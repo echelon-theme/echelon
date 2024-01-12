@@ -1,0 +1,87 @@
+#titlebar {
+  margin-top: calc(var(--titlebar-height) - 2px) !important;
+}
+
+.titlebar-buttonbox-container {
+  position: fixed !important;
+  right: 0 !important;
+  top: 0 !important;
+}
+
+#appmenu-button {
+  position: fixed !important;
+  left: 0 !important;
+  top: 1px !important;
+  height: calc(var(--titlebar-height) - 1px) !important;
+  border: 1px solid hsla(0,0%,100%,.5) !important;
+  border-top: 0 !important;
+  padding: 0 !important;
+  color: white !important;
+  text-shadow: 0 0 1px rgba(0,0,0,.7), 0 1px 1.5px rgba(0,0,0,.5) !important;
+  font-weight: bold !important;
+  border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
+  border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;  
+}
+
+:root[sizemode="maximized"] #appmenu-button {
+  top: 8px !important;
+}
+
+:root[sizemode="fullscreen"] #a ppmenu-button {
+  display: none !important;
+}
+
+#appmenu-button .toolbarbutton-icon {
+  display: none !important;
+}
+
+#appmenu-button .toolbarbutton-text {
+  display: flex !important;
+  min-width: 92px !important;
+  height: 100% !important;
+  background-image: linear-gradient(to bottom, rgb(247, 182, 82), rgb(215, 98, 10) 95%) !important;
+  min-height: unset !important;
+  padding: 0 1.5em .05em !important;
+  border-radius: 0 !important;
+  border: 1px solid hsla(210,59%,13%,.9) !important;
+  border-top: 0 !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.25) inset, 0 0 0 1px rgba(255,255,255,.25) inset !important;
+  border-bottom-left-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
+  border-bottom-right-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
+  align-items: center !important;
+}
+
+#appmenu-button:hover .toolbarbutton-text {
+  background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(252,240,89,.5) 10%, rgba(252,240,89,0) 70%),
+                    -moz-radial-gradient(center bottom, farthest-side, rgb(236,133,0), rgba(255,229,172,0)),
+                    -moz-linear-gradient(rgb(246,170,69), rgb(209,74,0) 95%) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
+              0 0 1.5px 1px rgba(250,234,169,.7) inset,
+              0 -1px 0 rgba(250,234,169,.5) inset !important;
+}
+
+#appmenu-button .toolbarbutton-text::after {
+  content: '' !important;
+  display: inline-block;
+  width: 9px;
+  height: 7px;
+  background-image: url('images/appmenu-dropmarker.png');
+  margin-inline-start: .5em;
+}
+
+#PersonalToolbar {
+  border-left: 1px solid rgba(10%,10%,10%,.4) !important;
+  border-right: 1px solid rgba(10%,10%,10%,.4) !important;
+  padding-inline: 0 !important;
+}
+
+toolbarbutton.bookmark-item {
+  appearance: toolbarbutton !important;
+  margin: 0 !important;
+}
+
+.bookmark-item[container] .toolbarbutton-icon {
+  background-image: url('images/folder-item.png') !important;
+  list-style-image: none !important;
+  background-position-x: -16px !important;
+}

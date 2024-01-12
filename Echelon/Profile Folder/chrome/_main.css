@@ -1,0 +1,57 @@
+/** TOOLBAR ICONS **/
+
+#back-button {
+  list-style-image: url('images/icons/back_large.png') !important;
+}
+
+#forward-button {
+  list-style-image: url('images/icons/forward.png') !important;
+}
+
+#home-button {
+  list-style-image: url('images/icons/home.png') !important;
+}
+
+#bookmarks-menu-button {
+  list-style-image: url('images/icons/bookmarks.png') !important;
+}
+
+#history-panelmenu {
+  list-style-image: url('images/icons/history.png') !important;
+}
+
+#print-button {
+  list-style-image: url('images/icons/print.png') !important;
+}
+
+#new-window-button {
+  list-style-image: url('images/icons/new-window.png') !important;
+}
+
+#zoom-out-button {
+  list-style-image: url('images/icons/zoom-out.png') !important;
+}
+
+#zoom-in-button {
+  list-style-image: url('images/icons/zoom-in.png') !important;
+}
+
+#panic-button {
+  list-style-image: url('images/icons/refresh.png') !important;
+}
+
+#cut-button {
+  list-style-image: url('images/icons/cut.png') !important;
+}
+
+#copy-button {
+  list-style-image: url('images/icons/copy.png') !important;
+}
+
+#paste-button {
+  list-style-image: url('images/icons/paste.png') !important;
+}
+
+#unified-extensions-button {
+  list-style-image: url('images/icons/extensions.png') !important;
+}

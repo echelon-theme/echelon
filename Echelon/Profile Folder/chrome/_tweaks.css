@@ -1,0 +1,63 @@
+@supports -moz-bool-pref("Echelon.Appearance.Blue") {
+  :root {
+    --toolbar-custom-color: hsl(214,44%,87%) !important;
+  }
+  #navigator-toolbox > toolbar:not(:-moz-lwtheme) {
+    background-color: var(--toolbar-custom-color) !important;
+  }
+  .tab-background,
+  #tabs-newtab-button {
+    background-image: linear-gradient(to top, rgba(10%,10%,10%,.4) 1px, transparent 1px), var(--tab-background), linear-gradient(var(--toolbar-custom-color), var(--toolbar-custom-color)) !important;
+  }
+  #tabs-newtab-button:hover,
+  #tabs-newtab-button[open] {
+    background-image: linear-gradient(to top, rgba(10%,10%,10%,.4) 1px, transparent 1px), var(--tab-background-hover), linear-gradient(var(--toolbar-custom-color), var(--toolbar-custom-color)) !important;
+  }
+  :root:not([lwtheme-image]) .tab-background:is([selected], [multiselected]) {
+    background-image: linear-gradient(var(--tab-selected-highlight), var(--toolbar-highlight-top) 50%), linear-gradient(var(--toolbar-custom-color), var(--toolbar-custom-color)) !important;
+  }
+  .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"], [multiselected]) {
+    background-image: linear-gradient(to top, rgba(10%,10%,10%,.4) 1px, transparent 1px), var(--tab-background-hover), linear-gradient(var(--toolbar-custom-color), var(--toolbar-custom-color)) !important;
+  }
+}
+
+/** THEME SUPPORT **/
+:root[lwtheme-image] {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+#navigator-toolbox:-moz-lwtheme {
+  background-image: none !important;
+}
+
+#navigator-toolbox:-moz-lwtheme #nav-bar,
+#navigator-toolbox:-moz-lwtheme #PersonalToolbar {
+  background-image: linear-gradient(var(--toolbar-highlight-top) 15%, var(--toolbar-highlight-bottom)), var(--lwt-header-image), var(--lwt-additional-images) !important;
+  background-repeat: var(--lwt-background-tiling) !important;
+  background-position: var(--lwt-background-alignment) !important;
+}
+
+#navigator-toolbox:-moz-lwtheme #PersonalToolbar {
+  background-image: var(--lwt-header-image), var(--lwt-additional-images) !important;
+  background-position: var(--lwt-background-alignment) -36px !important;
+}
+
+#navigator-toolbox:-moz-lwtheme .tab-background,
+#navigator-toolbox:-moz-lwtheme #tabs-newtab-button {
+  background-image: linear-gradient(to top, rgba(10%,10%,10%,.4) 1px, transparent 1px), var(--tab-background), var(--lwt-header-image), var(--lwt-additional-images) !important;
+  background-size: 100vh 30px !important;
+}
+
+#navigator-toolbox:-moz-lwtheme .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"], [multiselected]),
+#navigator-toolbox:-moz-lwtheme #tabs-newtab-button:hover {
+  background-image: linear-gradient(to top, rgba(10%,10%,10%,.4) 1px, transparent 1px), var(--tab-background-hover), var(--lwt-header-image), var(--lwt-additional-images) !important;
+}
+
+#navigator-toolbox:-moz-lwtheme .tab-background:is([selected], [multiselected]) {
+  background-image: linear-gradient(var(--tab-selected-highlight), var(--toolbar-highlight-top) 50%), var(--lwt-header-image), var(--lwt-additional-images) !important;
+}
+
+#TabsToolbar #firefox-view-button[open]:not(:focus-visible) > .toolbarbutton-icon:-moz-lwtheme, .tab-background[selected]:not([multiselected="true"]):-moz-lwtheme {
+  outline: 0 !important;
+}
