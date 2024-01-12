@@ -1,8 +1,8 @@
-# RinFox
-Rinfox is a Mozilla Firefox theme that mimicks the look and feel of Internet Explorer 7 and 8.
+# Echelon
+Echelon is a Mozilla Firefox 4 theme for Mozilla Firefox 115ESR.
 
 # Notes
-* Tested on Windows Vista w/ Extended Kernel, Windows 7, and Windows 10
+* Tested on Windows 10
 * It doesn't work properly with WindowBlinds
 * Make sure that your profile hasn't been modified by other themes, if so, delete the modified files _or_ create a new profile
 
@@ -24,20 +24,6 @@ Rinfox is a Mozilla Firefox theme that mimicks the look and feel of Internet Exp
 <supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>
 <supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"/>
 ```
-2.3.	Restart your computer.
-
-3. Open Firefox and follow the instructions of the wizard that appears on-screen.
-
-4.	Extensions
-
-4.1	**(Optional)** Drag and drop `suggestedSites.xpi` in the Extensions folder to Firefox
-
-4.3	**(Optional)** Install [FeedBro](https://addons.mozilla.org/en-US/firefox/addon/feedbroreader/) for RSS feeds
-
-5. Go to `about:support` and click on "Clear startup cache"
+3.	Restart your computer.
 
 Enjoy!
-
-# Credits 
-* [BruniBanana](https://github.com/angelbruni) - Developer
-* All Closed Beta testers
