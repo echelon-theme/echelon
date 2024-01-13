@@ -49,7 +49,7 @@ toolbar .toolbarbutton-1:not(#back-button, #tabs-newtab-button, #reload-button, 
   height: 18px !important;
 }
 
-#nav-bar[mode="icons"] .toolbarbutton-1:not(#back-button, #forward-button, #alltabs-button, #new-tab-button, #reload-button, #stop-button, #PanelUI-menu-button, #appmenu-button, #new-tab-button) {
+#nav-bar[mode="icons"] .toolbarbutton-1:not(#back-button, #forward-button, #alltabs-button, #new-tab-button, #reload-button, #stop-button, #PanelUI-menu-button, #appmenu-button, #new-tab-button, #bookmarks-menu-button) {
   width: 30px !important;
   height: 24px !important;
 }
@@ -100,6 +100,29 @@ toolbar .toolbarbutton-1[open] {
   transition: none !important;
 }
 
+#bookmarks-menu-button {
+  width: 35px !important;
+  height: 24px !important;
+}
+
+#bookmarks-menu-button::after {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 3px;
+  background-image: url('images/dropdown.png') !important;
+}
+
+dropmarker:hover:active:not([disabled="true"]) {
+  -moz-border-top-colors: ThreeDShadow ThreeDFace;
+  -moz-border-right-colors: ThreeDShadow ThreeDFace;
+  -moz-border-bottom-colors: ThreeDShadow ThreeDFace;
+  -moz-border-left-colors: ThreeDShadow ThreeDFace;
+  padding-top: 2px;
+  padding-bottom: 0px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
+}
 /* UNIFIED BACK & FORWARD BUTTONS */
 
 #back-button {
