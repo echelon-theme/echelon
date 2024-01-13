@@ -197,10 +197,6 @@
   background-image: url('images/icons/add-to-bookmarks_hover.png') !important;
 }
 
-::placeholder {
-  color: GrayText !important;
-}
-
 .urlbar-page-action {
   width: 18px !important;
   height: 18px !important;

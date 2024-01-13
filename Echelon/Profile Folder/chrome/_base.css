@@ -29,3 +29,8 @@
   border: 1px solid rgba(10%,10%,10%,.4) !important;
   border-top: 0 !important;
 }
+
+::placeholder {
+  color: GrayText !important;
+  font-style: italic !important;
+}

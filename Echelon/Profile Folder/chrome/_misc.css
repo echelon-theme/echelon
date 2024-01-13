@@ -27,6 +27,10 @@
   top: 8px !important;
 }
 
+:root[sizemode="maximized"] #titlebar {
+  margin-top: var(--titlebar-height) !important;
+}
+
 :root[sizemode="fullscreen"] #a ppmenu-button {
   display: none !important;
 }
