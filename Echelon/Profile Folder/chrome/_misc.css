@@ -8,6 +8,10 @@
   top: 0 !important;
 }
 
+:root[sizemode="maximized"] .titlebar-buttonbox-container {
+  position: static !important;
+}
+
 #appmenu-button {
   position: fixed !important;
   left: 0 !important;
@@ -28,11 +32,15 @@
 }
 
 :root[sizemode="maximized"] #titlebar {
-  margin-top: var(--titlebar-height) !important;
+  margin-top: 0 !important;
 }
 
-:root[sizemode="fullscreen"] #a ppmenu-button {
+:root[sizemode="fullscreen"] #appmenu-button {
   display: none !important;
+}
+
+:root[sizemode="maximized"] #TabsToolbar {
+  padding-left: calc(92px + 5px) !important; 
 }
 
 #appmenu-button .toolbarbutton-icon {
