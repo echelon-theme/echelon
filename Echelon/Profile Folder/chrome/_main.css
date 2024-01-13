@@ -55,3 +55,11 @@
 #unified-extensions-button {
   list-style-image: url('images/icons/extensions.png') !important;
 }
+
+#downloads-indicator-anchor {
+  list-style-image: url('images/icons/downloads.png') !important;
+}
+
+#downloads-button[attention] #downloads-indicator-anchor {
+  list-style-image: url('images/icons/download-glow.png') !important;
+}

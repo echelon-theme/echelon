@@ -38,7 +38,8 @@ toolbar .toolbaritem-combined-buttons {
   padding: 5px 2px !important;
 }
 
-toolbar .toolbarbutton-icon {
+toolbar .toolbarbutton-icon,
+toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack {
   padding: 0 !important;
   background-color: transparent !important;
 }
@@ -74,8 +75,8 @@ toolbar .toolbarbutton-1:not(#PanelUI-menu-button, #tabs-newtab-button, #new-tab
 
 toolbar .toolbarbutton-1:not([open], [disabled="true"], #back-button, #new-tab-button, #tabs-newtab-button, #reload-button, #stop-button, #appmenu-button, #alltabs-button):hover {
   background-color: hsla(190,60%,70%,.5) !important;
-  border-color: hsla(190,50%,65%,.8) hsla(190,50%,50%,.8) hsla(190,50%,40%,.8);
-  box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset, 0 0 0 1.5px rgba(255,255,255,.1) inset, 0 1px 0 rgba(0,0,0,.1), 0 0 3.5px hsl(190,90%,80%);
+  border-color: hsla(190,50%,65%,.8) hsla(190,50%,50%,.8) hsla(190,50%,40%,.8) !important;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset, 0 0 0 1.5px rgba(255,255,255,.1) inset, 0 1px 0 rgba(0,0,0,.1), 0 0 3.5px hsl(190,90%,80%) !important;
 }
 
 toolbar .toolbarbutton-1:not([disabled="true"], #back-button, #new-tab-button, #tabs-newtab-button, #reload-button, #stop-button, #appmenu-button, #alltabs-button):hover:active,
@@ -178,7 +179,7 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:last-of-type {
   border-bottom-left-radius: 0 !important;
 }
 
-/** HIDE PANEL UI **/
+/* HIDE PANEL UI */
 #PanelUI-menu-button {
   list-style-image: none !important;
   background-color: transparent !important;
@@ -192,4 +193,52 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:last-of-type {
 
 #PanelUI-menu-button .toolbarbutton-icon {
   width: 0 !important;
+}
+
+/* DOWNLOADS BUTTON */
+#nav-bar:not([urlbar-exceeds-toolbar-bounds]), toolbar[overflowable][customizing] > .customization-target {
+  overflow: visible !important;
+}
+
+#downloads-indicator-finish-box {
+  display: none !important;
+}
+
+#downloads-button:not([progress]) > .toolbarbutton-badge-stack > #downloads-indicator-anchor > #downloads-indicator-icon  {
+  visibility: visible !important;
+}
+
+#downloads-button > .toolbarbutton-badge-stack > #downloads-indicator-progress-outer {
+  visibility: visible !important;
+  border: 0 !important;
+}
+
+#downloads-button:not([progress]) > .toolbarbutton-badge-stack > #downloads-indicator-progress-outer {
+  visibility: hidden !important;
+}
+
+#downloads-indicator-progress-inner {
+  width: 18px !important;
+  height: 5px !important;
+  border-radius: 100px !important;
+  background: linear-gradient(to bottom, #515151, #555555) !important;
+  border: 1px solid #313131 !important;
+  border-top: 1px solid #222222 !important;
+  box-shadow: 0 1px 0 rgb(255 255 255 / 25%) !important;
+  position: relative !important;
+}
+
+#downloads-indicator-progress-inner::before {
+  content: '';
+  display: inline-block;
+  width: var(--download-progress-pcent);
+  height: 100%;
+  background-image: linear-gradient(to bottom, #5AC942 0%, #9CDF8E 50%, #5AC942 100%) !important;
+  border-radius: 100px !important;
+  border: green !important;
+  position: absolute !important; 
+  top: -1px !important;
+  left: -1px !important;
+  border: 1px solid #368A4A !important;
+  border-top: 1px solid #246A4E !important;
 }
