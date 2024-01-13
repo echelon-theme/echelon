@@ -15,17 +15,27 @@
   transition: min-width 200ms ease-out, max-width 250ms ease-out , opacity 50ms ease-out 20ms !important;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  #tabbrowser-tabs[movingtab] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[fadein]:not([selected]):not([multiselected]),
+  .tabbrowser-tab[tab-grouping],
+  .tabbrowser-tab[tabdrop-samewindow] {
+    transition: transform 0.001ms var(--animation-easing-function), min-width 200ms ease-out, max-width 250ms ease-out , opacity 50ms ease-out 20ms !important;
+  }
+}
+
 .tabbrowser-tab:not([pinned]):not([fadein]) {
+  max-width: 0.1px !important;
+  min-width: 0.1px !important;
   opacity: 0 !important;
   transition: min-width 200ms ease-out, max-width 250ms ease-out , opacity 50ms ease-out 100ms !important;
 }
 
-.tabbrowser-tab:where([visuallyselected="true"]) {
+.tabbrowser-tab[visuallyselected="true"] {
   z-index: 999 !important;
 }
 
 .tabbrowser-tab[fadein]:not([pinned]):not([style*="max-width"]) {
-    max-width: 250px !important; 
+  max-width: 250px !important; 
 }
 
 .tab-background,
@@ -95,6 +105,10 @@
 
 .tab-close-button {
   margin-inline-end: 1px !important;
+}
+
+.tabbrowser-tab:first-of-type:last-of-type .tab-close-button {
+  display: none !important;
 }
 
 #tabs-newtab-button .toolbarbutton-icon {

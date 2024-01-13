@@ -53,7 +53,7 @@ toolbar .toolbarbutton-1:not(#back-button, #tabs-newtab-button, #reload-button, 
   height: 24px !important;
 }
 
-toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button, #tabs-newtab-button, #new-tab-button, #reload-button, #stop-button, #appmenu-button) {
+toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button, #tabs-newtab-button, #new-tab-button, #reload-button, #stop-button, #appmenu-button, .toolbarbutton-combined) {
   margin-inline: 3px !important;
 }
 
@@ -154,30 +154,26 @@ toolbar .toolbarbutton-1[open] {
   display: none !important;
 }
 
-#nav-bar #zoom-controls {
-  margin: 0 !important;
-}
-
 toolbar .toolbaritem-combined-buttons {
-  margin-inline: 0 !important;
+  margin: 0 !important;
 }
 
 toolbar .toolbaritem-combined-buttons separator {
   display: none !important;
 }
 
-toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:first-of-type .toolbarbutton-icon {
+toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:first-of-type {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   border-right: 0 !important;
 }
 
-toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:not(:first-of-type, :last-of-type) .toolbarbutton-icon {
+toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:not(:first-of-type, :last-of-type) {
   border-radius: 0 !important;
   border-right: 0 !important;
 }
 
-toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:last-of-type .toolbarbutton-icon {
+toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:last-of-type {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
 }
