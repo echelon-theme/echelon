@@ -58,6 +58,7 @@
 
 #urlbar[breakout][breakout-extend] > #urlbar-input-container {
   padding: 1px !important;
+  padding-right: 0 !important;
 }
 
 .urlbarView {
@@ -67,6 +68,10 @@
   border: 1px solid #696969 !important;
   background-color: #FFF !important;
   overflow: visible !important;
+}
+
+#urlbar-go-button {
+  display: none !important;
 }
 
 /* Hacky method for shadows */
@@ -86,7 +91,7 @@
 
 .urlbarView-body-outer {
   max-height: 258px !important;
-  overflow-y: scroll !important;
+  overflow-y: auto !important;
   padding-right: 1px !important;
 }
 
@@ -300,6 +305,7 @@
   height: 11px;
   background-image: url('images/searchbar-dropdown-arrow.png');
   align-self: center !important;
+  margin-right: 1px !important;
 }
 
 #urlbar-input-container:hover::after {

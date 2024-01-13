@@ -19,6 +19,9 @@
   .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"], [multiselected]) {
     background-image: linear-gradient(to top, rgba(10%,10%,10%,.4) 1px, transparent 1px), var(--tab-background-hover), linear-gradient(var(--toolbar-custom-color), var(--toolbar-custom-color)) !important;
   }
+  ::placeholder {
+    font-style: italic !important;
+  }
 }
 
 /** THEME SUPPORT **/

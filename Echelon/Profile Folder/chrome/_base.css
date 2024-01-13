@@ -1,7 +1,7 @@
 /** ROOT VARIABLES **/
 
 :root {
-  --toolbar-border-radius: 3px !important;
+  --toolbar-border-radius: 3.5px !important;
   --toolbarbutton-border-radius: 4.5px !important;
   --toolbarbutton-transition-duration: .3s !important;
   --toolbarbutton-transition-timingfunction: ease-in !important;
@@ -32,5 +32,4 @@
 
 ::placeholder {
   color: GrayText !important;
-  font-style: italic !important;
 }

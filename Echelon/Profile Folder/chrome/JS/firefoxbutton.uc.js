@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Silverfox Hamburger Menu
-// @version      1.0
-// @description  Creates Hamburger Menu with its contents and functions
-// @author       florin
+// @name			Firefox Button
+// @description 	Adds back Firefox button.
+// @author			Travis
+// @include			main
 // ==/UserScript==
 
 function createAppMenuButton() {

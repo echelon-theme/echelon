@@ -28,7 +28,12 @@
 }
 
 :root[sizemode="maximized"] #appmenu-button {
+  height: calc(var(--titlebar-height) - 2px) !important;
   top: 8px !important;
+}
+
+:root[sizemode="maximized"] #appmenu-button .toolbarbutton-text {
+  width: 89px !important;
 }
 
 :root[sizemode="maximized"] #titlebar {
@@ -53,14 +58,18 @@
   height: 100% !important;
   background-image: linear-gradient(to bottom, rgb(247, 182, 82), rgb(215, 98, 10) 95%) !important;
   min-height: unset !important;
-  padding: 0 1.5em .05em !important;
+  padding: 0 1.5em .15em !important;
   border-radius: 0 !important;
-  border: 1px solid hsla(210,59%,13%,.9) !important;
+  border: 1px solid rgba(83, 42, 6, 0.9) !important;
   border-top: 0 !important;
   box-shadow: 0 1px 0 rgba(255,255,255,.25) inset, 0 0 0 1px rgba(255,255,255,.25) inset !important;
   border-bottom-left-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
   border-bottom-right-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
   align-items: center !important;
+}
+
+#appmenu-button .toolbarbutton-text::before {
+  text-overflow: unset !important;
 }
 
 #appmenu-button:hover .toolbarbutton-text {
@@ -85,6 +94,7 @@
   border-left: 1px solid rgba(10%,10%,10%,.4) !important;
   border-right: 1px solid rgba(10%,10%,10%,.4) !important;
   padding-inline: 0 !important;
+  padding-bottom: 1px !important;
 }
 
 toolbarbutton.bookmark-item {

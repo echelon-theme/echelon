@@ -16,14 +16,16 @@
 }
 
 .tabbrowser-tab:not([pinned]):not([fadein]) {
-  max-width: 0.1px !important;
-  min-width: 0.1px !important;
   opacity: 0 !important;
   transition: min-width 200ms ease-out, max-width 250ms ease-out , opacity 50ms ease-out 100ms !important;
 }
 
 .tabbrowser-tab:where([visuallyselected="true"]) {
   z-index: 999 !important;
+}
+
+.tabbrowser-tab[fadein]:not([pinned]):not([style*="max-width"]) {
+    max-width: 250px !important; 
 }
 
 .tab-background,

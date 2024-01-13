@@ -28,6 +28,7 @@
   margin-top: -1px !important;
   padding-right: 2px !important;
   padding-bottom: 1px !important;
+  align-items: center !important;
 }
 
 /** TOOLBAR BUTTONS **/
@@ -37,16 +38,26 @@ toolbar .toolbaritem-combined-buttons {
   padding: 5px 2px !important;
 }
 
-toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button, #stop-button, #appmenu-button, #new-tab-button) > .toolbarbutton-icon {
-  padding: 2px 6px !important;
+toolbar .toolbarbutton-icon {
+  padding: 0 !important;
+  background-color: transparent !important;
 }
 
-#nav-bar[mode="icons"] .toolbarbutton-1:not(#back-button, #forward-button, #alltabs-button, #new-tab-button, #reload-button, #stop-button, #PanelUI-menu-button, #appmenu-button, #new-tab-button) .toolbarbutton-icon {
-  width: 32px !important;
+toolbar .toolbarbutton-1:not(#back-button, #tabs-newtab-button, #reload-button, #stop-button, #appmenu-button, #new-tab-button) > .toolbarbutton-icon {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+#nav-bar[mode="icons"] .toolbarbutton-1:not(#back-button, #forward-button, #alltabs-button, #new-tab-button, #reload-button, #stop-button, #PanelUI-menu-button, #appmenu-button, #new-tab-button) {
+  width: 30px !important;
   height: 24px !important;
 }
 
-toolbar .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, #reload-button, #stop-button, #appmenu-button) > .toolbarbutton-icon {
+toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button, #tabs-newtab-button, #new-tab-button, #reload-button, #stop-button, #appmenu-button) {
+  margin-inline: 3px !important;
+}
+
+toolbar .toolbarbutton-1:not(#PanelUI-menu-button, #tabs-newtab-button, #new-tab-button, #reload-button, #stop-button, #appmenu-button, #alltabs-button) {
   background: rgba(151,152,153,.05) linear-gradient(rgba(251,252,253,.95), rgba(246,247,248,.47) 49%, rgba(231,232,233,.45) 51%, rgba(225,226,229,.3));
   background-clip: padding-box;
   border-radius: var(--toolbarbutton-border-radius);
@@ -55,20 +66,21 @@ toolbar .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, #reload-butto
   box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset, 0 0 0 2px rgba(255,255,255,.1) inset, 0 1px 0 rgba(0,0,0,.15);
   color: black;
   text-shadow: 0 0 2px white;
+  align-self: center !important;
   transition: background-color var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction), 
               border-color var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction), 
               box-shadow var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction);
 }
 
-toolbar .toolbarbutton-1:not([open], [disabled="true"], #back-button, #new-tab-button, #tabs-newtab-button, #reload-button, #stop-button, #appmenu-button):hover > .toolbarbutton-icon {
+toolbar .toolbarbutton-1:not([open], [disabled="true"], #back-button, #new-tab-button, #tabs-newtab-button, #reload-button, #stop-button, #appmenu-button, #alltabs-button):hover {
   background-color: hsla(190,60%,70%,.5) !important;
   border-color: hsla(190,50%,65%,.8) hsla(190,50%,50%,.8) hsla(190,50%,40%,.8);
   box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset, 0 0 0 1.5px rgba(255,255,255,.1) inset, 0 1px 0 rgba(0,0,0,.1), 0 0 3.5px hsl(190,90%,80%);
 }
 
-toolbar .toolbarbutton-1:not([disabled="true"], #back-button, #new-tab-button, #tabs-newtab-button, #reload-button, #stop-button, #appmenu-button):hover:active > .toolbarbutton-icon,
-toolbar .toolbarbutton-1:not([disabled="true"], #new-tab-button, #tabs-newtab-button)[open] > .toolbarbutton-icon,
-#forward-button:not([disabled="true"]):active .toolbarbutton-icon {
+toolbar .toolbarbutton-1:not([disabled="true"], #back-button, #new-tab-button, #tabs-newtab-button, #reload-button, #stop-button, #appmenu-button, #alltabs-button):hover:active,
+toolbar .toolbarbutton-1:not([disabled="true"], #back-button, #new-tab-button, #tabs-newtab-button, #alltabs-button)[open],
+#forward-button:not([disabled="true"]):active {
   background-color: transparent !important;
   border-color: rgba(0,0,0,.65) rgba(0,0,0,.55) rgba(0,0,0,.5) !important;
   box-shadow: 0 0 6.5px rgba(0,0,0,.4) inset, 0 0 2px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.4) !important;
@@ -76,64 +88,64 @@ toolbar .toolbarbutton-1:not([disabled="true"], #new-tab-button, #tabs-newtab-bu
 }
 
 .toolbarbutton-1:not(#reload-button, #stop-button)[disabled="true"] {
-  opacity: .4 !important;
+  opacity: 0.8 !important;
 }
 
-toolbar .toolbarbutton-1[open] > .toolbarbutton-icon {
+.toolbarbutton-1:not(#reload-button, #stop-button)[disabled="true"] .toolbarbutton-icon {
+  opacity: 0.5 !important;
+}
+
+toolbar .toolbarbutton-1[open] {
   transition: none !important;
 }
 
 /* UNIFIED BACK & FORWARD BUTTONS */
 
 #back-button {
-  padding-top: 3px !important;
-  padding-bottom: 3px !important;
-  padding-inline-start: 5px !important;
-  padding-inline-end: 0 !important;
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-#back-button .toolbarbutton-icon {
   width: 30px !important;
   height: 30px !important;
   border-radius: 10000px !important;
-  padding: 6px !important;
+  padding: 0 !important;
   border: none !important;
   background-image: linear-gradient(rgba(251,252,253,.97), rgba(246,247,248,.5) 49%, rgba(231,232,233,.45) 51%, rgba(225,226,229,.2)) !important;
   box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset, 0 0 0 2px rgba(255,255,255,.1) inset, 0 0 0 1px rgba(0,0,0,.15), 0 1px 0 rgba(0,0,0,.4), 0 1px 1px rgba(0,0,0,.3), 1px 2px 1px rgba(0,0,0,.2) !important;
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+  margin-inline-start: 4px !important;
 }
 
-#back-button:not([disabled="true"]):hover .toolbarbutton-icon {
+#back-button:not([disabled="true"], [open], :active):hover {
   background-color: hsla(190,60%,70%,.5) !important;
   box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset, 0 0 0 2px rgba(255,255,255,.1) inset, 0 0 0 1px hsla(190,50%,40%,.3), 0 1px 0 rgba(0,0,0,.4), 0 1px 1px rgba(0,0,0,.3), 1px 2px 1px rgba(0,0,0,.2), 0 0 5px 1px hsl(190,90%,80%) !important;
 }
 
-#back-button:not([disabled="true"]):hover:active .toolbarbutton-icon {
+#back-button:not([disabled="true"]):hover:active,
+#back-button:not([disabled="true"])[open] {
   box-shadow: 0 0 6.5px rgba(0,0,0,.4) inset, 0 0 2px rgba(0,0,0,.4) inset, 0 0 0 1px rgba(0,0,0,.65), 0 2px 0 rgba(255,255,255,.4) !important;
 }
 
-#forward-button {
-  padding: 0 !important;
+#back-button .toolbarbutton-icon {
+  width: 20px !important;
+  height: 20px !important;
 }
 
-#forward-button .toolbarbutton-icon {
+#forward-button {
   clip-path: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CclipPath id='windows-keyhole-forward-clip-path' clipPathUnits='objectBoundingBox'%3E%3Cpath d='M 0,0 C 0.16,0.11 0.28,0.29 0.28,0.5 0.28,0.71 0.16,0.89 0,1 L 1,1 1,0 0,0 z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E#windows-keyhole-forward-clip-path") !important;
-  width: 30px !important;
+  width: 28px !important;
   height: 24px !important;
-  padding: 2px 2px 2px 9px !important;
-  margin-inline-start: -7px !important;
+  padding: 0 !important;
+  margin-inline-start: -5px !important;
   border-top-right-radius: var(--toolbarbutton-border-radius) !important;
   border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
   border-left-style: none !important;
   background-image: linear-gradient(rgba(251,252,253,.97), rgba(246,247,248,.5) 49%, rgba(231,232,233,.45) 51%, rgba(225,226,229,.2)) !important;
-  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.3) inset, 0px 0px 0px 2px rgba(255, 255, 255, 0.1) inset, -1px 0.5px 0px 1px rgba(0, 0, 0, 0.15) !important;
 }
 
-#forward-button:not([disabled="true"]):hover .toolbarbutton-icon {
-  box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset, 0 0 0 2px rgba(255,255,255,.1) inset, 0 1px 0px rgba(0,0,0,.1), 0 0 5px 1px hsl(190,90%,80%) !important;
+#forward-button .toolbarbutton-icon {
+  margin-inline-start: 2px !important;
 }
 
 /* COMBINED TOOLBAR BUTTONS */
