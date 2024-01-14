@@ -30,13 +30,6 @@ var init = function() {
 		document.querySelector(".searchbar-search-icon").setAttribute("src", engineicon);
 
 	};
-	
-	function changeSearchBarPlaceholder() {
-		var enginename = document.getElementById("searchbar").currentEngine.name;
-		const searchBarPlaceHolder = document.querySelector(".searchbar-textbox");
-		
-		searchBarPlaceHolder.setAttribute("placeholder", ""+enginename+"");
-	};
 
   } catch(e) {}
 }

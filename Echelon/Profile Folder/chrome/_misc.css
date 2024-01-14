@@ -45,7 +45,7 @@
   display: none !important;
 }
 
-:root[sizemode="maximized"] #TabsToolbar {
+:root[sizemode="maximized"][tabsintitlebar] #TabsToolbar {
   padding-left: calc(92px + 5px) !important; 
 }
 

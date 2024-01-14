@@ -242,6 +242,7 @@
   padding-inline: 4px !important;
   background-color: transparent !important;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.15)) !important;
+  position: relative !important;
 }
 
 #identity-icon-box:hover {
@@ -255,6 +256,20 @@
 
 #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
   list-style-image: url('images/icon16.png') !important;
+}
+
+#identity-icon-box::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('images/urlbar-favicon-glow.png');
+  position: absolute;
+  left: 0;
+}
+
+#identity-icon {
+  z-index: 999 !important;
 }
 
 .searchbar-search-button {

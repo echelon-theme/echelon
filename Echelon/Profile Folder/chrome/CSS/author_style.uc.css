@@ -12,3 +12,34 @@ toolbarbutton menupopup[placespopup] {
 	background-color: Menu !important;
 	appearance: auto !important;
 }
+
+toolbarbutton menupopup[placespopup]::part(content) {
+	padding: 0 !important;
+	margin: 0 !important;
+	box-shadow: none !important;
+	border: 0 !important;
+  background-color: transparent !important;
+}
+
+toolbarbutton menupopup[placespopup] > :is(menu, menuitem) {
+	appearance: auto !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+toolbarbutton menupopup[placespopup] > :is(menu, menuitem) :is(.menu-text, .menu-iconic-text, .menu-iconic-icon, .menu-iconic-left, .menu-iconic-accel, .menu-accel-container, .menu-accel, .menu-right) {
+	appearance: auto !important;
+}
+
+toolbarbutton menupopup[placespopup] menuseparator {
+	appearance: auto !important;
+	margin: 0 !important;
+}
+
+toolbarbutton menupopup[placespopup] > :is(.menu-iconic, .menuitem-iconic) > .menu-iconic-left {
+	margin: 0 !important;
+}
+
+toolbarbutton menupopup[placespopup] menuseparator::before {
+	display:  none !important;
+}
