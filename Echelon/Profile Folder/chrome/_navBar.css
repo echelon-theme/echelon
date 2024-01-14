@@ -34,7 +34,7 @@
 /** TOOLBAR BUTTONS **/
 
 #nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #zoom-out-button, #zoom-in-button, #reload-button, #stop-button, #edit-controls > *, #PanelUI-menu-button, #appmenu-button, #new-tab-button),
-toolbar .toolbaritem-combined-buttons {
+toolbar .toolbaritem-combined-buttons:not(.unified-extensions-item) {
   padding: 5px 2px !important;
 }
 

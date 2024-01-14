@@ -1,4 +1,4 @@
-#titlebar {
+:root[tabsintitlebar] #titlebar {
   margin-top: calc(var(--titlebar-height) - 2px) !important;
 }
 
@@ -40,7 +40,8 @@
   margin-top: 0 !important;
 }
 
-:root[sizemode="fullscreen"] #appmenu-button {
+:root[sizemode="fullscreen"] #appmenu-button,
+:root:not([tabsintitlebar]) #appmenu-button {
   display: none !important;
 }
 
@@ -68,17 +69,44 @@
   align-items: center !important;
 }
 
+#main-window[privatebrowsingmode=temporary] #appmenu-button .toolbarbutton-text {
+  background-image: linear-gradient(to bottom, rgb(153,38,211), rgb(105,19,163) 95%) !important;
+  border-color: rgba(43,8,65,.9) !important;
+}
+
 #appmenu-button .toolbarbutton-text::before {
   text-overflow: unset !important;
 }
 
-#appmenu-button:hover .toolbarbutton-text {
+#appmenu-button:hover:not(:active):not([open]) .toolbarbutton-text {
   background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(252,240,89,.5) 10%, rgba(252,240,89,0) 70%),
                     -moz-radial-gradient(center bottom, farthest-side, rgb(236,133,0), rgba(255,229,172,0)),
                     -moz-linear-gradient(rgb(246,170,69), rgb(209,74,0) 95%) !important;
   box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
               0 0 1.5px 1px rgba(250,234,169,.7) inset,
               0 -1px 0 rgba(250,234,169,.5) inset !important;
+}
+
+#main-window[privatebrowsingmode=temporary] #appmenu-button:hover:not(:active):not([open]) .toolbarbutton-text {
+  background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(240,193,255,.5) 10%, rgba(240,193,255,0) 70%),
+                    -moz-radial-gradient(center bottom, farthest-side, rgb(192,81,247), rgba(236,172,255,0)),
+                    -moz-linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%) !important;
+  border-color: rgba(43,8,65,.9) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
+              0 0 2px 1px rgba(240,193,255,.7) inset,
+              0 -1px 0 rgba(240,193,255,.5) inset !important;
+}
+
+#appmenu-button:hover:active .toolbarbutton-text,
+#appmenu-button[open] .toolbarbutton-text {
+  background-image: linear-gradient(to bottom, rgb(246,170,69), rgb(209,74,0) 95%) !important;
+  box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
+              0 1px 1px rgba(0,0,0,.2) inset !important;
+}
+
+#main-window[privatebrowsingmode=temporary] #appmenu-button:hover:active .toolbarbutton-text,
+#main-window[privatebrowsingmode=temporary] #appmenu-button[open] .toolbarbutton-text {
+  background-image: linear-gradient(to bottom, rgb(144,20,207), rgb(95,0,158) 95%) !important;
 }
 
 #appmenu-button .toolbarbutton-text::after {

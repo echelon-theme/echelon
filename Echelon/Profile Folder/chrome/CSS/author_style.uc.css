@@ -1,0 +1,14 @@
+/* ==UserScript==
+// @description    author style injected to browser.xhtml
+// @usefileuri
+// @name  fuck shadow dom
+// ==/UserScript==*/
+
+/* Default to xul namespace */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+toolbarbutton menupopup[placespopup] {
+	--panel-shadow-margin: 0 !important;
+	background-color: Menu !important;
+	appearance: auto !important;
+}
