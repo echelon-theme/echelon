@@ -32,8 +32,8 @@
 
 /** ECHELON STYLE 1 (Firefox 5.0 - 9.0) **/
 
-#main-window[echelonstyle="1"] toolbar .toolbarbutton-1:not(#PanelUI-menu-button, #tabs-newtab-button, #new-tab-button, #reload-button, #stop-button, #appmenu-button, #alltabs-button),
-#main-window[echelonstyle="2"] toolbar .toolbarbutton-1:not(#PanelUI-menu-button, #tabs-newtab-button, #new-tab-button, #reload-button, #stop-button, #appmenu-button, #alltabs-button) {
+#main-window[echelonstyle="1"] toolbar .toolbarbutton-1:not(#PanelUI-menu-button, #tabs-newtab-button, #new-tab-button, #reload-button, #stop-button, #go-button, #appmenu-button, #alltabs-button),
+#main-window[echelonstyle="2"] toolbar .toolbarbutton-1:not(#PanelUI-menu-button, #tabs-newtab-button, #new-tab-button, #reload-button, #stop-button, #go-button, #appmenu-button, #alltabs-button) {
   border-radius: 3.5px;
   border-color: rgba(0,0,0,.12) rgba(0,0,0,.19) rgba(0,0,0,.38);
   box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset,
