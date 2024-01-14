@@ -143,7 +143,7 @@
 }
 
 .urlbarView-favicon[src="chrome://activity-stream/content/data/content/tippytop/favicons/google-com.ico"] {
-  content: url('images/google.png') !important;
+  content: url('images/icons/engines/google.png') !important;
 }
 
 .urlbarView-row[pinned] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
@@ -162,7 +162,7 @@
 .urlbarView-action,
 .urlbarView-button,
 .urlbarView-row[label]::before,
-.search-one-offs {
+#urlbar .search-one-offs {
   display: none !important;
 }
 

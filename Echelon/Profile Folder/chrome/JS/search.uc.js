@@ -1,36 +1,32 @@
-var tries = 30;
-var init = function() {
-  try {
-	document.getElementById("searchbar").currentEngine;
-  } catch(e) {
-	if (--tries > 0) {
-	  setTimeout(init, 1000);
-	}
-  }
+// ==UserScript==
+// @name			Old Search Bar
+// @description 	Adds back Search Engine icon and Placeholder name.
+// @author			Travis
+// @include			main
+// ==/UserScript==
 
-  try {
-	var searchbar = document.getElementById("searchbar");
+try {
 
-	updateStyleSheet();
-
-	var oldUpdateDisplay = searchbar.updateDisplay;
-	searchbar.updateDisplay = function() {
-	  oldUpdateDisplay.call(this);
-	  updateStyleSheet();
-	};
-
-	function updateStyleSheet() {
+	function setEngineProperties() {
+		let searchBar = document.getElementById("searchbar");
+		let searchBarIcon = document.querySelector(".searchbar-search-icon");
+		let getEngineIcon = searchbar.currentEngine.iconURI.spec;
+		let getEngineName = searchBar.currentEngine.name;
+		let searchBarPlaceholder = document.querySelector(".searchbar-textbox");
 		
-		var enginename = document.getElementById("searchbar").currentEngine.name;
-		
-		if (enginename == "Google") {
-			engineicon = "chrome://userchrome/content/images/google.png";
+		if (getEngineName = "Google") {
+			getEngineIcon = "chrome://userchrome/content/images/icons/engines/google.png";
 		}
-
-		document.querySelector(".searchbar-search-icon").setAttribute("src", engineicon);
-
-	};
-
-  } catch(e) {}
+		
+		searchBarIcon.setAttribute("src", getEngineIcon);
+		searchBarPlaceholder.setAttribute("placeholder", getEngineName);
+	}
+	
+	Services.search.init().then(a => {
+		setEngineProperties();
+	});
+	
 }
-setTimeout(init, 1000);
+catch (e) {
+	Components.utils.reportError(e);
+}
