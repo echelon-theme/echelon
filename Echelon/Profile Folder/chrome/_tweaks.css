@@ -24,6 +24,12 @@
   }
 }
 
+@supports -moz-bool-pref("Echelon.Option.HideUnifiedExtensions") {
+  #unified-extensions-button {
+    display: none !important;
+  }
+}
+
 /** THEME SUPPORT **/
 :root[lwtheme-image] {
   background-image: none !important;
