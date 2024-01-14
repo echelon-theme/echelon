@@ -5,6 +5,7 @@
 // @include			main
 // ==/UserScript==
 
+
 function createAppMenuButton() {
     try {
 		let titleBar = document.getElementById("titlebar");

@@ -343,26 +343,25 @@
 }
 
 #reload-button,
-#stop-button,
-#go-button {
+#stop-button {
   width: 21px !important;
   height: 22px !important;
   padding: 0 !important;
   border-left: 1px solid rgba(0,0,0,.25) !important;
+  border-top-right-radius: var(--toolbarbutton-border-radius);
+  border-bottom-right-radius: var(--toolbarbutton-border-radius);
   list-style-image: none !important;
   opacity: 1 !important;
 }
 
-#reload-button:hover,
-#go-button:hover {
+#reload-button:hover {
   background-image: linear-gradient(rgb(162,207,241), rgb(111,178,225) 49%, rgb(91,159,217) 51%, rgb(62,138,200));
   box-shadow: 0 1px 0 rgba(0,0,0,.1) inset, -1px -1px 1px rgba(255,255,255,.25) inset;
 }
 
-#reload-button:hover:active,
-#go-button:hover:active {
-  border-left-color: transparent !important !important;
-  box-shadow: 0 0 6.5px rgba(0,0,0,.4) inset, 0 0 2px rgba(0,0,0,.4) inset !important;
+#reload-button:hover:active {
+  border-left-color: transparent !important;
+  box-shadow: 0 0 6.5px rgba(0,0,0,.4) inset, 0 0 2px rgba(0,0,0,.4) inset;
 }
 
 #stop-button {
@@ -374,14 +373,8 @@
   background-image: linear-gradient(rgb(244,156,128), rgb(215,101,77) 49%, rgb(194,66,48) 51%, rgb(170,41,23));
 }
 
-#go-button {
-  background-image: linear-gradient(rgb(115,213,115), rgb(96,190,96) 49%, rgb(82,174,82) 51%, rgb(79,155,79)) !important;
-  box-shadow: 0 1px 0 rgba(0,0,0,.1) inset, -1px -1px 1px rgba(255,255,255,.25) inset !important;
-}
-
 #reload-button .toolbarbutton-icon,
-#stop-button .toolbarbutton-icon,
-#go-button .toolbarbutton-icon {
+#stop-button .toolbarbutton-icon {
   width: 14px !important;
   height: 14px !important;
   padding: 0 !important;
@@ -398,22 +391,6 @@
   background-position-x: -28px;
 }
 
-#go-button .toolbarbutton-icon {
-  background-position-x: -42px;
-}
-
 #stop-reload-button .toolbarbutton-animatable-box {
   display: none !important;
-}
-
-/* SHITTY CSS FOR GO BUTTON */
-
-#nav-bar[urlbar-exceeds-toolbar-bounds="true"] #stop-button,
-#nav-bar[urlbar-exceeds-toolbar-bounds="true"] #reload-button,
-#go-button {
-  display: none !important;
-}
-
-#nav-bar[urlbar-exceeds-toolbar-bounds="true"] #go-button {
-  display: flex !important;
 }

@@ -1,0 +1,75 @@
+@-moz-document url("chrome://browser/content/aboutDialog.xhtml") {
+    #aboutDialogContainer {
+        background: #f7f7f7 !important;
+        color: #222 !important;
+    }
+
+    #updateBox .text-blurb,
+    #releasenotes {
+        display: none !important;
+    }
+
+    #bottomBox {
+        background: #f0f0f0 !important;
+    }
+
+    #updateBox hbox[align="baseline"] {
+        order: -1;
+    }
+
+    #updateDeck {
+        color: #909090;
+        font-style: italic;
+    }
+
+    .text-link {
+        color: #06c !important;
+    }
+
+    #leftBox {
+        background-image: url("images/about-logo.png") !important;
+        background-position: 0 0 !important;
+    }
+
+    #rightBox {
+        background-image: url("images/about-wordmark.png") !important;
+        background-size: 130px auto !important;
+        padding-top: 38px !important;
+    }
+
+    #version {
+        margin-block-start: 10px !important;
+    }
+
+    #trademark {
+        color: #999 !important;
+        text-align: center !important;
+        font-size: xx-small !important;
+    }
+
+    #trademark::after {
+        content: "Firefox and the Firefox logos are trademarks of the Mozilla Foundation.";
+    }
+
+    @supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+        #leftBox {
+            background-image: url("images/about-logo-new.png") !important;
+        }
+
+        #rightBox {
+            background-image: url("images/about-wordmark-new.svg") !important;
+        }
+    }
+
+    [echelon-style-3]  #updateDeck {
+        font-style: unset;
+    }
+
+    [echelon-style-3] .text-link {
+        text-decoration: none !important;
+    }
+
+    [echelon-style-3] .text-link:hover {
+        text-decoration: underline !important;
+    }
+}

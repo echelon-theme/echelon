@@ -261,6 +261,17 @@ spacer[part="overflow-start-indicator"] {
   content: url('images/icon16.png') !important;
 }
 
+@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+  .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+    content: url('images/icon16-new.png') !important;
+  }
+}
+
 #private-browsing-indicator-with-label {
   display: none !important;
+}
+
+/* Fix white inactive tabs */
+:root[darkwindowframe="true"]:not(:-moz-window-inactive, :-moz-lwtheme) {
+  color: black !important;
 }
