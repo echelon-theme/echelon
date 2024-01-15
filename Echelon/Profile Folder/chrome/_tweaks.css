@@ -286,6 +286,31 @@
   border-color: ThreeDShadow !important;
 }
 
+@supports -moz-bool-pref("Echelon.Appearance.Blue") {
+  [echelon-style-3]:root {
+    --toolbar-custom-color: rgb(219, 234, 249) !important;
+  }
+  #main-window[echelon-style-1][echelon-style-3] #urlbar-background, 
+  #main-window[echelon-style-1][echelon-style-3] #searchbar,
+  #main-window[echelon-style-1][echelon-style-3] #stop-reload-button {
+    background-color: rgba(255,255,255) !important;
+    border-color: hsla(210,54%,20%,.25) hsla(210,54%,20%,.27) hsla(210,54%,20%,.3) !important;
+  }
+  #main-window[echelon-style-1][echelon-style-3] #urlbar:hover #urlbar-background, 
+  #main-window[echelon-style-1][echelon-style-3] #searchbar:hover,
+  #main-window[echelon-style-1][echelon-style-3] #urlbar-container:hover + #stop-reload-button {
+    border-color: hsla(210,54%,20%,.35) hsla(210,54%,20%,.37) hsla(210,54%,20%,.4) !important;
+  }
+  #main-window[echelon-style-1][echelon-style-3] #urlbar[open] > #urlbar-background, 
+  #main-window[echelon-style-1][echelon-style-3] #nav-bar[urlbar-exceeds-toolbar-bounds="true"] #stop-reload-button,
+  #main-window[echelon-style-1][echelon-style-3] #searchbar:focus {
+    border-color: hsla(206,100%,60%,.65) hsla(206,100%,55%,.65) hsla(206,100%,50%,.65) !important;
+  }
+  #navigator-toolbox::after {
+    background-color: rgb(170, 188, 207) !important;
+  }
+}
+
 #main-window[echelon-style-1][echelon-style-3] #stop-reload-button {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
