@@ -32,16 +32,14 @@
 
 /** ECHELON STYLE 1 (Firefox 5.0 - 9.0) **/
 
-#main-window[echelonstyle="1"] toolbar .toolbarbutton-1:not(#PanelUI-menu-button, #tabs-newtab-button, #new-tab-button, #reload-button, #stop-button, #go-button, #appmenu-button, #alltabs-button),
-#main-window[echelonstyle="2"] toolbar .toolbarbutton-1:not(#PanelUI-menu-button, #tabs-newtab-button, #new-tab-button, #reload-button, #stop-button, #go-button, #appmenu-button, #alltabs-button) {
+#main-window[echelon-style-1] toolbar .toolbarbutton-1:not(#PanelUI-menu-button, #tabs-newtab-button, #new-tab-button, #reload-button, #stop-button, #go-button, #appmenu-button, #alltabs-button) {
   border-radius: 3.5px;
   border-color: rgba(0,0,0,.12) rgba(0,0,0,.19) rgba(0,0,0,.38);
   box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset,
               0 0 0 2px rgba(255,255,255,.1) inset;
 }
 
-#main-window[echelonstyle="1"] #back-button,
-#main-window[echelonstyle="2"] #back-button {
+#main-window[echelon-style-1] #back-button {
   box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset,
               0 0 0 2px rgba(255,255,255,.1) inset,
               0 0 0 1px rgba(0,0,0,.15),
@@ -49,111 +47,106 @@
               0 1px 1px rgba(0,0,0,.3) !important;
 }
 
-#main-window[echelonstyle="2"] #back-button:not([disabled="true"], [open], :active):hover {
-  background-color: hsla(190,60%,70%,.5) !important;
-  box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset, 0 0 0 2px rgba(255,255,255,.1) inset, 0 0 0 1px hsla(190,50%,40%,.3), 0 1px 0 rgba(0,0,0,.4), 0 1px 1px rgba(0,0,0,.3), 1px 2px 1px rgba(0,0,0,.2), 0 0 5px 1px hsl(190,90%,80%) !important;
-}
-
-#main-window[echelonstyle="2"] #back-button:not([disabled="true"]):hover:active,
-#main-window[echelonstyle="2"] #back-button:not([disabled="true"])[open] {
-  transition: none !important;
-  box-shadow: 0 0 6.5px rgba(0,0,0,.4) inset, 0 0 2px rgba(0,0,0,.4) inset, 0 0 0 1px rgba(0,0,0,.65), 0 2px 0 rgba(255,255,255,.4) !important;
-}
-
-#main-window[echelonstyle="1"] #identity-box:not(.localResource) #identity-icon-box {
+#main-window[echelon-style-1] #identity-box:not(.localResource) #identity-icon-box {
   background-image: linear-gradient(to bottom, rgba(255,255,255,.25), rgba(0,0,0,.15)) !important;
   color: -moz-dialogText !important;
   border-radius: 2px !important;
 }
 
-#main-window[echelonstyle="1"] #identity-box:not(.localResource)[pageproxystate="valid"] #identity-icon-box {
+#main-window[echelon-style-1] #identity-box:not(.localResource)[pageproxystate="valid"] #identity-icon-box {
   color: white !important;
   text-shadow: 0 1px 0 rgba(0,0,0,.25) !important;
   box-shadow: 0 0 0 1px rgba(0,0,0,.2) inset !important;
   background-color: hsl(219,45%,60%) !important;
 }
 
-#main-window[echelonstyle="1"] #identity-box:hover #identity-icon-box {
+#main-window[echelon-style-1] #identity-box:hover #identity-icon-box {
   background-image: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(50%,50%,50%,.2), rgba(0,0,0,.15)) !important;
 }
 
-#main-window[echelonstyle="1"] #identity-box #identity-icon-box[open="true"],
-#main-window[echelonstyle="1"] #identity-box:hover:active #identity-icon-box {
+#main-window[echelon-style-1] #identity-box #identity-icon-box[open="true"],
+#main-window[echelon-style-1] #identity-box:hover:active #identity-icon-box {
   background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.1)) !important;
 }
 
-#main-window[echelonstyle="1"] #urlbar-background,
-#main-window[echelonstyle="1"] #searchbar,
-#main-window[echelonstyle="1"] #stop-reload-button,
-#main-window[echelonstyle="2"] #urlbar-background,
-#main-window[echelonstyle="2"] #searchbar,
-#main-window[echelonstyle="2"] #stop-reload-button {
+#main-window[echelon-style-1] #urlbar-background,
+#main-window[echelon-style-1] #searchbar,
+#main-window[echelon-style-1] #stop-reload-button {
   border-radius: 3.5px !important;
   box-shadow: none !important;
   border-color: rgba(0,0,0,.37) !important;
 }
 
-#main-window[echelonstyle="1"] #stop-reload-button,
-#main-window[echelonstyle="2"] #stop-reload-button {
+#main-window[echelon-style-1] #stop-reload-button {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
 }
 
-#main-window[echelonstyle="1"] #urlbar-background,
-#main-window[echelonstyle="2"] #urlbar-background {
+#main-window[echelon-style-1] #urlbar-background {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
 
 /** ECHELON STYLE 2 (Firefox 9.0 - Firefox 13.0) **/
 
-#main-window[echelonstyle="2"] #back-button {
+#main-window[echelon-style-2] #back-button:not([disabled="true"], [open], :active):hover {
+  background-color: hsla(190,60%,70%,.5) !important;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset, 0 0 0 2px rgba(255,255,255,.1) inset, 0 0 0 1px hsla(190,50%,40%,.3), 0 1px 0 rgba(0,0,0,.4), 0 1px 1px rgba(0,0,0,.3), 1px 2px 1px rgba(0,0,0,.2), 0 0 5px 1px hsl(190,90%,80%) !important;
+}
+
+#main-window[echelon-style-2] #back-button:not([disabled="true"]):hover:active,
+#main-window[echelon-style-2] #back-button:not([disabled="true"])[open] {
+  transition: none !important;
+  box-shadow: 0 0 6.5px rgba(0,0,0,.4) inset, 0 0 2px rgba(0,0,0,.4) inset, 0 0 0 1px rgba(0,0,0,.65), 0 2px 0 rgba(255,255,255,.4) !important;
+}
+
+#main-window[echelon-style-2] #back-button {
   margin-inline-end: -5px !important;
 }
 
-#main-window[echelonstyle="2"] #back-button ~ #forward-button:not(:hover)[disabled="true"] {
+#main-window[echelon-style-2] #back-button ~ #forward-button:not(:hover)[disabled="true"] {
   margin-inline-start: -30px !important;
   opacity: 0 !important;
   pointer-events: none !important;
 }
 
-#main-window[echelonstyle="2"] #forward-button {
+#main-window[echelon-style-2] #forward-button {
   border-radius: 0 !important;
   margin-left: 0 !important;
   transition: margin-inline-start 150ms ease-out, opacity 150ms ease-out !important;
 }
 
-#main-window[echelonstyle="2"] #urlbar-container {
+#main-window[echelon-style-2] #urlbar-container {
   margin-left: 0 !important;
 }
 
-#main-window[echelonstyle="2"] #urlbar-input-container,
-#main-window[echelonstyle="2"] #urlbar[breakout][breakout-extend] > #urlbar-input-container {
+#main-window[echelon-style-2] #urlbar-input-container,
+#main-window[echelon-style-2] #urlbar[breakout][breakout-extend] > #urlbar-input-container {
   padding-left: 0 !important;
 }
 
-#main-window[echelonstyle="2"] #urlbar-background {
+#main-window[echelon-style-2] #urlbar-background {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
   border-left: 0 !important;
 }
-#main-window[echelonstyle="2"] #forward-button:not(:hover)[disabled="true"] + #urlbar-container #urlbar-background,
-#main-window[echelonstyle="2"] #forward-button:not(:hover)[disabled="true"] + #urlbar-container #urlbar-input-container {
+#main-window[echelon-style-2] #forward-button:not(:hover)[disabled="true"] + #urlbar-container #urlbar-background,
+#main-window[echelon-style-2] #forward-button:not(:hover)[disabled="true"] + #urlbar-container #urlbar-input-container {
   /* Shitty hack for masking */
   -webkit-mask: url('images/forward-button-url-mask.svg') !important;
   -webkit-mask-repeat: no-repeat !important;
   -webkit-mask-position: left !important;
 }
 
-#main-window[echelonstyle="2"] .urlbar-input-box {
+#main-window[echelon-style-2] .urlbar-input-box {
   padding-left: 2px !important;
 }
 
-#main-window[echelonstyle="2"] #identity-box {
+#main-window[echelon-style-2] #identity-box {
   padding: 0 !important;
 }
 
-#main-window[echelonstyle="2"] #identity-icon-box {
+#main-window[echelon-style-2] #identity-icon-box {
   background-image: linear-gradient(to bottom, hsl(0,0%,98%), hsl(0,0%,92%)) !important;
   box-shadow: 0 1px 0 hsla(0,0%,0%,.05) inset !important;
   border-right: 1px solid hsla(0,0%,0%,.1);
@@ -162,40 +155,40 @@
   transition: padding-left 150ms ease-out !important;
 }
 
-#main-window[echelonstyle="2"] #identity-icon-box:hover {
+#main-window[echelon-style-2] #identity-icon-box:hover {
   background-image: linear-gradient(to bottom, hsl(0,0%,95%), hsl(0,0%,87%)) !important;
 }
 
-#main-window[echelonstyle="2"] #identity-icon-box[open="true"],
-#main-window[echelonstyle="2"] #identity-icon-box:hover:active {
+#main-window[echelon-style-2] #identity-icon-box[open="true"],
+#main-window[echelon-style-2] #identity-icon-box:hover:active {
   background-image: linear-gradient(to bottom hsl(0,0%,92%), hsl(0,0%,82%)) !important;
   box-shadow: 0 1px 1px hsla(0,0%,0%,.3) inset,
               0 1px 3px hsla(0,0%,0%,.3) inset !important;
 }
 
-#main-window[echelonstyle="2"] .verifiedDomain #identity-icon-box {
+#main-window[echelon-style-2] .verifiedDomain #identity-icon-box {
   background-image: -moz-linear-gradient(hsl(215,60%,92%), hsl(215,58%,88%)) !important;
   box-shadow: 0 1px 0 hsla(215,54%,33%,.05) inset !important;
   border-right: 1px solid hsla(215,54%,33%,.2) !important;
   color: hsl(215,54%,33%) !important;
 }
 
-#main-window[echelonstyle="2"] .verifiedDomain #identity-icon-box:hover {
+#main-window[echelon-style-2] .verifiedDomain #identity-icon-box:hover {
   background-image: -moz-linear-gradient(hsl(215,85%,85%), hsl(215,70%,68%)) !important;
 }
 
-#main-window[echelonstyle="2"] .verifiedDomain #identity-icon-box[open="true"],
-#main-window[echelonstyle="2"] .verifiedDomain #identity-icon-box:hover:active {
+#main-window[echelon-style-2] .verifiedDomain #identity-icon-box[open="true"],
+#main-window[echelon-style-2] .verifiedDomain #identity-icon-box:hover:active {
   background-image: -moz-linear-gradient(hsl(215,80%,80%), hsl(215,67%,65%)) !important;
   box-shadow: 0 1px 1px hsla(215,54%,33%,.7) inset,
               0 1px 3px 1px hsla(215,54%,33%,.5) inset !important;
 }
 
-#main-window[echelonstyle="2"] #forward-button:not(:hover)[disabled="true"] + #urlbar-container #identity-icon-box {
+#main-window[echelon-style-2] #forward-button:not(:hover)[disabled="true"] + #urlbar-container #identity-icon-box {
   padding-left: 12px !important;
 }
 
-#main-window[echelonstyle="2"] #identity-icon-box::after {
+#main-window[echelon-style-2] #identity-icon-box::after {
   display: none !important;
 }
 
@@ -238,4 +231,60 @@
 
 #TabsToolbar #firefox-view-button[open]:not(:focus-visible) > .toolbarbutton-icon:-moz-lwtheme, .tab-background[selected]:not([multiselected="true"]):-moz-lwtheme {
   outline: 0 !important;
+}
+
+/** ECHELON STYLE 3 (Firefox 14.0 - Firefox 28.0) **/
+
+#main-window[echelon-style-3] #identity-icon-box,
+#main-window[echelon-style-3] #identity-box:not(.localResource)[pageproxystate="valid"] #identity-icon-box {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  background-image: none !important;
+  border-width: 0 !important;
+  padding: 2px !important;
+  padding-left: 5.01px !important;
+}
+
+#main-window[echelon-style-3] #identity-icon {
+  list-style-image: none !important;
+  background: url("images/identity-icons-generic.png") 0 0;
+}
+
+#main-window[echelon-style-3] #identity-box:not(.localResource)[pageproxystate="valid"] #identity-icon {
+  background-image: url("images/identity-icons-https.png");
+}
+
+#identity-box.chromeUI #identity-icon {
+  background-image: url("images/identity-icons-brand.png") !important;
+}
+
+#main-window[echelon-style-3] #identity-box:not([pageproxystate="invalid"]) #identity-icon-box:hover #identity-icon {
+  background-position: -16px 0;
+}
+
+#main-window[echelon-style-3] #identity-box:not([pageproxystate="invalid"]) #identity-icon-box:active #identity-icon,
+#main-window[echelon-style-3] #identity-box:not([pageproxystate="invalid"]) #identity-icon-box[open="true"] #identity-icon {
+  background-position: -32px 0;
+}
+
+#main-window[echelon-style-3] #identity-box[pageproxystate="invalid"]  #identity-icon {
+  opacity: 0.3 !important;
+}
+
+#main-window[echelon-style-3] #identity-box.chromeUI #identity-icon-label {
+  display: inline-flex !important;
+}
+
+#main-window[echelon-style-3] #identity-box:not(.localResource)[pageproxystate="valid"].chromeUI {
+  background-image: linear-gradient(rgba(229, 114, 0, 0), rgba(229, 114, 0, 0.5) 35%, rgba(229, 114, 0, 0.5) 65%, rgba(229, 114, 0, 0)) !important;
+  background-position: right center;
+  background-size: 1px auto;
+  background-repeat: no-repeat;
+}
+
+#main-window[echelon-style-3] #identity-box.chromeUI #identity-icon-label {
+  color: #e57300 !important;
+  text-shadow: none !important;
+  font-size: 8pt !important;
+  margin-right: 4px !important;
 }
