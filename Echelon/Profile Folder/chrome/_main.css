@@ -12,6 +12,10 @@
   list-style-image: url('images/icons/home.png') !important;
 }
 
+#main-window[echelon-style-3] #home-button {
+  list-style-image: url('images/icons/home_new.png') !important;
+}
+
 #bookmarks-menu-button {
   list-style-image: url('images/icons/bookmarks.png') !important;
 }
