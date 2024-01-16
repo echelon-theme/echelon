@@ -20,6 +20,10 @@
   list-style-image: url('images/icons/bookmarks.png') !important;
 }
 
+#main-window[echelon-style-4] #bookmarks-menu-button {
+  list-style-image: url('images/icons/bookmarks_australis.png') !important;
+}
+
 #bookmarks-button {
   list-style-image: url('images/icons/add-to-bookmarks_australis.png') !important;
 }
