@@ -7,12 +7,10 @@
 /* Default to xul namespace */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-@media (-moz-windows-non-native-menus)
-	:is(panel, menupopup)::part(content) {
-		border: 0 !important;
-		border-radius: 4px !important;
-		box-shadow: 0 0 6px rgb(0 0 0 / 25%), 0 0 1px 0 rgb(0 0 0 / 40%) !important;
-	}
+#downloadsPanel::part(content) {
+	border: 0 !important;
+	border-radius: 4px !important;
+	box-shadow: 0 0 6px rgb(0 0 0 / 25%), 0 0 1px 0 rgb(0 0 0 / 40%) !important;
 }
 
 toolbarbutton menupopup[placespopup] {
