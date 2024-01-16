@@ -10,6 +10,7 @@ const { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");
 function executeFunctions() {
 	getAndSetTitleBarHeight();
 	createAppMenuButton();
+	createAddToBookmarks();
     console.info("Functions executed.");
 }
 

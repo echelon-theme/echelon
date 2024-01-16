@@ -1,6 +1,6 @@
 #TabsToolbar {
-  padding-left: 4px !important;
-  padding-right: 4px !important;
+  padding-inline: 4px;
+  background-image: none !important;
 }
 
 #tabbrowser-tabs, #tabbrowser-arrowscrollbox, #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
@@ -51,6 +51,10 @@
   border-width: 4px 3px 0 !important;
   border-style: solid !important;
   margin-block: 0 !important;
+}
+
+.tab-loading-burst {
+  display: none !important;
 }
 
 #tabs-newtab-button {

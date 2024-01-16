@@ -20,6 +20,10 @@
   list-style-image: url('images/icons/bookmarks.png') !important;
 }
 
+#bookmarks-button {
+  list-style-image: url('images/icons/add-to-bookmarks_australis.png') !important;
+}
+
 #history-panelmenu {
   list-style-image: url('images/icons/history.png') !important;
 }
@@ -88,6 +92,10 @@
 
   #main-window[echelon-style-4] #bookmarks-menu-button {
     list-style-image: url('images/icons/australis/bookmarks.png') !important;
+  }
+  
+  #bookmarks-button {
+    list-style-image: url('images/icons/australis/add-to-bookmarks.png') !important;
   }
 
   #main-window[echelon-style-4] #history-panelmenu {
