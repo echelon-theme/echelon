@@ -408,6 +408,7 @@
 
 /* SHITTY CSS FOR GO BUTTON */
 
+/*
 #nav-bar[urlbar-exceeds-toolbar-bounds="true"] #stop-button,
 #nav-bar[urlbar-exceeds-toolbar-bounds="true"] #reload-button,
 #go-button {
@@ -417,3 +418,4 @@
 #nav-bar[urlbar-exceeds-toolbar-bounds="true"] #go-button {
   display: flex !important;
 }
+*/

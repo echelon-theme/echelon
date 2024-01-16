@@ -221,7 +221,7 @@
   background-image: url('images/folder-item.png') !important;
 }
 
-.tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]) {
+.tab-icon-stack:not([busy="true"]) .tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]) {
   display: flex !important;
 }
 
