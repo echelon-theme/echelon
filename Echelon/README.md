@@ -2,7 +2,7 @@
 Echelon is a Mozilla Firefox 4 theme for Mozilla Firefox 115ESR.
 
 # Notes
-* Tested on Windows 10
+* Tested on Windows 7 & 10
 * It doesn't work properly with WindowBlinds
 * Make sure that your profile hasn't been modified by other themes, if so, delete the modified files _or_ create a new profile
 
@@ -24,6 +24,7 @@ Echelon is a Mozilla Firefox 4 theme for Mozilla Firefox 115ESR.
 <supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>
 <supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"/>
 ```
+
 3.	Restart your computer.
 
-Enjoy!
+4. Enjoy!
