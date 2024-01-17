@@ -23,6 +23,7 @@
   background-clip: padding-box;
 	box-shadow: 0 1px 0 rgba(0,0,0,.1) inset, 0 1px 0 rgba(255,255,255,.4) !important;
   background-color: rgba(255,255,255,.725) !important;
+  outline: 0 !important;
   color: black;
 }
 
@@ -207,7 +208,22 @@
   height: 18px !important;
   padding: 0 !important;
   border-radius: 0 !important;
+  margin-inline-start: 2px !important;
   background-color: transparent !important;
+}
+
+#reader-mode-button > .urlbar-icon {
+  list-style-image: none !important;
+  background-image: url('images/readerMode.svg') !important;
+  background-size: cover !important;
+}
+
+#reader-mode-button:hover > .urlbar-icon {
+  background-position-x: -16px !important;
+}
+
+#reader-mode-button[readeractive] > .urlbar-icon {
+  background-position-x: -32px !important;
 }
 
 #identity-box {

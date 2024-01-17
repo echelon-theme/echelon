@@ -602,11 +602,11 @@
 }
 
 #main-window[tabsintitlebar][echelon-style-4] #toolbar-menubar[autohide="true"][inactive="true"]:not([customizing="true"]) + #TabsToolbar {
-  margin-top: calc(var(--titlebar-height) - 7px) !important;
+  padding-top: calc(var(--titlebar-height) - 7px) !important;
 }
 
 #main-window[sizemode="maximized"][tabsintitlebar][echelon-style-4] #toolbar-menubar[autohide="true"][inactive="true"]:not([customizing="true"]) + #TabsToolbar {
-  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 #main-window[sizemode="maximized"][echelon-style-4][tabsintitlebar] #TabsToolbar, 
@@ -692,7 +692,15 @@
   opacity: 0;
 }
 
-/* Blue Tabs */
+#main-window[echelon-style-3][echelon-style-4] .urlbarView-title {
+  font-size: 105% !important;
+}
+
+#main-window[echelon-style-3][echelon-style-4] .urlbarView-row-inner strong {
+  text-decoration: none !important;
+}
+
+/* Blue Style */
 @supports -moz-bool-pref("Echelon.Appearance.Blue") {
   
   #main-window[echelon-style-4] .tab-background:is([selected], [multiselected]),
@@ -704,6 +712,20 @@
   #main-window[echelon-style-3][echelon-style-4] toolbar #bookmarks-button + #bookmarks-menu-button::before {
     background-color: #BDCAD9;
     outline: 1px solid rgb(255 255 255 / 25%);
+  }
+  
+  #main-window[echelon-style-3][echelon-style-4] #TabsToolbar:not(:-moz-lwtheme)::after {
+    box-shadow: 0 0 30px 30px rgba(174,189,204,0.85);
+    content: "";
+    display: flex;
+    height: 0;
+    margin: 0 60px;
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    width: -moz-available;
+    z-index: -1;
+    order: -1;
   }
 
 }
