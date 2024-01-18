@@ -563,8 +563,8 @@
   right: calc(-1 * var(--tab-curve-half-width)) !important;
 }
 
-#main-window[echelon-style-4] .tab-context-line {
-  all: revert !important;
+.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
+  z-index: 999 !important;
 }
 
 #main-window[echelon-style-4] .tab-background:is([selected], [multiselected]) .tab-context-line::before,
@@ -700,6 +700,14 @@
   text-decoration: none !important;
 }
 
+#main-window[echelon-style-4] .tab-throbber:not([pinned]), 
+#main-window[echelon-style-4] .tab-icon-pending:not([pinned]), 
+#main-window[echelon-style-4] .tab-icon-image:not([pinned]), 
+#main-window[echelon-style-4] .tab-sharing-icon-overlay:not([pinned]), 
+#main-window[echelon-style-4] .tab-icon-overlay:not([pinned]) {
+  margin-inline-end: 6px !important;
+}
+
 /* Blue Style */
 @supports -moz-bool-pref("Echelon.Appearance.Blue") {
   
@@ -798,6 +806,245 @@
     border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25) !important;
     border-top-color: hsla(210,4%,10%,.2) !important;
   }
+}
+
+/** ECHELON STYLE 5 (Firefox 56) **/
+
+:root {
+  --urlbar-separator-color: ThreeDLightShadow !important;
+}
+
+#main-window[echelon-style-5] #PlacesToolbar {
+  padding-inline: 5px !important;
+}
+
+#main-window[echelon-style-1][echelon-style-3][echelon-style-5] #stop-reload-button {
+  width: unset !important;
+  border-radius: 0 !important;
+}
+
+#main-window[echelon-style-5] #reload-button, 
+#main-window[echelon-style-5] #stop-button, 
+#main-window[echelon-style-5] #go-button {
+  width: unset !important;
+  height: 100% !important;
+  padding: 0 9px !important;
+  margin-inline-start: 5px !important;
+  border-inline-start: 1px solid var(--urlbar-separator-color) !important;
+  border-image: linear-gradient(transparent 15%, var(--urlbar-separator-color) 15%, var(--urlbar-separator-color) 85%, transparent 85%) !important;
+  border-image-slice: 1 !important;
+}
+
+#main-window[echelon-style-5] #reload-button .toolbarbutton-icon, 
+#main-window[echelon-style-5] #stop-button .toolbarbutton-icon, 
+#main-window[echelon-style-5] #go-button .toolbarbutton-icon {
+  background-image: url('images/ff56/reload-stop-go.png') !important;
+}
+
+#main-window[echelon-style-5] #urlbar-input-container::after {
+  background-image: url('images/ff56/urlbar-history-dropmarker.png') !important;
+  transition: opacity 0.15s ease;
+}
+
+#main-window[echelon-style-5] #urlbar:not(:hover, [breakout-extend]) #urlbar-input-container::after {
+  opacity: 0 !important;
+}
+
+#main-window[echelon-style-5] #page-action-buttons {
+  display: none !important;
+}
+
+#main-window[echelon-style-1][echelon-style-3][echelon-style-5] #urlbar-background, 
+#main-window[echelon-style-1][echelon-style-3][echelon-style-5] #searchbar {
+  border-radius: 0 !important;
+  padding: 1px !important;
+}
+
+#main-window[echelon-style-5] .searchbar-search-button {
+  margin-inline-end: 2px !important;
+}
+
+#main-window[echelon-style-5] .searchbar-search-icon-overlay {
+  display: none !important;
+}
+
+#main-window[echelon-style-5] .searchbar-search-icon {
+  width: 20px !important;
+  height: 20px !important;
+  list-style-image: none !important;
+  background-image: url('images/ff56/search-indicator.png') !important;
+}
+
+#main-window[echelon-style-5] .searchbar-search-button:hover .searchbar-search-icon {
+  background-position-x: -20px !important;
+}
+
+#main-window[echelon-style-5] .searchbar-search-button:active .searchbar-search-icon {
+  background-position-x: -40px !important;
+}
+
+#main-window[echelon-style-5] .search-go-button {
+  width: 14px !important;
+  height: 14px !important;
+  background-image: url('images/ff56/reload-stop-go.png') !important;
+  background-position-x: -28px !important;
+}
+
+#main-window[echelon-style-5] .search-go-button:hover {
+  background-position-y: -14px !important;
+}
+
+#main-window[echelon-style-5] .search-go-button:hover:active {
+  background-position-y: -28px !important;
+}
+
+#main-window[echelon-style-5] .search-go-button[hidden="true"] {
+  display: none !important;
+}
+
+#main-window[echelon-style-5] .urlbarView {
+  width: 100% !important;
+  left: 0 !important;
+  position: fixed !important;
+  margin-top: 8px !important;
+  max-height: 100% !important;
+  border-color: #A0A0A0 !important;
+}
+
+#main-window[echelon-style-5] .urlbarView-body-outer {
+  max-height: 100% !important;
+  overflow-y: clip !important;
+  background-color: #FFF !important;
+}
+
+#main-window[echelon-style-5] .urlbarView-results {
+  padding: 4px !important;
+}
+
+#main-window[echelon-style-5] .urlbarView-row {
+  min-height: 28px !important;
+  border: 0 !important;
+}
+
+#main-window[echelon-style-5] .urlbarView-row-inner {
+  min-height: unset !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  padding: 0 !important;
+  padding-inline: 15px !important;
+}
+
+#main-window[echelon-style-5] .urlbarView-url {
+  margin: 0 !important;
+}
+
+#main-window[echelon-style-5] .urlbarView-title-separator {
+  color: Highlight !important;
+  display: flex !important;
+}
+
+#main-window[echelon-style-5] .urlbarView-type-icon {
+  width: 16px !important;
+  height: 16px !important;
+  order: -1 !important;
+  position: static !important;
+  margin-inline-end: -16px !important;
+  fill: #B2B2B2 !important;
+}
+
+#main-window .urlbarView-row[type="bookmark"] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
+  background-image: url('images/ff56/bookmark.svg') !important;
+}
+
+#main-window[echelon-style-3][echelon-style-4][echelon-style-5] .urlbarView-title {
+  font-size: 115% !important;
+  margin-bottom: 0 !important;
+}
+
+#main-window[echelon-style-5] .urlbarView-row {
+  border-radius: 2px !important;
+  border: 1px solid transparent !important;
+}
+
+#main-window[echelon-style-5] .urlbarView-row[row-selectable]:not([selected]):hover {
+  border-color: #D8D8D8 !important;
+  background-color: #F0F0F0 !important;
+}
+
+#main-window[echelon-style-5] .urlbarView-action {
+  font-size: unset !important;
+}
+
+#main-window[echelon-style-5] .urlbarView-row[row-selectable]:not([selected]):hover {
+  color: #000 !important;
+}
+
+#main-window[echelon-style-5] .urlbarView-row:is(:hover, [selected]) > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-action {
+  display: flex !important;
+}
+
+#main-window[echelon-style-5] .urlbarView-row[selected] .urlbarView-title-separator,
+#main-window[echelon-style-5] .urlbarView-row:not([selected]):is(:hover) > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-action {
+  color: inherit !important;
+}
+
+#main-window[echelon-style-5] .urlbarView-results[wrap] > .urlbarView-row:where(:not([rich-suggestion="with-icon"])) > .urlbarView-row-inner {
+  flex-wrap: unset !important;
+}
+
+#main-window[echelon-style-3][echelon-style-4][echelon-style-5] .urlbarView-row-inner strong {
+  font-weight: 600 !important;
+}
+
+#main-window[echelon-style-5] #urlbar .search-one-offs:not([hidden]) {
+  display: flex !important;
+  border-top: 1px solid #E3E3E3 !important;
+  background-color: #F0F0F0 !important;
+  padding-block: 0 !important;
+  min-height: 32px !important;
+  align-items: center !important;
+}
+
+#main-window[echelon-style-5] #urlbar .search-panel-one-offs-container {
+  align-self: stretch !important;
+}
+
+#main-window[echelon-style-5] #urlbar .searchbar-engine-one-off-item {
+  width: 58px !important;
+  height: 100% !important;
+  margin-inline: 0 !important;
+  border-radius: 0 !important;
+  position: relative !important;
+}
+
+#main-window[echelon-style-5] #urlbar .search-panel-header {
+  display: none !important;
+}
+
+#main-window[echelon-style-5] #urlbar .searchbar-engine-one-off-item::after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: calc(100% - 10px);
+  position: absolute !important;
+  background-color: #E3E3E3;
+  top: 5px;
+}
+
+#main-window[echelon-style-5] #urlbar .searchbar-engine-one-off-item:hover {
+  background-color: #E0E0E0 !important;
+  transition: background-color 100ms ease-in-out !important;
+}
+
+#main-window[echelon-style-5] .urlbarView-favicon {
+  margin-inline-start: 22px !important;
+}
+
+@media screen and (min-height: 600px) {
+    #main-window[echelon-style-5] .urlbarView-results[wrap] > .urlbarView-row > .urlbarView-row-inner > .urlbarView-no-wrap {
+      max-width: unset !important;
+      flex-basis: 0 !important;
+    }
 }
 
 /** THEME SUPPORT **/

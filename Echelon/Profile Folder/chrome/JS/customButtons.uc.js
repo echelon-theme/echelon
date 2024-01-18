@@ -5,6 +5,7 @@ try {
 
     CustomizableUI.createWidget({
         id: "bookmarks-button",
+        defaultArea: CustomizableUI.AREA_NAVBAR,
         removable: true,
         label: buttonText,
         tooltiptext: "Bookmark this page",
