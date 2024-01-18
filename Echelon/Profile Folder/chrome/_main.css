@@ -1,10 +1,12 @@
 /** TOOLBAR ICONS **/
 
-#back-button {
+#back-button,
+#context-back {
   list-style-image: url('images/icons/back_large.png') !important;
 }
 
-#forward-button {
+#forward-button,
+#context-forward {
   list-style-image: url('images/icons/forward.png') !important;
 }
 
@@ -24,8 +26,13 @@
   list-style-image: url('images/icons/bookmarks_australis.png') !important;
 }
 
-#bookmarks-button {
+#bookmarks-button,
+#context-bookmarkpage {
   list-style-image: url('images/icons/add-to-bookmarks_australis.png') !important;
+}
+
+#context-bookmarkpage[starred="true"] {
+  list-style-image: url('images/icons/add-to-bookmarks_starred_australis.png') !important;
 }
 
 #history-panelmenu {
@@ -76,13 +83,23 @@
   list-style-image: url('images/icons/download-glow.png') !important;
 }
 
+#context-reload {
+  list-style-image: url('images/icons/reload.png') !important;
+}
+
+#context-stop {
+  list-style-image: url('images/icons/stop.png') !important;
+}
+
 /* Windows 8+ Icons for Australis Style. */
 @supports not -moz-bool-pref("Echelon.Appearance.Blue") {
-  #main-window[echelon-style-4] #back-button {
+  #main-window[echelon-style-4] #back-button,
+  #main-window[echelon-style-4] #context-back {
     list-style-image: url('images/icons/australis/back_large.png') !important;
   }
 
-  #main-window[echelon-style-4] #forward-button {
+  #main-window[echelon-style-4] #forward-button,
+  #main-window[echelon-style-4] #context-forward {
     list-style-image: url('images/icons/australis/forward.png') !important;
   }
 
@@ -98,8 +115,13 @@
     list-style-image: url('images/icons/australis/bookmarks.png') !important;
   }
   
-  #bookmarks-button {
+  #main-window[echelon-style-4] #bookmarks-button,
+  #main-window[echelon-style-4] #context-bookmarkpage {
     list-style-image: url('images/icons/australis/add-to-bookmarks.png') !important;
+  }
+  
+  #main-window[echelon-style-4] #context-bookmarkpage[starred="true"] {
+    list-style-image: url('images/icons/australis/add-to-bookmarks_starred.png') !important;
   }
 
   #main-window[echelon-style-4] #history-panelmenu {
@@ -144,5 +166,13 @@
 
   #main-window[echelon-style-4] #downloads-indicator-anchor {
     list-style-image: url('images/icons/australis/downloads.png') !important;
+  }
+  
+  #main-window[echelon-style-4] #context-reload {
+    list-style-image: url('images/icons/australis/reload.png') !important;
+  }
+  
+  #main-window[echelon-style-4] #context-stop {
+    list-style-image: url('images/icons/australis/stop.png') !important;
   }
 }

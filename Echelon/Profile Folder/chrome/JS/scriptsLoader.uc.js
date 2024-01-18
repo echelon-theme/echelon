@@ -11,6 +11,7 @@ function executeFunctions() {
 	getAndSetTitleBarHeight();
 	createAppMenuButton();
 	createAddToBookmarks();
+	openEchelonWizardWindow(true);
     console.info("Functions executed.");
 }
 

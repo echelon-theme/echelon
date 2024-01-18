@@ -43,7 +43,7 @@
 							<p>Echelon has several styles spanning across multiple versions of Firefox. Choose your preferred appearance.</p>
 						</vbox>
 						<hbox class="themeSelectorContainer">
-							<vbox class="styleOptionContainer" flex="1" onclick="showPage(2);">
+							<vbox class="styleOptionContainer" flex="1" onclick="setIntPref(echelonAppearanceStyle, 0); showPage(2);">
 								<vbox class="styleOptionPreview">
 									<html:div class="styleOptionPreviewImg ff4blue" flex="1"></html:div>
 								</vbox>
@@ -51,7 +51,7 @@
 									<h2>Strata</h2>
 								</hbox>
 							</vbox>
-							<vbox class="styleOptionContainer" flex="1" onclick="showPage(3);">
+							<vbox class="styleOptionContainer" flex="1" onclick="setIntPref(echelonAppearanceStyle, 4); showPage(4);">
 								<vbox class="styleOptionPreview">
 									<html:div class="styleOptionPreviewImg australisblue" flex="1"></html:div>
 								</vbox>
@@ -88,7 +88,7 @@
 							<p>Mozilla Firefox used two colors for it’s theme depending on the user’s operating system or theme.</p>
 						</vbox>
 						<hbox class="themeSelectorContainer">
-							<vbox class="styleOptionContainer" flex="1" onclick="showPage(4);">
+							<vbox class="styleOptionContainer" flex="1" onclick="setBoolPref(echelonAppearanceBlue, false); showPage(3);">
 								<vbox class="styleOptionPreview">
 									<html:div class="styleOptionPreviewImg ff4native" flex="1"></html:div>
 								</vbox>
@@ -96,7 +96,7 @@
 									<h2>Native</h2>
 								</hbox>
 							</vbox>
-							<vbox class="styleOptionContainer" flex="1" onclick="showPage(4);">
+							<vbox class="styleOptionContainer" flex="1" onclick="setBoolPref(echelonAppearanceBlue, true); showPage(3);">
 								<vbox class="styleOptionPreview">
 									<html:div class="styleOptionPreviewImg ff4blue" flex="1"></html:div>
 								</vbox>
@@ -121,9 +121,62 @@
 			
 		</html:div>
 		
-		<!-- SELECT AUSTRALIS STYLE -->
+		<!-- SELECT STRATA STYLE -->
 		
 		<html:div id="page3" class="page" flex="1">
+		
+			<vbox class="pageContent" flex="1">
+				<vbox class="pageContentContainer" flex="1">
+					<vbox class="content" flex="1" style="justify-content: space-between;">
+						<vbox class="pageContentHeader">
+							<h1>choose your variation</h1>
+							<p>Strata has had multiple variations during it’s lifespan. Choose your preferred variation. </p>
+						</vbox>
+						<hbox class="themeSelectorContainer">
+							<vbox class="styleOptionContainer" flex="1" onclick="setIntPref(echelonAppearanceStyle, 0); showPage(5);">
+								<vbox class="styleOptionPreview">
+									<html:div class="styleOptionPreviewImg ff4bluesmall" flex="1"></html:div>
+								</vbox>
+								<hbox class="styleOptionHeader">
+									<h2>Firefox 4</h2>
+								</hbox>
+							</vbox>
+							<vbox class="styleOptionContainer" flex="1" onclick="setIntPref(echelonAppearanceStyle, 2); showPage(5);">
+								<vbox class="styleOptionPreview">
+									<html:div class="styleOptionPreviewImg ff10bluesmall" flex="1"></html:div>
+								</vbox>
+								<hbox class="styleOptionHeader">
+									<h2>Firefox 10</h2>
+								</hbox>
+							</vbox>
+							<vbox class="styleOptionContainer" flex="1" onclick="setIntPref(echelonAppearanceStyle, 3); showPage(5);">
+								<vbox class="styleOptionPreview">
+									<html:div class="styleOptionPreviewImg ff14bluesmall" flex="1"></html:div>
+								</vbox>
+								<hbox class="styleOptionHeader">
+									<h2>Firefox 14+</h2>
+								</hbox>
+							</vbox>
+						</hbox>
+					</vbox>
+					<hbox class="pageContentFooter">
+						<button class="backButton footerButton styleBlue" onclick="showPage(1);">
+							<html:div class="buttonIcon"></html:div>
+							<span class="buttonLabel">Back</span>
+						</button>
+						<button disabled="true" class="nextButton footerButton styleGreen">
+							<html:div class="buttonIcon"></html:div>
+							<span class="buttonLabel">Next</span>
+						</button>
+					</hbox>
+				</vbox>
+			</vbox>
+			
+		</html:div>
+		
+		<!-- SELECT AUSTRALIS STYLE -->
+		
+		<html:div id="page4" class="page" flex="1">
 		
 			<vbox class="pageContent" flex="1">
 				<vbox class="pageContentContainer" flex="1">
@@ -133,7 +186,7 @@
 							<p>Mozilla Firefox used two colors for it’s theme depending on the user’s operating system or theme.</p>
 						</vbox>
 						<hbox class="themeSelectorContainer">
-							<vbox class="styleOptionContainer" flex="1" onclick="showPage(4);">
+							<vbox class="styleOptionContainer" flex="1" onclick="setBoolPref(echelonAppearanceBlue, false); showPage(5);">
 								<vbox class="styleOptionPreview">
 									<html:div class="styleOptionPreviewImg australisblue" flex="1"></html:div>
 								</vbox>
@@ -141,7 +194,7 @@
 									<h2>Windows 7</h2>
 								</hbox>
 							</vbox>
-							<vbox class="styleOptionContainer" flex="1" onclick="showPage(4);">
+							<vbox class="styleOptionContainer" flex="1" onclick="setBoolPref(echelonAppearanceBlue, false); showPage(5);">
 								<vbox class="styleOptionPreview">
 									<html:div class="styleOptionPreviewImg australisnative" flex="1"></html:div>
 								</vbox>
@@ -168,7 +221,7 @@
 		
 		<!-- END SCREEN -->
 		
-		<html:div id="page4" class="page" flex="1">
+		<html:div id="page5" class="page" flex="1">
 			
 				<vbox class="pageContent" flex="1">
 					<vbox class="pageContentContainer endScreen" flex="1">

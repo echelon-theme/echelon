@@ -1,4 +1,12 @@
-var currentPage = 0; // Default to the first page
+let currentPage = 0; // Default to the first page
+
+// ECHELON SETTINGS
+let echelonAppearanceBlue = "Echelon.Appearance.Blue";
+let echelonAppearanceStyle = "Echelon.Appearance.Style";
+let echelonParameterisFirstRunFinished = "Echelon.parameter.isFirstRunFinished";
+
+let setBoolPref = Services.prefs.setBoolPref;
+let setIntPref = Services.prefs.setIntPref;
 
 function showPage(pageNumber) {
     var pageId = 'page' + pageNumber;
@@ -24,5 +32,8 @@ showPage(currentPage);
 
 var restartNow = document.getElementById('restartNow');
 restartNow.addEventListener("click", function() {
+	
+	setBoolPref(echelonParameterisFirstRunFinished, true);
+	
     _ucUtils.restart(true);
 }); 

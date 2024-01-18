@@ -115,3 +115,27 @@ toolbarbutton.bookmark-item {
   list-style-image: none !important;
   background-position-x: -16px !important;
 }
+
+.bookmark-item[container][query] .toolbarbutton-icon {
+  background-image: url('images/query.png') !important;
+}
+
+/** MENUPOPUPS **/
+
+/* Context Navigation */
+
+#context-navigation > .menuitem-iconic {
+  width: 45px !important;
+}
+
+#context-navigation > .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {
+  width: 18px !important;
+}
+
+#context-forward [disabled="true"] .menu-iconic-icon {
+  opacity: 0.4 !important;
+}
+
+#context-inspect-a11y {
+  display: none !important;
+}
