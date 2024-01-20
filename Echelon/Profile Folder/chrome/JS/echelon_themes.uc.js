@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name			Echelon Styles
+// @name			Echelon :: Styles
 // @description 	Checks about:config pref and adds an HTML attribute.
 // @author			Travis
 // @include			main

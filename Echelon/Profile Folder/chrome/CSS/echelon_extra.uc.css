@@ -1,7 +1,8 @@
 /* ==UserScript==
-// @description    author style injected to browser.xhtml
+// @stylemode		author_sheet
+// @description		Styles certain Shadow DOM elements for Echelon.
 // @usefileuri
-// @name  fuck shadow dom
+// @name  			Echelon :: Extras
 // ==/UserScript==*/
 
 /* Default to xul namespace */

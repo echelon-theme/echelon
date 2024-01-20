@@ -21,7 +21,8 @@
   --tab-min-width: var(--tab-width) !important;
 }
 
-#navigator-toolbox > toolbar:not(:-moz-lwtheme) {
+:root #navigator-toolbox > toolbar,
+:root:is([style*="--lwt-accent-color: rgb(28, 27, 34);"], [style*="--lwt-accent-color: rgb(240, 240, 244);"]) #navigator-toolbox > toolbar {
   background-color: -moz-Dialog !important;
 }
 

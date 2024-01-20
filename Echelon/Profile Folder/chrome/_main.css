@@ -91,6 +91,10 @@
   list-style-image: url('images/icons/stop.png') !important;
 }
 
+#save-to-pocket-button {
+  list-style-image: url('images/icons/pocket.png') !important;
+}
+
 /* Windows 8+ Icons for Australis Style. */
 @supports not -moz-bool-pref("Echelon.Appearance.Blue") {
   #main-window[echelon-style-4] #back-button,
@@ -156,7 +160,7 @@
     list-style-image: url('images/icons/australis/copy.png') !important;
   }
 
-  #paste-button {
+  #main-window[echelon-style-4] #paste-button {
     list-style-image: url('images/icons/australis/paste.png') !important;
   }
 
@@ -174,5 +178,9 @@
   
   #main-window[echelon-style-4] #context-stop {
     list-style-image: url('images/icons/australis/stop.png') !important;
+  }
+  
+  #main-window[echelon-style-4] #save-to-pocket-button {
+    list-style-image: url('images/icons/australis/pocket.png') !important;
   }
 }

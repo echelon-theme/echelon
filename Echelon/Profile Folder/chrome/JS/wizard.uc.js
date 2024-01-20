@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name			Echelon Wizard
+// @name			Echelon :: Wizard
 // @description 	Opens the Echelon Wizard on first-time installs
 // @author			Travis
 // @include			main

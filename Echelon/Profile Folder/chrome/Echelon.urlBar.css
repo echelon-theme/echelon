@@ -16,27 +16,29 @@
 }
 
 #urlbar-background, #searchbar {
-	padding: 2px;
-	border: 1px solid;
-  border-color: rgba(0,0,0,.25) rgba(0,0,0,.32) rgba(0,0,0,.37) !important;
-	border-radius: var(--toolbarbutton-border-radius);
+  padding: 2px;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.37) !important;
+  border-radius: var(--toolbarbutton-border-radius);
   background-clip: padding-box;
-	box-shadow: 0 1px 0 rgba(0,0,0,.1) inset, 0 1px 0 rgba(255,255,255,.4) !important;
-  background-color: rgba(255,255,255,.725) !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+  background-color: rgba(255, 255, 255, 0.725) !important;
   outline: 0 !important;
   color: black;
 }
 
 #urlbar-background:hover, #searchbar:hover {
-  background-color: rgba(255,255,255,.898) !important;
+  background-color: rgba(255, 255, 255, 0.898) !important;
 }
 
 #urlbar-background {
+  margin: 0 !important;
+  outline: 0 !important;
+}
+.unified-refresh-button #urlbar-background {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   border-right: 0 !important;
-  margin: 0 !important;
-  outline: 0 !important;
 }
 
 #urlbar[breakout] {
@@ -76,9 +78,8 @@
 }
 
 /* Hacky method for shadows */
-
 .urlbarView::after {
-  content: '' !important;
+  content: "" !important;
   display: inline-block !important;
   width: calc(100% - 3px) !important;
   height: calc(100% - 2px) !important;
@@ -86,7 +87,7 @@
   left: 6px !important;
   top: 5px !important;
   z-index: -1 !important;
-  background-color: rgb(0 0 0 / 50%) !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
   filter: blur(1px) !important;
 }
 
@@ -136,15 +137,15 @@
 }
 
 .urlbarView-favicon[src="chrome://browser/skin/history.svg"] {
-  content: url('images/history.png') !important;
+  content: url("images/history.png") !important;
 }
 
 .urlbarView-favicon[src="chrome://global/skin/icons/search-glass.svg"] {
-  content: url('images/search.png') !important;
+  content: url("images/search.png") !important;
 }
 
 .urlbarView-favicon[src="chrome://activity-stream/content/data/content/tippytop/favicons/google-com.ico"] {
-  content: url('images/icons/engines/google.png') !important;
+  content: url("images/icons/engines/google.png") !important;
 }
 
 .urlbarView-row[pinned] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
@@ -199,8 +200,8 @@
   text-decoration: underline !important;
 }
 
-.urlbarView-row[type="bookmark"] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
-  background-image: url('images/icons/add-to-bookmarks_hover.png') !important;
+.urlbarView-row[type=bookmark] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
+  background-image: url("images/icons/add-to-bookmarks_hover.png") !important;
 }
 
 .urlbar-page-action {
@@ -214,7 +215,7 @@
 
 #reader-mode-button > .urlbar-icon {
   list-style-image: none !important;
-  background-image: url('images/readerMode.svg') !important;
+  background-image: url("images/readerMode.svg") !important;
   background-size: cover !important;
 }
 
@@ -239,11 +240,11 @@
   width: 18px !important;
   height: 18px !important;
   list-style-image: none !important;
-  background-image: url('images/icons/add-to-bookmarks.png') !important;
+  background-image: url("images/icons/add-to-bookmarks.png") !important;
 }
 
 #pageAction-panel-bookmark:hover, #star-button:hover, #star-button[starred] {
-  background-image: url('images/icons/add-to-bookmarks_hover.png') !important;
+  background-image: url("images/icons/add-to-bookmarks_hover.png") !important;
 }
 
 #tracking-protection-icon-container,
@@ -262,24 +263,24 @@
 }
 
 #identity-icon-box:hover {
-  background-image: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(50%,50%,50%,.2), rgba(0,0,0,.15)) !important;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(128, 128, 128, 0.2), rgba(0, 0, 0, 0.15)) !important;
 }
 
-#identity-icon-box[open="true"] ,
+#identity-icon-box[open=true],
 #identity-icon-box:hover:active {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.1)) !important;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)) !important;
 }
 
 #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-  list-style-image: url('images/icon16.png') !important;
+  list-style-image: url("images/icon16.png") !important;
 }
 
 #identity-icon-box::after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 24px;
   height: 24px;
-  background-image: url('images/urlbar-favicon-glow.png');
+  background-image: url("images/urlbar-favicon-glow.png");
   position: absolute;
   left: 0;
 }
@@ -301,7 +302,7 @@
   width: 13px !important;
   height: 11px !important;
   list-style-image: none !important;
-  background-image: url('images/searchbar-dropdown-arrow.png') !important;
+  background-image: url("images/searchbar-dropdown-arrow.png") !important;
   margin-inline: 0 !important;
   margin-top: 0 !important;
 }
@@ -317,7 +318,7 @@
   border-radius: 0 !important;
   background-color: transparent !important;
   list-style-image: none !important;
-  background-image: url('images/search-glass.png') !important;
+  background-image: url("images/search-glass.png") !important;
   display: flex !important;
 }
 
@@ -330,11 +331,11 @@
 }
 
 #urlbar-input-container::after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 13px;
   height: 11px;
-  background-image: url('images/searchbar-dropdown-arrow.png');
+  background-image: url("images/searchbar-dropdown-arrow.png");
   align-self: center !important;
   margin-right: 1px !important;
 }
@@ -344,94 +345,86 @@
 }
 
 /* STOP & REFRESH BUTTON */
-#stop-reload-button {
+#stop-reload-button.unified {
   width: 22px !important;
   height: 24px !important;
-	border: 1px solid;
-  border-color: rgba(0,0,0,.25) rgba(0,0,0,.32) rgba(0,0,0,.37) !important;
-	border-radius: var(--toolbarbutton-border-radius);
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.37) !important;
+  border-radius: var(--toolbarbutton-border-radius);
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
   border-left: 0 !important;
-	box-shadow: 0 1px 0 rgba(0,0,0,.1) inset, 0 1px 0 rgba(255,255,255,.4) !important;
-  background-color: rgba(255,255,255,.725) !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+  background-color: rgba(255, 255, 255, 0.725) !important;
   align-self: center !important;
 }
 
-#reload-button,
-#stop-button,
-#go-button {
+#reload-button.unified,
+#stop-button.unified,
+#go-button.unified {
   width: 21px !important;
   height: 22px !important;
   padding: 0 !important;
-  border-left: 1px solid rgba(0,0,0,.25) !important;
+  border-left: 1px solid rgba(0, 0, 0, 0.25) !important;
   list-style-image: none !important;
   opacity: 1 !important;
 }
 
-#reload-button:hover,
-#go-button:hover {
-  background-image: linear-gradient(rgb(162,207,241), rgb(111,178,225) 49%, rgb(91,159,217) 51%, rgb(62,138,200));
-  box-shadow: 0 1px 0 rgba(0,0,0,.1) inset, -1px -1px 1px rgba(255,255,255,.25) inset;
+#reload-button.unified:hover,
+#go-button.unified:hover {
+  background-image: linear-gradient(rgb(162, 207, 241), rgb(111, 178, 225) 49%, rgb(91, 159, 217) 51%, rgb(62, 138, 200));
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset, -1px -1px 1px rgba(255, 255, 255, 0.25) inset;
 }
 
-#reload-button:hover:active,
-#go-button:hover:active {
+#reload-button.unified:hover:active,
+#go-button.unified:hover:active {
   border-left-color: transparent !important !important;
-  box-shadow: 0 0 6.5px rgba(0,0,0,.4) inset, 0 0 2px rgba(0,0,0,.4) inset !important;
+  box-shadow: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset !important;
 }
 
-#stop-button {
-  background-image: linear-gradient(rgb(231,162,140), rgb(209,119,100) 49%, rgb(193,92,78) 51%, rgb(173,72,58));
-  box-shadow: 0 1px 0 rgba(0,0,0,.1) inset, -1px -1px 1px rgba(255,255,255,.25) inset;
+#stop-button.unified {
+  background-image: linear-gradient(rgb(231, 162, 140), rgb(209, 119, 100) 49%, rgb(193, 92, 78) 51%, rgb(173, 72, 58));
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset, -1px -1px 1px rgba(255, 255, 255, 0.25) inset;
 }
 
-#stop-button:hover {
-  background-image: linear-gradient(rgb(244,156,128), rgb(215,101,77) 49%, rgb(194,66,48) 51%, rgb(170,41,23));
+#stop-button.unified:hover {
+  background-image: linear-gradient(rgb(244, 156, 128), rgb(215, 101, 77) 49%, rgb(194, 66, 48) 51%, rgb(170, 41, 23));
 }
 
-#go-button {
-  background-image: linear-gradient(rgb(115,213,115), rgb(96,190,96) 49%, rgb(82,174,82) 51%, rgb(79,155,79)) !important;
-  box-shadow: 0 1px 0 rgba(0,0,0,.1) inset, -1px -1px 1px rgba(255,255,255,.25) inset !important;
+#go-button.unified {
+  background-image: linear-gradient(rgb(115, 213, 115), rgb(96, 190, 96) 49%, rgb(82, 174, 82) 51%, rgb(79, 155, 79)) !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset, -1px -1px 1px rgba(255, 255, 255, 0.25) inset !important;
 }
 
-#reload-button .toolbarbutton-icon,
-#stop-button .toolbarbutton-icon,
-#go-button .toolbarbutton-icon {
+#reload-button.unified .toolbarbutton-icon, #stop-button.unified .toolbarbutton-icon, #go-button.unified .toolbarbutton-icon {
   width: 14px !important;
   height: 14px !important;
   padding: 0 !important;
   background-color: transparent !important;
-  background-image: url('images/reload-stop-go.png') !important;
+  background-image: url("images/reload-stop-go.png") !important;
 }
 
-#reload-button:hover .toolbarbutton-icon,
-#reload-button:hover:active .toolbarbutton-icon {
+#reload-button.unified:hover .toolbarbutton-icon,
+#reload-button.unified:hover:active .toolbarbutton-icon {
   background-position-x: -14px;
 }
 
-#stop-button .toolbarbutton-icon {
+#stop-button.unified .toolbarbutton-icon {
   background-position-x: -28px;
 }
 
-#go-button .toolbarbutton-icon {
+#go-button.unified .toolbarbutton-icon {
   background-position-x: -42px;
 }
 
-#stop-reload-button .toolbarbutton-animatable-box {
+#stop-reload-button.unified .toolbarbutton-animatable-box {
   display: none !important;
 }
 
-/* SHITTY CSS FOR GO BUTTON */
-
-/*
-#nav-bar[urlbar-exceeds-toolbar-bounds="true"] #stop-button,
-#nav-bar[urlbar-exceeds-toolbar-bounds="true"] #reload-button,
-#go-button {
-  display: none !important;
+#reload-button:not(.unified) {
+  list-style-image: url("images/icons/reload.png") !important;
 }
 
-#nav-bar[urlbar-exceeds-toolbar-bounds="true"] #go-button {
-  display: flex !important;
+#stop-button:not(.unified) {
+  list-style-image: url("images/icons/stop.png") !important;
 }
-*/
