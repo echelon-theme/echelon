@@ -78,7 +78,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
     border: 1px solid ThreeDShadow !important;
     padding: 2px !important;
   }
-  menuitem:where([disabled=true]) {
+  #appmenuPrimaryPane menuitem:where([disabled=true]) {
     font-style: italic !important;
   }
 }
