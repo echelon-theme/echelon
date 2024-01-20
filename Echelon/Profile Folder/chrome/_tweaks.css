@@ -3,7 +3,7 @@
   :root:is([style*="--lwt-accent-color: rgb(28, 27, 34);"], [style*="--lwt-accent-color: rgb(240, 240, 244);"]) {
     --toolbar-custom-color: hsl(214,44%,87%) !important;
   }
-  #navigator-toolbox > toolbar,
+  :root #navigator-toolbox > toolbar,
   :root:is([style*="--lwt-accent-color: rgb(28, 27, 34);"], [style*="--lwt-accent-color: rgb(240, 240, 244);"]) #navigator-toolbox > toolbar {
     background-color: var(--toolbar-custom-color) !important;
   }
