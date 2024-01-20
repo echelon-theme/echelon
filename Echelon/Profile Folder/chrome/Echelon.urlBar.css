@@ -402,6 +402,7 @@
   padding: 0 !important;
   background-color: transparent !important;
   background-image: url("images/reload-stop-go.png") !important;
+  opacity: 1 !important;
 }
 
 #reload-button.unified:hover .toolbarbutton-icon,
