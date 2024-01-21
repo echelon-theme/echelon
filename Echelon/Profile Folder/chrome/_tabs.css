@@ -8,10 +8,13 @@
 }
 
 .tabbrowser-tab {
+  color: rgb(0, 0, 0) !important;
   padding: 0 !important;
 }
 
 .tabbrowser-tab:not([pinned]) {
+  max-width: var(--tab-min-width) !important;
+  min-width: 0 !important;
   transition: min-width 200ms ease-out, max-width 250ms ease-out , opacity 50ms ease-out 20ms !important;
 }
 

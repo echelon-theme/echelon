@@ -141,6 +141,30 @@ toolbarbutton.bookmark-item {
 }
 
 /* Fix Menu Bar */
+
+#toolbar-menubar:not(:-moz-lwtheme) {
+  text-shadow: 0 0 .5em white, 0 0 .5em white, 0 1px 0 rgba(255,255,255,.4);
+}
+
+#main-menubar:not(:-moz-lwtheme, :-moz-window-inactive) {
+  background-color: rgba(255,255,255,.5);
+  color: black;
+  border-radius: 4px;
+}
+
+/* Artificially draw window borders that are covered by lwtheme, see bug 591930.
+* We use a different border for win8, and this win10+ only needs this if
+* drawing in the titlebar (-moz-windows-accent-color-in-titlebar). */
+#main-window[sizemode="normal"] #navigator-toolbox:-moz-lwtheme {
+  border-top: 1px solid var(--glass-active-border-color);
+  padding-top: 1px;
+  box-shadow: 0 1px 0 rgba(255,255,255,.6) inset;
+}
+
+#main-window[sizemode="normal"] #navigator-toolbox:-moz-lwtheme:-moz-window-inactive {
+  border-top-color: var(--glass-inactive-border-color);
+}
+
 #main-menubar > menu {
   appearance: menuitem !important;
 }

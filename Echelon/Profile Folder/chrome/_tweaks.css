@@ -203,7 +203,7 @@
   border: 1px solid transparent !important;
   box-shadow: none !important;
   border-radius: 2px !important;
-  transition: background-color 150ms var(--toolbarbutton-transition-timingfunction), border-color 150ms var(--toolbarbutton-transition-timingfunction), box-shadow 150ms var(--toolbarbutton-transition-timingfunction) !important;
+  transition: background-image 150ms var(--toolbarbutton-transition-timingfunction), border-color 150ms var(--toolbarbutton-transition-timingfunction), box-shadow 150ms var(--toolbarbutton-transition-timingfunction) !important;
 }
 
 #main-window[echelon-style-3] toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button, #tabs-newtab-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover,
@@ -501,7 +501,9 @@
 
 #main-window[echelon-style-4] .tabbrowser-tab::before,
 #main-window[echelon-style-4] .tabbrowser-tab::after,
-#main-window[echelon-style-4] .tabbrowser-tab:hover + .tabbrowser-tab::before {
+#main-window[echelon-style-4] .tabbrowser-tab:hover + .tabbrowser-tab::before,
+#main-window[echelon-style-4] #tabbrowser-arrowscrollbox-periphery::before,
+#main-window[echelon-style-4] .tabbrowser-tab:hover + #tabbrowser-arrowscrollbox-periphery::before {
   display: none !important;
   margin-inline-start: -3px !important;
   width: 3px !important;
@@ -510,7 +512,8 @@
   box-sizing: border-box !important;
 }
 
-#main-window[echelon-style-4] .tabbrowser-tab:not([selected], :first-of-type, :hover)::before {
+#main-window[echelon-style-4] .tabbrowser-tab:not([selected], :first-of-type, :hover)::before,
+#main-window[echelon-style-4] #tabbrowser-arrowscrollbox-periphery::before {
   content: '' !important;
   display: inline-block !important;
 }
