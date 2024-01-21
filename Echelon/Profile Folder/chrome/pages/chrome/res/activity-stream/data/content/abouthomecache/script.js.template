@@ -1,3 +1,0 @@
-window.__FROM_STARTUP_CACHE__ = true;
-window.__STARTUP_STATE__ = {{ STATE }};
-
