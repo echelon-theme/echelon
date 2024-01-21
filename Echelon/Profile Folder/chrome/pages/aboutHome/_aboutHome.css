@@ -236,3 +236,25 @@ input, button {
 #settings:before {
     content: url('chrome://userchrome/content/pages/aboutHome/settings.png');
 }
+
+#aboutMozilla {
+  display: block;
+  position: relative; /* pin wordmark to edge of document, not of viewport */
+  order: -1;
+  opacity: .5;
+  transition: opacity 150ms;
+}
+
+#aboutMozilla:hover {
+  opacity: 1;
+}
+
+#aboutMozilla::before {
+  content: url("chrome://userchrome/content/pages/aboutHome/mozilla.png");
+  display: block;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 69px;
+  height: 19px;
+}

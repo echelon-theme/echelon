@@ -16,6 +16,10 @@ try {
 		function setEngineProperties() {
 			if (!isEchelonStyle5) {
 				
+				// Remove Search Engine name from URL Bar placeholder
+				let urlBarInputPlaceholder = "Search or enter address";
+				
+				let urlBarInput = document.getElementById("urlbar-input");
 				let searchBar = document.getElementById("searchbar");
 				let searchBarIcon = document.querySelector(".searchbar-search-icon");
 				let getEngineIcon = searchbar.currentEngine.iconURI.spec;
@@ -44,6 +48,7 @@ try {
 				
 				searchBarIcon.setAttribute("src", getEngineIcon);
 				searchBarPlaceholder.setAttribute("placeholder", getEngineName);
+				urlBarInput.setAttribute("placeholder", urlBarInputPlaceholder);
 				
 			}
 		};
