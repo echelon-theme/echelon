@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Mozilla Firefox Start Page</title>
+		<link rel="icon" type="image/png" href="chrome://branding/content/icon32.png" />
+		<link rel="stylesheet" type="text/css" href="chrome://userchrome/content/pages/aboutHome/_aboutHome.css" />
+	</head>
+	<body>
+		<div class="topSection">
+			<div class="brandLogo"></div>
+			<div class="searchContainer">
+				<form xmlns="http://www.w3.org/1999/xhtml" name="searchForm" id="searchForm" onsubmit="onSearchSubmit(event)">
+					<div id="searchLogo"></div>
+					<input type="text" name="q" value="" id="searchText" maxlength="256" placeholder="" />
+					<input type="submit" id="searchSubmit" value="Search" />
+				</form>
+			</div>
+			<div xmlns="http://www.w3.org/1999/xhtml" id="snippetContainer">
+				<div id="snippets" class="snippet1">
+					<div class="snippetIcon snippetIcon1"></div>
+					<span id="defaultSnippet1">Thanks for choosing Firefox! To get the most out of your browser, learn more about the <a href="https://www.mozilla.org/firefox/features/?utm_source=snippet&amp;utm_medium=snippet&amp;utm_campaign=default+feature+snippet">latest features</a>.</span>
+				</div>
+				<div id="snippets" class="snippet2">
+					<div class="snippetIcon snippetIcon2"></div>
+					<span id="defaultSnippet2">It's easy to customize your Firefox exactly the way you want it. <a xmlns="http://www.w3.org/1999/xhtml" href="https://addons.mozilla.org/firefox/?utm_source=snippet&amp;utm_medium=snippet&amp;utm_campaign=addons">Choose from thousands of add-ons</a>.</span>
+				</div>
+			</div>
+		</div>
+		<div id="launcher">
+		  <button class="launchButton" id="downloads">Downloads</button>
+		  <button class="launchButton" id="bookmarks">Bookmarks</button>
+		  <button class="launchButton" id="history">History</button>
+		  <button class="launchButton" id="addons">Add-ons</button>
+		  <button class="launchButton" id="sync">Sync</button>
+		  <button class="launchButton" id="settings">Settings</button>
+		</div>
+	</body>
+	<script src="chrome://userchrome/content/pages/aboutHome/_aboutHome.js"></script>
+</html>

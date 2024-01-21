@@ -418,8 +418,13 @@
   background-position-x: -42px;
 }
 
-#stop-reload-button.unified .toolbarbutton-animatable-box {
+#stop-reload-button.unified .toolbarbutton-animatable-box,
+#nav-bar-customization-target > #stop-reload-button > :is(#reload-button, #stop-button) > .toolbarbutton-animatable-box {
   display: none !important;
+}
+
+#stop-reload-button:not(.unified) + #urlbar-container {
+  margin-inline-start: 2px !important;
 }
 
 #reload-button:not(.unified) {

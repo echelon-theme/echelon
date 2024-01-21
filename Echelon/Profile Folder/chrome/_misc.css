@@ -139,3 +139,8 @@ toolbarbutton.bookmark-item {
 #context-inspect-a11y {
   display: none !important;
 }
+
+/* Fix Menu Bar */
+#main-menubar > menu {
+  appearance: menuitem !important;
+}

@@ -5,7 +5,8 @@
     }
 
     #updateBox .text-blurb,
-    #releasenotes {
+    #releasenotes,
+	#icons > .noUpdatesFound {
         display: none !important;
     }
 

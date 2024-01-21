@@ -1,0 +1,238 @@
+*, ::before, ::after {
+	box-sizing: border-box;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+[flex="1"] {
+	flex: 1;
+}
+
+[hidden] {
+	visibility: collapse;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	font: message-box;
+	color: #000;
+	background-color: #F2F2F2;
+}
+
+input, button {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+.topSection {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.brandLogo {
+	width: 192px;
+	height: 192px;
+	min-height: 192px;
+	margin: 22px auto 31px;
+	background-image: url('chrome://userchrome/content/pages/aboutHome/about-logo.png');
+	background-size: 192px auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.searchContainer {
+	display: flex;
+	height: 37px;
+}
+
+#searchForm {
+    width: 470px;
+	display: flex;
+	align-items: center;
+	align-self: stretch;
+	font-size: 130%;
+}
+
+#searchLogo {
+	display: inline-block;
+	width: 70px;
+	min-width: 70px;
+	height: 28px;
+	background-image: url('chrome://userchrome/content/pages/aboutHome/google.png');
+	background-size: 100% 100%;
+	margin-inline-end: 8px;
+}
+
+#searchText {
+	flex: 1;
+	align-self: stretch;
+    padding: 6px 8px;
+    background: none repeat scroll 0% 0% padding-box rgba(255, 255, 255, 0.9);
+	border: 1px solid;
+    border-image: none;
+    border-color: rgba(23, 51, 78, 0.15) rgba(23, 51, 78, 0.17) rgba(23, 51, 78, 0.2);
+    box-shadow: 0px 1px 0px rgba(8, 22, 37, 0.02) inset, 0px 0px 2px rgba(8, 22, 37, 0.1) inset, 0px 1px 0px rgba(255, 255, 255, 0.2);
+    border-radius: 2.5px 0px 0px 2.5px;
+}
+
+#searchText:focus,
+#searchText[autofocus] {
+	outline: 0;
+	border-color: hsla(206,100%,60%,.6) hsla(206,76%,52%,.6) hsla(204,100%,40%,.6);
+}
+
+#searchSubmit {
+	align-self: stretch;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1)) repeat scroll 0% 0% padding-box transparent;
+    padding: 0px 13px;
+	border: 1px solid;
+    border-color: rgba(23, 51, 78, 0.15) rgba(23, 51, 78, 0.17) rgba(23, 51, 78, 0.2);
+    border-left: 0;
+    border-radius: 0px 2.5px 2.5px 0px;
+    box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.5) inset, 0px 1px 0px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;	
+}
+
+#searchText:focus + #searchSubmit,
+#searchText + #searchSubmit:hover,
+#searchText[autofocus] + #searchSubmit {
+	border-color: #59b5fc #45a3e7 #3294d5;
+	color: white;
+}
+
+#searchText:focus + #searchSubmit,
+#searchText[autofocus] + #searchSubmit {
+	background-image: linear-gradient(#4cb1ff, #1793e5);
+	box-shadow: 0 1px 0 hsla(0,0%,100%,.2) inset,
+			  0 0 0 1px hsla(0,0%,100%,.1) inset,
+			  0 1px 0 hsla(210,54%,20%,.03);
+}
+
+#searchText + #searchSubmit:hover {
+	background-image: linear-gradient(#66bdff, #0d9eff);
+	box-shadow: 0 1px 0 hsla(0,0%,100%,.2) inset,
+			  0 0 0 1px hsla(0,0%,100%,.1) inset,
+			  0 1px 0 hsla(210,54%,20%,.03),
+			  0 0 4px hsla(206,100%,20%,.2);
+}
+
+#searchText + #searchSubmit:hover:active {
+	box-shadow: 0 1px 1px hsla(211,79%,6%,.1) inset,
+			  0 0 1px hsla(211,79%,6%,.2) inset;
+	transition-duration: 0ms;
+}
+
+#searchText + #searchSubmit:hover {
+    background-image: linear-gradient(#66BDFF, #0D9EFF);
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2) inset, 0px 0px 0px 1px rgba(255, 255, 255, 0.1) inset, 0px 1px 0px rgba(23, 51, 78, 0.03), 0px 0px 4px rgba(0, 57, 102, 0.2);
+}
+
+#snippetContainer {
+	display: flex;
+	width: 470px;
+	margin-top: 12px;
+	flex-direction: column;
+}
+
+#snippets {
+	display: flex;
+	align-items: center;
+	color: #3C3C3C;
+}
+
+.snippetIcon {
+	display: inline-block;
+	width: 40px;
+	min-width: 40px;
+	height: 50px;
+	margin-left: 30px;
+	margin-right: 8px;
+	background-size: 100% 100%;
+}
+
+.snippetIcon1 {
+	background-image: url('chrome://userchrome/content/pages/aboutHome/snippet1.png');
+}
+
+.snippetIcon2 {
+	background-image: url('chrome://userchrome/content/pages/aboutHome/snippet2.png');
+}
+
+#launcher {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.03);
+	border-top: 1px solid rgba(0, 0, 0, 0.03);
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.02) inset, 0px -1px 0px rgba(255, 255, 255, 0.25);
+}
+
+.launchButton {
+    display: flex;
+    flex-direction: column;
+    margin: 16px 1px;
+    padding: 14px 6px;
+    min-width: 88px;
+    max-width: 176px;
+    max-height: 85px;
+    vertical-align: top;
+    white-space: normal;
+    background: none repeat scroll 0% 0% padding-box transparent;
+    border: 1px solid transparent;
+    border-radius: 2.5px;
+    color: #525C66;
+    cursor: pointer;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+}
+
+.launchButton:hover {
+	background-color: hsla(211,79%,6%,.03);
+	border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.17) hsla(210,54%,20%,.2);
+}
+
+.launchButton:hover:active {
+	background-image: linear-gradient(hsla(211,79%,6%,.02), hsla(211,79%,6%,.05));
+	border-color: hsla(210,54%,20%,.2) hsla(210,54%,20%,.23) hsla(210,54%,20%,.25);
+	box-shadow: 0 1px 1px hsla(211,79%,6%,.05) inset,
+			  0 0 1px hsla(211,79%,6%,.1) inset;
+	transition-duration: 0ms;
+}
+
+#downloads:before {
+    content: url('chrome://userchrome/content/pages/aboutHome/downloads.png');
+}
+
+#bookmarks:before {
+    content: url('chrome://userchrome/content/pages/aboutHome/bookmarks.png');
+}
+
+#history:before {
+    content: url('chrome://userchrome/content/pages/aboutHome/history.png');
+}
+
+#addons:before {
+    content: url('chrome://userchrome/content/pages/aboutHome/addons.png');
+}
+
+#sync:before {
+    content: url('chrome://userchrome/content/pages/aboutHome/sync.png');
+}
+
+#settings:before {
+    content: url('chrome://userchrome/content/pages/aboutHome/settings.png');
+}

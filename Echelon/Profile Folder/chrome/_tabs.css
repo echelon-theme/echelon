@@ -269,6 +269,9 @@ spacer[part="overflow-start-indicator"] {
   .tab-icon-image[src="chrome://branding/content/icon32.png"] {
     content: url('images/icon16-new.png') !important;
   }
+  #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+    list-style-image: url('images/icon16-new.png') !important;
+  }
 }
 
 #private-browsing-indicator-with-label {
