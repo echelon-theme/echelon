@@ -748,16 +748,16 @@
   
     #main-window[echelon-style-3][echelon-style-4] #TabsToolbar::after {
       content: '';
-      display: inline-block;
+      display: flex;
       box-shadow: 0 0 30px 30px rgba(174,189,204,0.85);
       height: 0;
       margin: 0 60px;
       position: absolute;
       pointer-events: none;
-      top: 50%;
+      top: 60px;
       width: -moz-available;
       z-index: -1;
-      order: -1;
+      order: 1001;
     }
   
   }
