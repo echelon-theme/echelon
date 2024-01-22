@@ -220,7 +220,7 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:last-of-type {
 }
 
 /* DOWNLOADS BUTTON */
-#nav-bar:not([urlbar-exceeds-toolbar-bounds]), toolbar[overflowable][customizing] > .customization-target {
+#nav-bar:not([urlbar-exceeds-toolbar-bounds]) {
   overflow: visible !important;
 }
 

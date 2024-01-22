@@ -95,6 +95,50 @@
   list-style-image: url('images/icons/pocket.png') !important;
 }
 
+#developer-button {
+  list-style-image: url('images/icons/developer.png') !important;
+}
+
+#preferences-button {
+  list-style-image: url('images/icons/settings.png') !important;
+}
+
+#fullscreen-button {
+  list-style-image: url('images/icons/fullscreen.png') !important;
+}
+
+#characterencoding-button {
+  list-style-image: url('images/icons/encoding.png') !important;
+}
+
+#email-link-button {
+  list-style-image: url('images/icons/email.png') !important;
+}
+
+#open-file-button {
+  list-style-image: url('images/icons/open.png') !important;
+}
+
+#find-button {
+  list-style-image: url('images/icons/search.png') !important;
+}
+
+#save-page-button {
+  list-style-image: url('images/icons/save.png') !important;
+}
+
+#sidebar-button {
+  list-style-image: url('images/icons/sidebar.png') !important;
+}
+
+#privatebrowsing-button {
+  list-style-image: url('images/icons/private_browsing.png') !important;
+}
+
+#PlacesChevron, #nav-bar-overflow-button {
+  list-style-image: url('images/icons/chevron.png') !important;
+}
+
 /* Windows 8+ Icons for Australis Style. */
 @supports not -moz-bool-pref("Echelon.Appearance.Blue") {
   #main-window[echelon-style-4] #back-button,
@@ -182,5 +226,50 @@
   
   #main-window[echelon-style-4] #save-to-pocket-button {
     list-style-image: url('images/icons/australis/pocket.png') !important;
+  }
+  
+  #main-window[echelon-style-4] #developer-button {
+    list-style-image: url('images/icons/australis/developer.png') !important;
+  }
+
+  #main-window[echelon-style-4] #preferences-button {
+    list-style-image: url('images/icons/australis/settings.png') !important;
+  }
+
+  #main-window[echelon-style-4] #fullscreen-button {
+    list-style-image: url('images/icons/australis/fullscreen.png') !important;
+  }
+
+  #main-window[echelon-style-4] #characterencoding-button {
+    list-style-image: url('images/icons/australis/encoding.png') !important;
+  }
+
+  #main-window[echelon-style-4] #email-link-button {
+    list-style-image: url('images/icons/australis/email.png') !important;
+  }
+
+  #main-window[echelon-style-4] #open-file-button {
+    list-style-image: url('images/icons/australis/open.png') !important;
+  }
+
+  #main-window[echelon-style-4] #find-button {
+    list-style-image: url('images/icons/australis/search.png') !important;
+  }
+
+  #main-window[echelon-style-4] #save-page-button {
+    list-style-image: url('images/icons/australis/save.png') !important;
+  }
+
+  #main-window[echelon-style-4] #sidebar-button {
+    list-style-image: url('images/icons/australis/sidebar.png') !important;
+  }
+  
+  #main-window[echelon-style-4] #privatebrowsing-button {
+    list-style-image: url('images/icons/australis/private_browsing.png') !important;
+  }
+  
+  #main-window[echelon-style-4] #PlacesChevron, 
+  #main-window[echelon-style-4] #nav-bar-overflow-button {
+    list-style-image: url('images/icons/australis/chevron.png') !important;
   }
 }
