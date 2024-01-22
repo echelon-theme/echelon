@@ -69,6 +69,14 @@
               0 -1px 0 rgba(240,193,255,.5) inset !important;
 }
 
+/* Private Browsing icon from Firefox 20 */
+
+#main-window[echelon-style-3][privatebrowsingmode=temporary] #appmenu-button::before {
+  content: url('images/privatebrowsing-light.png') !important;
+  margin-top: 1px !important;
+}
+
+
 #appmenu-button:hover:active,
 #appmenu-button[open] {
   background-image: linear-gradient(to bottom, rgb(246,170,69), rgb(209,74,0) 95%) !important;
