@@ -208,10 +208,41 @@ class FirefoxButton
 		try
 		{
 			//
+			// 	Custom Firefox Button name & background color
+			//
+			let getStringPref = Services.prefs.getStringPref;
+			let fxButtonBgColor = null;
+			try
+			{
+				fxButtonBgColor = getStringPref("Echelon.FirefoxButton.CustomBGColor");
+				
+				let root = document.documentElement;
+				root.setAttribute("custom-fx-button-bg", "true");
+				
+				let styleElement = document.createElement('style');
+				document.head.appendChild(styleElement);
+
+				styleElement.innerHTML = `
+					:root {
+						--fx-custom-bg: `+ fxButtonBgColor + `;
+					}
+				`;
+			} catch (e) {}
+			
+			//
 			// Button creation and insertion
 			//
 			let titlebarEl = document.getElementById("titlebar");
 			let browserName = Services.appinfo.name;
+			
+			try
+			{
+				browserName = getStringPref("Echelon.FirefoxButton.CustomName");
+			} catch (e) {}
+			
+			if (browserName === "") {
+				browserName = Services.appinfo.name;
+			}
 			
 			this.appMenuButtonContainerEl = document.createXULElement("hbox");
 			const appMenuButtonContainerAttrs = {
@@ -221,7 +252,7 @@ class FirefoxButton
 			
 			this.appMenuButtonEl = document.createXULElement("button");
 			const appMenuButtonAttrs = {
-				"id": "appmenu-button",
+				"id":	 "appmenu-button",
 				"type": "menu",
 				"label": browserName
 			};
