@@ -6,7 +6,7 @@ let echelonStyle = Services.prefs.getIntPref("Echelon.Appearance.Style");
 let echelonOldLogo = Services.prefs.getBoolPref("Echelon.Appearance.NewLogo");
 
 if (echelonOldLogo) {
-	root.setAttribute("echelon-new-logo", isOldLogo);
+	root.setAttribute("echelon-new-logo", echelonOldLogo);
 }
 
 // ECHELON STYLE
