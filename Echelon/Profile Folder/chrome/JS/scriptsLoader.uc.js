@@ -9,12 +9,12 @@
 const { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");
 
 function executeFunctions() {
-	//echelonInitNewTabManager();
 	getAndSetTitleBarHeight();
 	createAppMenuButton();
 	createAddToBookmarks();
 	echelonInitLayout();
 	openEchelonWizardWindow(true);
+	addEchelonOptionsMenuItem();
     console.info("Functions executed.");
 }
 

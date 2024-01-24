@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://userchrome/content/windows/echelonOptions/styles.css" type="text/css"?>
+
+<window xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="echelonOptions" windowtype="Browser:EchelonOptions" width="450" height="450" role="dialog" resizable="false" title="Echelon Options">
+    <vbox id="contentArea" flex="1">
+        <html:div id="tabs">
+            <html:div class="tab tab-selected" id="tab-general">
+                <html:div class="tab-icon"></html:div>
+                <html:span class="tab-label">General</html:span>
+            </html:div>
+            <html:div class="tab" id="tab-advanced">
+                <html:div class="tab-icon"></html:div>
+                <html:span class="tab-label">Advanced</html:span>
+            </html:div>
+            <html:div class="tab" id="tab-about">
+                <html:div class="tab-icon"></html:div>
+                <html:span class="tab-label">About</html:span>
+            </html:div>
+        </html:div>
+        <html:div id="content">
+            <html:div id="main-section">    
+                <html:div id="section-general" class="section section-selected">
+                    <groupbox>
+                        <caption>Appearance</caption>
+                        <html:div class="option-container">
+                            <label value="Style:"/>
+                            <menulist native="" class="option" data-type="enum" data-option="Echelon.Appearance.Style">
+                                <menupopup>
+                                    <menuitem label="Strata (Firefox 4)" value="0"/>
+                                    <menuitem label="Strata (Firefox 5-9)" value="1"/>
+                                    <menuitem label="Strata (Firefox 10-13)" value="2"/>
+                                    <menuitem label="Strata (Firefox 14-28)" value="3"/>
+                                    <menuitem label="Australis (Firefox 29+)" value="4"/>
+                                </menupopup>
+                            </menulist>
+                        </html:div>
+                        <checkbox native="" label="Use Aero blue" class="option" data-type="bool" data-option="Echelon.Appearance.Blue"/>
+                        <checkbox native="" label="Hide &quot;Extensions&quot; button (not recommended)" class="option" data-type="bool" data-option="Echelon.Option.HideUnifiedExtensions"/>
+                        <checkbox native="" label="Use 2013+ Firefox logo" class="option" data-type="bool" data-option="Echelon.Appearance.NewLogo"/>
+                        <checkbox native="" label="Enable fog (Australis only)" class="option" data-type="bool" data-option="Echelon.Appearance.Australis.EnableFog"/>
+                        <checkbox native="" label="Windows 8+ mode (Australis only)" class="option" data-type="bool" data-option="Echelon.Appearance.Australis.Windows10"/>
+                    </groupbox>
+                    <groupbox>
+                        <caption>Firefox Button</caption>
+                        <checkbox native="" label="Custom Firefox Button style" class="option" data-type="bool" data-option="Echelon.FirefoxButton.CustomStyle"/>
+                        <html:div class="option-container">
+                            <label value="Firefox Button text:"/>
+                            <html:input type="text" id="custom-name" class="option" data-type="string" data-option="Echelon.FirefoxButton.CustomName"/>
+                        </html:div>
+                        <html:div class="option-container">
+                            <label value="Firefox Button color:" />
+                            <html:input type="color" class="option" data-type="string" data-option="Echelon.FirefoxButton.CustomBGColor"/>
+                        </html:div>
+                    </groupbox>
+                </html:div>
+                <html:div id="section-advanced" class="section">
+                    <p>You shouldn't need to change these options unless you're a developer.</p>
+                    <groupbox>
+                        <caption>Wizard</caption>
+                        <checkbox native="" label="First run has been completed" class="option" data-type="bool" data-option="Echelon.parameter.isFirstRunFinished" />
+                    </groupbox>
+                </html:div>
+                <html:div id="section-about" class="section">
+                    <html:img id="echelon-logo" src="chrome://userchrome/content/windows/echelonOptions/images/echelon-logo.png" width="223"/>
+                    <html:br/>
+                    <html:span><html:b>Echelon</html:b></html:span>
+                    <html:span>Version 0.7.2b</html:span>
+                    <groupbox>
+                        <caption>Credits</caption>
+                        <html:span>
+                            Codebase port to SCSS, improvements, and Firefox Button
+                            <br/>
+                            <html:span class="attribution">ephemeralViolette</html:span>
+                        </html:span>
+                        <html:span>
+                            Code improvement, Echelon Style 3, and Echelon Options window
+                            <br/>
+                            <html:span class="attribution">aubymori</html:span>
+                        </html:span>
+                        <html:span>
+                            <html:span class="attribution">Echelon Private Testers</html:span>
+                        </html:span>
+                    </groupbox>
+                </html:div>
+            </html:div>
+            <html:div id="button-section">
+                <button id="ok-button" label="OK"/>
+                <button id="cancel-button" label="Cancel"/>
+            </html:div>
+        </html:div>
+    </vbox>
+    <script src="chrome://userchrome/content/windows/echelonOptions/script.js" type="text/javascript"></script>
+</window>

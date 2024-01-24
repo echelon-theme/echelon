@@ -1,0 +1,129 @@
+groupbox {
+    appearance: groupbox;
+    position: relative;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+groupbox > caption {
+    position: absolute;
+    top: -10px;
+    left: 6px;
+    background-color: -moz-Dialog;
+}
+
+groupbox > span {
+    margin: 6px;
+}
+
+menulist {
+    width: 256px;
+    min-height: 25px;
+}
+
+input[type="color"] {
+    width: 35px;
+    height: 25px;
+}
+
+input::placeholder {
+    font-style: italic;
+}
+
+.option-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+#tabs {
+    min-height: 32px;
+    background: Window;
+    border-bottom: 1px ButtonShadow solid;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.tab {
+    margin: 0 1px;
+    padding: 6px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tab:hover {
+    background-color: #e0e8f6;
+}
+
+.tab-selected {
+    background-color: #c1d2ee !important;
+}
+
+.tab-icon {
+    width: 32px;
+    height: 32px;
+    background-image: url("chrome://userchrome/content/windows/echelonOptions/images/Options.png");
+}
+
+#tab-general .tab-icon {
+    background-position: 0 0;
+}
+
+#tab-advanced .tab-icon {
+    background-position: -32px 0;
+}
+
+#tab-about .tab-icon {
+    background-position: -64px 0;
+}
+
+.tab-label {
+    line-height: 1;
+}
+
+#content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 10px;
+    border-top: 1px ThreeDHighlight solid;
+}
+
+#main-section {
+    flex-grow: 1;
+}
+
+#button-section {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.section {
+    display: none;
+}
+
+.section-selected {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#echelon-logo {
+    margin-bottom: 15px;
+}
+
+.attribution {
+    font-weight: 700;
+    font-style: italic;
+}
+
+#section-about groupbox {
+    margin-top: 15px;
+}

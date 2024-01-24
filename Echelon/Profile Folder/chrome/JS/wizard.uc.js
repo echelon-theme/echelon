@@ -23,6 +23,9 @@ function openEchelonWizardWindow(verifyFirstRun) {
 }
 
 function launchEchelonWizard() {
-    var features = "chrome,centerscreen,resizeable=no,dependent,modal";
-    window.openDialog('chrome://userchrome/content/windows/echelonWizard/echelonWizard.xhtml', "Set Up Echelon", features); 
+    window.openDialog(
+        "chrome://userchrome/content/windows/echelonWizard/echelonWizard.xhtml",
+        "Set Up Echelon",
+        "chrome,centerscreen,resizeable=no,dependent,modal"
+    ); 
 };

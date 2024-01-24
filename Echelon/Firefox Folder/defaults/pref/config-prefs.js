@@ -20,7 +20,12 @@ pref("widget.non-native-theme.enabled", false);
 pref("Echelon.Appearance.Blue", false);
 pref("Echelon.Appearance.Style", 0);
 pref("Echelon.Appearance.NewLogo", false);
-pref("Echelon.Option.HideUnifiedExtensions", false);
 pref("Echelon.Appearance.Australis.EnableFog", true);
 pref("Echelon.Appearance.Australis.Windows10", false);
+pref("Echelon.Option.HideUnifiedExtensions", false);
+
+pref("Echelon.FirefoxButton.CustomStyle", false);
+pref("Echelon.FirefoxButton.CustomName", "");
+pref("Echelon.FirefoxButton.CustomBGColor, "#000000");
+
 pref("Echelon.parameter.isFirstRunFinished", false);

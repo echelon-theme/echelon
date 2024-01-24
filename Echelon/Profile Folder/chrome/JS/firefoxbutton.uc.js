@@ -207,38 +207,50 @@ class FirefoxButton
 	{
 		try
 		{
+			let useCustomStyle = false;
+			try
+			{
+				useCustomStyle = Services.prefs.getBoolPref("Echelon.FirefoxButton.CustomStyle");
+			} catch (e) {}
+
 			//
 			// 	Custom Firefox Button name & background color
 			//
 			let getStringPref = Services.prefs.getStringPref;
-			let fxButtonBgColor = null;
-			try
+			if (useCustomStyle)
 			{
-				fxButtonBgColor = getStringPref("Echelon.FirefoxButton.CustomBGColor");
-				
-				let root = document.documentElement;
-				root.setAttribute("custom-fx-button-bg", "true");
-				
-				let styleElement = document.createElement('style');
-				document.head.appendChild(styleElement);
+				let fxButtonBgColor = null;
+				try
+				{
+					fxButtonBgColor = getStringPref("Echelon.FirefoxButton.CustomBGColor");
+					
+					let root = document.documentElement;
+					root.setAttribute("custom-fx-button-bg", "true");
+					
+					let styleElement = document.createElement('style');
+					document.head.appendChild(styleElement);
 
-				styleElement.innerHTML = `
-					:root {
-						--fx-custom-bg: `+ fxButtonBgColor + `;
-					}
-				`;
-			} catch (e) {}
+					styleElement.innerHTML = `
+						:root {
+							--fx-custom-bg: `+ fxButtonBgColor + `;
+						}
+					`;
+				} catch (e) {}
+			}
 			
 			//
 			// Button creation and insertion
 			//
 			let titlebarEl = document.getElementById("titlebar");
 			let browserName = Services.appinfo.name;
-			
-			try
+
+			if (useCustomStyle)
 			{
-				browserName = getStringPref("Echelon.FirefoxButton.CustomName");
-			} catch (e) {}
+				try
+				{
+					browserName = getStringPref("Echelon.FirefoxButton.CustomName");
+				} catch (e) {}
+			}
 			
 			if (browserName === "") {
 				browserName = Services.appinfo.name;
@@ -695,6 +707,11 @@ class FirefoxButton
 							"id": "appmenu_preferences",
 							"label": "Options",
 							"oncommand": "openPreferences();"
+						}),
+						elm("xul:menuitem", {
+							"id": "appmenu_echelonOptions",
+							"label": "Echelon Options",
+							"oncommand": "launchEchelonOptions()"
 						}),
 						elm("xul:menuseparator"),
 						elm("xul:menuseparator"),
