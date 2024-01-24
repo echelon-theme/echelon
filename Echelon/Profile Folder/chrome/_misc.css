@@ -76,7 +76,6 @@
   margin-top: 1px !important;
 }
 
-
 #appmenu-button:hover:active,
 #appmenu-button[open] {
   background-image: linear-gradient(to bottom, rgb(246,170,69), rgb(209,74,0) 95%) !important;

@@ -2,6 +2,3 @@ content userchromejs ./
 content userscripts ../JS/
 skin userstyles classic/1.0 ../CSS/
 content userchrome ../ contentaccessible=yes
-
-
-resource activity-stream ../pages/chrome/res/activity-stream contentaccessible=yes

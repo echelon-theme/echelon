@@ -1119,10 +1119,6 @@
 }
 
 /** THEME SUPPORT **/
-:root:not([style*="--lwt-accent-color: rgb(28, 27, 34);"], [style*="--lwt-accent-color: rgb(240, 240, 244);"])[lwtheme-image] {
-  background-image: none !important;
-  background-color: transparent !important;
-}
 
 :root:not([style*="--lwt-accent-color: rgb(28, 27, 34);"], [style*="--lwt-accent-color: rgb(240, 240, 244);"]) #navigator-toolbox:-moz-lwtheme {
   background-image: none !important;

@@ -31,28 +31,10 @@
   margin-bottom: 2em !important;
 }
 
-#main-window[customizing]:not([echelon-style-4]) #titlebar {
-  margin-top: 1em !important;
-}
-
 #main-window[customizing]:not([echelon-style-4]) #appmenu-button-container {
-  border-top: 1px solid hsla(0,0%,100%,.5) !important;
-  height: var(--titlebar-height) !important;
-  border-top-left-radius: var(--toolbarbutton-border-radius) !important;
-  border-top-right-radius: var(--toolbarbutton-border-radius) !important;
   pointer-events: none !important;
   opacity: 0.5;
   transition: opacity 150ms ease-in !important;
-}
-
-#main-window[customizing]:not([echelon-style-4]) #appmenu-button {
-  border-top-left-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
-  border-top-right-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
-  border-top: 1px solid rgba(83, 42, 6, 0.9) !important;
-}
-
-#main-window[customizing][custom-fx-button-bg]:not([echelon-style-4], [privatebrowsingmode="temporary"]) #appmenu-button {
-  border-top-color: rgba(0, 0, 0, .6) !important;
 }
 
 #main-window[customizing] #wrapper-urlbar-container + #wrapper-stop-reload-button {
@@ -194,6 +176,10 @@
   margin-inline: 10px !important;
   border-radius: 4px !important;
   border: 1px dashed #BBB !important;
+}
+
+#customization-panelHolder > #widget-overflow-fixed-list:not(:empty)::before {
+  display: none !important;
 }
 
 #customization-panelDescription {

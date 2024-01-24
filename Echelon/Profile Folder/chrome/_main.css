@@ -139,6 +139,26 @@
   list-style-image: url('images/icons/chevron.png') !important;
 }
 
+#logins-button {
+  list-style-image: url('images/icons/login.png') !important;
+}
+
+#screenshot-button {
+  list-style-image: url('images/icons/screenshot.png') !important;
+}
+
+#import-button {
+  list-style-image: url('images/icons/import.png') !important;
+}
+
+#library-button {
+  list-style-image: url('images/icons/library.png') !important;
+}
+
+#sync-button {
+  list-style-image: url('images/icons/sync_tabs.png') !important;
+}
+
 /* Windows 8+ Icons for Australis Style. */
 @supports not -moz-bool-pref("Echelon.Appearance.Blue") {
   #main-window[echelon-style-4] #back-button,
@@ -271,5 +291,25 @@
   #main-window[echelon-style-4] #PlacesChevron, 
   #main-window[echelon-style-4] #nav-bar-overflow-button {
     list-style-image: url('images/icons/australis/chevron.png') !important;
+  }
+  
+  #main-window[echelon-style-4] #logins-button {
+    list-style-image: url('images/icons/australis/login.png') !important;
+  }
+
+  #main-window[echelon-style-4] #screenshot-button {
+    list-style-image: url('images/icons/australis/screenshot.png') !important;
+  }
+
+  #main-window[echelon-style-4] #import-button {
+    list-style-image: url('images/icons/australis/import.png') !important;
+  }
+
+  #main-window[echelon-style-4] #library-button {
+    list-style-image: url('images/icons/australis/library.png') !important;
+  }
+  
+  #main-window[echelon-style-4] #sync-button {
+    list-style-image: url('images/icons/australis/sync_tabs.png') !important;
   }
 }
