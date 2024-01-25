@@ -215,7 +215,7 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:last-of-type {
   width: 0 !important;
 }
 
-#PanelUI-menu-button .toolbarbutton-badge-stack {
+#PanelUI-menu-button .toolbarbutton-badge {
   display: none !important;
 }
 

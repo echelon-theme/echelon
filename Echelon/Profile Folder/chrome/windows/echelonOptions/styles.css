@@ -1,3 +1,24 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+
 groupbox {
     appearance: groupbox;
     position: relative;
@@ -96,6 +117,14 @@ p {
     border-top: 1px ThreeDHighlight solid;
 }
 
+#content[data-tab="about"] {
+	padding: 0;
+}
+
+#content[data-tab="about"] #button-section {
+	padding: 10px;
+}
+
 #main-section {
     flex-grow: 1;
 }
@@ -116,7 +145,7 @@ p {
 }
 
 #echelon-logo {
-    margin-bottom: 15px;
+    margin-bottom: 6px;
 }
 
 .attribution {
@@ -125,5 +154,30 @@ p {
 }
 
 #section-about groupbox {
-    margin-top: 15px;
+    margin: 15px;
+}
+
+#about-section-banner {
+	display: flex;
+	flex-direction: column;
+	height: 135px;
+	background-color: #fff;
+	border-bottom: 1px solid rgb(0 0 0 / 25%);
+	box-shadow: 0 1px 0 #fff;
+	background-image: url("chrome://userchrome/content/windows/echelonOptions/images/about-logo.png");
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	justify-content: center;
+	padding-inline: 40px;
+}
+
+#echelon-ver-text {
+	color: #838383;
+	text-transform: lowercase;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#echelon-ver-text b {
+	color: #404041;
 }

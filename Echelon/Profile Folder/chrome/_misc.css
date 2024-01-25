@@ -220,3 +220,388 @@ toolbarbutton.bookmark-item {
 #main-menubar > menu {
   appearance: menuitem !important;
 }
+
+/* Findbar */
+
+findbar {
+  max-height: 27px !important;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.15) 1px, rgba(255,255,255,.15) 1px);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  border-top: 0 !important;
+  padding-block: 0 !important;
+  padding-top: 1px !important;
+  align-items: center !important;
+  overflow: hidden !important;
+}
+
+.findbar-find-next,
+.findbar-highlight {
+  margin-inline: 0 !important;
+}
+
+.findbar-find-next,
+.findbar-find-previous,
+.findbar-highlight,
+#main-window[echelon-style-4] checkbox {
+  padding: 0 3px !important;
+  appearance: toolbarbutton !important;
+  list-style-image: none !important;
+}
+
+.findbar-find-next .toolbarbutton-icon,
+.findbar-find-previous .toolbarbutton-icon,
+.findbar-highlight .checkbox-icon {
+  width: 16px !important;
+  height: 16px !important;
+  background-image: url('images/find.png') !important;
+}
+
+.findbar-find-next .toolbarbutton-icon {
+  background-position-x: -16px !important;
+}
+
+.findbar-highlight .checkbox-icon {
+  background-position-x: -32px !important;
+}
+
+#main-window:not([echelon-style-4]) .findbar-find-previous[disabled="true"] > .toolbarbutton-icon, 
+#main-window:not([echelon-style-4]) .findbar-find-next[disabled="true"] > .toolbarbutton-icon {
+  opacity: 1 !important;
+  background-position-y: -32px !important;
+}
+
+.findbar-highlight .checkbox-check {
+  visibility: collapse !important;
+}
+
+#main-window:not([echelon-style-4]) .findbar-textbox {
+  margin-top: 2px !important;
+  max-height: 22px !important;
+  appearance: textfield !important;
+  -moz-default-appearance: textfield !important;
+  background-color: unset !important;
+  border-radius: unset !important;
+  border: unset !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+#main-window:not([echelon-style-4]) hbox[anonid="findbar-textbox-wrapper"]::before {
+  content: 'Find:';
+  display: flex;
+  align-self: center;
+  margin-inline-end: 8px;
+  margin-bottom: 2px;
+}
+
+#main-window:not([echelon-style-4]) .findbar-closebutton {
+  order: -1 !important;
+  margin-inline: 6px !important;
+}
+
+.findbar-find-previous::after,
+.findbar-find-next::after {
+  margin-inline-start: 5px !important;
+}
+
+#main-window:not([echelon-style-4]) .findbar-find-previous::after {
+  content: 'Previous';
+}
+
+#main-window:not([echelon-style-4]) .findbar-find-next::after {
+  content: 'Next';
+}
+
+findbar .checkbox-check {
+  appearance: auto !important;
+  -moz-default-appearance: checkbox !important;
+  margin-block-start: 2px !important;
+  margin-inline-end: 4px !important;
+}
+
+.findbar-find-status[status="notfound"] {
+  display: flex !important;
+  align-items: center !important;
+  font-weight: revert !important;
+}
+
+#main-window:not([echelon-style-4]) .findbar-find-status[status="notfound"]::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('images/information-16.png');
+  margin-inline-end: 4px;
+  margin-top: 2px !important;
+}
+
+/* Echelon Style 4 */
+
+#main-window[echelon-style-4] findbar {
+  height: 100% !important;
+  max-height: 35px !important;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1) inset !important;
+  background-image: linear-gradient(rgba(0,0,0,.15) 1px, rgba(255,255,255,.15) 1px) !important;
+  background-size: 100% 2px !important;
+  background-repeat: no-repeat !important;
+  background-color: -moz-Dialog !important;
+}
+
+
+#main-window[echelon-style-4] .findbar-label {
+  color: GrayText !important;
+  flex: 1 !important;
+}
+
+#main-window[echelon-style-4] findbar .checkbox-icon,
+#main-window[echelon-style-4] findbar .checkbox-check,
+#main-window[echelon-style-4] .found-matches {
+  visibility: collapse !important;
+}
+
+#main-window[echelon-style-4] findbar checkbox {
+  margin-inline: 0 !important;
+  margin-inline-start: 5px !important;
+  order: 1001 !important;
+}
+
+
+#main-window[echelon-style-4] .findbar-textbox {
+  min-height: 21px !important;
+  border: 1px solid ThreeDShadow !important;
+  border-radius: 2px 0 0 2px !important;
+  margin: 0 !important;
+  padding: 1px 5px !important;
+  width: 14em !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#main-window[echelon-style-4] .findbar-textbox:focus {
+  border-color: Highlight !important;
+}
+
+#main-window[echelon-style-4] .findbar-textbox[status="notfound"] {
+  background-color: #f66 !important;
+  color: white !important;
+}
+
+#main-window[echelon-style-4] .findbar-find-next,
+#main-window[echelon-style-4] .findbar-find-previous {
+  appearance: none !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,.9), rgba(255,255,255,.2)) !important;
+  border: 1px solid ThreeDShadow !important;
+  box-shadow: 0 1px #fff inset !important;
+  padding: 1px 5px !important;
+  line-height: 1em !important;
+  background-color: -moz-Dialog !important;
+}
+
+#main-window[echelon-style-4] .findbar-find-previous:not([disabled]):active,
+#main-window[echelon-style-4] .findbar-find-next:not([disabled]):active {
+  background-color: rgba(23,50,76,.2) !important;
+  box-shadow: 0 1px 2px rgba(10,31,51,.2) inset !important;
+}
+
+#main-window[echelon-style-4] .findbar-find-previous,
+#main-window[echelon-style-4] .findbar-find-previous:not([disabled]):active {
+  border-right: none !important;
+  border-left: none !important;
+}
+
+#main-window[echelon-style-4] .findbar-find-next:-moz-locale-dir(ltr) {
+  border-top-right-radius: 2px !important;
+  border-bottom-right-radius: 2px !important;
+}
+
+#main-window[echelon-style-4] .findbar-find-next:-moz-locale-dir(rtl) {
+  border-top-left-radius: 2px !important;
+  border-bottom-left-radius: 2px !important;
+}
+
+#main-window[echelon-style-4] .findbar-find-next .toolbarbutton-icon, 
+#main-window[echelon-style-4] .findbar-find-previous .toolbarbutton-icon {
+  width: 12px !important;
+  height: 9px !important;
+  background-image: url('images/find-arrows.png') !important;
+}
+
+#main-window[echelon-style-4] .findbar-find-next .toolbarbutton-icon {
+  background-position-x: -12px !important;
+}
+
+/* Sidebar */
+
+.sidebar-panel {
+  background-color: -moz-Dialog !important;
+}
+
+#sidebar-header {
+  min-height: 25px !important;
+  background-color: -moz-Dialog !important;
+  color: -moz-dialogText !important;
+  appearance: auto !important;
+  -moz-default-appearance: toolbox !important;
+  border-bottom: 1px solid ThreeDLightShadow;
+  border-top: 1px solid ThreeDHighlight;
+}
+
+#main-window:not([echelon-style-5]) #sidebar-header {
+  padding: 0 !important;
+  padding-inline: 1px !important;
+  font-size: revert !important;
+}
+
+#main-window:not([echelon-style-5]) #sidebar-close {
+  margin-top: 1px !important;
+  margin-inline: 6px !important;
+}
+
+.sidebar-placesTree {
+  border: 0 !important;
+  margin: 0 !important;
+  border-top: 1px solid ThreeDShadow !important;
+  background-color: #FFF !important;
+}
+
+#main-window:not([echelon-style-5]) #sidebar-switcher-target {
+  appearance: toolbarbutton !important;
+}
+
+#main-window:not([echelon-style-5]) #sidebar-title {
+  padding-inline: 0 !important;
+}
+
+#main-window:not([echelon-style-5]) #sidebar-icon,
+#main-window:not([echelon-style-5]) #sidebar-switcher-arrow {
+  visibility: collapse !important;
+}
+
+#viewButton {
+  appearance: button !important;
+  margin-inline-start: 10px !important;
+}
+
+#viewButton > .button-box > .button-menu-dropmarker {
+  width: 5px !important;
+  height: 3px !important;
+  list-style-image: url('images/dropdown.png') !important;
+  margin-left: 2px !important;
+}
+
+#sidebar-search-container {
+  padding: 3px 6px !important;
+  align-items: center !important;
+}
+
+#sidebar-search-container::before {
+  content: 'Search:';
+  margin-inline-end: 9px !important;
+}
+
+#search-box {
+  height: 100% !important;
+  max-height: 22px !important;
+}
+
+.textbox-search-sign {
+  width: 16px !important;
+  height: 16px !important;
+  list-style-image: none !important;
+  background-image: url('images/Search-glass.png') !important;
+  order: 1001 !important;
+  margin-inline-end: 1px !important;
+  margin-top: 1px !important;
+}
+
+splitter {
+  margin-inline-start: 0 !important;
+  border-width: 0 1px !important;
+  border-left-color: ThreeDShadow !important;
+  border-right-color: ThreeDDarkShadow !important;
+  box-shadow: inset 1px 0 ThreeDHighlight !important;
+  min-width: 6px !important;
+  background-color: ThreeDFace !important;
+}
+
+treechildren::-moz-tree-indentation {
+  width: 12px !important;
+}
+
+treechildren::-moz-tree-twisty {
+  padding-inline: 0 !important;
+  width: 9px !important;
+}
+
+treechildren::-moz-tree-row {
+  min-height: 18px !important;
+  padding: 0 !important;
+}
+
+treechildren::-moz-tree-row(current, focus) {
+  outline: 1px dotted transparent !important;
+  outline-offset: -1px !important;
+}
+
+treechildren::-moz-tree-row(selected, current, focus) {
+  outline-color: #F3D982 !important;
+}
+
+treechildren::-moz-tree-twisty {
+  list-style-image: url('images/twisty-clsd.png') !important;
+}
+
+treechildren::-moz-tree-twisty(hover) {
+  list-style-image: url('images/twisty-clsd-hover.png') !important;
+}
+
+treechildren::-moz-tree-twisty(open) {
+  list-style-image: url('images/twisty-open.png') !important;
+}
+
+treechildren::-moz-tree-twisty(hover, open) {
+  list-style-image: url('images/twisty-open-hover.png') !important;
+}
+
+/* Trees don't support background-image */
+treechildren::-moz-tree-image(container),
+treechildren::-moz-tree-image(title, query, hostContainer) {
+  list-style-image: url(images/bookmarksFolder.png) !important;
+}
+
+treechildren::-moz-tree-image(container, query) {
+  list-style-image: url(images/query.png) !important;
+}
+
+/* Have to do this because Smart Folders above this changes the icon */
+treechildren::-moz-tree-image(title, query, hostContainer) {
+  list-style-image: url(images/bookmarksFolder.png) !important;
+}
+
+treechildren::-moz-tree-image(container, queryFolder_toolbar_____) {
+  list-style-image: url(images/bookmarksToolbar.png) !important;
+}
+
+treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksMenu),
+treechildren::-moz-tree-image(container, queryFolder_menu________) {
+  list-style-image: url(images/bookmarksMenu.png) !important;
+}
+
+treechildren::-moz-tree-image(container, OrganizerQuery_UnfiledBookmarks),
+treechildren::-moz-tree-image(container, queryFolder_unfiled_____) {
+  list-style-image: url(images/unsortedBookmarks.png) !important;
+}
+
+treechildren::-moz-tree-image(query, OrganizerQuery_history____v),
+treechildren::-moz-tree-image(title, query, dayContainer) {
+  list-style-image: url(images/history-sidebar.png) !important;
+}
+
+treechildren::-moz-tree-image(title, query, tagContainer),
+treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
+  list-style-image: url("images/tag.png") !important;
+}

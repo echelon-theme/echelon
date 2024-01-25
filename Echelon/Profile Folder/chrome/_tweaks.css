@@ -609,11 +609,12 @@
   display: none !important;
 }
 
-#main-window[tabsintitlebar][echelon-style-4] #toolbar-menubar[autohide="true"][inactive="true"]:not([customizing="true"]) + #TabsToolbar {
-  padding-top: calc(var(--titlebar-height) - 7px) !important;
+#main-window[tabsintitlebar][echelon-style-4] #toolbar-menubar[autohide="true"][inactive="true"]:not([customizing="true"]) + #TabsToolbar .toolbar-items {
+  margin-top: 0 !important;
+  padding-top: calc(var(--titlebar-height) - 6px) !important;
 }
 
-#main-window[sizemode="maximized"][tabsintitlebar][echelon-style-4] #toolbar-menubar[autohide="true"][inactive="true"]:not([customizing="true"]) + #TabsToolbar {
+#main-window[sizemode="maximized"][tabsintitlebar][echelon-style-4] #toolbar-menubar[autohide="true"][inactive="true"]:not([customizing="true"]) + #TabsToolbar .toolbar-items {
   padding-top: 0 !important;
 }
 
@@ -623,7 +624,8 @@
 }
 
 #main-window[echelon-style-4] .titlebar-buttonbox-container {
-  position: static !important;
+  position: relative !important;
+  right: -6px !important;
 }
 
 #main-window[echelon-style-4] .tabbrowser-tab:not([pinned="true"])[label="New Tab"] .tab-icon-image {
