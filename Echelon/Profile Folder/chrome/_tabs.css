@@ -224,7 +224,7 @@
 }
 
 .tab-icon-image:not([src]), .tab-icon-image:-moz-broken {
-  content: url('images/blank.png') !important;
+  content: url('images/defaultFavicon.png') !important;
   background-image: url('images/folder-item.png') !important;
 }
 
@@ -262,19 +262,6 @@ spacer[part="overflow-start-indicator"] {
   height: 17px !important;
   background-image: url('images/tab-arrow-left.png') !important;
   padding: 0 !important;
-}
-
-.tab-icon-image[src="chrome://branding/content/icon32.png"] {
-  content: url('images/icon16.png') !important;
-}
-
-@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
-  .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-    content: url('images/icon16-new.png') !important;
-  }
-  #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-    list-style-image: url('images/icon16-new.png') !important;
-  }
 }
 
 #private-browsing-indicator-with-label {

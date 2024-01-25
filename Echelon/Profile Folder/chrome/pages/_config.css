@@ -1,0 +1,139 @@
+@-moz-document url("about:config") {
+    .config-background {
+        display: none !important;
+    }
+
+    :root:not([echelon-style-4]) {
+        background-color: #f0f0f0 !important;
+        font: message-box !important;
+    }
+    
+    :root:not([echelon-style-4]) .container {
+        background: #fff no-repeat url("chrome://global/skin/icons/warning-large.png") 30px 36px !important;
+        padding: 3em !important;
+        padding-inline-start: 114px !important;
+        border: 1px solid #a0a0a0 !important;
+        border-radius: 10px !important;
+    }
+    
+    :root:not([echelon-style-4]) .title {
+        background: none !important;
+        padding-top: 0 !important;
+    }
+    
+    :root:not([echelon-style-4]) #warningTitle {
+        font-size: 73% !important;
+        color: #000 !important;
+        font-weight: 400 !important;
+        padding: 0 !important;
+        margin: 0 0 .6em !important;
+        border-bottom: 1px solid #e3e3e3 !important;
+    }
+    
+    :root:not([echelon-style-4]) #warningDescription {
+        margin: 0 !important;
+        font-size: 110% !important;
+    }
+    
+    :root:not([echelon-style-4]) .toggle-container-with-text {
+        margin-top: .6em !important;
+    }
+    
+    :root:not([echelon-style-4]) input[type="checkbox"] {
+        appearance: checkbox !important;
+        margin: revert !important;
+    }
+    
+    :root:not([echelon-style-4]) .button-container {
+        margin: 0 !important;
+        display: flex;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    :root:not([echelon-style-4]) button {
+        appearance: button !important;
+        background: revert !important;
+        border: revert !important;
+        color: revert !important;
+        border-radius: revert !important;
+        font: message-box !important;
+        min-height: 26px !important;
+        margin-top: .6em !important;
+    }
+    
+    :root:not([echelon-style-4]) #toolbar {
+        background: #f0f0f0 !important;
+        padding: 6px 4px !important;
+    }
+    
+    :root:not([echelon-style-4]) input[type="text"] {
+        appearance: textfield !important;
+        background: revert !important;
+        border: revert !important;
+        border-radius: revert !important;
+        outline: none !important;
+    }
+
+    :root:not([echelon-style-4]) input[type="text"]::placeholder {
+        font-style: italic !important;
+    }
+
+    :root:not([echelon-style-4]) .config-help-text {
+        font-size: 110%;
+    }
+
+    :root:not([echelon-style-4]) #prefs {
+        margin: 0 4px !important;
+        width: calc(100% - 8px) !important;
+        padding: 2px !important;
+        border-radius: 0 !important;
+        border-color: #828790 !important;
+    }
+
+    :root:not([echelon-style-4]) #prefs tr > * {
+        padding: 0 !important;
+    }
+
+    :root:not([echelon-style-4]) #prefs tr > * > * {
+        margin-left: 2px;
+    }
+
+    :root:not([echelon-style-4]) #prefs td {
+        position: relative !important;
+    }
+
+    :root:not([echelon-style-4]) .button-add,
+    :root:not([echelon-style-4]) .button-save,
+    :root:not([echelon-style-4]) .button-edit,
+    :root:not([echelon-style-4]) .button-toggle,
+    :root:not([echelon-style-4]) .button-delete,
+    :root:not([echelon-style-4]) .button-reset {
+        appearance: button !important;
+        width: 18px !important;
+        min-height: 18px !important;
+        margin: 0 !important;
+        margin-inline: 0 !important;
+        position: absolute;
+        top: 3px;
+        left: 0;
+    }
+
+    :root:not([echelon-style-4]) #prefs > tr > td.cell-edit,
+    :root:not([echelon-style-4]) #prefs > tr > td.cell-reset {
+        width: 18px !important;
+    }
+
+    :root:not([echelon-style-4]) #prefs > tr {
+        line-height: 22px !important;
+        box-sizing: border-box !important;
+        background-color: transparent !important;
+        outline: 1px solid transparent !important;
+        border-radius: 2px !important;
+    }
+
+    :root:not([echelon-style-4]) #prefs > tr:hover {
+        background-image: linear-gradient(to bottom, #f7faff, #edf5fe);
+        outline-color: #b8d6fb !important;
+    }
+}

@@ -4,6 +4,7 @@
 // @author			Travis
 // @include			main
 // @include         chrome://browser/content/aboutDialog.xhtml
+// @include         about:*
 // ==/UserScript==
 
 let root = document.documentElement;

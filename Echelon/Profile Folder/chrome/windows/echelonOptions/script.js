@@ -90,6 +90,9 @@ function switchTab(e)
     /* Update sections */
     document.querySelector(".section-selected").classList.remove("section-selected");
     document.getElementById(`section-${id}`).classList.add("section-selected");
+
+    /* Update content element */
+    document.getElementById("content").dataset.tab = id;
 }
 
 for (const tab of document.querySelectorAll(".tab"))
