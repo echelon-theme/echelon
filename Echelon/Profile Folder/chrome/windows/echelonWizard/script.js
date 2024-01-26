@@ -3,6 +3,7 @@ let currentPage = 0; // Default to the first page
 // ECHELON SETTINGS
 let echelonAppearanceBlue = "Echelon.Appearance.Blue";
 let echelonAppearanceStyle = "Echelon.Appearance.Style";
+let echelonAppearanceNewLogo = "Echelon.Appearance.NewLogo";
 let echelonParameterisFirstRunFinished = "Echelon.parameter.isFirstRunFinished";
 
 let setBoolPref = Services.prefs.setBoolPref;

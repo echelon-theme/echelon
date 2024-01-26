@@ -22,7 +22,8 @@
 }
 
 :root #navigator-toolbox > toolbar,
-:root:is([style*="--lwt-accent-color: rgb(28, 27, 34);"], [style*="--lwt-accent-color: rgb(240, 240, 244);"]) #navigator-toolbox > toolbar {
+:root:is([style*="--lwt-accent-color: rgb(28, 27, 34);"], [style*="--lwt-accent-color: rgb(240, 240, 244);"]) #navigator-toolbox > toolbar,
+.notificationbox-stack {
   background-color: -moz-Dialog !important;
 }
 

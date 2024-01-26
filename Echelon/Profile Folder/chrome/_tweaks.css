@@ -623,9 +623,11 @@
   padding-left: 0 !important;
 }
 
-#main-window[echelon-style-4] .titlebar-buttonbox-container {
-  position: relative !important;
-  right: -6px !important;
+@media (-moz-windows-compositor) {
+  #main-window[echelon-style-4] .titlebar-buttonbox-container {
+    position: relative !important;
+    right: -6px !important;
+  }
 }
 
 #main-window[echelon-style-4] .tabbrowser-tab:not([pinned="true"])[label="New Tab"] .tab-icon-image {
@@ -636,7 +638,8 @@
   display: none !important;
 }
 
-#main-window[echelon-style-4] .close-icon {
+#main-window[echelon-style-4] .close-icon,
+#main-window[echelon-style-4] .ghost-button {
   background-image: url('images/close_australis.png') !important;
 }
 
@@ -976,7 +979,7 @@
   fill: #B2B2B2 !important;
 }
 
-#main-window .urlbarView-row[type="bookmark"] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
+#main-window[echelon-style-5] #main-window .urlbarView-row[type="bookmark"] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
   background-image: url('images/ff56/bookmark.svg') !important;
 }
 
@@ -1118,6 +1121,130 @@
       max-width: unset !important;
       flex-basis: 0 !important;
     }
+}
+
+/** BASIC THEME **/
+@media not (-moz-windows-compositor),
+@supports -moz-bool-pref("Echelon.Appearance.XP") {
+  .titlebar-buttonbox-container {
+    top: 3px !important;
+  }
+  #appmenu-button-container {
+    height: calc(var(--titlebar-height) + 6px) !important;
+  }
+  #nav-bar,
+  #PersonalToolbar,
+  #main-window[sizemode="normal"] #browser,
+  #customization-container {
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-bottom: 0 !important;
+    border-radius: 0 !important;
+  }
+  #TabsToolbar {
+    padding-inline: 0 !important;
+  }
+  #navigator-toolbox::after {
+    width: 100% !important;
+    left: 0 !important;
+  }
+}
+
+/** APPEARANCE ON WINDOWS XP **/
+
+@supports -moz-bool-pref("Echelon.Appearance.XP") {
+  ::placeholder {
+    opacity: 1 !important;
+  }
+  
+  #TabsToolbar:not(:-moz-lwtheme) {
+    background-image: none !important;
+  }
+  
+  #main-window:not([echelon-style-4]) #TabsToolbar,
+  #main-window:not([echelon-style-4]) #toolbar-menubar {
+    background-color: -moz-Dialog !important;
+  }
+  
+  #main-window:not([echelon-style-4]) #TabsToolbar:not(:-moz-lwtheme) {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.05) 1px, transparent 50%) !important;
+  }
+  
+  .search-go-button,
+  .textbox-search-sign {
+    background-image: url('images/xp/Search-Glass.png') !important;
+  }
+  
+  .tab-background,
+  #tabs-newtab-button {
+    background-image: linear-gradient(hsla(51,34%,89%,.9), hsla(51,15%,79%,.9) 1px, hsla(51,9%,68%,.9)) !important;
+  }
+  
+  .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"], [multiselected]),
+  #tabs-newtab-button:hover, #tabs-newtab-button[open] {
+    background-image: linear-gradient(hsla(51,34%,100%,.9), hsla(51,15%,94%,.9) 1px, hsla(51,9%,83%,.9)) !important;
+  }
+  
+  #TabsToolbar {
+    padding-inline: 2px !important;
+  }
+  
+  .bookmark-item[container][query] .toolbarbutton-icon {
+    background-image: url('images/xp/query.png') !important;
+  }
+  
+  .bookmark-item[container] .toolbarbutton-icon, .menu-iconic[container] .menu-iconic-icon,
+  .tab-icon-image:not([src]), .tab-icon-image:-moz-broken {
+    background-image: url('images/xp/folder-item.png') !important;
+  }
+  
+  treechildren::-moz-tree-twisty {
+    list-style-image: url('images/xp/twisty-clsd.png') !important;
+  }
+
+  treechildren::-moz-tree-twisty(open) {
+    list-style-image: url('images/xp/twisty-open.png') !important;
+  }
+  
+  /* Trees don't support background-image */
+  treechildren::-moz-tree-image(container),
+  treechildren::-moz-tree-image(title, query, hostContainer) {
+    list-style-image: url(images/xp/bookmarksFolder.png) !important;
+  }
+
+  treechildren::-moz-tree-image(container, query) {
+    list-style-image: url(images/xp/query.png) !important;
+  }
+
+  /* Have to do this because Smart Folders above this changes the icon */
+  treechildren::-moz-tree-image(title, query, hostContainer) {
+    list-style-image: url(images/xp/bookmarksFolder.png) !important;
+  }
+
+  treechildren::-moz-tree-image(container, queryFolder_toolbar_____) {
+    list-style-image: url(images/xp/bookmarksToolbar.png) !important;
+  }
+
+  treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksMenu),
+  treechildren::-moz-tree-image(container, queryFolder_menu________) {
+    list-style-image: url(images/bookmarksMenu.png) !important;
+  }
+
+  treechildren::-moz-tree-image(container, OrganizerQuery_UnfiledBookmarks),
+  treechildren::-moz-tree-image(container, queryFolder_unfiled_____) {
+    list-style-image: url(images/xp/unsortedBookmarks.png) !important;
+  }
+
+  treechildren::-moz-tree-image(query, OrganizerQuery_history____v),
+  treechildren::-moz-tree-image(title, query, dayContainer) {
+    list-style-image: url(images/xp/calendar.png) !important;
+  }
+
+  treechildren::-moz-tree-image(title, query, tagContainer),
+  treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
+    list-style-image: url("images/tag.png") !important;
+  }
+  
 }
 
 /** THEME SUPPORT **/

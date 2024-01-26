@@ -1,6 +1,11 @@
 #TabsToolbar {
   padding-inline: 4px !important;
-  background-image: none !important;
+}
+
+@supports not -moz-bool-pref("Echelon.Appearance.XP") {
+  #TabsToolbar {
+    background-image: none !important;
+  }
 }
 
 #tabbrowser-tabs, #tabbrowser-arrowscrollbox, #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
@@ -86,7 +91,8 @@
   background-image: linear-gradient(to top, rgba(10%,10%,10%,.4) 1px, transparent 1px), var(--tab-background-hover), linear-gradient(-moz-dialog, -moz-dialog) !important;
 }
 
-.close-icon {
+.close-icon,
+.ghost-button {
   width: 16px !important;
   height: 16px !important;
   padding: 0 !important;
@@ -94,15 +100,18 @@
   border-radius: 0 !important;
   list-style-image: none !important;
   background-image: url("images/close.png") !important;
+  background-position-x: 0 !important;
 }
 
 .close-icon:hover,
-.tabbrowser-tab:not([visuallyselected="true"]) .close-icon:hover {
+.tabbrowser-tab:not([visuallyselected="true"]) .close-icon:hover,
+.ghost-button:hover {
   background-position-x: -16px !important;
 }
 
 .close-icon:active,
-.tabbrowser-tab:not([visuallyselected="true"]) .close-icon:active {
+.tabbrowser-tab:not([visuallyselected="true"]) .close-icon:active,
+.ghost-button:active {
   background-position-x: -32px !important;
 }
 
@@ -224,8 +233,14 @@
 }
 
 .tab-icon-image:not([src]), .tab-icon-image:-moz-broken {
-  content: url('images/defaultFavicon.png') !important;
+  content: url('images/transparent.png') !important;
   background-image: url('images/folder-item.png') !important;
+}
+
+#main-window[echelon-style-2] .tab-icon-image:not([src]), 
+#main-window[echelon-style-2] .tab-icon-image:-moz-broken {
+  content: url('images/defaultFavicon.png') !important;
+  background-image: none !important;
 }
 
 .tab-icon-stack:not([busy="true"]) .tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]) {
@@ -266,6 +281,11 @@ spacer[part="overflow-start-indicator"] {
 
 #private-browsing-indicator-with-label {
   display: none !important;
+}
+
+:root[sizemode="normal"] #toolbar-menubar[autohide="true"][inactive] + #TabsToolbar > .toolbar-items {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
 
 /* Fix white inactive tabs */

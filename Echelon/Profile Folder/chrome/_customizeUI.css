@@ -51,8 +51,10 @@
   padding-inline: 10px !important;
 }
 
-#main-window[echelon-style-4][customizing] .titlebar-buttonbox-container {
-  right: calc(-11px - 2em) !important;
+@media (-moz-windows-compositor) {
+  #main-window[echelon-style-4][customizing] .titlebar-buttonbox-container {
+    right: calc(-11px - 2em) !important;
+  }
 }
 
 #nav-bar[customizing] {

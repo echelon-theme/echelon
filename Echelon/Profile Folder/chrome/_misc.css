@@ -162,7 +162,8 @@ toolbarbutton.bookmark-item {
   margin: 0 !important;
 }
 
-.bookmark-item[container] .toolbarbutton-icon {
+.bookmark-item[container] .toolbarbutton-icon,
+.menu-iconic[container] .menu-iconic-icon {
   background-image: url('images/folder-item.png') !important;
   list-style-image: none !important;
   background-position-x: -16px !important;
@@ -194,27 +195,29 @@ toolbarbutton.bookmark-item {
 
 /* Fix Menu Bar */
 
-#toolbar-menubar:not(:-moz-lwtheme) {
-  text-shadow: 0 0 .5em white, 0 0 .5em white, 0 1px 0 rgba(255,255,255,.4);
-}
+@supports not -moz-bool-pref("Echelon.Appearance.XP") {
+  #toolbar-menubar:not(:-moz-lwtheme) {
+    text-shadow: 0 0 .5em white, 0 0 .5em white, 0 1px 0 rgba(255,255,255,.4);
+  }
 
-#main-menubar:not(:-moz-lwtheme, :-moz-window-inactive) {
-  background-color: rgba(255,255,255,.5);
-  color: black;
-  border-radius: 4px;
-}
+  #main-menubar:not(:-moz-lwtheme, :-moz-window-inactive) {
+    background-color: rgba(255,255,255,.5);
+    color: black;
+    border-radius: 4px;
+  }
 
-/* Artificially draw window borders that are covered by lwtheme, see bug 591930.
-* We use a different border for win8, and this win10+ only needs this if
-* drawing in the titlebar (-moz-windows-accent-color-in-titlebar). */
-#main-window[sizemode="normal"] #navigator-toolbox:-moz-lwtheme {
-  border-top: 1px solid var(--glass-active-border-color);
-  padding-top: 1px;
-  box-shadow: 0 1px 0 rgba(255,255,255,.6) inset;
-}
+  /* Artificially draw window borders that are covered by lwtheme, see bug 591930.
+  * We use a different border for win8, and this win10+ only needs this if
+  * drawing in the titlebar (-moz-windows-accent-color-in-titlebar). */
+  #main-window[sizemode="normal"] #navigator-toolbox:-moz-lwtheme {
+    border-top: 1px solid var(--glass-active-border-color);
+    padding-top: 1px;
+    box-shadow: 0 1px 0 rgba(255,255,255,.6) inset;
+  }
 
-#main-window[sizemode="normal"] #navigator-toolbox:-moz-lwtheme:-moz-window-inactive {
-  border-top-color: var(--glass-inactive-border-color);
+  #main-window[sizemode="normal"] #navigator-toolbox:-moz-lwtheme:-moz-window-inactive {
+    border-top-color: var(--glass-inactive-border-color);
+  }
 }
 
 #main-menubar > menu {
@@ -434,6 +437,66 @@ findbar .checkbox-check {
   background-position-x: -12px !important;
 }
 
+/* Pop Ups */
+#tab-notification-deck {
+  border-left: 1px solid rgba(26, 26, 26, 0.4) !important;
+  border-right: 1px solid rgba(26, 26, 26, 0.4) !important;
+}
+
+notification-message {
+  border-top: 1px solid ThreeDHighlight !important;
+  border-left: 1px solid ThreeDHighlight !important;
+  border-bottom: 1px solid ThreeDShadow !important;
+  border-right: 1px solid ThreeDShadow !important;
+}
+
+.notification-button {
+  appearance: button !important;
+  font-size: revert !important;
+  font-weight: revert !important;
+  margin: 0 !important;
+}
+
+/* Hack to remove padding but don't break the notification message */
+
+notification-message {
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+notification-message[style="margin-top: -34px; opacity: 0;"] {
+  margin-top: -34px !important;
+}
+
+.container.infobar {
+  align-items: center !important;
+  border-radius: 0 !important;
+  background-color: infobackground !important;
+  color: infotext !important;
+}
+
+.container.infobar::before {
+  display: none !important;
+}
+
+.infobar > .icon,
+.notification-content {
+  margin-inline-start: 6px !important;
+}
+
+.ghost-button {
+  background-size: unset !important;
+}
+
+.notification-content {
+  display: flex !important;
+  width: 100% !important;
+}
+
+.notification-message {
+  flex: 1 !important;
+}
+
 /* Sidebar */
 
 .sidebar-panel {
@@ -518,7 +581,7 @@ findbar .checkbox-check {
   margin-top: 1px !important;
 }
 
-splitter {
+#sidebar-splitter {
   margin-inline-start: 0 !important;
   border-width: 0 1px !important;
   border-left-color: ThreeDShadow !important;
@@ -551,20 +614,22 @@ treechildren::-moz-tree-row(selected, current, focus) {
   outline-color: #F3D982 !important;
 }
 
-treechildren::-moz-tree-twisty {
-  list-style-image: url('images/twisty-clsd.png') !important;
-}
+@supports not -moz-bool-pref("Echelon.Appearance.XP") {
+  treechildren::-moz-tree-twisty {
+    list-style-image: url('images/twisty-clsd.png') !important;
+  }
 
-treechildren::-moz-tree-twisty(hover) {
-  list-style-image: url('images/twisty-clsd-hover.png') !important;
-}
+  treechildren::-moz-tree-twisty(hover) {
+    list-style-image: url('images/twisty-clsd-hover.png') !important;
+  }
 
-treechildren::-moz-tree-twisty(open) {
-  list-style-image: url('images/twisty-open.png') !important;
-}
+  treechildren::-moz-tree-twisty(open) {
+    list-style-image: url('images/twisty-open.png') !important;
+  }
 
-treechildren::-moz-tree-twisty(hover, open) {
-  list-style-image: url('images/twisty-open-hover.png') !important;
+  treechildren::-moz-tree-twisty(hover, open) {
+    list-style-image: url('images/twisty-open-hover.png') !important;
+  }
 }
 
 /* Trees don't support background-image */
