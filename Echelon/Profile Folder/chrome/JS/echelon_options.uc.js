@@ -19,6 +19,18 @@ function addEchelonOptionsMenuItem()
         console.log(echelonPrefsItem);
         prefsItem.append(echelonPrefsItem);
     });
+	waitForElement("#toolbar-context-menu").then((prefsItem) => {
+        let echelonPrefsItem = window.MozXULElement.parseXULToFragment(`
+            <menuitem id="menu_echelonOptions" oncommand="launchEchelonOptions();" label="Echelon Options" accesskey="E">
+                <label class="menu-text" crop="end" aria-hidden="true" value="Echelon Options" accesskey="E" />
+                <hbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" class="menu-accel-container" aria-hidden="true">
+                    <label class="menu-accel" />
+                </hbox>
+            </menuitem>
+        `);
+        console.log(echelonPrefsItem);
+        prefsItem.insertBefore(echelonPrefsItem, document.querySelector(".viewCustomizeToolbar"));
+    });
 }
 
 function launchEchelonOptions()
