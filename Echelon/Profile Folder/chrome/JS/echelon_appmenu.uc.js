@@ -1,20 +1,14 @@
 // ==UserScript==
-// @name			Echelon :: Firefox Button
-// @description 	Adds back Firefox button.
+// @name			Echelon :: Appmenu
+// @description 	Adds back appmenu (Firefox menu) functionality.
 // @author			Travis, ephemeralViolette
 // @include			main
 // ==/UserScript==
 
-// THIS IS THE CURRENT DEVELOPMENT VERSION
-
-//const { utils } = ChromeUtils.importESModule("chrome://userscripts/content/echelon_utils.sys.mjs");
 let g_echelonFirefoxButton = null;
 
-
-//console.log(utils);
-//const renderElement = utils.renderElement;
-
-function setAttributes(element, attributes) {
+function setAttributes(element, attributes)
+{
 	Object.keys(attributes).forEach(attr => {
 		element.setAttribute(attr, attributes[attr]);
 	});
@@ -718,8 +712,8 @@ class FirefoxButton
 						elm("xul:menuitem", {
 							"id": "appmenu_toggleTabsOnTop",
 							"label": "Tabs on Top",
-							"type": "checkbox"
-							// Functionality is gone for now
+							"type": "checkbox",
+							"oncommand": "g_echelonLayoutManager.setTabsOnTop(Boolean(this.getAttribute('checked')))"
 						}),
 						elm("xul:menuitem", {
 							"id": "appmenu_toolbarLayout",
@@ -843,12 +837,27 @@ class FirefoxButton
 		
 		return result;
 	}
+	
+	onUpdateTabsOnTop(state)
+	{
+		let tabsOnTopButton = this.menuEl.querySelector("#appmenu_toggleTabsOnTop");
+		
+		if (state == true)
+		{
+			tabsOnTopButton.setAttribute("checked", "true");
+		}
+		else
+		{
+			tabsOnTopButton.removeAttribute("checked");
+		}
+	}
 }
 
 /**
  * Public export.
  */
-function createAppMenuButton() {
+function createAppMenuButton()
+{
 	g_echelonFirefoxButton = new FirefoxButton();
 	console.log("[echelon debug] appmenu instance: ", g_echelonFirefoxButton);
 }

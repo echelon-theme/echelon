@@ -38,3 +38,9 @@ restartNow.addEventListener("click", function() {
 	
     _ucUtils.restart(true);
 }); 
+
+document.documentElement.addEventListener('keypress', function(e) {
+	if (e.key == "Escape") {
+		window.close();
+	}
+});

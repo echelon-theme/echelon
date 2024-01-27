@@ -20,7 +20,7 @@
   border: 1px solid;
   border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.37) !important;
   border-radius: var(--toolbarbutton-border-radius);
-  background-clip: padding-box;
+  background-clip: padding-box !important;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.4) !important;
   background-color: rgba(255, 255, 255, 0.725) !important;
   outline: 0 !important;
@@ -357,7 +357,9 @@
   border-left: 0 !important;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.4) !important;
   background-color: rgba(255, 255, 255, 0.725) !important;
+  background-clip: padding-box !important;
   align-self: center !important;
+  overflow: hidden !important;
 }
 
 #reload-button.unified,

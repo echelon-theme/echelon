@@ -101,3 +101,9 @@ for (const tab of document.querySelectorAll(".tab"))
 }
 
 document.getElementById("custom-name").placeholder = Services.appinfo.name;
+
+document.documentElement.addEventListener('keypress', function(e) {
+	if (e.key == "Escape") {
+		window.close();
+	}
+});

@@ -4,7 +4,7 @@
   top: 0 !important;
 }
 
-:root[sizemode="maximized"] .titlebar-buttonbox-container {
+:root[tabs-on-top][sizemode="maximized"] .titlebar-buttonbox-container {
   position: static !important;
 }
 
@@ -163,7 +163,7 @@ toolbarbutton.bookmark-item {
 }
 
 .bookmark-item[container] .toolbarbutton-icon,
-.menu-iconic[container] .menu-iconic-icon {
+.menu-iconic[container] > .menu-iconic-left > .menu-iconic-icon {
   background-image: url('images/folder-item.png') !important;
   list-style-image: none !important;
   background-position-x: -16px !important;

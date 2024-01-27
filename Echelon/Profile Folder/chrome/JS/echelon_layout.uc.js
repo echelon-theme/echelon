@@ -16,13 +16,83 @@ class LayoutManager
 	
 	async init()
 	{
+		this.initTabsOnTop();
+		
 		let toolboxRoot = await waitForElement("#navigator-toolbox");
 		toolboxRoot.addEventListener("customizationchange", this);
 		toolboxRoot.addEventListener("aftercustomization", this);
-		this.refreshLayout();
+		this.refreshToolboxLayout();
 	}
 	
-	refreshLayout()
+	initTabsOnTop()
+	{
+		try
+		{
+			this._applyTabsOnTopFromPrefs();
+		}
+		catch (e)
+		{
+			if (e.name == "NS_ERROR_UNEXPECTED") // preference does not exist
+			{
+				try
+				{
+					Services.prefs.setBoolPref("Echelon.Appearance.TabsOnTop", true);
+				}
+				catch (e) {}
+			}
+		}
+		
+		Services.prefs.addObserver("Echelon.Appearance.TabsOnTop", this._applyTabsOnTopFromPrefs.bind(this));
+	}
+	
+	setTabsOnTop(state)
+	{
+		Services.prefs.setBoolPref("Echelon.Appearance.TabsOnTop", state);
+		this._applyTabsOnTopState(state);
+	}
+	
+	_applyTabsOnTopFromPrefs()
+	{
+		let newState = Services.prefs.getBoolPref("Echelon.Appearance.TabsOnTop");
+		this._applyTabsOnTopState(newState);
+	}
+	
+	/**
+	 * Applies the user's tabs on top preference.
+	 *
+	 * If the tabs are on top, then they are static and their layout cannot be changed. If they are
+	 * not on top, then tabs are a flexible toolbar via CustomizeUI.
+	 */
+	_applyTabsOnTopState(state)
+	{
+		let tabsContainer = document.querySelector("#TabsToolbar");
+		
+		if (!tabsContainer)
+		{
+			console.log("???", document);
+			return;
+		}
+		
+		if (state == true)
+		{
+			document.querySelector("#titlebar").appendChild(tabsContainer);
+			document.documentElement.setAttribute("tabs-on-top", "true");
+		}
+		else
+		{
+			document.querySelector("#PersonalToolbar").insertAdjacentElement("afterend", tabsContainer);
+			document.documentElement.removeAttribute("tabs-on-top");
+		}
+		
+		// In lieu of an actual global messaging system, we will just message directly to modules that need it:
+		// (this should be cleaned up in the future)
+		if (g_echelonFirefoxButton)
+		{
+			g_echelonFirefoxButton.onUpdateTabsOnTop(state);
+		}
+	}
+	
+	refreshToolboxLayout()
 	{
 		// Update reload button
 		let reloadButtonEl;
@@ -80,3 +150,37 @@ echelonInitLayout = function()
 };
 	
 })();
+
+function addEchelonTabsOnTopMenuItem() {
+	waitForElement("#toolbar-context-menu").then((prefsItem) => {
+        let echelonTabsOnTopItem = window.MozXULElement.parseXULToFragment(`
+            <menuitem id="menu_echelonTabsOnTop" oncommand="g_echelonLayoutManager.setTabsOnTop(Boolean(this.getAttribute('checked')))" type="checkbox" label="Tabs on Top" accesskey="T">
+				<hbox class="menu-iconic-left" align="center" pack="center" aria-hidden="true">
+					<image class="menu-iconic-icon"/>
+				</hbox>
+				<label class="menu-iconic-text" flex="1" crop="end" aria-hidden="true" value="Tabs on Top" accesskey="T"/>
+                <hbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" class="menu-accel-container" aria-hidden="true">
+                    <label class="menu-accel" />
+                </hbox>
+            </menuitem>
+			<menuseparator xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="tabsOnTopMenuSeparator"/>
+        `);
+        console.log(echelonTabsOnTopItem);
+        prefsItem.insertBefore(echelonTabsOnTopItem, document.querySelector("#menu_echelonOptions"));
+		
+		let isTabsOnTop = Services.prefs.getBoolPref("Echelon.Appearance.TabsOnTop");
+		let contextMenuItem = document.querySelector("#menu_echelonTabsOnTop");
+		
+		if (contextMenuItem)
+		{
+			if (isTabsOnTop == true)
+			{
+				contextMenuItem.setAttribute("checked", "true");
+			}
+			else
+			{
+				contextMenuItem.removeAttribute("checked");
+			}
+		}
+    });
+}

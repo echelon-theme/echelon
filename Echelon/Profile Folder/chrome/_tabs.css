@@ -38,7 +38,7 @@
   transition: min-width 200ms ease-out, max-width 250ms ease-out , opacity 50ms ease-out 100ms !important;
 }
 
-.tabbrowser-tab[visuallyselected="true"] {
+#main-window[tabs-on-top] .tabbrowser-tab[visuallyselected="true"] {
   z-index: 999 !important;
 }
 

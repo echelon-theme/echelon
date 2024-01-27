@@ -108,7 +108,7 @@
 }
 
 #main-window[echelon-style-2] #back-button ~ #forward-button:not(:hover)[disabled="true"] {
-  margin-inline-start: -30px !important;
+  margin-inline-start: -32px !important;
   opacity: 0 !important;
   pointer-events: none !important;
 }
@@ -1245,6 +1245,60 @@
     list-style-image: url("images/tag.png") !important;
   }
   
+}
+
+/** TABS ON BOTTOM **/
+
+#main-window:not([tabs-on-top]) #nav-bar {
+  background-image: none !important;
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+#main-window:not([tabs-on-top]) #TabsToolbar {
+  background-clip: padding-box !important;
+  border-left: 1px solid rgba(10%,10%,10%,.4) !important;
+  border-right: 1px solid rgba(10%,10%,10%,.4) !important;
+  padding-inline: 2px !important;
+}
+
+#main-window:not([tabs-on-top]) #PersonalToolbar {
+  border-top-left-radius: var(--toolbar-border-radius) !important;
+  border-top-right-radius: var(--toolbar-border-radius) !important;
+  border-top: 1px solid rgba(10%,10%,10%,.4) !important;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)) !important;
+}
+
+#main-window[tabsintitlebar][sizemode="normal"]:not([tabs-on-top]) #titlebar {
+  appearance: none !important;
+}
+
+#main-window:not([tabs-on-top], [echelon-style-4]) #TabsToolbar:not(:-moz-lwtheme) {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.05) 1px, transparent 50%) !important;
+}
+
+#main-window:not([tabs-on-top], [echelon-style-4]) #TabsToolbar:not(:-moz-lwtheme)::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(0 0 0 / 35%);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+#main-window:not([tabs-on-top], [echelon-style-4]) #PersonalToolbar[collapsed="true"] + #TabsToolbar:not(:-moz-lwtheme) {
+  border: 0 !important;
+  background-color: transparent !important;
+}
+
+#main-window:not([tabs-on-top]) #navigator-toolbox::after {
+  display: none !important;
+}
+
+#main-window:not([tabs-on-top]) #back-button {
+  margin-inline-start: 5px !important;
 }
 
 /** THEME SUPPORT **/
