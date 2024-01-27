@@ -109,3 +109,33 @@ function trySetStringPref(name, value)
 {
 	internalTrySetPref(name, value, Services.prefs.setStringPref);
 }
+
+function getDefaultFirefoxButtonText()
+{
+	switch (Services.appinfo.defaultUpdateChannel)
+	{
+		case "nightly":
+			return "Nightly";
+		case "aurora":
+			return "Aurora";
+		default:
+			return Services.appinfo.name;
+	}
+}
+
+function getFullProductName()
+{
+	switch (Services.appinfo.defaultUpdateChannel)
+	{
+		case "nightly":
+			return "Nightly";
+		case "aurora":
+			return "Aurora";
+		default:
+			if (Services.appinfo.name == "Firefox")
+			{
+				return "Mozilla Firefox";
+			}
+			return Services.appinfo.name;
+	}
+}

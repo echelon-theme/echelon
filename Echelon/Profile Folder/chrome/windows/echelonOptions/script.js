@@ -1,38 +1,19 @@
+Services.scriptloader.loadSubScript("chrome://userchrome/content/JS/echelon_utils.uc.js");
+
 /* Fill current values */
 for (const option of document.querySelectorAll(".option"))
 {   
     switch (option.dataset.type)
     {
         case "bool":
-        {
-            let value = false;
-            try
-            {
-                value = Services.prefs.getBoolPref(option.dataset.option);
-            } catch (e) {}
-            option.checked = value;
+            option.checked = tryGetBoolPref(option.dataset.option);
             break;
-        }
         case "enum":
-        {
-            let value = 0;
-            try
-            {
-                value = Services.prefs.getIntPref(option.dataset.option);
-            } catch (e) {}
-            option.value = value;
+            option.value = tryGetIntPref(option.dataset.option);
             break;
-        }
         case "string":
-        {
-            let value = "";
-            try
-            {
-                value = Services.prefs.getStringPref(option.dataset.option);
-            } catch (e) {}
-            option.value = value;
+            option.value = tryGetStringPref(option.dataset.option);
             break;
-        }
     }
 }
 
@@ -44,29 +25,14 @@ document.getElementById("ok-button").addEventListener("click", function()
         switch (option.dataset.type)
         {
             case "bool":
-            {
-                try
-                {
-                    Services.prefs.setBoolPref(option.dataset.option, option.checked);
-                } catch (e) {}
+                trySetBoolPref(option.dataset.option, option.checked);
                 break;
-            }
             case "enum":
-            {
-                try
-                {
-                    Services.prefs.setIntPref(option.dataset.option, Number(option.value));
-                } catch (e) {}
+                trySetIntPref(option.dataset.option, Number(option.value));
                 break;
-            }
             case "string":
-            {
-                try
-                {
-                    Services.prefs.setStringPref(option.dataset.option, option.value);
-                } catch (e) {}
+                trySetStringPref(option.dataset.option, option.value);
                 break;
-            }
         }
     }
 
@@ -99,8 +65,7 @@ for (const tab of document.querySelectorAll(".tab"))
 {
     tab.addEventListener("click", switchTab);
 }
-
-document.getElementById("custom-name").placeholder = Services.appinfo.name;
+document.getElementById("custom-name").placeholder = getDefaultFirefoxButtonText();
 
 document.documentElement.addEventListener('keypress', function(e) {
 	if (e.key == "Escape") {

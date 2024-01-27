@@ -227,14 +227,14 @@ class FirefoxButton
 			// Button creation and insertion
 			//
 			let titlebarEl = document.getElementById("titlebar");
-			let browserName = Services.appinfo.name;
+			let browserName = getDefaultFirefoxButtonText();
 
 			if (useCustomStyle)
 			{
 				browserName = tryGetStringPref("Echelon.FirefoxButton.CustomName");
 				if (browserName === "")
 				{
-					browserName = Services.appinfo.name;
+					browserName = getDefaultFirefoxButtonText();
 				}
 			}
 			
