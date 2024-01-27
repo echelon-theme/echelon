@@ -19,7 +19,7 @@ var FaviconInUrlbar = {
 						favicon_in_urlbar = default_favicon;
 					}
 						
-					let style = Services.prefs.getIntPref("Echelon.Appearance.Style");
+					let style = tryGetIntPref("Echelon.Appearance.Style");
 					if (style < 3)
 					{
 						document.querySelector('#identity-icon').setAttribute("style", "list-style-image: url('"+favicon_in_urlbar+"');");

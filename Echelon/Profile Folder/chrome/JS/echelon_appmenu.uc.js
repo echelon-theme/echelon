@@ -201,35 +201,26 @@ class FirefoxButton
 	{
 		try
 		{
-			let useCustomStyle = false;
-			try
-			{
-				useCustomStyle = Services.prefs.getBoolPref("Echelon.FirefoxButton.CustomStyle");
-			} catch (e) {}
+			let useCustomStyle = tryGetBoolPref("Echelon.FirefoxButton.CustomStyle");
 
 			//
 			// 	Custom Firefox Button name & background color
 			//
-			let getStringPref = Services.prefs.getStringPref;
 			if (useCustomStyle)
 			{
-				let fxButtonBgColor = null;
-				try
-				{
-					fxButtonBgColor = getStringPref("Echelon.FirefoxButton.CustomBGColor");
+				let fxButtonBgColor = tryGetStringPref("Echelon.FirefoxButton.CustomBGColor");
 					
-					let root = document.documentElement;
-					root.setAttribute("custom-fx-button-bg", "true");
-					
-					let styleElement = document.createElement('style');
-					document.head.appendChild(styleElement);
+				let root = document.documentElement;
+				root.setAttribute("custom-fx-button-bg", "true");
+				
+				let styleElement = document.createElement('style');
+				document.head.appendChild(styleElement);
 
-					styleElement.innerHTML = `
-						:root {
-							--fx-custom-bg: `+ fxButtonBgColor + `;
-						}
-					`;
-				} catch (e) {}
+				styleElement.innerHTML = `
+					:root {
+						--fx-custom-bg: `+ fxButtonBgColor + `;
+					}
+				`;
 			}
 			
 			//
@@ -240,14 +231,11 @@ class FirefoxButton
 
 			if (useCustomStyle)
 			{
-				try
+				browserName = tryGetStringPref("Echelon.FirefoxButton.CustomName");
+				if (browserName === "")
 				{
-					browserName = getStringPref("Echelon.FirefoxButton.CustomName");
-				} catch (e) {}
-			}
-			
-			if (browserName === "") {
-				browserName = Services.appinfo.name;
+					browserName = Services.appinfo.name;
+				}
 			}
 			
 			this.appMenuButtonContainerEl = document.createXULElement("hbox");

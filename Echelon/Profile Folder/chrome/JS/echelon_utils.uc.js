@@ -59,3 +59,53 @@ async function waitForElement(query, parent = document, timeout = -1)
 	
 	return parent.querySelector(query);
 }
+
+function internalTryGetPref(name, fallback, func)
+{
+	let result = fallback;
+	try
+	{
+		result = func(name);
+	}
+	catch (e) {}
+	return result;
+}
+
+function tryGetBoolPref(name, fallback = false)
+{
+	return internalTryGetPref(name, fallback, Services.prefs.getBoolPref);
+}
+
+function tryGetIntPref(name, fallback = 0)
+{
+	return internalTryGetPref(name, fallback, Services.prefs.getIntPref);
+}
+
+function tryGetStringPref(name, fallback = "")
+{
+	return internalTryGetPref(name, fallback, Services.prefs.getStringPref);
+}
+
+function internalTrySetPref(name, value, func)
+{
+	try
+	{
+		func(name, value);
+	}
+	catch (e) {}
+}
+
+function trySetBoolPref(name, value)
+{
+	internalTrySetPref(name, value, Services.prefs.setBoolPref);
+}
+
+function trySetIntPref(name, value)
+{
+	internalTrySetPref(name, value, Services.prefs.setIntPref);
+}
+
+function trySetStringPref(name, value)
+{
+	internalTrySetPref(name, value, Services.prefs.setStringPref);
+}
