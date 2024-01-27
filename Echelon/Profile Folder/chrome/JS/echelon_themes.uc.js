@@ -10,7 +10,7 @@
 let root = document.documentElement;
 
 let style = tryGetIntPref("Echelon.Appearance.Style");
-for (let i = 1; i <= style; i++)
+for (let i = 1; i <= theme; i++)
 {
     root.setAttribute(`echelon-style-${i}`, "true");
 }

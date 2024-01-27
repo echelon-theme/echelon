@@ -16,6 +16,8 @@ function executeFunctions() {
 	openEchelonWizardWindow(true);
 	addEchelonOptionsMenuItem();
 	addEchelonTabsOnTopMenuItem();
+	observeMenuBar();
+	changeTitleFormats();
     console.info("Functions executed.");
 }
 
