@@ -103,25 +103,46 @@
         position: relative !important;
     }
 
-    :root:not([echelon-style-4]) .button-add,
-    :root:not([echelon-style-4]) .button-save,
-    :root:not([echelon-style-4]) .button-edit,
-    :root:not([echelon-style-4]) .button-toggle,
-    :root:not([echelon-style-4]) .button-delete,
-    :root:not([echelon-style-4]) .button-reset {
-        appearance: button !important;
-        width: 18px !important;
-        min-height: 18px !important;
+    :root:not([echelon-style-4]) .cell-edit > button,
+    :root:not([echelon-style-4]) .cell-reset > button {
+        appearance: toolbarbutton !important;
+        width: 21px !important;
+        min-height: 21px !important;
         margin: 0 !important;
         margin-inline: 0 !important;
         position: absolute;
-        top: 3px;
+        top: 1px;
         left: 0;
+        padding: 0 !important;
+    }
+
+    :root:not([echelon-style-4]) .cell-edit > button::before,
+    :root:not([echelon-style-4]) .cell-reset > button::before {
+        content: "" !important;
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .button-add::before {
+        background-image: url("chrome://userchrome/content/pages/aboutConfig/images/new.png");
+    }
+
+    .button-edit::before,
+    .button-toggle::before {
+        background-image: url("chrome://userchrome/content/pages/aboutConfig/images/edit.png");
+    }
+
+    .button-delete::before {
+        background-image: url("chrome://userchrome/content/pages/aboutConfig/images/delete.png");
     }
 
     :root:not([echelon-style-4]) #prefs > tr > td.cell-edit,
     :root:not([echelon-style-4]) #prefs > tr > td.cell-reset {
-        width: 18px !important;
+        width: 22px !important;
     }
 
     :root:not([echelon-style-4]) #prefs > tr {
@@ -135,5 +156,26 @@
     :root:not([echelon-style-4]) #prefs > tr:hover {
         background-image: linear-gradient(to bottom, #f7faff, #edf5fe);
         outline-color: #b8d6fb !important;
+    }
+
+    :root:not([echelon-style-4]) .add > * {
+        border-top: 0 !important;
+    }
+
+    :root:not([echelon-style-4]) .add > *::before {
+        content: unset !important;
+    }
+
+    :root:not([echelon-style-4]) input[type="radio"] {
+        appearance: radio !important;
+        margin: 0 !important;
+        margin-top: 2px !important;
+        margin-right: 2px !important;
+    }
+
+    :root:not([echelon-style-4]) #form-edit > label {
+        max-height: 22px !important;
+        transform: translateY(-1px);
+        margin-inline-end: 8px !important;
     }
 }
