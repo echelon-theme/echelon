@@ -81,3 +81,9 @@ document.getElementById("default-title").placeholder = titles.default;
 document.getElementById("private-title").placeholder = titles.private;
 document.getElementById("default-content-title").placeholder = titles.contentDefault;
 document.getElementById("private-content-title").placeholder = titles.contentPrivate;
+
+fetch("chrome://userchrome/content/version.txt").then(r => {
+    r.text().then(t => {
+        document.querySelector("#echelon-ver-text b").innerText = t;
+    });
+});
