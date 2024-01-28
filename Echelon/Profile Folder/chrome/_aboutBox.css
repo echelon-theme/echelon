@@ -73,4 +73,51 @@
     [echelon-style-3] .text-link:hover {
         text-decoration: underline !important;
     }
+
+    :root[update-channel="aurora"] #trademark::after,
+    :root[update-channel="nightly"] #trademark::after {
+        content: unset !important;
+    }
+
+    :root[update-channel="aurora"] #leftBox,
+    :root[update-channel="nightly"] #leftBox {
+        background-image: none !important;
+    }
+
+    :root[update-channel="aurora"] #aboutDialogContainer {
+        background: #130824 no-repeat url("images/icons/alt/aurora/about-background.png") !important;
+    }
+
+    :root[update-channel="nightly"] #aboutDialogContainer {
+        background: #0a1125 no-repeat url("images/icons/alt/nightly/about-background.png") !important;
+    }
+
+    :root[update-channel="aurora"] #aboutDialogContainer,
+    :root[update-channel="nightly"] #aboutDialogContainer,
+    :root[update-channel="aurora"] #updateDeck,
+    :root[update-channel="nightly"] #updateDeck,
+    :root[update-channel="aurora"] .text-link,
+    :root[update-channel="nightly"] .text-link {
+        color: #fff !important;
+    }
+
+    :root[update-channel="aurora"] .text-link,
+    :root[update-channel="nightly"] .text-link {
+        text-decoration: underline !important;
+    }
+
+    :root[update-channel="aurora"] #bottomBox,
+    :root[update-channel="nightly"] #bottomBox {
+        background-color: rgba(0, 0, 0, 0.7) !important;
+    }
+
+    :root[update-channel="aurora"] #rightBox {
+        background-image: url("images/icons/alt/aurora/about-wordmark.svg") !important;
+        background-size: 264px auto !important;
+    }
+
+    :root[update-channel="nightly"] #rightBox {
+        background-image: url("images/icons/alt/nightly/about-wordmark.svg") !important;
+        background-size: 270px auto !important;
+    }
 }

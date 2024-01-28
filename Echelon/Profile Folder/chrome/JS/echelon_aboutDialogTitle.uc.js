@@ -4,7 +4,7 @@
 // @author			Travis
 // @include			chrome://browser/content/aboutDialog.xhtml
 // @exclude			main
-// @loadOrder       1
+// @loadOrder       2
 // ==/UserScript==
 
 const aboutDialog = document.getElementById("aboutDialog");

@@ -1314,20 +1314,36 @@
 
 /** FIREFOX CHANNELS **/
 
-/* Nightly */
-
-#main-window[echelon-style-3][echelon-update-channel="nightly"] #identity-box.chromeUI #identity-icon {
-  background-image: url("images/identity-icons-brand_nightly.png") !important;
+/* Aurora (Dev Edition) */
+#main-window[echelon-style-3][update-channel="aurora"] #identity-box.chromeUI #identity-icon {
+  background-image: url("images/icons/alt/aurora/identity-icons-brand.png") !important;
 }
 
-#main-window[echelon-style-3][echelon-update-channel="nightly"] #identity-box:not(.localResource)[pageproxystate="valid"].chromeUI {
+#main-window[echelon-style-3][update-channel="aurora"] #identity-box:not(.localResource).chromeUI {
+  background-image: linear-gradient(rgba(51, 30, 84, 0),
+                                    rgba(51, 30, 84, 0.5) 35%,
+                                    rgba(51, 30, 84, 0.5) 65%,
+                                    rgba(51, 30, 84, 0)) !important;
+}
+
+#main-window[echelon-style-3][update-channel="aurora"] #identity-box.chromeUI #identity-icon-label {
+  color: #001D43 !important;
+}
+
+/* Nightly */
+
+#main-window[echelon-style-3][update-channel="nightly"] #identity-box.chromeUI #identity-icon {
+  background-image: url("images/icons/alt/nightly/identity-icons-brand.png") !important;
+}
+
+#main-window[echelon-style-3][update-channel="nightly"] #identity-box:not(.localResource).chromeUI {
   background-image: linear-gradient(rgba(0,33,71,0),
                                     rgba(0,33,71,.5) 35%,
                                     rgba(0,33,71,.5) 65%,
                                     rgba(0,33,71,0)) !important;
 }
 
-#main-window[echelon-style-3][echelon-update-channel="nightly"] #identity-box.chromeUI #identity-icon-label[value="Waterfox"] {
+#main-window[echelon-style-3][update-channel="nightly"] #identity-box.chromeUI #identity-icon-label {
   color: #001D43 !important;
 }
 
@@ -1336,17 +1352,17 @@
 /* Waterfox */
 
 #main-window[echelon-style-3][browser-name="Waterfox"] #identity-box.chromeUI #identity-icon {
-  background-image: url("images/identity-icons-brand_nightly.png") !important;
+  background-image: url("images/icons/alt/nightly/identity-icons-brand.png") !important;
 }
 
-#main-window[echelon-style-3][browser-name="Waterfox"] #identity-box:not(.localResource)[pageproxystate="valid"].chromeUI {
+#main-window[echelon-style-3][browser-name="Waterfox"] #identity-box:not(.localResource).chromeUI {
   background-image: linear-gradient(rgba(0,33,71,0),
                                     rgba(0,33,71,.5) 35%,
                                     rgba(0,33,71,.5) 65%,
                                     rgba(0,33,71,0)) !important;
 }
 
-#main-window[echelon-style-3][browser-name="Waterfox"] #identity-box.chromeUI #identity-icon-label[value="Waterfox"] {
+#main-window[echelon-style-3][browser-name="Waterfox"] #identity-box.chromeUI #identity-icon-label {
   color: #001D43 !important;
 }
 

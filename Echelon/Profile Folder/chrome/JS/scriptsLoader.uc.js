@@ -17,7 +17,9 @@ function executeFunctions() {
 	addEchelonOptionsMenuItem();
 	addEchelonTabsOnTopMenuItem();
 	observeMenuBar();
+	observeIdentityLabel();
 	changeTitleFormats();
+	updateAboutItem();
     console.info("Functions executed.");
 }
 

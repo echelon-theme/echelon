@@ -482,25 +482,35 @@ input, button {
 	display: flex;
 }
 
-/** Browser Forks **/
+/** Browser Forks / Other Branches **/
 
 /* Waterfox */
 :root[echelon-new-logo][browser-name="Waterfox"] .brandLogo {
-	background-image: url('chrome://userchrome/content/images/icons/forks/waterfox/about-logo.png');
+	background-image: url('chrome://userchrome/content/images/icons/alt/waterfox/about-logo.png');
 }
 
 :root[browser-name="Waterfox"] .brandLogo {
-	background-image: url('chrome://userchrome/content/images/icons/forks/waterfox/old/about-logo.png');
+	background-image: url('chrome://userchrome/content/images/icons/alt/waterfox/old/about-logo.png');
 }
 
 /* Superfox */
 :root[browser-name="Superfox"] .brandLogo {
-	background-image: url('chrome://userchrome/content/images/icons/forks/superfox/about-logo.png');
+	background-image: url('chrome://userchrome/content/images/icons/alt/superfox/about-logo.png');
 }
 
 :root:not([echelon-style="1"])[browser-name="Superfox"] #aboutMozilla::before {
 	width: 49px;
-	content: url("chrome://userchrome/content/images/icons/forks/superfox/win32-wordmark.png");
+	content: url("chrome://userchrome/content/images/icons/alt/superfox/win32-wordmark.png");
+}
+
+/* Aurora (Firefox Dev Edition) */
+:root[update-channel="aurora"] .brandLogo {
+	background-image: url('chrome://userchrome/content/images/icons/alt/aurora/about-logo.png');
+}
+
+/* Nightly */
+:root[update-channel="nightly"] .brandLogo {
+	background-image: url('chrome://userchrome/content/images/icons/alt/nightly/about-logo.png');
 }
 
 :root[echelon-style="1"][browser-name="Superfox"] #aboutMozilla::before {

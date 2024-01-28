@@ -10,11 +10,10 @@
 let root = document.documentElement;
 
 let style = tryGetIntPref("Echelon.Appearance.Style");
-for (let i = 1; i <= theme; i++)
+for (let i = 1; i <= style; i++)
 {
     root.setAttribute(`echelon-style-${i}`, "true");
 }
 
-let branch = tryGetStringPref("app.update.channel");
-root.setAttribute("echelon-update-channel", Services.appinfo.defaultUpdateChannel);
+root.setAttribute("update-channel", Services.appinfo.defaultUpdateChannel);
 root.setAttribute("browser-name", Services.appinfo.name);

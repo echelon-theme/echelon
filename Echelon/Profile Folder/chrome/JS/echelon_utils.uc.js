@@ -3,6 +3,7 @@
 // @description 	Common utilities for Echelon scripts.
 // @author			ephemeralViolette
 // @include			main
+// @include			chrome://browser/content/aboutDialog.xhtml
 // @loadOrder       1
 // ==/UserScript==
 
@@ -110,7 +111,7 @@ function trySetStringPref(name, value)
 	internalTrySetPref(name, value, Services.prefs.setStringPref);
 }
 
-function getDefaultFirefoxButtonText()
+function getShortProductName()
 {
 	let custom = tryGetStringPref("Echelon.Option.BrandName");
 	if (custom != "")

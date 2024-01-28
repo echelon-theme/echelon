@@ -227,14 +227,14 @@ class FirefoxButton
 			// Button creation and insertion
 			//
 			let titlebarEl = document.getElementById("titlebar");
-			let browserName = getDefaultFirefoxButtonText();
+			let browserName = getShortProductName();
 
 			if (useCustomStyle)
 			{
 				browserName = tryGetStringPref("Echelon.FirefoxButton.CustomName");
 				if (browserName === "")
 				{
-					browserName = getDefaultFirefoxButtonText();
+					browserName = getShortProductName();
 				}
 			}
 			
@@ -750,7 +750,7 @@ class FirefoxButton
 						elm("xul:menuseparator"),
 						elm("xul:menuitem", {
 							"id": "appmenu_about",
-							"label": "About Firefox",
+							"label": `About ${getShortProductName()}`,
 							"oncommand": "openAboutDialog()"
 						})
 					]

@@ -9,9 +9,10 @@ if (echelonOldLogo) {
 	root.setAttribute("echelon-new-logo", echelonOldLogo);
 }
 
-// BROWSER NAME (FOR FORKS)
+// BROWSER NAME AND BRANCH (FOR ALT BRANDING)
 
 root.setAttribute("browser-name", Services.appinfo.name);
+root.setAttribute("update-channel", Services.appinfo.defaultUpdateChannel);
 
 // ECHELON STYLE
 

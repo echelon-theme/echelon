@@ -72,7 +72,7 @@ document.documentElement.addEventListener('keypress', function(e) {
 	}
 });
 
-document.getElementById("custom-name").placeholder = getDefaultFirefoxButtonText();
+document.getElementById("custom-name").placeholder = getShortProductName();
 
 document.getElementById("brand-name").placeholder = getDefaultProductName();
 
