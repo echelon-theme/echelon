@@ -1301,6 +1301,17 @@
   margin-inline-start: 5px !important;
 }
 
+@media not (-moz-windows-compositor) {
+  #main-window[echelon-style-3]:not([tabs-on-top]) #PersonalToolbar,
+  #main-window[echelon-style-3]:not([tabs-on-top]) #TabsToolbar {
+    background: transparent !important;
+  }
+
+  #main-window[echelon-style-3]:not([tabs-on-top]) #PersonalToolbar {
+    border: 0 !important;
+  }
+}
+
 /** FIREFOX CHANNELS **/
 
 /* Nightly */

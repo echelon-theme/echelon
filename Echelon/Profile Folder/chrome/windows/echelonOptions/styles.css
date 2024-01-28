@@ -107,6 +107,12 @@ groupbox > p {
     background-image: url("chrome://userchrome/content/windows/echelonOptions/images/Options.png");
 }
 
+@supports -moz-bool-pref("Echelon.Appearance.XP") {
+    .tab-icon {
+        background-image: url("chrome://userchrome/content/windows/echelonOptions/images/Options-xp.png");
+    }
+}
+
 #tab-general .tab-icon {
     background-position: 0 0;
 }
