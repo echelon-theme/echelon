@@ -63,15 +63,34 @@
 }
 
 #main-window[update-channel="aurora"] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-    content: url("images/icons/alt/aurora/icon16.png") !important;
+    list-style-image: url("images/icons/alt/aurora/icon16.png") !important;
 }
 
 /** NIGHTLY **/
-
 #main-window[update-channel="nightly"] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-    content: url("images/icons/alt/nightly/icon16.png") !important;
+    content: url("images/icons/alt/nightly/old/icon16.png") !important;
 }
 
 #main-window[update-channel="nightly"] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-    content: url("images/icons/alt/nightly/icon16.png") !important;
+    list-style-image: url("images/icons/alt/nightly/old/icon16.png") !important;
+}
+
+@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+    #main-window[update-channel="nightly"] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+        content: url("images/icons/alt/nightly/icon16.png") !important;
+    }
+
+    #main-window[update-channel="nightly"] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+        list-style-image: url("images/icons/alt/nightly/icon16.png") !important;
+    }
+}
+
+@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+    #main-window[update-channel="nightly"] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+        content: url("images/icons/alt/nightly/icon16.png") !important;
+    }
+
+    #main-window[update-channel="nightly"] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+        list-style-image: url("images/icons/alt/nightly/icon16.png") !important;
+    }
 }

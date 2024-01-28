@@ -85,13 +85,25 @@
     }
 
     :root[update-channel="aurora"] #aboutDialogContainer {
-        background: #130824 no-repeat url("images/icons/alt/aurora/about-background.png") !important;
+        background: #000000 no-repeat url("images/icons/alt/aurora/old/about-background.png") !important;
     }
 
-    :root[update-channel="nightly"] #aboutDialogContainer {
-        background: #0a1125 no-repeat url("images/icons/alt/nightly/about-background.png") !important;
-    }
-
+	@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+		:root[update-channel="aurora"] #aboutDialogContainer {
+			background: #130824 no-repeat url("images/icons/alt/aurora/about-background.png") !important;
+		}
+	}
+	
+	:root[update-channel="nightly"] #aboutDialogContainer {
+		background: #000000 no-repeat url("images/icons/alt/nightly/old/about-background.png") !important;
+	}
+	
+	@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+		:root[update-channel="nightly"] #aboutDialogContainer {
+			background: #0a1125 no-repeat url("images/icons/alt/nightly/about-background.png") !important;
+		}
+	}
+	
     :root[update-channel="aurora"] #aboutDialogContainer,
     :root[update-channel="nightly"] #aboutDialogContainer,
     :root[update-channel="aurora"] #updateDeck,
@@ -112,12 +124,26 @@
     }
 
     :root[update-channel="aurora"] #rightBox {
-        background-image: url("images/icons/alt/aurora/about-wordmark.svg") !important;
-        background-size: 264px auto !important;
+        background-image: url("images/icons/alt/aurora/old/about-wordmark.png") !important;
+        background-size: 147px auto !important;
     }
+	
+	@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+		:root[update-channel="aurora"] #rightBox {
+			background-image: url("images/icons/alt/aurora/about-wordmark.svg") !important;
+			background-size: 264px auto !important;
+		}
+	}
+	
+	:root[update-channel="nightly"] #rightBox {
+		background-image: url("images/icons/alt/nightly/old/about-wordmark.png") !important;
+		background-size: 157px auto !important;
+	}
 
-    :root[update-channel="nightly"] #rightBox {
-        background-image: url("images/icons/alt/nightly/about-wordmark.svg") !important;
-        background-size: 270px auto !important;
-    }
+	@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+		:root[update-channel="nightly"] #rightBox {
+			background-image: url("images/icons/alt/nightly/about-wordmark.svg") !important;
+			background-size: 270px auto !important;
+		}
+	}
 }

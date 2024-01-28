@@ -505,11 +505,19 @@ input, button {
 
 /* Aurora (Firefox Dev Edition) */
 :root[update-channel="aurora"] .brandLogo {
+	background-image: url('chrome://userchrome/content/images/icons/alt/aurora/old/about-logo.png');
+}
+
+:root[echelon-new-logo][update-channel="aurora"] .brandLogo {
 	background-image: url('chrome://userchrome/content/images/icons/alt/aurora/about-logo.png');
 }
 
 /* Nightly */
 :root[update-channel="nightly"] .brandLogo {
+	background-image: url('chrome://userchrome/content/images/icons/alt/nightly/old/about-logo.png');
+}
+
+:root[echelon-new-logo][update-channel="nightly"] .brandLogo {
 	background-image: url('chrome://userchrome/content/images/icons/alt/nightly/about-logo.png');
 }
 
