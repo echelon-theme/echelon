@@ -77,6 +77,7 @@ for (const option of document.querySelectorAll(".option"))
         case "bool":
             option.checked = tryGetBoolPref(option.dataset.option);
             break;
+        case "int":
         case "enum":
             option.value = tryGetIntPref(option.dataset.option);
             break;
@@ -98,6 +99,9 @@ document.getElementById("ok-button").addEventListener("click", function()
                 break;
             case "enum":
                 trySetIntPref(option.dataset.option, Number(option.value));
+                break;
+            case "int":
+                trySetIntPref(option.dataset.option, Math.floor(Number(option.value)));
                 break;
             case "string":
                 trySetStringPref(option.dataset.option, option.value);

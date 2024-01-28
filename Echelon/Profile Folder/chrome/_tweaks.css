@@ -1124,11 +1124,11 @@
 }
 
 /** BASIC THEME **/
-@media not (-moz-windows-compositor),
-@supports -moz-bool-pref("Echelon.Appearance.XP") {
+@media not (-moz-windows-compositor){
   .titlebar-buttonbox-container {
-    top: 3px !important;
+    top: var(--padded-border) !important;
   }
+
   #appmenu-button-container {
     height: calc(var(--titlebar-height) + 6px) !important;
   }

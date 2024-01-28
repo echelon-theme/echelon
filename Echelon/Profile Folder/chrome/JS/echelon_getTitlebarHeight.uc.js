@@ -18,6 +18,7 @@ function getAndSetTitleBarHeight() {
 
         // Get the height of the system title bar (SM_CYCAPTION)
         var titleBarHeight = GetSystemMetrics(4) - 1;
+        var paddedBorderHeight = GetSystemMetrics(92) - 1;
 
         // Close the User32.dll library
         user32.close();
@@ -30,7 +31,8 @@ function getAndSetTitleBarHeight() {
 
     titlebarHeightStyle.innerHTML = `
         :root {
-            --titlebar-height:`+ titleBarHeight + `px;
+            --titlebar-height: ${titleBarHeight}px;
+            --padded-border: ${paddedBorderHeight}px;
         }
     `
 }

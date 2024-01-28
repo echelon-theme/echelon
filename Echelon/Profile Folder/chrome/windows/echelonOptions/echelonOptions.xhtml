@@ -14,6 +14,10 @@
                 <html:div class="tab-icon"></html:div>
                 <html:span class="tab-label">Branding</html:span>
             </html:div>
+            <html:div class="tab" id="tab-native-controls">
+                <html:div class="tab-icon"></html:div>
+                <html:span class="tab-label">Native Controls</html:span>
+            </html:div>
             <html:div class="tab" id="tab-debug">
                 <html:div class="tab-icon"></html:div>
                 <html:span class="tab-label">Debug</html:span>
@@ -98,6 +102,44 @@
                         <html:div class="option-container">
                             <label value="Private Browsing content title:"/>
                             <html:input type="text" id="private-content-title" class="option" data-type="string" data-option="Echelon.WindowTitle.ContentPrivate"/>
+                        </html:div>
+                    </groupbox>
+                </html:div>
+                <html:div id="section-native-controls" class="section">
+                    <p>This tab allows you to configure ephemeralViolette's native controls patch.</p>
+                    <groupbox>
+                        <caption>General</caption>
+                        <html:div class="option-container">
+                            <label value="Override Windows Version:"/>
+                            <menulist native="" class="option" data-type="enum" data-option="widget.ev-native-controls-patch.override-win-version">
+                                <menupopup>
+                                    <menuitem label="Windows 7" value="7"/>
+                                    <menuitem label="Windows 8.x" value="8"/>
+                                    <menuitem label="Windows 10" value="10"/>
+                                </menupopup>
+                            </menulist>
+                        </html:div>
+                        <html:div class="option-container">
+                            <label value="Override Glass:"/>
+                            <menulist native="" class="option" data-type="enum" data-option="widget.ev-native-controls-patch.override-win-version">
+                                <menupopup>
+                                    <menuitem label="Default" value="0"/>
+                                    <menuitem label="Force on" value="1"/>
+                                    <menuitem label="Force off" value="2"/>
+                                </menupopup>
+                            </menulist>
+                        </html:div>
+                        <checkbox native="" label="Disable DWM composition" class="option" data-type="bool" data-option="widget.ev-native-controls-patch.force-dwm-report-off"/>
+                    </groupbox>
+                    <groupbox>
+                        <caption>Aero caption button mask</caption>
+                        <html:div class="option-container">
+                            <label value="Width:"/>
+                            <html:input type="number" id="default-title" class="option" data-type="int" onkeydown="return event.keyCode !== 190" data-option="widget.ev-native-controls-patch.override-aero-caption-buttons-mask-width"/>
+                        </html:div>
+                        <html:div class="option-container">
+                            <label value="Height:"/>
+                            <html:input type="number" id="default-title" class="option" data-type="int" onkeydown="return event.keyCode !== 190" data-option="widget.ev-native-controls-patch.override-aero-caption-buttons-mask-height"/>
                         </html:div>
                     </groupbox>
                 </html:div>
