@@ -26,6 +26,10 @@ groupbox {
     padding-top: 10px;
 }
 
+groupbox:not(:first-child) {
+    margin-top: 20px;
+}
+
 groupbox > caption {
     position: absolute;
     top: -10px;
@@ -47,6 +51,10 @@ input[type="color"] {
     height: 25px;
 }
 
+input[type="text"].full-width {
+    flex-grow: 1;
+}
+
 input::placeholder {
     font-style: italic;
 }
@@ -59,6 +67,12 @@ input::placeholder {
 
 p {
     margin-bottom: 10px;
+}
+
+groupbox > p {
+    display: inline;
+    margin-top: 6px;
+    margin-left: 6px;
 }
 
 #tabs {

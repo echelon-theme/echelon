@@ -38,3 +38,9 @@ function snippetRandomizer()
 }
 
 snippetRandomizer();
+
+// TITLE TEXT
+Services.scriptloader.loadSubScript("chrome://userchrome/content/JS/echelon_utils.uc.js");
+
+let product = getFullProductName();
+document.title = `${product} Start Page`;

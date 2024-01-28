@@ -65,10 +65,19 @@ for (const tab of document.querySelectorAll(".tab"))
 {
     tab.addEventListener("click", switchTab);
 }
-document.getElementById("custom-name").placeholder = getDefaultFirefoxButtonText();
 
 document.documentElement.addEventListener('keypress', function(e) {
 	if (e.key == "Escape") {
 		window.close();
 	}
 });
+
+document.getElementById("custom-name").placeholder = getDefaultFirefoxButtonText();
+
+document.getElementById("brand-name").placeholder = getDefaultProductName();
+
+let titles = getDefaultTitles();
+document.getElementById("default-title").placeholder = titles.default;
+document.getElementById("private-title").placeholder = titles.private;
+document.getElementById("default-content-title").placeholder = titles.contentDefault;
+document.getElementById("private-content-title").placeholder = titles.contentPrivate;

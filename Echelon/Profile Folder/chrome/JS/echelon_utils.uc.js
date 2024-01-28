@@ -112,6 +112,12 @@ function trySetStringPref(name, value)
 
 function getDefaultFirefoxButtonText()
 {
+	let custom = tryGetStringPref("Echelon.Option.BrandName");
+	if (custom != "")
+	{
+		return custom;
+	}
+
 	switch (Services.appinfo.defaultUpdateChannel)
 	{
 		case "nightly":
@@ -123,7 +129,7 @@ function getDefaultFirefoxButtonText()
 	}
 }
 
-function getFullProductName()
+function getDefaultProductName()
 {
 	switch (Services.appinfo.defaultUpdateChannel)
 	{
@@ -138,4 +144,48 @@ function getFullProductName()
 			}
 			return Services.appinfo.name;
 	}
+}
+
+function getFullProductName()
+{
+	let custom = tryGetStringPref("Echelon.Option.BrandName");
+	if (custom == "")
+	{
+		return getDefaultProductName();
+	}
+	return custom;
+}
+
+function getDefaultTitles()
+{
+	let product = getFullProductName();
+	return {
+		"default": product,
+		"private": `${product} (Private Browsing)`,
+		"contentDefault": `CONTENTTITLE - ${product}`,
+		"contentPrivate": `CONTENTTITLE - ${product} (Private Browsing)`
+	};
+}
+
+function getUserTitles()
+{
+	let result = getDefaultTitles();
+	
+	const prefmap = {
+		"default": "Echelon.WindowTitle.Default",
+		"private": "Echelon.WindowTitle.Private",
+		"contentDefault": "Echelon.WindowTitle.ContentDefault",
+		"contentPrivate": "Echelon.WindowTitle.ContentPrivate"
+	};
+
+	for (const prop in prefmap)
+	{
+		let string = tryGetStringPref(prefmap[prop]);
+		if (string != "")
+		{
+			result[prop] = string;
+		}
+	}
+
+	return result;
 }

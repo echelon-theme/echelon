@@ -56,16 +56,46 @@
                     </groupbox>
                 </html:div>
                 <html:div id="section-advanced" class="section">
-                    <p>You shouldn't need to change these options unless you're a developer.</p>
                     <groupbox>
                         <caption>Wizard</caption>
-                        <checkbox native="" label="First run has been completed" class="option" data-type="bool" data-option="Echelon.parameter.isFirstRunFinished" />
+                        <checkbox native="" label="First run has been completed" class="option" data-type="bool" data-option="Echelon.parameter.isFirstRunFinished"/>
+                    </groupbox>
+                    <groupbox>
+                        <caption>Branding</caption>
+                        <html:div class="option-container">
+                            <label value="Brand name:"/>
+                            <html:input type="text" id="brand-name" class="option full-width" data-type="string" data-option="Echelon.Option.BrandName"/>
+                        </html:div>
+                    </groupbox>
+                    <groupbox>
+                        <caption>Window Title</caption>
+                        <html:div class="option-container">
+                            <label value="Default title:"/>
+                            <html:input type="text" id="default-title" class="option full-width" data-type="string" data-option="Echelon.WindowTitle.Default"/>
+                        </html:div>
+                        <html:div class="option-container">
+                            <label value="Private Browsing title:"/>
+                            <html:input type="text" id="private-title" class="option full-width" data-type="string" data-option="Echelon.WindowTitle.Private"/>
+                        </html:div>
+                        <p>
+                            <html:span>Use </html:span>
+                            <html:b>CONTENTTITLE</html:b>
+                            <html:span> in place of where the page title should go.</html:span>
+                        </p>
+                        <html:div class="option-container">
+                            <label value="Default content title:"/>
+                            <html:input type="text" id="default-content-title" class="option full-width" data-type="string" data-option="Echelon.WindowTitle.ContentDefault"/>
+                        </html:div>
+                        <html:div class="option-container">
+                            <label value="Private Browsing content title:"/>
+                            <html:input type="text" id="private-content-title" class="option full-width" data-type="string" data-option="Echelon.WindowTitle.ContentPrivate"/>
+                        </html:div>
                     </groupbox>
                 </html:div>
                 <html:div id="section-about" class="section">
 					<html:div id="about-section-banner">
 						<html:img id="echelon-logo" src="chrome://userchrome/content/windows/echelonOptions/images/echelon-logo.png" width="223"/>
-						<html:div id="echelon-ver-text">Version <html:b>0.8.6b</html:b></html:div>
+						<html:div id="echelon-ver-text">Version <html:b>0.8.7b</html:b></html:div>
 					</html:div>
                     <groupbox>
                         <caption>Credits</caption>
