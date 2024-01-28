@@ -17,3 +17,4 @@ for (let i = 1; i <= theme; i++)
 
 let branch = tryGetStringPref("app.update.channel");
 root.setAttribute("echelon-update-channel", Services.appinfo.defaultUpdateChannel);
+root.setAttribute("browser-name", Services.appinfo.name);

@@ -463,7 +463,6 @@ input, button {
 	background-size: contain;
 }
 
-
 /*
 	Pre-Firefox 23 Style
 */
@@ -481,4 +480,29 @@ input, button {
 :root[echelon-style="1"] #snippetContainer,
 :root[echelon-style="1"] #searchLogo {
 	display: flex;
+}
+
+/** Browser Forks **/
+
+/* Waterfox */
+:root[echelon-new-logo][browser-name="Waterfox"] .brandLogo {
+	background-image: url('chrome://userchrome/content/images/icons/forks/waterfox/about-logo.png');
+}
+
+:root[browser-name="Waterfox"] .brandLogo {
+	background-image: url('chrome://userchrome/content/images/icons/forks/waterfox/old/about-logo.png');
+}
+
+/* Superfox */
+:root[browser-name="Superfox"] .brandLogo {
+	background-image: url('chrome://userchrome/content/images/icons/forks/superfox/about-logo.png');
+}
+
+:root:not([echelon-style="1"])[browser-name="Superfox"] #aboutMozilla::before {
+	width: 49px;
+	content: url("chrome://userchrome/content/images/icons/forks/superfox/win32-wordmark.png");
+}
+
+:root[echelon-style="1"][browser-name="Superfox"] #aboutMozilla::before {
+	content: 'About Superfox';
 }

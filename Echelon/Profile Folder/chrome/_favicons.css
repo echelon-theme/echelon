@@ -1,17 +1,19 @@
-.tab-icon-image[src="chrome://branding/content/icon32.png"] {
+/** THEME WILL USE DEFAULT BROWSER IMAGES IF THERE ISN'T AVAILABLE STYLES FOR THE BROWSER NAME **/
+
+#main-window[browser-name="Firefox"] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
     content: url("images/icon16.png") !important;
 }
 
-#identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+#main-window[browser-name="Firefox"] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
     list-style-image: url("images/icon16.png") !important;
 }
 
 @supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
-    .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+    #main-window[browser-name="Firefox"] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
         content: url("images/icon16-new.png") !important;
     }
 
-    #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+    #main-window[browser-name="Firefox"] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
         list-style-image: url("images/icon16-new.png") !important;
     }
 }
@@ -22,4 +24,34 @@
 
 #identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
     list-style-image: url("chrome://global/skin/icons/settings.svg") !important;
+}
+
+/** WATERFOX **/
+
+#main-window[browser-name="Waterfox"] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+    content: url("images/icons/forks/waterfox/old/info16.png") !important;
+}
+
+#main-window[browser-name="Waterfox"] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+    list-style-image: url("images/icons/forks/waterfox/old/info16.png") !important;
+}
+
+@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+    #main-window[browser-name="Waterfox"] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+        content: url("images/icons/forks/waterfox/info16.png") !important;
+    }
+
+    #main-window[browser-name="Waterfox"] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+        list-style-image: url("images/icons/forks/waterfox/info16.png") !important;
+    }
+}
+
+/** SUPERFOX **/
+
+#main-window[browser-name="Superfox"] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+    content: url("images/icons/forks/superfox/info16.png") !important;
+}
+
+#main-window[browser-name="Superfox"] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+    list-style-image: url("images/icons/forks/superfox/info16.png") !important;
 }

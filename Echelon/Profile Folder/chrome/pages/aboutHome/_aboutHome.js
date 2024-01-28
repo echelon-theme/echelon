@@ -9,6 +9,10 @@ if (echelonOldLogo) {
 	root.setAttribute("echelon-new-logo", echelonOldLogo);
 }
 
+// BROWSER NAME (FOR FORKS)
+
+root.setAttribute("browser-name", Services.appinfo.name);
+
 // ECHELON STYLE
 
 if (echelonStyle <= 2) {
