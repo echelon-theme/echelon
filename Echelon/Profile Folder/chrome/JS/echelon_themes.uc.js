@@ -15,5 +15,5 @@ for (let i = 1; i <= style; i++)
     root.setAttribute(`echelon-style-${i}`, "true");
 }
 
-root.setAttribute("update-channel", Services.appinfo.defaultUpdateChannel);
-root.setAttribute("browser-name", Services.appinfo.name);
+root.setAttribute("update-channel", getUpdateChannel());
+root.setAttribute("browser-name", getBrowserName());

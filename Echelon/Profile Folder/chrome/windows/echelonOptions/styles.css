@@ -51,7 +51,7 @@ input[type="color"] {
     height: 25px;
 }
 
-input[type="text"].full-width {
+input[type="text"] {
     flex-grow: 1;
 }
 
@@ -65,14 +65,11 @@ input::placeholder {
     align-items: center;
 }
 
-p {
-    margin-bottom: 10px;
-}
-
 groupbox > p {
     display: inline;
     margin-top: 6px;
     margin-left: 6px;
+    margin-bottom: 10px;
 }
 
 #tabs {
@@ -117,12 +114,16 @@ groupbox > p {
     background-position: 0 0;
 }
 
-#tab-advanced .tab-icon {
+#tab-branding .tab-icon {
     background-position: -32px 0;
 }
 
-#tab-about .tab-icon {
+#tab-debug .tab-icon {
     background-position: -64px 0;
+}
+
+#tab-about .tab-icon {
+    background-position: -96px 0;
 }
 
 .tab-label {
@@ -200,4 +201,18 @@ groupbox > p {
 
 #echelon-ver-text b {
 	color: #404041;
+}
+
+table {
+    margin-top: 10px;
+    display: block;
+    table-layout: auto;
+}
+
+th {
+    text-align: left;
+}
+
+td {
+    padding-left: 4px;
 }

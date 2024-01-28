@@ -10,9 +10,13 @@
                 <html:div class="tab-icon"></html:div>
                 <html:span class="tab-label">General</html:span>
             </html:div>
-            <html:div class="tab" id="tab-advanced">
+            <html:div class="tab" id="tab-branding">
                 <html:div class="tab-icon"></html:div>
-                <html:span class="tab-label">Advanced</html:span>
+                <html:span class="tab-label">Branding</html:span>
+            </html:div>
+            <html:div class="tab" id="tab-debug">
+                <html:div class="tab-icon"></html:div>
+                <html:span class="tab-label">Debug</html:span>
             </html:div>
             <html:div class="tab" id="tab-about">
                 <html:div class="tab-icon"></html:div>
@@ -56,27 +60,31 @@
                         </html:div>
                     </groupbox>
                 </html:div>
-                <html:div id="section-advanced" class="section">
-                    <groupbox>
-                        <caption>Wizard</caption>
-                        <checkbox native="" label="First run has been completed" class="option" data-type="bool" data-option="Echelon.parameter.isFirstRunFinished"/>
-                    </groupbox>
+                <html:div id="section-branding" class="section">
                     <groupbox>
                         <caption>Branding</caption>
                         <html:div class="option-container">
                             <label value="Brand name:"/>
-                            <html:input type="text" id="brand-name" class="option full-width" data-type="string" data-option="Echelon.Option.BrandName"/>
+                            <html:input type="text" id="brand-name" class="option" data-type="string" data-option="Echelon.Option.BrandName"/>
+                        </html:div>
+                        <html:div class="option-container">
+                            <label value="Browser name spoof:"/>
+                            <html:input type="text" id="browser-spoof" class="option" data-type="string" data-option="Echelon.Option.BrowserSpoof"/>
+                        </html:div>
+                        <html:div class="option-container">
+                            <label value="Update channel spoof:"/>
+                            <html:input type="text" id="channel-spoof" class="option" data-type="string" data-option="Echelon.Option.ChannelSpoof"/>
                         </html:div>
                     </groupbox>
                     <groupbox>
                         <caption>Window Title</caption>
                         <html:div class="option-container">
                             <label value="Default title:"/>
-                            <html:input type="text" id="default-title" class="option full-width" data-type="string" data-option="Echelon.WindowTitle.Default"/>
+                            <html:input type="text" id="default-title" class="option" data-type="string" data-option="Echelon.WindowTitle.Default"/>
                         </html:div>
                         <html:div class="option-container">
                             <label value="Private Browsing title:"/>
-                            <html:input type="text" id="private-title" class="option full-width" data-type="string" data-option="Echelon.WindowTitle.Private"/>
+                            <html:input type="text" id="private-title" class="option" data-type="string" data-option="Echelon.WindowTitle.Private"/>
                         </html:div>
                         <p>
                             <html:span>Use </html:span>
@@ -85,13 +93,42 @@
                         </p>
                         <html:div class="option-container">
                             <label value="Default content title:"/>
-                            <html:input type="text" id="default-content-title" class="option full-width" data-type="string" data-option="Echelon.WindowTitle.ContentDefault"/>
+                            <html:input type="text" id="default-content-title" class="option" data-type="string" data-option="Echelon.WindowTitle.ContentDefault"/>
                         </html:div>
                         <html:div class="option-container">
                             <label value="Private Browsing content title:"/>
-                            <html:input type="text" id="private-content-title" class="option full-width" data-type="string" data-option="Echelon.WindowTitle.ContentPrivate"/>
+                            <html:input type="text" id="private-content-title" class="option" data-type="string" data-option="Echelon.WindowTitle.ContentPrivate"/>
                         </html:div>
                     </groupbox>
+                </html:div>
+                <html:div id="section-debug" class="section">
+                    <p>These options are meant for debugging; you should not need to change them unless you are a developer.</p>
+                    <groupbox>
+                        <caption>Wizard</caption>
+                        <checkbox native="" label="First run has been completed" class="option" data-type="bool" data-option="Echelon.parameter.isFirstRunFinished"/>
+                    </groupbox>
+                    <html:table id="debug-table">
+                        <html:tr>
+                            <html:th>Browser name</html:th>
+                            <html:td data-content="Services.appinfo.name"></html:td>
+                        </html:tr>
+                        <html:tr>
+                            <html:th>Engine version</html:th>
+                            <html:td data-content="Services.appinfo.version"></html:td>
+                        </html:tr>
+                        <html:tr>
+                            <html:th>Update channel</html:th>
+                            <html:td data-content="Services.appinfo.defaultUpdateChannel"></html:td>
+                        </html:tr>
+                        <html:tr>
+                            <html:th>Windows version (manifest)</html:th>
+                            <html:td data-content="getWinVer()"></html:td>
+                        </html:tr>
+                        <html:tr>
+                            <html:th>Windows version (true)</html:th>
+                            <html:td data-content="getTrueWinVer()"></html:td>
+                        </html:tr>
+                    </html:table>
                 </html:div>
                 <html:div id="section-about" class="section">
 					<html:div id="about-section-banner">

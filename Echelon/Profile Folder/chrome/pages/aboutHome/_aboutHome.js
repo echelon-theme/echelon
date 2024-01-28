@@ -1,3 +1,5 @@
+Services.scriptloader.loadSubScript("chrome://userchrome/content/JS/echelon_utils.uc.js");
+
 // FOR PRE-FIREFOX 23 STYLE
 
 let root = document.documentElement;
@@ -11,8 +13,8 @@ if (echelonOldLogo) {
 
 // BROWSER NAME AND BRANCH (FOR ALT BRANDING)
 
-root.setAttribute("browser-name", Services.appinfo.name);
-root.setAttribute("update-channel", Services.appinfo.defaultUpdateChannel);
+root.setAttribute("browser-name", getBrowserName());
+root.setAttribute("update-channel", getUpdateChannel());
 
 // ECHELON STYLE
 
@@ -45,7 +47,6 @@ function snippetRandomizer()
 snippetRandomizer();
 
 // TITLE TEXT
-Services.scriptloader.loadSubScript("chrome://userchrome/content/JS/echelon_utils.uc.js");
 
 let product = getFullProductName();
 document.title = `${product} Start Page`;

@@ -111,6 +111,26 @@ function trySetStringPref(name, value)
 	internalTrySetPref(name, value, Services.prefs.setStringPref);
 }
 
+function getBrowserName()
+{
+	let spoof = tryGetStringPref("Echelon.Option.BrowserSpoof");
+	if (spoof == "")
+	{
+		return Services.appinfo.name;
+	}
+	return spoof;
+}
+
+function getUpdateChannel()
+{
+	let spoof = tryGetStringPref("Echelon.Option.ChannelSpoof");
+	if (spoof == "")
+	{
+		return Services.appinfo.defaultUpdateChannel;
+	}
+	return spoof;
+}
+
 function getShortProductName()
 {
 	let custom = tryGetStringPref("Echelon.Option.BrandName");
@@ -119,31 +139,31 @@ function getShortProductName()
 		return custom;
 	}
 
-	switch (Services.appinfo.defaultUpdateChannel)
+	switch (getUpdateChannel())
 	{
 		case "nightly":
 			return "Nightly";
 		case "aurora":
 			return "Aurora";
 		default:
-			return Services.appinfo.name;
+			return getBrowserName();
 	}
 }
 
 function getDefaultProductName()
 {
-	switch (Services.appinfo.defaultUpdateChannel)
+	switch (getUpdateChannel())
 	{
 		case "nightly":
 			return "Nightly";
 		case "aurora":
 			return "Aurora";
 		default:
-			if (Services.appinfo.name == "Firefox")
+			if (getBrowserName() == "Firefox")
 			{
 				return "Mozilla Firefox";
 			}
-			return Services.appinfo.name;
+			return getBrowserName();
 	}
 }
 
