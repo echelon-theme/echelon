@@ -154,6 +154,7 @@ vbox {
 }
 
 .footerButton:not([disabled]):hover:active {
+	transition: none;
 	box-shadow: inset 0px 2px 4px -2px rgba(0, 0, 0, 0.50);
 }
 
@@ -222,7 +223,7 @@ vbox {
 }
 
 .restartButton .buttonIcon {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/restarticon.png');
+	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/finishicon.png');
 }
 
 .pageContentHeader {
@@ -284,16 +285,28 @@ vbox {
 	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/ff4blue.png');
 }
 
-.australisblue {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/australisblue.png');
-}
-
 .ff4native {
 	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/ff4native.png');
 }
 
+.ff4xp {
+	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/ff4xp.png');
+}
+
+.australisblue {
+	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/australisblue.png');
+}
+
 .australisnative {
 	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/australisnative.png');
+}
+
+.australisxp {
+	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/australisxp.png');
+}
+
+.australisWindows10 {
+	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/australis10.png');
 }
 
 .ff4bluesmall {
@@ -319,11 +332,30 @@ vbox {
 	text-shadow: 0px -1px 3.8px #1384C4, 0px -1px 17px #1384C4;
 }
 
+.smallText h2 {
+	font-size: 15px;
+}
+
 #reset-layout {
+	font-size: 9pt;
+	font-family: 'Segoe Ui', sans-serif;
+}
+
+#reset-layout {
+	margin-inline: 20px;
 	margin-bottom: 8px;
 }
 
-.backButton.close {
-	border-radius: 3px;
-	border-left: 1px solid transparent;
+#reset-layout .checkbox-check {
+	width: 13px !important;
+	height: 13px !important;
+	border-radius: 2px !important;
+	border: 1px solid #000 !important;
+	background-image: linear-gradient(180deg, #3D3D3D 0%, #181818 100%) !important;
+	background-color: transparent !important;
+	box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.25), 0px 1px 2px 0px rgba(0, 0, 0, 0.75) inset;
+}
+
+#reset-layout .checkbox-check[checked] {
+	list-style-image: url('chrome://userchrome/content/windows/echelonWizard/images/checkmark.png');
 }

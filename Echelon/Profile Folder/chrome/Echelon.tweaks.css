@@ -1056,10 +1056,10 @@
     top: var(--padded-border, 0) !important;
   }
   #main-window[echelon-appearance-xp] .titlebar-buttonbox-container {
-    top: 3px !important;
+    top: calc(var(--padded-border) + 1px) !important;
   }
   #main-window[echelon-appearance-xp][sizemode=maximized] .titlebar-buttonbox-container {
-    top: 0 !important;
+    top: 4px !important;
   }
   #main-window:not([echelon-appearance-xp]) #appmenu-button-container {
     height: calc(var(--titlebar-height) + 6px) !important;
@@ -1082,17 +1082,18 @@
   }
 }
 /** APPEARANCE ON WINDOWS XP **/
-#main-window[echelon-appearance-xp] {
-  /* Trees don't support background-image */
-  /* Have to do this because Smart Folders above this changes the icon */
-}
 #main-window[echelon-appearance-xp] ::placeholder {
   opacity: 1 !important;
+}
+#main-window[echelon-appearance-xp] #appmenu-button-container {
+  border: 0 !important;
+  margin-bottom: 5px !important;
+  z-index: 1 !important;
 }
 #main-window[echelon-appearance-xp] #TabsToolbar:not(:-moz-lwtheme) {
   background-image: none !important;
 }
-#main-window[echelon-appearance-xp]:not([echelon-style-4]) #TabsToolbar, #main-window[echelon-appearance-xp]:not([echelon-style-4]) #toolbar-menubar {
+#main-window[echelon-appearance-xp]:not([echelon-style-4], [sizemode="maximized"]) #TabsToolbar, #main-window[echelon-appearance-xp]:not([echelon-style-4]) #toolbar-menubar {
   background-color: -moz-Dialog !important;
 }
 #main-window[echelon-appearance-xp]:not([echelon-style-4]) #TabsToolbar:not(:-moz-lwtheme) {
@@ -1154,6 +1155,39 @@
 #main-window[echelon-appearance-xp] treechildren::-moz-tree-image(title, query, tagContainer),
 #main-window[echelon-appearance-xp] treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
   list-style-image: url("images/tag.png") !important;
+}
+
+#main-window:not([tabs-on-top])[echelon-appearance-xp] #PersonalToolbar, 
+#main-window:not([tabs-on-top])[echelon-appearance-xp] #TabsToolbar,
+#main-window:not([tabs-on-top])[echelon-appearance-xp] #nav-bar {
+  border-left: 0 !important;
+  border-right: 0 !important;
+  background-color: -moz-Dialog !important;
+}
+
+#main-window[echelon-appearance-xp] #main-menubar > menu {
+  color: WindowText !important;
+}
+
+#main-window[echelon-appearance-xp] #main-menubar > menu[_moz-menuactive="true"] {
+  color: HighlightText !important;
+}
+
+#main-window[echelon-appearance-xp] #main-menubar > menu:-moz-window-inactive {
+  color: ThreeDShadow !important;
+}
+
+/* Hack to have the titlebar image because the bottom part of it's image is hidden */
+#main-window[tabsintitlebar][echelon-appearance-xp] #titlebar::before {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: var(--titlebar-height);
+  appearance: auto;
+  pointer-events: none !important;
+  -moz-default-appearance: -moz-window-titlebar;
+  position: absolute !important;
+  z-index: 0 !important;
 }
 
 /** TABS ON BOTTOM **/

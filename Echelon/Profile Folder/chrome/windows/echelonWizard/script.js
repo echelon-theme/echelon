@@ -65,6 +65,11 @@ function setOSPref(osName)
 			isBlue = true;
 			isWin10 = false;
 			break;
+		case "win7native":
+			isWinXP = false;
+			isBlue = false;
+			isWin10 = false;
+			break;
 		case "win8":
 			isWinXP = false;
 			isBlue = false; // confusing...

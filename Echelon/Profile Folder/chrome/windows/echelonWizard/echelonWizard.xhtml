@@ -18,7 +18,6 @@
 						<vbox class="welcomeText">
 							<p>Echelon aims to brings back the beloved designs of older versions of Mozilla Firefox.</p>
 							<p>Our mission — to bring back the cleanliness and sleek design of internet browsing. We are bringing back what made Mozilla Firefox set itself apart from its competitors.</p>
-							<p>Notice: This is a public beta version of Echelon, which means it is still going undergoing development. Expect unfinished and buggy features.</p>
 						</vbox>
 					</vbox>
 					<hbox class="pageContentFooter" style="justify-content:flex-end;">
@@ -44,7 +43,7 @@
 							<p>Echelon has several styles spanning across multiple versions of Firefox. Choose your preferred appearance.</p>
 						</vbox>
 						<hbox class="themeSelectorContainer">
-							<vbox class="styleOptionContainer" flex="1" onclick="setIntPref(echelonAppearanceStyle, 0); showPage(2);">
+							<vbox class="styleOptionContainer" flex="1" onclick="setBoolPref(echelonAppearanceNewLogo, false); setIntPref(echelonAppearanceStyle, 0); showPage(2);">
 								<vbox class="styleOptionPreview">
 									<html:div class="styleOptionPreviewImg ff4blue" flex="1"></html:div>
 								</vbox>
@@ -77,7 +76,7 @@
 			
 		</html:div>
 		
-		<!-- SELECT THEME COLOR -->
+		<!-- SELECT OS STYLE -->
 		
 		<html:div id="page2" class="page" flex="1">
 		
@@ -86,15 +85,15 @@
 					<vbox class="content" flex="1" style="justify-content: space-between;">
 						<vbox class="pageContentHeader">
 							<h1>choose your style</h1>
-							<p>Mozilla Firefox used two colors for its theme depending on the user’s operating system or theme.</p>
+							<p>Mozilla Firefox had many styles for its theme depending on the user’s operating system.</p>
 						</vbox>
 						<hbox class="themeSelectorContainer">
 							<vbox class="styleOptionContainer" flex="1" onclick="setOSPref('winxp'); showPage(3);">
 								<vbox class="styleOptionPreview">
-									<html:div class="styleOptionPreviewImg ff4native" flex="1"></html:div>
+									<html:div class="styleOptionPreviewImg ff4xp" flex="1"></html:div>
 								</vbox>
 								<hbox class="styleOptionHeader">
-									<h2>Native (Windows XP)</h2>
+									<h2>Windows XP</h2>
 								</hbox>
 							</vbox>
 							<vbox class="styleOptionContainer" flex="1" onclick="setOSPref('win7'); showPage(3);">
@@ -102,7 +101,7 @@
 									<html:div class="styleOptionPreviewImg ff4blue" flex="1"></html:div>
 								</vbox>
 								<hbox class="styleOptionHeader">
-									<h2>Blue (Aero)</h2>
+									<h2>Windows 7</h2>
 								</hbox>
 							</vbox>
 						</hbox>
@@ -184,19 +183,19 @@
 					<vbox class="content" flex="1" style="justify-content: space-between;">
 						<vbox class="pageContentHeader">
 							<h1>choose your style</h1>
-							<p>Mozilla Firefox used two colors for its theme depending on the user’s operating system or theme.</p>
+							<p>Mozilla Firefox had many styles for its theme depending on the user’s operating system.</p>
 						</vbox>
-						<hbox class="themeSelectorContainer">
+						<hbox class="themeSelectorContainer smallText">
 							<vbox class="styleOptionContainer" flex="1" onclick="setOSPref('winxp'); showPage(5);">
 								<vbox class="styleOptionPreview">
-									<html:div class="styleOptionPreviewImg australisblue" flex="1"></html:div>
+									<html:div class="styleOptionPreviewImg australisxp" flex="1"></html:div>
 								</vbox>
 								<hbox class="styleOptionHeader">
 									<h2>Windows XP</h2>
 								</hbox>
 							</vbox>
 							<vbox class="styleOptionContainer" flex="1" onclick="setOSPref('win7'); showPage(5);">
-								<vbox class="styleOptionPreview">
+								<vbox class="styleOptionPreview">	
 									<html:div class="styleOptionPreviewImg australisblue" flex="1"></html:div>
 								</vbox>
 								<hbox class="styleOptionHeader">
@@ -252,17 +251,11 @@
 							</vbox>
 						</vbox>
 						<hbox class="pageContentFooter">
-							<checkbox id="reset-layout" label="Refresh toolbox layout (recommended)" checked="true" native="" />
 							<button class="backButton footerButton styleBlue close" onclick="goBack()">
 								<html:div class="buttonIcon"></html:div>
 								<span class="buttonLabel">Back</span>
 							</button>
-							<!-- Restarting is no longer required.
-							<button id="restartNow" class="restartButton nextButton footerButton styleRed">
-								<html:div class="buttonIcon"></html:div>
-								<span class="buttonLabel">Restart Firefox</span>
-							</button>
-							-->
+							<checkbox id="reset-layout" label="Refresh toolbox layout (recommended)" flex="1" checked="true"/>
 							<button id="finishButton" class="restartButton nextButton footerButton styleGreen">
 								<html:div class="buttonIcon"></html:div>
 								<span class="buttonLabel">Finish</span>

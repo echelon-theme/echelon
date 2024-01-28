@@ -1145,10 +1145,10 @@
   
   #main-window[echelon-appearance-xp] .titlebar-buttonbox-container {
     // hack
-    top: 3px !important;
+    top: calc(var(--padded-border) + 1px) !important;
   }
   #main-window[echelon-appearance-xp][sizemode="maximized"] .titlebar-buttonbox-container {
-    top: 0 !important;
+    top: 4px !important;
   }
 
   #main-window:not([echelon-appearance-xp]) #appmenu-button-container {
@@ -1179,11 +1179,17 @@
     opacity: 1 !important;
   }
 
+  #appmenu-button-container {
+    border: 0 !important;
+    margin-bottom: 5px !important;
+    z-index: 1 !important;
+  }
+
   #TabsToolbar:not(:-moz-lwtheme) {
     background-image: none !important;
   }
   
-  &:not([echelon-style-4]) #TabsToolbar,
+  &:not([echelon-style-4], [sizemode="maximized"]) #TabsToolbar, 
   &:not([echelon-style-4]) #toolbar-menubar {
     background-color: -moz-Dialog !important;
   }
@@ -1228,7 +1234,6 @@
     list-style-image: url('images/xp/twisty-open.png') !important;
   }
   
-  /* Trees don't support background-image */
   treechildren::-moz-tree-image(container),
   treechildren::-moz-tree-image(title, query, hostContainer) {
     list-style-image: url(images/xp/bookmarksFolder.png) !important;
@@ -1238,7 +1243,6 @@
     list-style-image: url(images/xp/query.png) !important;
   }
 
-  /* Have to do this because Smart Folders above this changes the icon */
   treechildren::-moz-tree-image(title, query, hostContainer) {
     list-style-image: url(images/xp/bookmarksFolder.png) !important;
   }
@@ -1265,6 +1269,40 @@
   treechildren::-moz-tree-image(title, query, tagContainer),
   treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
     list-style-image: url("images/tag.png") !important;
+  }
+  
+  
+  &:not([tabs-on-top]) #PersonalToolbar, 
+  &:not([tabs-on-top]) #TabsToolbar,
+  &:not([tabs-on-top]) #nav-bar {
+    border-left: 0 !important;
+    border-right: 0 !important;
+    background-color: -moz-Dialog !important;
+  }
+
+  #main-menubar > menu {
+    color: WindowText !important;
+  }
+
+  #main-menubar > menu[_moz-menuactive="true"] {
+    color: HighlightText !important;
+  }
+
+  #main-menubar > menu:-moz-window-inactive {
+    color: ThreeDShadow !important;
+  }
+
+  /* Hack to have the titlebar image because the bottom part of it's image is hidden */
+  &[tabsintitlebar] #titlebar::before {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: var(--titlebar-height);
+    appearance: auto;
+    pointer-events: none !important;
+    -moz-default-appearance: -moz-window-titlebar;
+    position: absolute !important;
+    z-index: 0 !important;
   }
   
 }
