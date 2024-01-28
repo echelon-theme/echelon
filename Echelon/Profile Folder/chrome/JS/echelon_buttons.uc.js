@@ -1,3 +1,10 @@
+// ==UserScript==
+// @name			Echelon :: Add to Bookmarks button
+// @description 	Adds back "Add to Bookmarks" button for Australis.
+// @author			Travis
+// @include			main
+// ==/UserScript==
+
 function createAddToBookmarks() {
 
 try {

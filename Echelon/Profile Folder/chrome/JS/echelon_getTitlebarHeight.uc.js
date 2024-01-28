@@ -1,3 +1,10 @@
+// ==UserScript==
+// @name			Echelon :: Get Titlebar Height
+// @description 	Gets WindowMetrics and sets a CSS variable.
+// @author			AngelBruni, Travis
+// @include			main
+// ==/UserScript==
+
 function getAndSetTitleBarHeight() {
     if (Components.classes["@mozilla.org/xre/app-info;1"].getService(Components.interfaces.nsIXULRuntime).OS == "WINNT") {
         // Load User32.dll library
