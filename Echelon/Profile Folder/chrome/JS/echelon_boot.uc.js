@@ -9,6 +9,7 @@
 const { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");
 
 function executeFunctions() {
+	EchelonThemeManager.init();
 	getAndSetTitleBarHeight();
 	createAppMenuButton();
 	createAddToBookmarks();
@@ -20,6 +21,15 @@ function executeFunctions() {
 	observeIdentityLabel();
 	changeTitleFormats();
 	updateAboutItem();
+
+	window.addEventListener("echelon-reopen-wizard", function(e) {
+		// Kill the wizard notification early. Technically, it will disappear as soon as this
+		// callback ends, but it looks bad.
+		gBrowser?.getNotificationBox()?.getNotificationWithValue("echelon-setup-closed")?.dismiss();
+
+		openEchelonWizardWindow(false);
+	});
+
     console.info("Functions executed.");
 }
 

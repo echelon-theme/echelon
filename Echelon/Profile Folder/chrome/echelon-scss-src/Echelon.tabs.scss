@@ -2,7 +2,7 @@
   padding-inline: 4px !important;
 }
 
-@supports not -moz-bool-pref("Echelon.Appearance.XP") {
+#main-window:not([echelon-appearance-xp]) {
   #TabsToolbar {
     background-image: none !important;
   }
@@ -19,7 +19,7 @@
 
 .tabbrowser-tab:not([pinned]) {
   max-width: var(--tab-min-width) !important;
-  min-width: 0 !important;
+  //min-width: 0 !important; // is this necessary?
   transition: min-width 200ms ease-out, max-width 250ms ease-out , opacity 50ms ease-out 20ms !important;
 }
 
@@ -50,7 +50,7 @@
 #tabs-newtab-button {
   box-shadow: none !important;
   border-image: url(images/tab.png) 6 3 4 / 6px 3px 4px repeat stretch !important;
-  background-image: linear-gradient(to top, rgba(10%,10%,10%,.4) 1px, transparent 1px), var(--tab-background), linear-gradient(-moz-dialog, -moz-dialog) !important;
+  background-image: linear-gradient(to top, rgba(10%,10%,10%,.4) 1px, transparent 1px), var(--tab-background), linear-gradient(-moz-dialog, -moz-dialog);
   background-color: transparent !important;
   background-position: -2px -2px !important;
   background-size: calc(100% + 4px) calc(100% + 2px) !important;
@@ -123,8 +123,11 @@
   margin-inline-end: 1px !important;
 }
 
-.tabbrowser-tab:first-of-type:last-of-type .tab-close-button {
-  display: none !important;
+// Hide the close button on single-tab views, except in Australis.
+html:not([echelon-style-4]) {
+  .tabbrowser-tab:first-of-type:last-of-type .tab-close-button {
+    display: none !important;
+  }
 }
 
 #tabs-newtab-button .toolbarbutton-icon {

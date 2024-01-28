@@ -206,7 +206,7 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:last-of-type {
   padding: 0 !important;
 }
 
-#PanelUI-menu-button .toolbarbutton-badge-stack {
+#PanelUI-menu-button .toolbarbutton-badge {
   padding: 0 !important;
   background-color: transparent !important;
 }
@@ -215,7 +215,7 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:last-of-type {
   width: 0 !important;
 }
 
-#PanelUI-menu-button .toolbarbutton-badge {
+#PanelUI-menu-button .toolbarbutton-badge-stack {
   display: none !important;
 }
 

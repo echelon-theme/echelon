@@ -5,6 +5,8 @@
 // @include			main
 // ==/UserScript==
 
+// christ just rewrite this whole thing
+
 const mainWindow = document.documentElement;
 const isEchelonStyle3 = mainWindow.getAttribute("echelon-style-3");
 const isEchelonStyle5 = mainWindow.getAttribute("echelon-style-5");
@@ -15,7 +17,7 @@ try {
 
 		function setEngineProperties() {
 			if (!isEchelonStyle5) {
-				
+
 				// Remove Search Engine name from URL Bar placeholder
 				let urlBarInputPlaceholder = "Search or enter address";
 				

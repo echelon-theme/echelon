@@ -318,3 +318,12 @@ vbox {
 	color: #A2E2FF;
 	text-shadow: 0px -1px 3.8px #1384C4, 0px -1px 17px #1384C4;
 }
+
+#reset-layout {
+	margin-bottom: 8px;
+}
+
+.backButton.close {
+	border-radius: 3px;
+	border-left: 1px solid transparent;
+}

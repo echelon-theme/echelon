@@ -5,6 +5,26 @@
 		<title>Mozilla Firefox Start Page</title>
 		<link rel="icon" type="image/png" href="chrome://branding/content/icon32.png" />
 		<link rel="stylesheet" type="text/css" href="chrome://userchrome/content/pages/aboutHome/_aboutHome.css" />
+		<script id="refresh-tab-name">
+			// Script to self-refresh the tab name. This is required with the replacement hack.
+			(async function() {
+				if (windowRoot?.ownerGlobal?.gBrowser)
+				{
+					while (null == windowRoot.ownerGlobal.gBrowser.getTabForBrowser(browser))
+					{
+						await new Promise(r => requestAnimationFrame(r));
+						
+						try
+						{
+							var browser = windowRoot.ownerGlobal.gBrowser.getBrowserForOuterWindowID(window.browsingContext.currentWindowContext.outerWindowId);
+							var tab = windowRoot.ownerGlobal.gBrowser.getTabForBrowser(browser);
+							windowRoot.ownerGlobal.gBrowser.setTabTitle(tab);
+						}
+						catch (e) {}
+					}
+				}
+			})();
+			</script>
 	</head>
 	<body>
 		<div class="topSection">

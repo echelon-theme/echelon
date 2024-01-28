@@ -160,156 +160,159 @@
 }
 
 /* Windows 8+ Icons for Australis Style. */
-@supports not -moz-bool-pref("Echelon.Appearance.Blue") {
-  #main-window[echelon-style-4] #back-button,
-  #main-window[echelon-style-4] #context-back {
+#main-window:not([echelon-appearance-blue], [echelon-appearance-xp]) {
+  &[echelon-style-4] #back-button,
+  &[echelon-style-4] #context-back {
     list-style-image: url('images/icons/australis/back_large.png') !important;
   }
 
-  #main-window[echelon-style-4] #forward-button,
-  #main-window[echelon-style-4] #context-forward {
+  &[echelon-style-4] #forward-button,
+  &[echelon-style-4] #context-forward {
     list-style-image: url('images/icons/australis/forward.png') !important;
   }
 
-  #main-window[echelon-style-4] #home-button {
+  &[echelon-style-4] #home-button {
     list-style-image: url('images/icons/australis/home.png') !important;
   }
 
-  #main-window[echelon-style-4] #main-window[echelon-style-3] #home-button {
+  // ???
+  // I do not understand the syntax, but this does work, and what I thought was right
+  // "&[echelon-style-4][echelon-style-3] #home-button" does not work...?
+  &[echelon-style-4] &[echelon-style-3] #home-button {
     list-style-image: url('images/icons/australis/home_new.png') !important;
   }
 
-  #main-window[echelon-style-4] #bookmarks-menu-button {
+  &[echelon-style-4] #bookmarks-menu-button {
     list-style-image: url('images/icons/australis/bookmarks.png') !important;
   }
-  
-  #main-window[echelon-style-4] #bookmarks-button,
-  #main-window[echelon-style-4] #context-bookmarkpage {
+
+  &[echelon-style-4] #bookmarks-button,
+  &[echelon-style-4] #context-bookmarkpage {
     list-style-image: url('images/icons/australis/add-to-bookmarks.png') !important;
   }
   
-  #main-window[echelon-style-4] #context-bookmarkpage[starred="true"] {
+  &[echelon-style-4] #context-bookmarkpage[starred="true"] {
     list-style-image: url('images/icons/australis/add-to-bookmarks_starred.png') !important;
   }
 
-  #main-window[echelon-style-4] #history-panelmenu {
+  &[echelon-style-4] #history-panelmenu {
     list-style-image: url('images/icons/australis/history.png') !important;
   }
 
-  #main-window[echelon-style-4] #print-button {
+  &[echelon-style-4] #print-button {
     list-style-image: url('images/icons/australis/print.png') !important;
   }
 
-  #main-window[echelon-style-4] #new-window-button {
+  &[echelon-style-4] #new-window-button {
     list-style-image: url('images/icons/australis/new-window.png') !important;
   }
 
-  #main-window[echelon-style-4] #zoom-out-button {
+  &[echelon-style-4] #zoom-out-button {
     list-style-image: url('images/icons/australis/zoom-out.png') !important;
   }
 
-  #main-window[echelon-style-4] #zoom-in-button {
+  &[echelon-style-4] #zoom-in-button {
     list-style-image: url('images/icons/australis/zoom-in.png') !important;
   }
 
-  #main-window[echelon-style-4] #panic-button {
+  &[echelon-style-4] #panic-button {
     list-style-image: url('images/icons/australis/refresh.png') !important;
   }
 
-  #main-window[echelon-style-4]#cut-button {
+  &[echelon-style-4]#cut-button {
     list-style-image: url('images/icons/australis/cut.png') !important;
   }
 
-  #main-window[echelon-style-4] #copy-button {
+  &[echelon-style-4] #copy-button {
     list-style-image: url('images/icons/australis/copy.png') !important;
   }
 
-  #main-window[echelon-style-4] #paste-button {
+  &[echelon-style-4] #paste-button {
     list-style-image: url('images/icons/australis/paste.png') !important;
   }
 
-  #main-window[echelon-style-4] #unified-extensions-button {
+  &[echelon-style-4] #unified-extensions-button {
     list-style-image: url('images/icons/australis/extensions.png') !important;
   }
 
-  #main-window[echelon-style-4] #downloads-indicator-anchor {
+  &[echelon-style-4] #downloads-indicator-anchor {
     list-style-image: url('images/icons/australis/downloads.png') !important;
   }
   
-  #main-window[echelon-style-4] #context-reload {
+  &[echelon-style-4] #context-reload {
     list-style-image: url('images/icons/australis/reload.png') !important;
   }
   
-  #main-window[echelon-style-4] #context-stop {
+  &[echelon-style-4] #context-stop {
     list-style-image: url('images/icons/australis/stop.png') !important;
   }
   
-  #main-window[echelon-style-4] #save-to-pocket-button {
+  &[echelon-style-4] #save-to-pocket-button {
     list-style-image: url('images/icons/australis/pocket.png') !important;
   }
   
-  #main-window[echelon-style-4] #developer-button {
+  &[echelon-style-4] #developer-button {
     list-style-image: url('images/icons/australis/developer.png') !important;
   }
 
-  #main-window[echelon-style-4] #preferences-button {
+  &[echelon-style-4] #preferences-button {
     list-style-image: url('images/icons/australis/settings.png') !important;
   }
 
-  #main-window[echelon-style-4] #fullscreen-button {
+  &[echelon-style-4] #fullscreen-button {
     list-style-image: url('images/icons/australis/fullscreen.png') !important;
   }
 
-  #main-window[echelon-style-4] #characterencoding-button {
+  &[echelon-style-4] #characterencoding-button {
     list-style-image: url('images/icons/australis/encoding.png') !important;
   }
 
-  #main-window[echelon-style-4] #email-link-button {
+  &[echelon-style-4] #email-link-button {
     list-style-image: url('images/icons/australis/email.png') !important;
   }
 
-  #main-window[echelon-style-4] #open-file-button {
+  &[echelon-style-4] #open-file-button {
     list-style-image: url('images/icons/australis/open.png') !important;
   }
 
-  #main-window[echelon-style-4] #find-button {
+  &[echelon-style-4] #find-button {
     list-style-image: url('images/icons/australis/search.png') !important;
   }
 
-  #main-window[echelon-style-4] #save-page-button {
+  &[echelon-style-4] #save-page-button {
     list-style-image: url('images/icons/australis/save.png') !important;
   }
 
-  #main-window[echelon-style-4] #sidebar-button {
+  &[echelon-style-4] #sidebar-button {
     list-style-image: url('images/icons/australis/sidebar.png') !important;
   }
   
-  #main-window[echelon-style-4] #privatebrowsing-button {
+  &[echelon-style-4] #privatebrowsing-button {
     list-style-image: url('images/icons/australis/private_browsing.png') !important;
   }
   
-  #main-window[echelon-style-4] #PlacesChevron, 
-  #main-window[echelon-style-4] #nav-bar-overflow-button {
+  &[echelon-style-4] #PlacesChevron,
+  &[echelon-style-4] #nav-bar-overflow-button {
     list-style-image: url('images/icons/australis/chevron.png') !important;
   }
   
-  #main-window[echelon-style-4] #logins-button {
+  &[echelon-style-4] #logins-button {
     list-style-image: url('images/icons/australis/login.png') !important;
   }
 
-  #main-window[echelon-style-4] #screenshot-button {
+  &[echelon-style-4] #screenshot-button {
     list-style-image: url('images/icons/australis/screenshot.png') !important;
   }
 
-  #main-window[echelon-style-4] #import-button {
+  &[echelon-style-4] #import-button {
     list-style-image: url('images/icons/australis/import.png') !important;
   }
 
-  #main-window[echelon-style-4] #library-button {
+  &[echelon-style-4] #library-button {
     list-style-image: url('images/icons/australis/library.png') !important;
   }
   
-  #main-window[echelon-style-4] #sync-button {
+  &[echelon-style-4] #sync-button {
     list-style-image: url('images/icons/australis/sync_tabs.png') !important;
   }
 }

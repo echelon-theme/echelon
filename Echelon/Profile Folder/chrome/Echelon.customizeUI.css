@@ -1,0 +1,210 @@
+#customization-container {
+  background-color: transparent !important;
+}
+
+#customization-content-container {
+  background-color: #F7F7F7 !important;
+}
+
+#main-window[customizing] {
+  background-image: url("images/customizeUI/customizeMode-gridTexture.png") !important;
+  background-attachment: fixed !important;
+}
+
+#main-window[customizing] #customization-container,
+#main-window[customizing] #navigator-toolbox,
+#main-window[customizing] #browser {
+  margin-left: 2em !important;
+  margin-right: 2em !important;
+}
+
+#navigator-toolbox,
+#customization-container,
+#titlebar,
+#browser {
+  transition-property: all !important;
+  transition-duration: 150ms !important;
+  transition-timing-function: ease-out !important;
+}
+
+#main-window[customizing] #customization-container {
+  margin-bottom: 2em !important;
+}
+
+#main-window[customizing]:not([echelon-style-4]) #appmenu-button-container {
+  pointer-events: none !important;
+  opacity: 0.5;
+  transition: opacity 150ms ease-in !important;
+}
+
+#main-window[customizing] #wrapper-urlbar-container + #wrapper-stop-reload-button {
+  opacity: 0.5 !important;
+}
+
+#main-window[customizing] #nav-bar,
+#main-window[customizing] #wrapper-personal-bookmarks,
+#main-window[customizing] #TabsToolbar,
+#main-window[customizing] #toolbar-menubar {
+  transition-property: padding-inline !important;
+  transition-duration: 150ms !important;
+  transition-timing-function: ease-out !important;
+  padding-inline: 10px !important;
+}
+
+@media (-moz-windows-compositor) {
+  #main-window[echelon-style-4][customizing] .titlebar-buttonbox-container {
+    right: calc(-11px - 2em) !important;
+  }
+}
+#nav-bar[customizing] {
+  outline: 1px dashed;
+  outline-offset: -3px;
+}
+
+#PersonalToolbar:not(:hover)[customizing] {
+  outline-color: transparent !important;
+}
+
+#bookmarks-toolbar-button, #bookmarks-toolbar-placeholder {
+  list-style-image: url("images/bookmarksToolbar.png") !important;
+}
+
+#customization-footer {
+  border-top: 1px solid #DDD !important;
+  padding: 15px !important;
+  padding-inline: 10px !important;
+  background-color: #ECECEC !important;
+}
+
+:root:not([echelon-style-4]) #customization-titlebar-visibility-checkbox {
+  display: none !important;
+}
+
+#customization-titlebar-visibility-checkbox .checkbox-check {
+  display: none !important;
+}
+
+#customization-titlebar-visibility-checkbox .checkbox-icon {
+  width: 24px !important;
+  height: 24px !important;
+  background-image: url("images/customizeUI/customize-titleBar-toggle.png") !important;
+}
+
+#customization-titlebar-visibility-checkbox[checked] .checkbox-icon {
+  background-position-x: -24px !important;
+}
+
+#customization-titlebar-visibility-checkbox .checkbox-label-box {
+  gap: 6px !important;
+  align-items: center !important;
+}
+
+.customizationmode-button[type=menu] > .box-inherit > .box-inherit > .button-text {
+  padding-inline-end: 4px !important;
+}
+
+.customizationmode-button > .box-inherit > .button-menu-dropmarker {
+  width: 5px !important;
+  height: 3px !important;
+  list-style-image: url("images/dropdown.png") !important;
+}
+
+.customizationmode-checkbox,
+.customizationmode-button {
+  min-height: 35px !important;
+  border: 1px solid #C0C0C0 !important;
+  border-radius: 3px !important;
+  margin: 0px !important;
+  margin-inline: 5px !important;
+  padding: 2px 12px !important;
+  background-color: #FBFBFB !important;
+  color: #474747 !important;
+  box-shadow: 0px 1px rgba(255, 255, 255, 0.5), 0px 1px rgba(255, 255, 255, 0.5) inset !important;
+}
+
+#customization-header {
+  font-size: 1.5em !important;
+  line-height: 1.5em !important;
+  color: #406480 !important;
+  font-weight: lighter !important;
+  margin-bottom: 1em !important;
+  padding: 25px 25px 0px !important;
+  margin: 0 !important;
+}
+
+#customization-palette .toolbarbutton-icon {
+  width: 18px !important;
+  opacity: 1 !important;
+}
+
+#customization-palette #fxa-avatar-image {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+#customization-panel-container {
+  background-image: url("images/customizeUI/customizeMode-separatorHorizontal.png"), url("images/customizeUI/customizeMode-separatorVertical.png"), url("images/customizeUI/customizeMode-gridTexture.png"), url("images/customizeUI/background-noise-toolbar.png"), linear-gradient(to bottom, #3E86CE, #3878BA);
+  background-position: center top, left center, left top, left top, left top;
+  background-repeat: no-repeat, no-repeat, repeat, repeat, no-repeat;
+  background-size: auto 12px, 12px 100%, auto auto, auto auto, auto auto;
+  background-attachment: scroll, scroll, fixed, fixed, scroll;
+  padding: 15px 25px 25px !important;
+}
+
+#customization-panelWrapper {
+  --panel-arrow-offset: 0 !important;
+}
+
+#customization-panelWrapper > .panel-arrowcontent {
+  max-width: 300px !important;
+  border: 1px solid #AAA !important;
+  box-shadow: none !important;
+  min-height: 100% !important;
+}
+
+#customization-panelWrapper > .panel-arrowbox > .panel-arrow[side=top] {
+  stroke: #AAA !important;
+  position: relative !important;
+  margin-left: 10px !important;
+  margin-right: 6px !important;
+}
+
+#customization-panelHolder {
+  min-height: 100% !important;
+}
+
+#customization-panelHolder > #widget-overflow-fixed-list::before {
+  height: 100% !important;
+  background-image: none !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  margin-inline: 10px !important;
+  border-radius: 4px !important;
+  border: 1px dashed #BBB !important;
+}
+
+#customization-panelHolder > #widget-overflow-fixed-list:not(:empty)::before {
+  display: none !important;
+}
+
+#customization-panelDescription {
+  font-size: unset !important;
+  color: #444 !important;
+}
+
+#customization-panelHeader {
+  font-size: 1.5em !important;
+  color: #406480 !important;
+  font-weight: lighter !important;
+}
+
+/** Hack to make entering CustomizeUI work properly **/
+#main-window:not([customizing]) #customization-container {
+  opacity: 0 !important;
+  min-height: 0 !important;
+  visibility: collapse !important;
+}
+
+#customization-container {
+  display: flex !important;
+}
