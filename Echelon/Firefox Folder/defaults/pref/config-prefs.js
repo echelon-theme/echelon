@@ -5,6 +5,9 @@ pref("general.config.filename", "config.js");
 pref("general.config.sandbox_enabled", false);
 // End Fuckerfox defaults
 
+// FUCK DARK MODE
+pref("ui.systemUsesDarkMode", 0);
+
 // Enable CSS
 pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
