@@ -1,3 +1,10 @@
+// ==UserScript==
+// @name			Echelon :: Status Bar
+// @description 	Adds back Status Bar.
+// @author			Travis
+// @include			main
+// ==/UserScript==
+
 var addStatusbar = {
     init: function () {	
         if (location != 'chrome://browser/content/browser.xhtml')

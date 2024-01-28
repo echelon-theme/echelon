@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name			Echelon :: Search Engine icon
+// @name			Echelon :: Restore Old Search Engine
 // @description 	Adds back Search Engine icon and Placeholder name.
 // @author			Travis
 // @include			main

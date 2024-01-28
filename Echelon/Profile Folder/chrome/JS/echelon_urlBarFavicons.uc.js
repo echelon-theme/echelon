@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name			Favicon In UrlBar
+// @name			Echelon :: Favicon on Address Bar
 // @description 	Adds Favicon of the current website to the UrlBar
 // @author			Travis
 // @include			main
