@@ -1302,12 +1302,12 @@
 }
 
 @media not (-moz-windows-compositor) {
-  #main-window[echelon-style-3]:not([tabs-on-top]) #PersonalToolbar,
-  #main-window[echelon-style-3]:not([tabs-on-top]) #TabsToolbar {
+  #main-window:not([tabs-on-top]) #PersonalToolbar,
+  #main-window:not([tabs-on-top]) #TabsToolbar {
     background: transparent !important;
   }
 
-  #main-window[echelon-style-3]:not([tabs-on-top]) #PersonalToolbar {
+  #main-window:not([tabs-on-top]) #PersonalToolbar {
     border: 0 !important;
   }
 }
