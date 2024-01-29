@@ -13,7 +13,7 @@ pushd echelon-scss-src\buildenv
 
 npm install --dry-run | findstr /C:"up to date"
 
-if (%ERRORLEVEL% equ 1) (
+if errorlevel 1 (
 	echo Node packages outdated. Installing.
 	call npm install --include=dev
 )
