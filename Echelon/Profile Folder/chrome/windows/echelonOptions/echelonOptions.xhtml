@@ -6,25 +6,27 @@
 <window xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="echelonOptions" windowtype="Browser:EchelonOptions" width="450" height="450" role="dialog" resizable="false" title="Echelon Options">
     <vbox id="contentArea" flex="1">
         <html:div id="tabs">
-            <html:div class="tab tab-selected" id="tab-general">
-                <html:div class="tab-icon"></html:div>
-                <html:span class="tab-label">General</html:span>
-            </html:div>
-            <html:div class="tab" id="tab-branding">
-                <html:div class="tab-icon"></html:div>
-                <html:span class="tab-label">Branding</html:span>
-            </html:div>
-            <html:div class="tab" id="tab-native-controls">
-                <html:div class="tab-icon"></html:div>
-                <html:span class="tab-label">Native Controls</html:span>
-            </html:div>
-            <html:div class="tab" id="tab-debug">
+			<html:div id="main-tabs">
+				<html:div class="tab tab-selected" id="tab-general">
+					<html:div class="tab-icon"></html:div>
+					<html:span class="tab-label">General</html:span>
+				</html:div>
+				<html:div class="tab" id="tab-branding">
+					<html:div class="tab-icon"></html:div>
+					<html:span class="tab-label">Branding</html:span>
+				</html:div>
+				<html:div class="tab" id="tab-native-controls">
+					<html:div class="tab-icon"></html:div>
+					<html:span class="tab-label">Native Controls</html:span>
+				</html:div>
+				<html:div class="tab" id="tab-about">
+					<html:div class="tab-icon"></html:div>
+					<html:span class="tab-label">About</html:span>
+				</html:div>
+			</html:div>
+			<html:div class="tab" id="tab-debug">
                 <html:div class="tab-icon"></html:div>
                 <html:span class="tab-label">Debug</html:span>
-            </html:div>
-            <html:div class="tab" id="tab-about">
-                <html:div class="tab-icon"></html:div>
-                <html:span class="tab-label">About</html:span>
             </html:div>
         </html:div>
         <html:div id="content">

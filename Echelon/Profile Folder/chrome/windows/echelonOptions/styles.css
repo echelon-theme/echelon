@@ -84,6 +84,13 @@ groupbox > p {
     display: flex;
     flex-direction: row;
     align-items: stretch;
+	justify-content: space-between;
+}
+
+#main-tabs {
+	display: flex;
+    flex-direction: row;
+    align-items: stretch;
 }
 
 .tab {
