@@ -168,6 +168,10 @@
   list-style-image: url("images/icons/sync_tabs.png") !important;
 }
 
+#PanelUI-menu-button {
+  list-style-image: url("images/icons/hamburger.png") !important;
+}
+
 /* Windows 8+ Icons for Australis Style. */
 #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #back-button, #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #context-back {
   list-style-image: url("images/icons/australis/back_large.png") !important;
@@ -208,7 +212,7 @@
 #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #panic-button {
   list-style-image: url("images/icons/australis/refresh.png") !important;
 }
-#main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4]#cut-button {
+#main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #cut-button {
   list-style-image: url("images/icons/australis/cut.png") !important;
 }
 #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #copy-button {
@@ -279,4 +283,7 @@
 }
 #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #sync-button {
   list-style-image: url("images/icons/australis/sync_tabs.png") !important;
+}
+#main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #PanelUI-menu-button {
+  list-style-image: url("images/icons/australis/hamburger.png") !important;
 }

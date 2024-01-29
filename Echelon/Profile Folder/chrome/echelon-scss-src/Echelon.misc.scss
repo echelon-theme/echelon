@@ -356,7 +356,7 @@ findbar {
 .findbar-find-next,
 .findbar-find-previous,
 .findbar-highlight,
-#main-window[echelon-style-4] checkbox {
+#main-window[echelon-style-4] checkbox:not(.customizationmode-checkbox) {
   padding: 0 3px !important;
   appearance: toolbarbutton !important;
   list-style-image: none !important;

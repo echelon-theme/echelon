@@ -137,7 +137,7 @@ class LayoutManager
 		{
 			case "aftercustomization":
 			case "customizationchange":
-				this.refreshLayout();
+				this.refreshToolboxLayout();
 				break;
 		}
 	}

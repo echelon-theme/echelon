@@ -480,8 +480,6 @@
   --tab-width: 210px !important;
 }
 
-/* PanelUI Button */
-
 #main-window[echelon-style-4] #PanelUI-button {
   margin-inline-start: 3px !important;
   position: relative !important;
@@ -776,7 +774,7 @@
   
   &[echelon-appearance-australis-fog] {
 
-    &[echelon-style-3][echelon-style-4] #TabsToolbar::after {
+    &[tabsintitlebar][echelon-style-3][echelon-style-4] #TabsToolbar::after {
       content: '';
       display: flex;
       box-shadow: 0 0 30px 30px rgba(174,189,204,0.85);
