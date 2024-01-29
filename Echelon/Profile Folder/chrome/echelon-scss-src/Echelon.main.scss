@@ -159,6 +159,10 @@
   list-style-image: url('images/icons/sync_tabs.png') !important;
 }
 
+#PanelUI-menu-button {
+  list-style-image: url('images/icons/hamburger.png') !important;
+}
+
 /* Windows 8+ Icons for Australis Style. */
 #main-window:not([echelon-appearance-blue], [echelon-appearance-xp]) {
   &[echelon-style-4] #back-button,
@@ -219,7 +223,7 @@
     list-style-image: url('images/icons/australis/refresh.png') !important;
   }
 
-  &[echelon-style-4]#cut-button {
+  &[echelon-style-4] #cut-button {
     list-style-image: url('images/icons/australis/cut.png') !important;
   }
 
@@ -314,5 +318,9 @@
   
   &[echelon-style-4] #sync-button {
     list-style-image: url('images/icons/australis/sync_tabs.png') !important;
+  }
+
+  &[echelon-style-4] #PanelUI-menu-button {
+    list-style-image: url('images/icons/australis/hamburger.png') !important;
   }
 }

@@ -35,7 +35,7 @@ $unified-refresh-buttons: "#reload-button.unified, #stop-button.unified, #go-but
 
 /** TOOLBAR BUTTONS **/
 
-#nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #zoom-out-button, #zoom-in-button, #{$unified-refresh-buttons}, #edit-controls > *, #PanelUI-menu-button, #appmenu-button, #new-tab-button),
+#nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #zoom-out-button, #zoom-in-button, #{$unified-refresh-buttons}, #edit-controls > *, #appmenu-button, #new-tab-button),
 toolbar .toolbaritem-combined-buttons:not(.unified-extensions-item) {
   padding: 5px 2px !important;
 }
@@ -51,16 +51,20 @@ toolbar .toolbarbutton-1:not(#back-button, #tabs-newtab-button, #{$unified-refre
   height: 18px !important;
 }
 
-#nav-bar[mode="icons"] .toolbarbutton-1:not(#back-button, #forward-button, #alltabs-button, #new-tab-button, #{$unified-refresh-buttons}, #PanelUI-menu-button, #appmenu-button, #new-tab-button, #bookmarks-menu-button) {
+#nav-bar[mode="icons"] .toolbarbutton-1:not(#back-button, #forward-button, #alltabs-button, #new-tab-button, #{$unified-refresh-buttons}, #appmenu-button, #new-tab-button, #bookmarks-menu-button) {
   width: 30px !important;
   height: 24px !important;
 }
 
-toolbar .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button, #tabs-newtab-button, #new-tab-button, #{$unified-refresh-buttons}, #appmenu-button, .toolbarbutton-combined) {
+.toolbarbutton-1 > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+  width: revert !important;
+}
+
+toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #new-tab-button, #{$unified-refresh-buttons}, #appmenu-button, .toolbarbutton-combined) {
   margin-inline: 3px !important;
 }
 
-toolbar .toolbarbutton-1:not(#PanelUI-menu-button, #tabs-newtab-button, #new-tab-button, #appmenu-button, #{$unified-refresh-buttons}, #alltabs-button) {
+toolbar .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, #appmenu-button, #{$unified-refresh-buttons}, #alltabs-button) {
   background: rgba(151,152,153,.05) linear-gradient(rgba(251,252,253,.95), rgba(246,247,248,.47) 49%, rgba(231,232,233,.45) 51%, rgba(225,226,229,.3));
   background-clip: padding-box;
   border-radius: var(--toolbarbutton-border-radius);
@@ -206,23 +210,25 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:last-of-type {
 }
 
 /* HIDE PANEL UI */
-#PanelUI-menu-button {
-  list-style-image: none !important;
-  background-color: transparent !important;
-  padding: 0 !important;
-}
+#main-window:not([echelon-style-4]) {
+  #PanelUI-menu-button {
+    list-style-image: none !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+  }
 
-#PanelUI-menu-button .toolbarbutton-badge {
-  padding: 0 !important;
-  background-color: transparent !important;
-}
+  #PanelUI-menu-button .toolbarbutton-badge {
+    padding: 0 !important;
+    background-color: transparent !important;
+  }
 
-#PanelUI-menu-button .toolbarbutton-icon {
-  width: 0 !important;
-}
+  #PanelUI-menu-button .toolbarbutton-icon {
+    width: 0 !important;
+  }
 
-#PanelUI-menu-button .toolbarbutton-badge-stack {
-  display: none !important;
+  #PanelUI-menu-button .toolbarbutton-badge-stack {
+    display: none !important;
+  }
 }
 
 /* DOWNLOADS BUTTON */
