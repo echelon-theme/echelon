@@ -480,6 +480,26 @@
   --tab-width: 210px !important;
 }
 
+/* PanelUI Button */
+
+#main-window[echelon-style-4] #PanelUI-button {
+  margin-inline-start: 3px !important;
+  position: relative !important;
+  &::before {
+    content: "";
+    display: inline-block;
+    height: calc(100% + 14px);
+    width: 3px;
+    position: absolute;
+    left: -4px !important;
+    top: -7px;
+    background-image: -moz-linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.3) 30%, hsla(0, 0%, 100%, 0.3) 70%, hsla(0, 0%, 100%, 0)), -moz-linear-gradient(hsla(210, 54%, 20%, 0), hsla(210, 54%, 20%, 0.3) 30%, hsla(210, 54%, 20%, 0.3) 70%, hsla(210, 54%, 20%, 0)), -moz-linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.3) 30%, hsla(0, 0%, 100%, 0.3) 70%, hsla(0, 0%, 100%, 0));
+    background-size: 1px calc(100% - 1px), 1px calc(100% - 1px), 1px calc(100% - 1px) !important;
+    background-position: 0px 0px, 1px 0px, 2px 0px;
+    background-repeat: no-repeat;
+  }
+}
+
 /* HACKY AND SHITY AUSTRALIS TABS FUCK MOZILLA */
 #main-window[echelon-style-4] #TabsToolbar {
   --tab-stroke-background-size: auto 100%;
