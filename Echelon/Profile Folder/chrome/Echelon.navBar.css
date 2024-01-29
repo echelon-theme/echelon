@@ -42,7 +42,7 @@
 }
 
 /** TOOLBAR BUTTONS **/
-#nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #zoom-out-button, #zoom-in-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #edit-controls > *, #appmenu-button, #new-tab-button),
+#nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #zoom-out-button, #PanelUI-menu-button, #zoom-in-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #edit-controls > *, #appmenu-button, #new-tab-button),
 toolbar .toolbaritem-combined-buttons:not(.unified-extensions-item) {
   padding: 5px 2px !important;
 }
@@ -53,12 +53,12 @@ toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack {
   background-color: transparent !important;
 }
 
-toolbar .toolbarbutton-1:not(#back-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #new-tab-button) > .toolbarbutton-icon {
+toolbar .toolbarbutton-1:not(#back-button, #PanelUI-menu-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #new-tab-button) > .toolbarbutton-icon {
   width: 18px !important;
   height: 18px !important;
 }
 
-#nav-bar[mode=icons] .toolbarbutton-1:not(#back-button, #forward-button, #alltabs-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #new-tab-button, #bookmarks-menu-button) {
+#nav-bar[mode=icons] .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button, #alltabs-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #new-tab-button, #bookmarks-menu-button) {
   width: 30px !important;
   height: 24px !important;
 }
@@ -67,11 +67,11 @@ toolbar .toolbarbutton-1:not(#back-button, #tabs-newtab-button, #reload-button.u
   width: revert !important;
 }
 
-toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, .toolbarbutton-combined) {
+toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #PanelUI-menu-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, .toolbarbutton-combined) {
   margin-inline: 3px !important;
 }
 
-toolbar .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, #appmenu-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #alltabs-button) {
+toolbar .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, #PanelUI-menu-button, #appmenu-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #alltabs-button) {
   background: rgba(151, 152, 153, 0.05) linear-gradient(rgba(251, 252, 253, 0.95), rgba(246, 247, 248, 0.47) 49%, rgba(231, 232, 233, 0.45) 51%, rgba(225, 226, 229, 0.3));
   background-clip: padding-box;
   border-radius: var(--toolbarbutton-border-radius);
@@ -84,14 +84,14 @@ toolbar .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, #appmenu-butt
   transition: background-color var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction), border-color var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction), box-shadow var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction);
 }
 
-toolbar .toolbarbutton-1:not([open], [disabled=true], #back-button, #new-tab-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):hover {
+toolbar .toolbarbutton-1:not([open], [disabled=true], #back-button, #new-tab-button, #PanelUI-menu-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):hover {
   background-color: hsla(190, 60%, 70%, 0.5) !important;
   border-color: hsla(190, 50%, 65%, 0.8) hsla(190, 50%, 50%, 0.8) hsla(190, 50%, 40%, 0.8) !important;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 1.5px rgba(255, 255, 255, 0.1) inset, 0 1px 0 rgba(0, 0, 0, 0.1), 0 0 3.5px hsl(190, 90%, 80%) !important;
 }
 
-toolbar .toolbarbutton-1:not([disabled=true], #back-button, #new-tab-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):hover:active,
-toolbar .toolbarbutton-1:not([disabled=true], #back-button, #new-tab-button, #tabs-newtab-button, #alltabs-button)[open],
+toolbar .toolbarbutton-1:not([disabled=true], #back-button, #new-tab-button, #PanelUI-menu-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):hover:active,
+toolbar .toolbarbutton-1:not([disabled=true], #back-button, #new-tab-button, #PanelUI-menu-button, #tabs-newtab-button, #alltabs-button)[open],
 #forward-button:not([disabled=true]):active {
   background-color: transparent !important;
   border-color: rgba(0, 0, 0, 0.65) rgba(0, 0, 0, 0.55) rgba(0, 0, 0, 0.5) !important;
