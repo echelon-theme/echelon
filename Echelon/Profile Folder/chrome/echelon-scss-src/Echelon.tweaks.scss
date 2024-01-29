@@ -764,7 +764,7 @@
       margin: 0 60px;
       position: absolute;
       pointer-events: none;
-      top: 60px;
+      top: 30px;
       width: -moz-available;
       z-index: -1;
       order: 1001;
@@ -1226,14 +1226,6 @@
     background-image: url('images/xp/folder-item.png') !important;
   }
   
-  treechildren::-moz-tree-twisty {
-    list-style-image: url('images/xp/twisty-clsd.png') !important;
-  }
-
-  treechildren::-moz-tree-twisty(open) {
-    list-style-image: url('images/xp/twisty-open.png') !important;
-  }
-  
   treechildren::-moz-tree-image(container),
   treechildren::-moz-tree-image(title, query, hostContainer) {
     list-style-image: url(images/xp/bookmarksFolder.png) !important;
@@ -1306,6 +1298,21 @@
   }
   
 }
+
+/* 
+  treechildren doesn't support being selected from HTML
+*/
+
+@supports -moz-bool-pref("Echelon.Appearance.XP") {
+  treechildren::-moz-tree-twisty {
+    list-style-image: url('images/xp/twisty-clsd.png') !important;
+  }
+
+  treechildren::-moz-tree-twisty(open) {
+    list-style-image: url('images/xp/twisty-open.png') !important;
+  }
+}
+
 
 /** TABS ON BOTTOM **/
 

@@ -724,22 +724,20 @@ treechildren::-moz-tree-row(selected, current, focus) {
   outline-color: #F3D982 !important;
 }
 
-html:not([echelon-appearance-xp]) {
-  treechildren::-moz-tree-twisty {
-    list-style-image: url('images/twisty-clsd.png') !important;
-  }
+treechildren::-moz-tree-twisty {
+  list-style-image: url('images/twisty-clsd.png') !important;
+}
 
-  treechildren::-moz-tree-twisty(hover) {
-    list-style-image: url('images/twisty-clsd-hover.png') !important;
-  }
+treechildren::-moz-tree-twisty(hover) {
+  list-style-image: url('images/twisty-clsd-hover.png') !important;
+}
 
-  treechildren::-moz-tree-twisty(open) {
-    list-style-image: url('images/twisty-open.png') !important;
-  }
+treechildren::-moz-tree-twisty(open) {
+  list-style-image: url('images/twisty-open.png') !important;
+}
 
-  treechildren::-moz-tree-twisty(hover, open) {
-    list-style-image: url('images/twisty-open-hover.png') !important;
-  }
+treechildren::-moz-tree-twisty(hover, open) {
+  list-style-image: url('images/twisty-open-hover.png') !important;
 }
 
 /* Trees don't support background-image */

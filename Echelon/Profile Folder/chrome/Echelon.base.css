@@ -27,7 +27,7 @@
 }
 
 #tabbrowser-tabs {
-  --tab-min-width: var(--tab-width) !important;
+  --tab-max-width: var(--tab-width) !important;
 }
 
 :root #navigator-toolbox > toolbar,

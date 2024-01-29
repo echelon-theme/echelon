@@ -18,8 +18,8 @@
 }
 
 .tabbrowser-tab:not([pinned]) {
-  max-width: var(--tab-min-width) !important;
-  //min-width: 0 !important; // is this necessary?
+  max-width: var(--tab-max-width) !important;
+  min-width: var(--tab-min-width) !important;
   transition: min-width 200ms ease-out, max-width 250ms ease-out , opacity 50ms ease-out 20ms !important;
 }
 
@@ -215,7 +215,10 @@ html:not([echelon-style-4]) {
   display: none !important;
 }
 
-.tab-throbber[busy],
+.tab-throbber[busy] {
+  background-image: url('images/connecting.png') !important;
+}
+
 .tab-throbber[progress] {
   background-image: url('images/loading.png') !important;
 }
