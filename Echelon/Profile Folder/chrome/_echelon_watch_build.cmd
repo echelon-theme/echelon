@@ -1,1 +1,1 @@
-sass --watch echelon-scss-src:. --no-error-css --no-source-map
+_echelon_build watch
