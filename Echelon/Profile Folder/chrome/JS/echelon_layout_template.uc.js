@@ -91,12 +91,28 @@ const TOOLBAR_LAYOUT_TEMPLATE = [
 		}
 	},
 	{
-		id: "bookmarks-menu-button",
+		id: "downloads-button",
+		behavior: "add-if-not-existing",
+		absolutePositionHint: 7,
+		relativePositionHint: {
+			"home-button": "after"
+		}
+	},
+	{
+		id: "bookmarks-button",
 		behavior: "add-if-not-existing",
 		relativePositionHint: {
 			// These are counted one after another, so the first in the list
 			// is the primary item to check
-			"home-button": "after",
+			"downloads-button": "after",
+			"search-container": "after"
+		}
+	},
+	{
+		id: "bookmarks-menu-button",
+		behavior: "add-if-not-existing",
+		relativePositionHint: {
+			"bookmarks-button": "after",
 			"search-container": "after"
 		}
 	},
