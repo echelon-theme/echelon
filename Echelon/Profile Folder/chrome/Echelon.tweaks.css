@@ -492,7 +492,8 @@
 #main-window[echelon-style-4] .tabbrowser-tab::after,
 #main-window[echelon-style-4] .tabbrowser-tab:hover + .tabbrowser-tab::before,
 #main-window[echelon-style-4] #tabbrowser-arrowscrollbox-periphery::before,
-#main-window[echelon-style-4] .tabbrowser-tab:hover + #tabbrowser-arrowscrollbox-periphery::before {
+#main-window[echelon-style-4] .tabbrowser-tab:hover + #tabbrowser-arrowscrollbox-periphery::before,
+#main-window[echelon-style-4] .tabbrowser-tab[selected] + .tabbrowser-tab::before {
   display: none !important;
   margin-inline-start: -3px !important;
   width: 3px !important;
@@ -813,9 +814,9 @@
   border-radius: 0 !important;
 }
 
-#main-window[echelon-style-5] #reload-button,
-#main-window[echelon-style-5] #stop-button,
-#main-window[echelon-style-5] #go-button {
+#main-window[echelon-style-5] #reload-button.unified,
+#main-window[echelon-style-5] #stop-button.unified,
+#main-window[echelon-style-5] #go-button.unified {
   width: unset !important;
   height: 100% !important;
   padding: 0 9px !important;
@@ -825,9 +826,9 @@
   border-image-slice: 1 !important;
 }
 
-#main-window[echelon-style-5] #reload-button .toolbarbutton-icon,
-#main-window[echelon-style-5] #stop-button .toolbarbutton-icon,
-#main-window[echelon-style-5] #go-button .toolbarbutton-icon {
+#main-window[echelon-style-5] #reload-button.unified .toolbarbutton-icon,
+#main-window[echelon-style-5] #stop-button.unified .toolbarbutton-icon,
+#main-window[echelon-style-5] #go-button.unified .toolbarbutton-icon {
   background-image: url("images/ff56/reload-stop-go.png") !important;
 }
 
@@ -942,7 +943,7 @@
   fill: #B2B2B2 !important;
 }
 
-#main-window[echelon-style-5] #main-window .urlbarView-row[type=bookmark] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
+#main-window[echelon-style-5] .urlbarView-row[type=bookmark] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
   background-image: url("images/ff56/bookmark.svg") !important;
 }
 
@@ -1034,6 +1035,32 @@
   display: flex !important;
 }
 
+#main-window[echelon-style-5] .urlbarView-row[row-selectable]:hover .urlbarView-url {
+  color: Highlight !important;
+}
+
+#main-window[echelon-style-5] .tabbrowser-tab::before,
+#main-window[echelon-style-5] .tabbrowser-tab::after,
+#main-window[echelon-style-5] .tabbrowser-tab:hover + .tabbrowser-tab::before,
+#main-window[echelon-style-5] #tabbrowser-arrowscrollbox-periphery::before,
+#main-window[echelon-style-5] .tabbrowser-tab:hover + #tabbrowser-arrowscrollbox-periphery::before {
+  border-left: 1px solid !important;
+  border-image: linear-gradient(transparent 6px, currentColor 6px, currentColor calc(100% - 5px), transparent calc(100% - 5px)) !important;
+  background-image: none !important;
+  border-image-slice: 1 !important;
+  width: 1px !important;
+  box-sizing: border-box !important;
+  opacity: 0.2 !important;
+  margin-inline-start: -1px !important;
+}
+
+#main-window[echelon-style-5] #identity-box:not(.localResource).chromeUI {
+  background-image: none !important;
+  border-inline-end: 1px solid var(--urlbar-separator-color) !important;
+  border-image: linear-gradient(transparent 15%, var(--urlbar-separator-color) 15%, var(--urlbar-separator-color) 85%, transparent 85%) !important;
+  border-image-slice: 1 !important;
+}
+
 #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #tabs-newtab-button .toolbarbutton-icon {
   width: 14px !important;
   height: 14px !important;
@@ -1062,6 +1089,12 @@
 #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4][echelon-appearance-australis-windows10] #searchbar {
   --urlbar-height: 28px !important;
   --urlbar-toolbar-height: 28px !important;
+}
+#main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4][echelon-appearance-australis-windows10] #back-button {
+  margin-inline-end: -8px !important;
+}
+#main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4][echelon-appearance-australis-windows10] #forward-button {
+  min-height: 28px !important;
 }
 #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4][echelon-appearance-australis-windows10] #forward-button:not(:hover)[disabled=true] + #urlbar-container #urlbar-background,
 #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4][echelon-appearance-australis-windows10] #forward-button:not(:hover)[disabled=true] + #urlbar-container #urlbar-input-container {

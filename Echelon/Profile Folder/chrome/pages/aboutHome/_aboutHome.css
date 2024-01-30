@@ -275,6 +275,53 @@ input, button {
   height: 19px;
 }
 
+/*
+	Firefox 56 Style
+*/
+
+:root[echelon-style="5"] #searchSubmit {
+	max-width: 50px;
+	color: transparent;
+	-moz-context-properties: fill;
+	fill: #616366;
+	background: url("chrome://userchrome/content/pages/aboutHome/images/search-arrow-go.svg") center center no-repeat, linear-gradient(hsla(0,0%,100%,.8), hsla(0,0%,100%,.1)) padding-box;
+}
+
+:root[echelon-style="5"] #searchText:focus + #searchSubmit,
+:root[echelon-style="5"] #searchText + #searchSubmit:hover,
+:root[echelon-style="5"] #searchText[autofocus] + #searchSubmit {
+	color: transparent;
+	background-image: url("chrome://userchrome/content/pages/aboutHome/images/search-arrow-go.svg"), linear-gradient(#66bdff, #0d9eff);
+	fill: white;
+}
+
+:root[echelon-style="5"] .snippetIcon {
+	margin-left: 0;
+}
+
+:root[echelon-style="5"] #searchLogo {
+    border: 1px transparent;
+    padding: 0;
+    margin: 0;
+    width: 36px;
+	min-width: 36px;
+    height: 36px;
+    background: url("chrome://userchrome/content/pages/aboutHome/images/search-indicator-magnifying-glass.svg") center center no-repeat;
+    position: absolute;
+}
+
+:root[echelon-style="5"] #searchText {
+	padding-inline-start: 34px;
+}
+
+:root[echelon-style="5"] #aboutMozilla {
+	opacity: 0.2;
+}
+
+:root[echelon-style="5"] #aboutMozilla::before {
+	content: url("chrome://userchrome/content/pages/aboutHome/images/mozilla.svg");
+}
+
 /* 
 	Pre-Firefox 14 style
 */

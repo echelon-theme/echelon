@@ -3,6 +3,7 @@ Services.scriptloader.loadSubScript("chrome://userchrome/content/JS/echelon_util
 // FOR PRE-FIREFOX 23 STYLE
 
 let root = document.documentElement;
+let searchText = document.getElementById("searchText");
 
 let echelonStyle = Services.prefs.getIntPref("Echelon.Appearance.Style");
 let echelonOldLogo = Services.prefs.getBoolPref("Echelon.Appearance.NewLogo");
@@ -18,11 +19,12 @@ root.setAttribute("update-channel", getUpdateChannel());
 
 // ECHELON STYLE
 
-if (echelonStyle <= 2) {
+if (echelonStyle = 5) {
+	root.setAttribute("echelon-style", "5");
+	searchText.setAttribute("placeholder", "Search");
+} else if (echelonStyle <= 2) {
 	root.setAttribute("echelon-style", "1");
-}
-
-if (echelonStyle <= 1) {
+} else if (echelonStyle <= 1) {
 	root.setAttribute("no-snippet-icon", "true");
 }
 
