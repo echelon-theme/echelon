@@ -19,7 +19,7 @@ root.setAttribute("update-channel", getUpdateChannel());
 
 // ECHELON STYLE
 
-if (echelonStyle = 5) {
+if (echelonStyle == 5) {
 	root.setAttribute("echelon-style", "5");
 	searchText.setAttribute("placeholder", "Search");
 } else if (echelonStyle <= 2) {
