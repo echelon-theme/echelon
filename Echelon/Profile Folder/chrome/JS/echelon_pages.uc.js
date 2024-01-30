@@ -60,6 +60,7 @@ class OverrideFactory
 class EchelonPageManager
 {
     static registrar = Components.manager.QueryInterface(Ci.nsIComponentRegistrar);
+    static registeredPages = {};
 
     /* Generate unique ID every launch */
     static generateFreeCID()
@@ -74,29 +75,51 @@ class EchelonPageManager
         return uuid;
     }
 
-    static addAboutPage(name, uri)
+    static registerAboutPage(name, uri)
     {
+        /* Unregister the page if it has already been registered. */
+        this.unregisterAboutPage(name);
+
         let factory = new OverrideFactory(uri);
+        let cid = this.generateFreeCID();
+
+        this.registeredPages[name] = {
+            cid: cid,
+            factory: factory
+        };
+
         this.registrar.registerFactory(
-            this.generateFreeCID(),
+            cid,
             `about:${name}`,
             `@mozilla.org/network/protocol/about;1?what=${name}`,
             factory
         );
     }
+
+    static unregisterAboutPage(name)
+    {
+        if (this.registeredPages[name])
+        {
+            this.registrar.unregisterFactory(
+                this.registeredPages[name].cid,
+                this.registeredPages[name].factory
+            );
+            delete this.registeredPages[name];
+        }
+    }
 }
 
-EchelonPageManager.addAboutPage(
+EchelonPageManager.registerAboutPage(
     "newtab",
     "chrome://userchrome/content/pages/aboutHome/_aboutHome.html"
 );
-EchelonPageManager.addAboutPage(
+EchelonPageManager.registerAboutPage(
     "home",
     "chrome://userchrome/content/pages/aboutHome/_aboutHome.html"
 );
-EchelonPageManager.addAboutPage(
+EchelonPageManager.registerAboutPage(
     "privatebrowsing",
-    "chrome://userchrome/content/pages/privateBrowsing/_privateBrowsing.html"
+    "chrome://userchrome/content/pages/privateBrowsing/_privateBrowsing.xhtml"
 );
 
 let EXPORTED_SYMBOLS = [];

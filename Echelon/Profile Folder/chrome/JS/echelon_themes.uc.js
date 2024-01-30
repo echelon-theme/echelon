@@ -74,6 +74,5 @@ class EchelonThemeManager
 
 let root = document.documentElement;
 EchelonThemeManager.refreshTheme(root);
-let branch = tryGetStringPref("app.update.channel");
-root.setAttribute("echelon-update-channel", Services.appinfo.defaultUpdateChannel);
-root.setAttribute("browser-name", Services.appinfo.name);
+root.setAttribute("update-channel", getUpdateChannel());
+root.setAttribute("browser-name", getBrowserName());

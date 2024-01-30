@@ -80,102 +80,104 @@
 
 /* DEVELOPER EDITION / AURORA */
 
-#main-window[update-channel="aurora"] #appmenu-button {
-  background-image: linear-gradient(hsl(208,99%,37%), hsl(214,90%,23%) 95%) !important;
-  border-color: hsla(214,89%,21%,.9) !important;
-}
-
-#main-window[update-channel="aurora"] #appmenu-button:hover:not(:active):not([open]) {
-  background-image: radial-gradient(farthest-side at bottom, hsla(202,100%,85%,.5) 10%, hsla(202,100%,85%,0) 70%),
-                    radial-gradient(farthest-side at bottom, hsla(205,100%,72%,.7), hsla(205,100%,72%,0)),
-                    linear-gradient(hsl(208,98%,34%), hsl(213,87%,20%) 95%) !important;
-  border-color: hsla(214,89%,21%,.9) !important;
-  box-shadow: 0 1px 0 hsla(205,100%,72%,.15) inset,
-              0 0 2px 1px hsla(205,100%,72%,.5) inset,
-              0 -1px 0 hsla(205,100%,72%,.2) inset !important;
-}
-
-#main-window[update-channel="aurora"] #appmenu-button:hover:active,
-#main-window[update-channel="aurora"] #appmenu-button[open] {
-  background-image: linear-gradient(hsl(208,95%,30%), hsl(214,85%,17%) 95%);
-  box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
-              0 1px 1px rgba(0,0,0,.2) inset !important;
-}
-
-/* NIGHTLY */
-
-#main-window[update-channel="nightly"] #appmenu-button {
-  background-image: -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
-  border-color: hsla(210,59%,13%,.9) !important;
-  box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
-              0 0 2px 1px hsla(211,65%,85%,.15) inset !important;
-}
-
-#main-window[update-channel="nightly"] #appmenu-button:hover:not(:active):not([open]) {
-  background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210,48%,90%,.5) 10%, hsla(210,48%,90%,0) 70%),
-                    -moz-radial-gradient(center bottom, farthest-side, hsla(211,70%,83%,.5), hsla(211,70%,83%,0)),
-                    -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
-  border-color: hsla(210,59%,13%,.9) !important;
-  box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
-              0 0 2px 1px hsla(210,48%,90%,.4) inset,
-              0 -1px 0 hsla(210,48%,90%,.2) inset !important;
-}
-
-#main-window[update-channel="nightly"] #appmenu-button:hover:active,
-#main-window[update-channel="nightly"] #appmenu-button[open] {
-  background-image: -moz-linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
-  box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
-              0 1px 1px rgba(0,0,0,.2) inset !important;
-}
-
-/* WATERFOX */
-
-#main-window[browser-name="Waterfox"] #appmenu-button {
-  background-image: -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
-  border-color: hsla(210,59%,13%,.9) !important;
-  box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
-              0 0 2px 1px hsla(211,65%,85%,.15) inset !important;
-}
-
-#main-window[browser-name="Waterfox"] #appmenu-button:hover:not(:active):not([open]) {
-  background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210,48%,90%,.5) 10%, hsla(210,48%,90%,0) 70%),
-                    -moz-radial-gradient(center bottom, farthest-side, hsla(211,70%,83%,.5), hsla(211,70%,83%,0)),
-                    -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
-  border-color: hsla(210,59%,13%,.9) !important;
-  box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
-              0 0 2px 1px hsla(210,48%,90%,.4) inset,
-              0 -1px 0 hsla(210,48%,90%,.2) inset !important;
-}
-
-#main-window[browser-name="Waterfox"] #appmenu-button:hover:active,
-#main-window[browser-name="Waterfox"] #appmenu-button[open] {
-  background-image: -moz-linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
-  box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
-              0 1px 1px rgba(0,0,0,.2) inset !important;
-}
-@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
-  #main-window[browser-name="Waterfox"] #appmenu-button {
-    background-image: linear-gradient(rgb(82,182,247), rgb(10,98,215) 95%) !important;
-    border-color: rgba(6,42,83,.9) !important;
-    box-shadow: 0 1px 0 rgba(255,255,255,.25) inset,
-                0 0 0 1px rgba(255,255,255,.25) inset !important;
+#main-window:not([privatebrowsingmode="temporary"]) {
+  &[update-channel="aurora"] #appmenu-button {
+    background-image: linear-gradient(hsl(208,99%,37%), hsl(214,90%,23%) 95%) !important;
+    border-color: hsla(214,89%,21%,.9) !important;
   }
-
-  #main-window[browser-name="Waterfox"] #appmenu-button:hover:not(:active):not([open]) {
-    background-image: radial-gradient(farthest-side at bottom, rgba(89,240,252,.5) 10%, rgba(89,240,252,0) 70%),
-                      radial-gradient(farthest-side at bottom, rgb(60,68,236), rgba(172,229,255,0)),
-                      linear-gradient(rgb(69,170,246), rgb(30,40,209) 95%) !important;
-    border-color: rgba(6,42,83,.9) !important;
-    box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
-                0 0 2px 1px rgba(169,234,250,.7) inset,
-                0 -1px 0 rgba(169,234,250,.5) inset !important;
+  
+  &[update-channel="aurora"] #appmenu-button:hover:not(:active):not([open]) {
+    background-image: radial-gradient(farthest-side at bottom, hsla(202,100%,85%,.5) 10%, hsla(202,100%,85%,0) 70%),
+                      radial-gradient(farthest-side at bottom, hsla(205,100%,72%,.7), hsla(205,100%,72%,0)),
+                      linear-gradient(hsl(208,98%,34%), hsl(213,87%,20%) 95%) !important;
+    border-color: hsla(214,89%,21%,.9) !important;
+    box-shadow: 0 1px 0 hsla(205,100%,72%,.15) inset,
+                0 0 2px 1px hsla(205,100%,72%,.5) inset,
+                0 -1px 0 hsla(205,100%,72%,.2) inset !important;
   }
-
-  #main-window[browser-name="Waterfox"] #appmenu-button:hover:active,
-  #main-window[browser-name="Waterfox"] #appmenu-button[open] {
-    background-image: linear-gradient(rgb(69,170,246), rgb(0,74,209) 95%) !important;
+  
+  &[update-channel="aurora"] #appmenu-button:hover:active,
+  &[update-channel="aurora"] #appmenu-button[open] {
+    background-image: linear-gradient(hsl(208,95%,30%), hsl(214,85%,17%) 95%);
     box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
                 0 1px 1px rgba(0,0,0,.2) inset !important;
+  }
+  
+  /* NIGHTLY */
+  
+  &[update-channel="nightly"] #appmenu-button {
+    background-image: -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
+    border-color: hsla(210,59%,13%,.9) !important;
+    box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
+                0 0 2px 1px hsla(211,65%,85%,.15) inset !important;
+  }
+  
+  &[update-channel="nightly"] #appmenu-button:hover:not(:active):not([open]) {
+    background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210,48%,90%,.5) 10%, hsla(210,48%,90%,0) 70%),
+                      -moz-radial-gradient(center bottom, farthest-side, hsla(211,70%,83%,.5), hsla(211,70%,83%,0)),
+                      -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
+    border-color: hsla(210,59%,13%,.9) !important;
+    box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
+                0 0 2px 1px hsla(210,48%,90%,.4) inset,
+                0 -1px 0 hsla(210,48%,90%,.2) inset !important;
+  }
+  
+  &[update-channel="nightly"] #appmenu-button:hover:active,
+  &[update-channel="nightly"] #appmenu-button[open] {
+    background-image: -moz-linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
+    box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
+                0 1px 1px rgba(0,0,0,.2) inset !important;
+  }
+  
+  /* WATERFOX */
+  
+  &[browser-name="Waterfox"] #appmenu-button {
+    background-image: -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
+    border-color: hsla(210,59%,13%,.9) !important;
+    box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
+                0 0 2px 1px hsla(211,65%,85%,.15) inset !important;
+  }
+  
+  &[browser-name="Waterfox"] #appmenu-button:hover:not(:active):not([open]) {
+    background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210,48%,90%,.5) 10%, hsla(210,48%,90%,0) 70%),
+                      -moz-radial-gradient(center bottom, farthest-side, hsla(211,70%,83%,.5), hsla(211,70%,83%,0)),
+                      -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
+    border-color: hsla(210,59%,13%,.9) !important;
+    box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
+                0 0 2px 1px hsla(210,48%,90%,.4) inset,
+                0 -1px 0 hsla(210,48%,90%,.2) inset !important;
+  }
+  
+  &[browser-name="Waterfox"] #appmenu-button:hover:active,
+  &[browser-name="Waterfox"] #appmenu-button[open] {
+    background-image: -moz-linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
+    box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
+                0 1px 1px rgba(0,0,0,.2) inset !important;
+  }
+  @supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+    &[browser-name="Waterfox"] #appmenu-button {
+      background-image: linear-gradient(rgb(82,182,247), rgb(10,98,215) 95%) !important;
+      border-color: rgba(6,42,83,.9) !important;
+      box-shadow: 0 1px 0 rgba(255,255,255,.25) inset,
+                  0 0 0 1px rgba(255,255,255,.25) inset !important;
+    }
+  
+    &[browser-name="Waterfox"] #appmenu-button:hover:not(:active):not([open]) {
+      background-image: radial-gradient(farthest-side at bottom, rgba(89,240,252,.5) 10%, rgba(89,240,252,0) 70%),
+                        radial-gradient(farthest-side at bottom, rgb(60,68,236), rgba(172,229,255,0)),
+                        linear-gradient(rgb(69,170,246), rgb(30,40,209) 95%) !important;
+      border-color: rgba(6,42,83,.9) !important;
+      box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
+                  0 0 2px 1px rgba(169,234,250,.7) inset,
+                  0 -1px 0 rgba(169,234,250,.5) inset !important;
+    }
+  
+    &[browser-name="Waterfox"] #appmenu-button:hover:active,
+    &[browser-name="Waterfox"] #appmenu-button[open] {
+      background-image: linear-gradient(rgb(69,170,246), rgb(0,74,209) 95%) !important;
+      box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
+                  0 1px 1px rgba(0,0,0,.2) inset !important;
+    }
   }
 }
 
