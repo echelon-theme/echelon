@@ -7,6 +7,7 @@ pref("general.config.sandbox_enabled", false);
 
 // FUCK DARK MODE
 pref("ui.systemUsesDarkMode", 0);
+pref("browser.theme.dark-private-windows", false);
 
 // Enable CSS
 pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
