@@ -37,7 +37,7 @@ $unified-refresh-buttons: "#reload-button.unified, #stop-button.unified, #go-but
 
 #nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #zoom-out-button, #PanelUI-menu-button, #zoom-in-button, #{$unified-refresh-buttons}, #edit-controls > *, #appmenu-button, #new-tab-button),
 #nav-bar .toolbaritem-combined-buttons:not(.unified-extensions-item) {
-  padding: 5px 2px !important;
+  padding: 0 !important;
 }
 
 toolbar .toolbarbutton-icon,
@@ -62,6 +62,23 @@ toolbar .toolbarbutton-1:not(#back-button, #PanelUI-menu-button, #tabs-newtab-bu
 
 #nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #PanelUI-menu-button, #new-tab-button, #{$unified-refresh-buttons}, #appmenu-button, .toolbarbutton-combined) {
   margin-inline: 3px !important;
+
+  .toolbarbutton-badge-stack {
+    width: 100% !important;
+    height: 100% !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  & > .toolbarbutton-icon {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 2px 5px !important;
+  }
+}
+
+.unified-extensions-item-action-button {
+  overflow: visible !important;
 }
 
 #nav-bar .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, #PanelUI-menu-button, #appmenu-button, #{$unified-refresh-buttons}, #alltabs-button) {
@@ -133,19 +150,16 @@ toolbar:not(#nav-bar, #TabsToolbar) .toolbarbutton-1 {
   align-items: center !important;
   appearance: toolbarbutton !important;
   margin-block: 0 !important;
-}
+  padding: 0 !important;
+  width: 24px !important;
+  height: 26px !important;
 
-#main-window:not([echelon-style-4]) {
-  toolbar:not(#nav-bar, #TabsToolbar) .toolbarbutton-1 {
-    --toolbarbutton-inner-padding: 3px !important;
-    .toolbarbutton-text {
-      background-color: transparent !important;
-      border-radius: 0 !important;
-      display: flex !important;
-    }
-    .toolbarbutton-icon {
-      margin-inline-end: 2px !important;
-    }
+  .toolbarbutton-badge-stack {
+    width: 100% !important;
+    height: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 4px 3px !important;
   }
 }
 

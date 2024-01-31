@@ -1,0 +1,66 @@
+:root {
+    --arrowpanel-border-radius: 4px !important;
+
+    &[echelon-style-5] {
+        --arrowpanel-border-radius: 0 !important;
+    }
+}
+
+/**
+  * Australis popout transition.
+  *
+  * This opens at the wrong position (it is literally impossible to determine the right one
+  * in just CSS), so it is commented out.
+  */
+// panel[type="arrow"]:not([animate="false"]) {
+//     transform: scale(.4) !important;
+//     opacity: 0 !important;
+//     transition-property: transform, opacity !important;
+//     transition-duration: 0.15s !important;
+//     transition-timing-function: ease-out !important;
+// }
+
+// panel[type="arrow"][animate="open"] {
+//     transform: none !important;
+//     opacity: 1.0 !important;
+// }
+
+// panel[arrowposition="after_start"]:-moz-locale-dir(ltr),
+// panel[arrowposition="after_end"]:-moz-locale-dir(rtl) {
+//   transform-origin: 20px top !important;
+// }
+
+// panel[arrowposition="after_end"]:-moz-locale-dir(ltr),
+// panel[arrowposition="after_start"]:-moz-locale-dir(rtl) {
+//   transform-origin: calc(100% - 20px) top !important;
+// }
+
+// panel[arrowposition="before_start"]:-moz-locale-dir(ltr),
+// panel[arrowposition="before_end"]:-moz-locale-dir(rtl) {
+//   transform-origin: 20px bottom !important;
+// }
+
+// panel[arrowposition="before_end"]:-moz-locale-dir(ltr),
+// panel[arrowposition="before_start"]:-moz-locale-dir(rtl) {
+//   transform-origin: calc(100% - 20px) bottom !important;
+// }
+
+// panel[arrowposition="start_before"]:-moz-locale-dir(ltr),
+// panel[arrowposition="end_before"]:-moz-locale-dir(rtl) {
+//   transform-origin: right 20px !important;
+// }
+
+// panel[arrowposition="start_after"]:-moz-locale-dir(ltr),
+// panel[arrowposition="end_after"]:-moz-locale-dir(rtl) {
+//   transform-origin: right calc(100% - 20px) !important;
+// }
+
+// panel[arrowposition="end_before"]:-moz-locale-dir(ltr),
+// panel[arrowposition="start_before"]:-moz-locale-dir(rtl) {
+//   transform-origin: left 20px !important;
+// }
+
+// panel[arrowposition="end_after"]:-moz-locale-dir(ltr),
+// panel[arrowposition="start_after"]:-moz-locale-dir(rtl) {
+//   transform-origin: left calc(100% - 20px) !important;
+// }

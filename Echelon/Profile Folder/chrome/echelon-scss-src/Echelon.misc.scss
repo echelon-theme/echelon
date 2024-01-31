@@ -793,3 +793,38 @@ treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
   width: 100% !important;
   left: 0 !important;
 }
+
+/* Message box icons */
+.message-icon {
+  list-style-image: url("chrome://userchrome/content/images//information-32.png") !important;
+}
+
+.alert-icon {
+  list-style-image: url("chrome://userchrome/content/images//Warning.png") !important;
+}
+
+.error-icon {
+  list-style-image: url("chrome://userchrome/content/images//Error.png") !important;
+}
+
+.question-icon {
+  list-style-image: url("chrome://userchrome/content/images//Question.png") !important;
+}
+
+@supports -moz-bool-pref("Echelon.Appearance.XP") {
+  .message-icon {
+    list-style-image: url("chrome://userchrome/content/images//information-32-xp.png") !important;
+  }
+  
+  .alert-icon {
+    list-style-image: url("chrome://userchrome/content/images//Warning-xp.png") !important;
+  }
+  
+  .error-icon {
+    list-style-image: url("chrome://userchrome/content/images//Error-xp.png") !important;
+  }
+  
+  .question-icon {
+    list-style-image: url("chrome://userchrome/content/images//Question-xp.png") !important;
+  }
+}
