@@ -23,10 +23,10 @@ panel[type=arrow]:not([animate=false]) {
   transition-timing-function: ease-out !important;
   will-change: transition, opacity !important;
 }
-panel[type=arrow]:not([animate=false])[side=bottom] {
+panel[type=arrow]:not([animate=false])[arrowposition*=before], panel[type=arrow]:not([animate=false])[side=bottom] {
   transform: translateY(20px) !important;
 }
-panel[type=arrow][animate=open], panel[type=arrow][animate=cancel] {
+panel[type=arrow]:not([animate=false])[animate=open], panel[type=arrow]:not([animate=false])[animate=cancel] {
   opacity: 1 !important;
   transform: none !important;
 }

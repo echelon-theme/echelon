@@ -15,15 +15,17 @@ panel[type="arrow"] {
         transition-timing-function: ease-out !important;
         will-change: transition, opacity !important;
     
-        &[side="bottom"] {
+        &[arrowposition*="before"], &[side="bottom"] {
             transform: translateY(20px) !important;
+        }
+
+        &[animate="open"], &[animate="cancel"] {
+            opacity: 1.0 !important;
+            transform: none !important;
         }
     }
 
-    &[animate="open"], &[animate="cancel"] {
-        opacity: 1.0 !important;
-        transform: none !important;
-    }
+    
 }
 
 :root[echelon-style-4]
