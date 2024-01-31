@@ -1,8 +1,15 @@
 /** TOOLBAR ICONS **/
 
-#back-button,
-#context-back {
+#back-button {
   list-style-image: url('images/icons/back_large.png') !important;
+}
+
+#context-back {
+  list-style-image: url('images/icons/back_small.png') !important;
+}
+
+#main-window[echelon-style-4] #back-button {
+  list-style-image: url('images/icons/australis/back_large-aero.png') !important;
 }
 
 #forward-button,

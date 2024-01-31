@@ -193,7 +193,7 @@
 }
 
 #main-window[echelon-style-2] #forward-button:not(:hover)[disabled="true"] + #urlbar-container #identity-icon-box {
-  padding-left: 12px !important;
+  padding-inline-start: 10px !important;
 }
 
 #main-window[echelon-style-2] #identity-icon-box::after {
@@ -456,6 +456,7 @@
 
 #main-window[echelon-style-3] #identity-box.chromeUI #identity-icon-label {
   display: inline-flex !important;
+  margin-top: 1px !important;
 }
 
 #main-window[echelon-style-3] #identity-box:not(.localResource).chromeUI {
@@ -469,13 +470,14 @@
   color: #e57300 !important;
   text-shadow: none !important;
   font-size: 8pt !important;
-  margin-right: 4px !important;
+  padding-inline-start: 3px !important;
+  margin-right: 3px !important;
 }
 
 /** ECHELON STYLE 4 (Australis) **/
 
 [echelon-style-4]:root {
-  --inline-tab-padding: 8px !important;
+  --inline-tab-padding: 9px !important;
   --toolbar-border-radius: 0 !important;
   --tab-width: 210px !important;
 }
@@ -549,7 +551,7 @@
 }
 
 #main-window[echelon-style-4] .tabbrowser-tab:first-of-type {
-  margin-inline-start: var(--tab-curve-half-width) !important;
+  margin-inline-start: calc(var(--tab-curve-half-width) - 3px) !important;
 }
 
 #main-window[echelon-style-4] #tabs-newtab-button {
@@ -641,7 +643,7 @@
 
 #main-window[tabsintitlebar][echelon-style-4] #toolbar-menubar[autohide="true"][inactive="true"]:not([customizing="true"]) + #TabsToolbar .toolbar-items {
   margin-top: 0 !important;
-  padding-top: calc(var(--titlebar-height) - 6px) !important;
+  padding-top: calc(var(--titlebar-height) - 5px) !important;
 }
 
 #main-window[sizemode="maximized"][tabsintitlebar][echelon-style-4] #toolbar-menubar[autohide="true"][inactive="true"]:not([customizing="true"]) + #TabsToolbar .toolbar-items {
@@ -690,7 +692,7 @@
 }
 
 #main-window[echelon-style-4] #back-button {
-  margin-inline-start: 5px !important;
+  margin-inline-start: 6px !important;
 }
 
 #main-window[echelon-style-4] #bookmarks-menu-button::after {
@@ -763,6 +765,15 @@
 #main-window[echelon-style-4] .tab-sharing-icon-overlay:not([pinned]), 
 #main-window[echelon-style-4] .tab-icon-overlay:not([pinned]) {
   margin-inline-end: 6px !important;
+}
+
+#main-window[echelon-style-4] #tabs-newtab-button .toolbarbutton-icon,
+#main-window[echelon-style-4] .tab-icon-stack {
+  margin-top: 1px !important;
+}
+
+#main-window[echelon-style-4] .urlbar-page-action {
+  display: none !important;
 }
 
 /* Blue Style */

@@ -7,11 +7,11 @@
 
 // christ just rewrite this whole thing
 
-const mainWindow = document.documentElement;
-const isEchelonStyle3 = mainWindow.getAttribute("echelon-style-3");
-const isEchelonStyle5 = mainWindow.getAttribute("echelon-style-5");
-
 try {
+
+	const mainWindow = document.documentElement;
+	const isEchelonStyle4 = mainWindow.getAttribute("echelon-style-4");
+	const isEchelonStyle5 = mainWindow.getAttribute("echelon-style-5");
 
 	if (!isEchelonStyle5) {
 
@@ -30,21 +30,21 @@ try {
 				
 				
 				// Custom Search Engine icons
-				if (!isEchelonStyle3) {
-					if (getEngineName === "Google") {
-						getEngineIcon = "chrome://userchrome/content/images/icons/engines/google.png";
-					} else if (getEngineName === "Bing") {
-						getEngineIcon = "chrome://userchrome/content/images/icons/engines/bing.png";
-					} else if (getEngineName === "eBay") {
-						getEngineIcon = "chrome://userchrome/content/images/icons/engines/ebay.png";
-					}
-				} else {
+				if (isEchelonStyle4) {
 					if (getEngineName === "Google") {
 						getEngineIcon = "chrome://userchrome/content/images/icons/engines/google_new.ico";
 					} else if (getEngineName === "Bing") {
 						getEngineIcon = "chrome://userchrome/content/images/icons/engines/bing_new.ico";
 					} else if (getEngineName === "eBay") {
 						getEngineIcon = "chrome://userchrome/content/images/icons/engines/ebay_new.ico";
+					}
+				} else {
+					if (getEngineName === "Google") {
+						getEngineIcon = "chrome://userchrome/content/images/icons/engines/google.png";
+					} else if (getEngineName === "Bing") {
+						getEngineIcon = "chrome://userchrome/content/images/icons/engines/bing.png";
+					} else if (getEngineName === "eBay") {
+						getEngineIcon = "chrome://userchrome/content/images/icons/engines/ebay.png";
 					}
 				}
 				

@@ -780,3 +780,16 @@ treechildren::-moz-tree-image(title, query, tagContainer),
 treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
   list-style-image: url("images/tag.png") !important;
 }
+
+/** MAXIMIZED CHANGES **/
+
+#main-window[sizemode="maximized"] #navigator-toolbox toolbar {
+  border-radius: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+
+#main-window[sizemode="maximized"] #navigator-toolbox::after {
+  width: 100% !important;
+  left: 0 !important;
+}

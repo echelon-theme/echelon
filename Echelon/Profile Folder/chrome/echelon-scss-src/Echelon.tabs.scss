@@ -66,7 +66,7 @@
 }
 
 #tabs-newtab-button {
-  width: 30px !important;
+  width: 28px !important;
   padding-bottom: 2px !important;
 }
 
@@ -120,11 +120,11 @@
 }
 
 .tab-close-button {
-  margin-inline-end: 1px !important;
+  margin-inline-end: -2px !important;
 }
 
-// Hide the close button on single-tab views, except in Australis.
-html:not([echelon-style-4]) {
+// Hide the close button on single-tab views, except in Australis (Firefox 56).
+html:not([echelon-style-5]) {
   .tabbrowser-tab:first-of-type:last-of-type .tab-close-button {
     display: none !important;
   }
@@ -262,10 +262,6 @@ spacer[part="overflow-start-indicator"] {
   border-radius: 0 !important;
   opacity: 1 !important;
   margin-inline: 0 !important;
-}
-
-spacer[part="overflow-start-indicator"] {
-  background-position-x: -2px !important;
 }
 
 #scrollbutton-up,
