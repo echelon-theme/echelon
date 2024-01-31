@@ -21,6 +21,7 @@ function executeFunctions() {
 	observeIdentityLabel();
 	changeTitleFormats();
 	updateAboutItem();
+	EchelonPopupManager.registerEvent();
 
 	window.addEventListener("echelon-reopen-wizard", function(e) {
 		// Kill the wizard notification early. Technically, it will disappear as soon as this

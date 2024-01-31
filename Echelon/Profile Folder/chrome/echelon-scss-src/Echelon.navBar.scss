@@ -47,12 +47,18 @@ toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack {
 }
 
 #nav-bar[mode="icons"] .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button, #alltabs-button, #new-tab-button, #{$unified-refresh-buttons}, #appmenu-button, #new-tab-button, #bookmarks-menu-button) {
+  min-width: 30px !important;
   width: 30px !important;
   height: 24px !important;
 }
 
 .toolbarbutton-1 > .toolbarbutton-badge-stack > .toolbarbutton-icon {
   width: revert !important;
+}
+
+#forward-button > .toolbarbutton-icon {
+  width: 18px !important;
+  height: 18px !important;
 }
 
 #nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #PanelUI-menu-button, #new-tab-button, #{$unified-refresh-buttons}, #appmenu-button, .toolbarbutton-combined) {
@@ -146,6 +152,7 @@ toolbar:not(#nav-bar, #TabsToolbar) .toolbarbutton-1 {
   appearance: toolbarbutton !important;
   margin-block: 0 !important;
   padding: 0 !important;
+  min-width: 24px !important;
   width: 24px !important;
   height: 26px !important;
 
