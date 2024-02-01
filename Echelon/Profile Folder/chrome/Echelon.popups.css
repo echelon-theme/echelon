@@ -12,16 +12,16 @@
   --arrowpanel-border-radius: 4px !important;
   --arrowpanel-border-color: hsla(210,4%,10%,.2) !important;
 }
-:root[echelon-style-5] {
+:root:not([echelon-appearance-blue])[echelon-style-4], :root[echelon-style-5] {
   --arrowpanel-border-radius: 0 !important;
 }
 
 panelview {
-  border-radius: 4px !important;
+  border-radius: var(--arrowpanel-border-radius) !important;
 }
 
 panel[type=arrow] {
-  --panel-shadow: 0 0 4px hsla(210,4%,10%,.2) !important;
+  --panel-shadow: 0 0 0 1px var(--arrowpanel-border-color), 0 0 4px hsla(210,4%,10%,.2) !important;
   --panel-shadow-margin: 4px !important;
 }
 panel[type=arrow]:not([animate=false]) {
@@ -38,6 +38,10 @@ panel[type=arrow]:not([animate=false])[arrowposition^=before], panel[type=arrow]
 panel[type=arrow]:not([animate=false])[animate=open], panel[type=arrow]:not([animate=false])[animate=cancel] {
   opacity: 1 !important;
   transform: none !important;
+}
+
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] panel[type=arrow] {
+  --panel-shadow: 0 0 0 1px var(--arrowpanel-border-color) !important;
 }
 
 :root[echelon-style-4] panel[type=arrow]:not([animate=false]) {
@@ -84,4 +88,182 @@ panel[type=arrow]:not([animate=false])[animate=open], panel[type=arrow]:not([ani
 :root[echelon-style-4] panel[arrowposition=end_after]:-moz-locale-dir(ltr),
 :root[echelon-style-4] panel[arrowposition=start_after]:-moz-locale-dir(rtl) {
   transform-origin: left calc(100% - 20px) !important;
+}
+
+#downloadsPanel-mainView {
+  padding: 0 !important;
+  min-width: unset !important;
+}
+
+#downloadsListBox,
+#unified-extensions-view .panel-subview-body {
+  padding: 4px !important;
+}
+
+#downloadsFooterButtons toolbarseparator,
+#unified-extensions-view toolbarseparator,
+#unified-extensions-view .panel-header,
+#emptyDownloads {
+  display: none !important;
+}
+
+.downloadsPanelFooterButton,
+#unified-extensions-manage-extensions {
+  min-height: 44px !important;
+  background-color: transparent !important;
+  color: -moz-nativehyperlinktext !important;
+  cursor: pointer !important;
+  transition-duration: 150ms !important;
+  transition-property: background-color !important;
+  border-radius: 0 !important;
+  border-bottom-left-radius: var(--arrowpanel-border-radius) !important;
+  border-bottom-right-radius: var(--arrowpanel-border-radius) !important;
+}
+.downloadsPanelFooterButton,
+.downloadsPanelFooterButton .button-box,
+#unified-extensions-manage-extensions,
+#unified-extensions-manage-extensions .button-box {
+  justify-content: center !important;
+}
+.downloadsPanelFooterButton .button-text,
+#unified-extensions-manage-extensions .button-text {
+  display: inline-block !important;
+  flex: 1 !important;
+}
+
+#downloadsPanel[hasdownloads=true] .downloadsPanelFooterButton,
+#unified-extensions-manage-extensions {
+  background-color: #f1f5fb !important;
+  box-shadow: 0px 1px 2px rgb(204, 214, 234) inset !important;
+}
+
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #downloadsPanel[hasdownloads=true] .downloadsPanelFooterButton,
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #unified-extensions-manage-extensions {
+  background-color: hsla(210, 4%, 10%, 0.04) !important;
+  box-shadow: 0 1px 0 hsla(210, 4%, 10%, 0.08) inset !important;
+}
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #downloadsPanel[hasdownloads=true] .downloadsPanelFooterButton:hover,
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #unified-extensions-manage-extensions:hover {
+  background-color: hsla(210, 4%, 10%, 0.05) !important;
+}
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #downloadsPanel[hasdownloads=true] .downloadsPanelFooterButton:hover:active,
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #unified-extensions-manage-extensions:hover:active {
+  background-color: hsla(210, 4%, 10%, 0.1) !important;
+  box-shadow: 0 2px 0 0 hsla(210, 4%, 10%, 0.1) inset !important;
+}
+
+#downloadsListBox > richlistitem,
+#unified-extensions-area toolbaritem {
+  border-radius: 3px !important;
+  min-height: 84px !important;
+  border: 1px solid transparent !important;
+  margin: 0 !important;
+  cursor: pointer !important;
+}
+#downloadsListBox > richlistitem:hover, #downloadsListBox > richlistitem[state="1"][exists]:hover, #downloadsListBox > richlistitem[state="1"][exists].hoveringMainArea:hover,
+#unified-extensions-area toolbaritem:hover,
+#unified-extensions-area toolbaritem[state="1"][exists]:hover,
+#unified-extensions-area toolbaritem[state="1"][exists].hoveringMainArea:hover {
+  background-color: transparent !important;
+  border: 1px solid hsl(213, 45%, 65%) !important;
+  box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.5) inset, 0 1px 0 hsla(0, 0%, 100%, 0.3) inset !important;
+  background-image: linear-gradient(hsl(212, 86%, 92%), hsl(212, 91%, 86%)) !important;
+}
+#downloadsListBox > richlistitem:not(:last-of-type, :hover),
+#unified-extensions-area toolbaritem:not(:last-of-type, :hover) {
+  border-radius: 0 !important;
+  border-bottom: 1px solid hsla(220, 18%, 51%, 0.25) !important;
+}
+
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #downloadsListBox > richlistitem,
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #unified-extensions-area toolbaritem {
+  border-radius: 0 !important;
+  border: 0 !important;
+}
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #downloadsListBox > richlistitem:hover, :root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #downloadsListBox > richlistitem[state="1"][exists]:hover, :root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #downloadsListBox > richlistitem[state="1"][exists].hoveringMainArea:hover,
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #unified-extensions-area toolbaritem:hover,
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #unified-extensions-area toolbaritem[state="1"][exists]:hover,
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #unified-extensions-area toolbaritem[state="1"][exists].hoveringMainArea:hover {
+  border: 0 !important;
+  background-image: none !important;
+  background-color: hsla(210, 4%, 10%, 0.08) !important;
+  outline: 1px solid hsla(210, 4%, 10%, 0.1) !important;
+  outline-offset: -1px !important;
+}
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #downloadsListBox > richlistitem:hover:active, :root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #downloadsListBox > richlistitem[state="1"][exists]:hover:active, :root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #downloadsListBox > richlistitem[state="1"][exists].hoveringMainArea:hover:active,
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #unified-extensions-area toolbaritem:hover:active,
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #unified-extensions-area toolbaritem[state="1"][exists]:hover:active,
+:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #unified-extensions-area toolbaritem[state="1"][exists].hoveringMainArea:hover:active {
+  background-color: hsla(210, 4%, 10%, 0.15) !important;
+  outline: 1px solid hsla(210, 4%, 10%, 0.15) !important;
+  box-shadow: 0 1px 0 0 hsla(210, 4%, 10%, 0.05) inset !important;
+}
+
+.downloadMainArea {
+  cursor: pointer !important;
+  padding-inline-start: 8px !important;
+}
+
+.downloadButton {
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  margin-inline-end: 5px !important;
+}
+.downloadButton > .button-box > .button-icon {
+  list-style-image: none !important;
+  background-image: url("images/buttons.png") !important;
+}
+
+#downloadsListBox > richlistitem[state="1"][exists]:hover .downloadButton .button-icon,
+#downloadsListBox > richlistitem[state="1"][exists].hoveringMainArea:hover .downloadButton .button-icon,
+.downloadButton:hover .button-icon,
+#unified-extensions-area toolbaritem:hover .unified-extensions-item-menu-button > .toolbarbutton-icon {
+  background-position-x: -16px !important;
+}
+
+#downloadsListBox > richlistitem[state="1"][exists]:hover .downloadButton:hover .button-icon,
+.unified-extensions-item-menu-button:hover > .toolbarbutton-icon {
+  background-position-x: -32px !important;
+}
+
+.downloadButton:hover:active .button-icon,
+.unified-extensions-item-menu-button:hover:active > .toolbarbutton-icon {
+  background-position-x: -48px !important;
+}
+
+.downloadIconShow > .button-box > .button-icon {
+  background-position-y: -16px !important;
+}
+
+.downloadIconRetry > .button-box > .button-icon {
+  background-position-y: -32px !important;
+}
+
+#unified-extensions-area toolbaritem {
+  min-height: 64px !important;
+  margin: 0 !important;
+}
+
+#unified-extensions-manage-extensions {
+  margin: 0 !important;
+}
+#unified-extensions-manage-extensions .toolbarbutton-text {
+  text-align: center !important;
+}
+
+.unified-extensions-item-action-button,
+.unified-extensions-item-menu-button > .toolbarbutton-icon {
+  background-color: transparent !important;
+}
+
+.unified-extensions-item-menu-button {
+  margin-inline-end: 17px !important;
+}
+
+.unified-extensions-item-menu-button > .toolbarbutton-icon {
+  padding: 0 !important;
+  border: 0 !important;
+  list-style-image: none !important;
+  background-image: url("images/extension_options.png");
 }

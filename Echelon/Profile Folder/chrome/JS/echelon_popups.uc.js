@@ -88,6 +88,7 @@ class EchelonPopupManager
 
             /* POPUP ARROW IMAGE (FOR EXTENSION POPUPS) */
             let color = popup.style.getPropertyValue("--arrowpanel-background");
+            console.log(color);
             if (color != "" && popup.style.getPropertyValue("--panel-arrow-image-vertical") == "")
             {
                 let panelBg = `url('data:image/svg+xml,${encodeURIComponent(`
@@ -100,6 +101,7 @@ class EchelonPopupManager
                         fill="${color}"/>
                 </svg>
                 `)}')`;
+                console.log(panelBg);
                 popup.setAttribute("style", `${popup.getAttribute("style")}--panel-arrow-image-vertical: ${panelBg};`);
             }
         }

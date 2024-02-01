@@ -20,7 +20,7 @@ toolbarbutton menupopup[placespopup]::part(content) {
 	margin: 0 !important;
 	box-shadow: none !important;
 	border: 0 !important;
-  	background-color: transparent !important;
+	background-color: transparent !important;
 }
 
 toolbarbutton menupopup[placespopup] > :is(menu, menuitem) {
@@ -59,6 +59,7 @@ toolbarbutton menupopup[placespopup] > :is(menu, menuitem) > .menu-accel-contain
 panel[type="arrow"]::part(content) {
 	position: relative;
 	overflow: visible !important;
+	border: 0 !important;
 }
 
 panel[type="arrow"]::part(content)::before {
@@ -80,7 +81,7 @@ panel[type="arrow"][arrowposition*="after"]::part(content)::before {
 }
 
 panel[type="arrow"][arrowposition*="end"]::part(content)::before {
-	right: 3px;
+	right: 4px;
 }
 
 panel[type="arrow"][arrowposition*="before"]::part(content) {
