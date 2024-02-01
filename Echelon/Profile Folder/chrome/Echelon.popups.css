@@ -16,6 +16,10 @@
   --arrowpanel-border-radius: 0 !important;
 }
 
+panelview {
+  border-radius: 4px !important;
+}
+
 panel[type=arrow] {
   --panel-shadow: 0 0 4px hsla(210,4%,10%,.2) !important;
   --panel-shadow-margin: 4px !important;

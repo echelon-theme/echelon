@@ -45,7 +45,7 @@
   margin: 0 !important;
   outline: 0 !important;
 }
-.unified-refresh-button #urlbar-background {
+:root:not([chromehidden~=toolbar]) .unified-refresh-button #urlbar-background {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   border-right: 0 !important;
