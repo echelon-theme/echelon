@@ -52,3 +52,14 @@ snippetRandomizer();
 
 let product = getFullProductName();
 document.title = `${product} Start Page`;
+
+// HIDE IF USER WANTS BLANK PAGE FOR NEW TAB
+
+if (location.href.startsWith("about:newtab"))
+{
+	let blank = tryGetBoolPref("browser.newtabpage.enabled", true);
+	if (!blank)
+	{
+		document.documentElement.hidden = true;
+	}
+}
