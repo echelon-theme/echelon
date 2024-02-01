@@ -36,7 +36,7 @@
   outline: 0 !important;
   
   // Styles for unified background
-  .unified-refresh-button &
+  :root:not([chromehidden~="toolbar"]) .unified-refresh-button &
   {
 	  border-top-right-radius: 0 !important;
 	  border-bottom-right-radius: 0 !important;

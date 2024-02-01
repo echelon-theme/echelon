@@ -1,6 +1,6 @@
 /** TOOLBAR ICONS **/
 
-#back-button {
+#main-window #back-button {
   list-style-image: url('images/icons/back_large.png') !important;
 }
 
@@ -12,7 +12,7 @@
   list-style-image: url('images/icons/australis/back_large-aero.png') !important;
 }
 
-#forward-button,
+#main-window #forward-button,
 #context-forward {
   list-style-image: url('images/icons/forward.png') !important;
 }

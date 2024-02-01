@@ -682,12 +682,12 @@ treechildren::-moz-tree-twisty(hover, open) {
 }
 
 /* Trees don't support background-image */
-treechildren::-moz-tree-image(container),
+treechildren::-moz-tree-image(title, container),
 treechildren::-moz-tree-image(title, query, hostContainer) {
   list-style-image: url(images/bookmarksFolder.png) !important;
 }
 
-treechildren::-moz-tree-image(container, query) {
+treechildren::-moz-tree-image(title, container, query) {
   list-style-image: url(images/query.png) !important;
 }
 
@@ -713,6 +713,10 @@ treechildren::-moz-tree-image(container, queryFolder_unfiled_____) {
 treechildren::-moz-tree-image(query, OrganizerQuery_history____v),
 treechildren::-moz-tree-image(title, query, dayContainer) {
   list-style-image: url(images/history-sidebar.png) !important;
+}
+
+treechildren::-moz-tree-image(query, OrganizerQuery_downloads__v) {
+  list-style-image: url(images/downloads.png) !important;
 }
 
 treechildren::-moz-tree-image(title, query, tagContainer),

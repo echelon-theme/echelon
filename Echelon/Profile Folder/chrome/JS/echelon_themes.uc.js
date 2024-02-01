@@ -3,6 +3,7 @@
 // @description 	Checks about:config pref and adds an HTML attribute.
 // @author			Travis
 // @include			main
+// @include         chrome://browser/content/browser.xhtml
 // @include         chrome://browser/content/aboutDialog.xhtml
 // @include         about:config
 // ==/UserScript==

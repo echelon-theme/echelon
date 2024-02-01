@@ -124,7 +124,7 @@
   transition: margin-inline-start 150ms ease-out, opacity 150ms ease-out !important;
 }
 
-#main-window[echelon-style-2] #urlbar-container {
+#main-window[echelon-style-2]:not([chromehidden~="toolbar"]) #urlbar-container {
   margin-left: 0 !important;
 }
 
@@ -136,15 +136,19 @@
 #main-window[echelon-style-2] #urlbar-background {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
+}
+
+#main-window[echelon-style-2]:not([chromehidden~="toolbar"]) #urlbar-background {
   border-left: 0 !important;
 }
-#main-window[echelon-style-2] #forward-button:not(:hover)[disabled="true"] + #urlbar-container #urlbar-background,
-#main-window[echelon-style-2] #forward-button:not(:hover)[disabled="true"] + #urlbar-container #urlbar-input-container {
+
+#main-window[echelon-style-2]:not([chromehidden~="toolbar"]) #forward-button:not(:hover)[disabled="true"] + #urlbar-container #urlbar-background,
+#main-window[echelon-style-2]:not([chromehidden~="toolbar"]) #forward-button:not(:hover)[disabled="true"] + #urlbar-container #urlbar-input-container {
   /* Shitty hack for masking */
   -webkit-mask: url('images/forward-button-url-mask.svg') !important;
   -webkit-mask-repeat: no-repeat !important;
   -webkit-mask-position: left !important;
-}
+} 
 
 #main-window[echelon-style-2] .urlbar-input-box {
   padding-left: 2px !important;
@@ -192,7 +196,7 @@
               0 1px 3px 1px hsla(215,54%,33%,.5) inset !important;
 }
 
-#main-window[echelon-style-2] #forward-button:not(:hover)[disabled="true"] + #urlbar-container #identity-icon-box {
+#main-window[echelon-style-2]:not([chromehidden~="toolbar"]) #forward-button:not(:hover)[disabled="true"] + #urlbar-container #identity-icon-box {
   padding-inline-start: 10px !important;
 }
 

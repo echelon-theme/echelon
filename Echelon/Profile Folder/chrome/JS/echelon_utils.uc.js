@@ -3,6 +3,7 @@
 // @description 	Common utilities for Echelon scripts.
 // @author			ephemeralViolette
 // @include			main
+// @include         chrome://browser/content/browser.xhtml
 // @include			chrome://browser/content/aboutDialog.xhtml
 // @loadOrder       1
 // ==/UserScript==
