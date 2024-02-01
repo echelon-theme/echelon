@@ -1271,7 +1271,7 @@
 #main-window[echelon-appearance-xp] #main-menubar > menu:-moz-window-inactive {
   color: ThreeDShadow !important;
 }
-#main-window[echelon-appearance-xp][tabsintitlebar] #titlebar::before {
+#main-window[echelon-appearance-xp]:not([echelon-style-4])[tabsintitlebar] #titlebar::before {
   content: "";
   display: inline-block;
   width: 100%;
@@ -1281,6 +1281,9 @@
   -moz-default-appearance: -moz-window-titlebar;
   position: absolute !important;
   z-index: 0 !important;
+}
+#main-window[echelon-appearance-xp]:not([echelon-style-4])[tabsintitlebar] #titlebar::before #toolbar-menubar {
+  z-index: 1 !important;
 }
 
 /* 

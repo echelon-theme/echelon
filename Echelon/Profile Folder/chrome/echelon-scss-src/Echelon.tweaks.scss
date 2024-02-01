@@ -1392,7 +1392,7 @@
   }
 
   /* Hack to have the titlebar image because the bottom part of it's image is hidden */
-  &[tabsintitlebar] #titlebar::before {
+  &:not([echelon-style-4])[tabsintitlebar] #titlebar::before {
     content: '';
     display: inline-block;
     width: 100%;
@@ -1402,8 +1402,13 @@
     -moz-default-appearance: -moz-window-titlebar;
     position: absolute !important;
     z-index: 0 !important;
+
+    #toolbar-menubar {
+      // Must display over the hack.
+      z-index: 1 !important;
+    }
   }
-  
+
 }
 
 /* 
