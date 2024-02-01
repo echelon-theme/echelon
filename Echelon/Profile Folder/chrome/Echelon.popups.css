@@ -10,11 +10,16 @@
 
 :root {
   --arrowpanel-border-radius: 4px !important;
+  --arrowpanel-border-color: hsla(210,4%,10%,.2) !important;
 }
 :root[echelon-style-5] {
   --arrowpanel-border-radius: 0 !important;
 }
 
+panel[type=arrow] {
+  --panel-shadow: 0 0 4px hsla(210,4%,10%,.2) !important;
+  --panel-shadow-margin: 4px !important;
+}
 panel[type=arrow]:not([animate=false]) {
   opacity: 0 !important;
   transform: translateY(-20px) !important;
@@ -23,7 +28,7 @@ panel[type=arrow]:not([animate=false]) {
   transition-timing-function: ease-out !important;
   will-change: transition, opacity !important;
 }
-panel[type=arrow]:not([animate=false])[arrowposition*=before], panel[type=arrow]:not([animate=false])[side=bottom] {
+panel[type=arrow]:not([animate=false])[arrowposition^=before], panel[type=arrow]:not([animate=false])[side=bottom] {
   transform: translateY(20px) !important;
 }
 panel[type=arrow]:not([animate=false])[animate=open], panel[type=arrow]:not([animate=false])[animate=cancel] {

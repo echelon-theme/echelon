@@ -450,8 +450,13 @@
 #main-window[echelon-style-4] #PanelUI-button #PanelUI-menu-button {
   width: 30px !important;
   height: 24px !important;
-  padding: 5px 2px !important;
+  padding: 0 !important;
   margin-inline: 3px !important;
+}
+#main-window[echelon-style-4] #PanelUI-button #PanelUI-menu-button .toolbarbutton-badge-stack {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 2px 5px !important;
 }
 #main-window[echelon-style-4] #PanelUI-button::before {
   content: "";

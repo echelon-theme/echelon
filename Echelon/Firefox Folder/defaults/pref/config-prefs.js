@@ -12,6 +12,9 @@ pref("browser.theme.dark-private-windows", false);
 // Enable CSS
 pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
+// Enable :has()
+pref("layout.css.has-selector.enabled", true);
+
 // Make private windows good again
 pref("browser.theme.dark-private-windows", false);
 pref("browser.privateWindowSeparation.enabled", false);

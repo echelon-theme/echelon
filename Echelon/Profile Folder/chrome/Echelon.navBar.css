@@ -158,18 +158,25 @@ toolbar:not(#nav-bar, #TabsToolbar) .toolbarbutton-1 {
   min-width: 24px !important;
   width: 24px !important;
   height: 26px !important;
+  position: relative;
 }
 toolbar:not(#nav-bar, #TabsToolbar) .toolbarbutton-1 .toolbarbutton-badge-stack {
-  width: 100% !important;
+  width: calc(100% + 4px) !important;
   height: 100% !important;
   justify-content: center !important;
   align-items: center !important;
-  padding: 4px 3px !important;
+  padding: 4px 5px !important;
+  position: absolute;
+  top: 0;
+  left: -2px;
 }
 toolbar:not(#nav-bar, #TabsToolbar) .toolbarbutton-1 > .toolbarbutton-icon {
-  width: 100% !important;
+  width: 28px !important;
   height: 100% !important;
-  padding: 4px 3px !important;
+  padding: 4px 5px !important;
+  position: absolute;
+  top: 0;
+  left: -2px;
 }
 
 /* UNIFIED BACK & FORWARD BUTTONS */

@@ -1,5 +1,6 @@
 :root {
     --arrowpanel-border-radius: 4px !important;
+    --arrowpanel-border-color: hsla(210,4%,10%,.2) !important;
 
     &[echelon-style-5] {
         --arrowpanel-border-radius: 0 !important;
@@ -15,7 +16,7 @@ panel[type="arrow"] {
         transition-timing-function: ease-out !important;
         will-change: transition, opacity !important;
     
-        &[arrowposition*="before"], &[side="bottom"] {
+        &[arrowposition^="before"], &[side="bottom"] {
             transform: translateY(20px) !important;
         }
 
@@ -25,7 +26,8 @@ panel[type="arrow"] {
         }
     }
 
-    
+    --panel-shadow: 0 0 4px hsla(210,4%,10%,.2) !important;
+    --panel-shadow-margin: 4px !important;
 }
 
 :root[echelon-style-4]

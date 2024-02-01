@@ -83,13 +83,27 @@ class EchelonPopupManager
             {
                 p2 = "start";
             }
-
-            let position = `${p1}_${p2}`;
-            popup.setAttribute("arrowposition", position);
-
-            /* POPUP ARROW ITSELF (OH GOD) */
-            let children = popup.children;
             
+            popup.setAttribute("arrowposition", `${p1}_${p2}`);
+
+            /* POPUP ARROW IMAGE (FOR EXTENSION POPUPS) */
+            let color = popup.style.getPropertyValue("--arrowpanel-background");
+            console.log(color);
+            if (color != "" && popup.style.getPropertyValue("--panel-arrow-image-vertical") == "")
+            {
+                let panelBg = `url('data:image/svg+xml,${encodeURIComponent(`
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="10">
+                <path d="M 0,10 L 10,0 20,10 z"
+                        fill="hsla(210,4%,10%,.2"/>
+                <path d="M 1,10 L 10,1 19,10 z"
+                        fill="${color}"/>
+                </svg>
+                `)}')`;
+                console.log(panelBg);
+                popup.setAttribute("style", `${popup.getAttribute("style")}--panel-arrow-image-vertical: ${panelBg};`);
+            }
         }
     }
 

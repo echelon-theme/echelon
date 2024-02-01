@@ -8,12 +8,7 @@
 /* Default to xul namespace */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#downloadsPanel::part(content) {
-	border: 0 !important;
-	border-radius: 4px !important;
-	box-shadow: 0 0 6px rgb(0 0 0 / 25%), 0 0 1px 0 rgb(0 0 0 / 40%) !important;
-}
-
+/* Bookmarks menus */
 toolbarbutton menupopup[placespopup] {
 	--panel-shadow-margin: 0 !important;
 	background-color: Menu !important;
@@ -25,7 +20,7 @@ toolbarbutton menupopup[placespopup]::part(content) {
 	margin: 0 !important;
 	box-shadow: none !important;
 	border: 0 !important;
-  background-color: transparent !important;
+  	background-color: transparent !important;
 }
 
 toolbarbutton menupopup[placespopup] > :is(menu, menuitem) {
@@ -58,4 +53,45 @@ toolbarbutton menupopup[placespopup] > menu > .menu-right {
 
 toolbarbutton menupopup[placespopup] > :is(menu, menuitem) > .menu-accel-container > :is(.menu-accel, .menu-iconic-accel) {
 	color: unset !important;
+}
+
+/* Popout arrows */
+panel[type="arrow"]::part(content) {
+	position: relative;
+	overflow: visible !important;
+}
+
+panel[type="arrow"]::part(content)::before {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 10px;
+	position: absolute;
+	z-index: 99999999;
+	background-image: var(--panel-arrow-image-vertical, url("chrome://userchrome/content/images/panelarrow-vertical.svg"));
+}
+
+panel[type="arrow"][arrowposition*="after"]::part(content) {
+	margin-top: calc(var(--panel-shadow-margin) + 10px) !important;
+}
+
+panel[type="arrow"][arrowposition*="after"]::part(content)::before {
+	top: -10px;
+}
+
+panel[type="arrow"][arrowposition*="end"]::part(content)::before {
+	right: 3px;
+}
+
+panel[type="arrow"][arrowposition*="before"]::part(content) {
+	margin-bottom: calc(var(--panel-shadow-margin) + 10px) !important;
+}
+
+panel[type="arrow"][arrowposition*="before"]::part(content)::before {
+	bottom: -10px;
+	transform: scaleY(-1);
+}
+
+panel[type="arrow"][arrowposition*="start"]::part(content)::before {
+	left: 3px;
 }
