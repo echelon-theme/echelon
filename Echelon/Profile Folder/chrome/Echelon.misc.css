@@ -216,7 +216,7 @@
 #PersonalToolbar {
   border-left: 1px solid rgba(26, 26, 26, 0.4) !important;
   border-right: 1px solid rgba(26, 26, 26, 0.4) !important;
-  padding-inline: 5px !important;
+  padding-inline: 0 !important;
   padding-bottom: 1px !important;
 }
 
@@ -252,33 +252,6 @@ toolbarbutton.bookmark-item {
 
 #context-inspect-a11y {
   display: none !important;
-}
-
-/* Fix Menu Bar */
-html:not([echelon-appearance-xp]) {
-  /* Artificially draw window borders that are covered by lwtheme, see bug 591930.
-  * We use a different border for win8, and this win10+ only needs this if
-  * drawing in the titlebar (-moz-windows-accent-color-in-titlebar). */
-}
-html:not([echelon-appearance-xp]) #toolbar-menubar:not(:-moz-lwtheme) {
-  text-shadow: 0 0 0.5em white, 0 0 0.5em white, 0 1px 0 rgba(255, 255, 255, 0.4);
-}
-html:not([echelon-appearance-xp]) #main-menubar:not(:-moz-lwtheme, :-moz-window-inactive) {
-  background-color: rgba(255, 255, 255, 0.5);
-  color: black;
-  border-radius: 4px;
-}
-html:not([echelon-appearance-xp])[sizemode=normal] #navigator-toolbox:-moz-lwtheme {
-  border-top: 1px solid var(--glass-active-border-color);
-  padding-top: 1px;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
-}
-html:not([echelon-appearance-xp])[sizemode=normal] #navigator-toolbox:-moz-lwtheme:-moz-window-inactive {
-  border-top-color: var(--glass-inactive-border-color);
-}
-
-#main-menubar > menu {
-  appearance: menuitem !important;
 }
 
 /* Findbar */
@@ -684,39 +657,39 @@ treechildren::-moz-tree-twisty(hover, open) {
 /* Trees don't support background-image */
 treechildren::-moz-tree-image(title, container),
 treechildren::-moz-tree-image(title, query, hostContainer) {
-  list-style-image: url(images/bookmarksFolder.png) !important;
+  list-style-image: url("images/bookmarksFolder.png") !important;
 }
 
 treechildren::-moz-tree-image(title, container, query) {
-  list-style-image: url(images/query.png) !important;
+  list-style-image: url("images/query.png") !important;
 }
 
 /* Have to do this because Smart Folders above this changes the icon */
 treechildren::-moz-tree-image(title, query, hostContainer) {
-  list-style-image: url(images/bookmarksFolder.png) !important;
+  list-style-image: url("images/bookmarksFolder.png") !important;
 }
 
 treechildren::-moz-tree-image(container, queryFolder_toolbar_____) {
-  list-style-image: url(images/bookmarksToolbar.png) !important;
+  list-style-image: url("images/bookmarksToolbar.png") !important;
 }
 
 treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksMenu),
 treechildren::-moz-tree-image(container, queryFolder_menu________) {
-  list-style-image: url(images/bookmarksMenu.png) !important;
+  list-style-image: url("images/bookmarksMenu.png") !important;
 }
 
 treechildren::-moz-tree-image(container, OrganizerQuery_UnfiledBookmarks),
 treechildren::-moz-tree-image(container, queryFolder_unfiled_____) {
-  list-style-image: url(images/unsortedBookmarks.png) !important;
+  list-style-image: url("images/unsortedBookmarks.png") !important;
 }
 
 treechildren::-moz-tree-image(query, OrganizerQuery_history____v),
 treechildren::-moz-tree-image(title, query, dayContainer) {
-  list-style-image: url(images/history-sidebar.png) !important;
+  list-style-image: url("images/history-sidebar.png") !important;
 }
 
 treechildren::-moz-tree-image(query, OrganizerQuery_downloads__v) {
-  list-style-image: url(images/downloads.png) !important;
+  list-style-image: url("images/downloads.png") !important;
 }
 
 treechildren::-moz-tree-image(title, query, tagContainer),
@@ -738,32 +711,32 @@ treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
 
 /* Message box icons */
 .message-icon {
-  list-style-image: url("chrome://userchrome/content/images//information-32.png") !important;
+  list-style-image: url("chrome://userchrome/content/images/information-32.png") !important;
 }
 
 .alert-icon {
-  list-style-image: url("chrome://userchrome/content/images//Warning.png") !important;
+  list-style-image: url("chrome://userchrome/content/images/Warning.png") !important;
 }
 
 .error-icon {
-  list-style-image: url("chrome://userchrome/content/images//Error.png") !important;
+  list-style-image: url("chrome://userchrome/content/images/Error.png") !important;
 }
 
 .question-icon {
-  list-style-image: url("chrome://userchrome/content/images//Question.png") !important;
+  list-style-image: url("chrome://userchrome/content/images/Question.png") !important;
 }
 
 @supports -moz-bool-pref("Echelon.Appearance.XP") {
   .message-icon {
-    list-style-image: url("chrome://userchrome/content/images//information-32-xp.png") !important;
+    list-style-image: url("chrome://userchrome/content/images/information-32-xp.png") !important;
   }
   .alert-icon {
-    list-style-image: url("chrome://userchrome/content/images//Warning-xp.png") !important;
+    list-style-image: url("chrome://userchrome/content/images/Warning-xp.png") !important;
   }
   .error-icon {
-    list-style-image: url("chrome://userchrome/content/images//Error-xp.png") !important;
+    list-style-image: url("chrome://userchrome/content/images/Error-xp.png") !important;
   }
   .question-icon {
-    list-style-image: url("chrome://userchrome/content/images//Question-xp.png") !important;
+    list-style-image: url("chrome://userchrome/content/images/Question-xp.png") !important;
   }
 }

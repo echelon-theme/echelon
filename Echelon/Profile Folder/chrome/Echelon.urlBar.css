@@ -45,7 +45,7 @@
   margin: 0 !important;
   outline: 0 !important;
 }
-:root:not([chromehidden~=toolbar]) .unified-refresh-button #urlbar-background {
+.unified-refresh-button #urlbar-background {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   border-right: 0 !important;
@@ -391,7 +391,7 @@
 
 #reload-button.unified:hover:active,
 #go-button.unified:hover:active {
-  border-left-color: transparent !important !important;
+  border-left-color: transparent !important;
   box-shadow: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset !important;
 }
 

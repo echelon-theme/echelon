@@ -20,8 +20,11 @@
   min-height: calc(var(--tab-min-height) + 1px) !important;
 }
 
+#main-window:not([echelon-style-4]) .tabbrowser-tab {
+  color: -moz-DialogText !important;
+}
+
 .tabbrowser-tab {
-  color: rgb(0, 0, 0) !important;
   padding: 0 !important;
 }
 

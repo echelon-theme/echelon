@@ -8,3 +8,25 @@
  * You can find the SCSS source files in echelon-scss-src/
  */
 
+/* Fix Menu Bar */
+@media not (-moz-windows-classic) {
+  html:not([echelon-appearance-xp]) #toolbar-menubar:not(:-moz-lwtheme) {
+    text-shadow: 0 0 0.5em white, 0 0 0.5em white, 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  html:not([echelon-appearance-xp]) #main-menubar:not(:-moz-lwtheme, :-moz-window-inactive) {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    border-radius: 4px;
+  }
+  html:not([echelon-appearance-xp])[sizemode=normal] #navigator-toolbox:-moz-lwtheme {
+    border-top: 1px solid var(--glass-active-border-color);
+    padding-top: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  }
+  html:not([echelon-appearance-xp])[sizemode=normal] #navigator-toolbox:-moz-lwtheme:-moz-window-inactive {
+    border-top-color: var(--glass-inactive-border-color);
+  }
+}
+#main-menubar > menu {
+  appearance: menuitem !important;
+}
