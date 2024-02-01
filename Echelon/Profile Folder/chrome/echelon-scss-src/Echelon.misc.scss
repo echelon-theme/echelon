@@ -686,6 +686,20 @@ treechildren::-moz-tree-row {
   padding: 0 !important;
 }
 
+treechildren::-moz-tree-row(hover) {
+  background-color: unset !important;
+}
+
+treechildren::-moz-tree-row(selected, hover),
+treechildren::-moz-tree-row(selected) {
+  background-color: -moz-Dialog !important;
+}
+
+treechildren::-moz-tree-row(selected, hover, focus),
+treechildren::-moz-tree-row(selected, focus) {
+  background-color: Highlight !important;
+}
+
 treechildren::-moz-tree-row(current, focus) {
   outline: 1px dotted transparent !important;
   outline-offset: -1px !important;
