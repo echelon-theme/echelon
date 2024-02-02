@@ -168,6 +168,8 @@ groupbox > p {
 }
 
 #content[data-tab="about"] #button-section {
+    border-top: 1px solid ThreeDShadow;
+    box-shadow: inset 0 1px 0 ThreeDHighlight;
 	padding: 10px;
 }
 
@@ -188,6 +190,8 @@ groupbox > p {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    flex: 1;
+    height: 100%;
 }
 
 #echelon-logo {
@@ -207,9 +211,8 @@ groupbox > p {
 	display: flex;
 	flex-direction: column;
 	height: 135px;
+    border-bottom: 1px solid ThreeDLightShadow;
 	background-color: #fff;
-	border-bottom: 1px solid rgb(0 0 0 / 25%);
-	box-shadow: 0 1px 0 #fff;
 	background-image: url("chrome://userchrome/content/windows/echelonOptions/images/about-logo.png");
 	background-repeat: no-repeat;
 	background-position: bottom right;
@@ -246,4 +249,45 @@ td {
     color: red;
     align-self: center;
     flex-grow: 1;
+}
+
+.about-section-credits {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    padding-block: 20px;
+    padding-inline: 40px;
+    background-color: #FFF;
+}
+
+.about-section-list,
+.credits-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.credits-section-list-container {
+    margin-block-end: 10px;
+}
+
+.credits-section-desc {
+    display: inline-block;
+    color: #838383;
+    text-transform: lowercase;
+    margin-block-end: 3px;
+}
+
+.credits-list {
+    color: #404041;
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.credits-list li {
+    margin-block-end: 3px;
 }
