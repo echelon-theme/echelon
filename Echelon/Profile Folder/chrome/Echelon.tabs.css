@@ -146,8 +146,18 @@ html:not([echelon-style-5]) .tabbrowser-tab:first-of-type:last-of-type .tab-clos
   background-image: url("images/newtab.png") !important;
 }
 
+.tab-label-container {
+  mask-image: none !important;
+  flex-grow: 1 !important;
+}
 #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container {
   height: unset !important;
+}
+
+.tab-label {
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 .titlebar-spacer[type=pre-tabs], .titlebar-spacer[type=post-tabs] {
