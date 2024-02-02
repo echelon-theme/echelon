@@ -46,27 +46,36 @@
                                 </menupopup>
                             </menulist>
                         </html:div>
-                        <checkbox native="" label="Use Aero blue" class="option" data-type="bool" data-option="Echelon.Appearance.Blue"/>
-                        <checkbox native="" label="Windows XP mode" class="option" data-type="bool" data-option="Echelon.Appearance.XP"/>
-                        <checkbox native="" label="Hide &quot;Extensions&quot; button (not recommended)" class="option" data-type="bool" data-option="Echelon.Option.HideUnifiedExtensions"/>
-                        <checkbox native="" label="Use 2013+ Firefox logo" class="option" data-type="bool" data-option="Echelon.Appearance.NewLogo"/>
-                        <checkbox native="" label="Enable fog (Australis only)" class="option" data-type="bool" data-option="Echelon.Appearance.Australis.EnableFog"/>
-                        <checkbox native="" label="Windows 10 mode (Australis only)" class="option" data-type="bool" data-option="Echelon.Appearance.Australis.Windows10"/>
+                        <html:div class="option-container">
+                            <label value="OS Style:"/>
+                            <menulist native="" class="option os-control-list">
+                                <menupopup>
+                                    <menuitem label="Windows XP" value="winxp"/>
+                                    <menuitem label="Windows Vista/7" value="win7"/>
+                                    <menuitem label="Windows 8" value="win8" australis-only="true"/>
+                                    <menuitem label="Windows 10" value="win10" australis-only="true"/>
+                                </menupopup>
+                            </menulist>
+                        </html:div>
+                        <checkbox native="" label="Use Aero blue (Vista/7)" class="option" data-type="bool" data-option="Echelon.Appearance.Blue" win7-only="true"/>
+                        <checkbox native="" label="Hide &quot;Extensions&quot; button (not recommended)" class="option" data-type="bool" data-option="Echelon.Option.HideUnifiedExtensions" change-requires-restart="true"/>
+                        <checkbox native="" label="Use 2013+ Firefox logo" class="option" data-type="bool" data-option="Echelon.Appearance.NewLogo" change-requires-restart="true"/>
+                        <checkbox native="" label="Enable fog (Australis only)" class="option" data-type="bool" data-option="Echelon.Appearance.Australis.EnableFog" australis-only="true"/>
                     </groupbox>
                     <groupbox>
                         <caption>Firefox Button</caption>
-                        <checkbox native="" label="Custom Firefox Button style" class="option" data-type="bool" data-option="Echelon.FirefoxButton.CustomStyle"/>
+                        <checkbox native="" label="Custom Firefox Button style" class="option" data-type="bool" data-option="Echelon.FirefoxButton.CustomStyle" change-requires-restart="true"/>
                         <html:div class="option-container">
                             <label value="Firefox Button text:"/>
-                            <html:input type="text" id="custom-name" class="option" data-type="string" data-option="Echelon.FirefoxButton.CustomName"/>
+                            <html:input type="text" id="custom-name" class="option" data-type="string" data-option="Echelon.FirefoxButton.CustomName" change-requires-restart="true"/>
                         </html:div>
                         <html:div class="option-container">
                             <label value="Firefox Button color:" />
-                            <html:input type="color" class="option" data-type="string" data-option="Echelon.FirefoxButton.CustomBGColor"/>
+                            <html:input type="color" class="option" data-type="string" data-option="Echelon.FirefoxButton.CustomBGColor" change-requires-restart="true"/>
                         </html:div>
                     </groupbox>
                 </html:div>
-                <html:div id="section-branding" class="section">
+                <html:div id="section-branding" class="section" section-change-requires-restart="true">
                     <groupbox>
                         <caption>Branding</caption>
                         <html:div class="option-container">
@@ -107,7 +116,7 @@
                         </html:div>
                     </groupbox>
                 </html:div>
-                <html:div id="section-native-controls" class="section">
+                <html:div id="section-native-controls" class="section" section-change-requires-restart="true">
                     <p>This tab allows you to configure ephemeralViolette's native controls patch.</p>
                     <groupbox>
                         <caption>General</caption>
@@ -145,7 +154,7 @@
                         </html:div>
                     </groupbox>
                 </html:div>
-                <html:div id="section-debug" class="section">
+                <html:div id="section-debug" class="section" section-change-requires-restart="true">
                     <p>These options are meant for debugging; you should not need to change them unless you are a developer.</p>
                     <groupbox>
                         <caption>Wizard</caption>
@@ -203,8 +212,10 @@
                 </html:div>
             </html:div>
             <html:div id="button-section">
+                <html:span class="restart-required-label" style="display:none">Restart required</html:span>
                 <button id="ok-button" label="OK"/>
                 <button id="cancel-button" label="Cancel"/>
+                <button id="apply-button" label="Apply"/>
             </html:div>
         </html:div>
     </vbox>

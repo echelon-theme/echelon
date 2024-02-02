@@ -241,3 +241,9 @@ th {
 td {
     padding-left: 4px;
 }
+
+.restart-required-label {
+    color: red;
+    align-self: center;
+    flex-grow: 1;
+}
