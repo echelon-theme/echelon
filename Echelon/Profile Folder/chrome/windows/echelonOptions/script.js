@@ -129,7 +129,7 @@ function osStyleSet(osName)
 let ncpQueryResult = window.matchMedia("(-moz-ev-native-controls-patch)");
 if (!ncpQueryResult.matches)
 {
-    document.querySelector("#section-native-controls").style.display = none;
+    document.querySelector("#section-native-controls").style.display = "none";
 }
 
 function refreshViewProperties()
