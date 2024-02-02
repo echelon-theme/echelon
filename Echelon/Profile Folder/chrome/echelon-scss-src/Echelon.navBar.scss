@@ -72,8 +72,9 @@ toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack {
   }
 
   & > .toolbarbutton-icon {
-    width: 18px !important;
-    height: 18px !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 2px 5px !important;
   }
 }
 

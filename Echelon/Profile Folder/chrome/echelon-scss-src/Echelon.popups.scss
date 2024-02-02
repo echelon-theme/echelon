@@ -238,17 +238,17 @@ panel[type="arrow"] {
 #downloadsListBox > richlistitem[state="1"][exists]:hover .downloadButton .button-icon,
 #downloadsListBox > richlistitem[state="1"][exists].hoveringMainArea:hover .downloadButton .button-icon,
 .downloadButton:hover .button-icon,
-#unified-extensions-area toolbaritem:hover .unified-extensions-item-menu-button > .toolbarbutton-icon {
+#unified-extensions-panel .unified-extensions-item:hover .unified-extensions-item-menu-button > .toolbarbutton-icon {
     background-position-x: -16px !important;
 }
 
 #downloadsListBox > richlistitem[state="1"][exists]:hover .downloadButton:hover .button-icon,
-.unified-extensions-item-menu-button:hover > .toolbarbutton-icon {
+#unified-extensions-panel .unified-extensions-item:hover .unified-extensions-item-menu-button:hover > .toolbarbutton-icon {
     background-position-x: -32px !important;
 }
 
 .downloadButton:hover:active .button-icon,
-.unified-extensions-item-menu-button:hover:active > .toolbarbutton-icon {
+#unified-extensions-panel .unified-extensions-item:hover .unified-extensions-item-menu-button:hover:active > .toolbarbutton-icon {
     background-position-x: -48px !important;
 }
 
@@ -260,8 +260,8 @@ panel[type="arrow"] {
     background-position-y: -32px !important;
 }
 
-#unified-extensions-area {
-    toolbaritem {
+#unified-extensions-area, .unified-extensions-list {
+    toolbaritem, unified-extensions-item {
         min-height: 64px !important;
         margin: 0 !important;
     }
@@ -288,4 +288,8 @@ panel[type="arrow"] {
     border: 0 !important;
     list-style-image: none !important;
     background-image: url('images/extension_options.png');
+}
+
+.unified-extensions-item-message {
+    font-size: calc(100% * 0.9) !important;    
 }
