@@ -63,3 +63,26 @@ if (location.href.startsWith("about:newtab"))
 		document.documentElement.hidden = true;
 	}
 }
+
+// SET UP SEARCH ENGINE
+
+Services.search.getDefault().then(engine => {
+	window.engine = engine;
+	
+	/* Only Google has a logo. Others use placeholder. */
+	if (engine._name != "Google" && echelonStyle < 5)
+	{
+		document.getElementById("searchLogo").hidden = true;
+		document.getElementById("searchText").placeholder = engine._name;
+	}
+});
+
+function onSearchSubmit(e)
+{
+	if (window.engine)
+	{
+		location.href = window.engine.getSubmission(document.getElementById("searchText").value)._uri.spec;
+	}
+
+	e.preventDefault();
+}

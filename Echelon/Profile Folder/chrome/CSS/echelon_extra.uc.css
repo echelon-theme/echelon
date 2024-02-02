@@ -32,6 +32,23 @@ toolbarbutton menupopup[placespopup]::part(content) {
 	background-color: transparent !important;
 }
 
+panel[type="autocomplete-richlistbox"]::part(content) {
+	position: relative;
+}
+
+panel[type="autocomplete-richlistbox"]::part(content)::after {
+	content: "" !important;
+	display: inline-block !important;
+	width: calc(100% - 3px) !important;
+	height: calc(100% - 2px) !important;
+	position: absolute !important;
+	left: 6px !important;
+	top: 5px !important;
+	z-index: -99999999999 !important;
+	background-color: rgb(0 0 0 / 35%) !important;
+	filter: blur(1px) !important;
+}
+
 toolbarbutton menupopup[placespopup] > :is(menu, menuitem) {
 	appearance: auto !important;
 	margin: 0 !important;

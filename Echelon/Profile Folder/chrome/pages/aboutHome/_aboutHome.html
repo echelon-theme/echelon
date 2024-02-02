@@ -12,7 +12,7 @@
 			<div class="brandSpacer"></div>
 			<div class="brandLogo"></div>
 			<div class="searchContainer">
-				<form action="http://www.google.com/search" method="get" name="searchForm" id="searchForm">
+				<form method="get" name="searchForm" id="searchForm" onsubmit="onSearchSubmit(event)">
 					<div id="searchLogo"></div>
 					<input type="text" name="q" value="" id="searchText" maxlength="256" placeholder="" />
 					<input type="submit" id="searchSubmit" value="Search" />

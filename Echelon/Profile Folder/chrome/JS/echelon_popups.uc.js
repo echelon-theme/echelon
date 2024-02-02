@@ -18,6 +18,7 @@ function maxSubtract(x, y)
  */
 function adjustedBoundingRect(el)
 {
+    if (!el) return new DOMRect(0, 0, 0, 0);
     let rect = el.getBoundingClientRect();
     let style = getComputedStyle(el);
     let tx = style.transform;

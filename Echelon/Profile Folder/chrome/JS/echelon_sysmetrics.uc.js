@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name			Echelon :: Get Titlebar Height
-// @description 	Gets WindowMetrics and sets a CSS variable.
+// @name			Echelon :: System Metrics
+// @description 	Gets system metrics and assigns them to CSS variables.
 // @author			AngelBruni, Travis
 // @include			main
 // ==/UserScript==
@@ -18,6 +18,8 @@ function getAndSetTitleBarHeight() {
 
         // Get the height of the system title bar (SM_CYCAPTION)
         var titleBarHeight = GetSystemMetrics(4) - 1;
+
+        // Get the width of padded borders (SM_CXPADDEDBORDER)
         var paddedBorderHeight = GetSystemMetrics(92) - 1;
 
         // Close the User32.dll library

@@ -3,7 +3,7 @@
 // @description 	Loads resources required for Echelon.
 // @author			Travis
 // @include			main
-// @loadOrder       11
+// @loadOrder       14
 // ==/UserScript==
 
 const { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");

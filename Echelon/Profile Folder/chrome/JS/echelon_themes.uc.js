@@ -10,7 +10,7 @@
 
 // Make sure this include is available where needed
 // (checking without "in" causes an error btw)
-if (!"tryGetStringPref" in globalThis)
+if (!"tryGetStringPref" in globalThis || !"tryGetIntPref" in globalThis)
 	Services.scriptloader.loadSubScript("chrome://userchrome/content/JS/echelon_utils.uc.js");
 
 class EchelonThemeManager
