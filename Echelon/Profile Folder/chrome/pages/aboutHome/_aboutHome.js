@@ -61,6 +61,9 @@ if (location.href.startsWith("about:newtab"))
 	if (!blank)
 	{
 		document.documentElement.hidden = true;
+
+		// least nitpicking
+		document.title = "New Tab";
 	}
 }
 
