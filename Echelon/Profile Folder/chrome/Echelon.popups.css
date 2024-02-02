@@ -175,6 +175,10 @@ panel[type=arrow]:not([animate=false])[animate=open], panel[type=arrow]:not([ani
   border-bottom: 1px solid hsla(220, 18%, 51%, 0.25) !important;
 }
 
+.unified-extensions-list > unified-extensions-item {
+  border-top: 1px solid hsla(220, 18%, 51%, 0.25) !important;
+}
+
 :root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #downloadsListBox > richlistitem,
 :root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #unified-extensions-area toolbaritem {
   border-radius: 0 !important;
