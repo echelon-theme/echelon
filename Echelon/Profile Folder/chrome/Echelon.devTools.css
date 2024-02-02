@@ -78,9 +78,9 @@
   border-width: 0 !important;
   box-shadow: 0 1px 0 #d7f1ff inset, 0 7px 3px -5px #2b82bf inset, 0 -2px 0 rgba(0, 0, 0, 0.2) inset !important;
 }
-.devtools-tab.selected:not(:first-child), .devtools-tab.checked:not(:first-child),
-.devtools-tabbar-button.selected:not(:first-child),
-.devtools-tabbar-button.checked:not(:first-child) {
+.devtools-tab.selected:not(:last-child), .devtools-tab.checked:not(:last-child),
+.devtools-tabbar-button.selected:not(:last-child),
+.devtools-tabbar-button.checked:not(:last-child) {
   padding-inline-start: 1px !important;
 }
 .devtools-tab.selected:last-child, .devtools-tab.checked:last-child,
@@ -261,7 +261,9 @@
 }
 
 #inspector-toolbar .devtools-button,
-#ruleview-command-toolbar .devtools-button {
+#ruleview-command-toolbar .devtools-button,
+#command-button-pick,
+.devtools-toolbar .devtools-toolbarbutton {
   display: flex !important;
   justify-content: center !important;
   min-width: 32px !important;
@@ -274,14 +276,21 @@
   margin: 0 3px !important;
   color: inherit !important;
 }
-#inspector-toolbar .devtools-button:not([checked=true]):hover:active,
-#ruleview-command-toolbar .devtools-button:not([checked=true]):hover:active {
+#inspector-toolbar .devtools-button.checked, #inspector-toolbar .devtools-button:not([checked=true]):hover:active,
+#ruleview-command-toolbar .devtools-button.checked,
+#ruleview-command-toolbar .devtools-button:not([checked=true]):hover:active,
+#command-button-pick.checked,
+#command-button-pick:not([checked=true]):hover:active,
+.devtools-toolbar .devtools-toolbarbutton.checked,
+.devtools-toolbar .devtools-toolbarbutton:not([checked=true]):hover:active {
   border-color: hsla(210, 8%, 5%, 0.6) !important;
   background: linear-gradient(hsla(220, 6%, 10%, 0.3), hsla(212, 7%, 57%, 0.15) 65%, hsla(212, 7%, 57%, 0.3)) !important;
   box-shadow: 0 0 3px hsla(210, 8%, 5%, 0.25) inset, 0 1px 3px hsla(210, 8%, 5%, 0.25) inset, 0 1px 0 hsla(210, 16%, 76%, 0.15) !important;
 }
 #inspector-toolbar .devtools-button::before,
-#ruleview-command-toolbar .devtools-button::before {
+#ruleview-command-toolbar .devtools-button::before,
+#command-button-pick::before,
+.devtools-toolbar .devtools-toolbarbutton::before {
   color: #b6babf !important;
 }
 
@@ -298,6 +307,16 @@
 
 .ruleview-rule-source:not([unselectable], :hover) {
   text-decoration: none !important;
+}
+
+#toolbox-buttons-start {
+  align-items: center !important;
+}
+
+#command-button-pick {
+  margin-inline: 5px !important;
+  max-height: 24px !important;
+  margin-bottom: 1px !important;
 }
 
 .tabs .tabs-navigation {
@@ -387,7 +406,8 @@
   color: #0A3860 !important;
 }
 
-.ruleview-ruleopen {
+.ruleview-ruleopen,
+.ruleview-ruleclose {
   color: #000 !important;
 }
 
@@ -452,6 +472,16 @@
   transform: translate(1px, 1px) !important;
 }
 
+.devtools-tab img {
+  opacity: 0.6 !important;
+}
+.devtools-tab:hover img {
+  opacity: 0.8 !important;
+}
+.devtools-tab:active img, .devtools-tab.selected img {
+  opacity: 1 !important;
+}
+
 #toolbox-close::before {
   background-image: url("chrome://userchrome/content/images/devTools/close.png") !important;
 }
@@ -459,4 +489,139 @@
 #toolbox-meatball-menu-button::before {
   opacity: 1 !important;
   background-image: url("chrome://userchrome/content/images/devTools/option-icon.png") !important;
+}
+
+#toolbox-tab-inspector img {
+  content: url("chrome://userchrome/content/images/devTools/tool-inspector.png") !important;
+}
+
+#toolbox-tab-styleeditor img {
+  content: url("chrome://userchrome/content/images/devTools/tool-styleeditor.png") !important;
+}
+
+#toolbox-tab-webconsole img {
+  content: url("chrome://userchrome/content/images/devTools/tool-webconsole.png") !important;
+}
+
+#toolbox-tab-jsdebugger img {
+  content: url("chrome://userchrome/content/images/devTools/tool-debugger.png") !important;
+}
+
+#toolbox-tab-netmonitor img {
+  content: url("chrome://userchrome/content/images/devTools/tool-network.png") !important;
+}
+
+#toolbox-tab-performance img {
+  content: url("chrome://userchrome/content/images/devTools/tool-profiler.png") !important;
+}
+
+#tools-chevron-menu-button::before {
+  background-image: url("chrome://userchrome/content/images/devTools/chevron.png") !important;
+}
+
+#command-button-pick::before {
+  background-position: unset !important;
+  background-image: url("chrome://userchrome/content/images/devTools/inspect-button.png") !important;
+}
+#command-button-pick.checked::before {
+  margin-top: 1px !important;
+  background-position-x: -16px !important;
+}
+
+.splitview-main .devtools-toolbar {
+  padding: 4px !important;
+  height: 34px !important;
+}
+
+.devtools-toolbar {
+  background-color: #343C45 !important;
+}
+.devtools-toolbar .devtools-filterinput {
+  height: 23px !important;
+  max-height: 23px !important;
+  padding-block: 0 !important;
+}
+
+.theme-sidebar,
+.splitview-nav {
+  color: #FFF !important;
+  background-color: #344150 !important;
+}
+
+.devtools-inspector-tab-panel .theme-sidebar {
+  background-color: var(--theme-body-background) !important;
+}
+
+.cm-s-mozilla .CodeMirror-gutters {
+  color: #667380 !important;
+  background-color: #F7F7F7 !important;
+}
+
+.splitview-nav {
+  box-shadow: inset -1px 0 0 #222426 !important;
+}
+.splitview-nav li {
+  background-clip: padding-box !important;
+  border-bottom: 1px solid hsla(210, 40%, 83%, 0.1) !important;
+  box-shadow: inset 0 -1px 0 hsla(211, 68%, 6%, 0.3) !important;
+}
+.splitview-nav li.splitview-active {
+  background-image: url("chrome://userchrome/content/images/devTools/itemArrow-ltr.png"), linear-gradient(to right, black, black), linear-gradient(hsl(200, 100%, 33%), hsl(200, 100%, 25%)) !important;
+  background-repeat: no-repeat, no-repeat, repeat-x !important;
+  background-position: center right, top right, top left !important;
+  background-size: auto, 1px 100%, auto !important;
+  border-bottom: 1px solid hsla(210, 8%, 5%, 0.25) !important;
+  box-shadow: inset 0 1px 0 hsla(210, 40%, 83%, 0.15), inset 0 -1px 0 hsla(210, 40%, 83%, 0.05) !important;
+}
+.splitview-nav li:not(.splitview-active):where(:hover, :focus-within) {
+  background-color: transparent !important;
+}
+.splitview-nav li .stylesheet-toggle {
+  width: 24px !important;
+  padding: 0 !important;
+  background-position-x: 0 !important;
+  background-size: unset !important;
+  background-image: url("chrome://userchrome/content/images/devTools/itemToggle.png") !important;
+}
+.splitview-nav li.disabled .stylesheet-toggle {
+  background-position-x: -24px !important;
+}
+
+:root.theme-dark {
+  --theme-body-background: #131C26 !important;
+  --theme-sidebar-background: var(--theme-body-background) !important;
+  --theme-selection-background: #26394D !important;
+  --theme-selection-background-hover: #090E13 !important;
+  --theme-highlight-dark-blue: #A673BF !important;
+  --theme-highlight-teal: #3689B2 !important;
+  --theme-highlight-purple: #B26B47 !important;
+  --markup-outline: #303B47 !important;
+}
+:root.theme-dark .ruleview-selector-matched {
+  color: var(--theme-highlight-dark-blue) !important;
+}
+:root.theme-dark .ruleview-ruleopen,
+:root.theme-dark .ruleview-ruleclose {
+  color: #8FA1B2 !important;
+}
+:root.theme-dark .ruleview-rule {
+  border-bottom: 1px dotted #303B47 !important;
+}
+:root.theme-dark .ruleview-header {
+  background-color: #0f171f !important;
+  color: #667380 !important;
+  border-color: #303b47 !important;
+}
+:root.theme-dark .theme-twisty {
+  background-position: -28px -14px !important;
+}
+:root.theme-dark .theme-twisty[open] {
+  background-position: -42px -14px !important;
+}
+:root.theme-dark .theme-link {
+  color: var(--theme-highlight-teal) !important;
+}
+:root.theme-dark .cm-s-mozilla .CodeMirror-gutters {
+  color: #5F7387 !important;
+  background-color: #181D20 !important;
 }
