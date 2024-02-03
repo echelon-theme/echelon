@@ -413,6 +413,7 @@
 
 #main-window:not([echelon-style-4])[echelon-style-3] #bookmarks-menu-button {
   width: 43px !important;
+  min-width: 43px !important;
   position: relative !important;
 
   .toolbarbutton-icon {
