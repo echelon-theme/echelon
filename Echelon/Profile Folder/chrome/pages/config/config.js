@@ -623,8 +623,6 @@ function ModifyPref(entry)
       }
       gPrefBranch.setIntPref(entry.prefCol, val);
     } else {
-      var supportsString = Components.classes[nsSupportsString_CONTRACTID].createInstance(nsISupportsString);
-      supportsString.data = result.value;
       gPrefBranch.setStringPref(entry.prefCol, result.value);
     }
   }
