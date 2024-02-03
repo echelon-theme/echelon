@@ -611,7 +611,7 @@
 
 #main-window[tabsintitlebar][echelon-style-4] #toolbar-menubar[autohide=true][inactive=true]:not([customizing=true]) + #TabsToolbar .toolbar-items {
   margin-top: 0 !important;
-  padding-top: calc(var(--titlebar-height) - 5px) !important;
+  padding-top: calc(var(--titlebar-height) - 10px) !important;
 }
 
 #main-window[sizemode=maximized][tabsintitlebar][echelon-style-4] #toolbar-menubar[autohide=true][inactive=true]:not([customizing=true]) + #TabsToolbar .toolbar-items {
@@ -1156,7 +1156,7 @@
     top: var(--padded-border, 0) !important;
   }
   #main-window[echelon-appearance-xp] .titlebar-buttonbox-container {
-    top: calc(var(--padded-border) + 1px) !important;
+    top: calc(var(--padded-border) + 5px) !important;
   }
   #main-window[echelon-appearance-xp][sizemode=maximized] .titlebar-buttonbox-container {
     top: 4px !important;
@@ -1189,6 +1189,7 @@
 }
 /** APPEARANCE ON WINDOWS XP **/
 #main-window[echelon-appearance-xp] {
+  background-color: -moz-Dialog !important;
   /* Hack to have the titlebar image because the bottom part of it's image is hidden */
 }
 #main-window[echelon-appearance-xp] ::placeholder {
@@ -1205,7 +1206,7 @@
 #main-window[echelon-appearance-xp]:not([echelon-style-4], [sizemode=maximized]) #TabsToolbar, #main-window[echelon-appearance-xp]:not([echelon-style-4]) #toolbar-menubar {
   background-color: -moz-Dialog !important;
 }
-#main-window[echelon-appearance-xp]:not([echelon-style-4]) #TabsToolbar:not(:-moz-lwtheme) {
+#main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar]) #TabsToolbar:not(:-moz-lwtheme) {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.05) 1px, transparent 50%) !important;
 }
 #main-window[echelon-appearance-xp] .search-go-button,
@@ -1264,14 +1265,24 @@
   border-right: 0 !important;
   background-color: -moz-Dialog !important;
 }
-#main-window[echelon-appearance-xp] #main-menubar > menu {
+#main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar]) #main-menubar > menu {
   color: WindowText !important;
 }
-#main-window[echelon-appearance-xp] #main-menubar > menu[_moz-menuactive=true] {
+#main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar]) #main-menubar > menu[_moz-menuactive=true] {
   color: HighlightText !important;
 }
-#main-window[echelon-appearance-xp] #main-menubar > menu:-moz-window-inactive {
+#main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar]) #main-menubar > menu:-moz-window-inactive {
   color: ThreeDShadow !important;
+}
+#main-window[echelon-appearance-xp][echelon-style-4][tabsintitlebar] #tabs-newtab-button .toolbarbutton-icon {
+  background-image: url("images/newtab-inverted.png") !important;
+  background-position-x: 0 !important;
+}
+#main-window[echelon-appearance-xp][echelon-style-4][tabsintitlebar] .tabbrowser-tab:not([visuallyselected=true]) .close-icon {
+  background-position-x: -48px !important;
+}
+#main-window[echelon-appearance-xp][echelon-style-4][tabsintitlebar] #toolbar-menubar:not([inactive=true]) {
+  padding-block: 4px !important;
 }
 #main-window[echelon-appearance-xp]:not([echelon-style-4])[tabsintitlebar] #titlebar::before {
   content: "";
@@ -1282,6 +1293,8 @@
   pointer-events: none !important;
   -moz-default-appearance: -moz-window-titlebar;
   position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
   z-index: 0 !important;
 }
 #main-window[echelon-appearance-xp]:not([echelon-style-4])[tabsintitlebar] #titlebar::before #toolbar-menubar {

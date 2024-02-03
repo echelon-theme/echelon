@@ -2,7 +2,7 @@
   --arrowpanel-border-radius: 4px !important;
   --arrowpanel-border-color: hsla(210,4%,10%,.2) !important;
 }
-:root:not([echelon-appearance-blue])[echelon-style-4], :root[echelon-style-5] {
+:root:not([echelon-appearance-xp], [echelon-appearance-blue])[echelon-style-4], :root[echelon-style-5] {
   --arrowpanel-border-radius: 0 !important;
 }
 
@@ -11,7 +11,7 @@ panelview {
 }
 
 :is(panel, menupopup):not(#PlacesChevronPopup)[type=arrow] {
-  --panel-shadow: 0 0 5px rgba(0, 0, 0, .65) !important;
+  --panel-shadow: 0 0 0 1px var(--arrowpanel-border-color), 0 0 5px rgba(0, 0, 0, .65) !important;
   --panel-shadow-margin: 5px !important;
 }
 :is(panel, menupopup):not(#PlacesChevronPopup)[type=arrow]:not([animate=false]) {
@@ -30,7 +30,7 @@ panelview {
   transform: none !important;
 }
 :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[type=arrow] {
-  --panel-shadow: 0 0 5px rgba(0, 0, 0, .35) !important;
+  --panel-shadow: 0 0 0 1px var(--arrowpanel-border-color), 0 0 5px rgba(0, 0, 0, .35) !important;
 }
 
 :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[type=arrow]:not([animate=false]) {
@@ -72,6 +72,7 @@ panelview {
 }
 
 #downloadsPanel-mainView {
+  font: revert !important;
   padding: 0 !important;
   min-width: unset !important;
 }
@@ -133,6 +134,12 @@ panelview {
   box-shadow: 0 2px 0 0 hsla(210, 4%, 10%, 0.1) inset !important;
 }
 
+:root[echelon-appearance-xp] #downloadsPanel[hasdownloads=true] .downloadsPanelFooterButton,
+:root[echelon-appearance-xp] #unified-extensions-manage-extensions {
+  background-color: -moz-Dialog !important;
+  box-shadow: none !important;
+}
+
 #downloadsListBox > richlistitem,
 #unified-extensions-area toolbaritem {
   border-radius: 3px !important;
@@ -182,6 +189,30 @@ panelview {
   background-color: hsla(210, 4%, 10%, 0.15) !important;
   outline: 1px solid hsla(210, 4%, 10%, 0.15) !important;
   box-shadow: 0 1px 0 0 hsla(210, 4%, 10%, 0.05) inset !important;
+}
+
+:root[echelon-appearance-xp] #downloadsListBox > richlistitem,
+:root[echelon-appearance-xp] #unified-extensions-area toolbaritem {
+  border-radius: 3px !important;
+}
+:root[echelon-appearance-xp] #downloadsListBox > richlistitem:hover, :root[echelon-appearance-xp] #downloadsListBox > richlistitem[state="1"][exists]:hover, :root[echelon-appearance-xp] #downloadsListBox > richlistitem[state="1"][exists].hoveringMainArea:hover,
+:root[echelon-appearance-xp] #unified-extensions-area toolbaritem:hover,
+:root[echelon-appearance-xp] #unified-extensions-area toolbaritem[state="1"][exists]:hover,
+:root[echelon-appearance-xp] #unified-extensions-area toolbaritem[state="1"][exists].hoveringMainArea:hover {
+  color: HighlightText !important;
+  background-color: Highlight !important;
+  border: 1px solid Highlight !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+:root[echelon-appearance-xp] #downloadsListBox > richlistitem:not(:last-of-type, :hover),
+:root[echelon-appearance-xp] #unified-extensions-area toolbaritem:not(:last-of-type, :hover) {
+  border-radius: 0 !important;
+  border-bottom: 1px solid hsla(220, 18%, 51%, 0.25) !important;
+}
+:root[echelon-appearance-xp] #downloadsPanel-mainView,
+:root[echelon-appearance-xp] #downloadsListBox {
+  max-width: 348px !important;
 }
 
 .downloadMainArea {
