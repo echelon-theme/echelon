@@ -121,9 +121,9 @@ EchelonPageManager.registerAboutPage(
     "privatebrowsing",
     "chrome://userchrome/content/pages/privatebrowsing/privatebrowsing.xhtml"
 );
-EchelonPageManager.registerAboutPage(
-    "config",
-    "chrome://userchrome/content/pages/config/config.xhtml"
-);
+// EchelonPageManager.registerAboutPage(
+//     "config",
+//     "chrome://userchrome/content/pages/config/config.xhtml"
+// );
 
 let EXPORTED_SYMBOLS = [];
