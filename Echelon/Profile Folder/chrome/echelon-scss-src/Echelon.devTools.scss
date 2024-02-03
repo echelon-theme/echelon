@@ -44,6 +44,10 @@
     border-inline-start: 1px solid #42484f !important;
     align-items: center !important;
     justify-content: center !important;
+
+    .devtools-tab-label {
+        font-size: revert !important;
+    }
       
     &:last-child {
         border-inline-end: 1px solid #42484f;
@@ -167,7 +171,7 @@
     margin: 0 -11px 0 0 !important;
     padding: 0 9px !important;
     color: hsl(210,30%,85%) !important;
-    font-size: 9pt !important;
+    font: message-box !important;
 
     
     &:not(:first-child)::before {
@@ -265,7 +269,7 @@
     background-position: 4px center, top left, top left !important;
     background-size: unset !important;
     background-repeat: no-repeat !important;
-    font-size: 9pt !important;
+    font: message-box !important;
 }
 
 .devtools-separator {
@@ -403,6 +407,7 @@
         }
 
         a {
+            font-size: revert !important;
             border: 0 !important;
         }
     }
