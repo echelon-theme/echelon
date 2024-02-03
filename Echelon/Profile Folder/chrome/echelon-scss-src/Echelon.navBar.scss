@@ -162,6 +162,9 @@ toolbar:not(#nav-bar, #TabsToolbar) .toolbarbutton-1 {
   --toolbarbutton-outer-padding: 3px !important;
   align-items: center !important;
   appearance: toolbarbutton !important;
+  border: 0 !important;
+  background-image: none !important;
+  box-shadow: none !important;
   margin-block: 0 !important;
   padding: 0 !important;
   min-width: 24px !important;
