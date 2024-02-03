@@ -6,6 +6,9 @@
 // @backgroundmodule
 // ==/UserScript==
 
+// Heavily referenced/stolen from this script:
+// https://github.com/aminomancer/uc.css.js/blob/3ecff5b064712b2517b0af0d6a41cead3b7fe89f/JS/aboutCfg.uc.js
+
 class OverrideObject
 {
     _uri = null;
@@ -121,9 +124,9 @@ EchelonPageManager.registerAboutPage(
     "privatebrowsing",
     "chrome://userchrome/content/pages/privatebrowsing/privatebrowsing.xhtml"
 );
-// EchelonPageManager.registerAboutPage(
-//     "config",
-//     "chrome://userchrome/content/pages/config/config.xhtml"
-// );
+EchelonPageManager.registerAboutPage(
+    "config",
+    "chrome://userchrome/content/pages/config/config.xhtml"
+);
 
 let EXPORTED_SYMBOLS = [];

@@ -6,6 +6,9 @@
 @import url("chrome://global/skin/");
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+:root {
+  --default-focusring-width: 1px !important;
+}
 
 #warningScreen
 {
@@ -88,4 +91,12 @@
 {
   width: 48px;
   height: 48px;
+}
+
+#configDeck > vbox {
+  max-width: 100vw;
+}
+
+button:focus-visible {
+  outline-offset: -4px !important;
 }

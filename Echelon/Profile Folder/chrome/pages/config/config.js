@@ -306,11 +306,7 @@ function fetchPref(prefName, prefIndex)
         break;
       default:
       case gPrefBranch.PREF_STRING:
-        pref.valueCol = gPrefBranch.getComplexValue(prefName, nsISupportsString).data;
-        // Try in case it's a localized string (will throw an exception if not)
-        if (pref.lockCol == PREF_IS_DEFAULT_VALUE &&
-            /^chrome:\/\/.+\/locale\/.+\.properties/.test(pref.valueCol))
-          pref.valueCol = gPrefBranch.getComplexValue(prefName, nsIPrefLocalizedString).data;
+        pref.valueCol = gPrefBranch.getStringPref(prefName);
         break;
     }
   } catch (e) {
@@ -332,15 +328,7 @@ function onConfigLoad()
   gTypeStrs[nsIPrefBranch.PREF_INT] = gConfigBundle.getString("int");
   gTypeStrs[nsIPrefBranch.PREF_BOOL] = gConfigBundle.getString("bool");
 
-  var showWarning = true;
-  try
-  {
-    showWarning = gPrefBranch.getBoolPref("general.warnOnAboutConfig");
-  }
-  catch (e)
-  {
-    gPrefBranch.setBoolPref("general.warnOnAboutConfig", true);
-  }
+  var showWarning = gPrefBranch.getBoolPref("browser.aboutConfig.showWarning");
 
   if (showWarning)
     document.getElementById("warningButton").focus();
@@ -375,10 +363,10 @@ function ShowPrefs()
   configTree.view = view;
   configTree.controllers.insertControllerAt(0, configController);
 
-  document.getElementById("configDeck").setAttribute("selectedIndex", 1);
+  document.getElementById("configDeck").selectedIndex = 1;
   document.getElementById("configTreeKeyset").removeAttribute("disabled");
   if (!document.getElementById("showWarningNextTime").checked)
-    gPrefBranch.setBoolPref("general.warnOnAboutConfig", false);
+    gPrefBranch.setBoolPref("browser.aboutConfig.showWarning", false);
 
   // Process about:config?filter=<string>
   var textbox = document.getElementById("textbox");
@@ -637,7 +625,7 @@ function ModifyPref(entry)
     } else {
       var supportsString = Components.classes[nsSupportsString_CONTRACTID].createInstance(nsISupportsString);
       supportsString.data = result.value;
-      gPrefBranch.setComplexValue(entry.prefCol, nsISupportsString, supportsString);
+      gPrefBranch.setStringPref(entry.prefCol, result.value);
     }
   }
 
