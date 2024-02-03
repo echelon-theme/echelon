@@ -145,7 +145,7 @@ html:not([echelon-style-5]) .tabbrowser-tab:first-of-type:last-of-type .tab-clos
   height: unset !important;
 }
 
-.tab-label {
+#main-window .tab-label {
   max-width: 100% !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
