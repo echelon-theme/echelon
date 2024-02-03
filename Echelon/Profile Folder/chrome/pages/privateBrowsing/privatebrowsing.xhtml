@@ -4,8 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" lang="en" xml:lang="en">
 	<head>
 		<title>Private Browsing</title>
-		<link rel="icon" type="image/png" href="chrome://userchrome/content/pages/privateBrowsing/images/Privacy-16.png" />
-		<link rel="stylesheet" type="text/css" href="chrome://userchrome/content/pages/privateBrowsing/_privateBrowsing.css" />
+		<link rel="icon" type="image/png" href="chrome://userchrome/content/pages/privatebrowsing/images/Privacy-16.png" />
+		<link rel="stylesheet" type="text/css" href="chrome://userchrome/content/pages/privatebrowsing/privatebrowsing.css" />
 		<script id="refresh-tab-name" src="chrome://userchrome/content/pages/common/_selfLoadTitle.js"></script>
 	</head>
 	<body class="private" dir="ltr">
@@ -30,8 +30,8 @@
 					</div>
 
 					<!-- Start Private Browsing -->
-					<div id="startPrivateBrowsingDesc" class="showNormal">
-						<xul:button id="startPrivateBrowsing" label="Start Private Browsing"
+					<div id="startprivatebrowsingDesc" class="showNormal">
+						<xul:button id="startprivatebrowsing" label="Start Private Browsing"
 								    accesskey="P"
 								    oncommand="RPMSendAsyncMessage('OpenPrivateWindow');"/>
 					  </div>
@@ -65,7 +65,7 @@
 				document.body.classList.add("normal");
 				
 				document.title = "Would you like to start Private Browsing?";
-				document.querySelector("link[rel=\"icon\"]").setAttribute("href", "chrome://userchrome/content/pages/privateBrowsing/images/question-16.png");
+				document.querySelector("link[rel=\"icon\"]").setAttribute("href", "chrome://userchrome/content/pages/privatebrowsing/images/question-16.png");
 			}
 		}
 	</script>

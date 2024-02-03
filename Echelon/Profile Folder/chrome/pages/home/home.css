@@ -31,7 +31,7 @@ body {
 }
 
 :not([echelon-new-logo]) body {
-		background-image: url('chrome://userchrome/content/pages/aboutHome/images/noise.png');
+		background-image: url('chrome://userchrome/content/pages/home/images/noise.png');
 }
 
 a {
@@ -62,7 +62,7 @@ input, button {
 	height: var(--brand-logo-size);
 	min-height: var(--brand-logo-size);
 	margin: 22px auto 31px;
-	background-image: url('chrome://userchrome/content/pages/aboutHome/images/about-logo-old.png');
+	background-image: url('chrome://userchrome/content/pages/home/images/about-logo-old.png');
 	background-size: var(--brand-logo-size) auto;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -86,7 +86,7 @@ input, button {
 	width: 70px;
 	min-width: 70px;
 	height: 28px;
-	background-image: url('chrome://userchrome/content/pages/aboutHome/images/google.png');
+	background-image: url('chrome://userchrome/content/pages/home/images/google.png');
 	background-size: 100% 100%;
 	margin-inline-end: 8px;
 }
@@ -181,11 +181,11 @@ input, button {
 }
 
 .snippetIcon1 {
-	background-image: url('chrome://userchrome/content/pages/aboutHome/images/snippet1.png');
+	background-image: url('chrome://userchrome/content/pages/home/images/snippet1.png');
 }
 
 .snippetIcon2 {
-	background-image: url('chrome://userchrome/content/pages/aboutHome/images/snippet2.png');
+	background-image: url('chrome://userchrome/content/pages/home/images/snippet2.png');
 }
 
 #launcher {
@@ -230,27 +230,27 @@ input, button {
 }
 
 #downloads:before {
-    content: url('chrome://userchrome/content/pages/aboutHome/images/downloads.png');
+    content: url('chrome://userchrome/content/pages/home/images/downloads.png');
 }
 
 #bookmarks:before {
-    content: url('chrome://userchrome/content/pages/aboutHome/images/bookmarks.png');
+    content: url('chrome://userchrome/content/pages/home/images/bookmarks.png');
 }
 
 #history:before {
-    content: url('chrome://userchrome/content/pages/aboutHome/images/history.png');
+    content: url('chrome://userchrome/content/pages/home/images/history.png');
 }
 
 #addons:before {
-    content: url('chrome://userchrome/content/pages/aboutHome/images/addons.png');
+    content: url('chrome://userchrome/content/pages/home/images/addons.png');
 }
 
 #sync:before {
-    content: url('chrome://userchrome/content/pages/aboutHome/images/sync.png');
+    content: url('chrome://userchrome/content/pages/home/images/sync.png');
 }
 
 #settings:before {
-    content: url('chrome://userchrome/content/pages/aboutHome/images/settings.png');
+    content: url('chrome://userchrome/content/pages/home/images/settings.png');
 }
 
 :root:not([echelon-style="1"]) #aboutMozilla {
@@ -266,7 +266,7 @@ input, button {
 }
 
 :root:not([echelon-style="1"]) #aboutMozilla::before {
-  content: url("chrome://userchrome/content/pages/aboutHome/images/mozilla.png");
+  content: url("chrome://userchrome/content/pages/home/images/mozilla.png");
   display: block;
   position: absolute;
   top: 12px;
@@ -284,14 +284,14 @@ input, button {
 	color: transparent;
 	-moz-context-properties: fill;
 	fill: #616366;
-	background: url("chrome://userchrome/content/pages/aboutHome/images/search-arrow-go.svg") center center no-repeat, linear-gradient(hsla(0,0%,100%,.8), hsla(0,0%,100%,.1)) padding-box;
+	background: url("chrome://userchrome/content/pages/home/images/search-arrow-go.svg") center center no-repeat, linear-gradient(hsla(0,0%,100%,.8), hsla(0,0%,100%,.1)) padding-box;
 }
 
 :root[echelon-style="5"] #searchText:focus + #searchSubmit,
 :root[echelon-style="5"] #searchText + #searchSubmit:hover,
 :root[echelon-style="5"] #searchText[autofocus] + #searchSubmit {
 	color: transparent;
-	background-image: url("chrome://userchrome/content/pages/aboutHome/images/search-arrow-go.svg"), linear-gradient(#66bdff, #0d9eff);
+	background-image: url("chrome://userchrome/content/pages/home/images/search-arrow-go.svg"), linear-gradient(#66bdff, #0d9eff);
 	fill: white;
 }
 
@@ -306,7 +306,7 @@ input, button {
     width: 36px;
 	min-width: 36px;
     height: 36px;
-    background: url("chrome://userchrome/content/pages/aboutHome/images/search-indicator-magnifying-glass.svg") center center no-repeat;
+    background: url("chrome://userchrome/content/pages/home/images/search-indicator-magnifying-glass.svg") center center no-repeat;
     position: absolute;
 }
 
@@ -319,7 +319,7 @@ input, button {
 }
 
 :root[echelon-style="5"] #aboutMozilla::before {
-	content: url("chrome://userchrome/content/pages/aboutHome/images/mozilla.svg");
+	content: url("chrome://userchrome/content/pages/home/images/mozilla.svg");
 }
 
 /* 
@@ -473,7 +473,7 @@ input, button {
 }
 
 :root[echelon-style="1"] #searchLogo {
-	background-image: url('chrome://userchrome/content/pages/aboutHome/images/google_alt.png');
+	background-image: url('chrome://userchrome/content/pages/home/images/google_alt.png');
 }
 
 :root[echelon-style="1"] #snippetContainer {
@@ -519,7 +519,7 @@ input, button {
 }
 
 :root[echelon-new-logo] .brandLogo {
-	background-image: url('chrome://userchrome/content/pages/aboutHome/images/about-logo.png');
+	background-image: url('chrome://userchrome/content/pages/home/images/about-logo.png');
 }
 
 :root[echelon-new-logo] #snippetContainer,

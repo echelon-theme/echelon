@@ -12,7 +12,7 @@
 																 rgba(255,255,255,0.2) 54.5%, rgba(255,255,255,0.1) 55%,
 																 rgba(255,255,255,0.1) 57.5%, rgba(255,255,255,0) 58%,
 																 rgba(255,255,255,0) 87%, rgba(255,255,255,0.2) 90%),
-						          url("chrome://userchrome/content/pages/aboutPreferences/images/background-texture.png") !important;
+						          url("chrome://userchrome/content/pages/preferences/images/background-texture.png") !important;
 	}
 	:root:not(.system-font-size) {
 		font: message-box !important;
@@ -70,19 +70,19 @@
 		list-style-image: none !important;
 	}
 	#category-general > .category-icon {
-		background-image: url("chrome://userchrome/content/pages/aboutPreferences/images/Options.png") !important;
+		background-image: url("chrome://userchrome/content/pages/preferences/images/Options.png") !important;
 	}
 	#category-privacy > .category-icon {
-		list-style-image: url("chrome://userchrome/content/pages/aboutPreferences/images/Privacy-32.png") !important;
+		list-style-image: url("chrome://userchrome/content/pages/preferences/images/Privacy-32.png") !important;
 	}
 	#category-sync > .category-icon {
-		list-style-image: url("chrome://userchrome/content/pages/aboutPreferences/images/Sync-32.png") !important;
+		list-style-image: url("chrome://userchrome/content/pages/preferences/images/Sync-32.png") !important;
 	}
 	#category-home > .category-icon {
-		list-style-image: url("chrome://userchrome/content/pages/aboutPreferences/images/prefs_home.png") !important;
+		list-style-image: url("chrome://userchrome/content/pages/preferences/images/prefs_home.png") !important;
 	}
 	#category-search > .category-icon {
-		list-style-image: url("chrome://userchrome/content/pages/aboutPreferences/images/prefs_search.png") !important;
+		list-style-image: url("chrome://userchrome/content/pages/preferences/images/prefs_search.png") !important;
 	}
 	.category-name {
 		display: flex !important;
@@ -222,11 +222,11 @@
 		height: 44px !important;
 		border: 0 !important;
 		border-radius: 3.5px !important;
-		content: url("chrome://userchrome/content/pages/aboutPreferences/images/web-appearance-light.png") !important;
+		content: url("chrome://userchrome/content/pages/preferences/images/web-appearance-light.png") !important;
 		box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25) !important;
 	}
 	.web-appearance-choice.dark img {
-		content: url("chrome://userchrome/content/pages/aboutPreferences/images/web-appearance-dark.png") !important;
+		content: url("chrome://userchrome/content/pages/preferences/images/web-appearance-dark.png") !important;
 	}
 	.web-appearance-choice-footer {
 		background-image: linear-gradient(rgba(251, 252, 253, 0.95), rgba(246, 247, 248, 0.47) 49%, 
@@ -256,7 +256,7 @@
 		box-shadow: inset 0 1px 1px rgb(0 0 0 / 5%) !important;
 		padding: 8px 20px !important;
 		background-color: #FCFDFF !important;
-		background-image: url("chrome://userchrome/content/pages/aboutPreferences/images/background-texture.png") !important;
+		background-image: url("chrome://userchrome/content/pages/preferences/images/background-texture.png") !important;
 	}
 	.info-icon {
 		content: url("chrome://userchrome/content/images/information-16.png") !important;
@@ -271,9 +271,9 @@
 		border: 1px solid rgb(0 0 0 / 25%) !important;
 	}
 	.searchBarHiddenImage {
-		list-style-image: url("chrome://userchrome/content/pages/aboutPreferences/images/no-search-bar.png") !important;
+		list-style-image: url("chrome://userchrome/content/pages/preferences/images/no-search-bar.png") !important;
 	}
 	.searchBarShownImage {
-		list-style-image: url("chrome://userchrome/content/pages/aboutPreferences/images/search-bar.png") !important;
+		list-style-image: url("chrome://userchrome/content/pages/preferences/images/search-bar.png") !important;
 	}
 }

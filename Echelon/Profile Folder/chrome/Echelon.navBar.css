@@ -162,6 +162,7 @@ toolbar:not(#nav-bar, #TabsToolbar) .toolbarbutton-1 {
   width: 24px !important;
   height: 26px !important;
   position: relative;
+  overflow: visible !important;
 }
 toolbar:not(#nav-bar, #TabsToolbar) .toolbarbutton-1 .toolbarbutton-badge-stack {
   width: calc(100% + 4px) !important;
@@ -337,4 +338,24 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:last-of-type {
 }
 :root[echelon-style-5] .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
   content: url("chrome://userchrome/content/images/ff56/defaultFavicon.png") !important;
+}
+
+.toolbarbutton-badge-stack,
+#PersonalToolbar {
+  overflow: visible !important;
+}
+
+.toolbarbutton-badge {
+  position: absolute;
+  top: -3px;
+  right: -1px;
+  margin: 0 !important;
+  margin-inline-end: 0 !important;
+  max-width: 28px !important;
+  border-radius: 0 !important;
+  line-height: 14px !important;
+  height: 15px !important;
+}
+toolbar:not(#nav-bar, #TabsToolbar) .toolbarbutton-badge {
+  transform: translate(2px, -2px) !important;
 }

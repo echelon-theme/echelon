@@ -55,11 +55,11 @@ body.normal .showPrivate {
 	width: 48px;
 	min-width: 48px;
 	height: 48px;
-	background-image: url('chrome://userchrome/content/pages/privateBrowsing/images/question-48.png');
+	background-image: url('chrome://userchrome/content/pages/privatebrowsing/images/question-48.png');
 }
 
 .private .errorPageIcon {
-	background-image: url('chrome://userchrome/content/pages/privateBrowsing/images/Privacy-48.png');
+	background-image: url('chrome://userchrome/content/pages/privatebrowsing/images/Privacy-48.png');
 }
 
 .errorPageContentContainer {
@@ -68,7 +68,7 @@ body.normal .showPrivate {
 
 #errorLongContent p,
 #errorShortDesc,
-#startPrivateBrowsingDesc {
+#startprivatebrowsingDesc {
 	padding-bottom: 1em;
 }
 

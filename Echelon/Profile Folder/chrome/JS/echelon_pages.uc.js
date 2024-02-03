@@ -111,15 +111,19 @@ class EchelonPageManager
 
 EchelonPageManager.registerAboutPage(
     "newtab",
-    "chrome://userchrome/content/pages/aboutHome/_aboutHome.html"
+    "chrome://userchrome/content/pages/home/home.html"
 );
 EchelonPageManager.registerAboutPage(
     "home",
-    "chrome://userchrome/content/pages/aboutHome/_aboutHome.html"
+    "chrome://userchrome/content/pages/home/home.html"
 );
 EchelonPageManager.registerAboutPage(
     "privatebrowsing",
-    "chrome://userchrome/content/pages/privateBrowsing/_privateBrowsing.xhtml"
+    "chrome://userchrome/content/pages/privatebrowsing/privatebrowsing.xhtml"
+);
+EchelonPageManager.registerAboutPage(
+    "config",
+    "chrome://userchrome/content/pages/config/config.xhtml"
 );
 
 let EXPORTED_SYMBOLS = [];
