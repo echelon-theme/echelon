@@ -32,14 +32,6 @@ function executeFunctions() {
 		openEchelonWizardWindow(false);
 	});
 
-	// This particular tooltip element that is used for the search bar, extensions,
-	// etc, is completely untouchable, even with author styles. We must set its style
-	// attribute with JS.
-	waitForElement(":root > tooltip").then(e => {
-		console.log("root tooltip hi");
-		e.setAttribute("style", "-moz-default-appearance:tooltip!important;appearance:auto!important");
-	});
-
     console.info("Functions executed.");
 }
 
