@@ -505,7 +505,7 @@
 #main-window[echelon-style-4] .tabbrowser-tab:hover + .tabbrowser-tab::before,
 #main-window[echelon-style-4] #tabbrowser-arrowscrollbox-periphery::before,
 #main-window[echelon-style-4] .tabbrowser-tab:hover + #tabbrowser-arrowscrollbox-periphery #tabs-newtab-button::before,
-#main-window[echelon-style-4] .tabbrowser-tab[selected] + .tabbrowser-tab::before,
+#main-window[echelon-style-4] .tabbrowser-tab[selected] + #tabbrowser-arrowscrollbox-periphery #tabs-newtab-button::before #main-window[echelon-style-4] .tabbrowser-tab[selected] + .tabbrowser-tab::before,
 #main-window[echelon-style-4] #tabs-newtab-button::before {
   display: none !important;
   height: 100% !important;
