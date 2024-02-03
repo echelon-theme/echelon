@@ -504,9 +504,11 @@
 #main-window[echelon-style-4] .tabbrowser-tab::after,
 #main-window[echelon-style-4] .tabbrowser-tab:hover + .tabbrowser-tab::before,
 #main-window[echelon-style-4] #tabbrowser-arrowscrollbox-periphery::before,
-#main-window[echelon-style-4] .tabbrowser-tab:hover + #tabbrowser-arrowscrollbox-periphery::before,
-#main-window[echelon-style-4] .tabbrowser-tab[selected] + .tabbrowser-tab::before {
+#main-window[echelon-style-4] .tabbrowser-tab:hover + #tabbrowser-arrowscrollbox-periphery #tabs-newtab-button::before,
+#main-window[echelon-style-4] .tabbrowser-tab[selected] + .tabbrowser-tab::before,
+#main-window[echelon-style-4] #tabs-newtab-button::before {
   display: none !important;
+  height: 100% !important;
   margin-inline-start: -3px !important;
   width: 3px !important;
   background-image: url("images/tab-separator.png") !important;
@@ -514,8 +516,14 @@
   box-sizing: border-box !important;
 }
 
+#main-window[echelon-style-4] #tabs-newtab-button::before {
+  position: absolute;
+  left: var(--tab-curve-half-width) !important;
+  margin-inline-start: 0 !important;
+}
+
 #main-window[echelon-style-4] .tabbrowser-tab:not([selected], :first-of-type, :hover)::before,
-#main-window[echelon-style-4] #tabbrowser-arrowscrollbox-periphery::before {
+#main-window[echelon-style-4] #tabs-newtab-button:not(:hover)::before {
   content: "" !important;
   display: inline-block !important;
 }

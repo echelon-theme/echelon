@@ -68,6 +68,7 @@
 #tabs-newtab-button {
   width: 28px !important;
   padding-bottom: 2px !important;
+  position: relative !important;
 }
 
 #tabs-newtab-button:hover,
