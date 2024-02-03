@@ -21,7 +21,7 @@ function openEchelonWizardWindow(verifyFirstRun) {
 
 function launchEchelonWizard() {
     window.openDialog(
-        "chrome://userchrome/content/windows/echelonWizard/echelonWizard.xhtml",
+        "chrome://userchrome/content/windows/wizard/wizard.xhtml",
         "Set Up Echelon",
         "chrome,centerscreen,resizeable=no,dependent,modal"
     ); 

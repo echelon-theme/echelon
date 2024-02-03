@@ -112,12 +112,12 @@ groupbox > p {
 .tab-icon {
     width: 32px;
     height: 32px;
-    background-image: url("chrome://userchrome/content/windows/echelonOptions/images/Options.png");
+    background-image: url("chrome://userchrome/content/windows/options/images/Options.png");
 }
 
 @supports -moz-bool-pref("Echelon.Appearance.XP") {
     .tab-icon {
-        background-image: url("chrome://userchrome/content/windows/echelonOptions/images/Options-xp.png");
+        background-image: url("chrome://userchrome/content/windows/options/images/Options-xp.png");
     }
 }
 
@@ -143,6 +143,7 @@ groupbox > p {
 
 .tab-label {
     line-height: 1;
+    overflow: visible;
 }
 
 #tab-native-controls {
@@ -213,7 +214,7 @@ groupbox > p {
 	height: 135px;
     border-bottom: 1px solid ThreeDLightShadow;
 	background-color: #fff;
-	background-image: url("chrome://userchrome/content/windows/echelonOptions/images/about-logo.png");
+	background-image: url("chrome://userchrome/content/windows/options/images/about-logo.png");
 	background-repeat: no-repeat;
 	background-position: bottom right;
 	justify-content: center;

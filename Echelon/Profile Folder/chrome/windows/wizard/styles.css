@@ -65,8 +65,8 @@ vbox {
 	width: 585px;
 	height: 440px;
 	background-color: #3B7CBF;
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/bgnoise.png'),
-						url('chrome://userchrome/content/windows/echelonWizard/images/bggrid.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/bgnoise.png'),
+						url('chrome://userchrome/content/windows/wizard/images/bggrid.png');
 	box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
 	font-family: 'Open Sans', sans-serif;
 	color: #404041;
@@ -109,7 +109,7 @@ vbox {
 }
 
 .welcome {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/firefoxbg.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/firefoxbg.png');
 	background-repeat: no-repeat;
 	background-position: top right;
 }
@@ -118,7 +118,7 @@ vbox {
 	width: 223px;
 	height: 88px;
 	display: inline-block;
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/welcometoechelon.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/welcometoechelon.png');
 	margin-bottom: 30px;
 }
 
@@ -215,15 +215,15 @@ vbox {
 }
 
 .backButton .buttonIcon {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/backicon.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/backicon.png');
 }
 
 .nextButton .buttonIcon {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/nexticon.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/nexticon.png');
 }
 
 .restartButton .buttonIcon {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/finishicon.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/finishicon.png');
 }
 
 .pageContentHeader {
@@ -282,49 +282,49 @@ vbox {
 }
 
 .ff4blue {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/ff4blue.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/ff4blue.png');
 }
 
 .ff4native {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/ff4native.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/ff4native.png');
 }
 
 .ff4xp {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/ff4xp.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/ff4xp.png');
 }
 
 .australisblue {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/australisblue.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/australisblue.png');
 }
 
 .australisnative {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/australisnative.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/australisnative.png');
 }
 
 .australisxp {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/australisxp.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/australisxp.png');
 }
 
 .australisWindows10 {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/australis10.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/australis10.png');
 }
 
 .ff4bluesmall {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/ff4bluesmall.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/ff4bluesmall.png');
 }
 
 .ff10bluesmall {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/ff10bluesmall.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/ff10bluesmall.png');
 }
 
 .ff14bluesmall {
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/ff14bluesmall.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/ff14bluesmall.png');
 }
 
 .endScreen {
 	color: white;
 	text-shadow: 0 1px 0 black;
-	background-image: url('chrome://userchrome/content/windows/echelonWizard/images/bgend.png');
+	background-image: url('chrome://userchrome/content/windows/wizard/images/bgend.png');
 }
 
 .endScreen h1 {
@@ -357,5 +357,5 @@ vbox {
 }
 
 #reset-layout .checkbox-check[checked] {
-	list-style-image: url('chrome://userchrome/content/windows/echelonWizard/images/checkmark.png');
+	list-style-image: url('chrome://userchrome/content/windows/wizard/images/checkmark.png');
 }

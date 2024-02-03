@@ -218,7 +218,7 @@ function okApplyHandler(e, closeWindow = false)
 {
     let restartRequired = isRestartRequired();
 
-    let restartStruct ={
+    let restartStruct = {
         accepted: false,
         icon: "warning",
         title: "Are you sure?",
@@ -229,7 +229,7 @@ function okApplyHandler(e, closeWindow = false)
     if (restartRequired)
     {
         window.openDialog(
-            "chrome://userchrome/content/windows/echelonOptions/dialog.xhtml",
+            "chrome://userchrome/content/windows/options/dialog.xhtml",
             "Are you sure?",
             "chrome,centerscreen,resizeable=no,dependent,modal",
             restartStruct

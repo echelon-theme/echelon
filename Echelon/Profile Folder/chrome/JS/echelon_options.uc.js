@@ -25,7 +25,7 @@ function addEchelonOptionsMenuItem()
 function launchEchelonOptions()
 {
     window.openDialog(
-        "chrome://userchrome/content/windows/echelonOptions/echelonOptions.xhtml",
+        "chrome://userchrome/content/windows/options/options.xhtml",
         "Echelon Options",
         "chrome,centerscreen,resizeable=no,dependent,modal"
     ); 
