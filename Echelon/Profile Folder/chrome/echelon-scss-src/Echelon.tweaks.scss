@@ -1353,8 +1353,10 @@
     background-image: url('images/xp/query.png') !important;
   }
   
-  .bookmark-item[container] .toolbarbutton-icon, .menu-iconic[container] .menu-iconic-icon,
-  .tab-icon-image:not([src]), .tab-icon-image:-moz-broken {
+  .bookmark-item[container] .toolbarbutton-icon, 
+  .menu-iconic[container] .menu-iconic-icon,
+  &:not([echelon-style-3]) .tab-icon-image:not([src]), 
+  &:not([echelon-style-3]) .tab-icon-image:-moz-broken {
     background-image: url('images/xp/folder-item.png') !important;
   }
   

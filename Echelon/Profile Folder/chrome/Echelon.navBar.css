@@ -327,9 +327,19 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:last-of-type {
 }
 
 .bookmark-item {
+  list-style-image: none !important;
+}
+.bookmark-item .toolbarbutton-icon {
+  background-image: url("images/folder-item.png") !important;
+}
+:root[echelon-appearance-xp] .bookmark-item .toolbarbutton-icon {
+  background-image: url("images/xp/folder-item.png") !important;
+}
+:root[echelon-style-3] .bookmark-item:not([container]) .toolbarbutton-icon {
+  background-image: none !important;
   list-style-image: url("chrome://userchrome/content/images/defaultFavicon.png") !important;
 }
-:root[echelon-style-5] .bookmark-item {
+:root[echelon-style-5] .bookmark-item:not([container]) .toolbarbutton-icon {
   list-style-image: url("chrome://userchrome/content/images/ff56/defaultFavicon.png") !important;
 }
 
