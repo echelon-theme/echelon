@@ -1,4 +1,5 @@
 :root {
+  --theme-body-color: #73879a !important;
   --theme-highlight-blue: #329FFF !important;
   --theme-highlight-purple: #65BFFF !important;
   --theme-highlight-gray: #8D99A6 !important;
@@ -13,6 +14,7 @@
   --theme-selection-background: #CCC !important;
   --theme-icon-dimmed-color: #7F7F7F !important;
   --markup-outline: #EFEFEF !important;
+  --theme-icon-color: #B6BABF !important;
 }
 
 #inspector-main-content {
@@ -423,6 +425,10 @@
 
 .ruleview-propertyvaluecontainer .theme-fg-color1 {
   color: var(--theme-highlight-green) !important;
+}
+
+.stylesheet-name > label {
+  color: #CDD8E4 !important;
 }
 
 :root[platform=win] .ruleview-enableproperty,
