@@ -61,7 +61,7 @@ toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack {
   height: 18px !important;
 }
 
-#nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #PanelUI-menu-button, #new-tab-button, #{$unified-refresh-buttons}, #appmenu-button, .toolbarbutton-combined, #bookmarks-menu-button) {
+#nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #PanelUI-menu-button, #new-tab-button, #{$unified-refresh-buttons}, #appmenu-button, .toolbarbutton-combined) {
   margin-inline: 3px !important;
 
   .toolbarbutton-badge-stack {
@@ -125,21 +125,27 @@ toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack {
   transition: none !important;
 }
 
-#nav-bar #bookmarks-menu-button {
+#main-window:not([echelon-style-3]) #nav-bar #bookmarks-menu-button {
   width: 35px !important;
   height: 24px !important;
-  
+  position: relative !important;
+
   .toolbarbutton-icon {
-    width: 18px !important;
-    height: 18px !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 2px 5px !important;
+    padding-right: 10px !important;
   }
 
   &::after {
-    content: '';
+    content: "";
     display: inline-block;
     width: 5px;
     height: 3px;
     background-image: url('images/dropdown.png') !important;
+    position: absolute;
+    top: 10px;
+    left: 23px;
   }
 }
 

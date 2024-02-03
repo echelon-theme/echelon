@@ -65,30 +65,48 @@ class LayoutManager
 	 */
 	_applyTabsOnTopState(state)
 	{
-		let tabsContainer = document.querySelector("#TabsToolbar");
-		
-		if (!tabsContainer)
+		/* Tabs on bottom is not supported on Australis. */
+		let style = tryGetIntPref("Echelon.Appearance.Style");
+		if (style < 4 || state)
 		{
-			console.log("???", document);
-			return;
+			let tabsContainer = document.querySelector("#TabsToolbar");
+			
+			if (!tabsContainer)
+			{
+				console.log("???", document);
+				return;
+			}
+			
+			if (state == true)
+			{
+				document.querySelector("#titlebar").appendChild(tabsContainer);
+				document.documentElement.setAttribute("tabs-on-top", "true");
+			}
+			else
+			{
+				document.querySelector("#PersonalToolbar").insertAdjacentElement("afterend", tabsContainer);
+				document.documentElement.removeAttribute("tabs-on-top");
+			}
+			
+			// In lieu of an actual global messaging system, we will just message directly to modules that need it:
+			// (this should be cleaned up in the future)
+			if (g_echelonFirefoxButton)
+			{
+				g_echelonFirefoxButton.onUpdateTabsOnTop(state);
+			}
 		}
-		
-		if (state == true)
+
+		let menuitem = document.getElementById("menu_echelonTabsOnTop");
+		if (menuitem)
 		{
-			document.querySelector("#titlebar").appendChild(tabsContainer);
-			document.documentElement.setAttribute("tabs-on-top", "true");
-		}
-		else
-		{
-			document.querySelector("#PersonalToolbar").insertAdjacentElement("afterend", tabsContainer);
-			document.documentElement.removeAttribute("tabs-on-top");
-		}
-		
-		// In lieu of an actual global messaging system, we will just message directly to modules that need it:
-		// (this should be cleaned up in the future)
-		if (g_echelonFirefoxButton)
-		{
-			g_echelonFirefoxButton.onUpdateTabsOnTop(state);
+			if (state == true)
+			{
+				menuitem.setAttribute("checked", "true");
+			}
+			else
+			{
+				menuitem.removeAttribute("checked");
+			}
 		}
 	}
 	

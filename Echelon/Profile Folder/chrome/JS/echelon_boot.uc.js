@@ -22,6 +22,7 @@ function executeFunctions() {
 	changeTitleFormats();
 	updateAboutItem();
 	EchelonPopupManager.registerEvent();
+	EchelonSearchManager.installSearchBoxHook();
 
 	window.addEventListener("echelon-reopen-wizard", function(e) {
 		// Kill the wizard notification early. Technically, it will disappear as soon as this

@@ -14,76 +14,92 @@ const { SearchService } = ChromeUtils.importESModule("resource://gre/modules/Sea
 const { SearchUtils } = ChromeUtils.importESModule("resource://gre/modules/SearchUtils.sys.mjs");
 
 const REPLACEMENTS = {
-	"[addon]google@search.mozilla.org": "chrome://userchrome/content/images/icons/engines/google.png",
-	"[addon]bing@search.mozilla.org": "chrome://userchrome/content/images/icons/engines/bing.png",
-	"[addon]ebay@search.mozilla.org": "chrome://userchrome/content/images/icons/engines/ebay.png"
+	"moz-extension://6ed35b2d-1ed2-42d1-8ce2-e5bb7d28eaae/favicon.ico": "chrome://userchrome/content/images/icons/engines/google.png",
+	"moz-extension://86c18ad3-bda5-4e0e-a616-210d5a4e2d9c/favicon.ico": "chrome://userchrome/content/images/icons/engines/bing.png",
+	"moz-extension://de27d924-71c6-4eb5-89eb-e8805cd92d62/favicon.ico": "chrome://userchrome/content/images/icons/engines/ebay.png"
 };
 
 /* Style 3 with new logo and Style 4+ */
 const REPLACEMENTS_NEW = {
-	"[addon]google@search.mozilla.org": "chrome://userchrome/content/images/icons/engines/google_new.ico",
-	"[addon]bing@search.mozilla.org": "chrome://userchrome/content/images/icons/engines/bing_new.ico",
-	"[addon]ebay@search.mozilla.org": "chrome://userchrome/content/images/icons/engines/ebay_new.ico"
+	"moz-extension://6ed35b2d-1ed2-42d1-8ce2-e5bb7d28eaae/favicon.ico": "chrome://userchrome/content/images/icons/engines/google_new.ico",
+	"moz-extension://86c18ad3-bda5-4e0e-a616-210d5a4e2d9c/favicon.ico": "chrome://userchrome/content/images/icons/engines/bing_new.ico",
+	"moz-extension://de27d924-71c6-4eb5-89eb-e8805cd92d62/favicon.ico": "chrome://userchrome/content/images/icons/engines/ebay_new.ico"
 };
 
-function replaceEngineIcon(engine)
+class EchelonSearchManager
 {
-	let style = tryGetIntPref("Echelon.Appearance.Style");
-	let newLogo = tryGetBoolPref("Echelon.Appearance.NewLogo");
-	let table = (style >= 4 || (style == 3 && newLogo))
-	? REPLACEMENTS_NEW
-	: REPLACEMENTS;
+	static updateDisplay_orig = null;
+	static searchbar = null;
 
-	for (const replacement in table)
+	static async updateSearchBox()
 	{
-		if (engine._loadPath == replacement)
+		let style = tryGetIntPref("Echelon.Appearance.Style");
+		if (style < 5)
 		{
-			engine._iconURI = SearchUtils.makeURI(table[replacement]);
-			break;
+			let engine = await Services.search.getDefault();
+
+			let icon = await waitForElement(".searchbar-search-icon");
+			icon.setAttribute("src", this.getReplacementIcon(engine._iconURI.spec));
+	
+			let textbox = await waitForElement(".searchbar-textbox");
+			textbox.placeholder = engine._name;
 		}
 	}
-}
 
-let getVisibleEngines_orig = null;
-async function getVisibleEngines_hook()
-{
-	let engines = await getVisibleEngines_orig();
-	for (const engine of engines)
+	static getReplacementIcon(url)
 	{
-		replaceEngineIcon(engine);
+		let style = tryGetIntPref("Echelon.Appearance.Style");
+		let newLogo = tryGetBoolPref("Echelon.Appearance.NewLogo");
+		if (style < 5)
+		{
+			let replacements = (style == 4 || (style == 3 && newLogo))
+			? REPLACEMENTS_NEW
+			: REPLACEMENTS;
+			for (const orig in replacements)
+			{
+				if (url == orig)
+				{
+					return replacements[orig];
+				}
+			}
+		}
+		return url;
 	}
-	return engines;
+
+	static onMutation(list)
+	{
+		for (const mut of list)
+		{
+			if (mut.type == "attributes" && mut.target.nodeName == "image" && mut.attributeName == "src")
+			{
+				let replacement = this.getReplacementIcon(mut.target.getAttribute("src"));
+				if (replacement != mut.target.getAttribute("src"))
+				{
+					mut.target.setAttribute("src", replacement);
+				}
+			}
+		}
+	}
+
+	static updateDisplay_hook()
+	{
+		if (this.updateDisplay_orig && this.searchbar)
+		{
+			this.updateDisplay_orig.call(this.searchbar);
+		}
+		this.updateSearchBox();
+	}
+
+	static async installSearchBoxHook()
+	{
+		let e = await waitForElement("#searchbar");
+		this.searchbar = e;
+		this.updateDisplay_orig = e.updateDisplay;
+		e.updateDisplay = this.updateDisplay_hook.bind(this);
+	}
 }
 
-let getDefault_orig = null;
-
-async function getDefault_hook()
 {
-	let engine = await getDefault_orig();
-	replaceEngineIcon(engine);
-	return engine;
-}
-
-let service = new SearchService();
-
-getVisibleEngines_orig = service.getVisibleEngines.bind(service);
-service.getVisibleEngines = getVisibleEngines_hook.bind(service);
-
-getDefault_orig = service.getDefault.bind(service);
-service.getDefault = getDefault_hook.bind(service);
-
-Services.search = service;
-
-let style = tryGetIntPref("Echelon.Appearance.Style");
-if (style < 5)
-{
-	waitForElement(".searchbar-search-icon").then(async function(e) {
-		let engine = await Services.search.getDefault();
-		e.setAttribute("src", engine._iconURI.spec);
-	});
-
-	waitForElement(".searchbar-textbox").then(async function(e) {
-		let engine = await Services.search.getDefault();
-		e.placeholder = engine._name;
-	});
+	let observer = new MutationObserver(EchelonSearchManager.onMutation.bind(EchelonSearchManager));
+	observer.observe(document.documentElement, { attributes: true, childList: true, subtree : true });
 }

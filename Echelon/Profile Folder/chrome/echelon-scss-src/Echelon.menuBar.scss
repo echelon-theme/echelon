@@ -27,3 +27,9 @@
 #main-menubar > menu {
     appearance: menuitem !important;
 }
+
+:root[echelon-style-4] {
+    #menu_echelonTabsOnTop, #tabsOnTopMenuSeparator {
+        display: none;
+    }
+}

@@ -48,6 +48,12 @@ class EchelonThemeManager
 		{
 			this.root.setAttribute(`echelon-style-${i}`, "true");
 		}
+
+		/* Enable Tabs on Top for Australis */
+		if (style >= 4)
+		{
+			trySetBoolPref("Echelon.Appearance.TabsOnTop", true);
+		}
 	}
 	
 	static refreshPrefBoolAttribute(prefName, attrName)

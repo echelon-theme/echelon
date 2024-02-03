@@ -65,8 +65,9 @@ class EchelonPopupManager
     static onPopupShowing(event)
     {
         let popup = event.target;
-        /* We only care about arrow popouts. */
-        if (popup.matches(`panel[type="arrow"]`))
+
+        /* Arrow popouts */
+        if (popup.matches(`:is(panel, menupopup)[type="arrow"]`))
         {
             /* POPUP ARROW POSITION (FOR CSS TRANSITION) */
 
@@ -103,6 +104,16 @@ class EchelonPopupManager
                 `)}')`;
                 popup.setAttribute("style", `${popup.getAttribute("style")}--panel-arrow-image-vertical: ${panelBg};`);
             }
+        }
+        /* Bookmarks menu shit */
+        else if (popup.matches(`menupopup[type="arrow"] menupopup[placespopup]:not(#PlacesChevronPopup)`) && popup.anchorNode.nodeName == "menu")
+        {
+            let rect = adjustedBoundingRect(popup);
+            let anchorRect = adjustedBoundingRect(popup.anchorNode);
+
+            popup.setAttribute("side", (rect.left < anchorRect.left)
+            ? "left"
+            : "right");
         }
     }
 

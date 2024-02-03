@@ -12,7 +12,7 @@ panelview {
     border-radius: var(--arrowpanel-border-radius) !important;
 }
 
-panel[type="arrow"] {
+:is(panel, menupopup):not(#PlacesChevronPopup)[type="arrow"] {
     &:not([animate="false"]) {
         opacity: 0 !important;
         transform: translateY(-20px) !important;
@@ -31,21 +31,17 @@ panel[type="arrow"] {
         }
     }
 
-    --panel-shadow: 0 0 0 1px var(--arrowpanel-border-color), 0 0 4px hsla(210,4%,10%,.2) !important;
-    --panel-shadow-margin: 4px !important;
-}
+    --panel-shadow: 0 0 5px rgba(0, 0, 0, .65) !important;
+    --panel-shadow-margin: 5px !important;
 
-:root:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4]
-{
-    panel[type="arrow"] {
-        --panel-shadow: 0 0 0 1px var(--arrowpanel-border-color) !important;
+    :root[echelon-style-4] & {
+        --panel-shadow: 0 0 5px rgba(0, 0, 0, .35) !important;
     }
 }
 
 :root[echelon-style-4]
 {
-    panel[type="arrow"] {
-
+    :is(panel, menupopup):not(#PlacesChevronPopup)[type="arrow"] {
         &:not([animate="false"]) {
             transform: scale(.4) !important;
             opacity: 0 !important;
@@ -64,44 +60,46 @@ panel[type="arrow"] {
         }
     }
 
-    panel[arrowposition="after_start"]:-moz-locale-dir(ltr),
-    panel[arrowposition="after_end"]:-moz-locale-dir(rtl) {
-        transform-origin: 20px top !important;
-    }
-
-    panel[arrowposition="after_end"]:-moz-locale-dir(ltr),
-    panel[arrowposition="after_start"]:-moz-locale-dir(rtl) {
-        transform-origin: calc(100% - 20px) top !important;
-    }
-
-    panel[arrowposition="before_start"]:-moz-locale-dir(ltr),
-    panel[arrowposition="before_end"]:-moz-locale-dir(rtl) {
-        transform-origin: 20px bottom !important;
-    }
-
-    panel[arrowposition="before_end"]:-moz-locale-dir(ltr),
-    panel[arrowposition="before_start"]:-moz-locale-dir(rtl) {
-        transform-origin: calc(100% - 20px) bottom !important;
-    }
-
-    panel[arrowposition="start_before"]:-moz-locale-dir(ltr),
-    panel[arrowposition="end_before"]:-moz-locale-dir(rtl) {
-        transform-origin: right 20px !important;
-    }
-
-    panel[arrowposition="start_after"]:-moz-locale-dir(ltr),
-    panel[arrowposition="end_after"]:-moz-locale-dir(rtl) {
-        transform-origin: right calc(100% - 20px) !important;
-    }
-
-    panel[arrowposition="end_before"]:-moz-locale-dir(ltr),
-    panel[arrowposition="start_before"]:-moz-locale-dir(rtl) {
-        transform-origin: left 20px !important;
-    }
-
-    panel[arrowposition="end_after"]:-moz-locale-dir(ltr),
-    panel[arrowposition="start_after"]:-moz-locale-dir(rtl) {
-        transform-origin: left calc(100% - 20px) !important;
+    :is(panel, menupopup):not(#PlacesChevronPopup) {
+        &[arrowposition="after_start"]:-moz-locale-dir(ltr),
+        &[arrowposition="after_end"]:-moz-locale-dir(rtl) {
+            transform-origin: 20px top !important;
+        }
+    
+        &[arrowposition="after_end"]:-moz-locale-dir(ltr),
+        &[arrowposition="after_start"]:-moz-locale-dir(rtl) {
+            transform-origin: calc(100% - 20px) top !important;
+        }
+    
+        &[arrowposition="before_start"]:-moz-locale-dir(ltr),
+        &[arrowposition="before_end"]:-moz-locale-dir(rtl) {
+            transform-origin: 20px bottom !important;
+        }
+    
+        &[arrowposition="before_end"]:-moz-locale-dir(ltr),
+        &[arrowposition="before_start"]:-moz-locale-dir(rtl) {
+            transform-origin: calc(100% - 20px) bottom !important;
+        }
+    
+        &[arrowposition="start_before"]:-moz-locale-dir(ltr),
+        &[arrowposition="end_before"]:-moz-locale-dir(rtl) {
+            transform-origin: right 20px !important;
+        }
+    
+        &[arrowposition="start_after"]:-moz-locale-dir(ltr),
+        &[arrowposition="end_after"]:-moz-locale-dir(rtl) {
+            transform-origin: right calc(100% - 20px) !important;
+        }
+    
+        &[arrowposition="end_before"]:-moz-locale-dir(ltr),
+        &[arrowposition="start_before"]:-moz-locale-dir(rtl) {
+            transform-origin: left 20px !important;
+        }
+    
+        &[arrowposition="end_after"]:-moz-locale-dir(ltr),
+        &[arrowposition="start_after"]:-moz-locale-dir(rtl) {
+            transform-origin: left calc(100% - 20px) !important;
+        }
     }
 }
 
@@ -362,7 +360,6 @@ panel[type="autocomplete-richlistbox"] {
 .search-setting-button {
     align-self: stretch !important;
     border-top: 1px solid hsla(210, 4%, 10%, .14) !important;
-    background-color: hsla(0, 0%, 80%, .45) !important;
     color: GrayText !important;
     
     &::before {
@@ -371,6 +368,10 @@ panel[type="autocomplete-richlistbox"] {
         text-align: center;
         display: block;
         width: 100%;
+    }
+
+    &:hover {
+        background-color: hsla(0, 0%, 80%, .3) !important;
     }
 
     .button-icon {
@@ -404,5 +405,108 @@ panel[type="autocomplete-richlistbox"] {
             background: Highlight !important;
             color: HighlightText !important;
         }
+    }
+}
+
+/* Bookmarks menu */
+menupopup[type="arrow"]:not(#PlacesChevronPopup) {
+    &, menupopup[placespopup] {
+        --panel-border-color: transparent !important;
+        --panel-padding: 4px 0 0 !important;
+        --panel-separator-color: hsla(210, 4%, 10%, .14) !important;
+        --arrowpanel-menuitem-margin: 0 4px !important;
+        --arrowpanel-menuitem-padding: 0 6px !important;
+        --arrowpanel-menuitem-border-radius: 2px !important;
+
+        --panel-shadow: 0 0 5px rgba(0, 0, 0, .65) !important;
+        --panel-shadow-margin: 5px !important;
+
+        :root[echelon-style-4] & {
+            --panel-shadow: 0 0 5px rgba(0, 0, 0, .35) !important;
+        }
+
+        & > :is(menu, menuitem) {
+            min-height: 22px !important;
+            border: 1px solid transparent !important;
+
+            & > .menu-accel-container > :is(.menu-accel, .menu-iconic-accel) {
+                margin-inline-start: .74em !important;
+                margin-inline-end: 1.35em !important;
+                color: GrayText !important;
+            }
+
+            &[_moz-menuactive="true"] {
+                border-color: var(--panel-separator-color) !important;
+                background-color: hsla(0, 0%, 80%, .3) !important;
+
+                &:active {
+                    background-color: hsla(0, 0%, 80%, .45) !important;
+                }
+            }
+
+            & + menuseparator[hidden="true"]:last-child {
+                display: flex !important;
+                padding: 0 !important;
+                height: 4px !important;
+    
+                &::before {
+                    content: unset !important;
+                }
+            }
+        }
+
+        & > menu > .menu-right {
+            fill-opacity: 1 !important;
+            fill: MenuText !important;
+            list-style-image: url("chrome://userchrome/content/images/menu-arrow.svg") !important;
+        }
+
+        & > :is(.menu-iconic, .menuitem-iconic) > .menu-iconic-left {
+            margin-inline-end: 3px !important;
+        }
+
+        & > :not(.menu-iconic, .menuitem-iconic) > .menu-text {
+            margin-inline-start: calc(1.45em + 3px) !important;
+        }
+
+        menuseparator {
+            margin: 0 !important;
+            
+            &.bookmarks-actions-menuseparator {
+                display: none !important;
+            }
+        }
+
+        & > menuitem:last-child {
+            border: 0 !important;
+            border-top: 1px solid var(--panel-separator-color) !important;
+            align-items: center !important;
+            margin: 4px 0 0 !important;
+            min-height: 41px !important;
+            padding: 11px 12px !important;
+
+            background-color: hsla(0, 0%, 80%, .3) !important;
+
+            &[_moz-menuactive="true"] {
+                background-color: hsla(0, 0%, 80%, .45) !important;
+
+                &:active {
+                    background-color: hsla(0, 0%, 80%, .8) !important;
+                }
+            }
+        }
+    }
+}
+
+menupopup[type="arrow"] menupopup[placespopup] {
+    margin-top: -5px !important;
+    margin-inline-start: 0 !important;
+
+    &[side="right"] {
+        margin-left: -1px !important;
+    }
+
+    &[side="left"] {
+        margin-right: -999px !important;
     }
 }

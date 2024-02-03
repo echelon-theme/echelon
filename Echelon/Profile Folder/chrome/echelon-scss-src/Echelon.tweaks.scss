@@ -411,15 +411,28 @@
   background-position-y: -28px !important;
 }
 
-#main-window:not([echelon-style-4])[echelon-style-3] #bookmarks-menu-button::after {
-  width: 9px !important;
-  height: 7px !important;
-  background-image: url('images/toolbarbutton-dropdown-arrow.png') !important;
-  margin-left: 4px !important;
-}
-
 #main-window:not([echelon-style-4])[echelon-style-3] #bookmarks-menu-button {
   width: 43px !important;
+  position: relative !important;
+
+  .toolbarbutton-icon {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 2px 5px !important;
+    padding-right: 18px !important;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 8px !important;
+    left: 23px !important;
+    width: 9px !important;
+    height: 7px !important;
+    background-image: url('images/toolbarbutton-dropdown-arrow.png') !important;
+    margin-left: 4px !important;
+  }
 }
 
 #main-window[echelon-style-3] #identity-icon-box,
