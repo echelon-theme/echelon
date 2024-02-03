@@ -38,7 +38,6 @@
 
     fetch("chrome://global/skin/icons/defaultFavicon.svg").then(async (r) => {
         defaultFavicon = await r.text();
-        console.log(defaultFavicon);
 
         let observer = new MutationObserver(onMutation);
         observer.observe(

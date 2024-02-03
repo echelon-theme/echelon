@@ -8,7 +8,6 @@
 /* Default to xul namespace */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-
 panel[type="autocomplete-richlistbox"]::part(content) {
 	position: relative;
 

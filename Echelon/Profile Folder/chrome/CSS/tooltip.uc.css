@@ -1,0 +1,12 @@
+/* ==UserScript==
+// @stylemode		agent_sheet
+// @description		Gives tooltips native apperance if applicable.
+// @usefileuri
+// @name  			Echelon :: Tooltips
+// ==/UserScript==*/
+
+/* Tooltip appearance */
+tooltip {
+	-moz-default-appearance: tooltip !important;
+	appearance: auto !important;
+}
