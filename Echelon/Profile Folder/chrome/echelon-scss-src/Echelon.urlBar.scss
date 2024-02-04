@@ -112,9 +112,18 @@
 }
 
 .urlbarView-row {
+  background-color: transparent !important;
   border: 0 !important;
   border-bottom: 1px solid -moz-Dialog !important;
   border-radius: 0 !important;
+}
+
+// Remove separators on Echelon Style 2+
+
+:root[echelon-style-2] {
+  .urlbarView-row {
+    border-bottom: 0 !important;
+  }
 }
 
 .urlbarView-type-icon {
@@ -185,19 +194,44 @@
   padding-left: 0 !important;
 }
 
-.urlbarView-row[row-selectable]:not([selected]):hover,
-.urlbarView-row[selected] {
-  background-color: Highlight !important;
-  color: HighlightText !important;
+// Native Highlight
+:root:not([echelon-style-5])[echelon-appearance-blue] {
+
+  .urlbarView-row-inner {
+    margin: 1px !important;
+    border-radius: 3px !important;
+    border: 1px solid transparent !important;
+    padding: 4px !important;
+    padding-block: 2px !important;
+  }
+
+  .urlbarView-row[row-selectable]:not([selected]):hover .urlbarView-row-inner,
+  .urlbarView-row[selected] .urlbarView-row-inner {
+    background-color: transparent !important;
+    border: 1px solid hsl(213,45%,65%) !important;
+    box-shadow: 0 0 0 1px hsla(0,0%,100%,.5) inset,
+                0 1px 0 hsla(0,0%,100%,.3) inset !important;
+    background-image: linear-gradient(hsl(212,86%,92%), hsl(212,91%,86%)) !important;
+  }
 }
 
-.urlbarView-url {
-  color: Highlight !important;
-}
+// Non-Native Highlight
 
-.urlbarView-row[row-selectable]:hover .urlbarView-url,
-.urlbarView-row[selected] .urlbarView-url {
-  color: inherit !important;
+:root:not([echelon-appearance-blue]) {
+  .urlbarView-row[row-selectable]:not([selected]):hover,
+  .urlbarView-row[selected] {
+    background-color: Highlight !important;
+    color: HighlightText !important;
+  }
+
+  .urlbarView-url {
+    color: Highlight !important;
+  }
+
+  .urlbarView-row[row-selectable]:hover .urlbarView-url,
+  .urlbarView-row[selected] .urlbarView-url {
+    color: inherit !important;
+  }
 }
 
 .urlbarView-row-inner strong {
