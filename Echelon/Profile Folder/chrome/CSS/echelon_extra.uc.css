@@ -126,3 +126,26 @@ panel[type=arrow][arrowposition*=start]::part(content)::before,
 menupopup[type=arrow]:not(#PlacesChevronPopup)[arrowposition*=start]::part(content)::before {
   left: 3px;
 }
+
+.autoscroller {
+  width: 28px !important;
+  height: 28px !important;
+  margin: -14px !important;
+}
+.autoscroller::part(content) {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  background-image: url("chrome://userchrome/content/images/autoscroll.png") !important;
+  background-position: right top !important;
+  margin: 0 !important;
+  max-width: 28px !important;
+  max-height: 28px !important;
+  background-clip: border-box !important;
+}
+.autoscroller[scrolldir=NS]::part(content) {
+  background-position: right center !important;
+}
+.autoscroller[scrolldir=EW]::part(content) {
+  background-position: right bottom !important;
+}

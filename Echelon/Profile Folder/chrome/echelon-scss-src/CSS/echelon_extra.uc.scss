@@ -130,3 +130,29 @@ menupopup[type="arrow"]:not(#PlacesChevronPopup) {
 		left: 3px;
 	}
 }
+
+.autoscroller {
+	width: 28px !important;
+	height: 28px !important;
+	margin: -14px !important;
+	
+	&::part(content) {
+		background-color: transparent !important;
+		border-color: transparent !important;
+		box-shadow: none !important;
+		background-image: url("chrome://userchrome/content/images/autoscroll.png") !important;
+		background-position: right top !important;
+		margin: 0 !important;
+		max-width: 28px !important;
+		max-height: 28px !important;
+		background-clip: border-box !important;
+	}
+
+	&[scrolldir="NS"]::part(content) {
+		background-position: right center !important;
+	}
+
+	&[scrolldir="EW"]::part(content) {
+		background-position: right bottom !important;
+	}
+}
