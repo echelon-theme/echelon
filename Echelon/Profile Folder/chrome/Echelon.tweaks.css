@@ -1565,7 +1565,7 @@
  */
 @media (-moz-windows-compositor: 0) {
   :root:not([inFullscreen]) #titlebar:-moz-lwtheme {
-    visibility: visible;
-    appearance: none;
+    visibility: visible !important;
+    appearance: none !important;
   }
 }

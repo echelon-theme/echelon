@@ -1776,9 +1776,9 @@
  */
 @media (-moz-windows-compositor: 0) {
 	:root:not([inFullscreen]) #titlebar:-moz-lwtheme {
-		visibility: visible;
-		
+		visibility: visible !important;
+
 		// Needed to remove the uxtheme titlebar background
-		appearance: none;
+		appearance: none !important;
 	}
 }
