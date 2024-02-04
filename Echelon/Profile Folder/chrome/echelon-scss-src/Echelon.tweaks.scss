@@ -1770,3 +1770,15 @@
     }
   }
 }
+
+/*
+ * FIX(ev): Missing Firefox button in Strata theme with lwtheme (persona) without DWM.
+ */
+@media (-moz-windows-compositor: 0) {
+	:root:not([inFullscreen]) #titlebar:-moz-lwtheme {
+		visibility: visible;
+		
+		// Needed to remove the uxtheme titlebar background
+		appearance: none;
+	}
+}

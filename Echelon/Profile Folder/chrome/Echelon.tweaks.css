@@ -1559,3 +1559,13 @@
 :root:not([style*="--lwt-accent-color: rgb(28, 27, 34);"], [style*="--lwt-accent-color: rgb(240, 240, 244);"])[echelon-style-4]:not([lwtheme-image]) #navigator-toolbox:-moz-lwtheme #nav-bar, :root:not([style*="--lwt-accent-color: rgb(28, 27, 34);"], [style*="--lwt-accent-color: rgb(240, 240, 244);"])[echelon-style-4]:not([lwtheme-image]) #navigator-toolbox:-moz-lwtheme #PersonalToolbar {
   background-color: var(--toolbar-bgcolor) !important;
 }
+
+/*
+ * FIX(ev): Missing Firefox button in Strata theme with lwtheme (persona) without DWM.
+ */
+@media (-moz-windows-compositor: 0) {
+  :root:not([inFullscreen]) #titlebar:-moz-lwtheme {
+    visibility: visible;
+    appearance: none;
+  }
+}
