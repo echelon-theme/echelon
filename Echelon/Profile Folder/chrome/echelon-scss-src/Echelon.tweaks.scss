@@ -1425,13 +1425,14 @@
     list-style-image: url("images/xp/tag.png") !important;
   }
   
-  
-  &:not([tabs-on-top]) #PersonalToolbar, 
-  &:not([tabs-on-top]) #TabsToolbar,
-  &:not([tabs-on-top]) #nav-bar {
-    border-left: 0 !important;
-    border-right: 0 !important;
-    background-color: -moz-Dialog !important;
+  &:not([lwtheme="true"]) {
+    &:not([tabs-on-top]) #PersonalToolbar,
+    &:not([tabs-on-top]) #TabsToolbar,
+    &:not([tabs-on-top]) #nav-bar {
+      border-left: 0 !important;
+      border-right: 0 !important;
+      background-color: -moz-Dialog !important;
+    }
   }
 
   &:not([echelon-style-4][tabsintitlebar]) #main-menubar > menu {
@@ -1565,7 +1566,7 @@
   #main-window:not([echelon-appearance-xp]) .titlebar-buttonbox-container {
     top: calc(var(--padded-border) + 5px) !important;
   }
-  
+
   #nav-bar,
   #PersonalToolbar,
   #main-window[sizemode="normal"] #browser,

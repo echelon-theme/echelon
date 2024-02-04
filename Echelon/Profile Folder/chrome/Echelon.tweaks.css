@@ -1287,7 +1287,7 @@
 #main-window[echelon-appearance-xp] treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
   list-style-image: url("images/xp/tag.png") !important;
 }
-#main-window[echelon-appearance-xp]:not([tabs-on-top]) #PersonalToolbar, #main-window[echelon-appearance-xp]:not([tabs-on-top]) #TabsToolbar, #main-window[echelon-appearance-xp]:not([tabs-on-top]) #nav-bar {
+#main-window[echelon-appearance-xp]:not([lwtheme=true]):not([tabs-on-top]) #PersonalToolbar, #main-window[echelon-appearance-xp]:not([lwtheme=true]):not([tabs-on-top]) #TabsToolbar, #main-window[echelon-appearance-xp]:not([lwtheme=true]):not([tabs-on-top]) #nav-bar {
   border-left: 0 !important;
   border-right: 0 !important;
   background-color: -moz-Dialog !important;
