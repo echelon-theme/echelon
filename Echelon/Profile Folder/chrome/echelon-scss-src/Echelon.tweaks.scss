@@ -1346,12 +1346,14 @@
   #TabsToolbar:not(:-moz-lwtheme) {
     background-image: none !important;
   }
-  
-  &:not([echelon-style-4], [sizemode="maximized"]) #TabsToolbar, 
-  &:not([echelon-style-4]) #toolbar-menubar {
-    background-color: -moz-Dialog !important;
+
+  &:not([lwtheme="true"]) {
+    &:not([echelon-style-4], [sizemode="maximized"]) #TabsToolbar,
+    &:not([echelon-style-4]) #toolbar-menubar {
+      background-color: -moz-Dialog !important;
+    }
   }
-  
+
   &:not([echelon-style-4][tabsintitlebar]) #TabsToolbar:not(:-moz-lwtheme) {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.05) 1px, transparent 50%) !important;
   }
@@ -1360,7 +1362,7 @@
   .textbox-search-sign {
     background-image: url('images/xp/Search-Glass.png') !important;
   }
-  
+
   .tab-background,
   #tabs-newtab-button {
     background-image: linear-gradient(hsla(51,34%,89%,.9), hsla(51,15%,79%,.9) 1px, hsla(51,9%,68%,.9));

@@ -1230,7 +1230,7 @@
 #main-window[echelon-appearance-xp] #TabsToolbar:not(:-moz-lwtheme) {
   background-image: none !important;
 }
-#main-window[echelon-appearance-xp]:not([echelon-style-4], [sizemode=maximized]) #TabsToolbar, #main-window[echelon-appearance-xp]:not([echelon-style-4]) #toolbar-menubar {
+#main-window[echelon-appearance-xp]:not([lwtheme=true]):not([echelon-style-4], [sizemode=maximized]) #TabsToolbar, #main-window[echelon-appearance-xp]:not([lwtheme=true]):not([echelon-style-4]) #toolbar-menubar {
   background-color: -moz-Dialog !important;
 }
 #main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar]) #TabsToolbar:not(:-moz-lwtheme) {
