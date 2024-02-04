@@ -45,6 +45,10 @@
   align-items: center !important;
   justify-content: center !important;
 }
+.devtools-tab .devtools-tab-label,
+.devtools-tabbar-button .devtools-tab-label {
+  font-size: revert !important;
+}
 .devtools-tab:last-child,
 .devtools-tabbar-button:last-child {
   border-inline-end: 1px solid #42484f;
@@ -150,7 +154,7 @@
   margin: 0 -11px 0 0 !important;
   padding: 0 9px !important;
   color: hsl(210, 30%, 85%) !important;
-  font-size: 9pt !important;
+  font: message-box !important;
 }
 .breadcrumbs-widget-item:not(:first-child)::before {
   display: none !important;
@@ -232,7 +236,7 @@
   background-position: 4px center, top left, top left !important;
   background-size: unset !important;
   background-repeat: no-repeat !important;
-  font-size: 9pt !important;
+  font: message-box !important;
 }
 
 .devtools-separator {
@@ -360,6 +364,7 @@
   display: none !important;
 }
 .tabs .tabs-menu-item a {
+  font-size: revert !important;
   border: 0 !important;
 }
 
