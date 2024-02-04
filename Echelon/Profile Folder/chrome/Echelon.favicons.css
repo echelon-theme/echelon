@@ -18,9 +18,27 @@
 .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
   content: url("images/defaultFavicon.png") !important;
 }
+:root[echelon-appearance-xp] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
+  content: url("images/xp/defaultFavicon.png") !important;
+}
+:root[echelon-style-3] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
+  content: url("images/defaultFavicon-new.png") !important;
+}
+:root[echelon-style-5] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
+  content: url("images/ff56/defaultFavicon.png") !important;
+}
 
 #identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
-  list-style-image: url("chrome://global/skin/icons/settings.svg") !important;
+  list-style-image: url("images/defaultFavicon.png") !important;
+}
+:root[echelon-appearance-xp] #identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
+  list-style-image: url("images/xp/defaultFavicon.png") !important;
+}
+:root[echelon-style-3] #identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
+  list-style-image: url("images/defaultFavicon-new.png") !important;
+}
+:root[echelon-style-5] #identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
+  list-style-image: url("images/ff56/defaultFavicon.png") !important;
 }
 
 /** WATERFOX **/

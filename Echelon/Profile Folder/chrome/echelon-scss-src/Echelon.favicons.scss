@@ -20,10 +20,34 @@
 
 .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
     content: url("images/defaultFavicon.png") !important;
+
+    :root[echelon-appearance-xp] & {
+        content: url("images/xp/defaultFavicon.png") !important;
+    }
+
+    :root[echelon-style-3] & {
+        content: url("images/defaultFavicon-new.png") !important;
+    }
+
+    :root[echelon-style-5] & {
+        content: url("images/ff56/defaultFavicon.png") !important;
+    }
 }
 
 #identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
-    list-style-image: url("chrome://global/skin/icons/settings.svg") !important;
+    list-style-image: url("images/defaultFavicon.png") !important;
+
+    :root[echelon-appearance-xp] & {
+        list-style-image: url("images/xp/defaultFavicon.png") !important;
+    }
+
+    :root[echelon-style-3] & {
+        list-style-image: url("images/defaultFavicon-new.png") !important;
+    }
+
+    :root[echelon-style-5] & {
+        list-style-image: url("images/ff56/defaultFavicon.png") !important;
+    }
 }
 
 /** WATERFOX **/

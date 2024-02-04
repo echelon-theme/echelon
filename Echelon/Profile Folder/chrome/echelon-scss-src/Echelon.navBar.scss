@@ -388,7 +388,8 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:last-of-type {
   }
 }
 
-.urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
+.urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"],
+.urlbarView-favicon.default-favicon {
   content: url("chrome://userchrome/content/images/defaultFavicon.png") !important;
 
   :root[echelon-appearance-xp] & {

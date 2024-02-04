@@ -69,12 +69,17 @@
   <vbox flex="1">
     <hbox id="filterRow" align="center">
       <label value="&searchPrefs.label;" accesskey="&searchPrefs.accesskey;" control="textbox"/>
-      <!-- This was originally an xul:textbox, but that has since been removed. -->
-      <html:input id="textbox" flex="1" type="search" class="compact"
-                  aria-controls="configTree"
-                  oninput="FilterPrefs();"
-                  style="flex-grow: 1"/>
-      <!-- Also for some reason, I can't style this any other way. -->
+      <textbox flex="1" type="search" class="compact"
+               aria-controls="configTree">
+        <hbox class="textbox-input-box" flex="1">
+          <image class="textbox-search-sign"/>
+          <html:input id="textbox" class="textbox-input" type="search" oninput="FilterPrefs();" style="flex-grow:1"/>  
+          <deck class="textbox-search-icon">
+            <image class="textbox-search-icon"/>
+            <image class="textbox-search-clear"/>
+          </deck>
+        </hbox>
+      </textbox>
     </hbox>
 
     <tree id="configTree" flex="1" seltype="single"

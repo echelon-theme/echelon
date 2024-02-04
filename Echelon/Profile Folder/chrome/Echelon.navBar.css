@@ -366,16 +366,20 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:last-of-type {
   list-style-image: url("chrome://userchrome/content/images/ff56/defaultFavicon.png") !important;
 }
 
-.urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
+.urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"],
+.urlbarView-favicon.default-favicon {
   content: url("chrome://userchrome/content/images/defaultFavicon.png") !important;
 }
-:root[echelon-appearance-xp] .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
+:root[echelon-appearance-xp] .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"],
+:root[echelon-appearance-xp] .urlbarView-favicon.default-favicon {
   content: url("chrome://userchrome/content/images/xp/defaultFavicon.png") !important;
 }
-:root[echelon-style-3] .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
+:root[echelon-style-3] .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"],
+:root[echelon-style-3] .urlbarView-favicon.default-favicon {
   content: url("chrome://userchrome/content/images/defaultFavicon-new.png") !important;
 }
-:root[echelon-style-5] .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
+:root[echelon-style-5] .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"],
+:root[echelon-style-5] .urlbarView-favicon.default-favicon {
   content: url("chrome://userchrome/content/images/ff56/defaultFavicon.png") !important;
 }
 

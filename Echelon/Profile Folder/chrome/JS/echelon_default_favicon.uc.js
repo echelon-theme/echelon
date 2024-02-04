@@ -15,8 +15,10 @@
         {
             if (mut.type == "attributes"
             && mut.attributeName == "src"
-            && mut.target.nodeName == "image"
-            && mut.target.matches(".bookmark-item image"))
+            && (mut.target.nodeName == "image"
+            || mut.target.nodeName == "img")
+            && (mut.target.matches(".bookmark-item image")
+            || mut.target.matches("img.urlbarView-favicon")))
             {
                 try
                 {
@@ -24,7 +26,11 @@
                         if ((await r.text()) == defaultFavicon)
                         {
                             mut.target.classList.add("default-favicon");
-                            mut.target.removeAttribute("src");
+
+                            if (mut.target.nodeName == "image")
+                            {
+                                mut.target.removeAttribute("src");
+                            }
                         } 
                     });
                 }
