@@ -90,7 +90,10 @@ class EchelonSearchManager
 	{
 		for (const mut of list)
 		{
-			if (mut.type == "attributes" && mut.target.nodeName == "image" && mut.attributeName == "src")
+			if (mut.type == "attributes"
+			&& (mut.target.nodeName == "image"
+			|| mut.target.matches("img.urlbarView-favicon"))
+			&& mut.attributeName == "src")
 			{
 				let replacement = await this.getReplacementIcon(mut.target.getAttribute("src"));
 				if (replacement != mut.target.getAttribute("src"))
