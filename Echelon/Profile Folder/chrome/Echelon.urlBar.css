@@ -523,3 +523,18 @@
 #main-window[echelon-style-3]:is([echelon-style-3]) #navigator-toolbox::after {
   background-color: rgb(170, 188, 207) !important;
 }
+
+/* Go button */
+#go-button {
+  display: none !important;
+}
+#reload-button:not([displaystop]) + #go-button + #stop-button {
+  display: none !important;
+}
+
+#urlbar-container[focused] + #stop-reload-button > #reload-button {
+  display: none !important;
+}
+#urlbar-container[focused] + #stop-reload-button > #reload-button:not([displaystop]) + #go-button {
+  display: flex !important;
+}

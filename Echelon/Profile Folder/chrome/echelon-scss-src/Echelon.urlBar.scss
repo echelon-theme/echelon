@@ -564,19 +564,19 @@
   }
 }
 
-// /* Go button */
-// #go-button {
-//   display: none !important;
+/* Go button */
+#go-button {
+  display: none !important;
 
-//   #reload-button:not([displaystop]) + & + #stop-button {
-//     display: none !important;
-//   }
-// }
+  #reload-button:not([displaystop]) + & + #stop-button {
+    display: none !important;
+  }
+}
 
-// #nav-bar[urlbar-exceeds-toolbar-bounds="true"] #stop-reload-button > #reload-button {
-//   display: none !important;
+#urlbar-container[focused] + #stop-reload-button > #reload-button {
+  display: none !important;
   
-//   &:not([displaystop]) + #go-button {
-//       display: flex !important;
-//   }
-// }
+  &:not([displaystop]) + #go-button {
+      display: flex !important;
+  }
+}
