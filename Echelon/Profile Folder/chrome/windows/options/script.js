@@ -142,7 +142,7 @@ function refreshViewProperties()
     for (const elm of document.querySelectorAll(".option[australis-only]"))
     {
         let localStyle = document.querySelector(".option[data-option='Echelon.Appearance.Style']").value;
-        elm.disabled = localStyle != 4;
+        elm.disabled = localStyle < 4;
     }
 
     for (const elm of document.querySelectorAll(".option[win7-only]"))

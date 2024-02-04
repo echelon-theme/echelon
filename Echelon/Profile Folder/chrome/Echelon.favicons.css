@@ -24,8 +24,8 @@
 :root[echelon-style-3] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
   content: url("images/defaultFavicon-new.png") !important;
 }
-:root[echelon-style-5] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
-  content: url("images/ff56/defaultFavicon.png") !important;
+:root[echelon-style-4] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
+  display: none !important;
 }
 
 #identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
@@ -39,6 +39,24 @@
 }
 :root[echelon-style-5] #identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
   list-style-image: url("images/ff56/defaultFavicon.png") !important;
+}
+
+.tab-icon-image[src="chrome://global/skin/icons/info.svg"],
+.tab-icon-image[src="chrome://global/skin/icons/warning.svg"] {
+  content: url("images/warning-16.png") !important;
+}
+:root[echelon-appearance-xp] .tab-icon-image[src="chrome://global/skin/icons/info.svg"],
+:root[echelon-appearance-xp] .tab-icon-image[src="chrome://global/skin/icons/warning.svg"] {
+  content: url("images/xp/warning-16.png") !important;
+}
+
+#identity-icon[style="list-style-image: url('chrome://global/skin/icons/info.svg');"],
+#identity-icon[style="list-style-image: url('chrome://global/skin/icons/warning.svg');"] {
+  list-style-image: url("images/warning-16.png") !important;
+}
+:root[echelon-appearance-xp] #identity-icon[style="list-style-image: url('chrome://global/skin/icons/info.svg');"],
+:root[echelon-appearance-xp] #identity-icon[style="list-style-image: url('chrome://global/skin/icons/warning.svg');"] {
+  list-style-image: url("images/xp/warning-16.png") !important;
 }
 
 /** WATERFOX **/
@@ -67,7 +85,7 @@
   list-style-image: url("images/icons/alt/superfox/info16.png") !important;
 }
 
-/** AURORA (FIREFODX DEV EDITION) **/
+/** AURORA (FIREFOX DEV EDITION) **/
 #main-window[update-channel=aurora] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
   content: url("images/icons/alt/aurora/icon16.png") !important;
 }

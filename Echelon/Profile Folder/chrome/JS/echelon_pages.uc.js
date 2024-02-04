@@ -128,5 +128,4 @@ EchelonPageManager.registerAboutPage(
     "config",
     "chrome://userchrome/content/pages/config/config.xhtml"
 );
-
 let EXPORTED_SYMBOLS = [];

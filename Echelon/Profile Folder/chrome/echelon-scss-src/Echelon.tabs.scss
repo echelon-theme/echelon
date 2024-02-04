@@ -272,8 +272,8 @@ html:not([echelon-style-5]) {
     content: url('images/defaultFavicon-new.png') !important;
   }
 
-  #main-window[echelon-style-5] & {
-    content: url('images/ff56/defaultFavicon.png') !important;
+  #main-window[echelon-style-4] & {
+    display: none !important;
   }
 }
 

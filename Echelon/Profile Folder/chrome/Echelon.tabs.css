@@ -264,9 +264,9 @@ html:not([echelon-style-5]) .tabbrowser-tab:first-of-type:last-of-type .tab-clos
 #main-window[echelon-style-3] .tab-icon-image:-moz-broken {
   content: url("images/defaultFavicon-new.png") !important;
 }
-#main-window[echelon-style-5] .tab-icon-image:not([src]),
-#main-window[echelon-style-5] .tab-icon-image:-moz-broken {
-  content: url("images/ff56/defaultFavicon.png") !important;
+#main-window[echelon-style-4] .tab-icon-image:not([src]),
+#main-window[echelon-style-4] .tab-icon-image:-moz-broken {
+  display: none !important;
 }
 
 .tab-icon-stack:not([busy=true]) .tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]) {
