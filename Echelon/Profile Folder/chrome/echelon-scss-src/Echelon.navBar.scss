@@ -208,6 +208,21 @@ toolbar:not(#nav-bar, #TabsToolbar) .toolbarbutton-1 {
   padding: 3px !important;
 }
 
+:root[echelon-appearance-blue] .toolbaritem-combined-buttons > separator {
+  -moz-appearance: none !important;
+  width: 3px !important;
+  justify-self: stretch !important;
+  background-image: linear-gradient(to bottom, hsla(0,0%,100%,0), hsla(0,0%,100%,.3) 40%, hsla(0,0%,100%,.3) 60%, hsla(0,0%,100%,0)),
+                    linear-gradient(to bottom, hsla(210,54%,20%,0), hsla(210,54%,20%,.15) 40%, hsla(210,54%,20%,.15) 60%, hsla(210,54%,20%,0)),
+                    linear-gradient(to bottom, hsla(0,0%,100%,0), hsla(0,0%,100%,.3) 40%, hsla(0,0%,100%,.3) 60%, hsla(0,0%,100%,0)) !important;
+  background-size: 1px, 1px, 1px !important;
+  background-position: 0 0, 1px 0, 2px 0 !important;
+  background-repeat: no-repeat !important;
+  margin-inline-end: 0 !important;
+  height: 1.5em !important;
+  opacity: 1 !important;
+}
+
 /* UNIFIED BACK & FORWARD BUTTONS */
 
 #main-window #back-button {
@@ -267,7 +282,7 @@ toolbar .toolbaritem-combined-buttons {
   margin: 0 !important;
 }
 
-toolbar .toolbaritem-combined-buttons separator {
+:root:not([echelon-appearance-blue]) toolbar .toolbaritem-combined-buttons separator {
   display: none !important;
 }
 
