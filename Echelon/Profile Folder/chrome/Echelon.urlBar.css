@@ -520,7 +520,7 @@
   background-color: rgb(255, 255, 255) !important;
   border-color: rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.32) !important;
 }
-#main-window[echelon-style-3]:is([echelon-style-3]) #navigator-toolbox::after {
+#main-window[echelon-style-3][echelon-appearance-blue] #navigator-toolbox::after {
   background-color: rgb(170, 188, 207) !important;
 }
 

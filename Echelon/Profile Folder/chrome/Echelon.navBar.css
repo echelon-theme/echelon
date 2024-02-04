@@ -71,6 +71,9 @@ toolbar .toolbarbutton-1 > .toolbarbutton-text {
 #nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #PanelUI-menu-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, .toolbarbutton-combined) {
   margin-inline: 3px !important;
 }
+#main-window[echelon-style-4] #nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #PanelUI-menu-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, .toolbarbutton-combined)#bookmarks-button {
+  margin-inline-end: -1px !important;
+}
 #nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #PanelUI-menu-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, .toolbarbutton-combined) .toolbarbutton-badge-stack {
   width: 100% !important;
   height: 100% !important;
