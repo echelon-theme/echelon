@@ -36,7 +36,9 @@ pref("Echelon.Appearance.NewLogo", false);
 pref("Echelon.Appearance.Australis.EnableFog", true);
 pref("Echelon.Appearance.Australis.Windows10", false);
 pref("Echelon.Appearance.DevTools", true);
+
 pref("Echelon.Option.HideUnifiedExtensions", false);
+pref("Echelon.Option.ViewImage", false);
 
 pref("Echelon.FirefoxButton.CustomStyle", false);
 pref("Echelon.FirefoxButton.CustomName", "");

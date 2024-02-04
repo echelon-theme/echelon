@@ -3,7 +3,7 @@
 <?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
 <?xml-stylesheet href="chrome://userchrome/content/windows/options/styles.css" type="text/css"?>
 
-<window xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="echelonOptions" windowtype="Browser:EchelonOptions" width="450" height="450" role="dialog" resizable="false" title="Echelon Options">
+<window xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="echelonOptions" windowtype="Browser:EchelonOptions" width="450" height="500" role="dialog" resizable="false" title="Echelon Options">
     <vbox id="contentArea" flex="1">
         <html:div id="tabs">
 			<html:div id="main-tabs">
@@ -75,6 +75,10 @@
                             <html:input type="color" class="option" data-type="string" data-option="Echelon.FirefoxButton.CustomBGColor" change-requires-restart="true"/>
                         </html:div>
                     </groupbox>
+                    <!--<groupbox>
+                        <caption>Behavior</caption>
+                        <checkbox native="" label="Old &quot;View Image&quot; behavior in context menu" class="option" data-type="bool" data-option="Echelon.Option.ViewImage" change-requires-restart="true"/> 
+                    </groupbox>-->
                 </html:div>
                 <html:div id="section-branding" class="section" section-change-requires-restart="true">
                     <groupbox>

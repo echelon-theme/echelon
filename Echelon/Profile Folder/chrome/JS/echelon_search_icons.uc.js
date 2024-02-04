@@ -8,6 +8,8 @@
 const { SearchService } = ChromeUtils.importESModule("resource://gre/modules/SearchService.sys.mjs");
 const { SearchUtils } = ChromeUtils.importESModule("resource://gre/modules/SearchUtils.sys.mjs");
 
+
+
 const REPLACEMENTS = {
 	"moz-extension://6ed35b2d-1ed2-42d1-8ce2-e5bb7d28eaae/favicon.ico": "chrome://userchrome/content/images/icons/engines/google.png",
 	"moz-extension://86c18ad3-bda5-4e0e-a616-210d5a4e2d9c/favicon.ico": "chrome://userchrome/content/images/icons/engines/bing.png",
@@ -26,6 +28,43 @@ class EchelonSearchManager
 	static updateDisplay_orig = null;
 	static searchbar = null;
 
+	static defaultIcons = {};
+	static obtainedIcons = false;
+
+	/* A list of engines to obtain default icons for. */
+	static ENGINES = [
+		"google@search.mozilla.orgdefault",
+		"bing@search.mozilla.orgdefault",
+		"ebay@search.mozilla.orgdefault"
+	];
+
+	/* Replacement icons for FF14 with old logo and earlier */
+	static REPLACEMENTS = {
+		"google@search.mozilla.orgdefault": "chrome://userchrome/content/images/icons/engines/google.png",
+		"bing@search.mozilla.orgdefault": "chrome://userchrome/content/images/icons/engines/bing.png",
+		"ebay@search.mozilla.orgdefault": "chrome://userchrome/content/images/icons/engines/ebay.png"
+	};
+
+	/* Replacement icons for FF14 with new logo and later */
+	static REPLACEMENTS_NEW = {
+		"google@search.mozilla.orgdefault": "chrome://userchrome/content/images/icons/engines/google_new.ico",
+		"bing@search.mozilla.orgdefault": "chrome://userchrome/content/images/icons/engines/bing_new.ico",
+		"ebay@search.mozilla.orgdefault": "chrome://userchrome/content/images/icons/engines/ebay_new.ico"
+	};
+
+	static async obtainIcons()
+	{
+		if (!this.obtainedIcons)
+		{
+			await Services.search.init();
+			for (const id of this.ENGINES)
+			{
+				this.defaultIcons[id] = (await Services.search.getEngineById(id))?.iconURI.spec;
+			}
+			this.obtainedIcons = true;
+		}
+	}
+
 	static async updateSearchBox()
 	{
 		let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
@@ -34,25 +73,26 @@ class EchelonSearchManager
 			let engine = await Services.search.getDefault();
 
 			let icon = await waitForElement(".searchbar-search-icon");
-			icon.setAttribute("src", this.getReplacementIcon(engine._iconURI.spec));
+			icon.setAttribute("src", await this.getReplacementIcon(engine._iconURI.spec));
 	
 			let textbox = await waitForElement(".searchbar-textbox");
 			textbox.placeholder = engine._name;
 		}
 	}
 
-	static getReplacementIcon(url)
+	static async getReplacementIcon(url)
 	{
+		await this.obtainIcons();
 		let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
 		let newLogo = PrefUtils.tryGetBoolPref("Echelon.Appearance.NewLogo");
 		if (style < 5)
 		{
 			let replacements = (style == 4 || (style == 3 && newLogo))
-			? REPLACEMENTS_NEW
-			: REPLACEMENTS;
+			? this.REPLACEMENTS_NEW
+			: this.REPLACEMENTS;
 			for (const orig in replacements)
 			{
-				if (url == orig)
+				if (orig in this.defaultIcons && this.defaultIcons[orig] == url)
 				{
 					return replacements[orig];
 				}
@@ -61,13 +101,13 @@ class EchelonSearchManager
 		return url;
 	}
 
-	static onMutation(list)
+	static async onMutation(list)
 	{
 		for (const mut of list)
 		{
 			if (mut.type == "attributes" && mut.target.nodeName == "image" && mut.attributeName == "src")
 			{
-				let replacement = this.getReplacementIcon(mut.target.getAttribute("src"));
+				let replacement = await this.getReplacementIcon(mut.target.getAttribute("src"));
 				if (replacement != mut.target.getAttribute("src"))
 				{
 					mut.target.setAttribute("src", replacement);

@@ -152,6 +152,14 @@
 .urlbarView-favicon[src="chrome://activity-stream/content/data/content/tippytop/favicons/google-com.ico"] {
   content: url("images/icons/engines/google.png") !important;
 }
+@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+  :root[echelon-style-3] .urlbarView-favicon[src="chrome://activity-stream/content/data/content/tippytop/favicons/google-com.ico"] {
+    content: url("images/icons/engines/google_new.ico") !important;
+  }
+}
+:root[echelon-style-4] .urlbarView-favicon[src="chrome://activity-stream/content/data/content/tippytop/favicons/google-com.ico"] {
+  content: url("images/icons/engines/google_new.ico") !important;
+}
 
 .urlbarView-row[pinned] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
   display: none !important;
