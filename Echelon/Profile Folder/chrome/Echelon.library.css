@@ -61,7 +61,7 @@
   background-color: -moz-Dialog !important;
 }
 
-#placesView > splitter {
+#placesView splitter {
   margin-inline-start: 0 !important;
   border-inline: 1px solid !important;
   border-left-color: ThreeDShadow !important;
@@ -69,4 +69,8 @@
   box-shadow: inset 1px 0 ThreeDHighlight !important;
   min-width: 6px !important;
   background-color: ThreeDFace !important;
+}
+
+.downloadButton .button-box {
+  background-color: transparent !important;
 }
