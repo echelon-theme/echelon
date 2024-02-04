@@ -361,11 +361,11 @@
 		font: message-box !important;
 	}
 	#moz-toggle-button[aria-pressed="true"]::after {
-		content: 'Enable' !important;
+		content: 'Disable' !important;
 	}
 	#moz-toggle-button[aria-pressed="false"]::after {
 		width: 100% !important;
-		content: 'Disable' !important;
+		content: 'Enable' !important;
 	}
 	.addon-name-container .more-options-button {
 		width: unset !important;
@@ -485,5 +485,13 @@
         .category-name {
             display: none !important;
         }
+	}
+
+	addon-card:not([expanded]) .addon-name, addon-card:not([expanded]) .addon-description {
+		overflow-y: hidden !important;
+	}
+
+	img[src="https://addons.mozilla.org/static-server/img/addon-icons/default-32.2b26add4b394.png"] {
+		content: url("chrome://userchrome/content/pages/addons/images/category-extensions.png") !important;
 	}
 }

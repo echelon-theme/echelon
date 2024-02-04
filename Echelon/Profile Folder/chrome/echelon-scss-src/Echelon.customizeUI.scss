@@ -7,7 +7,7 @@
 }
 
 #main-window[customizing] {
-  background-image: url('images/customizeUI/customizeMode-gridTexture.png') !important;
+  background-image: var(--lwt-header-image), url('images/customizeUI/customizeMode-gridTexture.png') !important;
   background-attachment: fixed !important;
 }
 
@@ -22,7 +22,7 @@
 #customization-container,
 #titlebar,
 #browser {
-  transition-property: all !important;
+  transition-property: margin-left, margin-right !important;
   transition-duration: 150ms !important;
   transition-timing-function: ease-out !important;
 }

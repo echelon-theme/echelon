@@ -20,7 +20,7 @@ function updateIcon()
 			}
 				
 			let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
-			if (style < 3)
+			if (style < ECHELON_LAYOUT_FF14)
 			{
 				document.querySelector("#identity-icon").setAttribute("style", `list-style-image: url('${favicon}');`);
 			}

@@ -11,7 +11,7 @@
 }
 
 #main-window:not([echelon-style-4]) .tabbrowser-tab {
-  color: -moz-DialogText !important;
+  color: var(--lwt-text-color, -moz-DialogText) !important;
 }
 
 .tabbrowser-tab {
@@ -331,4 +331,8 @@ spacer[part=overflow-start-indicator] {
 
 :root:not([echelon-style-4]) .tab-throbber:not([fadein]) {
   display: flex !important;
+}
+
+.tab-background:-moz-lwtheme {
+  background-image: none !important;
 }

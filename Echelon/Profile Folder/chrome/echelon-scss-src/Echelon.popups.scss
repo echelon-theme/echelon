@@ -2,6 +2,9 @@
     --arrowpanel-border-radius: 4px !important;
     --arrowpanel-border-color: hsla(210,4%,10%,.2) !important;
 
+    --arrowpanel-background: #fff !important;
+    --arrowpanel-color: #000 !important;
+
     &:not([echelon-appearance-xp], [echelon-appearance-blue])[echelon-style-4],
     &[echelon-style-5] {
         --arrowpanel-border-radius: 0 !important;

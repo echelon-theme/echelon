@@ -67,7 +67,7 @@ class LayoutManager
 	{
 		/* Tabs on bottom is not supported on Australis. */
 		let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
-		if (style < 4 || state)
+		if (style < ECHELON_LAYOUT_AUSTRALIS || state)
 		{
 			let tabsContainer = document.querySelector("#TabsToolbar");
 			

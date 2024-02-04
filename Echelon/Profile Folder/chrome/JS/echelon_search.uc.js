@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name			Echelon :: Old Search Icons
-// @description 	Restore old icons for search engines.
+// @name			Echelon :: Search
+// @description 	Restore old icons for search engines, and a class for a focused searchbox.
 // @author			aubymori
 // @include			main
 // ==/UserScript==
@@ -53,7 +53,7 @@ class EchelonSearchManager
 	static async updateSearchBox()
 	{
 		let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
-		if (style < 5)
+		if (style < ECHELON_LAYOUT_AUSTRALIS_LATE)
 		{
 			let engine = await Services.search.getDefault();
 
@@ -70,7 +70,7 @@ class EchelonSearchManager
 		await this.obtainIcons();
 		let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
 		let newLogo = PrefUtils.tryGetBoolPref("Echelon.Appearance.NewLogo");
-		if (style < 5)
+		if (style < ECHELON_LAYOUT_AUSTRALIS_LATE)
 		{
 			let replacements = (style == 4 || (style == 3 && newLogo))
 			? this.REPLACEMENTS_NEW
@@ -113,12 +113,26 @@ class EchelonSearchManager
 		this.updateSearchBox();
 	}
 
+	static onFocusSearchbar()
+	{
+		this.searchbar.classList.add("focus");
+	}
+
+	static onUnfocusSearchbar()
+	{
+		this.searchbar.classList.remove("focus");
+	}
+
 	static async installSearchBoxHook()
 	{
-		let e = await waitForElement("#searchbar");
-		this.searchbar = e;
-		this.updateDisplay_orig = e.updateDisplay;
-		e.updateDisplay = this.updateDisplay_hook.bind(this);
+		let searchbar = await waitForElement("#searchbar");
+		this.searchbar = searchbar;
+		this.updateDisplay_orig = searchbar.updateDisplay;
+		searchbar.updateDisplay = this.updateDisplay_hook.bind(this);
+
+		let searchbarInput = await waitForElement(".searchbar-textbox", searchbar);
+		searchbarInput.addEventListener("focus", this.onFocusSearchbar.bind(this));
+		searchbarInput.addEventListener("blur", this.onUnfocusSearchbar.bind(this));
 	}
 }
 

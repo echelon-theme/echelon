@@ -603,7 +603,7 @@ function ModifyPref(entry)
   var title = gConfigBundle.getFormattedString("modify_title", [gTypeStrs[entry.typeCol]]);
   if (entry.typeCol == nsIPrefBranch.PREF_BOOL) {
     var check = { value: entry.valueCol == "false" };
-    if (!entry.valueCol && !Services.prompt.select(window, title, entry.prefCol, 2, [false, true], check))
+    if (!entry.valueCol && !Services.prompt.select(window, title, entry.prefCol, [false, true], check))
       return false;
     gPrefBranch.setBoolPref(entry.prefCol, check.value);
   } else {

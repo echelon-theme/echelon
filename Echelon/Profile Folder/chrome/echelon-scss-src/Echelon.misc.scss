@@ -263,8 +263,11 @@
 /** BOOKMARKS TOOLBAR **/
 
 #PersonalToolbar {
-  border-left: 1px solid rgba(10%,10%,10%,.4) !important;
-  border-right: 1px solid rgba(10%,10%,10%,.4) !important;
+  :root:not([lwtheme-image]) &
+  {
+    border-left: 1px solid rgba(10%,10%,10%,.4) !important;
+    border-right: 1px solid rgba(10%,10%,10%,.4) !important;
+  }
   padding-inline: 0 !important;
   padding-bottom: 1px !important;
 }
@@ -313,7 +316,6 @@ toolbarbutton.bookmark-item {
 
 findbar {
   max-height: 27px !important;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,.15) 1px, rgba(255,255,255,.15) 1px);
   background-size: 100% 2px;
   background-repeat: no-repeat;
   border-top: 0 !important;
@@ -321,6 +323,10 @@ findbar {
   padding-top: 1px !important;
   align-items: center !important;
   overflow: hidden !important;
+
+  &:not(:-moz-lwtheme) {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.15) 1px, rgba(255,255,255,.15) 1px);
+  }
 }
 
 .findbar-find-next,
@@ -431,10 +437,13 @@ findbar .checkbox-check {
   height: 100% !important;
   max-height: 35px !important;
   box-shadow: 0 1px 1px rgba(0,0,0,.1) inset !important;
-  background-image: linear-gradient(rgba(0,0,0,.15) 1px, rgba(255,255,255,.15) 1px) !important;
   background-size: 100% 2px !important;
   background-repeat: no-repeat !important;
-  background-color: -moz-Dialog !important;
+
+  &:not(:-moz-lwtheme) {
+    background-image: linear-gradient(rgba(0,0,0,.15) 1px, rgba(255,255,255,.15) 1px) !important;
+    background-color: -moz-Dialog !important;
+  }
 }
 
 

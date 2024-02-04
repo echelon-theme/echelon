@@ -20,15 +20,21 @@
   background-image: linear-gradient(var(--toolbar-highlight-top) 15%, var(--toolbar-highlight-bottom)) !important;
   height: 38px !important;
   box-shadow: none !important;
+  padding-right: 2px !important;
+  padding-bottom: 1px !important;
+  align-items: center !important;
+}
+:root:not([lwtheme-image]) #nav-bar, :root[echelon-style-4] #nav-bar {
   border-top: 1px solid rgba(26, 26, 26, 0.4) !important;
   border-left: 1px solid rgba(26, 26, 26, 0.4) !important;
   border-right: 1px solid rgba(26, 26, 26, 0.4) !important;
   border-top-left-radius: var(--toolbar-border-radius);
   border-top-right-radius: var(--toolbar-border-radius);
   margin-top: -1px !important;
-  padding-right: 2px !important;
-  padding-bottom: 1px !important;
-  align-items: center !important;
+}
+
+:root[echelon-style-4] #nav-bar:-moz-lwtheme {
+  margin-top: -2px !important;
 }
 
 /** TOOLBAR BUTTONS **/
@@ -88,14 +94,14 @@ toolbar .toolbarbutton-1 > .toolbarbutton-text {
   border: 1px solid;
   border-color: rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.19) rgba(0, 0, 0, 0.38);
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
-  color: black;
+  color: var(--lwt-text-color, black);
   text-shadow: 0 0 2px white;
   align-self: center !important;
   transition: background-color var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction), border-color var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction), box-shadow var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction);
 }
 
 .browser-toolbar:not(.titlebar-color) {
-  color: black !important;
+  color: var(--lwt-text-color, black) !important;
 }
 
 #nav-bar .toolbarbutton-1:not([open], [disabled=true], #back-button, #new-tab-button, #PanelUI-menu-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):hover {

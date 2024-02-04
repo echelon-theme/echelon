@@ -50,12 +50,11 @@ toolbarbutton:is(.bookmark-item, #PlacesChevron) menupopup[placespopup]#PlacesCh
 	}	
 
 	& > :is(menu, menuitem) {
-		appearance: auto !important;
 		margin: 0 !important;
 		padding: 0 !important;
 		min-height: unset !important;
 
-		:is(.menu-text, .menu-iconic-text, .menu-iconic-icon, .menu-iconic-left, .menu-iconic-accel, .menu-accel-container, .menu-accel, .menu-right) {
+		&, :is(.menu-text, .menu-iconic-text, .menu-iconic-icon, .menu-iconic-left, .menu-iconic-accel, .menu-accel-container, .menu-accel, .menu-right) {
 			appearance: auto !important;
 		}
 

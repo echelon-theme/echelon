@@ -57,7 +57,7 @@ async function waitForElement(query, parent = this.document, timeout = -1)
 		{
 			return null;
 		}
-		await new Promise(r => requestAnimationFrame(r));
+		await new Promise(r => this.requestAnimationFrame(r));
 	}
 	
 	return parent.querySelector(query);

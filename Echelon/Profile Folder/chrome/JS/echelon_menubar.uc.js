@@ -24,7 +24,7 @@ function observeMenuBar()
 {
     theme = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
     let menubar = document.getElementById("toolbar-menubar");
-    if (menubar && theme < 4)
+    if (menubar && theme < ECHELON_LAYOUT_AUSTRALIS)
     {
         let observer = new MutationObserver(menuBarMutation);
         observer.observe(menubar, { attributes: true });

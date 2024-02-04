@@ -3,6 +3,7 @@
   --urlbar-toolbar-height: 24px !important;
   min-height: var(--urlbar-height) !important;
   font-size: unset !important;
+  color: #000 !important;
 }
 
 #urlbar-container, #search-container {
@@ -27,8 +28,16 @@
   color: black;
 }
 
-#urlbar-background:hover, #searchbar:hover {
+#urlbar:hover #urlbar-background,
+#searchbar:hover,
+#urlbar-container:hover + #stop-reload-button {
   background-color: rgba(255, 255, 255, 0.898) !important;
+}
+
+#urlbar[open] > #urlbar-background,
+#nav-bar[urlbar-exceeds-toolbar-bounds=true] #stop-reload-button,
+#searchbar.focus {
+  background-color: rgb(255, 255, 255) !important;
 }
 
 #urlbar-background {
@@ -207,6 +216,16 @@
   border: 1px solid hsl(213, 45%, 65%) !important;
   box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.5) inset, 0 1px 0 hsla(0, 0%, 100%, 0.3) inset !important;
   background-image: linear-gradient(hsl(212, 86%, 92%), hsl(212, 91%, 86%)) !important;
+}
+:root:not([echelon-style-5])[echelon-appearance-blue] .urlbarView-row {
+  color: #000 !important;
+}
+:root:not([echelon-style-5])[echelon-appearance-blue] .urlbarView-url {
+  color: #06c !important;
+}
+
+#urlbar:is([focused=true], [open]), #searchbar:focus-within {
+  color: #000 !important;
 }
 
 :root:not([echelon-appearance-blue]) .urlbarView-row[row-selectable]:not([selected]):hover,

@@ -5,8 +5,13 @@
 // @include			main
 // @include         chrome://browser/content/browser.xhtml
 // @include         chrome://browser/content/aboutDialog.xhtml
-// @include         about:config
 // @include         about:preferences
+// @include         about:preferences#general
+// @include         about:preferences#home
+// @include         about:preferences#search
+// @include         about:preferences#privacy
+// @include         about:preferences#sync
+// @include         about:preferences#moreFromMozilla
 // ==/UserScript==
 
 var { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
@@ -77,11 +82,7 @@ class EchelonThemeManager
 	}
 }
 
-try
-{
 let root = document.documentElement;
 EchelonThemeManager.refreshTheme(root);
 root.setAttribute("update-channel", BrandUtils.getUpdateChannel());
 root.setAttribute("browser-name", BrandUtils.getBrowserName());
-}
-catch (e) { console.log(e) }

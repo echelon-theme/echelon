@@ -1,3 +1,26 @@
+/* Default light mode vars. */
+:root {
+  --organizer-color: -moz-DialogText !important;
+  --organizer-deemphasized-color: GrayText !important;
+  --organizer-toolbar-background: -moz-Dialog !important;
+  --organizer-pane-background: -moz-Dialog !important;
+  --organizer-content-background: -moz-Dialog !important;
+  --organizer-hover-background: SelectedItem !important;
+  --organizer-selected-background: -moz-cellhighlight !important;
+  --organizer-selected-color: -moz-cellhighlighttext !important;
+  --organizer-focus-selected-background: SelectedItem !important;
+  --organizer-focus-selected-color: SelectedItemText !important;
+  --organizer-outline-color: SelectedItem !important;
+  --organizer-separator-color: ThreeDDarkShadow !important;
+  --organizer-border-color: ThreeDShadow !important;
+  --organizer-toolbar-field-background: Field !important;
+  --organizer-toolbar-field-background-focused: Field !important;
+  --organizer-toolbar-field-border-color: ThreeDShadow !important;
+  --organizer-toolbar-field-focus-border-color: var(--organizer-outline-color) !important;
+  --organizer-toolbar-field-focus-box-shadow: unset !important;
+  --organizer-pane-field-border-color: ThreeDShadow !important;
+}
+
 #places #back-button {
   list-style-image: url("images/icons/back_small.png") !important;
 }

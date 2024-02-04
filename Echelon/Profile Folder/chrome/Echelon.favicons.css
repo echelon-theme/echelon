@@ -59,6 +59,14 @@
   list-style-image: url("images/xp/warning-16.png") !important;
 }
 
+.tab-icon-image[src="chrome://mozapps/skin/extensions/extension.svg"] {
+  content: url("images/extensionGeneric-16.png") !important;
+}
+
+#identity-icon[style="list-style-image: url('chrome://mozapps/skin/extensions/extension.svg');"] {
+  list-style-image: url("images/extensionGeneric-16.png") !important;
+}
+
 /** WATERFOX **/
 #main-window[browser-name=Waterfox] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
   content: url("images/icons/alt/waterfox/old/info16.png") !important;
