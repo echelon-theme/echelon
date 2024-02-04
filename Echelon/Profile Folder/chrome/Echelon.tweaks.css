@@ -161,19 +161,19 @@
 }
 
 #main-window[echelon-style-2] .verifiedDomain #identity-icon-box {
-  background-image: -moz-linear-gradient(hsl(215, 60%, 92%), hsl(215, 58%, 88%)) !important;
+  background-image: linear-gradient(hsl(215, 60%, 92%), hsl(215, 58%, 88%)) !important;
   box-shadow: 0 1px 0 hsla(215, 54%, 33%, 0.05) inset !important;
   border-right: 1px solid hsla(215, 54%, 33%, 0.2) !important;
   color: hsl(215, 54%, 33%) !important;
 }
 
 #main-window[echelon-style-2] .verifiedDomain #identity-icon-box:hover {
-  background-image: -moz-linear-gradient(hsl(215, 85%, 85%), hsl(215, 70%, 68%)) !important;
+  background-image: linear-gradient(hsl(215, 85%, 85%), hsl(215, 70%, 68%)) !important;
 }
 
 #main-window[echelon-style-2] .verifiedDomain #identity-icon-box[open=true],
 #main-window[echelon-style-2] .verifiedDomain #identity-icon-box:hover:active {
-  background-image: -moz-linear-gradient(hsl(215, 80%, 80%), hsl(215, 67%, 65%)) !important;
+  background-image: linear-gradient(hsl(215, 80%, 80%), hsl(215, 67%, 65%)) !important;
   box-shadow: 0 1px 1px hsla(215, 54%, 33%, 0.7) inset, 0 1px 3px 1px hsla(215, 54%, 33%, 0.5) inset !important;
 }
 
@@ -204,7 +204,7 @@
 
 #main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover:active,
 #main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled])[open] {
-  background-image: -moz-linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
+  background-image: linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
   background-color: hsla(210, 54%, 20%, 0.15) !important;
   border-color: hsla(210, 54%, 20%, 0.3) hsla(210, 54%, 20%, 0.35) hsla(210, 54%, 20%, 0.4) !important;
   box-shadow: 0 1px 1px hsla(210, 54%, 20%, 0.1) inset, 0 0 1px hsla(210, 54%, 20%, 0.2) inset, 0 1px 0 hsla(210, 54%, 20%, 0), 0 0 2px hsla(210, 54%, 20%, 0) !important;
@@ -213,7 +213,7 @@
 }
 
 #main-window[echelon-style-3] #back-button {
-  background-image: -moz-linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
+  background-image: linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
   box-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.3) inset, 0 0 0 1px hsla(0, 0%, 100%, 0.3) inset, 0 0 0 1px hsla(210, 54%, 20%, 0.25), 0 1px 0 hsla(210, 54%, 20%, 0.35) !important;
   transition: background-color 150ms var(--toolbarbutton-transition-timingfunction), box-shadow 150ms var(--toolbarbutton-transition-timingfunction) !important;
 }
@@ -231,7 +231,7 @@
 }
 
 #main-window[echelon-style-3] #forward-button {
-  background-image: -moz-linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
+  background-image: linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
   border-color: hsla(210, 54%, 20%, 0.15) hsla(210, 54%, 20%, 0.2) hsla(210, 54%, 20%, 0.25) !important;
   box-shadow: 0 1px hsla(0, 0%, 100%, 0.3) inset, 0 1px hsla(210, 54%, 20%, 0.03), 0 0 2px hsla(210, 54%, 20%, 0.1) !important;
   transition: margin-inline-start 150ms var(--toolbarbutton-transition-timingfunction), opacity 150ms var(--toolbarbutton-transition-timingfunction), background-color 150ms var(--toolbarbutton-transition-timingfunction), box-shadow 150ms var(--toolbarbutton-transition-timingfunction) !important;
@@ -244,7 +244,7 @@
 }
 
 #main-window[echelon-style-3] #forward-button:not([disabled=true]):hover:active {
-  background-image: -moz-linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
+  background-image: linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
   background-color: hsla(210, 54%, 20%, 0.15) !important;
   border-color: hsla(210, 54%, 20%, 0.3) hsla(210, 54%, 20%, 0.35) hsla(210, 54%, 20%, 0.4) !important;
   box-shadow: 0 1px 1px hsla(210, 54%, 20%, 0.1) inset, 0 0 1px hsla(210, 54%, 20%, 0.2) inset, 0 1px 0 hsla(210, 54%, 20%, 0), 0 0 2px hsla(210, 54%, 20%, 0) !important;
@@ -257,34 +257,6 @@
 #main-window[echelon-style-3] #stop-reload-button {
   border-radius: 2px !important;
   border-color: ThreeDShadow !important;
-}
-
-#main-window[echelon-appearance-blue][echelon-style-3] {
-  --toolbar-custom-color: rgb(219, 234, 249) !important;
-}
-#main-window[echelon-appearance-blue][echelon-style-3] #urlbar-background, #main-window[echelon-appearance-blue][echelon-style-3] #searchbar, #main-window[echelon-appearance-blue][echelon-style-3] #stop-reload-button.unified {
-  background-color: rgb(255, 255, 255) !important;
-  border-color: hsla(210, 54%, 20%, 0.25) hsla(210, 54%, 20%, 0.27) hsla(210, 54%, 20%, 0.3) !important;
-}
-#main-window[echelon-appearance-blue][echelon-style-3] #urlbar-background:-moz-lwtheme, #main-window[echelon-appearance-blue][echelon-style-3] #searchbar:-moz-lwtheme, #main-window[echelon-appearance-blue][echelon-style-3] #stop-reload-button.unified:-moz-lwtheme {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  border-color: rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.32) !important;
-}
-#main-window[echelon-appearance-blue][echelon-style-3] #urlbar:hover #urlbar-background, #main-window[echelon-appearance-blue][echelon-style-3] #searchbar:hover, #main-window[echelon-appearance-blue][echelon-style-3] #urlbar-container:hover + #stop-reload-button {
-  border-color: hsla(210, 54%, 20%, 0.35) hsla(210, 54%, 20%, 0.37) hsla(210, 54%, 20%, 0.4) !important;
-}
-#main-window[echelon-appearance-blue][echelon-style-3] #urlbar:hover #urlbar-background:-moz-lwtheme, #main-window[echelon-appearance-blue][echelon-style-3] #searchbar:hover:-moz-lwtheme, #main-window[echelon-appearance-blue][echelon-style-3] #urlbar-container:hover + #stop-reload-button:-moz-lwtheme {
-  border-color: rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.32) !important;
-}
-#main-window[echelon-appearance-blue][echelon-style-3] #urlbar[open] > #urlbar-background, #main-window[echelon-appearance-blue][echelon-style-3] #nav-bar[urlbar-exceeds-toolbar-bounds=true] #stop-reload-button, #main-window[echelon-appearance-blue][echelon-style-3] #searchbar.focus {
-  border-color: hsla(206, 100%, 60%, 0.65) hsla(206, 100%, 55%, 0.65) hsla(206, 100%, 50%, 0.65) !important;
-}
-#main-window[echelon-appearance-blue][echelon-style-3] #urlbar[open] > #urlbar-background:-moz-lwtheme, #main-window[echelon-appearance-blue][echelon-style-3] #nav-bar[urlbar-exceeds-toolbar-bounds=true] #stop-reload-button:-moz-lwtheme, #main-window[echelon-appearance-blue][echelon-style-3] #searchbar.focus:-moz-lwtheme {
-  background-color: rgb(255, 255, 255) !important;
-  border-color: rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.32) !important;
-}
-#main-window[echelon-appearance-blue]:is([echelon-style-3]) #navigator-toolbox::after {
-  background-color: rgb(170, 188, 207) !important;
 }
 
 #main-window[echelon-style-3] #stop-reload-button {
@@ -395,6 +367,11 @@
   margin-left: 4px !important;
 }
 
+#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #bookmarks-menu-button::after,
+#main-window[lwtheme-brighttext=true] #nav-bar #bookmarks-menu-button::after {
+  background-image: url("images/toolbarbutton-dropdown-arrow-inverted.png") !important;
+}
+
 #main-window[echelon-style-3] #identity-icon-box,
 #main-window[echelon-style-3] #identity-box:not(.localResource)[pageproxystate=valid] #identity-icon-box,
 #main-window[echelon-style-3][echelon-style-2] .verifiedDomain #identity-icon-box {
@@ -482,7 +459,7 @@
   position: absolute;
   left: -4px !important;
   top: -7px;
-  background-image: -moz-linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.3) 30%, hsla(0, 0%, 100%, 0.3) 70%, hsla(0, 0%, 100%, 0)), -moz-linear-gradient(hsla(210, 54%, 20%, 0), hsla(210, 54%, 20%, 0.3) 30%, hsla(210, 54%, 20%, 0.3) 70%, hsla(210, 54%, 20%, 0)), -moz-linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.3) 30%, hsla(0, 0%, 100%, 0.3) 70%, hsla(0, 0%, 100%, 0));
+  background-image: linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.3) 30%, hsla(0, 0%, 100%, 0.3) 70%, hsla(0, 0%, 100%, 0)), linear-gradient(hsla(210, 54%, 20%, 0), hsla(210, 54%, 20%, 0.3) 30%, hsla(210, 54%, 20%, 0.3) 70%, hsla(210, 54%, 20%, 0)), linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.3) 30%, hsla(0, 0%, 100%, 0.3) 70%, hsla(0, 0%, 100%, 0));
   background-size: 1px calc(100% - 1px), 1px calc(100% - 1px), 1px calc(100% - 1px) !important;
   background-position: 0px 0px, 1px 0px, 2px 0px;
   background-repeat: no-repeat;
@@ -569,13 +546,17 @@
   background-color: var(--toolbar-bgcolor) !important;
 }
 
-#main-window[echelon-style-4][lwtheme-image=true] .tab-background:is([selected], [multiselected]):-moz-lwtheme {
+#main-window[echelon-style-4][lwtheme-image=true] #tabbrowser-tabs:not([movingtab]) .tab-background:is([selected], [multiselected]):-moz-lwtheme {
   background-color: transparent !important;
   background-image: url("images/tab-active-middle.png"), linear-gradient(transparent 2px, rgba(255, 255, 255, 0.4) 2px, rgba(255, 255, 255, 0.4)), var(--lwt-header-image) !important;
   background-position: 0 0, 0 0, right top !important;
   background-repeat: repeat-x, repeat-x, no-repeat !important;
   background-size: var(--tab-stroke-background-size), auto 100%, auto auto !important;
   background-attachment: scroll, scroll, fixed !important;
+}
+
+#main-window[echelon-style-4][lwtheme-image=true] #tabbrowser-tabs[movingtab] .tab-background:is([selected], [multiselected]):-moz-lwtheme {
+  background-color: transparent !important;
 }
 
 #main-window[echelon-style-4] #tabbrowser-tabs,
@@ -625,12 +606,16 @@
   background-color: var(--toolbar-bgcolor) !important;
 }
 
-#main-window[echelon-style-4][lwtheme-image=true] .tab-background:is([selected], [multiselected]) .tab-context-line:-moz-lwtheme::before, #main-window[echelon-style-4][lwtheme-image=true] .tab-background:is([selected], [multiselected]) .tab-context-line:-moz-lwtheme::after {
+#main-window[echelon-style-4][lwtheme-image=true] #tabbrowser-tabs:not([movingtab]) .tab-background:is([selected], [multiselected]) .tab-context-line:-moz-lwtheme::before, #main-window[echelon-style-4][lwtheme-image=true] #tabbrowser-tabs:not([movingtab]) .tab-background:is([selected], [multiselected]) .tab-context-line:-moz-lwtheme::after {
   background-color: transparent !important;
   background-image: linear-gradient(transparent 2px, rgba(255, 255, 255, 0.4) 2px, rgba(255, 255, 255, 0.4)), var(--lwt-header-image) !important;
   background-position: 0 0, right top !important;
   background-repeat: repeat-x, no-repeat !important;
   background-attachment: scroll, fixed !important;
+}
+
+#main-window[echelon-style-4][lwtheme-image=true] #tabbrowser-tabs[movingtab] .tab-background:is([selected], [multiselected]) .tab-context-line:-moz-lwtheme::before, #main-window[echelon-style-4][lwtheme-image=true] #tabbrowser-tabs[movingtab] .tab-background:is([selected], [multiselected]) .tab-context-line:-moz-lwtheme::after {
+  background-color: transparent !important;
 }
 
 #main-window[echelon-style-4] .tab-background:is([selected], [multiselected]) .tab-context-line::after {

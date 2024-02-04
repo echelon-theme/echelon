@@ -34,11 +34,13 @@
 :root[echelon-appearance-xp] #identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
   list-style-image: url("images/xp/defaultFavicon.png") !important;
 }
-:root[echelon-style-3] #identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
-  list-style-image: url("images/defaultFavicon-new.png") !important;
+
+.tab-icon-image[src="chrome://browser/skin/customize.svg"] {
+  content: url("images/customizeFavicon.ico") !important;
 }
-:root[echelon-style-5] #identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
-  list-style-image: url("images/ff56/defaultFavicon.png") !important;
+
+#identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
+  list-style-image: url("images/customizeFavicon.ico") !important;
 }
 
 .tab-icon-image[src="chrome://global/skin/icons/info.svg"],

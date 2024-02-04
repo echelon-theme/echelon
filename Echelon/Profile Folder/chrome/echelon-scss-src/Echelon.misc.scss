@@ -60,7 +60,7 @@
 #appmenu-button:hover:not(:active):not([open]) {
   background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(252,240,89,.5) 10%, rgba(252,240,89,0) 70%),
                     -moz-radial-gradient(center bottom, farthest-side, rgb(236,133,0), rgba(255,229,172,0)),
-                    -moz-linear-gradient(rgb(246,170,69), rgb(209,74,0) 95%) !important;
+                    linear-gradient(rgb(246,170,69), rgb(209,74,0) 95%) !important;
   box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
               0 0 1.5px 1px rgba(250,234,169,.7) inset,
               0 -1px 0 rgba(250,234,169,.5) inset !important;
@@ -69,7 +69,7 @@
 #main-window[privatebrowsingmode=temporary] #appmenu-button:hover:not(:active):not([open]) {
   background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(240,193,255,.5) 10%, rgba(240,193,255,0) 70%),
                     -moz-radial-gradient(center bottom, farthest-side, rgb(192,81,247), rgba(236,172,255,0)),
-                    -moz-linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%) !important;
+                    linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%) !important;
   border-color: rgba(43,8,65,.9) !important;
   box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
               0 0 2px 1px rgba(240,193,255,.7) inset,
@@ -106,7 +106,7 @@
   /* NIGHTLY */
   
   &[update-channel="nightly"] #appmenu-button {
-    background-image: -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
+    background-image: linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
     border-color: hsla(210,59%,13%,.9) !important;
     box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
                 0 0 2px 1px hsla(211,65%,85%,.15) inset !important;
@@ -115,7 +115,7 @@
   &[update-channel="nightly"] #appmenu-button:hover:not(:active):not([open]) {
     background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210,48%,90%,.5) 10%, hsla(210,48%,90%,0) 70%),
                       -moz-radial-gradient(center bottom, farthest-side, hsla(211,70%,83%,.5), hsla(211,70%,83%,0)),
-                      -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
+                      linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
     border-color: hsla(210,59%,13%,.9) !important;
     box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
                 0 0 2px 1px hsla(210,48%,90%,.4) inset,
@@ -124,7 +124,7 @@
   
   &[update-channel="nightly"] #appmenu-button:hover:active,
   &[update-channel="nightly"] #appmenu-button[open] {
-    background-image: -moz-linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
+    background-image: linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
     box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
                 0 1px 1px rgba(0,0,0,.2) inset !important;
   }
@@ -132,7 +132,7 @@
   /* WATERFOX */
   
   &[browser-name="Waterfox"] #appmenu-button {
-    background-image: -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
+    background-image: linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
     border-color: hsla(210,59%,13%,.9) !important;
     box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
                 0 0 2px 1px hsla(211,65%,85%,.15) inset !important;
@@ -141,7 +141,7 @@
   &[browser-name="Waterfox"] #appmenu-button:hover:not(:active):not([open]) {
     background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210,48%,90%,.5) 10%, hsla(210,48%,90%,0) 70%),
                       -moz-radial-gradient(center bottom, farthest-side, hsla(211,70%,83%,.5), hsla(211,70%,83%,0)),
-                      -moz-linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
+                      linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
     border-color: hsla(210,59%,13%,.9) !important;
     box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
                 0 0 2px 1px hsla(210,48%,90%,.4) inset,
@@ -150,7 +150,7 @@
   
   &[browser-name="Waterfox"] #appmenu-button:hover:active,
   &[browser-name="Waterfox"] #appmenu-button[open] {
-    background-image: -moz-linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
+    background-image: linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
     box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
                 0 1px 1px rgba(0,0,0,.2) inset !important;
   }

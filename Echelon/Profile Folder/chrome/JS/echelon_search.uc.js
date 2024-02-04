@@ -113,14 +113,20 @@ class EchelonSearchManager
 		this.updateSearchBox();
 	}
 
-	static onFocusSearchbar()
+	static onFocusSearchbar(event)
 	{
-		this.searchbar.classList.add("focus");
+		if (event.target.classList.contains("searchbar-textbox"))
+		{
+			event.target.parentNode.classList.add("focus");
+		}	
 	}
 
-	static onUnfocusSearchbar()
+	static onUnfocusSearchbar(event)
 	{
-		this.searchbar.classList.remove("focus");
+		if (event.target.classList.contains("searchbar-textbox"))
+		{
+			event.target.parentNode.classList.remove("focus");
+		}	
 	}
 
 	static async installSearchBoxHook()
@@ -129,10 +135,9 @@ class EchelonSearchManager
 		this.searchbar = searchbar;
 		this.updateDisplay_orig = searchbar.updateDisplay;
 		searchbar.updateDisplay = this.updateDisplay_hook.bind(this);
-
-		let searchbarInput = await waitForElement(".searchbar-textbox", searchbar);
-		searchbarInput.addEventListener("focus", this.onFocusSearchbar.bind(this));
-		searchbarInput.addEventListener("blur", this.onUnfocusSearchbar.bind(this));
+		
+		document.addEventListener("focusin", this.onFocusSearchbar.bind(this));
+		document.addEventListener("focusout", this.onUnfocusSearchbar.bind(this));
 	}
 }
 
