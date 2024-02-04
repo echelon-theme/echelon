@@ -1,6 +1,7 @@
 @-moz-document url("about:preferences"), url-prefix("about:preferences#") {
 	:root {
 		color: #000 !important;
+		background-color: rgb(204, 217, 234) !important;
 		background-image: linear-gradient(to bottom, rgb(231,237,246) 3px, rgba(231,237,246,0) 156px),
 											linear-gradient(to left, rgba(255,255,255,0.2), rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.2)),
 											linear-gradient(32deg, rgba(255,255,255,0) 19.5%, rgba(255,255,255,0.1) 20%,
@@ -156,6 +157,8 @@
 	}
 	treecol {
 		appearance: auto !important;
+		padding: 0 8px !important;
+		min-height: unset !important;
 	}
 	listheader {
 		border-radius: 0 !important;
@@ -189,8 +192,35 @@
     border-radius: 0 !important;
 	}
 	button {
-		appearance: auto !important;
-		font-weight: revert !important;
+		appearance: none !important;
+		background: rgba(151,152,153,.05)
+								-moz-linear-gradient(rgba(251, 252, 253, 0.95), rgba(246, 247, 248, 0.47) 49%, 
+																		 rgba(231, 232, 233, 0.45) 51%, rgba(225, 226, 229, 0.3)) !important;
+		background-clip: padding-box !important;
+		border-radius: 4.5px !important;
+		border: 1px solid !important;
+		border-color: rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.19) rgba(0, 0, 0, 0.38) !important;
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset,
+								0 0 0 2px rgba(255, 255, 255, 0.1) inset !important;
+		font: message-box !important;
+		color: #000 !important;
+	}
+	button:hover {
+		background-color: hsla(190, 60%, 70%, 0.5) !important;
+		border-color: hsla(190, 50%, 65%, 0.8) hsla(190, 50%, 50%, 0.8) hsla(190, 50%, 40%, 0.8) !important;
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset,
+								0 0 0 1.5px rgba(255, 255, 255, 0.1) inset,
+								0 1px 0 rgba(0, 0, 0, 0.1),
+								0 0 3.5px hsl(190, 90%, 80%) !important;
+		transition: background-color .4s ease-in,
+										 border-color .3s ease-in,
+										 box-shadow .3s ease-in !important;
+	}
+	button:hover:active {
+		background-color: transparent !important;
+		border-color: rgba(0, 0, 0, 0.65) rgba(0, 0, 0, 0.55) rgba(0, 0, 0, 0.5) !important;
+		box-shadow: 0 0 6.5px rgba(0, 0, 0, 0.4) inset,
+								0 0 2px rgba(0, 0, 0, 0.4) inset !important;
 	}
 	.sidebar-footer-list {
 		display: none !important;
@@ -230,7 +260,7 @@
 	}
 	.web-appearance-choice-footer {
 		background-image: linear-gradient(rgba(251, 252, 253, 0.95), rgba(246, 247, 248, 0.47) 49%, 
-                      rgba(231, 232, 233, 0.45) 51%, rgba(225, 226, 229, 0.3)); !important;
+                      rgba(231, 232, 233, 0.45) 51%, rgba(225, 226, 229, 0.3)) !important;
 		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset,
                 0 0 0 2px rgba(255, 255, 255, 0.1) inset !important;
 		background-clip: padding-box !important;
@@ -261,6 +291,17 @@
 	.info-icon {
 		content: url("chrome://userchrome/content/images/information-16.png") !important;
 	}
+	.content-blocking-warning-image {
+		width: 16px !important;
+		height: 16px !important;
+		list-style-image: url("chrome://userchrome/content/images/warning-16.png") !important;
+	}
+	.arrowhead {
+		list-style-image: url("chrome://userchrome/content/images/dropdown.png") !important;
+	}
+	.arrowhead[aria-expanded="true"] .button-icon {
+		transform: scaleY(-1) !important;
+	}
 	#updateSettingCrossUserWarningDesc {
 		margin-block: 5px !important;
 	}
@@ -275,5 +316,40 @@
 	}
 	.searchBarShownImage {
 		list-style-image: url("chrome://userchrome/content/pages/preferences/images/search-bar.png") !important;
+	}
+	#trackingProtectionShield {
+		display: none !important;
+	}
+	#handlersView > richlistitem {
+		min-height: 22px !important;
+	}
+	#handlersView > richlistitem[selected] {
+		background-color: Highlight !important;
+		color: HighlightText !important;
+	}
+	#homeContentsGroup .checkbox-icon[src] {
+		display: none !important;
+	}
+	.toggle-button::before {
+		border-radius: 3.5px !important;
+		background: -moz-linear-gradient(rgba(251, 252, 253, 0.95), rgba(246, 247, 248, 0.47) 49%, 
+																		 rgba(231, 232, 233, 0.45) 51%, rgba(225, 226, 229, 0.3)) !important;
+		background-clip: padding-box !important;
+		border: 1px solid !important;
+		background-color: hsla(190, 60%, 70%, 0.5) !important;
+		border-color: hsla(190, 50%, 65%, 0.8) hsla(190, 50%, 50%, 0.8) hsla(190, 50%, 40%, 0.8) !important;
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset,
+								0 0 0 1.5px rgba(255, 255, 255, 0.1) inset,
+								0 1px 0 rgba(0, 0, 0, 0.1),
+								0 0 3.5px hsl(190, 90%, 80%) !important;
+		box-sizing: border-box !important;
+	}
+	@media (max-width: 830px) {
+        #categories {
+            width: unset !important;
+        }
+        .category-name {
+            display: none !important;
+        }
 	}
 }

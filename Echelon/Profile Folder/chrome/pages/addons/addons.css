@@ -1,0 +1,489 @@
+@-moz-document url("about:addons") {
+	:root {
+		--section-width: 100% !important;
+		--card-padding: 20px !important;
+		
+		color: #000 !important;
+		font: message-box !important;
+		background-color: rgb(204, 217, 234) !important;
+		background-image: linear-gradient(to bottom, rgb(231,237,246) 3px, rgba(231,237,246,0) 156px),
+											linear-gradient(to left, rgba(255,255,255,0.2), rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.2)),
+											linear-gradient(32deg, rgba(255,255,255,0) 19.5%, rgba(255,255,255,0.1) 20%,
+																 rgba(255,255,255,0.1) 21.5%, rgba(255,255,255,0.2) 22%,
+																 rgba(255,255,255,0.2) 25.5%, rgba(255,255,255,0.1) 26%,
+																 rgba(255,255,255,0.1) 27.5%, rgba(255,255,255,0) 28%,
+																 rgba(255,255,255,0) 49.5%, rgba(255,255,255,0.1) 50%,
+																 rgba(255,255,255,0.1) 52.5%, rgba(255,255,255,0.2) 53%,
+																 rgba(255,255,255,0.2) 54.5%, rgba(255,255,255,0.1) 55%,
+																 rgba(255,255,255,0.1) 57.5%, rgba(255,255,255,0) 58%,
+																 rgba(255,255,255,0) 87%, rgba(255,255,255,0.2) 90%),
+						          url("chrome://userchrome/content/pages/preferences/images/background-texture.png") !important;
+	}
+	h1 {
+		font-size: 150% !important;
+		font-weight: bold !important;
+		color: #3F3F3F !important;
+	}
+	#full {
+		display: flex !important;
+	}
+	#sidebar {
+		position: static !important;
+		overflow: visible !important;
+		z-index: 999 !important;
+	}
+	#content {
+		flex: 1 !important;
+		padding: 40px 28px !important;
+		padding-inline-start: 0 !important;
+		padding-block-start: 0 !important;
+		height: calc(100vh - 40px) !important;
+	}
+	#categories {
+		padding: 0 !important;
+		margin-inline-end: -1px !important;
+		margin-top: 100px !important;
+		z-index: 999 !important;
+		width: 246px !important;
+	}
+	.category {
+		appearance: none !important;
+		background-color: transparent !important;
+		color: #252F3B !important;
+		padding: 0 8px !important;
+		padding-top: 2px !important;
+		border-width: 1px !important;
+		border-style: solid !important;
+		border-color: transparent !important;
+		overflow: visible !important;
+		border-radius: 5px !important;
+		border-top-right-radius: 0 !important;
+		border-bottom-right-radius: 0 !important;
+		z-index: 999 !important;
+		padding-inline-start: 48px !important;
+		margin-inline-start: 22px !important;
+		margin-inline-end: 0 !important;
+		position: relative !important;
+		background-size: 32px !important;
+		background-position-x: 10px !important;
+		background-position-y: center !important;
+	}
+	.category:not([disabled]) {
+		height: 52px !important;
+		transition-property: height, opacity !important;
+		transition-duration: 1s, 0.8s !important;
+	}
+  #categories > .category[selected] {
+		background-color: rgba(255, 255, 255, 0.4) !important;
+		color: #252F3B !important;
+		border-color: #C3CEDF !important;
+		-moz-border-end-color: #E2E9F2 !important;
+	}
+	.category-icon {
+		width: 32px !important;
+		height: 32px !important;
+		list-style-image: none !important;
+	}
+	.category-name {
+		display: flex !important;
+		font-size: 150% !important;
+		padding-inline-start: 6px !important;
+	}
+	.sticky-container {
+		display: flex !important;
+		position: static !important;
+		width: 100% !important;
+		background-color: transparent !important;
+		padding-inline: 0 !important;
+		margin-inline: 0 !important;
+	}
+	.sticky-inner-container {
+		max-width: 100% !important;
+	}
+	.main-heading {
+		flex: 1 !important;
+		order: -1 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		background-color: transparent !important;
+		align-items: center !important;
+	}
+	.main-search {
+		padding: 0 !important;
+		background-color: transparent !important;
+	}
+	.main-content {
+		z-index: -1 !important;
+		padding-inline-start: 0 !important;
+		overflow: hidden !important;
+	}
+	#main {
+		height: calc(100% - 60px) !important;
+		overflow-x: hidden !important;
+		overflow-y: auto !important;
+		background-color: rgba(255, 255, 255, 0.35) !important;
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75)) !important;
+		border: 1px solid #C3CEDF;
+		border-radius: 5px;
+		padding: 30px !important;
+		margin: 0 !important;
+		box-sizing: border-box !important;
+	}
+  search-textbox {
+		width: 264px !important;
+		min-height: 25px !important;
+		color: black !important;
+		border: 1px solid !important;
+		border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.37) !important;
+		border-radius: 4px !important;
+		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset,
+			0 1px 0 rgba(255, 255, 255, 0.4) !important;
+		padding: 3px !important;
+		background-color: rgba(255, 255, 255, 0.8) !important;
+		margin: 18px 0 !important;
+	}
+  search-textbox:focus {
+		outline: none !important;
+	}
+	.textbox-search-icon {
+		width: 16px !important;
+		height: 16px !important;
+		list-style-image: none !important;
+    background-image: url("chrome://userchrome/content/images/search-glass.png") !important;
+		margin-inline-end: 0 !important;
+		order: 1001 !important;
+	}
+	.checkbox-check:not([native]) {
+		appearance: auto !important;
+		-moz-default-appearance: checkbox !important;
+	}
+	input[type="radio"],
+	.radio-check {
+		appearance: radio !important;
+	}
+	#label-box:not([native]) {
+		font-weight: revert !important;
+	}
+	.actionContainer {
+		padding-inline: 20px !important;
+	}
+	button {
+		appearance: auto !important;
+		font-weight: revert !important;
+	}
+	.sidebar-footer-list,
+	.search-label,
+	.header-name,
+	.addon-badge {
+		display: none !important;
+	}
+	.back-button {
+		display: flex !important;
+		width: 28px !important;
+		min-height: 26px !important;
+		padding: 0 !important;
+		margin-inline-end: 18px !important;
+		align-items: center !important;
+		justify-content: center !important;
+		position: absolute !important;
+		left: 28px !important;
+		z-index: 9999 !important;
+	}
+	.more-options-button {
+		width: 49px !important;
+		height: 26px !important;
+		margin-inline-start: 0 !important;
+		margin-inline-end: 18px !important;
+		display: flex !important;
+		justify-content: space-between !important;
+    padding-top: 3px !important;
+		padding-inline: 8px !important;
+		padding-inline-end: 10px !important;
+	}
+	.back-button,
+	.theme-enable-button,
+	.extension-enable-button,
+	.more-options-button,
+	button[action="open-amo"],
+	.disco-cta-button {
+		appearance: none !important;
+		background: rgba(151,152,153,.05)
+								-moz-linear-gradient(rgba(251, 252, 253, 0.95), rgba(246, 247, 248, 0.47) 49%, 
+																		 rgba(231, 232, 233, 0.45) 51%, rgba(225, 226, 229, 0.3)) !important;
+		background-clip: padding-box !important;
+		border-radius: 4.5px !important;
+		border: 1px solid !important;
+		border-color: rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.19) rgba(0, 0, 0, 0.38) !important;
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset,
+								0 0 0 2px rgba(255, 255, 255, 0.1) inset !important;
+		font: message-box !important;
+		color: #000 !important;
+	}
+	.back-button:hover,
+	.extension-enable-button:hover,
+	.theme-enable-button:hover,
+	.disco-cta-button:hover,
+	button[action="open-amo"]:hover,
+	.more-options-button:not([aria-expanded="true"]):not([disabled="true"]):not(:active):hover {
+		background-color: hsla(190, 60%, 70%, 0.5) !important;
+		border-color: hsla(190, 50%, 65%, 0.8) hsla(190, 50%, 50%, 0.8) hsla(190, 50%, 40%, 0.8) !important;
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset,
+								0 0 0 1.5px rgba(255, 255, 255, 0.1) inset,
+								0 1px 0 rgba(0, 0, 0, 0.1),
+								0 0 3.5px hsl(190, 90%, 80%) !important;
+		transition: background-color .4s ease-in,
+										 border-color .3s ease-in,
+										 box-shadow .3s ease-in !important;
+	}
+	.back-button:active:hover,
+	.extension-enable-button:active:hover,
+	.theme-enable-button:active:hover,
+	.disco-cta-button:active:hover,
+	button[action="open-amo"]:active:hover,
+	.more-options-button:not([disabled="true"]):active:hover,
+	.more-options-button[aria-expanded="true"] {
+		background-color: transparent !important;
+		border-color: rgba(0, 0, 0, 0.65) rgba(0, 0, 0, 0.55) rgba(0, 0, 0, 0.5) !important;
+		box-shadow: 0 0 6.5px rgba(0, 0, 0, 0.4) inset,
+								0 0 2px rgba(0, 0, 0, 0.4) inset !important;
+	}
+	.more-options-button::before {
+		content: url("chrome://userchrome/content/pages/addons/images/utilities.png") !important;
+	}
+	.more-options-button::after {
+		content: url("chrome://userchrome/content/images/dropdown.png") !important;
+	}
+	.back-button::before {
+		margin-top: 2px !important;
+		content: url("chrome://userchrome/content/images/icons/back_small.png") !important;
+	}
+	.category[name="discover"] {
+		background-image: url("chrome://userchrome/content/pages/addons/images/category-discover.png") !important;
+	}
+	.category[name="extension"] {
+		background-image: url("chrome://userchrome/content/pages/addons/images/category-extensions.png") !important;
+	}
+	.category[name="theme"] {
+		background-image: url("chrome://userchrome/content/pages/addons/images/category-themes.png") !important;
+	}
+	.category[name="plugin"] {
+		background-image: url("chrome://userchrome/content/pages/addons/images/category-plugins.png") !important;
+	}
+	#main[current-view="list"],
+	#main[current-view="detail"],
+	#main[current-view="discover"] {
+		padding: 0 !important;
+	}
+	#main[current-view="list"] h2,
+	#main[current-view="list"] .view-footer,
+	.toggle-button::before,
+	.card-heading-image {
+		display: none !important;
+	}
+	.addon.card {
+		display: flex !important;
+		flex-direction: column !important;
+		background-color: transparent !important;
+		border-radius: 0 !important;
+		box-shadow: none !important;
+		margin-bottom: 0 !important;
+		border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+		opacity: 1 !important;
+		padding-block: 12px !important;
+		cursor: default !important;
+	}
+	recommended-addon-list[type="extension"],
+	recommended-addon-list[type="theme"] {
+		display: none !important;
+	}
+	.update-postponed-bar + .addon-card-message {
+		position: relative !important;
+		margin-block: 12px !important;
+		margin-block-start: -13px !important;
+		margin-inline: calc(calc(var(--card-padding) * -1) - 4px) !important;
+		order: -1 !important;
+	}
+	button[data-l10n-id="details-notification-unsigned-and-disabled-link"] {
+		padding: 0 !important;
+		min-height: unset !important;
+		background-color: transparent !important;
+		border-radius: 0 !important;
+		font-weight: 600 !important;
+		text-decoration: underline !important;
+		color: Highlight !important;
+		cursor: pointer !important;
+	}
+	.addon-card-message[type="error"]::before {
+		position: absolute !important;
+		content: '' !important;
+		display: inline-block;
+		width: 16px;
+		height: 15px;
+		background-image: url("chrome://userchrome/content/pages/addons/images/alerticon-info-negative.png") !important;
+		z-index: 9999 !important;
+		top: 8px !important;
+		left: 60px !important;
+	}
+	.container .icon,
+	.addon-detail-description-wrapper {
+		display: none !important;
+	}
+	.container {
+		padding-inline-start: 75px !important;
+		color: #62666E !important;
+		font-weight: 600 !important;
+		border-radius: 0 !important;
+		background-color: transparent !important;
+		box-shadow: inset 0 1px 0 rgb(0 0 0 / 10%) !important;
+		background-image: url("chrome://userchrome/content/pages/addons/images/stripes-info-negative.png"), 
+											linear-gradient(color-mix(in srgb, var(--message-bar-background-color), transparent 60%), transparent) !important;
+		background-size: contain !important;
+		background-repeat: repeat-x !important;
+	}
+	.extension-enable-button {
+		display: flex !important;
+		justify-content: center !important;
+		min-width: 70px !important;
+		min-height: 21px !important;
+		background-color: transparent !important;
+		box-sizing: border-box !important;
+	}
+	#moz-toggle-button {
+		width: 100% !important;
+		border-radius: 0 !important;
+		border: 0 !important;
+		background: none !important;
+		appearance: none !important;
+	}
+	#moz-toggle-button::after {
+		content: '' !important;
+		font: message-box !important;
+	}
+	#moz-toggle-button[aria-pressed="true"]::after {
+		content: 'Enable' !important;
+	}
+	#moz-toggle-button[aria-pressed="false"]::after {
+		width: 100% !important;
+		content: 'Disable' !important;
+	}
+	.addon-name-container .more-options-button {
+		width: unset !important;
+		min-width: 70px !important;
+		margin-inline-end: 0 !important;
+		height: 21px !important;
+		padding-block-start: 1px !important;
+		align-items: center !important;
+		justify-content: center !important;
+		padding-inline-end: 8px !important;
+		margin-inline-start: 10px !important;
+	}
+	.addon-name-container .more-options-button::before {
+		content: 'Settings' !important;
+	}
+	.addon-name-container .more-options-button::after {
+		display: none !important;
+	}
+	.addon-description {
+		font-size: revert !important;
+		line-height: unset !important;
+	}
+	.theme-enable-button {
+		min-width: 70px !important;
+		max-height: 21px !important;
+	}
+	.card-heading-icon {
+		margin-inline-end: 20px !important;
+	}
+	.addon-name,
+	.disco-addon-name {
+		font-size: 150% !important;
+		font-weight: bold !important;
+		color: #3F3F3F !important;
+	}
+	.tab-group,
+	.addon-detail-sitepermissions, 
+	.addon-detail-row {
+		margin-inline: 0 !important;
+	}
+	addon-card[expanded] .addon.card {
+		border-bottom: 0 !important;
+	}
+	addon-card[expanded] .addon-description {
+		margin-block: 12px !important;
+	}
+	.addon-detail-row:first-of-type {
+		border-top: 0 !important;
+	}
+	.tab-group {
+		border: 0 !important;
+		margin-block-end: -1px !important;
+		margin-inline: 5px !important;
+	}
+	.tab-group button {
+		font-size: revert !important;
+		font-weight: 600 !important;
+		border-top-left-radius: 5px !important;
+		border-top-right-radius: 5px !important;
+		color: #252F3B !important;
+		border: 1px solid transparent !important;
+		background-color: transparent !important;
+	}
+	.tab-group button[aria-selected="true"] {
+		background-color: rgba(255, 255, 255, 0.4) !important;
+		border-color: #C3CEDF !important;
+		border-bottom-color: #E2E9F2 !important;
+	}
+	addon-card[expanded] section,
+	.addon-permissions-required {
+		background-color: rgba(255, 255, 255, 0.35) !important;
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75)) !important;
+		border: 1px solid #C3CEDF !important;
+		border-radius: 5px !important;
+		padding: 15px !important;
+	}
+	.addon-detail-row-updates {
+		border-top: 0 !important;
+	}
+	.addon-description {
+		margin-top: 10px !important;
+	}
+	addon-list[type="theme"] .addon.card {
+		flex-direction: row !important;
+	}
+	addon-list[type="theme"] .addon-card-collapsed {
+		flex: 1 !important;
+	}
+	addon-list[type="theme"] .addon.card::before {
+		margin-inline-end: 20px !important;
+		content: url("chrome://userchrome/content/pages/addons/images/category-themes.png") !important;
+	}
+	img[src="chrome://global/skin/icons/plugin.svg"] {
+		content: url("chrome://userchrome/content/pages/addons/images/category-plugins.png") !important;
+	}
+	#main[current-view="discover"] header,
+	#main[current-view="discover"] .view-footer-item:not(.amo-link-container) {
+		display: none !important;
+	}
+	.disco-cta-button {
+		min-width: 87px !important;
+		min-height: 21px !important;
+		padding: 0 8px !important;
+	}
+	.disco-addon-author {
+		font-size: revert !important;
+		margin-block: 4px !important;
+		margin-block-end: 10px !important;
+	}
+	#main[current-view="discover"] .addon-description {
+		margin-top: 0 !important;
+	}
+    @media (max-width: 830px) {
+        #categories {
+            width: unset !important;
+        }
+        .category-name {
+            display: none !important;
+        }
+	}
+}

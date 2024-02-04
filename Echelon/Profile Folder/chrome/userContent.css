@@ -1,3 +1,7 @@
+@import url("pages/common/treechildren.css");
+
 @import url("pages/preferences/preferences.css");
+@import url("pages/addons/addons.css");
+
 @import url("Echelon.devTools.css");
 @import url("Echelon.netError.css");
