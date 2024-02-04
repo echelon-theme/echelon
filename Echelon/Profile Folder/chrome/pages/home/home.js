@@ -1,4 +1,4 @@
-Services.scriptloader.loadSubScript("chrome://userchrome/content/JS/echelon_utils.uc.js");
+const { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 
 // FOR PRE-FIREFOX 23 STYLE
 
@@ -14,8 +14,8 @@ if (echelonOldLogo) {
 
 // BROWSER NAME AND BRANCH (FOR ALT BRANDING)
 
-root.setAttribute("browser-name", getBrowserName());
-root.setAttribute("update-channel", getUpdateChannel());
+root.setAttribute("browser-name", BrandUtils.getBrowserName());
+root.setAttribute("update-channel", BrandUtils.getUpdateChannel());
 
 // ECHELON STYLE
 
@@ -50,14 +50,14 @@ snippetRandomizer();
 
 // TITLE TEXT
 
-let product = getFullProductName();
+let product = BrandUtils.getFullProductName();
 document.title = `${product} Start Page`;
 
 // HIDE IF USER WANTS BLANK PAGE FOR NEW TAB
 
 if (location.href.startsWith("about:newtab"))
 {
-	let blank = tryGetBoolPref("browser.newtabpage.enabled", true);
+	let blank = PrefUtils.tryGetBoolPref("browser.newtabpage.enabled", true);
 	if (!blank)
 	{
 		document.documentElement.hidden = true;

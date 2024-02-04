@@ -153,7 +153,7 @@ function getPropertyList(templateItem)
 	
 	if (templateItem.themeSpecificProperties)
 	{
-		let version = tryGetIntPref("Echelon.Appearance.Style", 0);
+		let version = PrefUtils.tryGetIntPref("Echelon.Appearance.Style", 0);
 		
 		if (templateItem.themeSpecificProperties[version])
 		{

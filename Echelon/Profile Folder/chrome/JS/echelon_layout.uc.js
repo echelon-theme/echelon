@@ -36,7 +36,7 @@ class LayoutManager
 			{
 				try
 				{
-					trySetBoolPref("Echelon.Appearance.TabsOnTop", true);
+					PrefUtils.trySetBoolPref("Echelon.Appearance.TabsOnTop", true);
 				}
 				catch (e) {}
 			}
@@ -47,7 +47,7 @@ class LayoutManager
 	
 	setTabsOnTop(state)
 	{
-		trySetBoolPref("Echelon.Appearance.TabsOnTop", state);
+		PrefUtils.trySetBoolPref("Echelon.Appearance.TabsOnTop", state);
 		this._applyTabsOnTopState(state);
 	}
 	
@@ -66,7 +66,7 @@ class LayoutManager
 	_applyTabsOnTopState(state)
 	{
 		/* Tabs on bottom is not supported on Australis. */
-		let style = tryGetIntPref("Echelon.Appearance.Style");
+		let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
 		if (style < 4 || state)
 		{
 			let tabsContainer = document.querySelector("#TabsToolbar");
@@ -186,7 +186,7 @@ function addEchelonTabsOnTopMenuItem() {
         console.log(echelonTabsOnTopItem);
         prefsItem.insertBefore(echelonTabsOnTopItem, document.querySelector("#menu_echelonOptions"));
 		
-		let isTabsOnTop = tryGetBoolPref("Echelon.Appearance.TabsOnTop");
+		let isTabsOnTop = PrefUtils.tryGetBoolPref("Echelon.Appearance.TabsOnTop");
 		let contextMenuItem = document.querySelector("#menu_echelonTabsOnTop");
 		
 		if (contextMenuItem)

@@ -1,11 +1,12 @@
 // ==UserScript==
-// @name			Echelon :: Utils
-// @description 	Common utilities for Echelon scripts.
-// @author			ephemeralViolette
-// @include			main
-// @include         chrome://browser/content/browser.xhtml
-// @include			chrome://browser/content/aboutDialog.xhtml
-// @loadOrder       1
+// @name			 Echelon :: Utils
+// @description 	 Common utilities for Echelon scripts.
+// @author			 ephemeralViolette
+// @include			 main
+// @include          chrome://browser/content/browser.xhtml
+// @include			 chrome://browser/content/aboutDialog.xhtml
+// @loadOrder        1
+// @backgroundmodule
 // ==/UserScript==
 
 function renderElement(nodeName, attrMap = {}, childrenArr = [])
@@ -24,10 +25,10 @@ function renderElement(nodeName, attrMap = {}, childrenArr = [])
 	switch (namespace)
 	{
 		case "html":
-			element = document.createElement(name);
+			element = this.document.createElement(name);
 			break;
 		case "xul":
-			element = document.createXULElement(name);
+			element = this.document.createXULElement(name);
 			break;
 		default:
 			throw new Error(`Invalid element namespace for ${namespace}:${name}`);
@@ -46,7 +47,7 @@ function renderElement(nodeName, attrMap = {}, childrenArr = [])
 	return element;
 }
 
-async function waitForElement(query, parent = document, timeout = -1)
+async function waitForElement(query, parent = this.document, timeout = -1)
 {
 	let startTime = Date.now();
 	
@@ -62,152 +63,160 @@ async function waitForElement(query, parent = document, timeout = -1)
 	return parent.querySelector(query);
 }
 
-function internalTryGetPref(name, fallback, func)
+class PrefUtils
 {
-	let result = fallback;
-	try
+	static #internalTryGetPref(name, fallback, func)
 	{
-		result = func(name);
-	}
-	catch (e) {}
-	return result;
-}
-
-function tryGetBoolPref(name, fallback = false)
-{
-	return internalTryGetPref(name, fallback, Services.prefs.getBoolPref);
-}
-
-function tryGetIntPref(name, fallback = 0)
-{
-	return internalTryGetPref(name, fallback, Services.prefs.getIntPref);
-}
-
-function tryGetStringPref(name, fallback = "")
-{
-	return internalTryGetPref(name, fallback, Services.prefs.getStringPref);
-}
-
-function internalTrySetPref(name, value, func)
-{
-	try
-	{
-		func(name, value);
-	}
-	catch (e) {}
-}
-
-function trySetBoolPref(name, value)
-{
-	internalTrySetPref(name, value, Services.prefs.setBoolPref);
-}
-
-function trySetIntPref(name, value)
-{
-	internalTrySetPref(name, value, Services.prefs.setIntPref);
-}
-
-function trySetStringPref(name, value)
-{
-	internalTrySetPref(name, value, Services.prefs.setStringPref);
-}
-
-function getBrowserName()
-{
-	let spoof = tryGetStringPref("Echelon.Option.BrowserSpoof");
-	if (spoof == "")
-	{
-		return Services.appinfo.name;
-	}
-	return spoof;
-}
-
-function getUpdateChannel()
-{
-	let spoof = tryGetStringPref("Echelon.Option.ChannelSpoof");
-	if (spoof == "")
-	{
-		return Services.appinfo.defaultUpdateChannel;
-	}
-	return spoof;
-}
-
-function getShortProductName()
-{
-	let custom = tryGetStringPref("Echelon.Option.BrandName");
-	if (custom != "")
-	{
-		return custom;
-	}
-
-	switch (getUpdateChannel())
-	{
-		case "nightly":
-			return "Nightly";
-		case "aurora":
-			return "Aurora";
-		default:
-			return getBrowserName();
-	}
-}
-
-function getDefaultProductName()
-{
-	switch (getUpdateChannel())
-	{
-		case "nightly":
-			return "Nightly";
-		case "aurora":
-			return "Aurora";
-		default:
-			if (getBrowserName() == "Firefox")
-			{
-				return "Mozilla Firefox";
-			}
-			return getBrowserName();
-	}
-}
-
-function getFullProductName()
-{
-	let custom = tryGetStringPref("Echelon.Option.BrandName");
-	if (custom == "")
-	{
-		return getDefaultProductName();
-	}
-	return custom;
-}
-
-function getDefaultTitles()
-{
-	let product = getFullProductName();
-	return {
-		"default": product,
-		"private": `${product} (Private Browsing)`,
-		"contentDefault": `CONTENTTITLE - ${product}`,
-		"contentPrivate": `CONTENTTITLE - ${product} (Private Browsing)`
-	};
-}
-
-function getUserTitles()
-{
-	let result = getDefaultTitles();
-	
-	const prefmap = {
-		"default": "Echelon.WindowTitle.Default",
-		"private": "Echelon.WindowTitle.Private",
-		"contentDefault": "Echelon.WindowTitle.ContentDefault",
-		"contentPrivate": "Echelon.WindowTitle.ContentPrivate"
-	};
-
-	for (const prop in prefmap)
-	{
-		let string = tryGetStringPref(prefmap[prop]);
-		if (string != "")
+		let result = fallback;
+		try
 		{
-			result[prop] = string;
+			result = func(name);
+		}
+		catch (e) {}
+		return result;
+	}
+
+	static tryGetBoolPref(name, fallback = false)
+	{
+		return this.#internalTryGetPref(name, fallback, Services.prefs.getBoolPref);
+	}
+
+	static tryGetIntPref(name, fallback = 0)
+	{
+		return this.#internalTryGetPref(name, fallback, Services.prefs.getIntPref);
+	}
+
+	static tryGetStringPref(name, fallback = "")
+	{
+		return this.#internalTryGetPref(name, fallback, Services.prefs.getStringPref);
+	}
+
+	static #internalTrySetPref(name, value, func)
+	{
+		try
+		{
+			func(name, value);
+		}
+		catch (e) {}
+	}
+
+	static trySetBoolPref(name, value)
+	{
+		this.#internalTrySetPref(name, value, Services.prefs.setBoolPref);
+	}
+
+	static trySetIntPref(name, value)
+	{
+		this.#internalTrySetPref(name, value, Services.prefs.setIntPref);
+	}
+
+	static trySetStringPref(name, value)
+	{
+		this.#internalTrySetPref(name, value, Services.prefs.setStringPref);
+	}
+}
+
+class BrandUtils
+{
+	static getBrowserName()
+	{
+		let spoof = PrefUtils.tryGetStringPref("Echelon.Option.BrowserSpoof");
+		if (spoof == "")
+		{
+			return Services.appinfo.name;
+		}
+		return spoof;
+	}
+
+	static getUpdateChannel()
+	{
+		let spoof = PrefUtils.tryGetStringPref("Echelon.Option.ChannelSpoof");
+		if (spoof == "")
+		{
+			return Services.appinfo.defaultUpdateChannel;
+		}
+		return spoof;
+	}
+
+	static getShortProductName()
+	{
+		let custom = PrefUtils.tryGetStringPref("Echelon.Option.BrandName");
+		if (custom != "")
+		{
+			return custom;
+		}
+
+		switch (this.getUpdateChannel())
+		{
+			case "nightly":
+				return "Nightly";
+			case "aurora":
+				return "Aurora";
+			default:
+				return this.getBrowserName();
 		}
 	}
 
-	return result;
+	static getDefaultProductName()
+	{
+		switch (this.getUpdateChannel())
+		{
+			case "nightly":
+				return "Nightly";
+			case "aurora":
+				return "Aurora";
+			default:
+				if (this.getBrowserName() == "Firefox")
+				{
+					return "Mozilla Firefox";
+				}
+				return this.getBrowserName();
+		}
+	}
+
+	static getFullProductName()
+	{
+		let custom = PrefUtils.tryGetStringPref("Echelon.Option.BrandName");
+		if (custom == "")
+		{
+			return this.getDefaultProductName();
+		}
+		return custom;
+	}
+
+	static getDefaultTitles()
+	{
+		let product = this.getFullProductName();
+		return {
+			"default": product,
+			"private": `${product} (Private Browsing)`,
+			"contentDefault": `CONTENTTITLE - ${product}`,
+			"contentPrivate": `CONTENTTITLE - ${product} (Private Browsing)`
+		};
+	}
+
+	static getUserTitles()
+	{
+		let result = this.getDefaultTitles();
+		
+		const prefmap = {
+			"default": "Echelon.WindowTitle.Default",
+			"private": "Echelon.WindowTitle.Private",
+			"contentDefault": "Echelon.WindowTitle.ContentDefault",
+			"contentPrivate": "Echelon.WindowTitle.ContentPrivate"
+		};
+
+		for (const prop in prefmap)
+		{
+			let string = PrefUtils.tryGetStringPref(prefmap[prop]);
+			if (string != "")
+			{
+				result[prop] = string;
+			}
+		}
+
+		return result;
+	}
 }
+
+let EXPORTED_SYMBOLS = [ "PrefUtils", "BrandUtils", "waitForElement", "renderElement" ];

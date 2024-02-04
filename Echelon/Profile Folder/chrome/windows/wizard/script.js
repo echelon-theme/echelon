@@ -1,5 +1,5 @@
 let currentPage = 0; // Default to the first page
-Services.scriptloader.loadSubScript("chrome://userchrome/content/JS/echelon_utils.uc.js");
+const { PrefUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 Services.scriptloader.loadSubScript("chrome://userchrome/content/JS/echelon_layout_template.uc.js");
 let { CustomizableUI } = ChromeUtils.importESModule("resource:///modules/CustomizableUI.sys.mjs");
 
@@ -82,9 +82,9 @@ function setOSPref(osName)
 			break;
 	}
 
-	trySetBoolPref("Echelon.Appearance.XP", isWinXP);
-	trySetBoolPref("Echelon.Appearance.Australis.Windows10", isWin10);
-	trySetBoolPref(echelonAppearanceBlue, isBlue);
+	PrefUtils.trySetBoolPref("Echelon.Appearance.XP", isWinXP);
+	PrefUtils.trySetBoolPref("Echelon.Appearance.Australis.Windows10", isWin10);
+	PrefUtils.trySetBoolPref(echelonAppearanceBlue, isBlue);
 }
 
 // Dump the current user layout in case we want to revert to it.
@@ -112,12 +112,12 @@ let previousCustomizableUiLayout = dumpExistingLayout();
 
 // We backup the uiCustomization state whenever we're previewing the layout changes,
 // because otherwise it saves over the user's state with the preview.
-let previousCustomizableUiConfig = tryGetStringPref("browser.uiCustomization.state");
+let previousCustomizableUiConfig = PrefUtils.tryGetStringPref("browser.uiCustomization.state");
 
 // Apply the preview layout over this, which will not override the user's preferences, but
 // will update the UI visually.
 EchelonLayoutTemplateManager.applyDefaultLayout(window.opener);
-trySetStringPref("browser.uiCustomization.state");
+PrefUtils.trySetStringPref("browser.uiCustomization.state");
 
 // Handle toggling of the reset layout checkbox on the last page.
 let resetLayoutCheckbox = document.querySelector("#reset-layout");
@@ -127,12 +127,12 @@ if (resetLayoutCheckbox)
 		if (resetLayoutCheckbox.checked)
 		{
 			EchelonLayoutTemplateManager.applyDefaultLayout(window.opener);
-			trySetStringPref("browser.uiCustomization.state");
+			PrefUtils.trySetStringPref("browser.uiCustomization.state");
 		}
 		else if (previousCustomizableUiLayout)
 		{
 			EchelonLayoutTemplateManager.applyLayout(window.opener, previousCustomizableUiLayout);
-			trySetStringPref("browser.uiCustomization.state");
+			PrefUtils.trySetStringPref("browser.uiCustomization.state");
 		}
 	});
 }
@@ -162,7 +162,7 @@ function onClose() {
 	// If the user closes the window prematurely, then reset the CustomizableUI layout.
 	// This is done to not startle the user and make them think their original layout is lost.
 	EchelonLayoutTemplateManager.applyLayout(window.opener, previousCustomizableUiLayout);
-	trySetStringPref("browser.uiCustomization.state");
+	PrefUtils.trySetStringPref("browser.uiCustomization.state");
 
 	// Notify the user that this action can be rectified in the future:
 	let root = window.opener;

@@ -8,6 +8,6 @@
 function updateAboutItem()
 {
     waitForElement("#aboutName").then(e => {
-        e.label = `About ${getShortProductName()}`;
+        e.label = `About ${BrandUtils.getShortProductName()}`;
     })
 }

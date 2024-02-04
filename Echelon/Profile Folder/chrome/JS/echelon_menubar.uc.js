@@ -5,7 +5,7 @@
 // @include			main
 // ==/UserScript==
 
-let theme = tryGetIntPref("Echelon.Appearance.Style");
+let theme;
 
 function menuBarMutation(list, observer)
 {
@@ -22,6 +22,7 @@ function menuBarMutation(list, observer)
 
 function observeMenuBar()
 {
+    theme = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
     let menubar = document.getElementById("toolbar-menubar");
     if (menubar && theme < 4)
     {

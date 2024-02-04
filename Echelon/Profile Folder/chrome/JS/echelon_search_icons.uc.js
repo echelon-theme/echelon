@@ -5,11 +5,6 @@
 // @include			main
 // ==/UserScript==
 
-// Make sure this include is available where needed
-// (checking without "in" causes an error btw)
-if (!"tryGetIntPref" in globalThis || !"tryGetBoolPref" in globalThis || !"waitForElement" in globalThis)
-	Services.scriptloader.loadSubScript("chrome://userchrome/content/JS/echelon_utils.uc.js");
-
 const { SearchService } = ChromeUtils.importESModule("resource://gre/modules/SearchService.sys.mjs");
 const { SearchUtils } = ChromeUtils.importESModule("resource://gre/modules/SearchUtils.sys.mjs");
 
@@ -33,7 +28,7 @@ class EchelonSearchManager
 
 	static async updateSearchBox()
 	{
-		let style = tryGetIntPref("Echelon.Appearance.Style");
+		let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
 		if (style < 5)
 		{
 			let engine = await Services.search.getDefault();
@@ -48,8 +43,8 @@ class EchelonSearchManager
 
 	static getReplacementIcon(url)
 	{
-		let style = tryGetIntPref("Echelon.Appearance.Style");
-		let newLogo = tryGetBoolPref("Echelon.Appearance.NewLogo");
+		let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
+		let newLogo = PrefUtils.tryGetBoolPref("Echelon.Appearance.NewLogo");
 		if (style < 5)
 		{
 			let replacements = (style == 4 || (style == 3 && newLogo))

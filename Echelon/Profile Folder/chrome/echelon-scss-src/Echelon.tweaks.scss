@@ -207,7 +207,7 @@
 
 /** ECHELON STYLE 3 (Firefox 14.0 - Firefox 27.0) **/
 
-#main-window[echelon-style-3] toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button) {
+#main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button) {
   background-image: none !important;
   background-color: transparent !important;
   border: 1px solid transparent !important;
@@ -216,8 +216,8 @@
   transition: background-image 150ms var(--toolbarbutton-transition-timingfunction), border-color 150ms var(--toolbarbutton-transition-timingfunction), box-shadow 150ms var(--toolbarbutton-transition-timingfunction) !important;
 }
 
-#main-window[echelon-style-3] toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover,
-#main-window[echelon-style-3][echelon-style-4] toolbar #bookmarks-button:hover + #bookmarks-menu-button {
+#main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover,
+#main-window[echelon-style-4] toolbar:is(#nav-bar, #TabsToolbar) #bookmarks-button:hover + #bookmarks-menu-button {
   background-image: linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1)) !important;
   border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25) !important;
   box-shadow: 0 1px hsla(0,0%,100%,.3) inset,
@@ -225,8 +225,8 @@
               0 0 2px hsla(210,54%,20%,.1) !important;
 }
 
-#main-window[echelon-style-3] toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover:active,
-#main-window[echelon-style-3] toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled])[open] {
+#main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover:active,
+#main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled])[open] {
   background-image: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1)) !important;
   background-color: hsla(210,54%,20%,.15) !important;
   border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
@@ -411,7 +411,7 @@
   background-position-y: -28px !important;
 }
 
-#main-window:not([echelon-style-4])[echelon-style-3] #bookmarks-menu-button {
+#main-window:not([echelon-style-4])[echelon-style-3] #nav-bar #bookmarks-menu-button {
   width: 43px !important;
   min-width: 43px !important;
   position: relative !important;
@@ -741,7 +741,7 @@
   background-image: linear-gradient(rgba(253,253,253,0.45), rgba(255,255,255,0)) !important;
 }
 
-#main-window[echelon-style-3][echelon-style-4] toolbar #bookmarks-button {
+#main-window[echelon-style-4] toolbar #bookmarks-button {
   width: 31px !important;
   border-right: 0 !important;
   margin-inline-end: 0 !important;
@@ -759,7 +759,7 @@
   border-bottom-right-radius: 0 !important;
 }
 
-#main-window[echelon-style-3][echelon-style-4] toolbar #bookmarks-button + #bookmarks-menu-button {
+#main-window[echelon-style-4] toolbar #bookmarks-button + #bookmarks-menu-button {
   width: 30px !important;
   margin-inline-start: 0 !important;
   position: relative !important;
@@ -767,7 +767,7 @@
   border-bottom-left-radius: 0 !important;
 }
 
-#main-window[echelon-style-3][echelon-style-4] toolbar #bookmarks-button + #bookmarks-menu-button::before {
+#main-window[echelon-style-4] toolbar #bookmarks-button + #bookmarks-menu-button::before {
   content: '';
   display: inline-block;
   width: 1px;
@@ -779,17 +779,17 @@
   transition: all 250ms ease-in-out;
 }
 
-#main-window[echelon-style-3][echelon-style-4] toolbar #bookmarks-button:hover + #bookmarks-menu-button::before,
-#main-window[echelon-style-3][echelon-style-4] toolbar #bookmarks-menu-button:hover::before {
+#main-window[echelon-style-4] toolbar #bookmarks-button:hover + #bookmarks-menu-button::before,
+#main-window[echelon-style-4] toolbar #bookmarks-menu-button:hover::before {
   height: 100%;
   opacity: 0;
 }
 
-#main-window[echelon-style-3][echelon-style-4] .urlbarView-title {
+#main-window[echelon-style-4] .urlbarView-title {
   font-size: 105% !important;
 }
 
-#main-window[echelon-style-3][echelon-style-4] .urlbarView-row-inner strong {
+#main-window[echelon-style-4] .urlbarView-row-inner strong {
   text-decoration: none !important;
 }
 
@@ -829,14 +829,14 @@
     background-color: var(--toolbar-custom-color) !important;
   }
   
-  &[echelon-style-3][echelon-style-4] toolbar #bookmarks-button + #bookmarks-menu-button::before {
+  &[echelon-style-4] toolbar #bookmarks-button + #bookmarks-menu-button::before {
     background-color: #BDCAD9;
     outline: 1px solid rgb(255 255 255 / 25%);
   }
   
   &[echelon-appearance-australis-fog] {
 
-    &[tabsintitlebar][echelon-style-3][echelon-style-4] #TabsToolbar::after {
+    &[tabsintitlebar][echelon-style-4] #TabsToolbar::after {
       content: '';
       display: flex;
       box-shadow: 0 0 30px 30px rgba(174,189,204,0.85);
@@ -857,17 +857,17 @@
 /* Windows 8+ Style */
 @media not (-moz-windows-classic) {
   #main-window:not([echelon-appearance-blue], [echelon-appearance-xp]) {
-    &[echelon-style-1][echelon-style-3][echelon-style-4] #urlbar-background,
-    &[echelon-style-1][echelon-style-3][echelon-style-4] #searchbar,
-    &[echelon-style-1][echelon-style-3][echelon-style-4] #stop-reload-button {
+    &[echelon-style-1][echelon-style-4] #urlbar-background,
+    &[echelon-style-1][echelon-style-4] #searchbar,
+    &[echelon-style-1][echelon-style-4] #stop-reload-button {
       border-radius: 0 !important;
     }
     &[echelon-style-4] toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button) {
       border-radius: 0 !important;
     }
     &[echelon-style-4] toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover,
-    &[echelon-style-3][echelon-style-4] toolbar #bookmarks-button:hover + #bookmarks-menu-button,
-    &[echelon-style-3][echelon-style-4] #bookmarks-button:has(+ #bookmarks-menu-button:hover) {
+    &[echelon-style-4] toolbar #bookmarks-button:hover + #bookmarks-menu-button,
+    &[echelon-style-4] #bookmarks-button:has(+ #bookmarks-menu-button:hover) {
       background-color: hsla(210,4%,10%,.08) !important;
       background-image: none !important;
       box-shadow: 0 0 0 1px hsla(0,0%,100%,.2) !important;
@@ -1071,7 +1071,7 @@
   background-image: url('images/ff56/bookmark.svg') !important;
 }
 
-#main-window[echelon-style-3][echelon-style-4][echelon-style-5] .urlbarView-title {
+#main-window[echelon-style-4][echelon-style-5] .urlbarView-title {
   font-size: 115% !important;
   margin-bottom: 0 !important;
 }
@@ -1107,7 +1107,7 @@
   flex-wrap: unset !important;
 }
 
-#main-window[echelon-style-3][echelon-style-4][echelon-style-5] .urlbarView-row-inner strong {
+#main-window[echelon-style-4][echelon-style-5] .urlbarView-row-inner strong {
   font-weight: 600 !important;
 }
 

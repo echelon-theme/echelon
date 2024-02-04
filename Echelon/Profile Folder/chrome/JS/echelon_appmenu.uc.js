@@ -201,14 +201,14 @@ class FirefoxButton
 	{
 		try
 		{
-			let useCustomStyle = tryGetBoolPref("Echelon.FirefoxButton.CustomStyle");
+			let useCustomStyle = PrefUtils.tryGetBoolPref("Echelon.FirefoxButton.CustomStyle");
 
 			//
 			// 	Custom Firefox Button name & background color
 			//
 			if (useCustomStyle)
 			{
-				let fxButtonBgColor = tryGetStringPref("Echelon.FirefoxButton.CustomBGColor");
+				let fxButtonBgColor = PrefUtils.tryGetStringPref("Echelon.FirefoxButton.CustomBGColor");
 					
 				let root = document.documentElement;
 				root.setAttribute("custom-fx-button-bg", "true");
@@ -227,14 +227,14 @@ class FirefoxButton
 			// Button creation and insertion
 			//
 			let titlebarEl = document.getElementById("titlebar");
-			let browserName = getShortProductName();
+			let browserName = BrandUtils.getShortProductName();
 
 			if (useCustomStyle)
 			{
-				browserName = tryGetStringPref("Echelon.FirefoxButton.CustomName");
+				browserName = PrefUtils.tryGetStringPref("Echelon.FirefoxButton.CustomName");
 				if (browserName === "")
 				{
-					browserName = getShortProductName();
+					browserName = BrandUtils.getShortProductName();
 				}
 			}
 			
@@ -750,7 +750,7 @@ class FirefoxButton
 						elm("xul:menuseparator"),
 						elm("xul:menuitem", {
 							"id": "appmenu_about",
-							"label": `About ${getShortProductName()}`,
+							"label": `About ${BrandUtils.getShortProductName()}`,
 							"oncommand": "openAboutDialog()"
 						})
 					]

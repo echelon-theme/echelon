@@ -7,10 +7,10 @@
 
 function openEchelonWizardWindow(verifyFirstRun) {
     if (verifyFirstRun) {
-        let isEchelonFirstRunFinished = tryGetBoolPref("Echelon.parameter.isFirstRunFinished");
+        let isEchelonFirstRunFinished = PrefUtils.tryGetBoolPref("Echelon.parameter.isFirstRunFinished");
         
         if (!isEchelonFirstRunFinished) {
-            trySetBoolPref('Echelon.parameter.isFirstRunFinished', false)
+            PrefUtils.trySetBoolPref('Echelon.parameter.isFirstRunFinished', false)
 
             launchEchelonWizard();
         }

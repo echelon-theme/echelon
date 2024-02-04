@@ -221,6 +221,10 @@ toolbarbutton.bookmark-item {
   list-style-image: none !important;
   background-position-x: -16px !important;
 }
+:root[echelon-appearance-xp] .bookmark-item[container] .toolbarbutton-icon,
+:root[echelon-appearance-xp] .menu-iconic[container] > .menu-iconic-left > .menu-iconic-icon {
+  background-image: url("images/xp/folder-item.png");
+}
 
 .bookmark-item[container][query] .toolbarbutton-icon {
   background-image: url("images/query.png") !important;

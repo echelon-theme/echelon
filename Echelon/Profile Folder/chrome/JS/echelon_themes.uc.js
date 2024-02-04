@@ -8,10 +8,7 @@
 // @include         about:config
 // ==/UserScript==
 
-// Make sure this include is available where needed
-// (checking without "in" causes an error btw)
-if (!"tryGetStringPref" in globalThis || !"tryGetIntPref" in globalThis)
-	Services.scriptloader.loadSubScript("chrome://userchrome/content/JS/echelon_utils.uc.js");
+var { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 
 class EchelonThemeManager
 {
@@ -34,7 +31,7 @@ class EchelonThemeManager
 	
 	static refreshTheme()
 	{
-		let style = tryGetIntPref("Echelon.Appearance.Style");
+		let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
 		
 		for (let attr of this.root.getAttributeNames())
 		{
@@ -52,13 +49,13 @@ class EchelonThemeManager
 		/* Enable Tabs on Top for Australis */
 		if (style >= 4)
 		{
-			trySetBoolPref("Echelon.Appearance.TabsOnTop", true);
+			PrefUtils.trySetBoolPref("Echelon.Appearance.TabsOnTop", true);
 		}
 	}
 	
 	static refreshPrefBoolAttribute(prefName, attrName)
 	{
-		let value = tryGetBoolPref(prefName);
+		let value = PrefUtils.tryGetBoolPref(prefName);
 		
 		if (value)
 		{
@@ -81,5 +78,5 @@ class EchelonThemeManager
 
 let root = document.documentElement;
 EchelonThemeManager.refreshTheme(root);
-root.setAttribute("update-channel", getUpdateChannel());
-root.setAttribute("browser-name", getBrowserName());
+root.setAttribute("update-channel", BrandUtils.getUpdateChannel());
+root.setAttribute("browser-name", BrandUtils.getBrowserName());

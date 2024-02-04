@@ -8,5 +8,5 @@
 // ==/UserScript==
 
 const aboutDialog = document.getElementById("aboutDialog");
-const aboutDialogTitle = `About ${getFullProductName()}`;
+const aboutDialogTitle = `About ${BrandUtils.getFullProductName()}`;
 aboutDialog.setAttribute("title", aboutDialogTitle);

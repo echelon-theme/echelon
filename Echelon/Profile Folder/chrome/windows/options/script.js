@@ -1,4 +1,4 @@
-Services.scriptloader.loadSubScript("chrome://userchrome/content/JS/echelon_utils.uc.js");
+const { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 const { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");
 
 function getWinVer()
@@ -100,7 +100,7 @@ function osStyleGet()
         const defs = OS_STYLE_MAP[osName];
         for (const prop in defs)
         {
-            if (tryGetBoolPref(prop) == defs[prop])
+            if (PrefUtils.tryGetBoolPref(prop) == defs[prop])
             {
                 style = osName;
             }
@@ -121,7 +121,7 @@ function osStyleSet(osName)
 {
     for (const prop in OS_STYLE_MAP[osName])
     {
-        trySetBoolPref(prop, OS_STYLE_MAP[osName][prop]);
+        PrefUtils.trySetBoolPref(prop, OS_STYLE_MAP[osName][prop]);
     }
 }
 
@@ -160,14 +160,14 @@ for (const option of document.querySelectorAll(".option"))
     switch (option.dataset.type)
     {
         case "bool":
-            option.checked = tryGetBoolPref(option.dataset.option);
+            option.checked = PrefUtils.tryGetBoolPref(option.dataset.option);
             break;
         case "int":
         case "enum":
-            option.value = tryGetIntPref(option.dataset.option);
+            option.value = PrefUtils.tryGetIntPref(option.dataset.option);
             break;
         case "string":
-            option.value = tryGetStringPref(option.dataset.option);
+            option.value = PrefUtils.tryGetStringPref(option.dataset.option);
             break;
     }
     option.originalValue = getOptionValue(option);
@@ -243,16 +243,16 @@ function okApplyHandler(e, closeWindow = false)
             switch (option.dataset.type)
             {
                 case "bool":
-                    trySetBoolPref(option.dataset.option, option.checked);
+                    PrefUtils.trySetBoolPref(option.dataset.option, option.checked);
                     break;
                 case "enum":
-                    trySetIntPref(option.dataset.option, Number(option.value));
+                    PrefUtils.trySetIntPref(option.dataset.option, Number(option.value));
                     break;
                 case "int":
-                    trySetIntPref(option.dataset.option, Math.floor(Number(option.value)));
+                    PrefUtils.trySetIntPref(option.dataset.option, Math.floor(Number(option.value)));
                     break;
                 case "string":
-                    trySetStringPref(option.dataset.option, option.value);
+                    PrefUtils.trySetStringPref(option.dataset.option, option.value);
                     break;
             }
         }
@@ -304,13 +304,13 @@ document.documentElement.addEventListener('keypress', function(e) {
 	}
 });
 
-document.getElementById("custom-name").placeholder = getShortProductName();
-document.getElementById("brand-name").placeholder = getDefaultProductName();
+document.getElementById("custom-name").placeholder = BrandUtils.getShortProductName();
+document.getElementById("brand-name").placeholder = BrandUtils.getDefaultProductName();
 
 document.getElementById("browser-spoof").placeholder = Services.appinfo.name;
 document.getElementById("channel-spoof").placeholder = Services.appinfo.defaultUpdateChannel;
 
-let titles = getDefaultTitles();
+let titles = BrandUtils.getDefaultTitles();
 document.getElementById("default-title").placeholder = titles.default;
 document.getElementById("private-title").placeholder = titles.private;
 document.getElementById("default-content-title").placeholder = titles.contentDefault;

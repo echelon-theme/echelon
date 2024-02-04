@@ -8,6 +8,11 @@
 
 const { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");
 
+var { PrefUtils, BrandUtils, waitForElement, renderElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+
+waitForElement = waitForElement.bind(this);
+renderElement = renderElement.bind(this);
+
 function executeFunctions() {
 	EchelonThemeManager.init();
 	getAndSetTitleBarHeight();

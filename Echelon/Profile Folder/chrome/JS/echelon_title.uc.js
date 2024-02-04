@@ -8,7 +8,7 @@
 function changeTitleFormats()
 {
     let root = document.documentElement;
-    let titles = getUserTitles();
+    let titles = BrandUtils.getUserTitles();
 
     root.dataset.titleDefault = titles.default;
     root.dataset.titlePrivate = titles.private;
@@ -16,7 +16,7 @@ function changeTitleFormats()
     root.dataset.contentTitlePrivate = titles.contentPrivate;
 
     /* Update initial title. */
-    document.title = root.getAttribute("privatebrowsingmode")
+    document.title = PrivateBrowsingUtils.isBrowserPrivate(gBrowser)
     ? titles.private
     : titles.default;
 }

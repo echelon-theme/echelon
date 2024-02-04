@@ -13,16 +13,16 @@ function updateIcon()
 	{
 		setTimeout(function()
 		{
-			var favicon_in_urlbar = gBrowser.selectedTab.image;
+			let favicon = gBrowser.selectedTab.image;
 			if (!gBrowser.selectedTab.image || gBrowser.selectedTab.image == null)
 			{
-				favicon_in_urlbar = DEFAULT_FAVICON;
+				favicon = DEFAULT_FAVICON;
 			}
 				
-			let style = tryGetIntPref("Echelon.Appearance.Style");
+			let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
 			if (style < 3)
 			{
-				document.querySelector('#identity-icon').setAttribute("style", "list-style-image: url('"+favicon_in_urlbar+"');");
+				document.querySelector("#identity-icon").setAttribute("style", `list-style-image: url('${favicon}');`);
 			}
 		}, 1);
 	}
@@ -33,10 +33,10 @@ let FaviconInUrlbar = {
 	init: function()
 	{
 		document.addEventListener("TabAttrModified", updateIcon, false);
-		document.addEventListener('TabSelect', updateIcon, false);
-		document.addEventListener('TabOpen', updateIcon, false);
-		document.addEventListener('TabClose', updateIcon, false);
-		document.addEventListener('load', updateIcon, false);
+		document.addEventListener("TabSelect", updateIcon, false);
+		document.addEventListener("TabOpen", updateIcon, false);
+		document.addEventListener("TabClose", updateIcon, false);
+		document.addEventListener("load", updateIcon, false);
 		updateIcon();
 	}
 };

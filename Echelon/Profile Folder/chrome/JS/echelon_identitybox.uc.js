@@ -5,7 +5,7 @@
 // @include			main
 // ==/UserScript==
 
-const brand = getShortProductName();
+let brand;
 
 function identityLabelMutation(list, observer)
 {
@@ -23,6 +23,7 @@ function identityLabelMutation(list, observer)
 
 function observeIdentityLabel()
 {
+    brand = BrandUtils.getShortProductName();
     let identity = document.getElementById("identity-icon-label");
     if (identity)
     {

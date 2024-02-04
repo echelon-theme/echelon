@@ -5,7 +5,6 @@
 // @include			main
 // ==/UserScript==
 
-
 function addEchelonOptionsMenuItem()
 {
     waitForElement("#menu_ToolsPopup").then((prefsItem) => {
