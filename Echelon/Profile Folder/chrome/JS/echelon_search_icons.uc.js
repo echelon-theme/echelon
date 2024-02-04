@@ -8,21 +8,6 @@
 const { SearchService } = ChromeUtils.importESModule("resource://gre/modules/SearchService.sys.mjs");
 const { SearchUtils } = ChromeUtils.importESModule("resource://gre/modules/SearchUtils.sys.mjs");
 
-
-
-const REPLACEMENTS = {
-	"moz-extension://6ed35b2d-1ed2-42d1-8ce2-e5bb7d28eaae/favicon.ico": "chrome://userchrome/content/images/icons/engines/google.png",
-	"moz-extension://86c18ad3-bda5-4e0e-a616-210d5a4e2d9c/favicon.ico": "chrome://userchrome/content/images/icons/engines/bing.png",
-	"moz-extension://de27d924-71c6-4eb5-89eb-e8805cd92d62/favicon.ico": "chrome://userchrome/content/images/icons/engines/ebay.png"
-};
-
-/* Style 3 with new logo and Style 4+ */
-const REPLACEMENTS_NEW = {
-	"moz-extension://6ed35b2d-1ed2-42d1-8ce2-e5bb7d28eaae/favicon.ico": "chrome://userchrome/content/images/icons/engines/google_new.ico",
-	"moz-extension://86c18ad3-bda5-4e0e-a616-210d5a4e2d9c/favicon.ico": "chrome://userchrome/content/images/icons/engines/bing_new.ico",
-	"moz-extension://de27d924-71c6-4eb5-89eb-e8805cd92d62/favicon.ico": "chrome://userchrome/content/images/icons/engines/ebay_new.ico"
-};
-
 class EchelonSearchManager
 {
 	static updateDisplay_orig = null;
