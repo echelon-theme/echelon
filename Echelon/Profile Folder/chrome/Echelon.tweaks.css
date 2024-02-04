@@ -254,12 +254,12 @@
 
 #main-window[echelon-style-3] #urlbar-background,
 #main-window[echelon-style-3] #searchbar,
-#main-window[echelon-style-3] #stop-reload-button {
+#main-window[echelon-style-3] #stop-reload-button.unified {
   border-radius: 2px !important;
   border-color: ThreeDShadow !important;
 }
 
-#main-window[echelon-style-3] #stop-reload-button {
+#main-window[echelon-style-3] #stop-reload-button.unified {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
 }

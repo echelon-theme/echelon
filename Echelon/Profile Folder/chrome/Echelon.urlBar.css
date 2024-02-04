@@ -30,12 +30,12 @@
 
 #urlbar:hover #urlbar-background,
 #searchbar:hover,
-#urlbar-container:hover + #stop-reload-button {
+#urlbar-container:hover + #stop-reload-button.unified {
   background-color: rgba(255, 255, 255, 0.898) !important;
 }
 
 #urlbar[open] > #urlbar-background,
-#nav-bar[urlbar-exceeds-toolbar-bounds=true] #stop-reload-button,
+#nav-bar[urlbar-exceeds-toolbar-bounds=true] #stop-reload-button.unified,
 #searchbar.focus {
   background-color: rgb(255, 255, 255) !important;
 }
@@ -495,11 +495,11 @@
 }
 #main-window[echelon-style-3][tabs-on-top=true] #urlbar:hover #urlbar-background,
 #main-window[echelon-style-3][tabs-on-top=true] #searchbar:hover,
-#main-window[echelon-style-3][tabs-on-top=true] #urlbar-container:hover + #stop-reload-button {
+#main-window[echelon-style-3][tabs-on-top=true] #urlbar-container:hover + #stop-reload-button.unified {
   border-color: hsla(210, 54%, 20%, 0.35) hsla(210, 54%, 20%, 0.37) hsla(210, 54%, 20%, 0.4) !important;
 }
 #main-window[echelon-style-3][tabs-on-top=true] #urlbar[open] > #urlbar-background,
-#main-window[echelon-style-3][tabs-on-top=true] #nav-bar[urlbar-exceeds-toolbar-bounds=true] #stop-reload-button,
+#main-window[echelon-style-3][tabs-on-top=true] #nav-bar[urlbar-exceeds-toolbar-bounds=true] #stop-reload-button.unified,
 #main-window[echelon-style-3][tabs-on-top=true] #searchbar.focus {
   border-color: hsla(206, 100%, 60%, 0.65) hsla(206, 100%, 55%, 0.65) hsla(206, 100%, 50%, 0.65) !important;
 }
@@ -511,11 +511,11 @@
 }
 #main-window[echelon-style-3] #urlbar:hover #urlbar-background:-moz-lwtheme,
 #main-window[echelon-style-3] #searchbar:hover:-moz-lwtheme,
-#main-window[echelon-style-3] #urlbar-container:hover + #stop-reload-button:-moz-lwtheme {
+#main-window[echelon-style-3] #urlbar-container:hover + #stop-reload-button.unified:-moz-lwtheme {
   border-color: rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.32) !important;
 }
 #main-window[echelon-style-3] #urlbar[open] > #urlbar-background:-moz-lwtheme,
-#main-window[echelon-style-3] #nav-bar[urlbar-exceeds-toolbar-bounds=true] #stop-reload-button:-moz-lwtheme,
+#main-window[echelon-style-3] #nav-bar[urlbar-exceeds-toolbar-bounds=true] #stop-reload-button.unified:-moz-lwtheme,
 #main-window[echelon-style-3] #searchbar.focus:-moz-lwtheme {
   background-color: rgb(255, 255, 255) !important;
   border-color: rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.32) !important;
