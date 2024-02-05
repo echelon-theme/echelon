@@ -57,6 +57,18 @@
                                 </menupopup>
                             </menulist>
                         </html:div>
+                        <html:div class="option-container">
+                            <label value="Homepage Style:"/>
+                            <menulist native="" class="option" data-type="enum" data-option="Echelon.Appearance.Homepage.Style">
+                                <menupopup>
+                                    <menuitem label="Firefox 4-9" value="0"/>
+                                    <menuitem label="Firefox 10-13" value="1"/>
+                                    <menuitem label="Firefox 14-28" value="2"/>
+                                    <menuitem label="Firefox 29" value="3"/>
+                                    <menuitem label="Firefox 56" value="4"/>
+                                </menupopup>
+                            </menulist>
+                        </html:div>
                         <checkbox native="" label="Use Aero blue (Vista/7)" class="option" data-type="bool" data-option="Echelon.Appearance.Blue" win7-only="true"/>
                         <checkbox native="" label="Hide &quot;Extensions&quot; button (not recommended)" class="option" data-type="bool" data-option="Echelon.Option.HideUnifiedExtensions" change-requires-restart="true"/>
                         <checkbox native="" label="Use 2013+ Firefox logo" class="option" data-type="bool" data-option="Echelon.Appearance.NewLogo" change-requires-restart="true"/>
@@ -221,10 +233,14 @@
                                 </html:li>
                             </html:ul>
                         </html:div>
-                        <html:div>
-                            <html:span class="view-github-link">
-                                <html:div class="github-icon"></html:div>
-                                <label class="view-github" is="text-link" href="https://github.com/echelon-theme/echelon">view GitHub</label>
+                        <html:div class="about-box-footer">
+                            <html:span class="about-box-footer-link">
+                                <html:div class="about-box-footer-icon github-icon"></html:div>
+                                <label is="text-link" href="https://github.com/echelon-theme/echelon">view GitHub repository</label>
+                            </html:span>
+                            <html:span class="about-box-footer-link">
+                                <html:div class="about-box-footer-icon issue-icon"></html:div>
+                                <label class="view-github" is="text-link" href="https://github.com/echelon-theme/echelon/issues">report an issue</label>
                             </html:span>
                         </html:div>
                     </html:div>

@@ -12,6 +12,7 @@
 // @include         about:preferences#privacy
 // @include         about:preferences#sync
 // @include         about:preferences#moreFromMozilla
+// @include			about:addons
 // ==/UserScript==
 
 var { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
