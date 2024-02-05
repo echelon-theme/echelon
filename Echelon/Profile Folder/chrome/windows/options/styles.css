@@ -73,6 +73,10 @@ input::placeholder {
     font-style: italic;
 }
 
+checkbox[disabled="true"] {
+    opacity: 1;
+}
+
 .option-container {
     display: flex;
     flex-direction: row;
@@ -293,7 +297,7 @@ td {
 }
 
 .credits-section-desc,
-.view-github {
+.about-box-footer .text-link {
     display: inline-block;
     color: #838383;
     text-transform: lowercase;
@@ -310,19 +314,36 @@ td {
     margin-block-end: 3px;
 }
 
-.view-github-link {
+.about-box-footer-link {
     display: flex;
     align-items: center;
 }
 
-.github-icon {
+.about-box-footer-icon {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background-image: url("chrome://userchrome/content/windows/options/images/GitHub.png");
-    margin-inline-end: 3px;
+    margin-inline-end: 6px;
 }
 
-.view-github {
+.github-icon {
+    background-image: url("chrome://userchrome/content/windows/options/images/GitHub.png");
+}
+
+.issue-icon {
+    background-image: url("chrome://userchrome/content/windows/options/images/icon-issue.png");
+}
+
+.about-box-footer .text-link {
+    text-transform: none;
     margin-bottom: 0;
+}
+
+menulist {
+    width: 100%;
+}
+
+.about-box-footer {
+    display: flex;
+    justify-content: space-between;
 }

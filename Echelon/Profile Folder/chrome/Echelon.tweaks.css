@@ -641,12 +641,12 @@
   padding-top: calc(var(--titlebar-height) - 10px) !important;
 }
 
-#main-window[sizemode=maximized][tabsintitlebar][echelon-style-4] #toolbar-menubar[autohide=true][inactive=true]:not([customizing=true]) + #TabsToolbar .toolbar-items {
+#main-window[sizemode="maximized"][tabsintitlebar][echelon-style-4] #toolbar-menubar[autohide=true][inactive=true]:not([customizing=true]) + #TabsToolbar .toolbar-items {
   padding-top: 0 !important;
 }
 
-#main-window[sizemode=maximized][echelon-style-4][tabsintitlebar] #TabsToolbar,
-#main-window[sizemode=maximized][echelon-style-4][tabsintitlebar] #toolbar-menubar {
+#main-window[sizemode="maximized"][echelon-style-4][tabsintitlebar] #TabsToolbar,
+#main-window[sizemode="maximized"][echelon-style-4][tabsintitlebar] #toolbar-menubar {
   padding-left: 0 !important;
 }
 
@@ -1326,6 +1326,18 @@
 }
 #main-window[echelon-appearance-xp]:not([echelon-style-4])[tabsintitlebar] #titlebar::before #toolbar-menubar {
   z-index: 1 !important;
+}
+
+#main-window[sizemode=maximized][echelon-style-4][tabsintitlebar] #toolbar-menubar[autohide=true] + #TabsToolbar {
+  margin-top: 4px !important;
+}
+
+#main-window[sizemode=maximized][echelon-appearance-xp][echelon-style-4][tabsintitlebar] #titlebar {
+  margin-top: -4px;
+}
+
+#main-window[echelon-appearance-xp][sizemode=maximized][echelon-style-4][tabsintitlebar] .titlebar-buttonbox-container {
+  top: 0 !important;
 }
 
 /* 

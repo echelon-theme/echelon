@@ -1480,6 +1480,18 @@
   }
 }
 
+#main-window[sizemode="maximized"][echelon-style-4][tabsintitlebar] #toolbar-menubar[autohide="true"] + #TabsToolbar {
+  margin-top: 4px !important;
+}
+
+#main-window[sizemode="maximized"][echelon-appearance-xp][echelon-style-4][tabsintitlebar] #titlebar {
+  margin-top: -4px;
+}
+
+#main-window[echelon-appearance-xp][sizemode="maximized"][echelon-style-4][tabsintitlebar] .titlebar-buttonbox-container {
+  top: 0 !important;
+}
+
 /* 
   treechildren doesn't support being selected from HTML
 */

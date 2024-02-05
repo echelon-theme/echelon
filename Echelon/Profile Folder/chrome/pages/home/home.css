@@ -300,6 +300,7 @@ input, button {
 }
 
 :root[echelon-style="5"] #searchLogo {
+	display: flex;
     border: 1px transparent;
     padding: 0;
     margin: 0;

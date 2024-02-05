@@ -487,3 +487,163 @@
 #main-window[lwtheme-brighttext="true"][fxastatus="not_configured"] {
   --avatar-image-url: url("chrome://userchrome/content/images/icons/inverted/avatar-empty.png") !important;
 }
+
+/* On Australis, different colored toolbar icons were used when using Windows XP. */
+
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) {
+  #back-button,
+  #context-back {
+    list-style-image: url("images/icons/xp/back_large.png") !important;
+  }
+
+  #forward-button,
+  #context-forward {
+    list-style-image: url("images/icons/xp/forward.png") !important;
+  }
+
+  #home-button {
+    list-style-image: url("images/icons/xp/home.png") !important;
+  }
+
+  #bookmarks-menu-button {
+    list-style-image: url("images/icons/xp/bookmarks.png") !important;
+  }
+
+  #bookmarks-button,
+  #context-bookmarkpage {
+    list-style-image: url("images/icons/xp/add-to-bookmarks.png") !important;
+  }
+  
+  #context-bookmarkpage[starred="true"] {
+    list-style-image: url("images/icons/xp/add-to-bookmarks_starred.png") !important;
+  }
+
+  #history-panelmenu {
+    list-style-image: url("images/icons/xp/history.png") !important;
+  }
+
+  #print-button {
+    list-style-image: url("images/icons/xp/print.png") !important;
+  }
+
+  #new-window-button {
+    list-style-image: url("images/icons/xp/new-window.png") !important;
+  }
+
+  #zoom-out-button {
+    list-style-image: url("images/icons/xp/zoom-out.png") !important;
+  }
+
+  #zoom-in-button {
+    list-style-image: url("images/icons/xp/zoom-in.png") !important;
+  }
+
+  #panic-button {
+    list-style-image: url("images/icons/xp/refresh.png") !important;
+  }
+
+  #cut-button {
+    list-style-image: url("images/icons/xp/cut.png") !important;
+  }
+
+  #copy-button {
+    list-style-image: url("images/icons/xp/copy.png") !important;
+  }
+
+  #paste-button {
+    list-style-image: url("images/icons/xp/paste.png") !important;
+  }
+
+  #unified-extensions-button {
+    list-style-image: url("images/icons/xp/extensions.png") !important;
+  }
+
+  #downloads-indicator-anchor {
+    list-style-image: url("images/icons/xp/downloads.png") !important;
+  }
+  
+  #context-reload {
+    list-style-image: url("images/icons/xp/reload.png") !important;
+  }
+  
+  #context-stop {
+    list-style-image: url("images/icons/xp/stop.png") !important;
+  }
+  
+  #save-to-pocket-button {
+    list-style-image: url("images/icons/xp/pocket.png") !important;
+  }
+  
+  #developer-button {
+    list-style-image: url("images/icons/xp/developer.png") !important;
+  }
+
+  #preferences-button {
+    list-style-image: url("images/icons/xp/settings.png") !important;
+  }
+
+  #fullscreen-button {
+    list-style-image: url("images/icons/xp/fullscreen.png") !important;
+  }
+
+  #characterencoding-button {
+    list-style-image: url("images/icons/xp/encoding.png") !important;
+  }
+
+  #email-link-button {
+    list-style-image: url("images/icons/xp/email.png") !important;
+  }
+
+  #open-file-button {
+    list-style-image: url("images/icons/xp/open.png") !important;
+  }
+
+  #find-button {
+    list-style-image: url("images/icons/xp/search.png") !important;
+  }
+
+  #save-page-button {
+    list-style-image: url("images/icons/xp/save.png") !important;
+  }
+
+  #sidebar-button {
+    list-style-image: url("images/icons/xp/sidebar.png") !important;
+  }
+  
+  #privatebrowsing-button {
+    list-style-image: url("images/icons/xp/private_browsing.png") !important;
+  }
+  
+  #PlacesChevron,
+  #nav-bar-overflow-button {
+    list-style-image: url("images/icons/xp/chevron.png") !important;
+  }
+  
+  #logins-button {
+    list-style-image: url("images/icons/xp/login.png") !important;
+  }
+
+  #screenshot-button {
+    list-style-image: url("images/icons/xp/screenshot.png") !important;
+  }
+
+  #import-button {
+    list-style-image: url("images/icons/xp/import.png") !important;
+  }
+
+  #library-button {
+    list-style-image: url("images/icons/xp/library.png") !important;
+  }
+  
+  #sync-button {
+    list-style-image: url("images/icons/xp/sync_tabs.png") !important;
+  }
+
+  #PanelUI-menu-button {
+    list-style-image: url("images/icons/xp/hamburger.png") !important;
+  }
+
+  &[fxastatus="not_configured"] {
+    --avatar-image-url: url("chrome://userchrome/content/images/icons/avatar-empty.png") !important;
+  }
+}

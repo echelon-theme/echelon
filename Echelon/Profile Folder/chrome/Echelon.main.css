@@ -445,3 +445,123 @@
 #main-window[lwtheme-brighttext=true][fxastatus=not_configured] {
   --avatar-image-url: url("chrome://userchrome/content/images/icons/inverted/avatar-empty.png") !important;
 }
+
+/* On Australis, different colored toolbar icons were used when using Windows XP. */
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #back-button,
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #context-back {
+  list-style-image: url("images/icons/xp/back_large.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #forward-button,
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #context-forward {
+  list-style-image: url("images/icons/xp/forward.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #home-button {
+  list-style-image: url("images/icons/xp/home.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #bookmarks-menu-button {
+  list-style-image: url("images/icons/xp/bookmarks.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #bookmarks-button,
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #context-bookmarkpage {
+  list-style-image: url("images/icons/xp/add-to-bookmarks.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #context-bookmarkpage[starred=true] {
+  list-style-image: url("images/icons/xp/add-to-bookmarks_starred.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #history-panelmenu {
+  list-style-image: url("images/icons/xp/history.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #print-button {
+  list-style-image: url("images/icons/xp/print.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #new-window-button {
+  list-style-image: url("images/icons/xp/new-window.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #zoom-out-button {
+  list-style-image: url("images/icons/xp/zoom-out.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #zoom-in-button {
+  list-style-image: url("images/icons/xp/zoom-in.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #panic-button {
+  list-style-image: url("images/icons/xp/refresh.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #cut-button {
+  list-style-image: url("images/icons/xp/cut.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #copy-button {
+  list-style-image: url("images/icons/xp/copy.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #paste-button {
+  list-style-image: url("images/icons/xp/paste.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #unified-extensions-button {
+  list-style-image: url("images/icons/xp/extensions.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #downloads-indicator-anchor {
+  list-style-image: url("images/icons/xp/downloads.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #context-reload {
+  list-style-image: url("images/icons/xp/reload.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #context-stop {
+  list-style-image: url("images/icons/xp/stop.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #save-to-pocket-button {
+  list-style-image: url("images/icons/xp/pocket.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #developer-button {
+  list-style-image: url("images/icons/xp/developer.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #preferences-button {
+  list-style-image: url("images/icons/xp/settings.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #fullscreen-button {
+  list-style-image: url("images/icons/xp/fullscreen.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #characterencoding-button {
+  list-style-image: url("images/icons/xp/encoding.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #email-link-button {
+  list-style-image: url("images/icons/xp/email.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #open-file-button {
+  list-style-image: url("images/icons/xp/open.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #find-button {
+  list-style-image: url("images/icons/xp/search.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #save-page-button {
+  list-style-image: url("images/icons/xp/save.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #sidebar-button {
+  list-style-image: url("images/icons/xp/sidebar.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #privatebrowsing-button {
+  list-style-image: url("images/icons/xp/private_browsing.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #PlacesChevron,
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #nav-bar-overflow-button {
+  list-style-image: url("images/icons/xp/chevron.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #logins-button {
+  list-style-image: url("images/icons/xp/login.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #screenshot-button {
+  list-style-image: url("images/icons/xp/screenshot.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #import-button {
+  list-style-image: url("images/icons/xp/import.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #library-button {
+  list-style-image: url("images/icons/xp/library.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #sync-button {
+  list-style-image: url("images/icons/xp/sync_tabs.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #PanelUI-menu-button {
+  list-style-image: url("images/icons/xp/hamburger.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue])[fxastatus=not_configured] {
+  --avatar-image-url: url("chrome://userchrome/content/images/icons/avatar-empty.png") !important;
+}

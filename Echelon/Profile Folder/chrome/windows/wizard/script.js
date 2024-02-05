@@ -6,6 +6,7 @@ let { CustomizableUI } = ChromeUtils.importESModule("resource:///modules/Customi
 // ECHELON SETTINGS
 let echelonAppearanceBlue = "Echelon.Appearance.Blue";
 let echelonAppearanceStyle = "Echelon.Appearance.Style";
+let echelonAppearanceHomepageStyle = "Echelon.Appearance.Homepage.Style";
 let echelonAppearanceNewLogo = "Echelon.Appearance.NewLogo";
 let echelonParameterisFirstRunFinished = "Echelon.parameter.isFirstRunFinished";
 

@@ -6,7 +6,9 @@ let root = document.documentElement;
 let searchText = document.getElementById("searchText");
 
 let echelonStyle = Services.prefs.getIntPref("Echelon.Appearance.Style");
+let echelonHomepageStyle = Services.prefs.getIntPref("Echelon.Appearance.Homepage.Style");
 let echelonOldLogo = Services.prefs.getBoolPref("Echelon.Appearance.NewLogo");
+
 
 if (echelonOldLogo) {
 	root.setAttribute("echelon-new-logo", echelonOldLogo);
@@ -19,17 +21,26 @@ root.setAttribute("update-channel", BrandUtils.getUpdateChannel());
 
 // ECHELON STYLE
 
-if (echelonStyle == 5) {
-	root.setAttribute("echelon-style", "5");
-	searchText.setAttribute("placeholder", "Search");
+if (echelonHomepageStyle == 0) {
+	root.setAttribute("no-snippet-icon", "true");
 }
 
-if (echelonStyle <= 2) {
+if (echelonHomepageStyle <= 1) {
 	root.setAttribute("echelon-style", "1");
 }
 
-if (echelonStyle <= 1) {
-	root.setAttribute("no-snippet-icon", "true");
+if (echelonHomepageStyle == 2) {
+	root.removeAttribute("echelon-new-logo");
+}
+
+if (echelonHomepageStyle == 3) {
+	root.setAttribute("echelon-new-logo", "true");
+}
+
+if (echelonHomepageStyle == 4) {
+	root.setAttribute("echelon-style", "5");
+	root.setAttribute("echelon-new-logo", "true");
+	searchText.setAttribute("placeholder", "Search");
 }
 
 // SNIPPET RANDOMIZER
