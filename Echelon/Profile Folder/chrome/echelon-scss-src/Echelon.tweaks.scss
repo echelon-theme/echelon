@@ -1797,3 +1797,25 @@
 		appearance: none !important;
 	}
 }
+
+:root, #main-window {
+  &[echelon-windows-experience-luna-msstyles-fixes] {
+    // Caption buttons are positioned incorrectly when the window is not maximised.
+    &[echelon-appearance-xp] .titlebar-buttonbox-container {
+      // hack
+      top: 0 !important;
+    }
+    &[echelon-appearance-xp][sizemode="maximized"] .titlebar-buttonbox-container {
+      top: 4px !important;
+    }
+
+    // Menu sizing is completely fucked, so it must be disabled altogether. This doesn't
+    // work on about:config at the moment, but other pages are flawless.
+    @media not (-moz-windows-non-native-menus) {
+      menupopup {
+        appearance: none !important;
+        padding: 1px !important;
+      }
+    }
+  }
+}

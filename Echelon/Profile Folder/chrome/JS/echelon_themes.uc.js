@@ -34,6 +34,7 @@ class EchelonThemeManager
 		this.registerBoolAttributeUpdateObserver("Echelon.Appearance.Australis.Windows10", "echelon-appearance-australis-windows10");
 		this.registerBoolAttributeUpdateObserver("Echelon.Appearance.XP", "echelon-appearance-xp");
 		this.registerBoolAttributeUpdateObserver("Echelon.FirefoxButton.CustomStyle", "echelon-firefox-button-custom-style");
+		this.registerBoolAttributeUpdateObserver("Echelon.Appearance.eXPerienceLunaMsstylesFixes", "echelon-windows-experience-luna-msstyles-fixes");
 	}
 	
 	static refreshTheme()
