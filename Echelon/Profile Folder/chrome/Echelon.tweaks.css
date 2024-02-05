@@ -1553,15 +1553,15 @@
 :root:not([style*="--lwt-accent-color: rgb(28, 27, 34);"], [style*="--lwt-accent-color: rgb(240, 240, 244);"]):not([echelon-style-4]) #navigator-toolbox:-moz-lwtheme .tab-background,
 :root:not([style*="--lwt-accent-color: rgb(28, 27, 34);"], [style*="--lwt-accent-color: rgb(240, 240, 244);"]):not([echelon-style-4]) #navigator-toolbox:-moz-lwtheme #tabs-newtab-button {
   background-color: transparent !important;
-  background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px) !important;
+  background-image: linear-gradient(rgba(102, 102, 102, 0.6), rgba(76, 76, 76, 0.6) 80%) !important;
   background-size: 100vh 30px !important;
 }
 :root:not([style*="--lwt-accent-color: rgb(28, 27, 34);"], [style*="--lwt-accent-color: rgb(240, 240, 244);"]):not([echelon-style-4]) #navigator-toolbox:-moz-lwtheme .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected=true], [multiselected]),
 :root:not([style*="--lwt-accent-color: rgb(28, 27, 34);"], [style*="--lwt-accent-color: rgb(240, 240, 244);"]):not([echelon-style-4]) #navigator-toolbox:-moz-lwtheme #tabs-newtab-button:hover {
-  background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px), var(--tab-background-hover) !important;
+  background-image: linear-gradient(rgba(153, 153, 153, 0.6), rgba(114, 114, 114, 0.6) 80%) !important;
 }
 :root:not([style*="--lwt-accent-color: rgb(28, 27, 34);"], [style*="--lwt-accent-color: rgb(240, 240, 244);"]):not([echelon-style-4]) #navigator-toolbox:-moz-lwtheme .tab-background:is([selected], [multiselected]) {
-  background-image: linear-gradient(var(--tab-selected-highlight), var(--toolbar-highlight-top) 50%) !important;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5) 50%) !important;
 }
 :root:not([style*="--lwt-accent-color: rgb(28, 27, 34);"], [style*="--lwt-accent-color: rgb(240, 240, 244);"])[echelon-style-4] #navigator-toolbox:-moz-lwtheme #nav-bar {
   background-image: linear-gradient(rgba(255, 255, 255, 0.4), transparent) !important;
