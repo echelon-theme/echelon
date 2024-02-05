@@ -34,8 +34,8 @@
   background-color: rgba(255,255,255,.898) !important;
 }
 
-#urlbar[open] > #urlbar-background,
-#nav-bar[urlbar-exceeds-toolbar-bounds="true"] #stop-reload-button.unified,
+#urlbar[focused] > #urlbar-background,
+#urlbar-container[focused] + #stop-reload-button.unified,
 #searchbar.focus {
   background-color: rgb(255, 255, 255) !important;
 }
@@ -528,8 +528,8 @@
     #urlbar-container:hover + #stop-reload-button.unified {
       border-color: hsla(210,54%,20%,.35) hsla(210,54%,20%,.37) hsla(210,54%,20%,.4) !important;
     }
-    #urlbar[open] > #urlbar-background,
-    #nav-bar[urlbar-exceeds-toolbar-bounds="true"] #stop-reload-button.unified,
+    #urlbar[focused] > #urlbar-background,
+    #urlbar-container[focused] + #stop-reload-button.unified,
     #searchbar.focus {
       border-color: hsla(206,100%,60%,.65) hsla(206,100%,55%,.65) hsla(206,100%,50%,.65) !important;
     }
@@ -550,8 +550,8 @@
       border-color: rgba(0, 0, 0, .32) rgba(0, 0, 0, .32) rgba(0, 0, 0, .32) !important;
     }
   }
-  #urlbar[open] > #urlbar-background,
-  #nav-bar[urlbar-exceeds-toolbar-bounds="true"] #stop-reload-button.unified,
+  #urlbar[focused] > #urlbar-background,
+  #urlbar-container[focused] + #stop-reload-button.unified,
   #searchbar.focus {
     &:-moz-lwtheme {
       background-color: rgb(255, 255, 255) !important;
