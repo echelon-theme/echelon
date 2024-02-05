@@ -46,6 +46,16 @@ menulist {
     min-height: 25px;
 }
 
+.text-link {
+    color: #0066D6;
+    text-decoration: none;
+    margin: 0;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
 input[type="color"] {
     width: 35px;
     height: 25px;
@@ -254,11 +264,17 @@ td {
 
 .about-section-credits {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     flex: 1;
     padding-block: 20px;
     padding-inline: 40px;
     background-color: #FFF;
+}
+
+.about-section-credits-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .about-section-list,
@@ -276,7 +292,8 @@ td {
     margin-block-end: 10px;
 }
 
-.credits-section-desc {
+.credits-section-desc,
+.view-github {
     display: inline-block;
     color: #838383;
     text-transform: lowercase;
@@ -291,4 +308,21 @@ td {
 
 .credits-list li {
     margin-block-end: 3px;
+}
+
+.view-github-link {
+    display: flex;
+    align-items: center;
+}
+
+.github-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("chrome://userchrome/content/windows/options/images/GitHub.png");
+    margin-inline-end: 3px;
+}
+
+.view-github {
+    margin-bottom: 0;
 }
