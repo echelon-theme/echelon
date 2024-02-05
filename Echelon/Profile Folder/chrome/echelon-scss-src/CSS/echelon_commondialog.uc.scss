@@ -1,0 +1,14 @@
+/* ==UserScript==
+// @stylemode		author_sheet
+// @description		Styles certain Shadow DOM elements for Echelon.
+// @usefileuri
+// @name  			Echelon :: Extras
+// ==/UserScript==*/
+
+@-moz-document url("chrome://global/content/commonDialog.xhtml") {
+    :root {
+        background-color: -moz-field !important;
+        color: -moz-fieldText !important;
+        border: 1px solid threeDDarkShadow !important;
+    }
+}

@@ -44,3 +44,14 @@
 :root:not([echelon-style-4]) #context-sep-navigation {
   margin-inline-start: 0 !important;
 }
+
+/* This is on default Firefox CSS, but only applies on -moz-windows-default-theme, which many users won't have. */
+menubar > menu:-moz-lwtheme {
+  appearance: auto !important;
+  -moz-default-appearance: menuitem !important;
+}
+
+menubar > menu:-moz-lwtheme[_moz-menuactive=true]:not([disabled=true]) {
+  color: inherit !important;
+  text-shadow: inherit !important;
+}

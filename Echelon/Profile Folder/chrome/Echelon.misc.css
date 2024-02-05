@@ -792,3 +792,7 @@ treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
 :root[sizemode=fullscreen][echelon-appearance-xp] .titlebar-button:not(.titlebar-max) {
   background-image: url("images/windowControls-XP.png") !important;
 }
+
+.dialogBox {
+  border-radius: 0 !important;
+}
