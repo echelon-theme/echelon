@@ -13,13 +13,15 @@
   min-width: 94px !important;
   height: calc(var(--titlebar-height) - 1px) !important;
   border: 1px solid hsla(0, 0%, 100%, 0.5) !important;
-  margin-top: 1px !important;
   margin-bottom: 1px !important;
   border-top: 0 !important;
   padding: 0 !important;
   border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
   border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;
   width: max-content;
+}
+#appmenu-button-container:not(:-moz-lwtheme) {
+  margin-top: 1px !important;
 }
 
 :root[sizemode=fullscreen] #appmenu-button-container,
@@ -761,4 +763,32 @@ treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
   .question-icon {
     list-style-image: url("chrome://userchrome/content/images/Question-xp.png") !important;
   }
+}
+:root[sizemode=fullscreen] #TabsToolbar .toolbar-items {
+  margin-inline-end: 49px !important;
+}
+:root[sizemode=fullscreen] .titlebar-button:not(.titlebar-max) {
+  display: flex !important;
+  appearance: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 16px !important;
+  height: 16px;
+  background-image: url("images/windowControls.png") !important;
+}
+:root[sizemode=fullscreen] .titlebar-button:not(.titlebar-max):hover {
+  background-position-y: -16px !important;
+}
+:root[sizemode=fullscreen] .titlebar-button:not(.titlebar-max):hover:active {
+  background-position-y: -32px !important;
+}
+:root[sizemode=fullscreen] .titlebar-button:not(.titlebar-max).titlebar-restore {
+  background-position-x: -16px !important;
+}
+:root[sizemode=fullscreen] .titlebar-button:not(.titlebar-max).titlebar-close {
+  background-position-x: -32px !important;
+  width: 17px !important;
+}
+:root[sizemode=fullscreen][echelon-appearance-xp] .titlebar-button:not(.titlebar-max) {
+  background-image: url("images/windowControls-XP.png") !important;
 }
