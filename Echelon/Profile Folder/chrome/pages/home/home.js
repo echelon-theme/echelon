@@ -5,9 +5,9 @@ const { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/conte
 let root = document.documentElement;
 let searchText = document.getElementById("searchText");
 
-let echelonStyle = Services.prefs.getIntPref("Echelon.Appearance.Style");
-let echelonHomepageStyle = Services.prefs.getIntPref("Echelon.Appearance.Homepage.Style");
-let echelonOldLogo = Services.prefs.getBoolPref("Echelon.Appearance.NewLogo");
+let echelonStyle = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
+let echelonHomepageStyle = PrefUtils.tryGetIntPref("Echelon.Appearance.Homepage.Style");
+let echelonOldLogo = PrefUtils.tryGetBoolPref("Echelon.Appearance.NewLogo");
 
 
 if (echelonOldLogo) {

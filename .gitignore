@@ -1,2 +1,4 @@
 /**/node_modules
 /**/package-lock.json
+/**/chrome/_chrome_user.css
+/**/chrome/_content_user.css

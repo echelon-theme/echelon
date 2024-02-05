@@ -641,12 +641,12 @@
   padding-top: calc(var(--titlebar-height) - 10px) !important;
 }
 
-#main-window[sizemode="maximized"][tabsintitlebar][echelon-style-4] #toolbar-menubar[autohide=true][inactive=true]:not([customizing=true]) + #TabsToolbar .toolbar-items {
+#main-window[sizemode=maximized][tabsintitlebar][echelon-style-4] #toolbar-menubar[autohide=true][inactive=true]:not([customizing=true]) + #TabsToolbar .toolbar-items {
   padding-top: 0 !important;
 }
 
-#main-window[sizemode="maximized"][echelon-style-4][tabsintitlebar] #TabsToolbar,
-#main-window[sizemode="maximized"][echelon-style-4][tabsintitlebar] #toolbar-menubar {
+#main-window[sizemode=maximized][echelon-style-4][tabsintitlebar] #TabsToolbar,
+#main-window[sizemode=maximized][echelon-style-4][tabsintitlebar] #toolbar-menubar {
   padding-left: 0 !important;
 }
 
