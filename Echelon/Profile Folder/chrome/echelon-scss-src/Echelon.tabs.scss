@@ -273,7 +273,7 @@ html:not([echelon-style-5]) {
   }
 
   &[pinned] {
-    list-style-image: url($url-small) !important;;
+    list-style-image: url($url-small) !important;
 
     :root[lwtheme-brighttext="true"] &:not([crashed], [selected], :hover) {
       list-style-image: url($url-small + "-white") !important;
