@@ -1580,3 +1580,15 @@
     appearance: none !important;
   }
 }
+:root[echelon-windows-experience-luna-msstyles-fixes][echelon-appearance-xp] .titlebar-buttonbox-container, #main-window[echelon-windows-experience-luna-msstyles-fixes][echelon-appearance-xp] .titlebar-buttonbox-container {
+  top: 0 !important;
+}
+:root[echelon-windows-experience-luna-msstyles-fixes][echelon-appearance-xp][sizemode=maximized] .titlebar-buttonbox-container, #main-window[echelon-windows-experience-luna-msstyles-fixes][echelon-appearance-xp][sizemode=maximized] .titlebar-buttonbox-container {
+  top: 4px !important;
+}
+@media not (-moz-windows-non-native-menus) {
+  :root[echelon-windows-experience-luna-msstyles-fixes] menupopup, #main-window[echelon-windows-experience-luna-msstyles-fixes] menupopup {
+    appearance: none !important;
+    padding: 1px !important;
+  }
+}
