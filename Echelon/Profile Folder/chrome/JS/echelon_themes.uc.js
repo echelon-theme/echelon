@@ -5,13 +5,7 @@
 // @include			main
 // @include         chrome://browser/content/browser.xhtml
 // @include         chrome://browser/content/aboutDialog.xhtml
-// @include         about:preferences
-// @include         about:preferences#general
-// @include         about:preferences#home
-// @include         about:preferences#search
-// @include         about:preferences#privacy
-// @include         about:preferences#sync
-// @include         about:preferences#moreFromMozilla
+// @include         about:preferences($|(\?|#)($|.*))
 // @include			about:addons
 // ==/UserScript==
 
