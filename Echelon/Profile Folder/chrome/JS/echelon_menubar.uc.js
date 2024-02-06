@@ -9,10 +9,8 @@ function menuBarMutation(list, observer)
 {
     for (const mut of list)
     {
-        console.log(mut);
         if (mut.type == "attributes" && mut.attributeName == "autohide")
         {
-            console.log("Autohide change");
             let autohide = mut.target.getAttribute("autohide") == "true";
             let theme = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
             if (theme < ECHELON_LAYOUT_AUSTRALIS)

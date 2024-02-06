@@ -1,7 +1,8 @@
 let currentPage = 0; // Default to the first page
 const { PrefUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
-Services.scriptloader.loadSubScript("chrome://userchrome/content/JS/echelon_layout_template.uc.js");
 let { CustomizableUI } = ChromeUtils.importESModule("resource:///modules/CustomizableUI.sys.mjs");
+var { EchelonLayoutTemplateManager } = ChromeUtils.import("chrome://userscripts/content/modules/EchelonLayoutTemplateManager.js");
+console.log(EchelonLayoutTemplateManager);
 
 // ECHELON SETTINGS
 let echelonAppearanceBlue = "Echelon.Appearance.Blue";
@@ -95,6 +96,7 @@ function dumpExistingLayout()
 	let out = [];
 
 	for (let widget of navBarWidgets)
+	if (widget)
 	{
 		let positionQuery = CustomizableUI.getPlacementOfWidget(widget.id);
 
