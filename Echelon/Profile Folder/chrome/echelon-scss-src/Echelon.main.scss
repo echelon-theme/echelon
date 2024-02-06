@@ -54,7 +54,7 @@
   list-style-image: url("images/icons/new-window.png") !important;
 }
 
-#new-tab-button {
+:not(#TabsToolbar-customization-target) > #new-tab-button {
   list-style-image: url("images/icons/new-tab.png") !important;
 
   #main-window[echelon-style-4] & {
@@ -224,7 +224,7 @@
       list-style-image: url("images/icons/australis/new-window.png") !important;
     }
     
-    #new-tab-button {
+    :not(#TabsToolbar-customization-target) > #new-tab-button {
       list-style-image: url("images/icons/australis/new-tab.png") !important;
     }
 
@@ -382,7 +382,7 @@
     list-style-image: url("images/icons/inverted/new-window.png") !important;
   }
 
-  #new-tab-button {
+  :not(#TabsToolbar-customization-target) > #new-tab-button {
     list-style-image: url("images/icons/inverted/new-tab.png") !important;
   }
 
@@ -499,7 +499,7 @@
   list-style-image: url("images/icons/inverted/back_large_australis.png") !important;
 }
 
-#main-window[echelon-style-4][lwtheme-brighttext="true"] #new-tab-button {
+#main-window[echelon-style-4][lwtheme-brighttext="true"] :not(#TabsToolbar-customization-target) > #new-tab-button {
   list-style-image: url("images/icons/inverted/new-tab-australis.png") !important;
 }
 
@@ -550,7 +550,7 @@
     list-style-image: url("images/icons/xp/new-window.png") !important;
   }
 
-  #new-tab-button {
+  :not(#TabsToolbar-customization-target) > #new-tab-button {
     list-style-image: url("images/icons/xp/new-tab.png") !important;
   }
 
