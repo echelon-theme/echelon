@@ -54,6 +54,14 @@
   list-style-image: url("images/icons/new-window.png") !important;
 }
 
+#new-tab-button {
+  list-style-image: url("images/icons/new-tab.png") !important;
+
+  #main-window[echelon-style-4] & {
+    list-style-image: url("images/icons/new-tab-australis.png") !important;
+  }
+}
+
 #zoom-out-button {
   list-style-image: url("images/icons/zoom-out.png") !important;
 }
@@ -215,6 +223,10 @@
     #new-window-button {
       list-style-image: url("images/icons/australis/new-window.png") !important;
     }
+    
+    #new-tab-button {
+      list-style-image: url("images/icons/australis/new-tab.png") !important;
+    }
 
     #zoom-out-button {
       list-style-image: url("images/icons/australis/zoom-out.png") !important;
@@ -370,6 +382,10 @@
     list-style-image: url("images/icons/inverted/new-window.png") !important;
   }
 
+  #new-tab-button {
+    list-style-image: url("images/icons/inverted/new-tab.png") !important;
+  }
+
   #zoom-out-button {
     list-style-image: url("images/icons/inverted/zoom-out.png") !important;
   }
@@ -483,6 +499,10 @@
   list-style-image: url("images/icons/inverted/back_large_australis.png") !important;
 }
 
+#main-window[echelon-style-4][lwtheme-brighttext="true"] #new-tab-button {
+  list-style-image: url("images/icons/inverted/new-tab-australis.png") !important;
+}
+
 #main-window[echelon-style-3]:not([tabs-on-top="true"])[fxastatus="not_configured"] #nav-bar,
 #main-window[lwtheme-brighttext="true"][fxastatus="not_configured"] {
   --avatar-image-url: url("chrome://userchrome/content/images/icons/inverted/avatar-empty.png") !important;
@@ -528,6 +548,10 @@
 
   #new-window-button {
     list-style-image: url("images/icons/xp/new-window.png") !important;
+  }
+
+  #new-tab-button {
+    list-style-image: url("images/icons/xp/new-tab.png") !important;
   }
 
   #zoom-out-button {
