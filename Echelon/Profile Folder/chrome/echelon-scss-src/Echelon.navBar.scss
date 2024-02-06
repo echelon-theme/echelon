@@ -169,6 +169,10 @@ toolbar .toolbarbutton-1 > .toolbarbutton-text {
   }
 }
 
+#main-window[lwtheme-brighttext="true"]:not([echelon-style-3]) #nav-bar #bookmarks-menu-button::after {
+  background-image: url('images/dropdown-inverted.png') !important;
+}
+
 dropmarker:hover:active:not([disabled="true"]) {
   padding-top: 2px;
   padding-bottom: 0px;

@@ -367,8 +367,7 @@
   margin-left: 4px !important;
 }
 
-#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #bookmarks-menu-button::after,
-#main-window[lwtheme-brighttext=true] #nav-bar #bookmarks-menu-button::after {
+#main-window:not([echelon-style-4])[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #bookmarks-menu-button::after, #main-window:not([echelon-style-4])[echelon-style-3][lwtheme-brighttext=true] #nav-bar #bookmarks-menu-button::after {
   background-image: url("images/toolbarbutton-dropdown-arrow-inverted.png") !important;
 }
 
