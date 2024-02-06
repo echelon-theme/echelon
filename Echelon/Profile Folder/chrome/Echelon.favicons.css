@@ -24,7 +24,7 @@
 :root[echelon-style-3] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
   content: url("images/defaultFavicon-new.png") !important;
 }
-:root[echelon-style-4] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
+:root[echelon-style-4] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"]:not([pinned]) {
   display: none !important;
 }
 

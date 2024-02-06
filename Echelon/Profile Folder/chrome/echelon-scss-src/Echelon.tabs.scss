@@ -239,96 +239,78 @@ html:not([echelon-style-5]) {
   background-image: url('images/loading.png') !important;
 }
 
+@mixin tab-overlay-icon($id) {
+  $url: "images/tab-audio.svg#" + $id;
+  $url-small: "images/tab-audio-small.svg#" + $id;
+
+  list-style-image: url($url) !important;
+
+
+  &:not([pinned]):hover {
+    list-style-image: url($url + "-hover") !important;
+
+    &:active {
+      list-style-image: url($url + "-pressed") !important;
+    }
+  }
+
+  :root[lwtheme-brighttext="true"] &:not([pinned]) {
+    list-style-image: url($url + "-white") !important;
+
+    &:hover {
+      list-style-image: url($url + "-white-hover") !important;
+
+      &:active {
+        list-style-image: url($url + "-white-pressed") !important;
+      }
+    }
+  }
+
+  &[pinned] {
+    list-style-image: url($url-small) !important;;
+
+    :root[lwtheme-brighttext="true"] &:not([crashed], [selected], :hover) {
+      list-style-image: url($url-small + "-white") !important;
+    }
+  }
+}
+
 .tab-icon-overlay {
   padding: 0 !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
 
   margin-inline-end: 0 !important;
 
   :root[lwtheme-brighttext="true"] & {
     color: white !important;
   }
-
-  &[soundplaying], &[muted], &[activemedia-blocked] {
-    &:not([crashed]) {
-      border-radius: 0 !important;
-      background-color: transparent !important;
-    }
-  }
   
   &[soundplaying] {
-    list-style-image: url("images/tab-audio.svg#tab-audio") !important;
-
-    &:hover {
-      list-style-image: url("images/tab-audio.svg#tab-audio-hover") !important;
-
-      &:active {
-        list-style-image: url("images/tab-audio.svg#tab-audio-pressed") !important;
-      }
-    }
-
-    :root[lwtheme-brighttext="true"] & {
-      list-style-image: url("images/tab-audio.svg#tab-audio-white") !important;
-
-      &:hover {
-        list-style-image: url("images/tab-audio.svg#tab-audio-white-hover") !important;
-
-        &:active {
-          list-style-image: url("images/tab-audio.svg#tab-audio-white-pressed") !important;
-        }
-      }
-    }
+    @include tab-overlay-icon("tab-audio");
   }
 
   &[muted] {
-    list-style-image: url("images/tab-audio.svg#tab-audio-muted") !important;
-
-    &:hover {
-      list-style-image: url("images/tab-audio.svg#tab-audio-muted-hover") !important;
-
-      &:active {
-        list-style-image: url("images/tab-audio.svg#tab-audio-muted-pressed") !important;
-      }
-    }
-
-    :root[lwtheme-brighttext="true"] & {
-      list-style-image: url("images/tab-audio.svg#tab-audio-muted-white") !important;
-
-      &:hover {
-        list-style-image: url("images/tab-audio.svg#tab-audio-muted-white-hover") !important;
-
-        &:active {
-          list-style-image: url("images/tab-audio.svg#tab-audio-muted-white-pressed") !important;
-        }
-      }
-    }
+    @include tab-overlay-icon("tab-audio-muted");
   }
 
   &[activemedia-blocked] {
-    list-style-image: url("images/tab-audio.svg#tab-audio-blocked") !important;
-  
-    &:hover {
-      list-style-image: url("images/tab-audio.svg#tab-audio-blocked-hover") !important;
-  
-      &:active {
-        list-style-image: url("images/tab-audio.svg#tab-audio-blocked-pressed") !important;
-      }
-    }
-  
-    :root[lwtheme-brighttext="true"] & {
-      list-style-image: url("images/tab-audio.svg#tab-audio-blocked-white") !important;
-  
-      &:hover {
-        list-style-image: url("images/tab-audio.svg#tab-audio-blocked-white-hover") !important;
-  
-        &:active {
-          list-style-image: url("images/tab-audio.svg#tab-audio-blocked-white-pressed") !important;
-        }
-      }
-    }
+    @include tab-overlay-icon("tab-audio-blocked");
   }
 
   &[indicator-replaces-favicon] {
     opacity: 1 !important;
+  }
+
+  &[pinned] {
+    margin-inline-start: -15px !important;
+    margin-inline-end: -1px !important;
+    top: -3px !important;
+    border-radius: 10px !important;
+
+    &:hover {
+      background-color: #fff !important;
+    }
   }
 }
 
@@ -354,7 +336,7 @@ html:not([echelon-style-5]) {
     content: url('images/defaultFavicon-new.png') !important;
   }
 
-  #main-window[echelon-style-4] & {
+  #main-window[echelon-style-4] &:not([pinned]) {
     display: none !important;
   }
 }

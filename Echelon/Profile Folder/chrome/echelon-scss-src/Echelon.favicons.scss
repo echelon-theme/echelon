@@ -29,7 +29,7 @@
         content: url("images/defaultFavicon-new.png") !important;
     }
 
-    :root[echelon-style-4] & {
+    :root[echelon-style-4] &:not([pinned]) {
         display: none !important;
     }
 }
