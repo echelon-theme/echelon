@@ -132,8 +132,8 @@ menupopup[type="arrow"]:not(#PlacesChevronPopup) {
 }
 
 .autoscroller {
-	width: 28px !important;
-	height: 28px !important;
+	width: 29px !important;
+	height: 29px !important;
 	margin: -14px !important;
 	
 	&::part(content) {
@@ -142,9 +142,9 @@ menupopup[type="arrow"]:not(#PlacesChevronPopup) {
 		box-shadow: none !important;
 		background-image: url("chrome://userchrome/content/images/autoscroll.png") !important;
 		background-position: right top !important;
-		margin: 0 !important;
-		max-width: 28px !important;
-		max-height: 28px !important;
+		margin: 1px !important;
+		max-width: 29px !important;
+		max-height: 29px !important;
 		background-clip: border-box !important;
 	}
 

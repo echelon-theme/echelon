@@ -755,8 +755,7 @@
 #main-window[echelon-style-4] .tab-throbber:not([pinned]),
 #main-window[echelon-style-4] .tab-icon-pending:not([pinned]),
 #main-window[echelon-style-4] .tab-icon-image:not([pinned]),
-#main-window[echelon-style-4] .tab-sharing-icon-overlay:not([pinned]),
-#main-window[echelon-style-4] .tab-icon-overlay:not([pinned]) {
+#main-window[echelon-style-4] .tab-sharing-icon-overlay:not([pinned]) {
   margin-inline-end: 6px !important;
 }
 

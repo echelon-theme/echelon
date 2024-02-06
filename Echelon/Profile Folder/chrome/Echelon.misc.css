@@ -764,7 +764,7 @@ treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
     list-style-image: url("chrome://userchrome/content/images/Question-xp.png") !important;
   }
 }
-:root[sizemode=fullscreen] #TabsToolbar .toolbar-items {
+:root[sizemode=fullscreen][tabs-on-top=true] #TabsToolbar .toolbar-items, :root[sizemode=fullscreen]:not([tabs-on-top=true]) #nav-bar {
   margin-inline-end: 49px !important;
 }
 :root[sizemode=fullscreen] .titlebar-button:not(.titlebar-max) {

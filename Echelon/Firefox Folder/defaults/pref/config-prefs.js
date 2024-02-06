@@ -23,6 +23,10 @@ pref("browser.privateWindowSeparation.enabled", false);
 pref("browser.display.windows.non_native_menus", 0);
 pref("widget.non-native-theme.enabled", false);
 
+// Angle graphics engine + caption button mask is notoriously buggy
+// This makes Firefox use the DirectX backend instead:
+pref("gfx.webrender.software", true);
+
 // Old smooth scroll
 pref("general.smoothScroll.currentVelocityWeighting", .25);
 pref("general.smoothScroll.mouseWheel.durationMaxMS", 400);

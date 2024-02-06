@@ -842,7 +842,8 @@ treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
 }
 
 :root[sizemode="fullscreen"] {
-  #TabsToolbar .toolbar-items {
+  &[tabs-on-top="true"] #TabsToolbar .toolbar-items,
+  &:not([tabs-on-top="true"]) #nav-bar {
     margin-inline-end: 49px !important;
   }
 
