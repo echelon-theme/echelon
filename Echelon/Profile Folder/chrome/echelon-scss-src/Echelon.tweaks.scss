@@ -700,7 +700,7 @@
   display: none !important;
 }
 
-#main-window[tabsintitlebar][echelon-style-4] #toolbar-menubar[autohide="true"][inactive="true"]:not([customizing="true"]) + #TabsToolbar .toolbar-items {
+#main-window[tabsintitlebar][echelon-style-4]:not([sizemode="maximized"]) #toolbar-menubar[autohide="true"][inactive="true"]:not([customizing="true"]) + #TabsToolbar .toolbar-items {
   margin-top: 0 !important;
   padding-top: calc(var(--titlebar-height) - 10px) !important;
 }
@@ -712,13 +712,6 @@
 #main-window[sizemode="maximized"][echelon-style-4][tabsintitlebar] #TabsToolbar, 
 #main-window[sizemode="maximized"][echelon-style-4][tabsintitlebar] #toolbar-menubar {
   padding-left: 0 !important;
-}
-
-@media (-moz-windows-compositor) {
-  #main-window[echelon-style-4] .titlebar-buttonbox-container {
-    position: relative !important;
-    right: -6px !important;
-  }
 }
 
 #main-window[echelon-style-4] .tabbrowser-tab:not([pinned="true"])[label="New Tab"] .tab-icon-image {
@@ -1479,7 +1472,7 @@
   }
 }
 
-#main-window[sizemode="maximized"][echelon-style-4][tabsintitlebar] #toolbar-menubar[autohide="true"] + #TabsToolbar {
+#main-window[sizemode="maximized"][echelon-style-4][tabsintitlebar] #toolbar-menubar[autohide="true"] + #TabsToolbar .toolbar-items {
   margin-top: 4px !important;
 }
 

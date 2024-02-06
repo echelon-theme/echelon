@@ -1,5 +1,9 @@
 #TabsToolbar {
   padding-inline: 4px !important;
+
+  :root[sizemode="maximized"][tabsintitlebar][tabs-on-top="true"] & {
+    padding-inline-end: 0 !important;
+  }
 }
 
 #main-window:not([echelon-appearance-xp]) {
