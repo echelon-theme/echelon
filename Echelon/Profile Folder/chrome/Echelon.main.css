@@ -53,10 +53,10 @@
   list-style-image: url("images/icons/new-window.png") !important;
 }
 
-:not(#TabsToolbar-customization-target) > #new-tab-button {
+:not(#TabsToolbar-customization-target, toolbarpaletteitem) > #new-tab-button {
   list-style-image: url("images/icons/new-tab.png") !important;
 }
-#main-window[echelon-style-4] :not(#TabsToolbar-customization-target) > #new-tab-button {
+#main-window[echelon-style-4] :not(#TabsToolbar-customization-target, toolbarpaletteitem) > #new-tab-button {
   list-style-image: url("images/icons/new-tab-australis.png") !important;
 }
 
@@ -212,7 +212,7 @@
   #main-window[echelon-style-4]:not([echelon-appearance-blue], [echelon-appearance-xp]) #new-window-button {
     list-style-image: url("images/icons/australis/new-window.png") !important;
   }
-  #main-window[echelon-style-4]:not([echelon-appearance-blue], [echelon-appearance-xp]) :not(#TabsToolbar-customization-target) > #new-tab-button {
+  #main-window[echelon-style-4]:not([echelon-appearance-blue], [echelon-appearance-xp]) :not(#TabsToolbar-customization-target, toolbarpaletteitem) > #new-tab-button {
     list-style-image: url("images/icons/australis/new-tab.png") !important;
   }
   #main-window[echelon-style-4]:not([echelon-appearance-blue], [echelon-appearance-xp]) #zoom-out-button {
@@ -337,8 +337,8 @@
 #main-window[lwtheme-brighttext=true] #new-window-button {
   list-style-image: url("images/icons/inverted/new-window.png") !important;
 }
-#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar :not(#TabsToolbar-customization-target) > #new-tab-button,
-#main-window[lwtheme-brighttext=true] :not(#TabsToolbar-customization-target) > #new-tab-button {
+#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar :not(#TabsToolbar-customization-target, toolbarpaletteitem) > #new-tab-button,
+#main-window[lwtheme-brighttext=true] :not(#TabsToolbar-customization-target, toolbarpaletteitem) > #new-tab-button {
   list-style-image: url("images/icons/inverted/new-tab.png") !important;
 }
 #main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #zoom-out-button,
@@ -455,7 +455,7 @@
   list-style-image: url("images/icons/inverted/back_large_australis.png") !important;
 }
 
-#main-window[echelon-style-4][lwtheme-brighttext=true] :not(#TabsToolbar-customization-target) > #new-tab-button {
+#main-window[echelon-style-4][lwtheme-brighttext=true] :not(#TabsToolbar-customization-target, toolbarpaletteitem) > #new-tab-button {
   list-style-image: url("images/icons/inverted/new-tab-australis.png") !important;
 }
 
@@ -495,7 +495,7 @@
 #main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #new-window-button {
   list-style-image: url("images/icons/xp/new-window.png") !important;
 }
-#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) :not(#TabsToolbar-customization-target) > #new-tab-button {
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) :not(#TabsToolbar-customization-target, toolbarpaletteitem) > #new-tab-button {
   list-style-image: url("images/icons/xp/new-tab.png") !important;
 }
 #main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #zoom-out-button {

@@ -76,8 +76,8 @@
   background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px), var(--tab-background-hover), linear-gradient(-moz-dialog, -moz-dialog) !important;
 }
 
-#tabs-newtab-button:hover:active .toolbarbutton-icon,
-#tabs-newtab-button[open] .toolbarbutton-icon {
+#main-window:not([echelon-style-4], [lwtheme-brighttext=true]) #tabs-newtab-button:hover:active .toolbarbutton-icon,
+#main-window:not([echelon-style-4], [lwtheme-brighttext=true]) #tabs-newtab-button[open] .toolbarbutton-icon {
   background-position-x: -16px !important;
 }
 
@@ -135,6 +135,9 @@ html:not([echelon-style-5]) .tabbrowser-tab:first-of-type:last-of-type .tab-clos
   background-color: transparent !important;
   list-style-image: none !important;
   background-image: url("images/newtab.png") !important;
+}
+:root[lwtheme-brighttext=true] #tabs-newtab-button .toolbarbutton-icon {
+  background-image: url("images/newtab-inverted.png") !important;
 }
 
 .tab-label-container {
@@ -329,11 +332,6 @@ html:not([echelon-style-5]) .tabbrowser-tab:first-of-type:last-of-type .tab-clos
   opacity: 1 !important;
 }
 
-.tab-icon-image:not([src]), .tab-icon-image:-moz-broken {
-  content: url("images/transparent.png") !important;
-  background-image: url("images/folder-item.png") !important;
-}
-
 .tab-icon-image:not([src]),
 .tab-icon-image:-moz-broken {
   content: url("images/defaultFavicon.png") !important;
@@ -352,8 +350,9 @@ html:not([echelon-style-5]) .tabbrowser-tab:first-of-type:last-of-type .tab-clos
   display: none !important;
 }
 
-.tab-icon-stack:not([busy=true]) .tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]) {
+.tab-icon-stack:not([busy=true]) .tab-icon-image:not([crashed], [sharing], [pictureinpicture]) {
   display: flex !important;
+  opacity: 1 !important;
 }
 
 spacer[part=overflow-end-indicator],
