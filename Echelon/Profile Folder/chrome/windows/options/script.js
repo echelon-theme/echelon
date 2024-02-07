@@ -176,6 +176,8 @@ for (const option of document.querySelectorAll(".option"))
         option.addEventListener("command", refreshViewProperties);
     else if (option.localName == "checkbox")
         option.addEventListener("CheckboxStateChange", refreshViewProperties);
+    else if (option.localName == "input")
+        option.addEventListener("input", refreshViewProperties);
 }
 
 refreshViewProperties();
@@ -198,20 +200,17 @@ function getOptionValue(optElm)
 
 function isRestartRequired()
 {
-    let restartRequired = false;
-
     for (const option of document.querySelectorAll(".option"))
     {
         if (option.closest("[section-change-requires-restart]") || option.getAttribute("change-requires-restart"))
         {
             if (option.originalValue != getOptionValue(option))
             {
-                restartRequired = true;
+                return true;
             }
         }
     }
-
-    return restartRequired;
+    return false;
 }
 
 function okApplyHandler(e, closeWindow = false)

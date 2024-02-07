@@ -5,29 +5,30 @@
 // @include			main
 // ==/UserScript==
 
-let brand;
-
-function identityLabelMutation(list, observer)
 {
-    for (const mut of list)
+    var { waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+    waitForElement = waitForElement.bind(window);
+
+    function identityLabelMutation(list)
     {
-        if (brand != Services.appinfo.name && mut.type == "attributes" && mut.attributeName == "value")
+        let brand = BrandUtils.getShortProductName();
+        for (const mut of list)
         {
-            if (mut.target.value == Services.appinfo.name)
+            if (mut.target.value != brand)
             {
                 mut.target.value = brand;
             }
         }
     }
-}
 
-function observeIdentityLabel()
-{
-    brand = BrandUtils.getShortProductName();
-    let identity = document.getElementById("identity-icon-label");
-    if (identity)
-    {
+    waitForElement("#identity-icon-label").then(identity => {
         let observer = new MutationObserver(identityLabelMutation);
-        observer.observe(identity, { attributes: true });
-    }
+        observer.observe(
+            identity,
+            {
+                attributes: true,
+                attributeFilter: ["value"]
+            }
+        );
+    })
 }

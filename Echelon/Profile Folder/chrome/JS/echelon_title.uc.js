@@ -5,7 +5,6 @@
 // @include			main
 // ==/UserScript===
 
-function changeTitleFormats()
 {
     let root = document.documentElement;
     let titles = BrandUtils.getUserTitles();
@@ -14,9 +13,4 @@ function changeTitleFormats()
     root.dataset.titlePrivate = titles.private;
     root.dataset.contentTitleDefault = titles.contentDefault;
     root.dataset.contentTitlePrivate = titles.contentPrivate;
-
-    /* Update initial title. */
-    document.title = PrivateBrowsingUtils.isBrowserPrivate(gBrowser)
-    ? titles.private
-    : titles.default;
 }

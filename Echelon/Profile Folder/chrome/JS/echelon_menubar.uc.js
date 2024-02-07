@@ -5,11 +5,13 @@
 // @include			main
 // ==/UserScript==
 
-function menuBarMutation(list, observer)
 {
-    for (const mut of list)
+    var { waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+    waitForElement = waitForElement.bind(window);
+
+    function menuBarMutation(list)
     {
-        if (mut.type == "attributes" && mut.attributeName == "autohide")
+        for (const mut of list)
         {
             let autohide = mut.target.getAttribute("autohide") == "true";
             let theme = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
@@ -19,15 +21,15 @@ function menuBarMutation(list, observer)
             }
         }
     }
-}
 
-function observeMenuBar()
-{
-    
-    let menubar = document.getElementById("toolbar-menubar");
-    if (menubar)
-    {
+    waitForElement("#toolbar-menubar").then(menubar => {
         let observer = new MutationObserver(menuBarMutation);
-        observer.observe(menubar, { attributes: true });
-    }
+        observer.observe(
+            menubar,
+            {
+                attributes: true,
+                attributeFilter: ["autohide"]
+            }
+        );
+    });
 }

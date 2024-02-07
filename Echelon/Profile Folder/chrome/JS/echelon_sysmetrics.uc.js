@@ -5,36 +5,38 @@
 // @include			main
 // ==/UserScript==
 
-function getAndSetTitleBarHeight() {
-    if (Components.classes["@mozilla.org/xre/app-info;1"].getService(Components.interfaces.nsIXULRuntime).OS == "WINNT") {
-        // Load User32.dll library
-        const user32 = ctypes.open("user32.dll");
+{
+    var { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");
 
-        // Define the GetSystemMetrics function signature
-        const GetSystemMetrics = user32.declare("GetSystemMetrics", ctypes.winapi_abi,
-            ctypes.int32_t,
-            ctypes.int32_t
-        );
+    window.addEventListener("load", function() {
+        if (Services.appinfo.OS == "WINNT")
+        {
+            let user32 = ctypes.open("user32.dll");
+            let GetSystemMetrics = user32.declare(
+                "GetSystemMetrics",
+                ctypes.winapi_abi,
+                ctypes.int32_t,
+                ctypes.int32_t
+            );
 
-        // Get the height of the system title bar (SM_CYCAPTION)
-        var titleBarHeight = GetSystemMetrics(4) - 1;
+            // SM_CYPCAPTION
+            let titlebarHeight = GetSystemMetrics(4) - 1;
 
-        // Get the width of padded borders (SM_CXPADDEDBORDER)
-        var paddedBorderHeight = GetSystemMetrics(92) - 1;
+            // SM_CXPADDEDBORDER
+            let paddedBorder = GetSystemMetrics(92);
+            if (paddedBorder > 0)
+            {
+                paddedBorder--;
+            }
 
-        // Close the User32.dll library
-        user32.close();
-    } else {
-        var titleBarHeight = 16;
-    }
-
-    var titlebarHeightStyle = document.createElement('style');
-    document.head.appendChild(titlebarHeightStyle);
-
-    titlebarHeightStyle.innerHTML = `
-        :root {
-            --titlebar-height: ${titleBarHeight}px;
-            --padded-border: ${paddedBorderHeight}px;
+            let style = document.createElement("style");
+            style.innerHTML = `
+                :root {
+                    --titlebar-height: ${titlebarHeight}px;
+                    --padded-border: ${paddedBorder}px;
+                }
+            `;
+            document.head.appendChild(style);
         }
-    `
+    });
 }

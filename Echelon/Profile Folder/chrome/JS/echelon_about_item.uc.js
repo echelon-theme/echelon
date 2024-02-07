@@ -5,9 +5,11 @@
 // @include			main
 // ==/UserScript===
 
-function updateAboutItem()
 {
+    var { waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+    waitForElement = waitForElement.bind(window);
+
     waitForElement("#aboutName").then(e => {
         e.label = `About ${BrandUtils.getShortProductName()}`;
-    })
+    });
 }

@@ -5,8 +5,19 @@
 // @include			main
 // ==/UserScript==
 
-function addEchelonOptionsMenuItem()
 {
+    var { waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+    waitForElement = waitForElement.bind(window);
+
+    function launchEchelonOptions()
+    {
+        window.openDialog(
+            "chrome://userchrome/content/windows/options/options.xhtml",
+            "Echelon Options",
+            "chrome,centerscreen,resizeable=no,dependent"
+        ); 
+    }
+
     waitForElement("#menu_ToolsPopup").then((prefsItem) => {
         let echelonPrefsItem = window.MozXULElement.parseXULToFragment(`
             <menuitem id="menu_echelonOptions" oncommand="launchEchelonOptions();" label="Echelon Options" accesskey="E"/>
@@ -21,11 +32,3 @@ function addEchelonOptionsMenuItem()
     });
 }
 
-function launchEchelonOptions()
-{
-    window.openDialog(
-        "chrome://userchrome/content/windows/options/options.xhtml",
-        "Echelon Options",
-        "chrome,centerscreen,resizeable=no,dependent"
-    ); 
-}
