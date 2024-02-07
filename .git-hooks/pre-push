@@ -15,11 +15,11 @@ build_number=$(git rev-list --count HEAD)
 # dotfiles within chrome URLs are weird, and won't even return
 # the "file not found" page when they don't exist. They just
 # don't return anything.
-cat <<EOL > build.txt
+cat <<EOL > "Echelon/Profile Folder/chrome/build.txt"
 $build_number
 EOL
 
-git add build.txt
+git add "Echelon/Profile Folder/chrome/build.txt"
 
 # Ignore next run
 git config custom.ignorePostCommitHook "true"
