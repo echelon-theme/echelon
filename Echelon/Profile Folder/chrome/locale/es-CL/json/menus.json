@@ -1,0 +1,18 @@
+{
+    "viewImage": {
+        "label": "Ver imagen",
+        "accessKey": "i"
+    },
+    "viewBGImage": {
+        "label": "Ver imagen de fondo",
+        "accessKey": "V"
+    },
+    "echelonOptions": {
+        "label": "Ajustes de Echelon",
+        "accessKey": "E"
+    },
+    "tabsOnTop": {
+        "label": "Pestañas por encima",
+        "accessKey": "s"
+    }
+}
