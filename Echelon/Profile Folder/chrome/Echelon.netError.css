@@ -21,7 +21,7 @@
   .container {
     margin: 4em auto !important;
     margin-top: calc(4em + 30px) !important;
-    background: url("chrome://global/skin/icons/warning-large.png") no-repeat scroll left 0px content-box border-box #FFF !important;
+    background: url("chrome://userchrome/content/images/warning-large.png") no-repeat scroll left 0px content-box border-box #FFF !important;
     border: 1px solid #a0a0a0 !important;
     border-radius: 10px !important;
     padding: 3em !important;
