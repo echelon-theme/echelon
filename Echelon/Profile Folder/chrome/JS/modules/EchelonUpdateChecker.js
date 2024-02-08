@@ -23,7 +23,10 @@ class EchelonUpdateChecker
 
     static async #getRemoteBuildNumber()
     {
-        let response = await fetch(`https://raw.githubusercontent.com/${this.GITHUB_REPOSITORY}/${this.GITHUB_REPOSITORY_BRANCH}/${this.BUILD_FILE_PATH_REMOTE}`);
+        let response = await fetch(
+            `https://raw.githubusercontent.com/${this.GITHUB_REPOSITORY}/${this.GITHUB_REPOSITORY_BRANCH}/${this.BUILD_FILE_PATH_REMOTE}`, 
+            { cache: "reload" }
+        );
         if (response.status != 200)
         {
             throw new Error(`Remote server returned ${response.status} when attempting to get version.`);
@@ -41,7 +44,10 @@ class EchelonUpdateChecker
 
     static async #getLocalBuildNumber()
     {
-        let response = await fetch(this.BUILD_FILE_PATH_LOCAL);
+        let response = await fetch(
+            this.BUILD_FILE_PATH_LOCAL,
+            { cache: "reload" }
+        );
 
         let buildText = await response.text();
         let build = Number(buildText);
