@@ -1,7 +1,6 @@
 {
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-append-prepend": "^1.0.9",
     "gulp-sass": "^5.1.0",
     "sass": "^1.70.0"
   }
