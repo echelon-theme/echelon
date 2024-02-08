@@ -122,7 +122,7 @@ EchelonPageManager.registerAboutPage(
 );
 EchelonPageManager.registerAboutPage(
     "privatebrowsing",
-    "chrome://userchrome/content/pages/privateBrowsing/privatebrowsing.xhtml"
+    "chrome://userchrome/content/pages/privatebrowsing/privatebrowsing.xhtml"
 );
 EchelonPageManager.registerAboutPage(
     "config",
