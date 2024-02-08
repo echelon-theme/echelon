@@ -1,60 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html SYSTEM "chrome://echelon/locale/dtd/privatebrowsing.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" lang="en" xml:lang="en">
 	<head>
-		<title>Private Browsing</title>
+		<title>&privatebrowsingpage.title;</title>
 		<link rel="icon" type="image/png" href="chrome://userchrome/content/pages/privatebrowsing/images/Privacy-16.png" />
 		<link rel="stylesheet" type="text/css" href="chrome://userchrome/content/pages/privatebrowsing/privatebrowsing.css" />
 		<script id="refresh-tab-name" src="chrome://userchrome/content/pages/common/_selfLoadTitle.js"></script>
 	</head>
 	<body class="private" dir="ltr">
-		<div id="errorPageContainer" hbox="1">
-			<div class="errorPageIcon"></div>
-			<div class="errorPageContentContainer">
-				<div id="errorTitle">
-					<h1 id="errorTitleText" class="showPrivate">Private Browsing</h1>
-					<h1 id="errorTitleTextNormal" class="showNormal">Would you like to start Private Browsing?</h1>
-				</div>
-				<div id="errorLongContent">
-
+		    <!-- PAGE CONTAINER (for styling purposes only) -->
+			<div id="errorPageContainer">
+				<div class="errorPageIcon"></div>
+				<div class="errorPageContentContainer">
+					<!-- Error Title -->
+					<div id="errorTitle">
+					<h1 id="errorTitleText" class="showPrivate">&privatebrowsingpage.title;</h1>
+					<h1 id="errorTitleTextNormal" class="showNormal">&privatebrowsingpage.title.normal;</h1>
+					</div>
+			
+					<!-- LONG CONTENT (the section most likely to require scrolling) -->
+					<div id="errorLongContent">
+			
 					<!-- Short Description -->
 					<div id="errorShortDesc">
-						<p id="errorShortDescText" class="showPrivate">Firefox won't remember any history for this window.</p>
-						<p id="errorShortDescTextNormal" class="showNormal">Firefox is not currently in Private Browsing Mode.</p>
+						<p id="errorShortDescText" class="showPrivate">&privatebrowsingpage.issueDesc;</p>
+						<p id="errorShortDescTextNormal" class="showNormal">&privatebrowsingpage.issueDesc.normal;</p>
 					</div>
-
+			
 					<!-- Long Description -->
+			
 					<div id="errorLongDesc">
-						<p id="errorLongDescText">In a Private Browsing window, Firefox won't keep any browser history, search history, download history, web form history, cookies, or temporary internet files.  However, files you download and bookmarks you make will be kept.</p>
+						<p id="errorLongDescText">&privatebrowsingpage.description;</p>
 					</div>
-
+			
 					<!-- Start Private Browsing -->
-					<div id="startprivatebrowsingDesc" class="showNormal">
-						<xul:button id="startprivatebrowsing" label="Start Private Browsing"
-								    accesskey="P"
-								    oncommand="RPMSendAsyncMessage('OpenPrivateWindow');"/>
-					  </div>
-
-					<!-- Footer -->
-					<div id="footerDesc">
-						<p id="footerText" class="showPrivate">To stop Private Browsing, you can close this window.</p>
-						<p id="footerTextNormal" class="showNormal">To start Private Browsing, you can also select Firefox > Start Private Browsing.</p>
+					<div id="startPrivateBrowsingDesc" class="showNormal">
+						<button xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+								id="startPrivateBrowsing" label="&privatebrowsingpage.startPrivateBrowsing.label;"
+								accesskey="&privatebrowsingpage.startPrivateBrowsing.accesskey;"
+								oncommand="RPMSendAsyncMessage('OpenPrivateWindow');"/>
 					</div>
-
+			
+					<!-- Footer -->
+			
+					<div id="footerDesc">
+						<p id="footerText" class="showPrivate">&privatebrowsingpage.howToStop2;</p>
+						<p id="footerTextNormal" class="showNormal">&privatebrowsingpage.howToStart2;</p>
+					</div>
+			
 					<!-- More Info -->
 					<div id="moreInfo" class="showPrivate">
-					
 						<p id="moreInfoText">
-							While this computer won't have a record of your browsing history, your internet service provider or employer can still track the pages you visit.
+						&privatebrowsingpage.moreInfo;
+			
 						</p>
 						<p id="moreInfoLinkContainer">
-							<a id="moreInfoLink" target="_blank" href="https://support.mozilla.org/1/firefox/29.0/WINNT/en-US/private-browsing">Learn More</a>
+						<a id="moreInfoLink" target="_blank">&privatebrowsingpage.learnMore;</a>
 						</p>
 					</div>
-				  </div>
-			</div>
-		</div>
+					</div>
+				</div>
+			  </div>
 	</body>
 	<script>
 		if (windowRoot?.ownerGlobal?.gBrowser)
@@ -64,7 +70,7 @@
 				document.body.classList.remove("private");
 				document.body.classList.add("normal");
 				
-				document.title = "Would you like to start Private Browsing?";
+				document.title = document.getElementById("errorTitleTextNormal").innerText;
 				document.querySelector("link[rel=\"icon\"]").setAttribute("href", "chrome://userchrome/content/pages/privatebrowsing/images/question-16.png");
 			}
 		}

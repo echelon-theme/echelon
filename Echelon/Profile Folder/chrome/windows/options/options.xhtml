@@ -3,199 +3,208 @@
 <?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
 <?xml-stylesheet href="chrome://userchrome/content/windows/options/styles.css" type="text/css"?>
 
-<window xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="echelonOptions" windowtype="Browser:EchelonOptions" width="450" height="500" role="dialog" resizable="false" title="Echelon Options">
+<!DOCTYPE window SYSTEM "chrome://echelon/locale/dtd/echelon-options.dtd">
+
+<window xmlns:html="http://www.w3.org/1999/xhtml" 
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+        id="echelonOptions" 
+        windowtype="Browser:EchelonOptions"
+        width="450" height="525" role="dialog" resizable="false" 
+        title="&window.title;">
+
+    <stringbundle id="optionsBundle" src="chrome://echelon/locale/properties/echelon-options.properties"/>
+
     <vbox id="contentArea" flex="1">
         <html:div id="tabs">
 			<html:div id="main-tabs">
 				<html:div class="tab tab-selected" id="tab-general">
 					<html:div class="tab-icon"></html:div>
-					<html:span class="tab-label">General</html:span>
+					<html:span class="tab-label">&tabs.general;</html:span>
 				</html:div>
 				<html:div class="tab" id="tab-branding">
 					<html:div class="tab-icon"></html:div>
-					<html:span class="tab-label">Branding</html:span>
+					<html:span class="tab-label">&tabs.branding;</html:span>
 				</html:div>
 				<html:div class="tab" id="tab-native-controls">
 					<html:div class="tab-icon"></html:div>
-					<html:span class="tab-label">Native Controls</html:span>
+					<html:span class="tab-label">&tabs.nativeControls;</html:span>
 				</html:div>
 				<html:div class="tab" id="tab-about">
 					<html:div class="tab-icon"></html:div>
-					<html:span class="tab-label">About</html:span>
+					<html:span class="tab-label">&tabs.about;</html:span>
 				</html:div>
 			</html:div>
 			<html:div class="tab" id="tab-debug">
                 <html:div class="tab-icon"></html:div>
-                <html:span class="tab-label">Debug</html:span>
+                <html:span class="tab-label">&tabs.debug;</html:span>
             </html:div>
         </html:div>
         <html:div id="content">
             <html:div id="main-section">    
                 <html:div id="section-general" class="section section-selected">
                     <groupbox>
-                        <caption>Appearance</caption>
+                        <caption>&general.appearance;</caption>
                         <html:div class="option-container">
-                            <label value="Style:"/>
+                            <label value="&general.appearance.style;"/>
                             <menulist native="" class="option" data-type="enum" data-option="Echelon.Appearance.Style">
                                 <menupopup>
-                                    <menuitem label="Strata (Firefox 4)" value="0"/>
-                                    <menuitem label="Strata (Firefox 5-9)" value="1"/>
-                                    <menuitem label="Strata (Firefox 10-13)" value="2"/>
-                                    <menuitem label="Strata (Firefox 14-28)" value="3"/>
-                                    <menuitem label="Australis (Firefox 29+)" value="4"/>
+                                    <menuitem label="&general.appearance.style.ff4;" value="0"/>
+                                    <menuitem label="&general.appearance.style.ff5;" value="1"/>
+                                    <menuitem label="&general.appearance.style.ff10;" value="2"/>
+                                    <menuitem label="&general.appearance.style.ff14;" value="3"/>
+                                    <menuitem label="&general.appearance.style.australis;" value="4"/>
                                 </menupopup>
                             </menulist>
                         </html:div>
                         <html:div class="option-container">
-                            <label value="OS Style:"/>
+                            <label value="&general.appearance.os;"/>
                             <menulist native="" class="option os-control-list">
                                 <menupopup>
-                                    <menuitem label="Windows XP" value="winxp"/>
-                                    <menuitem label="Windows Vista/7" value="win7"/>
-                                    <menuitem label="Windows 8" value="win8" australis-only="true"/>
-                                    <menuitem label="Windows 10" value="win10" australis-only="true"/>
+                                    <menuitem label="&general.appearance.os.xp;" value="winxp"/>
+                                    <menuitem label="&general.appearance.os.vista;" value="win7"/>
+                                    <menuitem label="&general.appearance.os.eight;" value="win8" australis-only="true"/>
+                                    <menuitem label="&general.appearance.os.ten;" value="win10" australis-only="true"/>
                                 </menupopup>
                             </menulist>
                         </html:div>
                         <html:div class="option-container">
-                            <label value="Homepage Style:"/>
+                            <label value="&general.appearance.home;"/>
                             <menulist native="" class="option" data-type="enum" data-option="Echelon.Appearance.Homepage.Style">
                                 <menupopup>
-                                    <menuitem label="Firefox 4-9" value="0"/>
-                                    <menuitem label="Firefox 10-13" value="1"/>
-                                    <menuitem label="Firefox 14-28" value="2"/>
-                                    <menuitem label="Firefox 29" value="3"/>
-                                    <menuitem label="Firefox 56" value="4"/>
+                                    <menuitem label="&general.appearance.home.ff4;" value="0"/>
+                                    <menuitem label="&general.appearance.home.ff10;" value="1"/>
+                                    <menuitem label="&general.appearance.home.ff14;" value="2"/>
+                                    <menuitem label="&general.appearance.home.ff29;" value="3"/>
+                                    <menuitem label="&general.appearance.home.ff56;" value="4"/>
                                 </menupopup>
                             </menulist>
                         </html:div>
-                        <checkbox native="" label="Use Aero blue (Vista/7)" class="option" data-type="bool" data-option="Echelon.Appearance.Blue" win7-only="true"/>
-                        <checkbox native="" label="Hide &quot;Extensions&quot; button (not recommended)" class="option" data-type="bool" data-option="Echelon.Option.HideUnifiedExtensions" change-requires-restart="true"/>
-                        <checkbox native="" label="Use 2013+ Firefox logo" class="option" data-type="bool" data-option="Echelon.Appearance.NewLogo" change-requires-restart="true"/>
-                        <checkbox native="" label="Enable fog (Australis only)" class="option" data-type="bool" data-option="Echelon.Appearance.Australis.EnableFog" australis-only="true"/>
-                        <checkbox native="" label="Theme Developer Tools" class="option" data-type="bool" data-option="Echelon.Appearance.DevTools" change-requires-restart="true"/>
+                        <checkbox native="" label="&general.appearance.blue;" class="option" data-type="bool" data-option="Echelon.Appearance.Blue" win7-only="true"/>
+                        <checkbox native="" label="&general.appearance.hideAddons;" class="option" data-type="bool" data-option="Echelon.Option.HideUnifiedExtensions" change-requires-restart="true"/>
+                        <checkbox native="" label="&general.appearance.newLogo;" class="option" data-type="bool" data-option="Echelon.Appearance.NewLogo" change-requires-restart="true"/>
+                        <checkbox native="" label="&general.appearance.australisFog;" class="option" data-type="bool" data-option="Echelon.Appearance.Australis.EnableFog" australis-only="true"/>
+                        <checkbox native="" label="&general.appearance.themeDevTools;" class="option" data-type="bool" data-option="Echelon.Appearance.DevTools" change-requires-restart="true"/>
                     </groupbox>
                     <groupbox>
-                        <caption>Firefox Button</caption>
-                        <checkbox native="" label="Custom Firefox Button style" class="option" data-type="bool" data-option="Echelon.FirefoxButton.CustomStyle" change-requires-restart="true"/>
+                        <caption>&general.firefoxButton;</caption>
+                        <checkbox native="" label="&general.firefoxButton.useCustomStyle;" class="option" data-type="bool" data-option="Echelon.FirefoxButton.CustomStyle" change-requires-restart="true"/>
                         <html:div class="option-container">
-                            <label value="Firefox Button text:"/>
+                            <label value="&general.firefoxButton.customText;"/>
                             <html:input type="text" id="custom-name" class="option" data-type="string" data-option="Echelon.FirefoxButton.CustomName" change-requires-restart="true"/>
                         </html:div>
                         <html:div class="option-container">
-                            <label value="Firefox Button color:" />
+                            <label value="&general.firefoxButton.customColor;" />
                             <html:input type="color" class="option" data-type="string" data-option="Echelon.FirefoxButton.CustomBGColor" change-requires-restart="true"/>
                         </html:div>
                     </groupbox>
                     <groupbox>
-                        <caption>Behavior</caption>
-                        <checkbox native="" label="Old &quot;View Image&quot; behavior in context menu" class="option" data-type="bool" data-option="Echelon.Behavior.ViewImage"/> 
+                        <caption>&general.behavior;</caption>
+                        <checkbox native="" label="&general.behavior.viewImage;" class="option" data-type="bool" data-option="Echelon.Behavior.ViewImage"/>
+                        <checkbox native="" label="&general.behavior.noUpdates;" class="option" data-type="bool" data-option="Echelon.Option.NoUpdateChecks"/> 
                     </groupbox>
                 </html:div>
                 <html:div id="section-branding" class="section" section-change-requires-restart="true">
                     <groupbox>
-                        <caption>Branding</caption>
+                        <caption>&branding.branding;</caption>
                         <html:div class="option-container">
-                            <label value="Brand name:"/>
+                            <label value="&branding.branding.brandName;"/>
                             <html:input type="text" id="brand-name" class="option" data-type="string" data-option="Echelon.Option.BrandName"/>
                         </html:div>
                         <html:div class="option-container">
-                            <label value="Browser name spoof:"/>
+                            <label value="&branding.branding.browserSpoof;"/>
                             <html:input type="text" id="browser-spoof" class="option" data-type="string" data-option="Echelon.Option.BrowserSpoof"/>
                         </html:div>
                         <html:div class="option-container">
-                            <label value="Update channel spoof:"/>
+                            <label value="&branding.branding.channelSpoof;"/>
                             <html:input type="text" id="channel-spoof" class="option" data-type="string" data-option="Echelon.Option.ChannelSpoof"/>
                         </html:div>
                     </groupbox>
                     <groupbox>
-                        <caption>Window Title</caption>
+                        <caption>&branding.windowTitle;</caption>
                         <html:div class="option-container">
-                            <label value="Default title:"/>
+                            <label value="&branding.windowTitle.default;"/>
                             <html:input type="text" id="default-title" class="option" data-type="string" data-option="Echelon.WindowTitle.Default"/>
                         </html:div>
                         <html:div class="option-container">
-                            <label value="Private Browsing title:"/>
+                            <label value="&branding.windowTitle.private;"/>
                             <html:input type="text" id="private-title" class="option" data-type="string" data-option="Echelon.WindowTitle.Private"/>
                         </html:div>
                         <p>
-                            <html:span>Use </html:span>
-                            <html:b>CONTENTTITLE</html:b>
-                            <html:span> in place of where the page title should go.</html:span>
+                            &branding.windowTitle.contentNotice;
                         </p>
                         <html:div class="option-container">
-                            <label value="Default content title:"/>
+                            <label value="&branding.windowTitle.defaultContent;"/>
                             <html:input type="text" id="default-content-title" class="option" data-type="string" data-option="Echelon.WindowTitle.ContentDefault"/>
                         </html:div>
                         <html:div class="option-container">
-                            <label value="Private Browsing content title:"/>
+                            <label value="&branding.windowTitle.privateContent;"/>
                             <html:input type="text" id="private-content-title" class="option" data-type="string" data-option="Echelon.WindowTitle.ContentPrivate"/>
                         </html:div>
                     </groupbox>
                 </html:div>
                 <html:div id="section-native-controls" class="section" section-change-requires-restart="true">
-                    <p>This tab allows you to configure ephemeralViolette's native controls patch.</p>
+                    <p>&nativeControls.notice;</p>
                     <groupbox>
-                        <caption>General</caption>
+                        <caption>&nativeControls.general;</caption>
                         <html:div class="option-container">
-                            <label value="Override Windows Version:"/>
+                            <label value="&nativeControls.general.osOverride;"/>
                             <menulist native="" class="option" data-type="enum" data-option="widget.ev-native-controls-patch.override-win-version">
                                 <menupopup>
-                                    <menuitem label="Windows 7" value="7"/>
-                                    <menuitem label="Windows 8.x" value="8"/>
-                                    <menuitem label="Windows 10" value="10"/>
+                                    <menuitem label="&nativeControls.general.osOverride.seven;" value="7"/>
+                                    <menuitem label="&nativeControls.general.osOverride.eight;" value="8"/>
+                                    <menuitem label="&nativeControls.general.osOverride.ten;" value="10"/>
                                 </menupopup>
                             </menulist>
                         </html:div>
                         <html:div class="option-container">
-                            <label value="Override Glass:"/>
+                            <label value="&nativeControls.general.glassOverride;"/>
                             <menulist native="" class="option" data-type="enum" data-option="widget.ev-native-controls-patch.force-glass-reporting">
                                 <menupopup>
-                                    <menuitem label="Default" value="0"/>
-                                    <menuitem label="Force on" value="1"/>
-                                    <menuitem label="Force off" value="2"/>
+                                    <menuitem label="&nativeControls.general.glassOverride.default;" value="0"/>
+                                    <menuitem label="&nativeControls.general.glassOverride.forceOn;" value="1"/>
+                                    <menuitem label="&nativeControls.general.glassOverride.forceOff;" value="2"/>
                                 </menupopup>
                             </menulist>
                         </html:div>
-                        <checkbox native="" label="Disable DWM composition" class="option" data-type="bool" data-option="widget.ev-native-controls-patch.force-dwm-report-off"/>
+                        <checkbox native="" label="&nativeControls.general.disableComposition;" class="option" data-type="bool" data-option="widget.ev-native-controls-patch.force-dwm-report-off"/>
                     </groupbox>
                     <groupbox>
-                        <caption>Aero caption button mask</caption>
+                        <caption>&nativeControls.captionMask;</caption>
                         <html:div class="option-container">
-                            <label value="Width:"/>
+                            <label value="&nativeControls.captionMask.width;"/>
                             <html:input type="number" id="default-title" class="option" data-type="int" onkeydown="return event.keyCode !== 190" data-option="widget.ev-native-controls-patch.override-aero-caption-buttons-mask-width"/>
                         </html:div>
                         <html:div class="option-container">
-                            <label value="Height:"/>
+                            <label value="&nativeControls.captionMask.height;"/>
                             <html:input type="number" id="default-title" class="option" data-type="int" onkeydown="return event.keyCode !== 190" data-option="widget.ev-native-controls-patch.override-aero-caption-buttons-mask-height"/>
                         </html:div>
                     </groupbox>
                 </html:div>
                 <html:div id="section-debug" class="section" section-change-requires-restart="true">
-                    <p>These options are meant for debugging; you should not need to change them unless you are a developer.</p>
+                    <p>&debug.notice;</p>
                     <groupbox>
-                        <caption>Wizard</caption>
-                        <checkbox native="" label="First run has been completed" class="option" data-type="bool" data-option="Echelon.parameter.isFirstRunFinished"/>
+                        <caption>&debug.wizard;</caption>
+                        <checkbox native="" label="&debug.wizard.firstRun;" class="option" data-type="bool" data-option="Echelon.parameter.isFirstRunFinished"/>
                     </groupbox>
                     <html:table id="debug-table">
                         <html:tr>
-                            <html:th>Browser name</html:th>
+                            <html:th>&debug.table.browserName;</html:th>
                             <html:td data-content="Services.appinfo.name"></html:td>
                         </html:tr>
                         <html:tr>
-                            <html:th>Engine version</html:th>
+                            <html:th>&debug.table.engineVer;</html:th>
                             <html:td data-content="Services.appinfo.version"></html:td>
                         </html:tr>
                         <html:tr>
-                            <html:th>Update channel</html:th>
+                            <html:th>&debug.table.updateChannel;</html:th>
                             <html:td data-content="Services.appinfo.defaultUpdateChannel"></html:td>
                         </html:tr>
                         <html:tr>
-                            <html:th>Windows version (manifest)</html:th>
+                            <html:th>&debug.table.winVerManifest;</html:th>
                             <html:td data-content="getWinVer()"></html:td>
                         </html:tr>
                         <html:tr>
-                            <html:th>Windows version (true)</html:th>
+                            <html:th>&debug.table.winVerTrue;</html:th>
                             <html:td data-content="getTrueWinVer()"></html:td>
                         </html:tr>
                     </html:table>
@@ -203,19 +212,20 @@
                 <html:div id="section-about" class="section">
 					<html:div id="about-section-banner">
 						<html:img id="echelon-logo" src="chrome://userchrome/content/windows/options/images/echelon-logo.png" width="223"/>
-						<html:div id="echelon-ver-text">Version <html:b></html:b></html:div>
+						<html:div id="echelon-ver-text"></html:div>
+                        <html:div id="echelon-build-text"></html:div>
 					</html:div>
                     <html:div class="about-section-credits">
                         <html:div class="about-section-credits-container">
                             <html:ul class="about-section-list">
                                 <html:li class="credits-section-list-container">
-                                    <html:span class="credits-section-desc">Echelon is made by</html:span>
+                                    <html:span class="credits-section-desc">&about.credits.madeBy;</html:span>
                                     <html:ul class="credits-list">
                                         <html:li><label is="text-link" href="https://github.com/travy-patty/">Travis (travy-patty)</label></html:li>
                                     </html:ul>
                                 </html:li>
                                 <html:li class="credits-section-list-container">
-                                    <html:span class="credits-section-desc">Developers</html:span>
+                                    <html:span class="credits-section-desc">&about.credits.developers;</html:span>
                                     <html:ul class="credits-list">
                                         <html:li><label is="text-link" href="https://github.com/ephemeralViolette/">ephemeralViolette</label></html:li>
                                         <html:li><label is="text-link" href="https://github.com/aubymori/">aubymori</label></html:li>
@@ -224,11 +234,11 @@
                             </html:ul>
                             <html:ul class="about-section-list">
                                 <html:li class="credits-section-list-container">
-                                    <html:span class="credits-section-desc">Honorable Mentions</html:span>
+                                    <html:span class="credits-section-desc">&about.credits.honorableMentions;</html:span>
                                     <html:ul class="credits-list">
                                         <html:li><label is="text-link" href="https://github.com/YukisCoffee/">YukisCoffee</label></html:li>
                                         <html:li><label is="text-link" href="https://github.com/angelbruni/">angelbruni</label></html:li>
-                                        <html:li>Echelon Private Testers</html:li>
+                                        <html:li>&about.credits.honorableMentions.privateTesters;</html:li>
                                     </html:ul>
                                 </html:li>
                             </html:ul>
@@ -236,21 +246,21 @@
                         <html:div class="about-box-footer">
                             <html:span class="about-box-footer-link">
                                 <html:div class="about-box-footer-icon github-icon"></html:div>
-                                <label is="text-link" href="https://github.com/echelon-theme/echelon">view GitHub repository</label>
+                                <label is="text-link" href="https://github.com/echelon-theme/echelon">&about.viewRepo;</label>
                             </html:span>
                             <html:span class="about-box-footer-link">
                                 <html:div class="about-box-footer-icon issue-icon"></html:div>
-                                <label class="view-github" is="text-link" href="https://github.com/echelon-theme/echelon/issues">report an issue</label>
+                                <label class="view-github" is="text-link" href="https://github.com/echelon-theme/echelon/issues">&about.reportIssue;</label>
                             </html:span>
                         </html:div>
                     </html:div>
                 </html:div>
             </html:div>
             <html:div id="button-section">
-                <html:span class="restart-required-label" style="display:none">Restart required</html:span>
-                <button id="ok-button" label="OK"/>
-                <button id="cancel-button" label="Cancel"/>
-                <button id="apply-button" label="Apply"/>
+                <html:span class="restart-required-label" style="display:none">&window.restartRequired;</html:span>
+                <button id="ok-button" label="&window.buttons.ok;"/>
+                <button id="cancel-button" label="&window.buttons.cancel;"/>
+                <button id="apply-button" label="&window.buttons.apply;" accesskey="&window.buttons.apply.accesskey;"/>
             </html:div>
         </html:div>
     </vbox>

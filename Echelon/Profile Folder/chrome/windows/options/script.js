@@ -1,5 +1,6 @@
 const { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 const { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");
+const gOptionsBundle = document.getElementById("optionsBundle");
 
 function getWinVer()
 {
@@ -220,16 +221,16 @@ function okApplyHandler(e, closeWindow = false)
     let restartStruct = {
         accepted: false,
         icon: "warning",
-        title: "Are you sure?",
-        message: "You have changed options that require a restart. Do you wish to restart and apply the changes?",
-        acceptButtonText: "Restart"
+        title: gOptionsBundle.getString("restart_prompt_title"),
+        message: gOptionsBundle.getString("restart_prompt_message"),
+        acceptButtonText: gOptionsBundle.getString("restart_prompt_restart")
     };
 
     if (restartRequired)
     {
         window.openDialog(
-            "chrome://userchrome/content/windows/options/dialog.xhtml",
-            "Are you sure?",
+            "chrome://userchrome/content/windows/common/dialog.xhtml",
+            gOptionsBundle.getString("restart_prompt_title"),
             "chrome,centerscreen,resizeable=no,dependent,modal",
             restartStruct
         );
@@ -320,8 +321,16 @@ for (const td of document.querySelectorAll("#debug-table td"))
     td.innerText = eval(td.dataset.content);
 }
 
-fetch("chrome://userchrome/content/version.txt").then(r => {
-    r.text().then(t => {
-        document.querySelector("#echelon-ver-text b").innerText = t;
-    });
+fetch("chrome://userchrome/content/version.txt").then(async r => {
+    document.getElementById("echelon-ver-text").innerHTML = gOptionsBundle.getFormattedString(
+        "version_format",
+        [`<html:b>${await r.text()}</html:b>`]
+    );
+});
+
+fetch("chrome://userchrome/content/build.txt").then(async r => {
+    document.getElementById("echelon-build-text").innerHTML = gOptionsBundle.getFormattedString(
+        "build_format",
+        [`<html:b>${await r.text()}</html:b>`]
+    );
 });

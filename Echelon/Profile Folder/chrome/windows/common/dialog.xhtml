@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<dialog id="echelonOptionsDialog"
+<dialog id="echelonDialog"
         buttonpack="end"
         buttons="accept,cancel"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
@@ -20,17 +20,28 @@
         {
             // init icon
             let iconEl = document.querySelector("#infoIcon");
-            if (args.icon == "warning")
+            let addClass = null;
+            switch (args.icon)
             {
-                iconEl.classList.add("alert-icon");
+                case "info":
+                    addClass = "message-icon";
+                    break;
+                case "warning":
+                    addClass = "alert-icon";
+                    break;
+                case "question":
+                    addClass = "question-icon";
+                    break;
+                case "authentication":
+                    addClass = "authentication-icon";
+                    break;
+                case "error":
+                    addClass = "error-icon";
+                    break;
             }
-            else if (args.icon = "question")
+            if (addClass)
             {
-                iconEl.classList.add("question-icon");
-            }
-            else if (args.icon = "authentication")
-            {
-                iconEl.classList.add("authentication-icon");
+                iconEl.classList.add(addClass);
             }
 
             // init text

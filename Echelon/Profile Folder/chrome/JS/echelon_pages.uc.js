@@ -114,11 +114,11 @@ class EchelonPageManager
 
 EchelonPageManager.registerAboutPage(
     "newtab",
-    "chrome://userchrome/content/pages/home/home.html"
+    "chrome://userchrome/content/pages/home/home.xhtml"
 );
 EchelonPageManager.registerAboutPage(
     "home",
-    "chrome://userchrome/content/pages/home/home.html"
+    "chrome://userchrome/content/pages/home/home.xhtml"
 );
 EchelonPageManager.registerAboutPage(
     "privatebrowsing",

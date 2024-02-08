@@ -269,6 +269,9 @@
 	.category[name="plugin"] {
 		background-image: url("chrome://userchrome/content/pages/addons/images/category-plugins.png") !important;
 	}
+	.category[name="locale"] {
+		background-image: url("chrome://userchrome/content/pages/addons/images/category-languages.png") !important;
+	}
 	:root:not([echelon-style-4]) #main[current-view="list"],
 	:root:not([echelon-style-4]) #main[current-view="detail"],
 	:root:not([echelon-style-4]) #main[current-view="discover"] {
@@ -363,10 +366,10 @@
 	}
 	:root:not([echelon-style-4]) .extension-enable-button::after {
 		width: 100% !important;
-		content: 'Disable' !important;
+		content: 'Enable' !important;
 	}
 	:root:not([echelon-style-4]) .extension-enable-button[pressed=""]::after {
-		content: 'Enable' !important;
+		content: 'Disable' !important;
 	}
 	:root:not([echelon-style-4]) .addon-name-container .more-options-button {
 		width: unset !important;

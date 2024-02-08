@@ -48,17 +48,13 @@ function ViewImage_viewMedia(e)
     var { PrefUtils, waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
     waitForElement = waitForElement.bind(window);
 
+    var { EchelonLocalization } = ChromeUtils.import("chrome://modules/content/EchelonLocalization.js");
+
     /* The bool pref which determines whether to use View Image. */
     const VIEWIMAGE_CONFIGKEY = "Echelon.Behavior.ViewImage";
 
-    /* Our values, view image and view background image have the same command now */
+    /* Our custom command. View Image and View Background Image have the same command now. */
     const VIEWIMAGE_COMMAND = "(ViewImage_viewMedia.bind(gContextMenu))(event);";
-
-    const VIEWIMAGE_TEXT = "View Image";
-    const VIEWIMAGE_ACCESSKEY = "I";
-    
-    const VIEWBGIMAGE_TEXT = "View Background Image";
-    const VIEWBGIMAGE_ACCESSKEY = "w";
 
     /* Original command, label, and accesskey */
     let original = {
@@ -66,6 +62,9 @@ function ViewImage_viewMedia(e)
         accesskey: null,
         command: null
     };
+
+    /* Where the new strings should go */
+    let strings = {};
 
     /* The content area menupopup. */
     let popup = null;
@@ -82,77 +81,117 @@ function ViewImage_viewMedia(e)
         }
 
         let enabled = PrefUtils.tryGetBoolPref(VIEWIMAGE_CONFIGKEY);
-        viewImage.label = enabled ? VIEWIMAGE_TEXT : original.label;
-        viewImage.accessKey = enabled ? VIEWIMAGE_ACCESSKEY : original.accesskey;
+        viewImage.label = enabled ? strings?.viewImage.label : original.label;
+        viewImage.accessKey = enabled ? strings?.viewImage.accessKey : original.accesskey;
         viewImage.setAttribute("oncommand", enabled ? VIEWIMAGE_COMMAND : original.command);
     }
 
-    function onPopupShowing(event)
+    /* When the View Image item's label has changed,
+       most likely a language change */
+    function onViewImageLabelChange()
     {
-        let enabled = PrefUtils.tryGetBoolPref(VIEWIMAGE_CONFIGKEY);
-        if (enabled)
+        if (viewImage.label != original.label && viewImage.label != strings?.viewImage.label)
         {
-            let shouldShow = !(gContextMenu.onTextInput || gContextMenu.onLink ||
-                gContextMenu.isContentSelected || gContextMenu.onImage ||
-                gContextMenu.onCanvas || gContextMenu.onVideo || gContextMenu.onAudio);
+            original.label = viewImage.label;
+            original.accesskey = viewImage.accessKey;
+            EchelonLocalization.getStringsById("menus").then(s => {
+                strings = s;
+                
+                let enabled = PrefUtils.tryGetBoolPref(VIEWIMAGE_CONFIGKEY);
+                if (enabled)
+                {
+                    viewImage.label = strings?.viewImage.label;
+                    viewImage.accessKey = strings?.viewImage.accessKey;
+                }
 
-            let showBgImage = shouldShow
-            && !gContextMenu.hasMultipleBGImages
-            && !gContextMenu.inSyntheticDoc;
-
-            gContextMenu.showItem("context-viewbgimage", showBgImage);
-            gContextMenu.showItem("context-sep-viewbgimage", showBgImage);
-            if (!gContextMenu.onTextInput)
-            {
-                gContextMenu.showItem("context-sep-redo", false);
-            }
-
-
-            document.getElementById("context-viewbgimage").disabled = !gContextMenu.hasBGImage;
-
-            /* Hide items that should be hidden when you can view BG image */
-            if (shouldShow
-            && !gContextMenu.hasMultipleBGImages
-            && !gContextMenu.inSyntheticDoc
-            && gContextMenu.hasBGImage)
-            {
-                gContextMenu.showItem("context-viewimage", false);
-                gContextMenu.showItem("context-copyimage", false);
-                gContextMenu.showItem("context-sendimage", false);
-                gContextMenu.showItem("context-sep-setbackground", false);
-            }
+                let viewBGImage = document.getElementById("context-viewbgimage");
+                if (viewBGImage)
+                {
+                    viewBGImage.label = strings?.viewBGImage.label;
+                    viewImage.accessKey = strings?.viewBGImage.accessKey;
+                }
+            });
         }
-        else
+    }
+
+    function onPopupShowing()
+    {
+        updateViewImageItem();
+        if (gContextMenu)
         {
-            gContextMenu.showItem("context-viewbgimage", false);
-            gContextMenu.showItem("context-sep-viewbgimage", false);
+            let enabled = PrefUtils.tryGetBoolPref(VIEWIMAGE_CONFIGKEY);
+            if (enabled)
+            {
+                let shouldShow = !(gContextMenu.onTextInput || gContextMenu.onLink ||
+                    gContextMenu.isContentSelected || gContextMenu.onImage ||
+                    gContextMenu.onCanvas || gContextMenu.onVideo || gContextMenu.onAudio);
+
+                let showBgImage = shouldShow
+                && !gContextMenu.hasMultipleBGImages
+                && !gContextMenu.inSyntheticDoc;
+
+                gContextMenu.showItem("context-viewbgimage", showBgImage);
+                gContextMenu.showItem("context-sep-viewbgimage", showBgImage);
+                if (!gContextMenu.onTextInput)
+                {
+                    gContextMenu.showItem("context-sep-redo", false);
+                }
+
+
+                document.getElementById("context-viewbgimage").disabled = !gContextMenu.hasBGImage;
+
+                /* Hide items that should be hidden when you can view BG image */
+                if (shouldShow
+                && !gContextMenu.hasMultipleBGImages
+                && !gContextMenu.inSyntheticDoc
+                && gContextMenu.hasBGImage)
+                {
+                    gContextMenu.showItem("context-viewimage", false);
+                    gContextMenu.showItem("context-copyimage", false);
+                    gContextMenu.showItem("context-sendimage", false);
+                    gContextMenu.showItem("context-sep-setbackground", false);
+                }
+            }
+            else
+            {
+                gContextMenu.showItem("context-viewbgimage", false);
+                gContextMenu.showItem("context-sep-viewbgimage", false);
+            }
         }
     }
 
     /* Initialize View Image. */
     waitForElement("menuitem#context-viewimage").then(e => {
-        viewImage = e;
-        original.label = e.label;
-        original.accesskey = e.accessKey;
-        original.command = e.getAttribute("oncommand");
+        EchelonLocalization.getStringsById("menus").then(s => {
+            strings = s;
+            viewImage = e;
+            original.label = e.label;
+            original.accesskey = e.accessKey;
+            original.command = e.getAttribute("oncommand");
 
-        popup = viewImage.parentNode;
-        popup.addEventListener("popupshowing", onPopupShowing);
+            popup = viewImage.parentNode;
+            popup.addEventListener("popupshowing", onPopupShowing);
 
-        let viewBgImage = window.MozXULElement.parseXULToFragment(`
-            <menuseparator id="context-sep-viewbgimage"/>
-            <menuitem id="context-viewbgimage" label="${VIEWBGIMAGE_TEXT}" accesskey="${VIEWBGIMAGE_ACCESSKEY}" oncommand="${VIEWIMAGE_COMMAND}" onclick="checkForMiddleClick(this, event);"/>
-        `);
-        let undo = document.getElementById("context-undo");
-        if (undo)
-        {
-            popup.insertBefore(viewBgImage, undo);
-        }
+            let viewBGImage = window.MozXULElement.parseXULToFragment(`
+                <menuseparator id="context-sep-viewbgimage"/>
+                <menuitem id="context-viewbgimage" label="${strings?.viewBGImage.label}" accesskey="${strings?.viewBGImage.accessKey}" oncommand="${VIEWIMAGE_COMMAND}" onclick="checkForMiddleClick(this, event);"/>
+            `);
+            let undo = document.getElementById("context-undo");
+            if (undo)
+            {
+                popup.insertBefore(viewBGImage, undo);
+            }
 
-        /* This will update the item when the bool pref changes. */
-        Services.prefs.addObserver(VIEWIMAGE_CONFIGKEY, updateViewImageItem);
+            let observer = new MutationObserver(onViewImageLabelChange);
+            observer.observe(e, {
+                attributes: true,
+                attributeFilter: ["label"]
+            });
 
-        updateViewImageItem();
+            /* This will update the item when the bool pref changes. */
+            Services.prefs.addObserver(VIEWIMAGE_CONFIGKEY, onPopupShowing);
+            onPopupShowing();
+        });
     });
 
     /* Add labels to navigation items so they can look exactly like normal items again */

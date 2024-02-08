@@ -1,7 +1,7 @@
 let currentPage = 0; // Default to the first page
 const { PrefUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 let { CustomizableUI } = ChromeUtils.importESModule("resource:///modules/CustomizableUI.sys.mjs");
-var { EchelonLayoutTemplateManager } = ChromeUtils.import("chrome://userscripts/content/modules/EchelonLayoutTemplateManager.js");
+var { EchelonLayoutTemplateManager } = ChromeUtils.import("chrome://modules/content/EchelonLayoutTemplateManager.js");
 console.log(EchelonLayoutTemplateManager);
 
 // ECHELON SETTINGS

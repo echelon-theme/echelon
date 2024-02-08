@@ -316,12 +316,6 @@ let g_echelonFirefoxButton = null;
 						"command": "Tools:PrivateBrowsing",
 						"key": "key_privatebrowsing"
 					}),
-					// elm("xul:menuitem", {
-						// "label": "goOfflineCmd.label??",
-						// "type": "checkbox",
-						// "command": "Tools:PrivateBrowsing",
-						// "key": "key_privatebrowsing"
-					// }, []),
 					elm("xul:menuseparator", {"class": "appmenu-menuseparator"}),
 					elm("xul:hbox", {}, [
 						elm("xul:menuitem", {
@@ -374,6 +368,7 @@ let g_echelonFirefoxButton = null;
 									"key": "key_paste",
 									"command": "cmd_paste"
 								}),
+								elm("xul:menuseparator", {"class": "appmenu-menuseparator"}),
 								// These following buttons don't have icons.
 								elm("xul:menuitem", {
 									"id": "appmenu-editmenu-undo",
@@ -387,12 +382,14 @@ let g_echelonFirefoxButton = null;
 									"key": "key_redo",
 									"command": "cmd_redo"
 								}),
+								elm("xul:menuseparator", {"class": "appmenu-menuseparator"}),
 								elm("xul:menuitem", {
 									"id": "appmenu-editmenu-selectAll",
 									"label": "Select All",
 									"key": "key_selectAll",
 									"command": "cmd_selectAll"
 								}),
+								elm("xul:menuseparator", {"class": "appmenu-menuseparator"}),
 								elm("xul:menuitem", {
 									"id": "appmenu-editmenu-delete",
 									"label": "Delete",

@@ -10,6 +10,8 @@ var { PrefUtils, BrandUtils, waitForElement, renderElement } = ChromeUtils.impor
 waitForElement = waitForElement.bind(this);
 renderElement = renderElement.bind(this);
 
+var { EchelonUpdateChecker } = ChromeUtils.import("chrome://modules/content/EchelonUpdateChecker.js");
+
 function executeFunctions() {
 	EchelonThemeManager.init();
 	openEchelonWizardWindow(true);
@@ -20,6 +22,9 @@ function executeFunctions() {
 		gBrowser?.getNotificationBox()?.getNotificationWithValue("echelon-setup-closed")?.dismiss();
 		openEchelonWizardWindow(false);
 	});
+
+	EchelonUpdateChecker.setWindow(window);
+	EchelonUpdateChecker.checkForUpdate();
 
     console.info("Functions executed.");
 }

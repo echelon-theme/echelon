@@ -1,4 +1,5 @@
 const { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+let gHomeBundle = document.getElementById("homeBundle");
 
 // FOR PRE-FIREFOX 23 STYLE
 
@@ -66,7 +67,7 @@ snippetRandomizer();
 // TITLE TEXT
 
 let product = BrandUtils.getFullProductName();
-document.title = `${product} Start Page`;
+document.title = gHomeBundle.getFormattedString("title_format", [product]);
 
 // HIDE IF USER WANTS BLANK PAGE FOR NEW TAB
 
@@ -97,10 +98,17 @@ Services.search.getDefault().then(engine => {
 
 function onSearchSubmit(e)
 {
-	if (window.engine)
+	if (window.engine && document.getElementById("searchText").value != "")
 	{
 		location.href = window.engine.getSubmission(document.getElementById("searchText").value)._uri.spec;
 	}
 
 	e.preventDefault();
 }
+
+/* The fucks at Mozilla decided to not let you inject markup with dtd anymore, so we have to do this.
+   (https://bugzilla.mozilla.org/show_bug.cgi?id=1539759) */
+document.getElementById("defaultSnippet1").innerHTML = gHomeBundle.getString("snippet_1");
+document.getElementById("defaultSnippet2").innerHTML = gHomeBundle.getString("snippet_2");
+document.querySelector("#defaultSnippet1 a").href = "https://www.mozilla.org/firefox/features/?utm_source=snippet&utm_medium=snippet&utm_campaign=default+feature+snippet";
+document.querySelector("#defaultSnippet2 a").href = "https://addons.mozilla.org/firefox/?utm_source=snippet&utm_medium=snippet&utm_campaign=addons";

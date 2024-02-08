@@ -495,8 +495,9 @@ input, button {
 	margin-bottom: 20px;
 }
 
-:root[echelon-style="1"] #aboutMozilla::before {
-	content: 'About Mozilla';
+:root:not([echelon-style="1"]) #aboutMozilla {
+	height: 0;
+	color: transparent;
 }
 
 :root[echelon-style="1"] .brandSpacer {
@@ -567,8 +568,4 @@ input, button {
 
 :root[echelon-new-logo][update-channel="nightly"] .brandLogo {
 	background-image: url('chrome://userchrome/content/images/icons/alt/nightly/about-logo.png');
-}
-
-:root[echelon-style="1"][browser-name="Superfox"] #aboutMozilla::before {
-	content: 'About Superfox';
 }

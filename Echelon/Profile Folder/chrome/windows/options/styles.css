@@ -235,7 +235,7 @@ groupbox > p {
 	padding-inline: 40px;
 }
 
-#echelon-ver-text {
+#echelon-ver-text, #echelon-build-text {
 	color: #838383;
 	text-transform: lowercase;
 	font-size: 14px;
@@ -244,6 +244,15 @@ groupbox > p {
 
 #echelon-ver-text b {
 	color: #404041;
+}
+
+#echelon-build-text {
+    font-size: 13px;
+    color: #939393;
+}
+
+#echelon-build-text b {
+    color: #505051;
 }
 
 table {
