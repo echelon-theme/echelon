@@ -81,7 +81,7 @@ class EchelonUpdateChecker
             }
 
             let remoteBuildNumber = await this.#getRemoteBuildNumber();
-            if (localBuildNumber != remoteBuildNumber)
+            if (localBuildNumber < remoteBuildNumber)
             {
                 let messageStruct = {
                     accepted: false,
