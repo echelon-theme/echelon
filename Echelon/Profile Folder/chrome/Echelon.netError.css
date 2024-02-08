@@ -21,7 +21,13 @@
   .container {
     margin: 4em auto !important;
     margin-top: calc(4em + 30px) !important;
-    background: url("chrome://userchrome/content/images/warning-large.png") no-repeat scroll left 0px content-box border-box #FFF !important;
+    /* background: url("chrome://userchrome/content/images/warning-large.png") no-repeat scroll left 0px content-box border-box #FFF !important; /**/
+    background-image: url("chrome://global/skin/icons/warning-large.png"), url("chrome://userchrome/content/images/warning-large.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: left 0px !important;
+    background-origin: content-box !important;
+    background-clip: border-box !important;
+    background-color: #FFF !important;
     border: 1px solid #a0a0a0 !important;
     border-radius: 10px !important;
     padding: 3em !important;
