@@ -31,7 +31,7 @@
   appearance: menuitem !important;
 }
 
-:root[echelon-style-4] #menu_echelonTabsOnTop, :root[echelon-style-4] #tabsOnTopMenuSeparator {
+:root[echelon-style-4] #toolbar-context-echelonTabsOnTop, :root[echelon-style-4] #tabsOnTopMenuSeparator {
   display: none;
 }
 
