@@ -229,6 +229,12 @@ input, button {
 	transition-duration: 0ms;
 }
 
+.launchButton[hidden],
+#launcher:not([session]) > #restorePreviousSessionSeparator,
+#launcher:not([session]) > #restorePreviousSession {
+  display: none;
+}
+
 #downloads:before {
     content: url('chrome://userchrome/content/pages/home/images/downloads.png');
 }
@@ -251,6 +257,41 @@ input, button {
 
 #settings:before {
     content: url('chrome://userchrome/content/pages/home/images/settings.png');
+}
+
+#restorePreviousSessionSeparator {
+	width: 3px;
+	height: 116px;
+	margin: 0 10px;
+	background-image: linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,.35), hsla(0,0%,100%,0)),
+					  linear-gradient(hsla(211,79%,6%,0), hsla(211,79%,6%,.2), hsla(211,79%,6%,0)),
+					  linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,.35), hsla(0,0%,100%,0));
+	background-position: left top, center, right bottom;
+	background-size: 1px auto;
+	background-repeat: no-repeat;
+}
+
+#restorePreviousSession {
+	max-width: none;
+	font-size: 120%;
+	padding-left: 67px;
+	padding-top: 27px;
+	padding-bottom: 27px;
+	position: relative;
+	line-height: 20px;
+}
+
+#restorePreviousSession::before {
+	position: absolute;
+	content: url("chrome://userchrome/content/pages/home/images/restore-large.png");
+	height: 48px;
+	width: 48px;
+	display: flex; /* display on same line as text label */
+	margin: 0 auto;
+	margin-bottom: 0;
+	margin-inline-end: 8px;
+	top: 15px;
+	left: 10px;
 }
 
 :root:not([echelon-style="1"]) #aboutMozilla {

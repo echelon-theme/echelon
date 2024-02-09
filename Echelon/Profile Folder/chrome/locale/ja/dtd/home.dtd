@@ -8,12 +8,13 @@
    
    <!ENTITY abouthome.searchEngineButton.label		"検索">
    
-   <!ENTITY abouthome.bookmarksButton.label		"ブックマーク">
-   <!ENTITY abouthome.historyButton.label			"履歴">
-   <!ENTITY abouthome.settingsButton.label			"オプション">
-   <!ENTITY abouthome.addonsButton.label			"アドオン">
-   <!ENTITY abouthome.appsButton.label			"Marketplace">
-   <!ENTITY abouthome.downloadsButton.label		"ダウンロード">
-   <!ENTITY abouthome.syncButton.label			"Sync">
+   <!ENTITY abouthome.bookmarksButton.label "ブックマーク">
+   <!ENTITY abouthome.historyButton.label "履歴">
+   <!ENTITY abouthome.settingsButton.label "オプション">
+   <!ENTITY abouthome.addonsButton.label "アドオン">
+   <!ENTITY abouthome.appsButton.label "Marketplace">
+   <!ENTITY abouthome.downloadsButton.label "ダウンロード">
+   <!ENTITY abouthome.syncButton.label "Sync">
+   <!ENTITY abouthome.restoreLastSessionButton.label "以前のセッションを復元">
    
    <!ENTITY abouthome.aboutMozilla "Mozilla について">
