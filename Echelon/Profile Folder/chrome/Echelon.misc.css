@@ -424,9 +424,14 @@ findbar .checkbox-check {
   border-color: Highlight !important;
 }
 
-#main-window[echelon-style-4] .findbar-textbox[status=notfound] {
+#main-window .findbar-textbox[status=notfound] {
   background-color: #f66 !important;
   color: white !important;
+}
+
+#main-window:not([echelon-style-4]) .findbar-textbox[status=notfound] {
+  appearance: none !important;
+  padding: 2px !important;
 }
 
 #main-window[echelon-style-4] .findbar-find-next,
