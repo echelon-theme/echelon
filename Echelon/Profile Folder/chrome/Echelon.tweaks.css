@@ -1294,13 +1294,13 @@
   border-right: 0 !important;
   background-color: -moz-Dialog !important;
 }
-#main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar]) #main-menubar > menu {
+#main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar]) #main-menubar > menu:not(:-moz-lwtheme) {
   color: WindowText !important;
 }
-#main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar]) #main-menubar > menu[_moz-menuactive=true] {
+#main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar]) #main-menubar > menu:not(:-moz-lwtheme)[_moz-menuactive=true] {
   color: HighlightText !important;
 }
-#main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar]) #main-menubar > menu:-moz-window-inactive {
+#main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar]) #main-menubar > menu:not(:-moz-lwtheme):-moz-window-inactive {
   color: ThreeDShadow !important;
 }
 #main-window[echelon-appearance-xp][echelon-style-4][tabsintitlebar] #tabs-newtab-button .toolbarbutton-icon {
