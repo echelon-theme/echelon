@@ -1429,7 +1429,7 @@
     }
   }
 
-  &:not([echelon-style-4][tabsintitlebar]) #main-menubar > menu {
+  &:not([echelon-style-4][tabsintitlebar]) #main-menubar > menu:not(:-moz-lwtheme) {
     color: WindowText !important;
 
     &[_moz-menuactive="true"] {
