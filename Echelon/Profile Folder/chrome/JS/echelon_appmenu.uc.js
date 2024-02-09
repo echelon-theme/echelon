@@ -206,7 +206,7 @@ let g_echelonFirefoxButton = null;
 		 * 
 		 * @var {nsIStringBundle}
 		 */
-		stringBundle = Services.strings.createBundle("chrome://echelon/locale/properties/appmenu.properties");
+		strings = Services.strings.createBundle("chrome://echelon/locale/properties/appmenu.properties");
 
 		/**
 		 * Current locale.
@@ -791,7 +791,7 @@ let g_echelonFirefoxButton = null;
 			let locale = Services.locale.requestedLocale;
 			if (!this.initialized || this.style != style || this.locale != locale)
 			{
-				this.stringBundle = Services.strings.createBundle("chrome://echelon/locale/properties/appmenu.properties");
+				this.strings = Services.strings.createBundle("chrome://echelon/locale/properties/appmenu.properties");
 				(this.style != style) && (this.style = style);
 				(this.locale != locale) && (this.locale = locale);
 
@@ -812,7 +812,7 @@ let g_echelonFirefoxButton = null;
 					let label = null;
 					try
 					{
-						label = this.stringBundle.GetStringFromName(elm.dataset.l10nId);
+						label = this.strings.GetStringFromName(elm.dataset.l10nId);
 					}
 					catch (e) {}
 

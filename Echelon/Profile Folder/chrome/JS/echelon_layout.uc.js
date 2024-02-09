@@ -8,9 +8,6 @@
 let g_echelonLayoutManager;
 	
 {
-	var { EchelonLocalization } = ChromeUtils.import("chrome://modules/content/EchelonLocalization.js");
-	let strings = {};
-
 	class LayoutManager
 	{
 		urlbarEl = null;
@@ -167,15 +164,13 @@ let g_echelonLayoutManager;
 			if (this.lang != Services.locale.requestedLocale)
 			{
 				this.lang = Services.locale.requestedLocale;
-				EchelonLocalization.getStringsById("menus").then(s => {
-					strings = s;
-					let tabsOnTopItem = document.getElementById("toolbar-context-echelonTabsOnTop");
-					if (tabsOnTopItem)
-					{
-						tabsOnTopItem.label = strings?.tabsOnTop?.label;
-						tabsOnTopItem.accessKey = strings?.tabsOnTop?.accessKey;
-					}
-				});
+				strings = Services.strings.createBundle("chrome://echelon/locale/properties/menus.properties");
+				let tabsOnTopItem = document.getElementById("toolbar-context-echelonTabsOnTop");
+				if (tabsOnTopItem)
+				{
+					tabsOnTopItem.label = strings.GetStringFromName("tabs_on_top_label");
+					tabsOnTopItem.accessKey = strings.GetStringFromName("tabs_on_top_accesskey");
+				}
 			}
 		}
 	}
@@ -183,36 +178,35 @@ let g_echelonLayoutManager;
 	g_echelonLayoutManager = new LayoutManager;
 	g_echelonLayoutManager.init();
 
-	EchelonLocalization.getStringsById("menus").then(s => {
-		strings = s;
-		waitForElement("#toolbar-context-menu").then((prefsItem) => {
-			let echelonTabsOnTopItem = window.MozXULElement.parseXULToFragment(`
-				<menuitem id="toolbar-context-echelonTabsOnTop"
-						  oncommand="g_echelonLayoutManager.setTabsOnTop(Boolean(this.getAttribute('checked')))"
-						  type="checkbox"
-						  label="${strings?.tabsOnTop?.label}" 
-						  accesskey="${strings?.tabsOnTop?.accessKey}"/>
-				<menuseparator xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="tabsOnTopMenuSeparator"/>
-			`);
-
-			waitForElement("#toolbar-context-echelonOptions").then(e => {
-				prefsItem.insertBefore(echelonTabsOnTopItem, e);
+	let strings = Services.strings.createBundle("chrome://echelon/locale/properties/menus.properties");
 	
-				let isTabsOnTop = PrefUtils.tryGetBoolPref("Echelon.Appearance.TabsOnTop");
-				let contextMenuItem = document.querySelector("#toolbar-context-echelonTabsOnTop");
-				if (contextMenuItem)
+	waitForElement("#toolbar-context-menu").then((prefsItem) => {
+		let echelonTabsOnTopItem = window.MozXULElement.parseXULToFragment(`
+			<menuitem id="toolbar-context-echelonTabsOnTop"
+						oncommand="g_echelonLayoutManager.setTabsOnTop(Boolean(this.getAttribute('checked')))"
+						type="checkbox"
+						label="${strings.GetStringFromName("tabs_on_top_label")}" 
+						accesskey="${strings.GetStringFromName("tabs_on_top_accesskey")}"/>
+			<menuseparator xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="tabsOnTopMenuSeparator"/>
+		`);
+
+		waitForElement("#toolbar-context-echelonOptions").then(e => {
+			prefsItem.insertBefore(echelonTabsOnTopItem, e);
+
+			let isTabsOnTop = PrefUtils.tryGetBoolPref("Echelon.Appearance.TabsOnTop");
+			let contextMenuItem = document.querySelector("#toolbar-context-echelonTabsOnTop");
+			if (contextMenuItem)
+			{
+				if (isTabsOnTop == true)
 				{
-					if (isTabsOnTop == true)
-					{
-						contextMenuItem.setAttribute("checked", "true");
-					}
-					else
-					{
-						contextMenuItem.removeAttribute("checked");
-					}
+					contextMenuItem.setAttribute("checked", "true");
 				}
-				contextMenuItem.parentNode.addEventListener("popupshowing", g_echelonLayoutManager.onCustomizePopupShowing);
-			});
+				else
+				{
+					contextMenuItem.removeAttribute("checked");
+				}
+			}
+			contextMenuItem.parentNode.addEventListener("popupshowing", g_echelonLayoutManager.onCustomizePopupShowing);
 		});
 	});
 }
