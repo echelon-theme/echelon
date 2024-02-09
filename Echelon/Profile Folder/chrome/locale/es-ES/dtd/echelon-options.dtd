@@ -61,12 +61,12 @@
 <!ENTITY branding.windowTitle.default "Titulo predeterminado:">
 <!ENTITY branding.windowTitle.private "Título en Navegación Privada:">
 <!-- TODO: How do we get CONTENTTITLE in this bold again? -->
-<!-- luisl: no sé no hablo inglés -->
+<!-- luisl: no sé, espero haberte ayudado -->
 <!ENTITY branding.windowTitle.contentNotice "Pon &quot;CONTENTTITLE&quot; en el sitio donde va el título de la página.">
 <!ENTITY branding.windowTitle.defaultContent "Título del contenido predeterminado:">
 <!ENTITY branding.windowTitle.privateContent "Título del contenido en Navegación Privada:">
 
-<!ENTITY nativeControls.notice "Esta pestaña te permite configurar el parche de controles naivos deephemeralViolette.">
+<!ENTITY nativeControls.notice "Esta pestaña te permite configurar el parche de controles nativos de ephemeralViolette.">
 
 <!ENTITY nativeControls.general "General">
 <!ENTITY nativeControls.general.osOverride "Cambiar versión de Windows">
@@ -74,7 +74,7 @@
 <!ENTITY nativeControls.general.osOverride.eight "Windows 8.x">
 <!ENTITY nativeControls.general.osOverride.ten "Windows 10">
 
-<!ENTITY nativeControls.general.glassOverride "Cambiar el estao de Aero Glass:">
+<!ENTITY nativeControls.general.glassOverride "Cambiar el estado de Aero Glass:">
 <!ENTITY nativeControls.general.glassOverride.default "Predeterminado">
 <!ENTITY nativeControls.general.glassOverride.forceOn "Forzar activado">
 <!ENTITY nativeControls.general.glassOverride.forceOff "Forzar desactivado">
