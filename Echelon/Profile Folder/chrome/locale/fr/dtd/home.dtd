@@ -12,7 +12,7 @@
 <!ENTITY abouthome.historyButton.label "Historique">
 <!ENTITY abouthome.settingsButton.label "Options">
 <!ENTITY abouthome.addonsButton.label "Modules">
-<!ENTITY abouthome.appsButton.label "Boutique d'add-ons">
+<!ENTITY abouthome.appsButton.label "Boutique de modules">
 <!ENTITY abouthome.downloadsButton.label "Téléchargement">
 <!ENTITY abouthome.syncButton.label "Sync">
 <!ENTITY abouthome.restoreLastSessionButton.label "Restaurer la session précédente">
