@@ -43,14 +43,6 @@
   #version {
     margin-block-start: 10px !important;
   }
-  #trademark {
-    color: #999 !important;
-    text-align: center !important;
-    font-size: xx-small !important;
-  }
-  #trademark::after {
-    content: "Firefox and the Firefox logos are trademarks of the Mozilla Foundation.";
-  }
   @supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
     #leftBox {
       background-image: url("images/about-logo-new.png") !important;
@@ -127,5 +119,11 @@
       background-image: url("images/icons/alt/nightly/about-wordmark.svg") !important;
       background-size: 270px auto !important;
     }
+  }
+  #clientBox {
+    padding: 0 !important;
+  }
+  #bottomBox {
+    padding-bottom: 0 !important;
   }
 }
