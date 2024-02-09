@@ -27,7 +27,8 @@ panel[type="autocomplete-richlistbox"]::part(content) {
 
 /* Bookmarks menus */
 toolbarbutton:is(.bookmark-item, #PlacesChevron) menupopup[placespopup]:not([type="arrow"]),
-toolbarbutton:is(.bookmark-item, #PlacesChevron) menupopup[placespopup]#PlacesChevronPopup {
+toolbarbutton:is(.bookmark-item, #PlacesChevron) menupopup[placespopup]#PlacesChevronPopup,
+toolbarbutton:is(.bookmark-item, #PlacesChevron) menupopup[placespopup]#OtherBookmarksPopup {
 	--panel-shadow-margin: 0 !important;
 	appearance: auto !important;
 	-moz-default-appearance: menupopup !important;
@@ -87,7 +88,7 @@ toolbarbutton:is(.bookmark-item, #PlacesChevron) menupopup[placespopup]#PlacesCh
 
 /* Popout arrows */
 panel[type="arrow"],
-menupopup[type="arrow"]:not(#PlacesChevronPopup) {
+menupopup[type="arrow"]:not(#PlacesChevronPopup, #OtherBookmarksPopup) {
 	&::part(content) {
 		position: relative;
 		overflow: visible !important;
