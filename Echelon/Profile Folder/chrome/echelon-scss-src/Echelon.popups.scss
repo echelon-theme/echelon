@@ -15,7 +15,7 @@ panelview {
     border-radius: var(--arrowpanel-border-radius) !important;
 }
 
-:is(panel, menupopup):not(#PlacesChevronPopup)[type="arrow"] {
+:is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type="arrow"] {
     &:not([animate="false"]) {
         opacity: 0 !important;
         transform: translateY(-20px) !important;
@@ -44,7 +44,7 @@ panelview {
 
 :root[echelon-style-4]
 {
-    :is(panel, menupopup):not(#PlacesChevronPopup)[type="arrow"] {
+    :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type="arrow"] {
         &:not([animate="false"]) {
             transform: scale(.4) !important;
             opacity: 0 !important;
@@ -63,7 +63,7 @@ panelview {
         }
     }
 
-    :is(panel, menupopup):not(#PlacesChevronPopup) {
+    :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup) {
         &[arrowposition="after_start"]:-moz-locale-dir(ltr),
         &[arrowposition="after_end"]:-moz-locale-dir(rtl) {
             transform-origin: 20px top !important;
@@ -449,7 +449,7 @@ panel[type="autocomplete-richlistbox"] {
 }
 
 /* Bookmarks menu */
-menupopup[type="arrow"]:not(#PlacesChevronPopup) {
+menupopup[type="arrow"]:not(#PlacesChevronPopup, #OtherBookmarksPopup) {
     &, menupopup[placespopup] {
         --panel-border-color: transparent !important;
         --panel-padding: 4px 0 0 !important;

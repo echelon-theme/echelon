@@ -22,11 +22,11 @@ panelview {
   border-radius: var(--arrowpanel-border-radius) !important;
 }
 
-:is(panel, menupopup):not(#PlacesChevronPopup)[type=arrow] {
+:is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type=arrow] {
   --panel-shadow: 0 0 0 1px var(--arrowpanel-border-color), 0 0 5px rgba(0, 0, 0, .65) !important;
   --panel-shadow-margin: 5px !important;
 }
-:is(panel, menupopup):not(#PlacesChevronPopup)[type=arrow]:not([animate=false]) {
+:is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type=arrow]:not([animate=false]) {
   opacity: 0 !important;
   transform: translateY(-20px) !important;
   transition-property: transform, opacity !important;
@@ -34,52 +34,52 @@ panelview {
   transition-timing-function: ease-out !important;
   will-change: transition, opacity !important;
 }
-:is(panel, menupopup):not(#PlacesChevronPopup)[type=arrow]:not([animate=false])[arrowposition^=before], :is(panel, menupopup):not(#PlacesChevronPopup)[type=arrow]:not([animate=false])[side=bottom] {
+:is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type=arrow]:not([animate=false])[arrowposition^=before], :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type=arrow]:not([animate=false])[side=bottom] {
   transform: translateY(20px) !important;
 }
-:is(panel, menupopup):not(#PlacesChevronPopup)[type=arrow]:not([animate=false])[animate=open], :is(panel, menupopup):not(#PlacesChevronPopup)[type=arrow]:not([animate=false])[animate=cancel] {
+:is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type=arrow]:not([animate=false])[animate=open], :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type=arrow]:not([animate=false])[animate=cancel] {
   opacity: 1 !important;
   transform: none !important;
 }
-:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[type=arrow] {
+:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type=arrow] {
   --panel-shadow: 0 0 0 1px var(--arrowpanel-border-color), 0 0 5px rgba(0, 0, 0, .35) !important;
 }
 
-:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[type=arrow]:not([animate=false]) {
+:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type=arrow]:not([animate=false]) {
   transform: scale(0.4) !important;
   opacity: 0 !important;
   transition-property: transform, opacity !important;
   transition-duration: 0.15s !important;
   transition-timing-function: ease-out !important;
 }
-:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[type=arrow][animate=open], :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[type=arrow][animate=cancel] {
+:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type=arrow][animate=open], :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type=arrow][animate=cancel] {
   transform: none !important;
 }
-:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[type=arrow][animate=open] {
+:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type=arrow][animate=open] {
   opacity: 1 !important;
 }
-:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=after_start]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=after_end]:-moz-locale-dir(rtl) {
+:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=after_start]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=after_end]:-moz-locale-dir(rtl) {
   transform-origin: 20px top !important;
 }
-:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=after_end]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=after_start]:-moz-locale-dir(rtl) {
+:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=after_end]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=after_start]:-moz-locale-dir(rtl) {
   transform-origin: calc(100% - 20px) top !important;
 }
-:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=before_start]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=before_end]:-moz-locale-dir(rtl) {
+:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=before_start]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=before_end]:-moz-locale-dir(rtl) {
   transform-origin: 20px bottom !important;
 }
-:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=before_end]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=before_start]:-moz-locale-dir(rtl) {
+:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=before_end]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=before_start]:-moz-locale-dir(rtl) {
   transform-origin: calc(100% - 20px) bottom !important;
 }
-:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=start_before]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=end_before]:-moz-locale-dir(rtl) {
+:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=start_before]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=end_before]:-moz-locale-dir(rtl) {
   transform-origin: right 20px !important;
 }
-:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=start_after]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=end_after]:-moz-locale-dir(rtl) {
+:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=start_after]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=end_after]:-moz-locale-dir(rtl) {
   transform-origin: right calc(100% - 20px) !important;
 }
-:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=end_before]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=start_before]:-moz-locale-dir(rtl) {
+:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=end_before]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=start_before]:-moz-locale-dir(rtl) {
   transform-origin: left 20px !important;
 }
-:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=end_after]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup)[arrowposition=start_after]:-moz-locale-dir(rtl) {
+:root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=end_after]:-moz-locale-dir(ltr), :root[echelon-style-4] :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowposition=start_after]:-moz-locale-dir(rtl) {
   transform-origin: left calc(100% - 20px) !important;
 }
 
@@ -401,7 +401,7 @@ panel[type=autocomplete-richlistbox] {
 }
 
 /* Bookmarks menu */
-menupopup[type=arrow]:not(#PlacesChevronPopup), menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] {
+menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup), menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] {
   --panel-border-color: transparent !important;
   --panel-padding: 4px 0 0 !important;
   --panel-separator-color: hsla(210, 4%, 10%, .14) !important;
@@ -411,51 +411,51 @@ menupopup[type=arrow]:not(#PlacesChevronPopup), menupopup[type=arrow]:not(#Place
   --panel-shadow: 0 0 5px rgba(0, 0, 0, .65) !important;
   --panel-shadow-margin: 5px !important;
 }
-:root[echelon-style-4] menupopup[type=arrow]:not(#PlacesChevronPopup), :root[echelon-style-4] menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] {
+:root[echelon-style-4] menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup), :root[echelon-style-4] menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] {
   --panel-shadow: 0 0 5px rgba(0, 0, 0, .35) !important;
 }
-menupopup[type=arrow]:not(#PlacesChevronPopup) > :is(menu, menuitem), menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] > :is(menu, menuitem) {
+menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) > :is(menu, menuitem), menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] > :is(menu, menuitem) {
   min-height: 22px !important;
   border: 1px solid transparent !important;
 }
-menupopup[type=arrow]:not(#PlacesChevronPopup) > :is(menu, menuitem) > .menu-accel-container > :is(.menu-accel, .menu-iconic-accel), menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] > :is(menu, menuitem) > .menu-accel-container > :is(.menu-accel, .menu-iconic-accel) {
+menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) > :is(menu, menuitem) > .menu-accel-container > :is(.menu-accel, .menu-iconic-accel), menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] > :is(menu, menuitem) > .menu-accel-container > :is(.menu-accel, .menu-iconic-accel) {
   margin-inline-start: 0.74em !important;
   margin-inline-end: 1.35em !important;
   color: GrayText !important;
 }
-menupopup[type=arrow]:not(#PlacesChevronPopup) > :is(menu, menuitem)[_moz-menuactive=true], menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] > :is(menu, menuitem)[_moz-menuactive=true] {
+menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) > :is(menu, menuitem)[_moz-menuactive=true], menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] > :is(menu, menuitem)[_moz-menuactive=true] {
   border-color: var(--panel-separator-color) !important;
   background-color: hsla(0, 0%, 80%, 0.3) !important;
 }
-menupopup[type=arrow]:not(#PlacesChevronPopup) > :is(menu, menuitem)[_moz-menuactive=true]:active, menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] > :is(menu, menuitem)[_moz-menuactive=true]:active {
+menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) > :is(menu, menuitem)[_moz-menuactive=true]:active, menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] > :is(menu, menuitem)[_moz-menuactive=true]:active {
   background-color: hsla(0, 0%, 80%, 0.45) !important;
 }
-menupopup[type=arrow]:not(#PlacesChevronPopup) > :is(menu, menuitem) + menuseparator[hidden=true]:last-child, menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] > :is(menu, menuitem) + menuseparator[hidden=true]:last-child {
+menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) > :is(menu, menuitem) + menuseparator[hidden=true]:last-child, menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] > :is(menu, menuitem) + menuseparator[hidden=true]:last-child {
   display: flex !important;
   padding: 0 !important;
   height: 4px !important;
 }
-menupopup[type=arrow]:not(#PlacesChevronPopup) > :is(menu, menuitem) + menuseparator[hidden=true]:last-child::before, menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] > :is(menu, menuitem) + menuseparator[hidden=true]:last-child::before {
+menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) > :is(menu, menuitem) + menuseparator[hidden=true]:last-child::before, menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] > :is(menu, menuitem) + menuseparator[hidden=true]:last-child::before {
   content: unset !important;
 }
-menupopup[type=arrow]:not(#PlacesChevronPopup) > menu > .menu-right, menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] > menu > .menu-right {
+menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) > menu > .menu-right, menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] > menu > .menu-right {
   fill-opacity: 1 !important;
   fill: MenuText !important;
   list-style-image: url("chrome://userchrome/content/images/menu-arrow.svg") !important;
 }
-menupopup[type=arrow]:not(#PlacesChevronPopup) > :is(.menu-iconic, .menuitem-iconic) > .menu-iconic-left, menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] > :is(.menu-iconic, .menuitem-iconic) > .menu-iconic-left {
+menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) > :is(.menu-iconic, .menuitem-iconic) > .menu-iconic-left, menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] > :is(.menu-iconic, .menuitem-iconic) > .menu-iconic-left {
   margin-inline-end: 3px !important;
 }
-menupopup[type=arrow]:not(#PlacesChevronPopup) > :not(.menu-iconic, .menuitem-iconic) > .menu-text, menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] > :not(.menu-iconic, .menuitem-iconic) > .menu-text {
+menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) > :not(.menu-iconic, .menuitem-iconic) > .menu-text, menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] > :not(.menu-iconic, .menuitem-iconic) > .menu-text {
   margin-inline-start: calc(1.45em + 3px) !important;
 }
-menupopup[type=arrow]:not(#PlacesChevronPopup) menuseparator, menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] menuseparator {
+menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menuseparator, menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] menuseparator {
   margin: 0 !important;
 }
-menupopup[type=arrow]:not(#PlacesChevronPopup) menuseparator.bookmarks-actions-menuseparator, menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] menuseparator.bookmarks-actions-menuseparator {
+menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menuseparator.bookmarks-actions-menuseparator, menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] menuseparator.bookmarks-actions-menuseparator {
   display: none !important;
 }
-menupopup[type=arrow]:not(#PlacesChevronPopup) > menuitem:last-child, menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] > menuitem:last-child {
+menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) > menuitem:last-child, menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] > menuitem:last-child {
   border: 0 !important;
   border-top: 1px solid var(--panel-separator-color) !important;
   align-items: center !important;
@@ -464,10 +464,10 @@ menupopup[type=arrow]:not(#PlacesChevronPopup) > menuitem:last-child, menupopup[
   padding: 11px 12px !important;
   background-color: hsla(0, 0%, 80%, 0.3) !important;
 }
-menupopup[type=arrow]:not(#PlacesChevronPopup) > menuitem:last-child[_moz-menuactive=true], menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] > menuitem:last-child[_moz-menuactive=true] {
+menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) > menuitem:last-child[_moz-menuactive=true], menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] > menuitem:last-child[_moz-menuactive=true] {
   background-color: hsla(0, 0%, 80%, 0.45) !important;
 }
-menupopup[type=arrow]:not(#PlacesChevronPopup) > menuitem:last-child[_moz-menuactive=true]:active, menupopup[type=arrow]:not(#PlacesChevronPopup) menupopup[placespopup] > menuitem:last-child[_moz-menuactive=true]:active {
+menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) > menuitem:last-child[_moz-menuactive=true]:active, menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup) menupopup[placespopup] > menuitem:last-child[_moz-menuactive=true]:active {
   background-color: hsla(0, 0%, 80%, 0.8) !important;
 }
 

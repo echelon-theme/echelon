@@ -48,8 +48,6 @@ function ViewImage_viewMedia(e)
     var { PrefUtils, waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
     waitForElement = waitForElement.bind(window);
 
-    var { EchelonLocalization } = ChromeUtils.import("chrome://modules/content/EchelonLocalization.js");
-
     /* The bool pref which determines whether to use View Image. */
     const VIEWIMAGE_CONFIGKEY = "Echelon.Behavior.ViewImage";
 
@@ -63,8 +61,8 @@ function ViewImage_viewMedia(e)
         command: null
     };
 
-    /* Where the new strings should go */
-    let strings = {};
+    /* Localization string bundle */
+    let strings = Services.strings.createBundle("chrome://echelon/locale/properties/menus.properties");
 
     /* The content area menupopup. */
     let popup = null;
@@ -81,8 +79,8 @@ function ViewImage_viewMedia(e)
         }
 
         let enabled = PrefUtils.tryGetBoolPref(VIEWIMAGE_CONFIGKEY);
-        viewImage.label = enabled ? strings?.viewImage.label : original.label;
-        viewImage.accessKey = enabled ? strings?.viewImage.accessKey : original.accesskey;
+        viewImage.label = enabled ? strings.GetStringFromName("view_image_label") : original.label;
+        viewImage.accessKey = enabled ? strings.GetStringFromName("view_image_accesskey") : original.accesskey;
         viewImage.setAttribute("oncommand", enabled ? VIEWIMAGE_COMMAND : original.command);
     }
 
@@ -90,27 +88,25 @@ function ViewImage_viewMedia(e)
        most likely a language change */
     function onViewImageLabelChange()
     {
-        if (viewImage.label != original.label && viewImage.label != strings?.viewImage.label)
+        if (viewImage.label != original.label && viewImage.label != strings.GetStringFromName("view_image_label"))
         {
             original.label = viewImage.label;
             original.accesskey = viewImage.accessKey;
-            EchelonLocalization.getStringsById("menus").then(s => {
-                strings = s;
-                
-                let enabled = PrefUtils.tryGetBoolPref(VIEWIMAGE_CONFIGKEY);
-                if (enabled)
-                {
-                    viewImage.label = strings?.viewImage.label;
-                    viewImage.accessKey = strings?.viewImage.accessKey;
-                }
+            strings = Services.strings.createBundle("chrome://echelon/locale/properties/menus.properties");
 
-                let viewBGImage = document.getElementById("context-viewbgimage");
-                if (viewBGImage)
-                {
-                    viewBGImage.label = strings?.viewBGImage.label;
-                    viewImage.accessKey = strings?.viewBGImage.accessKey;
-                }
-            });
+            let enabled = PrefUtils.tryGetBoolPref(VIEWIMAGE_CONFIGKEY);
+            if (enabled)
+            {
+                viewImage.label = strings.GetStringFromName("view_image_label");
+                viewImage.accessKey = strings.GetStringFromName("view_image_accesskey");
+            }
+
+            let viewBGImage = document.getElementById("context-viewbgimage");
+            if (viewBGImage)
+            {
+                viewBGImage.label = strings.GetStringFromName("view_bgimage_label");
+                viewImage.accessKey = strings.GetStringFromName("view_bgimage_accesskey");
+            }
         }
     }
 
@@ -162,36 +158,33 @@ function ViewImage_viewMedia(e)
 
     /* Initialize View Image. */
     waitForElement("menuitem#context-viewimage").then(e => {
-        EchelonLocalization.getStringsById("menus").then(s => {
-            strings = s;
-            viewImage = e;
-            original.label = e.label;
-            original.accesskey = e.accessKey;
-            original.command = e.getAttribute("oncommand");
+        viewImage = e;
+        original.label = e.label;
+        original.accesskey = e.accessKey;
+        original.command = e.getAttribute("oncommand");
 
-            popup = viewImage.parentNode;
-            popup.addEventListener("popupshowing", onPopupShowing);
+        popup = viewImage.parentNode;
+        popup.addEventListener("popupshowing", onPopupShowing);
 
-            let viewBGImage = window.MozXULElement.parseXULToFragment(`
-                <menuseparator id="context-sep-viewbgimage"/>
-                <menuitem id="context-viewbgimage" label="${strings?.viewBGImage.label}" accesskey="${strings?.viewBGImage.accessKey}" oncommand="${VIEWIMAGE_COMMAND}" onclick="checkForMiddleClick(this, event);"/>
-            `);
-            let undo = document.getElementById("context-undo");
-            if (undo)
-            {
-                popup.insertBefore(viewBGImage, undo);
-            }
+        let viewBGImage = window.MozXULElement.parseXULToFragment(`
+            <menuseparator id="context-sep-viewbgimage"/>
+            <menuitem id="context-viewbgimage" label="${strings.GetStringFromName("view_bgimage_label")}" accesskey="${strings.GetStringFromName("view_bgimage_accesskey")}" oncommand="${VIEWIMAGE_COMMAND}" onclick="checkForMiddleClick(this, event);"/>
+        `);
+        let undo = document.getElementById("context-undo");
+        if (undo)
+        {
+            popup.insertBefore(viewBGImage, undo);
+        }
 
-            let observer = new MutationObserver(onViewImageLabelChange);
-            observer.observe(e, {
-                attributes: true,
-                attributeFilter: ["label"]
-            });
-
-            /* This will update the item when the bool pref changes. */
-            Services.prefs.addObserver(VIEWIMAGE_CONFIGKEY, onPopupShowing);
-            onPopupShowing();
+        let observer = new MutationObserver(onViewImageLabelChange);
+        observer.observe(e, {
+            attributes: true,
+            attributeFilter: ["label"]
         });
+
+        /* This will update the item when the bool pref changes. */
+        Services.prefs.addObserver(VIEWIMAGE_CONFIGKEY, onPopupShowing);
+        onPopupShowing();
     });
 
     /* Add labels to navigation items so they can look exactly like normal items again */

@@ -89,7 +89,7 @@ Services.search.getDefault().then(engine => {
 	window.engine = engine;
 	
 	/* Only Google has a logo. Others use placeholder. */
-	if (engine._name != "Google" && echelonStyle < 5)
+	if (engine._name != "Google" && echelonHomepageStyle == 3)
 	{
 		document.getElementById("searchLogo").hidden = true;
 		document.getElementById("searchText").placeholder = engine._name;
@@ -112,3 +112,22 @@ document.getElementById("defaultSnippet1").innerHTML = gHomeBundle.getString("sn
 document.getElementById("defaultSnippet2").innerHTML = gHomeBundle.getString("snippet_2");
 document.querySelector("#defaultSnippet1 a").href = "https://www.mozilla.org/firefox/features/?utm_source=snippet&utm_medium=snippet&utm_campaign=default+feature+snippet";
 document.querySelector("#defaultSnippet2 a").href = "https://addons.mozilla.org/firefox/?utm_source=snippet&utm_medium=snippet&utm_campaign=addons";
+
+
+// RESTORE PREVIOUS SESSION BUTTON
+let { PrivateBrowsingUtils } = ChromeUtils.importESModule("resource://gre/modules/PrivateBrowsingUtils.sys.mjs");
+Components.utils.import("resource:///modules/sessionstore/SessionStore.jsm", this);
+
+function restoreLastSession()
+{
+	if (SessionStore.canRestoreLastSession)
+	{
+		SessionStore.restoreLastSession();
+		document.getElementById("launcher").removeAttribute("session");
+	}
+}
+
+if (SessionStore.canRestoreLastSession && !PrivateBrowsingUtils.isWindowPrivate(window))
+{
+	document.getElementById("launcher").setAttribute("session", "true");
+}
