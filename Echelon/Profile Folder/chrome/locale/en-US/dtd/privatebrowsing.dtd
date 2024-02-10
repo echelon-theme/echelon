@@ -15,8 +15,8 @@
 <!ENTITY privatebrowsingpage.startPrivateBrowsing.label "Start Private Browsing">
 <!ENTITY privatebrowsingpage.startPrivateBrowsing.accesskey "P">
 
-<!ENTITY privatebrowsingpage.howToStop2                "To stop Private Browsing, select Firefox; &gt; Stop Private Browsing, or close Firefox.">
-<!ENTITY privatebrowsingpage.howToStart2               "To start Private Browsing, you can also select Firefox; &gt; Start Private Browsing.">
+<!ENTITY privatebrowsingpage.howToStop                "To stop Private Browsing, select Firefox &gt; Stop Private Browsing, or close Firefox.">
+<!ENTITY privatebrowsingpage.howToStart               "To start Private Browsing, you can also select Firefox; &gt; Start Private Browsing.">
 
 <!ENTITY privatebrowsingpage.moreInfo                  "While this computer won't have a record of your browsing history, your internet service provider or employer can still track the pages you visit.">
 <!ENTITY privatebrowsingpage.learnMore                 "Learn More">

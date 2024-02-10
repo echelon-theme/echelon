@@ -127,21 +127,19 @@
   background-image: linear-gradient(hsl(211, 33%, 26%), hsl(209, 53%, 6%) 95%);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4) inset, 0 1px 1px rgba(0, 0, 0, 0.2) inset !important;
 }
-@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
-  #main-window:not([privatebrowsingmode=temporary])[browser-name=Waterfox] #appmenu-button {
-    background-image: linear-gradient(rgb(82, 182, 247), rgb(10, 98, 215) 95%) !important;
-    border-color: rgba(6, 42, 83, 0.9) !important;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
-  }
-  #main-window:not([privatebrowsingmode=temporary])[browser-name=Waterfox] #appmenu-button:hover:not(:active):not([open]) {
-    background-image: radial-gradient(farthest-side at bottom, rgba(89, 240, 252, 0.5) 10%, rgba(89, 240, 252, 0) 70%), radial-gradient(farthest-side at bottom, rgb(60, 68, 236), rgba(172, 229, 255, 0)), linear-gradient(rgb(69, 170, 246), rgb(30, 40, 209) 95%) !important;
-    border-color: rgba(6, 42, 83, 0.9) !important;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 0 2px 1px rgba(169, 234, 250, 0.7) inset, 0 -1px 0 rgba(169, 234, 250, 0.5) inset !important;
-  }
-  #main-window:not([privatebrowsingmode=temporary])[browser-name=Waterfox] #appmenu-button:hover:active, #main-window:not([privatebrowsingmode=temporary])[browser-name=Waterfox] #appmenu-button[open] {
-    background-image: linear-gradient(rgb(69, 170, 246), rgb(0, 74, 209) 95%) !important;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4) inset, 0 1px 1px rgba(0, 0, 0, 0.2) inset !important;
-  }
+#main-window:not([privatebrowsingmode=temporary])[echelon-appearance-newlogo][browser-name=Waterfox] #appmenu-button {
+  background-image: linear-gradient(rgb(82, 182, 247), rgb(10, 98, 215) 95%) !important;
+  border-color: rgba(6, 42, 83, 0.9) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
+}
+#main-window:not([privatebrowsingmode=temporary])[echelon-appearance-newlogo][browser-name=Waterfox] #appmenu-button:hover:not(:active):not([open]) {
+  background-image: radial-gradient(farthest-side at bottom, rgba(89, 240, 252, 0.5) 10%, rgba(89, 240, 252, 0) 70%), radial-gradient(farthest-side at bottom, rgb(60, 68, 236), rgba(172, 229, 255, 0)), linear-gradient(rgb(69, 170, 246), rgb(30, 40, 209) 95%) !important;
+  border-color: rgba(6, 42, 83, 0.9) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 0 2px 1px rgba(169, 234, 250, 0.7) inset, 0 -1px 0 rgba(169, 234, 250, 0.5) inset !important;
+}
+#main-window:not([privatebrowsingmode=temporary])[echelon-appearance-newlogo][browser-name=Waterfox] #appmenu-button:hover:active, #main-window:not([privatebrowsingmode=temporary])[echelon-appearance-newlogo][browser-name=Waterfox] #appmenu-button[open] {
+  background-image: linear-gradient(rgb(69, 170, 246), rgb(0, 74, 209) 95%) !important;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4) inset, 0 1px 1px rgba(0, 0, 0, 0.2) inset !important;
 }
 
 /* Private Browsing icon from Firefox 20 */
@@ -765,20 +763,19 @@ treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
   list-style-image: url("chrome://userchrome/content/images/Question.png") !important;
 }
 
-@supports -moz-bool-pref("Echelon.Appearance.XP") {
-  .message-icon {
-    list-style-image: url("chrome://userchrome/content/images/information-32-xp.png") !important;
-  }
-  .alert-icon {
-    list-style-image: url("chrome://userchrome/content/images/Warning-xp.png") !important;
-  }
-  .error-icon {
-    list-style-image: url("chrome://userchrome/content/images/Error-xp.png") !important;
-  }
-  .question-icon {
-    list-style-image: url("chrome://userchrome/content/images/Question-xp.png") !important;
-  }
+:root[echelon-appearance-xp] .message-icon {
+  list-style-image: url("chrome://userchrome/content/images/information-32-xp.png") !important;
 }
+:root[echelon-appearance-xp] .alert-icon {
+  list-style-image: url("chrome://userchrome/content/images/Warning-xp.png") !important;
+}
+:root[echelon-appearance-xp] .error-icon {
+  list-style-image: url("chrome://userchrome/content/images/Error-xp.png") !important;
+}
+:root[echelon-appearance-xp] .question-icon {
+  list-style-image: url("chrome://userchrome/content/images/Question-xp.png") !important;
+}
+
 :root[sizemode=fullscreen][tabs-on-top=true] #TabsToolbar .toolbar-items, :root[sizemode=fullscreen]:not([tabs-on-top=true]) #nav-bar {
   margin-inline-end: 49px !important;
 }

@@ -129,10 +129,8 @@ groupbox > p {
     background-image: url("chrome://userchrome/content/windows/options/images/Options.png");
 }
 
-@supports -moz-bool-pref("Echelon.Appearance.XP") {
-    .tab-icon {
-        background-image: url("chrome://userchrome/content/windows/options/images/Options-xp.png");
-    }
+:root[echelon-appearance-xp] .tab-icon {
+    background-image: url("chrome://userchrome/content/windows/options/images/Options-xp.png");
 }
 
 #tab-general .tab-icon {

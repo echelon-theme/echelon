@@ -15,8 +15,8 @@
 <!ENTITY privatebrowsingpage.startPrivateBrowsing.label "Iniciar navegación privada">
 <!ENTITY privatebrowsingpage.startPrivateBrowsing.accesskey "P">
 
-<!ENTITY privatebrowsingpage.howToStop2                "Para terminar la navegación privada, seleccione Firefox &gt; Detener la Navegación Privada, o cierre Firefox.">
-<!ENTITY privatebrowsingpage.howToStart2               "Para iniciar la navegación privada, también puede seleccionar Firefox &gt; Iniciar navegación privada.">
+<!ENTITY privatebrowsingpage.howToStop                "Para terminar la navegación privada, seleccione Firefox &gt; Detener la Navegación Privada, o cierre Firefox.">
+<!ENTITY privatebrowsingpage.howToStart               "Para iniciar la navegación privada, también puede seleccionar Firefox &gt; Iniciar navegación privada.">
 
 <!ENTITY privatebrowsingpage.moreInfo                  "Aunque este computador no guardará su historial de navegación, su proveedor de servicios de Internet o el personal de la organización podrán seguir realizando el seguimiento de las páginas que usted ha visitado.">
 <!ENTITY privatebrowsingpage.learnMore                 "Saber más">

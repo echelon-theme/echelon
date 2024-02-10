@@ -32,7 +32,7 @@
   }
 }
 
-@supports -moz-bool-pref("Echelon.Option.HideUnifiedExtensions") {
+#main-window[echelon-option-hideunifiedextensions] {
   #unified-extensions-button {
     display: none !important;
   }
@@ -854,7 +854,7 @@
     outline: 1px solid rgb(255 255 255 / 25%);
   }
   
-  &[echelon-appearance-australis-fog] {
+  &[echelon-appearance-australis-enablefog] {
 
     &[tabsintitlebar][echelon-style-4] #TabsToolbar:not(:-moz-lwtheme)::after {
       content: '';
@@ -1490,7 +1490,7 @@
   treechildren doesn't support being selected from HTML
 */
 
-@supports -moz-bool-pref("Echelon.Appearance.XP") {
+#main-window[echelon-appearance-xp] {
   treechildren::-moz-tree-twisty {
     list-style-image: url('images/xp/twisty-clsd.png') !important;
   }
@@ -1793,7 +1793,7 @@
 }
 
 :root, #main-window {
-  &[echelon-windows-experience-luna-msstyles-fixes] {
+  &[echelon-appearance-experiencelunamsstylesfixes] {
     // Caption buttons are positioned incorrectly when the window is not maximised.
     &[echelon-appearance-xp] .titlebar-buttonbox-container {
       // hack

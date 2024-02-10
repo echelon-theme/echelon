@@ -15,8 +15,8 @@
 <!ENTITY privatebrowsingpage.startPrivateBrowsing.label		"プライベートブラウジングを開始">
 <!ENTITY privatebrowsingpage.startPrivateBrowsing.accesskey	"P">
 
-<!ENTITY privatebrowsingpage.howToStop2		"プライベートブラウジングを終了するには、[Firefox] メニューの [プライベートブラウジングを終了] を選択するか、Firefox を終了してください。">
-<!ENTITY privatebrowsingpage.howToStart2	"プライベートブラウジングは [Firefox] メニューの [ブライベートブラウジングを開始] でも開始できます。">
+<!ENTITY privatebrowsingpage.howToStop		"プライベートブラウジングを終了するには、[Firefox] メニューの [プライベートブラウジングを終了] を選択するか、Firefox を終了してください。">
+<!ENTITY privatebrowsingpage.howToStart	"プライベートブラウジングは [Firefox] メニューの [ブライベートブラウジングを開始] でも開始できます。">
 
 <!ENTITY privatebrowsingpage.moreInfo		"表示したページの履歴はこのコンピュータには記録されませんが、インターネットサービスプロバイダや会社が記録している可能性はあります。">
 <!ENTITY privatebrowsingpage.learnMore		"詳細を表示">

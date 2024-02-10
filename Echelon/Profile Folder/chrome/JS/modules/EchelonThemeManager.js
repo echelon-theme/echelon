@@ -9,29 +9,47 @@
 // @include			about:addons
 // ==/UserScript==
 
+this.EXPORTED_SYMBOLS = ["EchelonThemeManager"];
+
 var { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 
 class EchelonThemeManager
 {
-	static root = document.documentElement;
-	
-	static init()
-	{
-		EchelonThemeManager.refreshTheme(document.documentElement);
-		
-		Services.prefs.addObserver("Echelon.Appearance.Style", (function() {
-			this.refreshTheme();
-		}).bind(this));
+	root = null;
 
-		this.registerBoolAttributeUpdateObserver("Echelon.Appearance.Blue", "echelon-appearance-blue");
-		this.registerBoolAttributeUpdateObserver("Echelon.Appearance.Australis.EnableFog", "echelon-appearance-australis-fog");
-		this.registerBoolAttributeUpdateObserver("Echelon.Appearance.Australis.Windows10", "echelon-appearance-australis-windows10");
-		this.registerBoolAttributeUpdateObserver("Echelon.Appearance.XP", "echelon-appearance-xp");
-		this.registerBoolAttributeUpdateObserver("Echelon.FirefoxButton.CustomStyle", "echelon-firefox-button-custom-style");
-		this.registerBoolAttributeUpdateObserver("Echelon.Appearance.eXPerienceLunaMsstylesFixes", "echelon-windows-experience-luna-msstyles-fixes");
+	static #prefToAttr(pref)
+	{
+		return pref.replace(/\./g, "-").toLowerCase();
 	}
 	
-	static refreshTheme()
+	init(root, config = { style: true })
+	{
+		this.root = root;
+		console.log(root);
+		if (!root)
+		{
+			throw new Error("Root not specified");
+		}
+		
+		if (config?.style)
+		{
+			this.refreshTheme();
+			Services.prefs.addObserver("Echelon.Appearance.Style", (function() {
+				this.refreshTheme();
+				console.log("theme change");
+			}).bind(this));
+		}
+
+		if (config?.bools && Array.isArray(config.bools))
+		{
+			for (const bool of config.bools)
+			{
+				this.registerBoolAttributeUpdateObserver(bool, EchelonThemeManager.#prefToAttr(bool));
+			}
+		}
+	}
+	
+	refreshTheme()
 	{
 		let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
 		
@@ -55,7 +73,7 @@ class EchelonThemeManager
 		}
 	}
 	
-	static refreshPrefBoolAttribute(prefName, attrName)
+	refreshPrefBoolAttribute(prefName, attrName)
 	{
 		let value = PrefUtils.tryGetBoolPref(prefName);
 		
@@ -69,7 +87,7 @@ class EchelonThemeManager
 		}
 	}
 	
-	static registerBoolAttributeUpdateObserver(prefName, attrName)
+	registerBoolAttributeUpdateObserver(prefName, attrName)
 	{
 		this.refreshPrefBoolAttribute(prefName, attrName);
 		Services.prefs.addObserver(prefName, (function() {
@@ -77,8 +95,3 @@ class EchelonThemeManager
 		}).bind(this));
 	}
 }
-
-let root = document.documentElement;
-EchelonThemeManager.refreshTheme(root);
-root.setAttribute("update-channel", BrandUtils.getUpdateChannel());
-root.setAttribute("browser-name", BrandUtils.getBrowserName());

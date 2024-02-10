@@ -44,8 +44,8 @@
 					<!-- Footer -->
 			
 					<div id="footerDesc">
-						<p id="footerText" class="showPrivate">&privatebrowsingpage.howToStop2;</p>
-						<p id="footerTextNormal" class="showNormal">&privatebrowsingpage.howToStart2;</p>
+						<p id="footerText" class="showPrivate">&privatebrowsingpage.howToStop;</p>
+						<p id="footerTextNormal" class="showNormal">&privatebrowsingpage.howToStart;</p>
 					</div>
 			
 					<!-- More Info -->
@@ -62,17 +62,5 @@
 				</div>
 			  </div>
 	</body>
-	<script>
-		if (windowRoot?.ownerGlobal?.gBrowser)
-		{
-			if (!windowRoot.ownerGlobal.PrivateBrowsingUtils.isBrowserPrivate(windowRoot.ownerGlobal.gBrowser))
-			{
-				document.body.classList.remove("private");
-				document.body.classList.add("normal");
-				
-				document.title = document.getElementById("errorTitleTextNormal").innerText;
-				document.querySelector("link[rel=\"icon\"]").setAttribute("href", "chrome://userchrome/content/pages/privatebrowsing/images/question-16.png");
-			}
-		}
-	</script>
+	<script src="chrome://userchrome/content/pages/privatebrowsing/privatebrowsing.js"></script>
 </html>	

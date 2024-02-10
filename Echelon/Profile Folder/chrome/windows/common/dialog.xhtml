@@ -14,6 +14,16 @@
     </linkset>
 
     <script>
+        /* Init theme manager for Windows XP theme */
+        const { EchelonThemeManager } = ChromeUtils.import("chrome://modules/content/EchelonThemeManager.js");
+        let g_themeManager = new EchelonThemeManager;
+        g_themeManager.init(
+            document.documentElement,
+            {
+                bools: ["Echelon.Appearance.XP"]
+            }
+        );
+
         let args = window.arguments[0];
         let g_dialog = document.documentElement;
         window.addEventListener("DOMContentLoaded", function()

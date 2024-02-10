@@ -33,11 +33,10 @@
   font-style: italic !important;
 }
 
-@supports -moz-bool-pref("Echelon.Option.HideUnifiedExtensions") {
-  #unified-extensions-button {
-    display: none !important;
-  }
+#main-window[echelon-option-hideunifiedextensions] #unified-extensions-button {
+  display: none !important;
 }
+
 /** ECHELON STYLE 1 (Firefox 5.0 - 9.0) **/
 #main-window:not([echelon-style-3])[echelon-style-1] toolbar .toolbarbutton-1:not(#tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button) {
   border-radius: 3.5px;
@@ -788,7 +787,7 @@
   background-color: #BDCAD9;
   outline: 1px solid rgba(255, 255, 255, 0.25);
 }
-#main-window[echelon-appearance-blue][echelon-appearance-australis-fog][tabsintitlebar][echelon-style-4] #TabsToolbar:not(:-moz-lwtheme)::after {
+#main-window[echelon-appearance-blue][echelon-appearance-australis-enablefog][tabsintitlebar][echelon-style-4] #TabsToolbar:not(:-moz-lwtheme)::after {
   content: "";
   display: flex;
   box-shadow: 0 0 30px 30px rgba(174, 189, 204, 0.85);
@@ -1345,14 +1344,13 @@
 /* 
   treechildren doesn't support being selected from HTML
 */
-@supports -moz-bool-pref("Echelon.Appearance.XP") {
-  treechildren::-moz-tree-twisty {
-    list-style-image: url("images/xp/twisty-clsd.png") !important;
-  }
-  treechildren::-moz-tree-twisty(open) {
-    list-style-image: url("images/xp/twisty-open.png") !important;
-  }
+#main-window[echelon-appearance-xp] treechildren::-moz-tree-twisty {
+  list-style-image: url("images/xp/twisty-clsd.png") !important;
 }
+#main-window[echelon-appearance-xp] treechildren::-moz-tree-twisty(open) {
+  list-style-image: url("images/xp/twisty-open.png") !important;
+}
+
 /** TABS ON BOTTOM **/
 #main-window:not([tabs-on-top]) #nav-bar {
   background-image: none !important;
@@ -1583,14 +1581,14 @@
     appearance: none !important;
   }
 }
-:root[echelon-windows-experience-luna-msstyles-fixes][echelon-appearance-xp] .titlebar-buttonbox-container, #main-window[echelon-windows-experience-luna-msstyles-fixes][echelon-appearance-xp] .titlebar-buttonbox-container {
+:root[echelon-appearance-experiencelunamsstylesfixes][echelon-appearance-xp] .titlebar-buttonbox-container, #main-window[echelon-appearance-experiencelunamsstylesfixes][echelon-appearance-xp] .titlebar-buttonbox-container {
   top: 0 !important;
 }
-:root[echelon-windows-experience-luna-msstyles-fixes][echelon-appearance-xp][sizemode=maximized] .titlebar-buttonbox-container, #main-window[echelon-windows-experience-luna-msstyles-fixes][echelon-appearance-xp][sizemode=maximized] .titlebar-buttonbox-container {
+:root[echelon-appearance-experiencelunamsstylesfixes][echelon-appearance-xp][sizemode=maximized] .titlebar-buttonbox-container, #main-window[echelon-appearance-experiencelunamsstylesfixes][echelon-appearance-xp][sizemode=maximized] .titlebar-buttonbox-container {
   top: 4px !important;
 }
 @media not (-moz-windows-non-native-menus) {
-  :root[echelon-windows-experience-luna-msstyles-fixes] menupopup, #main-window[echelon-windows-experience-luna-msstyles-fixes] menupopup {
+  :root[echelon-appearance-experiencelunamsstylesfixes] menupopup, #main-window[echelon-appearance-experiencelunamsstylesfixes] menupopup {
     appearance: none !important;
     padding: 1px !important;
   }

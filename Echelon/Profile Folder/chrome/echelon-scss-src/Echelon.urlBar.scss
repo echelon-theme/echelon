@@ -168,14 +168,9 @@
 
 .urlbarView-favicon[src="chrome://activity-stream/content/data/content/tippytop/favicons/google-com.ico"] {
   content: url('images/icons/engines/google.png') !important;
-
-  @supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
-    :root[echelon-style-3] & {
-      content: url('images/icons/engines/google_new.ico') !important;
-    }
-  }
   
-  :root[echelon-style-4] & {
+  :root[echelon-style-4] &,
+  :root[echelon-style-3][echelon-appearance-newlogo] & {
     content: url('images/icons/engines/google_new.ico') !important;
   }
 }

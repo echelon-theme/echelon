@@ -9,3 +9,5 @@ locale echelon ja    ../locale/ja/
 
 skin userstyles classic/1.0 ../CSS/
 content userchrome ../ contentaccessible=yes
+
+override chrome://global/content/commonDialog.xhtml ../windows/commonDialog/commonDialog.xhtml

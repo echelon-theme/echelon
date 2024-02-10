@@ -12,130 +12,120 @@
 #main-window .tab-icon-image[src="chrome://branding/content/icon32.png"] {
   content: url("images/icon16.png") !important;
 }
-
 #main-window #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
   list-style-image: url("images/icon16.png") !important;
 }
-
-@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
-  #main-window .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-    content: url("images/icon16-new.png") !important;
-  }
-  #main-window #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-    list-style-image: url("images/icon16-new.png") !important;
-  }
-}
-.tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
-  content: url("images/defaultFavicon.png") !important;
-}
-:root[echelon-appearance-xp] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
-  content: url("images/xp/defaultFavicon.png") !important;
-}
-:root[echelon-style-3] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
-  content: url("images/defaultFavicon-new.png") !important;
-}
-:root[echelon-style-4] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"]:not([pinned]) {
-  display: none !important;
-}
-
-#identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
-  list-style-image: url("images/defaultFavicon.png") !important;
-}
-:root[echelon-appearance-xp] #identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
-  list-style-image: url("images/xp/defaultFavicon.png") !important;
-}
-
-.tab-icon-image[src="chrome://browser/skin/customize.svg"] {
+#main-window .tab-icon-image[src="chrome://browser/skin/customize.svg"] {
   content: url("images/customizeFavicon.ico") !important;
 }
-
-#identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
+#main-window #identity-icon[style="list-style-image: url('chrome://browser/skin/customize.svg');"] {
   list-style-image: url("images/customizeFavicon.ico") !important;
 }
-
-.tab-icon-image[src="chrome://global/skin/icons/info.svg"],
-.tab-icon-image[src="chrome://global/skin/icons/warning.svg"] {
+#main-window .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
+  content: url("images/defaultFavicon.png") !important;
+}
+#main-window #identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
+  list-style-image: url("images/defaultFavicon.png") !important;
+}
+#main-window[echelon-appearance-xp] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
+  content: url("images/xp/defaultFavicon.png") !important;
+}
+#main-window[echelon-appearance-xp] #identity-icon[style="list-style-image: url('chrome://global/skin/icons/settings.svg');"] {
+  list-style-image: url("images/xp/defaultFavicon.png") !important;
+}
+#main-window[echelon-style-3] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
+  content: url("images/defaultFavicon-new.png") !important;
+}
+#main-window[echelon-appearance-newlogo] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+  content: url("images/icon16-new.png") !important;
+}
+#main-window[echelon-appearance-newlogo] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+  list-style-image: url("images/icon16-new.png") !important;
+}
+#main-window[echelon-style-4] .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
+  content: url("images/preferences.ico") !important;
+}
+#main-window .tab-icon-image[src="chrome://global/skin/icons/info.svg"] {
   content: url("images/warning-16.png") !important;
 }
-:root[echelon-appearance-xp] .tab-icon-image[src="chrome://global/skin/icons/info.svg"],
-:root[echelon-appearance-xp] .tab-icon-image[src="chrome://global/skin/icons/warning.svg"] {
-  content: url("images/xp/warning-16.png") !important;
-}
-
-#identity-icon[style="list-style-image: url('chrome://global/skin/icons/info.svg');"],
-#identity-icon[style="list-style-image: url('chrome://global/skin/icons/warning.svg');"] {
+#main-window #identity-icon[style="list-style-image: url('chrome://global/skin/icons/info.svg');"] {
   list-style-image: url("images/warning-16.png") !important;
 }
-:root[echelon-appearance-xp] #identity-icon[style="list-style-image: url('chrome://global/skin/icons/info.svg');"],
-:root[echelon-appearance-xp] #identity-icon[style="list-style-image: url('chrome://global/skin/icons/warning.svg');"] {
+#main-window .tab-icon-image[src="chrome://global/skin/icons/warning.svg"] {
+  content: url("images/warning-16.png") !important;
+}
+#main-window #identity-icon[style="list-style-image: url('chrome://global/skin/icons/warning.svg');"] {
+  list-style-image: url("images/warning-16.png") !important;
+}
+#main-window[echelon-appearance-xp] .tab-icon-image[src="chrome://global/skin/icons/info.svg"] {
+  content: url("images/xp/warning-16.png") !important;
+}
+#main-window[echelon-appearance-xp] #identity-icon[style="list-style-image: url('chrome://global/skin/icons/info.svg');"] {
   list-style-image: url("images/xp/warning-16.png") !important;
 }
-
-.tab-icon-image[src="chrome://mozapps/skin/extensions/extension.svg"] {
+#main-window[echelon-appearance-xp] .tab-icon-image[src="chrome://global/skin/icons/warning.svg"] {
+  content: url("images/xp/warning-16.png") !important;
+}
+#main-window[echelon-appearance-xp] #identity-icon[style="list-style-image: url('chrome://global/skin/icons/warning.svg');"] {
+  list-style-image: url("images/xp/warning-16.png") !important;
+}
+#main-window .tab-icon-image[src="chrome://mozapps/skin/extensions/extension.svg"] {
   content: url("images/extensionGeneric-16.png") !important;
 }
-
-#identity-icon[style="list-style-image: url('chrome://mozapps/skin/extensions/extension.svg');"] {
+#main-window #identity-icon[style="list-style-image: url('chrome://mozapps/skin/extensions/extension.svg');"] {
   list-style-image: url("images/extensionGeneric-16.png") !important;
 }
-
-/** WATERFOX **/
 #main-window[browser-name=Waterfox] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
   content: url("images/icons/alt/waterfox/old/info16.png") !important;
 }
-
 #main-window[browser-name=Waterfox] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
   list-style-image: url("images/icons/alt/waterfox/old/info16.png") !important;
 }
-
-@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
-  #main-window[browser-name=Waterfox] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-    content: url("images/icons/alt/waterfox/info16.png") !important;
-  }
-  #main-window[browser-name=Waterfox] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-    list-style-image: url("images/icons/alt/waterfox/info16.png") !important;
-  }
+#main-window[browser-name=Waterfox][echelon-appearance-newlogo] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+  content: url("images/icons/alt/waterfox/info16.png") !important;
 }
-/** SUPERFOX **/
+#main-window[browser-name=Waterfox][echelon-appearance-newlogo] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+  list-style-image: url("images/icons/alt/waterfox/info16.png") !important;
+}
 #main-window[browser-name=Superfox] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
   content: url("images/icons/alt/superfox/info16.png") !important;
 }
-
 #main-window[browser-name=Superfox] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
   list-style-image: url("images/icons/alt/superfox/info16.png") !important;
 }
-
-/** AURORA (FIREFOX DEV EDITION) **/
 #main-window[update-channel=aurora] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+  content: url("images/icons/alt/aurora/old/icon16.png") !important;
+}
+#main-window[update-channel=aurora] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+  list-style-image: url("images/icons/alt/aurora/old/icon16.png") !important;
+}
+#main-window[update-channel=aurora][echelon-appearance-newlogo] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
   content: url("images/icons/alt/aurora/icon16.png") !important;
 }
-
-#main-window[update-channel=aurora] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+#main-window[update-channel=aurora][echelon-appearance-newlogo] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
   list-style-image: url("images/icons/alt/aurora/icon16.png") !important;
 }
-
-/** NIGHTLY **/
 #main-window[update-channel=nightly] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-  content: url("images/icons/alt/nightly/old/icon16.png") !important;
+  content: url("images/icons/alt/aurora/old/icon16.png") !important;
 }
-
 #main-window[update-channel=nightly] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-  list-style-image: url("images/icons/alt/nightly/old/icon16.png") !important;
+  list-style-image: url("images/icons/alt/aurora/old/icon16.png") !important;
 }
-
-@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
-  #main-window[update-channel=nightly] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-    content: url("images/icons/alt/nightly/icon16.png") !important;
-  }
-  #main-window[update-channel=nightly] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-    list-style-image: url("images/icons/alt/nightly/icon16.png") !important;
-  }
+#main-window[update-channel=nightly][echelon-appearance-newlogo] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+  content: url("images/icons/alt/aurora/icon16.png") !important;
 }
-@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
-  #main-window[update-channel=nightly] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-    content: url("images/icons/alt/nightly/icon16.png") !important;
-  }
-  #main-window[update-channel=nightly] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-    list-style-image: url("images/icons/alt/nightly/icon16.png") !important;
-  }
+#main-window[update-channel=nightly][echelon-appearance-newlogo] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+  list-style-image: url("images/icons/alt/aurora/icon16.png") !important;
+}
+#main-window[echelon-appearance-xp] .tab-icon-image[src="chrome://userchrome/content/pages/privatebrowsing/images/Privacy-16.png"] {
+  content: url("chrome://userchrome/content/pages/privatebrowsing/images/Privacy-16-xp.png") !important;
+}
+#main-window[echelon-appearance-xp] #identity-icon[style="list-style-image: url('chrome://userchrome/content/pages/privatebrowsing/images/Privacy-16.png');"] {
+  list-style-image: url("chrome://userchrome/content/pages/privatebrowsing/images/Privacy-16-xp.png") !important;
+}
+#main-window[echelon-appearance-xp] .tab-icon-image[src="chrome://userchrome/content/pages/privatebrowsing/images/question-16.png"] {
+  content: url("chrome://userchrome/content/pages/privatebrowsing/images/question-16-xp.png") !important;
+}
+#main-window[echelon-appearance-xp] #identity-icon[style="list-style-image: url('chrome://userchrome/content/pages/privatebrowsing/images/question-16.png');"] {
+  list-style-image: url("chrome://userchrome/content/pages/privatebrowsing/images/question-16-xp.png") !important;
 }

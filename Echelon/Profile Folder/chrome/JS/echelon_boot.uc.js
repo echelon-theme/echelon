@@ -1,32 +1,96 @@
 // ==UserScript==
-// @name			Echelon :: Functions Loader
-// @description 	Loads resources required for Echelon.
-// @author			Travis
-// @include			main
+// @name			Echelon :: Boot
+// @description 	Initializes Echelon modules for different pages.
+// @author			aubymori
+// @include			(.*)
+// @include         chrome://global/content/commonDialog.xhtml
 // @loadOrder       14
 // ==/UserScript==
 
-var { PrefUtils, BrandUtils, waitForElement, renderElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
-waitForElement = waitForElement.bind(this);
-renderElement = renderElement.bind(this);
+/* ^ We can safely include everything; the script only injects into pages which have chrome privileges */
 
-var { EchelonUpdateChecker } = ChromeUtils.import("chrome://modules/content/EchelonUpdateChecker.js");
+let ECHELON_BOOT_CONFIG = {
+	/* Main browser window */
+	"chrome://browser/content/browser.xhtml": {
+		updates: true,
+		wizard: true,
+		themes: {
+			style: true,
+			bools: [
+				"Echelon.Appearance.Blue",
+				"Echelon.Appearance.Australis.EnableFog",
+				"Echelon.Appearance.Australis.Windows10",
+				"Echelon.Appearance.XP",
+				"Echelon.FirefoxButton.CustomStyle",
+				"Echelon.Appearance.eXPerienceLunaMsstylesFixes",
+				"Echelon.Appearance.NewLogo",
+				"Echelon.Option.HideUnifiedExtensions"
+			]
+		}
+	},
+	/* Options */
+	"about:preferences": {
+		themes: { style: true }
+	},
+	/* Add-ons Manager */
+	"about:addons": {
+		themes: { style: true }
+	},
+	/* "About Mozilla Firefox" dialog */
+	"chrome://browser/content/aboutDialog.xhtml": {
+		themes: {
+			style: true,
+			bools: ["Echelon.Appearance.NewLogo"]
+		}
+	}
+};
 
-function executeFunctions() {
-	EchelonThemeManager.init();
-	openEchelonWizardWindow(true);
+{
+	function bootEchelon(context, config)
+	{
+		if (config?.updates)
+		{
+			let { EchelonUpdateChecker } = ChromeUtils.import("chrome://modules/content/EchelonUpdateChecker.js");
+			EchelonUpdateChecker.setWindow(context);
+			EchelonUpdateChecker.checkForUpdate();
+		}
 
-	window.addEventListener("echelon-reopen-wizard", function(e) {
-		// Kill the wizard notification early. Technically, it will disappear as soon as this
-		// callback ends, but it looks bad.
-		gBrowser?.getNotificationBox()?.getNotificationWithValue("echelon-setup-closed")?.dismiss();
-		openEchelonWizardWindow(false);
-	});
+		if (config?.wizard)
+		{
+			let { openEchelonWizardWindow } = ChromeUtils.import("chrome://userscripts/content/echelon_wizard.uc.js");
+			openEchelonWizardWindow = openEchelonWizardWindow.bind(context);
+			openEchelonWizardWindow(true);
 
-	EchelonUpdateChecker.setWindow(window);
-	EchelonUpdateChecker.checkForUpdate();
+			context.addEventListener("echelon-reopen-wizard", function(e)
+			{
+				// Kill the wizard notification early. Technically, it will disappear as soon as this
+				// callback ends, but it looks bad.
+				gBrowser?.getNotificationBox()?.getNotificationWithValue("echelon-setup-closed")?.dismiss();
+				openEchelonWizardWindow(false);
+			});
+		}
 
-    console.info("Functions executed.");
+		if (config?.themes)
+		{
+			let { EchelonThemeManager } = ChromeUtils.import("chrome://modules/content/EchelonThemeManager.js");
+			context.g_themeManager = new EchelonThemeManager;
+			context.g_themeManager.init(context.document.documentElement, config.themes);
+		}
+	}
+
+	(function(context)
+	{
+		function isCurrentURL(url)
+		{
+			return context.document.documentURI.split("#")[0].split("?")[0] == url;
+		}
+
+		for (const url in ECHELON_BOOT_CONFIG)
+		{
+			if (isCurrentURL(url))
+			{
+				return bootEchelon(context, ECHELON_BOOT_CONFIG[url]);
+			}
+		}
+	})(window);
 }
-
-window.addEventListener("load", executeFunctions);

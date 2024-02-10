@@ -2,6 +2,8 @@
  * Provides a interface to check for updates and restart on update via GitHub.
  */
 
+this.EXPORTED_SYMBOLS = ["EchelonUpdateChecker"];
+
 var { PrefUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 var { _ucUtils } = ChromeUtils.importESModule("chrome://userchromejs/content/utils.sys.mjs");
 
@@ -141,5 +143,3 @@ Error: ${error.message}`,
         }
     }
 }
-
-let EXPORTED_SYMBOLS = ["EchelonUpdateChecker"];
