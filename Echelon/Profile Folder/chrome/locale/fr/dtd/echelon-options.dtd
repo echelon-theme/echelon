@@ -1,4 +1,4 @@
-<!ENTITY window.title "Options d'Echelon">
+<!ENTITY window.title "Options d&apos;Echelon">
 <!ENTITY window.restartRequired "Redémarrage requis">
 
 <!ENTITY window.buttons.ok "OK">
@@ -21,13 +21,13 @@
 <!ENTITY general.appearance.style.ff14 "Strata (Firefox 14-28)">
 <!ENTITY general.appearance.style.australis "Australis (Firefox 29+)">
 
-<!ENTITY general.appearance.os "Style d'OS :">
+<!ENTITY general.appearance.os "Style d&apos;OS :">
 <!ENTITY general.appearance.os.xp "Windows XP">
 <!ENTITY general.appearance.os.vista "Windows Vista/7">
 <!ENTITY general.appearance.os.eight "Windows 8">
 <!ENTITY general.appearance.os.ten "Windows 10">
 
-<!ENTITY general.appearance.home "Style de page d'accueil :">
+<!ENTITY general.appearance.home "Style de page d&apos;accueil :">
 <!ENTITY general.appearance.home.ff4 "Firefox 4-9">
 <!ENTITY general.appearance.home.ff10 "Firefox 10-13">
 <!ENTITY general.appearance.home.ff14 "Firefox 14-28">
@@ -36,7 +36,7 @@
 
 <!ENTITY general.appearance.blue "Utiliser le bleu Aero (Vista/7)">
 <!ENTITY general.appearance.hideAddons "Masquer le bouton &quot;Extensions&quot; (Déconseillé)">
-<!ENTITY general.appearance.newLogo "Utiliser le logo Firefox d'après 2013">
+<!ENTITY general.appearance.newLogo "Utiliser le logo Firefox d&apos;après 2013">
 <!ENTITY general.appearance.australisFog "Activer le brouillard (Australis uniquement)">
 <!ENTITY general.appearance.themeDevTools "Appliquer le thème sur les outils développeur">
 
@@ -48,8 +48,8 @@
 
 <!ENTITY general.behavior "Comportement">
 
-<!ENTITY general.behavior.viewImage "Activer l'ancien comportement &quot;Voir l'image&quot; dans les menus contextuels">
-<!ENTITY general.behavior.noUpdates "Désactiver la vérification des mises à jour d'Echelon">
+<!ENTITY general.behavior.viewImage "Activer l&apos;ancien comportement &quot;Voir l&apos;image&quot; dans les menus contextuels">
+<!ENTITY general.behavior.noUpdates "Désactiver la vérification des mises à jour d&apos;Echelon">
 
 <!ENTITY branding.branding "Image de marque">
 
@@ -73,9 +73,9 @@
 <!ENTITY nativeControls.general.osOverride.eight "Windows 8.x">
 <!ENTITY nativeControls.general.osOverride.ten "Windows 10">
 
-<!ENTITY nativeControls.general.glassOverride "Changer l'état d'Aero Glass :">
+<!ENTITY nativeControls.general.glassOverride "Changer l&apos;état d&apos;Aero Glass :">
 <!ENTITY nativeControls.general.glassOverride.default "Par défaut">
-<!ENTITY nativeControls.general.glassOverride.forceOn "Forcer l'activation">
+<!ENTITY nativeControls.general.glassOverride.forceOn "Forcer l&apos;activation">
 <!ENTITY nativeControls.general.glassOverride.forceOff "Forcer la désactivation">
 
 <!ENTITY nativeControls.general.disableComposition "Désactiver la composition DWM">
@@ -84,7 +84,7 @@
 <!ENTITY nativeControls.captionMask.width "Largeur :">
 <!ENTITY nativeControls.captionMask.height "Hauteur :">
 
-<!ENTITY debug.notice "Ces options ne sont destinés qu'à des fins de débogage ; vous n'avez en toute logique pas besoin de les modifier à moins que vous soyez un développeur.">
+<!ENTITY debug.notice "Ces options ne sont destinés qu&apos;à des fins de débogage ; vous n&apos;avez en toute logique pas besoin de les modifier à moins que vous soyez un développeur.">
 
 <!ENTITY debug.wizard "Assistant">
 
@@ -99,7 +99,7 @@
 <!ENTITY about.credits.madeBy "Echelon a été conçu par">
 <!ENTITY about.credits.developers "Développeurs">
 <!ENTITY about.credits.honorableMentions "Mentions honorables">
-<!ENTITY about.credits.honorableMentions.privateTesters "Testeurs privés d'Echelon">
+<!ENTITY about.credits.honorableMentions.privateTesters "Testeurs privés d&apos;Echelon">
 
 <!ENTITY about.viewRepo "Voir le dépôt GitHub">
 <!ENTITY about.reportIssue "Soumettre un rapport de bug">
