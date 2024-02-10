@@ -15,8 +15,8 @@
 <!ENTITY privatebrowsingpage.startPrivateBrowsing.label "Démarrer la navigation privée">
 <!ENTITY privatebrowsingpage.startPrivateBrowsing.accesskey "p">
 
-<!ENTITY privatebrowsingpage.howToStop2                "Pour arrêter la navigation privée, sélectionner Firefox; &gt; Arrêter la navigation privée ou fermez Firefox.">
-<!ENTITY privatebrowsingpage.howToStart2               "Pour démarrer la navigation privée, vous pouvez aussi sélectionner Firefox; &gt; Commencer la navigation privée.">
+<!ENTITY privatebrowsingpage.howToStop                 "Pour arrêter la navigation privée, sélectionner Firefox &gt; Arrêter la navigation privée ou fermez Firefox.">
+<!ENTITY privatebrowsingpage.howToStart                "Pour démarrer la navigation privée, vous pouvez aussi sélectionner Firefox &gt; Commencer la navigation privée.">
 
 <!ENTITY privatebrowsingpage.moreInfo                  "Bien que cet ordinateur ne conserve aucun enregistrement de votre historique de navigation, votre fournisseur d'accès à Internet ou votre employeur peuvent toujours connaître les pages que vous visitez.">
 <!ENTITY privatebrowsingpage.learnMore                 "En savoir plus">
