@@ -5,6 +5,10 @@ Echelon is an old Mozilla Firefox theme for Mozilla Firefox 115ESR.
 
 ![Screenshot](images/preview.png)
 
+## Installation
+Detailed instructions on how to install the theme can be seen here.
+[See this page for installation instructions.](https://github.com/echelon-theme/echelon/wiki/Installation)
+
 ## Screenshots
 ### Strata (Firefox 4)
 ![Screenshot](images/ff4.png)
