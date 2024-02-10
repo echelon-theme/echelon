@@ -400,8 +400,8 @@
   background-image: url("images/identity-icons-https.png");
 }
 
-#main-window[echelon-style-3] #identity-box.notSecure:not(.localResource) #identity-icon {
-  background-image: url("images/identity-icons-generic.png");
+#main-window[echelon-style-3] #identity-box.notSecure:not(.localResource) #identity-icon, #main-window[echelon-style-3] .mixedDisplayContent:not(.localResource) #identity-icon {
+  background-image: url("images/identity-icons-generic.png") !important;      
 }
 
 #main-window[echelon-style-3] #identity-box.chromeUI #identity-icon {
