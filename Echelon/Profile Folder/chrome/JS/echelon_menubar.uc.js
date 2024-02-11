@@ -22,16 +22,11 @@
             {
                 gCustomizeMode.toggleTitlebar(!autohide);
 
-                setChromeMargin();
+                if (theme < ECHELON_LAYOUT_FF14 && autohide)
+                {
+                    root.setAttribute("chromemargin", "0,1,1,1");
+                }
             }
-        }
-    }
-
-    function setChromeMargin() 
-    {
-        if (theme < ECHELON_LAYOUT_FF14 && tabsintitlebar)
-        {
-            root.setAttribute("chromemargin", "0,1,1,1");
         }
     }
 
@@ -44,6 +39,10 @@
                 attributeFilter: ["autohide"]
             }
         );
-        setChromeMargin();
+
+        if (theme < ECHELON_LAYOUT_FF14 && tabsintitlebar)
+        {
+            root.setAttribute("chromemargin", "0,1,1,1");
+        }
     });
 }
