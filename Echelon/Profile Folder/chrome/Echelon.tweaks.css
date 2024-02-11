@@ -194,6 +194,21 @@
   display: none !important;
 }
 
+#main-window[echelon-style-2][tabs-on-top=true] #TabsToolbar #new-tab-button .toolbarbutton-icon {
+  background-image: url("images/newtab-inverted.png") !important;
+}
+
+#main-window[echelon-style-2][tabs-on-top=true] #alltabs-button > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+  background-image: url("images/toolbarbutton-dropdown-arrow-inverted.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+}
+
+#main-window[echelon-style-2][tabs-on-top=true] #scrollbutton-up .toolbarbutton-icon,
+#main-window[echelon-style-2][tabs-on-top=true] #scrollbutton-down .toolbarbutton-icon {
+  background-image: url("images/tab-arrow-left-inverted.png") !important;
+}
+
 /** ECHELON STYLE 3 (Firefox 14.0 - Firefox 27.0) **/
 #main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button) {
   background-image: none !important;
@@ -435,6 +450,10 @@
   font-size: 8pt !important;
   padding-inline-start: 3px !important;
   padding-inline-end: 5px !important;
+}
+
+#main-window[echelon-style-3] #tabbrowser-tabs:not([overflow=true], [hashiddentabs]) ~ #alltabs-button {
+  display: none !important;
 }
 
 /** ECHELON STYLE 4 (Australis) **/

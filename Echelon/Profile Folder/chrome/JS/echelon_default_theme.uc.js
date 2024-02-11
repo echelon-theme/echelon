@@ -5,7 +5,7 @@
 // @include			main
 // ==/UserScript==
 
-{
+{   
     function updateThemeAttr()
     {
         let root = document.documentElement;
