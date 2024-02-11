@@ -89,7 +89,11 @@ let ECHELON_BOOT_CONFIG = {
 		{
 			if (isCurrentURL(url))
 			{
-				return bootEchelon(context, ECHELON_BOOT_CONFIG[url]);
+				context.addEventListener("load", function()
+				{
+					bootEchelon(context, ECHELON_BOOT_CONFIG[url]);
+				});
+				return;
 			}
 		}
 	})(window);

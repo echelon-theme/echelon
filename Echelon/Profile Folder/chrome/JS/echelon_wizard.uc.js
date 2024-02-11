@@ -16,17 +16,17 @@ let openEchelonWizardWindow;
             let isEchelonFirstRunFinished = PrefUtils.tryGetBoolPref("Echelon.parameter.isFirstRunFinished");
             
             if (!isEchelonFirstRunFinished) {
-                PrefUtils.trySetBoolPref('Echelon.parameter.isFirstRunFinished', false)
-
-                launchEchelonWizard();
+                (launchEchelonWizard.bind(this))();;
             }
         } else {
-            launchEchelonWizard();
+            (launchEchelonWizard.bind(this))();;
         }
     }
 
     function launchEchelonWizard() {
-        window.openDialog(
+        PrefUtils.trySetBoolPref('Echelon.parameter.isFirstRunFinished', false)
+
+        this.window.openDialog(
             "chrome://userchrome/content/windows/wizard/wizard.xhtml",
             "Set Up Echelon",
             "chrome,centerscreen,resizeable=no,dependent,modal"

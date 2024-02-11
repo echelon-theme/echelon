@@ -315,18 +315,15 @@
   background-color: transparent !important;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.15)) !important;
   position: relative !important;
+  overflow: hidden !important;
 }
-
 #identity-icon-box:hover {
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(128, 128, 128, 0.2), rgba(0, 0, 0, 0.15)) !important;
 }
-
-#identity-icon-box[open=true],
 #identity-icon-box:hover:active {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)) !important;
 }
-
-#identity-icon-box::after {
+#identity-icon-box ::after {
   content: "";
   display: inline-block;
   width: 24px;
@@ -373,12 +370,10 @@
   background-image: url("images/search-glass.png") !important;
   display: flex !important;
 }
-
 .search-go-button:hover {
   background-position-x: -16px !important;
 }
-
-.search-go-button:active {
+.search-go-button:hover:active {
   background-position-x: -32px !important;
 }
 
@@ -489,7 +484,7 @@
   list-style-image: url("images/icons/stop.png") !important;
 }
 
-#main-window[echelon-style-3] {
+#main-window[echelon-style-3]:not([default-dark-theme]) {
   --toolbar-custom-color: rgb(219, 234, 249) !important;
 }
 #main-window[echelon-style-3][tabs-on-top=true] #urlbar-background,
