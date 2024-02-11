@@ -9,16 +9,29 @@
     var { waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
     waitForElement = waitForElement.bind(window);
 
+    let root = document.documentElement;
+    let theme = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
+    let tabsintitlebar = document.getElementById("toolbar-menubar").getAttribute("autohide") == "true";
+
     function menuBarMutation(list)
     {
         for (const mut of list)
         {
             let autohide = mut.target.getAttribute("autohide") == "true";
-            let theme = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
             if (theme < ECHELON_LAYOUT_AUSTRALIS)
             {
                 gCustomizeMode.toggleTitlebar(!autohide);
+
+                setChromeMargin();
             }
+        }
+    }
+
+    function setChromeMargin() 
+    {
+        if (theme < ECHELON_LAYOUT_FF14 && tabsintitlebar)
+        {
+            root.setAttribute("chromemargin", "0,1,1,1");
         }
     }
 
@@ -31,5 +44,6 @@
                 attributeFilter: ["autohide"]
             }
         );
+        setChromeMargin();
     });
 }
