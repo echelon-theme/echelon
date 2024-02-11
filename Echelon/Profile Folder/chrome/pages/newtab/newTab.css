@@ -1,0 +1,905 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+input {
+  margin: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font: message-box;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #F9F9F9;
+  display: flex;
+  position: relative;
+  flex: 1;
+  -moz-user-focus: normal;
+  flex-direction: column;
+}
+
+input {
+  font: message-box;
+  font-size: 16px;
+}
+
+input[type=button] {
+  cursor: pointer;
+}
+
+/* UNDO */
+#newtab-undo-container {
+  transition: opacity 100ms ease-out;
+  align-items: center;
+  justify-content: center;
+}
+
+#newtab-undo-container[undo-disabled] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* CUSTOMIZE */
+#newtab-customize-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 101;
+}
+
+#newtab-customize-button:dir(rtl) {
+  left: 20px;
+  right: auto;
+}
+
+/* MARGINS */
+#newtab-vertical-margin {
+  display: flex;
+  position: relative;
+  flex: 1;
+  flex-direction: column;
+}
+
+#newtab-margin-undo-container {
+  display: flex;
+  left: 6px;
+  position: absolute;
+  top: 6px;
+  z-index: 1;
+}
+
+#newtab-margin-undo-container:dir(rtl) {
+  left: auto;
+  right: 6px;
+}
+
+#newtab-undo-close-button:dir(rtl) {
+  float:left;
+}
+
+#newtab-horizontal-margin {
+  display: flex;
+  flex: 1;
+}
+
+#newtab-margin-top,
+#newtab-margin-bottom {
+  display: flex;
+  position: relative;
+}
+
+#newtab-margin-top {
+  flex: 1;
+}
+
+#newtab-margin-bottom {
+  flex: 2;
+}
+
+.newtab-side-margin {
+  min-width: 10px;
+  flex: 1;
+}
+
+/* GRID */
+#newtab-grid {
+  flex: 5;
+  overflow: hidden;
+  text-align: center;
+  transition: 100ms ease-out;
+  transition-property: opacity;
+}
+
+#newtab-grid[page-disabled] {
+  opacity: 0;
+}
+
+#newtab-grid[locked],
+#newtab-grid[page-disabled] {
+  pointer-events: none;
+}
+
+body:not(.compact) #topsites-heading {
+  display: none;
+}
+
+/*
+ * If you change the sizes here, make sure you
+ * change the preferences:
+ * toolkit.pageThumbs.minWidth
+ * toolkit.pageThumbs.minHeight
+ */
+/* CELLS */
+.newtab-cell {
+  display: flex;
+  height: 210px;
+  margin: 20px 10px 35px;
+  width: 290px;
+}
+
+body.compact .newtab-cell {
+  width: 110px;
+  height: 110px;
+  margin: 12px;
+}
+
+/* SITES */
+.newtab-site {
+  position: relative;
+  flex: 1;
+  transition: 100ms ease-out;
+  transition-property: top, left, opacity;
+}
+
+.newtab-site[frozen] {
+  position: absolute;
+  pointer-events: none;
+}
+
+.newtab-site[dragged] {
+  transition-property: none;
+  z-index: 10;
+}
+
+/* LINK + THUMBNAILS */
+.newtab-link,
+.newtab-thumbnail {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* TITLES */
+.newtab-title {
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  bottom: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.newtab-title {
+  left: 0;
+  padding: 0 4px;
+}
+
+/* CONTROLS */
+.newtab-control {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 100ms ease-out;
+}
+
+.newtab-control:-moz-focusring,
+.newtab-cell:not([ignorehover]) > .newtab-site:hover > .newtab-control {
+  opacity: 1;
+}
+
+.newtab-control[dragged] {
+  opacity: 0 !important;
+}
+
+@media (-moz-touch-enabled) {
+  .newtab-control {
+    opacity: 1;
+  }
+}
+
+/* DRAG & DROP */
+
+/*
+ * This is just a temporary drag element used for dataTransfer.setDragImage()
+ * so that we can use custom drag images and elements. It needs an opacity of
+ * 0.01 so that the core code detects that it's in fact a visible element.
+ */
+.newtab-drag {
+  width: 1px;
+  height: 1px;
+  background-color: #fff;
+  opacity: 0.01;
+}
+
+/* SEARCH */
+#newtab-search-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin: 55px 0 15px;
+}
+
+body.compact #newtab-search-container {
+  margin-top: 0;
+  margin-bottom: 80px;
+}
+
+#newtab-search-container[page-disabled] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#newtab-search-form {
+  display: flex;
+  position: relative;
+  height: 36px;
+  flex: 1;
+  max-width: 600px; /* 2 * (290 cell width + 10 cell margin) */
+}
+
+#newtab-search-icon {
+  border: 1px transparent;
+  padding: 0;
+  margin: 0;
+  width: 36px;
+  height: 36px;
+  background: url("chrome://userchrome/content/pages/newtab/images/search-indicator-magnifying-glass.svg") center center no-repeat;
+  position: absolute;
+}
+
+#newtab-search-text {
+  flex: 1;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-inline-start: 34px;
+  padding-inline-end: 8px;
+  background: hsla(0,0%,100%,.9) padding-box;
+  border: 1px solid;
+  border-spacing: 0;
+  border-radius: 2px 0 0 2px;
+  border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.17) hsla(210,54%,20%,.2);
+  box-shadow: 0 1px 0 hsla(210,65%,9%,.02) inset,
+              0 0 2px hsla(210,65%,9%,.1) inset,
+              0 1px 0 hsla(0,0%,100%,.2);
+  color: inherit;
+  unicode-bidi: plaintext;
+}
+
+#newtab-search-text:dir(rtl) {
+  border-radius: 0 2px 2px 0;
+}
+
+#newtab-search-text[aria-expanded="true"] {
+  border-radius: 2px 0 0 0;
+}
+
+#newtab-search-text[aria-expanded="true"]:dir(rtl) {
+  border-radius: 0 2px 0 0;
+}
+
+#newtab-search-text[keepfocus],
+#newtab-search-text:focus,
+#newtab-search-text[autofocus] {
+  border-color: hsla(206,100%,60%,.6) hsla(206,76%,52%,.6) hsla(204,100%,40%,.6);
+}
+
+#newtab-search-submit {
+  margin-inline-start: -1px;
+  color: transparent;
+  background: url("chrome://userchrome/content/pages/newtab/images/search-arrow-go.svg") center center no-repeat, linear-gradient(hsla(0,0%,100%,.8), hsla(0,0%,100%,.1)) padding-box;
+  -moz-context-properties: fill;
+  fill: #616366;
+  padding: 0;
+  border: 1px solid;
+  border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.17) hsla(210,54%,20%,.2) transparent;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 2px hsla(0,0%,100%,.5) inset,
+              0 1px 0 hsla(0,0%,100%,.2);
+  cursor: pointer;
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 150ms;
+  width: 50px;
+}
+
+#newtab-search-submit:dir(rtl) {
+  transform: scaleX(-1);
+}
+
+#newtab-search-text:focus + #newtab-search-submit,
+#newtab-search-text + #newtab-search-submit:hover,
+#newtab-search-text[autofocus] + #newtab-search-submit {
+  border-color: #59b5fc #45a3e7 #3294d5;
+}
+
+#newtab-search-text:focus + #newtab-search-submit,
+#newtab-search-text[keepfocus] + #newtab-search-submit,
+#newtab-search-text[autofocus] + #newtab-search-submit {
+  background-image: url("chrome://userchrome/content/pages/newtab/images/search-arrow-go.svg"), linear-gradient(#4cb1ff, #1793e5);
+  fill: white;
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.2) inset,
+              0 0 0 1px hsla(0,0%,100%,.1) inset,
+              0 1px 0 hsla(210,54%,20%,.03);
+}
+
+#newtab-search-text + #newtab-search-submit:hover {
+  background-image: url("chrome://userchrome/content/pages/newtab/images/search-arrow-go.svg"), linear-gradient(#4cb1ff, #1793e5);
+  fill: white;
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.2) inset,
+              0 0 0 1px hsla(0,0%,100%,.1) inset,
+              0 1px 0 hsla(210,54%,20%,.03),
+              0 0 4px hsla(206,100%,20%,.2);
+}
+
+#newtab-search-text + #newtab-search-submit:hover:active {
+  box-shadow: 0 1px 1px hsla(211,79%,6%,.1) inset,
+              0 0 1px hsla(211,79%,6%,.2) inset;
+  transition-duration: 0ms;
+}
+
+/* CUSTOMIZE */
+#newtab-customize-overlay {
+  opacity: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #F9F9F9;
+  z-index: 100;
+  position: fixed;
+  transition: opacity .07s linear;
+}
+
+.newtab-customize-panel-container {
+  position: absolute;
+  margin-right: 40px;
+  right: 0;
+}
+
+.newtab-customize-panel-container:dir(rtl) {
+  right: auto;
+  left: 0;
+}
+
+#newtab-customize-panel {
+  z-index: 999;
+  margin-top: 55px;
+  min-width: 270px;
+  position: absolute;
+  top: 100%;
+  right: -25px;
+  filter: drop-shadow(0 0 1px rgba(0,0,0,0.4)) drop-shadow(0 3px 4px rgba(0,0,0,0.4));
+  transition: all 200ms ease-in-out;
+  transform-origin: top right;
+  transform: translate(-30px, -20px) scale(0) translate(30px, 20px);
+}
+
+#newtab-customize-panel:dir(rtl) {
+  transform-origin: 40px top 20px;
+}
+
+#newtab-customize-panel:dir(rtl),
+#newtab-customize-panel-anchor:dir(rtl) {
+  left: 15px;
+  right: auto;
+}
+
+#newtab-customize-panel[open="true"] {
+  transform: translate(-30px, -20px) scale(1) translate(30px, 20px);
+}
+
+#newtab-customize-panel-anchor {
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  transform: rotate(45deg);
+  position: absolute;
+  top: -6px;
+  right: 15px;
+}
+
+#newtab-customize-title {
+  color: #7A7A7A;
+  font-size: 14px;
+  background-color: #FFFFFF;
+  line-height: 25px;
+  padding: 15px;
+  font-weight: 600;
+  cursor: default;
+  border-radius: 5px 5px 0px 0px;
+  max-width: 300px;
+  overflow: hidden;
+  display: table-cell;
+  border-top: none;
+}
+
+#newtab-customize-panel-inner-wrapper {
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#newtab-customize-title > label {
+  cursor: default;
+}
+
+#newtab-customize-panel > .panel-arrowcontainer > .panel-arrowcontent {
+  padding: 0;
+}
+
+.newtab-customize-panel-item {
+  line-height: 25px;
+  padding: 15px;
+  padding-inline-start: 40px;
+  font-size: 14px;
+  cursor: pointer;
+  max-width: 300px;
+}
+
+.newtab-customize-panel-item:not(:first-child) {
+  border-top: 1px solid threedshadow;
+}
+
+.newtab-customize-panel-subitem > label,
+.newtab-customize-panel-item > label,
+.newtab-customize-complex-option {
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.newtab-customize-panel-item,
+.newtab-customize-complex-option {
+  display: block;
+  text-align: start;
+  background-color: #F9F9F9;
+}
+
+.newtab-customize-panel-item[selected]:dir(rtl){
+  background-position: right 15px center;
+}
+
+.newtab-customize-complex-option:hover > .selectable:not([selected]):dir(rtl),
+.selectable:not([selected]):hover:dir(rtl) {
+  background-position: right 15px center;
+}
+
+.newtab-customize-panel-item:not([selected]),
+.newtab-customize-panel-subitem:not([selected]){
+  color: #7A7A7A;
+}
+
+.newtab-customize-panel-item:not([selected]):hover {
+  color: #FFFFFF;
+  background-color: #4A90E2
+}
+
+.newtab-customize-complex-option:hover > .selectable:not([selected]),
+.selectable:not([selected]):hover {
+  background: url("chrome://userchrome/content/pages/newtab/images/shared-menu-check-hover.svg") no-repeat #FFFFFF;
+  background-size: 16px 16px;
+  background-position: 15px 15px;
+  color: #171F26;
+}
+
+.newtab-customize-complex-option:hover > .selectable:not([selected]) + .newtab-customize-panel-subitem {
+  background-color: #FFFFFF;
+}
+
+.newtab-customize-panel-item[selected] {
+  background: url("chrome://userchrome/content/pages/newtab/images/shared-menu-check-active.svg") no-repeat transparent;
+  background-size: 16px 16px;
+  background-position: 15px 15px;
+  color: black;
+  font-weight: 600;
+}
+
+.newtab-customize-panel-subitem > .checkbox {
+  width: 18px;
+  height: 18px;
+  background-color: #FFFFFF;
+  border: solid 1px threedshadow;
+}
+
+.newtab-customize-panel-subitem[selected] > .checkbox {
+  background: url("chrome://userchrome/content/pages/newtab/images/shared-menu-check-black.svg") no-repeat #FFFFFF;
+  background-size: 9px 9px;
+  background-position: center;
+  color: #333333;
+}
+
+.newtab-customize-panel-subitem {
+  font-size: 12px;
+  padding: 0px 15px 15px 15px;
+  padding-inline-start: 40px;
+  display: block;
+  max-width: 300px;
+}
+
+.newtab-customize-panel-subitem > label {
+  padding: 0px 10px;
+  line-height: 20px;
+  vertical-align: middle;
+  max-width: 225px;
+}
+
+.newtab-customize-panel-superitem {
+  line-height: 20px;
+  border-bottom: medium none !important;
+  padding: 15px 15px 10px 15px;
+  padding-inline-start: 40px;
+  border-top: 1px solid threedshadow;
+}
+
+.contentSearchSuggestionTable {
+  font: message-box;
+  font-size: 16px;
+}
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+ :root {
+  appearance: none;
+  font-size: 75%;
+  background-color: transparent;
+}
+
+/* UNDO */
+#newtab-undo-container {
+  padding: 4px 3px;
+  border: 1px solid;
+  border-color: rgba(8,22,37,.12) rgba(8,22,37,.14) rgba(8,22,37,.16);
+  background-color: rgba(255,255,255,.4);
+  color: #525e69;
+}
+
+#newtab-undo-label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.newtab-undo-button {
+  appearance: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 4px;
+  border: 0;
+  background: transparent;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.newtab-undo-button:hover {
+  text-decoration: underline;
+}
+
+.newtab-undo-button:-moz-focusring {
+  outline: 1px dotted;
+}
+
+#newtab-undo-close-button {
+  appearance: none;
+  padding: 0;
+  border: none;
+}
+
+#newtab-undo-close-button {
+  appearance: none;
+  padding: 0;
+  border: none;
+  height: 16px;
+  width: 16px;
+  float: right;
+  right: 0;
+  background-image: -moz-image-rect(url(chrome://userchrome/content/pages/newtab/images/close.png), 0, 16, 16, 0);
+  background-color: transparent;
+}
+
+#newtab-undo-close-button:hover {
+  background-image: -moz-image-rect(url(chrome://userchrome/content/pages/newtab/images/close.png), 0, 32, 16, 16);
+}
+
+#newtab-undo-close-button:hover:active {
+  background-image: -moz-image-rect(url(chrome://userchrome/content/pages/newtab/images/close.png), 0, 48, 16, 32);
+}
+
+/* CUSTOMIZE */
+#newtab-customize-button,
+.newtab-customize {
+  background-image: -moz-image-rect(url(chrome://userchrome/content/pages/newtab/images/controls.svg), 0, 32, 32, 0);
+  background-size: 28px;
+  height: 38px;
+  width: 38px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+}
+
+.newtab-customize {
+  height: 28px;
+  width: 28px;
+}
+
+#newtab-customize-button {
+  font-size: 28px;
+  padding: 0;
+  /* only display the text label when CSS backgrounds are disabled (e.g. in high contrast mode) */
+  color: transparent;
+}
+
+#newtab-customize-button:-moz-any(:hover, :active, [active]) {
+  background-image: -moz-image-rect(url(chrome://userchrome/content/pages/newtab/images/controls.svg), 0, 64, 32, 32);
+  background-color: #FFFFFF;
+  border: solid 1px #CCCCCC;
+  border-radius: 2px;
+}
+
+/* GRID */
+#topsites-heading {
+  color: #7A7A7A;
+  font-size: 1em;
+  font-weight: normal;
+  /* Position the heading such that it doesn't affect how many cells we
+     can fit into the grid. */
+  position: absolute;
+  /* The top margin moves the heading away from the grid.
+     The horizontal margin aligns the heading with the cells. */
+  margin: -1em 10px 0;
+}
+
+/* CELLS */
+.newtab-cell {
+  --cell-corner-radius: 8px;
+  background-color: rgba(255,255,255,.2);
+  border-radius: var(--cell-corner-radius);
+}
+
+body.compact .newtab-cell {
+  --cell-corner-radius: 2px;
+}
+
+.newtab-cell:empty {
+  outline: 2px dashed #c1c1c1;
+  outline-offset: -2px;
+  -moz-outline-radius: var(--cell-corner-radius);
+}
+
+/* SITES */
+.newtab-site {
+  border-radius: var(--cell-corner-radius);
+  box-shadow: 0 1px 3px #c1c1c1;
+  text-decoration: none;
+  transition-property: top, left, opacity, box-shadow, background-color;
+}
+
+.newtab-cell:not([ignorehover]) .newtab-control:hover ~ .newtab-link,
+.newtab-cell:not([ignorehover]) .newtab-link:hover,
+.newtab-site[dragged] {
+  border: 2px solid white;
+  box-shadow: 0 0 6px 1px #add6ff;
+  margin: -2px;
+}
+
+.newtab-site[dragged] {
+  transition-property: box-shadow, background-color;
+  background-color: rgb(242,242,242);
+}
+
+/* LINKS */
+.newtab-link {
+  border-radius: var(--cell-corner-radius);
+  overflow: hidden;
+}
+
+/***
+ * If you change the sizes here, change them in newTab.css
+ * and the preference values:
+ * toolkit.pageThumbs.minWidth
+ * toolkit.pageThumbs.minHeight
+ */
+/* THUMBNAILS */
+.newtab-thumbnail {
+  background-origin: padding-box;
+  background-clip: padding-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 180px;
+  transition: opacity 100ms ease-out;
+}
+
+body.compact .newtab-thumbnail {
+  height: 100%;
+  border-radius: calc(var(--cell-corner-radius) + 1px);
+  outline: 1px solid hsla(0,0%,0%,.1);
+  -moz-outline-radius: var(--cell-corner-radius);
+  outline-offset: -1px;
+}
+
+.newtab-thumbnail.placeholder {
+  color: white;
+  font-size: 85px;
+  line-height: 200%;
+}
+
+body.compact .newtab-thumbnail.placeholder {
+  font-size: 45px;
+}
+
+.newtab-cell:not([ignorehover]) .newtab-site:hover .newtab-thumbnail.enhanced-content {
+  opacity: 0;
+}
+
+.newtab-site[type=affiliate] .newtab-thumbnail {
+  background-position: center center;
+}
+
+body.compact .newtab-site[type=affiliate] .newtab-thumbnail {
+  background-position: center 30%;
+}
+
+.newtab-site[type=affiliate] .newtab-thumbnail {
+  background-size: auto;
+}
+
+/* TITLES */
+
+.newtab-title {
+  background-color: #F2F2F2;
+  font-size: 13px;
+  line-height: 30px;
+  border: 1px solid #fff;
+  border-radius: 0 0 var(--cell-corner-radius) var(--cell-corner-radius);
+}
+
+body.compact .newtab-title {
+  background-color: hsla(0,0%,100%,.85);
+  font-size: 12px;
+  line-height: 21px;
+  border: 1px solid hsla(0,0%,80%,.8);
+  border-top-color: hsla(0,0%,0%,.1);
+  background-clip: padding-box;
+}
+
+.newtab-title {
+  color: #5c5c5c;
+}
+
+body.compact .newtab-title {
+  color: black;
+}
+
+body:not(.compact) .newtab-site:hover .newtab-title {
+  color: white;
+  background-color: #333;
+  border-color: #333;
+  border-top-color: white;
+}
+
+body.compact .newtab-site:hover .newtab-title {
+  color: white;
+  background-color: hsla(0,0%,20%,.85);
+  border-color: hsla(0,0%,0%,.8);
+  border-top-color: white;
+}
+
+.newtab-site[pinned] .newtab-title {
+  padding-inline-start: 24px;
+}
+
+.newtab-site[pinned] .newtab-title::before {
+  background-image: -moz-image-rect(url("chrome://userchrome/content/pages/newtab/images/controls.svg"), 7, 278, 28, 266);
+  background-size: 10px;
+  content: "";
+  height: 17px;
+  left: 0;
+  position: absolute;
+  width: 10px;
+  margin-left: 8px;
+  margin-top: 6px;
+}
+
+.newtab-site[pinned] .newtab-title:dir(rtl)::before {
+  left: auto;
+  right: 0;
+}
+
+/* CONTROLS */
+.newtab-control {
+  background-color: transparent;
+  background-size: 24px;
+  border: none;
+  height: 24px;
+  width: 24px;
+  top: 4px;
+}
+
+.newtab-control-pin:dir(ltr),
+.newtab-control-block:dir(rtl) {
+  left: 4px;
+}
+
+.newtab-control-block:dir(ltr),
+.newtab-control-pin:dir(rtl) {
+  right: 4px;
+}
+
+body.compact .newtab-control {
+  top: -8px;
+}
+
+body.compact .newtab-control-pin:dir(ltr),
+body.compact .newtab-control-block:dir(rtl) {
+  left: -8px;
+}
+
+body.compact .newtab-control-block:dir(ltr),
+body.compact .newtab-control-pin:dir(rtl) {
+  right: -8px;
+}
+
+.newtab-control-pin,
+.newtab-site[pinned] .newtab-control-pin:hover:active {
+  background-image: -moz-image-rect(url(chrome://userchrome/content/pages/newtab/images/controls.svg), 0, 96, 32, 64);
+}
+
+.newtab-control-pin:hover,
+.newtab-site[pinned] .newtab-control-pin:hover {
+  background-image: -moz-image-rect(url(chrome://userchrome/content/pages/newtab/images/controls.svg), 0, 160, 32, 128);
+}
+
+.newtab-control-pin:hover:active,
+.newtab-site[pinned] .newtab-control-pin {
+  background-image: -moz-image-rect(url(chrome://userchrome/content/pages/newtab/images/controls.svg), 0, 128, 32, 96);
+}
+
+.newtab-control-block {
+  background-image: -moz-image-rect(url(chrome://userchrome/content/pages/newtab/images/controls.svg), 0, 192, 32, 160);
+}
+
+.newtab-control-block:hover {
+  background-image: -moz-image-rect(url(chrome://userchrome/content/pages/newtab/images/controls.svg), 0, 224, 32, 192);
+}
+
+.newtab-control-block:hover:active {
+  background-image: -moz-image-rect(url(chrome://userchrome/content/pages/newtab/images/controls.svg), 0, 256, 32, 224);
+}
+
+
+.newtab-undo-button {
+  color: rgb(0,102,204);
+}
+
+.newtab-undo-button > .button-box {
+  padding: 0;
+}
+
+.newtab-title {
+  font: message-box;
+  font-size: 13px;
+  line-height: 30px;
+}
