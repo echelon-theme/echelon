@@ -47,7 +47,7 @@
   color: GrayText !important;
 }
 
-/** KILL FIREFOX VIEW I FUCKING HATE FIREFOX VIEW **/
+/** Hide everything related to Firefox View **/
 #firefox-view-button {
   display: none !important;
 }
