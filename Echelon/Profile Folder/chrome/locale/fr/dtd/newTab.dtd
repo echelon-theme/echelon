@@ -4,13 +4,13 @@
 
 <!-- These strings are used in the about:newtab page -->
 <!ENTITY newtab.pageTitle "Nouvel onglet">
-<!ENTITY newtab.customize.classic "Afficher vos sites tendances">
+<!ENTITY newtab.customize.classic "Afficher les sites les plus visités">
 <!ENTITY newtab.customize.cog.enhanced "Inclure les sites suggérés">
-<!ENTITY newtab.customize.cog.title2 "CONTRÔLES DU NOUVEL ONGLET">
-<!ENTITY newtab.customize.cog.learn "En savoir plus à propos du nouvel onglet">
-<!ENTITY newtab.customize.title "Personnaliser votre page de nouvel onglet">
+<!ENTITY newtab.customize.cog.title2 "PRÉFÉRENCES DE LA PAGE NOUVEL ONGLET">
+<!ENTITY newtab.customize.cog.learn "En savoir plus sur cette page">
+<!ENTITY newtab.customize.title "Personnaliser la page Nouvel onglet">
 <!ENTITY newtab.customize.blank2 "Afficher une page vide">
-<!ENTITY newtab.undo.removedLabel "Miniature supprimée.">
+<!ENTITY newtab.undo.removedLabel "Vignette retirée.">
 <!ENTITY newtab.undo.undoButton "Annuler.">
 <!ENTITY newtab.undo.restoreButton "Tout restaurer.">
 <!ENTITY newtab.undo.closeTooltip "Masquer">
@@ -18,8 +18,8 @@
 <!-- LOCALIZATION NOTE (contentSearchInput.label):
      This is set as the aria-label attribute for the search input box in the
      in-content search UI, to be used by screen readers. -->
-     <!ENTITY contentSearchInput.label     "Requête de recherche">
-     <!ENTITY contentSearchSubmit.tooltip  "Soumettre la recherche">
+     <!ENTITY contentSearchInput.label     "Recherche">
+     <!ENTITY contentSearchSubmit.tooltip  "Lancer la recherche">
 
      <!-- LOCALIZATION NOTE (searchInput.placeholder):
           This string is displayed in the search box when the input field is empty. -->
