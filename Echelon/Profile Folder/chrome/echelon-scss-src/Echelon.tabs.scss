@@ -397,20 +397,9 @@ spacer[part="overflow-start-indicator"] {
 
 /* Restore tab close animation */
 :root:not([echelon-style-4]) .tabbrowser-tab:not([pinned], [fadein]),
-:root:not([echelon-style-4]) .tab-icon-pending:not([fadein]),
-:root:not([echelon-style-4]) .tab-icon-image:not([fadein]),
-:root:not([echelon-style-4]) .tab-close-button:not([fadein]),
 :root:not([echelon-style-4]) .tabbrowser-tab:not([fadein])::after,
 :root:not([echelon-style-4]) .tab-background:not([fadein]) {
   visibility: visible !important;
-}
-
-:root:not([echelon-style-4]) .tab-label:not([fadein]) {
-  display: block !important;
-}
-
-:root:not([echelon-style-4]) .tab-throbber:not([fadein]) {
-  display: flex !important;
 }
 
 .tab-background:-moz-lwtheme {
