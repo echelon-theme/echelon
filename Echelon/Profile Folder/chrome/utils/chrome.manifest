@@ -5,6 +5,7 @@ content modules ../JS/modules/
 locale echelon en-US ../locale/en-US/
 locale echelon es-CL ../locale/es-CL/
 locale echelon es-ES ../locale/es-ES/
+locale echelon it    ../locale/it/
 locale echelon ja    ../locale/ja/
 
 skin userstyles classic/1.0 ../CSS/
