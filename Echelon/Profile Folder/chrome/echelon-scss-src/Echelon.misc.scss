@@ -157,7 +157,8 @@
     box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
                 0 1px 1px rgba(0,0,0,.2) inset !important;
   }
-  @supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+  
+  &[echelon-appearance-newlogo] {
     &[browser-name="Waterfox"] #appmenu-button {
       background-image: linear-gradient(rgb(82,182,247), rgb(10,98,215) 95%) !important;
       border-color: rgba(6,42,83,.9) !important;
@@ -483,9 +484,14 @@ findbar .checkbox-check {
   border-color: Highlight !important;
 }
 
-#main-window[echelon-style-4] .findbar-textbox[status="notfound"] {
+#main-window .findbar-textbox[status="notfound"] {
   background-color: #f66 !important;
   color: white !important;
+}
+
+#main-window:not([echelon-style-4]) .findbar-textbox[status="notfound"] {
+  appearance: none !important;
+  padding: 2px !important;
 }
 
 #main-window[echelon-style-4] .findbar-find-next,
@@ -823,7 +829,7 @@ treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
   list-style-image: url("chrome://userchrome/content/images/Question.png") !important;
 }
 
-@supports -moz-bool-pref("Echelon.Appearance.XP") {
+:root[echelon-appearance-xp] {
   .message-icon {
     list-style-image: url("chrome://userchrome/content/images/information-32-xp.png") !important;
   }

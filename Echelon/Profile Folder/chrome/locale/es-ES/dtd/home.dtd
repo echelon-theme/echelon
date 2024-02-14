@@ -15,5 +15,6 @@
 <!ENTITY abouthome.appsButton.label      "Marketplace">
 <!ENTITY abouthome.downloadsButton.label "Descargas">
 <!ENTITY abouthome.syncButton.label      "Sync">
+<!ENTITY abouthome.restoreLastSessionButton.label "Restaurar sesión anterior">
 
 <!ENTITY abouthome.aboutMozilla "Acerca de Mozilla">

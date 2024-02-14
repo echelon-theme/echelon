@@ -22,27 +22,71 @@ root.setAttribute("update-channel", BrandUtils.getUpdateChannel());
 
 // ECHELON STYLE
 
-if (echelonHomepageStyle == 0) {
-	root.setAttribute("no-snippet-icon", "true");
+function updateHomepageStyle()
+{
+	let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Homepage.Style");
+
+	/* Snippet icon */
+	if (style == 0)
+	{
+		root.setAttribute("no-snippet-icon", "true");
+	}
+	else
+	{
+		root.removeAttribute("no-snippet-icon");
+	}
+
+	/* Style attribute */
+	if (style <= 1)
+	{
+		root.setAttribute("echelon-style", "1");
+	}
+	else if (style >= 4)
+	{
+		root.setAttribute("echelon-style", "5");
+	}
+	else
+	{
+		root.removeAttribute("echelon-style");
+	}
+
+	/* Logo */
+	if (style >= 3)
+	{
+		root.setAttribute("echelon-new-logo", "true");
+	}
+	else
+	{
+		root.removeAttribute("echelon-new-logo");
+	}
+
+	/* Search placeholder */
+	if (style >= 4)
+	{
+		searchText.setAttribute("placeholder", document.getElementById("searchSubmit").value);
+	}
+	else
+	{
+		searchText.removeAttribute("placeholder");
+	}
+	
+	Services.search.getDefault().then(engine => {
+		window.engine = engine;
+		
+		/* Only Google has a logo. Others use placeholder. */
+		if (engine._name != "Google" && echelonHomepageStyle == 3)
+		{
+			document.getElementById("searchLogo").hidden = true;
+			document.getElementById("searchText").placeholder = engine._name;
+		}
+	});
 }
 
-if (echelonHomepageStyle <= 1) {
-	root.setAttribute("echelon-style", "1");
-}
-
-if (echelonHomepageStyle == 2) {
-	root.removeAttribute("echelon-new-logo");
-}
-
-if (echelonHomepageStyle == 3) {
-	root.setAttribute("echelon-new-logo", "true");
-}
-
-if (echelonHomepageStyle == 4) {
-	root.setAttribute("echelon-style", "5");
-	root.setAttribute("echelon-new-logo", "true");
-	searchText.setAttribute("placeholder", "Search");
-}
+updateHomepageStyle();
+Services.prefs.addObserver(
+	"Echelon.Appearance.Homepage.Style",
+	updateHomepageStyle
+);
 
 // SNIPPET RANDOMIZER
 
@@ -79,22 +123,10 @@ if (location.href.startsWith("about:newtab"))
 		document.documentElement.hidden = true;
 
 		// least nitpicking
+		// Do not localize. New Tab will be added as a separate page eventually.
 		document.title = "New Tab";
 	}
 }
-
-// SET UP SEARCH ENGINE
-
-Services.search.getDefault().then(engine => {
-	window.engine = engine;
-	
-	/* Only Google has a logo. Others use placeholder. */
-	if (engine._name != "Google" && echelonHomepageStyle == 3)
-	{
-		document.getElementById("searchLogo").hidden = true;
-		document.getElementById("searchText").placeholder = engine._name;
-	}
-});
 
 function onSearchSubmit(e)
 {

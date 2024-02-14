@@ -1,6 +1,15 @@
 const { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+const { EchelonThemeManager } = ChromeUtils.import("chrome://modules/content/EchelonThemeManager.js");
 const { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");
 const gOptionsBundle = document.getElementById("optionsBundle");
+
+let g_themeManager = new EchelonThemeManager;
+g_themeManager.init(
+    document.documentElement,
+    {
+        bools: ["Echelon.Appearance.XP"]
+    }
+);
 
 function getWinVer()
 {

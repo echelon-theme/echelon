@@ -1,3 +1,5 @@
+this.EXPORTED_SYMBOLS = ["EchelonLayoutTemplateManager"];
+
 var { PrefUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 
 var EchelonLayoutTemplateManager = class EchelonLayoutTemplateManager
@@ -267,5 +269,3 @@ var EchelonLayoutTemplateManager = class EchelonLayoutTemplateManager
 		this.applyLayout(targetWindow, this.TOOLBAR_LAYOUT_TEMPLATE);
 	}
 }
-
-let EXPORTED_SYMBOLS = ["EchelonLayoutTemplateManager"];

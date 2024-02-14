@@ -58,8 +58,16 @@ body.normal .showPrivate {
 	background-image: url('chrome://userchrome/content/pages/privatebrowsing/images/question-48.png');
 }
 
+:root[echelon-appearance-xp] .errorPageIcon {
+	background-image: url('chrome://userchrome/content/pages/privatebrowsing/images/question-48-xp.png');
+}
+
 .private .errorPageIcon {
 	background-image: url('chrome://userchrome/content/pages/privatebrowsing/images/Privacy-48.png');
+}
+
+:root[echelon-appearance-xp] .private .errorPageIcon {
+	background-image: url('chrome://userchrome/content/pages/privatebrowsing/images/Privacy-48-xp.png');
 }
 
 .errorPageContentContainer {
@@ -92,4 +100,8 @@ body.normal .showPrivate {
     font-size: 110%;
     padding-inline-start: 25px;
     background: url('chrome://userchrome/content/images/information-16.png') no-repeat scroll left top transparent;
+}
+
+:root[echelon-appearance-xp] #moreInfo {
+	background-image: url("chrome://userchrome/content/images/information-16-xp.png");
 }

@@ -42,7 +42,7 @@
         margin-block-start: 10px !important;
     }
 
-    @supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+    :root[echelon-appearance-newlogo] {
         #leftBox {
             background-image: url("images/about-logo-new.png") !important;
         }
@@ -78,7 +78,7 @@
         background: #000000 no-repeat url("images/icons/alt/aurora/old/about-background.png") !important;
     }
 
-	@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+	:root[echelon-appearance-newlogo] {
 		:root[update-channel="aurora"] #aboutDialogContainer {
 			background: #130824 no-repeat url("images/icons/alt/aurora/about-background.png") !important;
 		}
@@ -88,7 +88,7 @@
 		background: #000000 no-repeat url("images/icons/alt/nightly/old/about-background.png") !important;
 	}
 	
-	@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+	:root[echelon-appearance-newlogo] {
 		:root[update-channel="nightly"] #aboutDialogContainer {
 			background: #0a1125 no-repeat url("images/icons/alt/nightly/about-background.png") !important;
 		}
@@ -118,7 +118,7 @@
         background-size: 147px auto !important;
     }
 	
-	@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+	:root[echelon-appearance-newlogo] {
 		:root[update-channel="aurora"] #rightBox {
 			background-image: url("images/icons/alt/aurora/about-wordmark.svg") !important;
 			background-size: 264px auto !important;
@@ -130,7 +130,7 @@
 		background-size: 157px auto !important;
 	}
 
-	@supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
+	:root[echelon-appearance-newlogo] {
 		:root[update-channel="nightly"] #rightBox {
 			background-image: url("images/icons/alt/nightly/about-wordmark.svg") !important;
 			background-size: 270px auto !important;

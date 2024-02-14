@@ -169,13 +169,8 @@
 .urlbarView-favicon[src="chrome://activity-stream/content/data/content/tippytop/favicons/google-com.ico"] {
   content: url('images/icons/engines/google.png') !important;
 
-  @supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
-    :root[echelon-style-3] & {
-      content: url('images/icons/engines/google_new.ico') !important;
-    }
-  }
-  
-  :root[echelon-style-4] & {
+  :root[echelon-style-4] &,
+  :root[echelon-style-3][echelon-appearance-newlogo] & {
     content: url('images/icons/engines/google_new.ico') !important;
   }
 }
@@ -334,25 +329,25 @@
   background-color: transparent !important;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.15)) !important;
   position: relative !important;
-}
+  overflow: hidden !important;
 
-#identity-icon-box:hover {
-  background-image: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(50%,50%,50%,.2), rgba(0,0,0,.15)) !important;
-}
+  &:hover {
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(50%,50%,50%,.2), rgba(0,0,0,.15)) !important;
+    &:active {
+      background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.1)) !important;
+    }    
+  }
 
-#identity-icon-box[open="true"] ,
-#identity-icon-box:hover:active {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.1)) !important;
-}
+  ::after {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('images/urlbar-favicon-glow.png');
+    position: absolute;
+    left: 0;
+  }
 
-#identity-icon-box::after {
-  content: '';
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background-image: url('images/urlbar-favicon-glow.png');
-  position: absolute;
-  left: 0;
 }
 
 #identity-icon {
@@ -391,14 +386,14 @@
   list-style-image: none !important;
   background-image: url('images/search-glass.png') !important;
   display: flex !important;
-}
 
-.search-go-button:hover {
-  background-position-x: -16px !important;
-}
+  &:hover {
+    background-position-x: -16px !important;
+    &:active {
+      background-position-x: -32px !important;
+    }
+  }
 
-.search-go-button:active {
-  background-position-x: -32px !important;
 }
 
 #urlbar-input-container::after {
@@ -514,7 +509,9 @@
 }
 
 #main-window[echelon-style-3] {
-  --toolbar-custom-color: rgb(219, 234, 249) !important;
+  &:not([default-dark-theme]) {
+    --toolbar-custom-color: rgb(219, 234, 249) !important;
+  }
 
   &[tabs-on-top="true"] {
     #urlbar-background,

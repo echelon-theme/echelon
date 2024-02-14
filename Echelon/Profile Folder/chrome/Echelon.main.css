@@ -26,6 +26,14 @@
   list-style-image: url("images/icons/forward.png") !important;
 }
 
+#stop-button:not(.unified) {
+  list-style-image: url("images/icons/stop.png") !important;
+}
+
+#home-button {
+  list-style-image: url("images/icons/home.png") !important;
+}
+
 #home-button {
   list-style-image: url("images/icons/home.png") !important;
 }
@@ -200,6 +208,12 @@
   #main-window[echelon-style-4]:not([echelon-appearance-blue], [echelon-appearance-xp]) #context-forward {
     list-style-image: url("images/icons/australis/forward.png") !important;
   }
+  #main-window[echelon-style-4]:not([echelon-appearance-blue], [echelon-appearance-xp]) #stop-button:not(.unified) {
+    list-style-image: url("images/icons/australis/stop.png") !important;
+  }
+  #main-window[echelon-style-4]:not([echelon-appearance-blue], [echelon-appearance-xp]) #home-button {
+    list-style-image: url("images/icons/australis/home.png") !important;
+  }
   #main-window[echelon-style-4]:not([echelon-appearance-blue], [echelon-appearance-xp]) #home-button {
     list-style-image: url("images/icons/australis/home.png") !important;
   }
@@ -323,6 +337,14 @@
 #main-window[lwtheme-brighttext=true] #forward-button {
   list-style-image: url("images/icons/inverted/forward.png") !important;
 }
+#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #reload-button:not(.unified),
+#main-window[lwtheme-brighttext=true] #reload-button:not(.unified) {
+  list-style-image: url("images/icons/inverted/reload.png") !important;
+}
+#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #stop-button:not(.unified),
+#main-window[lwtheme-brighttext=true] #stop-button:not(.unified) {
+  list-style-image: url("images/icons/inverted/stop.png") !important;
+}
 #main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #home-button,
 #main-window[lwtheme-brighttext=true] #home-button {
   list-style-image: url("images/icons/inverted/home.png") !important;
@@ -386,6 +408,10 @@
 #main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #downloads-button[attention] #downloads-indicator-anchor,
 #main-window[lwtheme-brighttext=true] #downloads-button[attention] #downloads-indicator-anchor {
   list-style-image: url("images/icons/download-glow.png") !important;
+}
+#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #save-to-pocket-button,
+#main-window[lwtheme-brighttext=true] #save-to-pocket-button {
+  list-style-image: url("images/icons/inverted/pocket.png") !important;
 }
 #main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #developer-button,
 #main-window[lwtheme-brighttext=true] #developer-button {
@@ -482,6 +508,12 @@
 #main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #forward-button,
 #main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #context-forward {
   list-style-image: url("images/icons/xp/forward.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #stop-button:not(.unified) {
+  list-style-image: url("images/icons/xp/stop.png") !important;
+}
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #home-button {
+  list-style-image: url("images/icons/xp/home.png") !important;
 }
 #main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #home-button {
   list-style-image: url("images/icons/xp/home.png") !important;

@@ -43,13 +43,11 @@
   #version {
     margin-block-start: 10px !important;
   }
-  @supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
-    #leftBox {
-      background-image: url("images/about-logo-new.png") !important;
-    }
-    #rightBox {
-      background-image: url("images/about-wordmark-new.svg") !important;
-    }
+  :root[echelon-appearance-newlogo] #leftBox {
+    background-image: url("images/about-logo-new.png") !important;
+  }
+  :root[echelon-appearance-newlogo] #rightBox {
+    background-image: url("images/about-wordmark-new.svg") !important;
   }
   [echelon-style-3] #updateDeck {
     font-style: unset;
@@ -71,18 +69,14 @@
   :root[update-channel=aurora] #aboutDialogContainer {
     background: #000000 no-repeat url("images/icons/alt/aurora/old/about-background.png") !important;
   }
-  @supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
-    :root[update-channel=aurora] #aboutDialogContainer {
-      background: #130824 no-repeat url("images/icons/alt/aurora/about-background.png") !important;
-    }
+  :root[echelon-appearance-newlogo] :root[update-channel=aurora] #aboutDialogContainer {
+    background: #130824 no-repeat url("images/icons/alt/aurora/about-background.png") !important;
   }
   :root[update-channel=nightly] #aboutDialogContainer {
     background: #000000 no-repeat url("images/icons/alt/nightly/old/about-background.png") !important;
   }
-  @supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
-    :root[update-channel=nightly] #aboutDialogContainer {
-      background: #0a1125 no-repeat url("images/icons/alt/nightly/about-background.png") !important;
-    }
+  :root[echelon-appearance-newlogo] :root[update-channel=nightly] #aboutDialogContainer {
+    background: #0a1125 no-repeat url("images/icons/alt/nightly/about-background.png") !important;
   }
   :root[update-channel=aurora] #aboutDialogContainer,
   :root[update-channel=nightly] #aboutDialogContainer,
@@ -104,21 +98,17 @@
     background-image: url("images/icons/alt/aurora/old/about-wordmark.png") !important;
     background-size: 147px auto !important;
   }
-  @supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
-    :root[update-channel=aurora] #rightBox {
-      background-image: url("images/icons/alt/aurora/about-wordmark.svg") !important;
-      background-size: 264px auto !important;
-    }
+  :root[echelon-appearance-newlogo] :root[update-channel=aurora] #rightBox {
+    background-image: url("images/icons/alt/aurora/about-wordmark.svg") !important;
+    background-size: 264px auto !important;
   }
   :root[update-channel=nightly] #rightBox {
     background-image: url("images/icons/alt/nightly/old/about-wordmark.png") !important;
     background-size: 157px auto !important;
   }
-  @supports -moz-bool-pref("Echelon.Appearance.NewLogo") {
-    :root[update-channel=nightly] #rightBox {
-      background-image: url("images/icons/alt/nightly/about-wordmark.svg") !important;
-      background-size: 270px auto !important;
-    }
+  :root[echelon-appearance-newlogo] :root[update-channel=nightly] #rightBox {
+    background-image: url("images/icons/alt/nightly/about-wordmark.svg") !important;
+    background-size: 270px auto !important;
   }
   #clientBox {
     padding: 0 !important;

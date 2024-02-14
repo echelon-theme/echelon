@@ -66,7 +66,8 @@ vbox {
 	height: 440px;
 	background-color: #3B7CBF;
 	background-image: url('chrome://userchrome/content/windows/wizard/images/bgnoise.png'),
-						url('chrome://userchrome/content/windows/wizard/images/bggrid.png');
+					  url('chrome://userchrome/content/windows/wizard/images/bggrid.png'),
+					radial-gradient(circle at top, #4792C9, #285783);
 	box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
 	font-family: 'Open Sans', sans-serif;
 	color: #404041;
