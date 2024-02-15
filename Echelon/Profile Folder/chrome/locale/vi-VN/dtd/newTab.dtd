@@ -1,0 +1,27 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!-- These strings are used in the about:newtab page -->
+<!ENTITY newtab.pageTitle "Thẻ mới">
+<!ENTITY newtab.customize.classic "Hiển thị trang web hàng đầu của bạn">
+<!ENTITY newtab.customize.cog.enhanced "Bao gồm các trang web được đề xuất">
+<!ENTITY newtab.customize.cog.title2 "CÁC TÙY CHỈNH TAB MỚI">
+<!ENTITY newtab.customize.cog.learn "Tìm hiểu về Tab mới">
+<!ENTITY newtab.customize.title "Tùy chỉnh trang Tab mới của bạn">
+<!ENTITY newtab.customize.blank2 "Hiển thị trang trống">
+<!ENTITY newtab.undo.removedLabel "Hình thu nhỏ đã bị xóa.">
+<!ENTITY newtab.undo.undoButton "Hoàn tác.">
+<!ENTITY newtab.undo.restoreButton "Khôi phục tất cả.">
+<!ENTITY newtab.undo.closeTooltip "Ẩn">
+
+<!-- LOCALIZATION NOTE (contentSearchInput.label):
+     This is set as the aria-label attribute for the search input box in the
+     in-content search UI, to be used by screen readers. -->
+     <!ENTITY contentSearchInput.label     "Cụm từ tìm kiếm">
+     <!ENTITY contentSearchSubmit.tooltip  "Chạy tìm kiếm">
+     
+     <!-- LOCALIZATION NOTE (searchInput.placeholder):
+          This string is displayed in the search box when the input field is empty. -->
+     <!ENTITY searchInput.placeholder      "Tìm Kiếm">
+     <!ENTITY searchIcon.tooltip           "Tìm Kiếm">
