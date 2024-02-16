@@ -22,8 +22,8 @@
 <!ENTITY valueColumn.label "Wartość">
 
 <!-- Tooltips -->
-<!ENTITY prefColumnHeader.tooltip "Click to sort"> 
-<!ENTITY columnChooser.tooltip "Click to select columns to display"> 
+<!ENTITY prefColumnHeader.tooltip "Kliknij, aby posortować"> 
+<!ENTITY columnChooser.tooltip "Kliknij, aby wybrać kolumny do wyświetlenia"> 
 
 <!-- Context Menu -->
 <!ENTITY copyPref.key "C">
