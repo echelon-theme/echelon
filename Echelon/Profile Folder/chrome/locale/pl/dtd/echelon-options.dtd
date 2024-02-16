@@ -80,7 +80,7 @@
 
 <!ENTITY nativeControls.general.disableComposition "Wyłącz kompozycję DWM">
 
-<!ENTITY nativeControls.captionMask "Aero caption button mask">
+<!ENTITY nativeControls.captionMask "Maska przycisku napisu Aero">
 <!ENTITY nativeControls.captionMask.width "Szerokość:">
 <!ENTITY nativeControls.captionMask.height "Wysokość:">
 
