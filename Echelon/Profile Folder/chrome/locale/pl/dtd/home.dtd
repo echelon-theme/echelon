@@ -14,7 +14,7 @@
 <!ENTITY abouthome.addonsButton.label "Dodatki">
 <!ENTITY abouthome.appsButton.label "Marketplace">
 <!ENTITY abouthome.downloadsButton.label "Pobrane">
-<!ENTITY abouthome.syncButton.label "Sync">
+<!ENTITY abouthome.syncButton.label "Synchronizacja">
 <!ENTITY abouthome.restoreLastSessionButton.label "Przywróć poprzednią sesję">
 
-<!ENTITY abouthome.aboutMozilla "About Mozilla">
+<!ENTITY abouthome.aboutMozilla "O Mozilli">
