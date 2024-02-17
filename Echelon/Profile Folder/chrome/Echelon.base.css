@@ -52,6 +52,11 @@
   display: none !important;
 }
 
+#menu_openFirefoxView {
+  display: none !important;  
+  visibility: collapse !important;
+}
+
 :root:not([privatebrowsingmode=temporary],
 [firefoxviewhidden]) :is(toolbarbutton, toolbarpaletteitem) + #tabbrowser-tabs,
 :root[privatebrowsingmode=temporary]:not([firefoxviewhidden]) :is(toolbarbutton:not(#firefox-view-button),
