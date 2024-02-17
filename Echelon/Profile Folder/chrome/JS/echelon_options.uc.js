@@ -13,6 +13,27 @@
     let lang = Services.locale.requestedLocale;
     let echelonPrefsItem = null;
 
+    try
+    {
+        let buttonText = "Echelon Options";
+        CustomizableUI.createWidget({
+            id: "echelon-button",
+            removable: true,
+            label: buttonText,
+            tooltiptext: "Opens the Echelon Options window",
+            onCommand: function() {
+                launchEchelonOptions();
+            },
+            onCreated: function(button) {
+                return button;
+            },
+        });
+    }
+    catch (e)
+    {
+        Components.utils.reportError(e);
+    }
+
     function onPopupShowing()
     {
         if (lang != Services.locale.requestedLocale)

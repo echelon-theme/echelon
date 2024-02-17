@@ -19,6 +19,7 @@ let ECHELON_BOOT_CONFIG = {
 			bools: [
 				"Echelon.Appearance.Blue",
 				"Echelon.Appearance.Australis.EnableFog",
+				"Echelon.Appearance.Australis.Windows8",
 				"Echelon.Appearance.Australis.Windows10",
 				"Echelon.Appearance.XP",
 				"Echelon.FirefoxButton.CustomStyle",

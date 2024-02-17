@@ -822,19 +822,22 @@
 
 /* Windows 8+ Style */
 @media not (-moz-windows-classic) {
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-1][echelon-style-4] #urlbar-background, #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-1][echelon-style-4] #searchbar, #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-1][echelon-style-4] #stop-reload-button {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4][echelon-style-1] #urlbar-background, #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4][echelon-style-1] #searchbar, #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4][echelon-style-1] #stop-reload-button {
     border-radius: 0 !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button) {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button) {
     border-radius: 0 !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover, #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] toolbar #bookmarks-button:hover + #bookmarks-menu-button, #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #bookmarks-button:has(+ #bookmarks-menu-button:hover) {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover,
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] toolbar #bookmarks-button:hover + #bookmarks-menu-button,
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #bookmarks-button:has(+ #bookmarks-menu-button:hover) {
     background-color: hsla(210, 4%, 10%, 0.08) !important;
     background-image: none !important;
     box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.2) !important;
     border-color: hsla(210, 54%, 20%, 0.3) hsla(210, 54%, 20%, 0.35) hsla(210, 54%, 20%, 0.4) !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover:active, #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled])[open] {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover:active,
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled])[open] {
     background-color: hsla(210, 4%, 10%, 0.12) !important;
     border-color: hsla(210, 54%, 20%, 0.15) hsla(210, 54%, 20%, 0.2) hsla(210, 54%, 20%, 0.25) !important;
     border-top-color: hsla(210, 4%, 10%, 0.2) !important;
@@ -842,7 +845,7 @@
     transition-duration: 10ms !important;
     background-image: none !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #back-button {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #back-button {
     width: 32px !important;
     min-width: 32px !important;
     height: 32px !important;
@@ -854,24 +857,26 @@
     transition-property: background-color, border-color !important;
     transition-duration: 250ms !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #back-button:not([disabled=true]):not([open=true]):not(:active):hover {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #back-button:not([disabled=true]):not([open=true]):not(:active):hover {
     background-color: hsla(210, 4%, 10%, 0.08) !important;
     box-shadow: none !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #back-button:not([disabled=true]):hover:active, #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #back-button[open=true] {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #back-button:not([disabled=true]):hover:active,
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #back-button[open=true] {
     background-color: hsla(210, 4%, 10%, 0.12) !important;
     box-shadow: 0 1px 0 0 hsla(210, 80%, 20%, 0.1) inset !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #forward-button {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #forward-button {
     box-shadow: none !important;
     background-image: none !important;
     border-color: hsla(210, 4%, 10%, 0.1) !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #forward-button:not([open=true]):hover {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #forward-button:not([open=true]):hover {
     background-color: hsla(210, 4%, 10%, 0.08) !important;
     border-color: hsla(210, 4%, 10%, 0.1) !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #forward-button:not([disabled=true]):hover:active, #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #forward-button[open=true] {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #forward-button:not([disabled=true]):hover:active,
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #forward-button[open=true] {
     background-image: none !important;
     background-color: hsla(210, 4%, 10%, 0.12) !important;
     box-shadow: 0 1px 0 0 hsla(210, 80%, 20%, 0.1) inset !important;
@@ -1141,53 +1146,53 @@
 }
 
 @media not (-moz-windows-classic) {
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #tabs-newtab-button .toolbarbutton-icon {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5] #tabs-newtab-button .toolbarbutton-icon {
     width: 14px !important;
     height: 14px !important;
     fill: #000 !important;
     background-size: cover !important;
     background-image: url("images/ff56/newtab.svg") !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #tabs-newtab-button:hover:active .toolbarbutton-icon,
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] #tabs-newtab-button[open] .toolbarbutton-icon {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5] #tabs-newtab-button:hover:active .toolbarbutton-icon,
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5] #tabs-newtab-button[open] .toolbarbutton-icon {
     background-position-x: 0 !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] .close-icon {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5] .close-icon {
     width: 20px !important;
     height: 20px !important;
     background-image: url("images/ff56/close.png") !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] .close-icon:hover,
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] .tabbrowser-tab:not([visuallyselected=true]) .close-icon:hover {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5] .close-icon:hover,
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5] .tabbrowser-tab:not([visuallyselected=true]) .close-icon:hover {
     background-position-x: -20px !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] .close-icon:active,
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4] .tabbrowser-tab:not([visuallyselected=true]) .close-icon:hover:active {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5] .close-icon:active,
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5] .tabbrowser-tab:not([visuallyselected=true]) .close-icon:hover:active {
     background-position-x: -40px !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4][echelon-appearance-australis-windows10] #urlbar,
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4][echelon-appearance-australis-windows10] #searchbar {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5][echelon-appearance-australis-windows10] #urlbar,
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5][echelon-appearance-australis-windows10] #searchbar {
     --urlbar-height: 28px !important;
     --urlbar-toolbar-height: 28px !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4][echelon-appearance-australis-windows10] #back-button {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5][echelon-appearance-australis-windows10] #back-button {
     margin-inline-end: -8px !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4][echelon-appearance-australis-windows10] #forward-button {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5][echelon-appearance-australis-windows10] #forward-button {
     min-height: 28px !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4][echelon-appearance-australis-windows10] #forward-button:not(:hover)[disabled=true] + #urlbar-container #urlbar-background,
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4][echelon-appearance-australis-windows10] #forward-button:not(:hover)[disabled=true] + #urlbar-container #urlbar-input-container {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5][echelon-appearance-australis-windows10] #forward-button:not(:hover)[disabled=true] + #urlbar-container #urlbar-background,
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5][echelon-appearance-australis-windows10] #forward-button:not(:hover)[disabled=true] + #urlbar-container #urlbar-input-container {
     -webkit-mask: url("images/ff56/forward-button-url-mask.svg") !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4][echelon-appearance-australis-windows10] #stop-reload-button {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5][echelon-appearance-australis-windows10] #stop-reload-button {
     height: 28px !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4][echelon-appearance-australis-windows10] #stop-reload-button toolbarbutton {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5][echelon-appearance-australis-windows10] #stop-reload-button toolbarbutton {
     align-self: center;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4][echelon-appearance-australis-windows10] .searchbar-textbox,
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-4][echelon-appearance-australis-windows10] .urlbar-input-box {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5][echelon-appearance-australis-windows10] .searchbar-textbox,
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-style-5][echelon-appearance-australis-windows10] .urlbar-input-box {
     font-size: 115% !important;
   }
 }
@@ -1348,7 +1353,7 @@
   z-index: 1 !important;
 }
 
-#main-window[sizemode=maximized][echelon-style-4][tabsintitlebar] #toolbar-menubar[autohide=true] + #TabsToolbar .toolbar-items {
+#main-window[echelon-style-4][tabsintitlebar] #toolbar-menubar:not([inactive=true]) + #TabsToolbar .toolbar-items {
   margin-top: 4px !important;
 }
 

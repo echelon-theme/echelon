@@ -186,13 +186,17 @@
   list-style-image: url("images/icons/hamburger.png") !important;
 }
 
+#echelon-button {
+  list-style-image: url("images/icons/echelon.png") !important;
+}
+
 :root[fxastatus="not_configured"] {
   --avatar-image-url: url("chrome://userchrome/content/images/icons/avatar-empty.png") !important;
 }
 
 /* Windows 8+ Icons for Australis Style. */
 @media not (-moz-windows-classic) {
-  #main-window[echelon-style-4]:not([echelon-appearance-blue], [echelon-appearance-xp]) {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] {
     #back-button,
     #context-back {
       list-style-image: url("images/icons/australis/back_large.png") !important;
@@ -357,6 +361,10 @@
       list-style-image: url("images/icons/australis/hamburger.png") !important;
     }
 
+    #echelon-button {
+      list-style-image: url("images/icons/australis/echelon.png") !important;
+    }
+
     &[fxastatus="not_configured"] {
       --avatar-image-url: url("chrome://userchrome/content/images/icons/avatar-empty.png") !important;
     }
@@ -516,6 +524,10 @@
   
   #PanelUI-menu-button {
     list-style-image: url("images/icons/inverted/hamburger.png") !important;
+  }
+
+  #echelon-button {
+    list-style-image: url("images/icons/inverted/echelon.png") !important;
   }
 }
 
@@ -701,6 +713,10 @@
 
   #PanelUI-menu-button {
     list-style-image: url("images/icons/xp/hamburger.png") !important;
+  }
+
+  #echelon-button {
+    list-style-image: url("images/icons/xp/echelon.png") !important;
   }
 
   &[fxastatus="not_configured"] {

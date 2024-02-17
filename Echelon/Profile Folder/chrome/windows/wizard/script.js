@@ -74,8 +74,8 @@ function setOSPref(osName)
 			break;
 		case "win8":
 			isWinXP = false;
-			isBlue = false; // confusing...
-			isWin10 = false;
+			isBlue = false;
+			isWin8 = true;
 			break;
 		case "win10":
 			isWinXP = false;
@@ -85,6 +85,7 @@ function setOSPref(osName)
 	}
 
 	PrefUtils.trySetBoolPref("Echelon.Appearance.XP", isWinXP);
+	PrefUtils.trySetBoolPref("Echelon.Appearance.Australis.Windows8", isWin8);
 	PrefUtils.trySetBoolPref("Echelon.Appearance.Australis.Windows10", isWin10);
 	PrefUtils.trySetBoolPref(echelonAppearanceBlue, isBlue);
 }

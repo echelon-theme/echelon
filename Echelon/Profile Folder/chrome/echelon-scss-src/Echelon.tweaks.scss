@@ -894,25 +894,25 @@
 
 /* Windows 8+ Style */
 @media not (-moz-windows-classic) {
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp]) {
-    &[echelon-style-1][echelon-style-4] #urlbar-background,
-    &[echelon-style-1][echelon-style-4] #searchbar,
-    &[echelon-style-1][echelon-style-4] #stop-reload-button {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] {
+    &[echelon-style-1] #urlbar-background,
+    &[echelon-style-1] #searchbar,
+    &[echelon-style-1] #stop-reload-button {
       border-radius: 0 !important;
     }
-    &[echelon-style-4] toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button) {
+    toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button) {
       border-radius: 0 !important;
     }
-    &[echelon-style-4] toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover,
-    &[echelon-style-4] toolbar #bookmarks-button:hover + #bookmarks-menu-button,
-    &[echelon-style-4] #bookmarks-button:has(+ #bookmarks-menu-button:hover) {
+    toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover,
+    toolbar #bookmarks-button:hover + #bookmarks-menu-button,
+    #bookmarks-button:has(+ #bookmarks-menu-button:hover) {
       background-color: hsla(210,4%,10%,.08) !important;
       background-image: none !important;
       box-shadow: 0 0 0 1px hsla(0,0%,100%,.2) !important;
       border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
     }
-    &[echelon-style-4] toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover:active,
-    &[echelon-style-4] toolbar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled])[open] {
+    toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover:active,
+    toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled])[open] {
       background-color: hsla(210,4%,10%,.12) !important;
       border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25) !important;
       border-top-color: hsla(210,4%,10%,.2) !important;
@@ -920,7 +920,7 @@
       transition-duration: 10ms !important;
       background-image: none !important;
     }
-    &[echelon-style-4] #back-button {
+    #back-button {
       width: 32px !important;
       min-width: 32px !important;
       height: 32px !important;
@@ -932,26 +932,26 @@
       transition-property: background-color, border-color !important;
       transition-duration: 250ms !important;
     }
-    &[echelon-style-4] #back-button:not([disabled="true"]):not([open="true"]):not(:active):hover {
+    #back-button:not([disabled="true"]):not([open="true"]):not(:active):hover {
       background-color: hsla(210,4%,10%,.08) !important;
       box-shadow: none !important;
     }
-    &[echelon-style-4] #back-button:not([disabled="true"]):hover:active,
-    &[echelon-style-4] #back-button[open="true"] {
+    #back-button:not([disabled="true"]):hover:active,
+    #back-button[open="true"] {
       background-color: hsla(210,4%,10%,.12) !important;
       box-shadow: 0 1px 0 0 hsla(210,80%,20%,.1) inset !important;
     }
-    &[echelon-style-4] #forward-button {
+    #forward-button {
       box-shadow: none !important;
       background-image: none !important;
       border-color: hsla(210,4%,10%,.1) !important;
     }
-    &[echelon-style-4] #forward-button:not([open="true"]):hover {
+    #forward-button:not([open="true"]):hover {
       background-color: hsla(210,4%,10%,.08) !important;
       border-color: hsla(210,4%,10%,.1) !important;
     }
-    &[echelon-style-4] #forward-button:not([disabled="true"]):hover:active,
-    &[echelon-style-4] #forward-button[open="true"] {
+    #forward-button:not([disabled="true"]):hover:active,
+    #forward-button[open="true"] {
       background-image: none !important;
       background-color: hsla(210,4%,10%,.12) !important;
       box-shadow: 0 1px 0 0 hsla(210,80%,20%,.1) inset !important;
@@ -1229,7 +1229,7 @@
 // Windows 8 and 10 Australis styles
 @media not (-moz-windows-classic) {
   #main-window:not([echelon-appearance-blue], [echelon-appearance-xp]) {
-    &[echelon-style-4] {
+    &[echelon-style-5] {
       #tabs-newtab-button .toolbarbutton-icon {
         width: 14px !important;
         height: 14px !important;
@@ -1492,7 +1492,7 @@
   }
 }
 
-#main-window[sizemode="maximized"][echelon-style-4][tabsintitlebar] #toolbar-menubar[autohide="true"] + #TabsToolbar .toolbar-items {
+#main-window[echelon-style-4][tabsintitlebar] #toolbar-menubar:not([inactive="true"]) + #TabsToolbar .toolbar-items {
   margin-top: 4px !important;
 }
 
