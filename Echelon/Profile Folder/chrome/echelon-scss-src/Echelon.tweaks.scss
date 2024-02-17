@@ -785,6 +785,50 @@
   margin-inline-end: 0 !important;
 }
 
+#main-window[privatebrowsingnewindicator][echelon-style-4] {
+  .private-browsing-indicator {
+    width: 40px !important;
+    height: 20px !important;
+    display: flex !important;
+    margin-inline: 0 !important;
+    background-image: url('images/privatebrowsing-mask-titlebar-XPVista7.png') !important;
+  }
+
+  &[tabsintitlebar]:not([sizemode="maximized"]) .private-browsing-indicator {
+    position: fixed !important;
+    top: 1px !important;
+    right: calc(var(--caption-mask-width) + 46px) !important;
+  }
+
+  &[tabsintitlebar][sizemode="maximized"] .private-browsing-indicator {
+    margin-inline-end: 46px !important;
+  }
+
+  // Windows 8+
+  &[echelon-appearance-australis-windows8] {
+    .private-browsing-indicator {
+      top: 0 !important;
+      background-image: url('images/privatebrowsing-mask-titlebar.png') !important;
+    }
+  }
+
+  // Titlebar Disabled
+  &:not([tabsintitlebar]) {
+    .private-browsing-indicator {
+      width: 48px !important;
+      height: 32px !important;
+      background-image: url('images/privatebrowsing-mask-tabstrip-XPVista7.png') !important;
+    }
+
+    // Windows 8+
+    &[echelon-appearance-australis-windows8] {
+      .private-browsing-indicator {
+        background-image: url('images/privatebrowsing-mask-tabstrip.png') !important;
+      }
+    }
+  }
+}
+
 /* Hide Add to Bookmarks button if the user is not using Style 4 */
 
 #bookmarks-button {
