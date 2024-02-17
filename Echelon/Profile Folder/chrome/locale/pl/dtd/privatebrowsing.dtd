@@ -8,8 +8,8 @@
 
 <!-- LOCALIZATION NOTE (privatebrowsingpage.clearRecentHistoryBefore): include a trailing space as needed -->
 <!-- LOCALIZATION NOTE (privatebrowsingpage.clearRecentHistoryAfter): include a starting space as needed -->
-<!ENTITY privatebrowsingpage.clearRecentHistoryBefore  "Możesz również zacząć od ">
-<!ENTITY privatebrowsingpage.clearRecentHistoryInner   "wyczyszczenia najnowszej historii">
+<!ENTITY privatebrowsingpage.clearRecentHistoryBefore  "Można także ">
+<!ENTITY privatebrowsingpage.clearRecentHistoryInner   "wyczyścić dotychczasową historię przeglądania">
 <!ENTITY privatebrowsingpage.clearRecentHistoryAfter   ".">
 
 <!ENTITY privatebrowsingpage.startPrivateBrowsing.label "Przejdź do trybu prywatnego">
@@ -18,5 +18,5 @@
 <!ENTITY privatebrowsingpage.howToStop                "Aby opuścić tryb prywatny, należy wybrać Firefox %gt; Opuść tryb prywatny albo zamknąć program Firefox.">
 <!ENTITY privatebrowsingpage.howToStart               "Aby przejść do trybu prywatnego, można także wybrać Firefox &gt; Przejdź do trybu prywatnego.">
 
-<!ENTITY privatebrowsingpage.moreInfo                  "While this computer won't have a record of your browsing history, your internet service provider or employer can still track the pages you visit.">
-<!ENTITY privatebrowsingpage.learnMore                 "Dowiedz się więcej">
+<!ENTITY privatebrowsingpage.moreInfo                  "Na tym komputerze nie pozostaną ślady historii przeglądania, ale dostawca usług internetowych lub pracodawca może w dalszym ciągu monitorować odwiedzane strony.">
+<!ENTITY privatebrowsingpage.learnMore                 "Więcej informacji">
