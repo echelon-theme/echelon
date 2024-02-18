@@ -37,6 +37,10 @@ let ECHELON_BOOT_CONFIG = {
 	"about:addons": {
 		themes: { style: true }
 	},
+	/* Echelon Options page */
+	"about:echelon": {
+		themes: { style: true }
+	},
 	/* "About Mozilla Firefox" dialog */
 	"chrome://browser/content/aboutDialog.xhtml": {
 		themes: {

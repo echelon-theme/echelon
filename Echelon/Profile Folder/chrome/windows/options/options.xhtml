@@ -13,6 +13,7 @@
         title="&window.title;">
 
     <stringbundle id="optionsBundle" src="chrome://echelon/locale/properties/echelon-options.properties"/>
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="icon" type="image/x-icon" href="chrome://userchrome/content/images/preferences.ico" />
 
     <vbox id="contentArea" flex="1">
         <html:div id="tabs">
@@ -42,6 +43,7 @@
         <html:div id="content">
             <html:div id="main-section">    
                 <html:div id="section-general" class="section section-selected">
+                    <html:h1 class="section-header">&tabs.general;</html:h1>
                     <groupbox>
                         <caption>&general.appearance;</caption>
                         <html:div class="option-container">
@@ -104,6 +106,7 @@
                     </groupbox>
                 </html:div>
                 <html:div id="section-branding" class="section" section-change-requires-restart="true">
+                    <html:h1 class="section-header">&tabs.branding;</html:h1>
                     <groupbox>
                         <caption>&branding.branding;</caption>
                         <html:div class="option-container">
@@ -143,6 +146,7 @@
                     </groupbox>
                 </html:div>
                 <html:div id="section-native-controls" class="section" section-change-requires-restart="true">
+                    <html:h1 class="section-header">&tabs.nativeControls;</html:h1>
                     <p>&nativeControls.notice;</p>
                     <groupbox>
                         <caption>&nativeControls.general;</caption>
@@ -181,6 +185,7 @@
                     </groupbox>
                 </html:div>
                 <html:div id="section-debug" class="section" section-change-requires-restart="true">
+                    <html:h1 class="section-header">&tabs.debug;</html:h1>
                     <p>&debug.notice;</p>
                     <groupbox>
                         <caption>&debug.wizard;</caption>
