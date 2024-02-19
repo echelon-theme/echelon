@@ -420,7 +420,7 @@ menulist {
     max-width: 664px;
 }
 
-.about-section-credits {
+:root:is([echelon-style-4]) .about-section-credits {
     max-width: 664px;
     padding: 40px 28px;
     padding-bottom: 0;
