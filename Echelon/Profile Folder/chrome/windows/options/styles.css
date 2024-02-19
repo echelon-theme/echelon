@@ -26,7 +26,7 @@ groupbox {
     padding-top: 10px;
 }
 
-groupbox:not(:first-child) {
+groupbox:not(:first-of-type) {
     margin-top: 20px;
 }
 
