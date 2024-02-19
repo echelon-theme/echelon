@@ -539,7 +539,7 @@ let g_echelonFirefoxButton = null;
 						"id": "appmenu-quit",
 						"class": "menuitem-iconic",
 						"data-l10n-id": "quit",
-						"oncommand": "BrowserTryToCloseWindow(event)"
+						"oncommand": "Services.startup.quit(Ci.nsIAppStartup.eAttemptQuit)"
 					})
 				]),
 				elm("xul:vbox", {id: "appmenuSecondaryPane"}, [
