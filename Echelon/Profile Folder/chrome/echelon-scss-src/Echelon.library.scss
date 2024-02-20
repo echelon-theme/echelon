@@ -81,12 +81,17 @@
     outline: 0 !important;
     box-shadow: none !important;
     padding: 0 !important;
+
+    .textbox-search-clear {
+        display: none !important;
+    }
 }
 
 #placesView,
 #infoPane,
 #placesList,
-#placeContent {
+#placeContent,
+#downloadsListBox {
     background-color: #FFF !important;
 }
 
@@ -96,7 +101,7 @@
 }
 
 #placesView {
-    splitter {
+    & > splitter:not(.tree-splitter ) {
         margin-inline-start: 0 !important;
         border-inline: 1px solid !important;
         border-left-color: ThreeDShadow !important;
@@ -111,4 +116,10 @@
     .button-box {
         background-color: transparent !important;
     }
+}
+
+#downloadsListBox > richlistitem {
+    outline: 0 !important;
+    background-color: transparent !important;
+    color: inherit !important;
 }
