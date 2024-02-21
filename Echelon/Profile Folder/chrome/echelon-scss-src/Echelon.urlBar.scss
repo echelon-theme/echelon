@@ -577,3 +577,27 @@
       display: flex !important;
   }
 }
+
+#urlbar-search-mode-indicator {
+  background: transparent !important;
+  margin-inline-end: 2px !important;
+  padding-inline: 4px 0 !important;
+  border-radius: 0 !important;
+}
+
+#urlbar-search-mode-indicator-close {
+  background: url("images/close.png") 0 0 !important;
+
+  :root[echelon-style-4] & {
+    background-image: url("images/close_australis.png") !important;
+  }
+
+  &:hover {
+    background-position-x: -16px !important;
+  }
+
+  :root:not([echelon-style-4]) &:active,
+  &:hover:active {
+    background-position-x: -32px !important;
+  }
+}
