@@ -10,7 +10,7 @@ var { _ucUtils } = ChromeUtils.importESModule("chrome://userchromejs/content/uti
 class EchelonUpdateChecker
 {
     static DO_NOT_UPDATE_PREF = "Echelon.Option.NoUpdateChecks";
-    static LAST_LOADED_VER_PREF = "Echelone.parameter.lastLoadedVersion";
+    static LAST_LOADED_VER_PREF = "Echelon.parameter.lastLoadedVersion";
     static GITHUB_REPOSITORY = "echelon-theme/echelon";
     static GITHUB_REPOSITORY_BRANCH = "main";
     static BUILD_FILE_PATH_REMOTE = "Echelon/Profile Folder/chrome/build.txt";
