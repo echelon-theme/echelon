@@ -53,6 +53,7 @@ function setOSPref(osName)
 {
 	let isWinXP = false;
 	let isBlue = false;
+	let isWin8 = false;
 	let isWin10 = false;
 
 	switch (osName)
@@ -60,26 +61,31 @@ function setOSPref(osName)
 		case "winxp":
 			isWinXP = true;
 			isBlue = false;
+			isWin8 = false;
 			isWin10 = false;
 			break;
 		case "win7":
 			isWinXP = false;
 			isBlue = true;
+			isWin8 = false;
 			isWin10 = false;
 			break;
 		case "win7native":
 			isWinXP = false;
 			isBlue = false;
+			isWin8 = false;
 			isWin10 = false;
 			break;
 		case "win8":
 			isWinXP = false;
 			isBlue = false;
 			isWin8 = true;
+			isWin10 = false;
 			break;
 		case "win10":
 			isWinXP = false;
 			isBlue = false;
+			isWin8 = false;
 			isWin10 = true;
 			break;
 	}
