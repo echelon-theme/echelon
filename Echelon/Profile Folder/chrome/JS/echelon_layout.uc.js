@@ -21,6 +21,7 @@ let g_echelonLayoutManager;
 			toolboxRoot.addEventListener("customizationchange", this);
 			toolboxRoot.addEventListener("aftercustomization", this);
 			this.refreshToolboxLayout();
+			this.hookTabArrowScrollbox();
 		}
 		
 		initTabsOnTop()
@@ -172,6 +173,36 @@ let g_echelonLayoutManager;
 					tabsOnTopItem.accessKey = strings.GetStringFromName("tabs_on_top_accesskey");
 				}
 			}
+		}
+
+		/**
+		 * We need this hack for Australis automatic tab scrolling (opening new tab, ctrl+num)
+		 * to work correctly. Otherwise, it will be offset a few pixels into the tab.
+		 * 
+		 * This does not negatively affect any other theme, since it just uses a more accurate
+		 * element for positioning instead of the clipped parent element.
+		 */
+		async hookTabArrowScrollbox()
+		{
+			async function scrollIntoView_hook()
+			{
+				return this.querySelector(".tab-background").scrollIntoView();
+			}
+
+			let arrowScrollbox = await waitForElement("#tabbrowser-arrowscrollbox");
+			let ensureElementIsVisible_orig = arrowScrollbox.ensureElementIsVisible;
+
+			/*
+			 * Overriding this method of the arrow scrollbox is basically done
+			 * to avoid having to register something like a mutation observer.
+			 * 
+			 * We can just record the arguments of this and install the main
+			 * hook painlessly.
+			 */
+			arrowScrollbox.ensureElementIsVisible = function(element, aInstant) {
+				element.scrollIntoView = scrollIntoView_hook;
+				ensureElementIsVisible_orig.apply(arrowScrollbox, arguments);
+			};
 		}
 	}
 	
