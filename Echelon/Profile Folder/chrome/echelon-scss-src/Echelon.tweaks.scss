@@ -308,6 +308,17 @@
   transition: none !important;
 }
 
+/*
+ * Disable forward button style changes while the tab is changing.
+ */
+#main-window[echelon-style-2][echelon-tabchanging],
+#main-window[echelon-style-3][echelon-tabchanging] {
+  #forward-button,
+  #identity-icon-box {
+    transition: none !important;
+  }
+}
+
 #main-window[echelon-style-3] #urlbar-background,
 #main-window[echelon-style-3] #searchbar,
 #main-window[echelon-style-3] #stop-reload-button.unified {

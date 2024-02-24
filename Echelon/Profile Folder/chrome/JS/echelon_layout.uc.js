@@ -22,6 +22,9 @@ let g_echelonLayoutManager;
 			toolboxRoot.addEventListener("aftercustomization", this);
 			this.refreshToolboxLayout();
 			this.hookTabArrowScrollbox();
+
+			let tabsBox = await waitForElement("#tabbrowser-tabs");
+			tabsBox.addEventListener("TabSelect", this.onTabSwitch.bind(this));
 		}
 		
 		initTabsOnTop()
@@ -173,6 +176,15 @@ let g_echelonLayoutManager;
 					tabsOnTopItem.accessKey = strings.GetStringFromName("tabs_on_top_accesskey");
 				}
 			}
+		}
+
+		onTabSwitch()
+		{
+			// This attribute is added in order to check in CSS if the tab is
+			// currently being switched. This is done in order to disable or
+			// enable certain animations.
+			document.documentElement.setAttribute("echelon-tabchanging", "true");
+			setTimeout(() => document.documentElement.removeAttribute("echelon-tabchanging"), 50);
 		}
 
 		/**
