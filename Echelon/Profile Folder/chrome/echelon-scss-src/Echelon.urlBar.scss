@@ -316,7 +316,7 @@
   background-image: url('images/icons/add-to-bookmarks_hover.png') !important;
 }
 
-#urlbar:not([usertyping="true"]) #urlbar-input-container[pageproxystate="invalid"] > #page-action-buttons > #star-button-box {
+#main-window:not([echelon-style-4]) #urlbar:not([usertyping="true"]) #urlbar-input-container[pageproxystate="invalid"] > #page-action-buttons > #star-button-box {
   display: flex !important;
 }
 
@@ -604,4 +604,54 @@
   &:hover:active {
     background-position-x: -32px !important;
   }
+}
+
+// NOTIFICATION POPUPS
+
+#main-window:not([echelon-style-2]) #notification-popup-box {
+  order: -1 !important;
+  height: 100% !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+
+  .notification-anchor-icon {
+    width: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+#main-window[echelon-style-2] #notification-popup-box {
+  order: -1 !important;
+  height: 100% !important;
+  background-color: #fff !important;
+  background-clip: padding-box !important;
+  padding-inline-start: 10px !important;
+  padding-inline-end: 2px !important;
+  border-radius: 2.5px 0 0 2.5px !important;
+  border-width: 0 8px 0 0 !important;
+  border-style: solid !important;
+  border-image: url("images/urlbar-arrow.png") 0 8 0 0 fill !important;
+  border-radius: 0 !important;
+  margin-inline-end: -8px !important;
+
+  .notification-anchor-icon {
+    padding: 0 !important;
+  }
+}
+
+.focus-tab-by-prompt-icon {
+  list-style-image: url("images/information-16.png") !important;
+}
+
+.geo-icon {
+  list-style-image: url("images/Geolocation-16.png") !important;
+} 
+
+.indexedDB-icon {
+  list-style-image: url("images/question-16.png") !important;
+}
+
+#identity-credential-notification-icon,
+#password-notification-icon {
+  list-style-image: url("images/key-16.png") !important;
 }

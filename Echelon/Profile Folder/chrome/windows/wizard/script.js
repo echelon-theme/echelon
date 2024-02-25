@@ -52,7 +52,7 @@ showPage(currentPage);
 function setOSPref(osName)
 {
 	let isWinXP = false;
-	let isBlue = false;
+	let isBlue = true;
 	let isWin8 = false;
 	let isWin10 = false;
 
