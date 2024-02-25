@@ -60,6 +60,13 @@ let ECHELON_BOOT_CONFIG = {
 			EchelonUpdateChecker.checkForUpdate();
 		}
 
+		if (config?.themes)
+		{
+			let { EchelonThemeManager } = ChromeUtils.import("chrome://modules/content/EchelonThemeManager.js");
+			context.g_themeManager = new EchelonThemeManager;
+			context.g_themeManager.init(context.document.documentElement, config.themes);
+		}
+
 		if (config?.wizard)
 		{
 			let { openEchelonWizardWindow } = ChromeUtils.import("chrome://userscripts/content/echelon_wizard.uc.js");
@@ -73,13 +80,6 @@ let ECHELON_BOOT_CONFIG = {
 				gBrowser?.getNotificationBox()?.getNotificationWithValue("echelon-setup-closed")?.dismiss();
 				openEchelonWizardWindow(false);
 			});
-		}
-
-		if (config?.themes)
-		{
-			let { EchelonThemeManager } = ChromeUtils.import("chrome://modules/content/EchelonThemeManager.js");
-			context.g_themeManager = new EchelonThemeManager;
-			context.g_themeManager.init(context.document.documentElement, config.themes);
 		}
 	}
 
