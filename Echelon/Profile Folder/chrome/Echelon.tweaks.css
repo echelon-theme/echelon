@@ -187,7 +187,7 @@
 }
 
 #main-window[echelon-style-2]:not([chromehidden~=toolbar]) #forward-button:not(:hover)[disabled=true] + #urlbar-container #identity-icon-box {
-  padding-inline-start: 10px !important;
+  padding-inline-start: 11px !important;
 }
 
 #main-window[echelon-style-2] #identity-icon-box::after {
@@ -211,12 +211,22 @@
 
 /** ECHELON STYLE 3 (Firefox 14.0 - Firefox 27.0) **/
 #main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button) {
-  background-image: none !important;
-  background-color: transparent !important;
-  border: 1px solid transparent !important;
-  box-shadow: none !important;
+  background: hsla(210, 32%, 93%, 0) padding-box !important;
+  border: 1px solid !important;
+  border-color: hsla(210, 54%, 20%, 0) hsla(210, 54%, 20%, 0) hsla(210, 54%, 20%, 0) !important;
+  box-shadow: 0 1px hsla(0, 0%, 100%, 0) inset, 0 1px hsla(210, 54%, 20%, 0), 0 0 2px hsla(210, 54%, 20%, 0) !important;
   border-radius: 2px !important;
-  transition: background-image 150ms var(--toolbarbutton-transition-timingfunction), border-color 150ms var(--toolbarbutton-transition-timingfunction), box-shadow 150ms var(--toolbarbutton-transition-timingfunction) !important;
+  transition-property: background-color, border-color, box-shadow !important;
+  transition-duration: 75ms !important;
+}
+
+#main-window[echelon-style-3] #nav-bar[mode=icons] .toolbarbutton-1:not(#back-button, #forward-button, #PanelUI-menu-button, #alltabs-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #bookmarks-menu-button) {
+  min-width: 32px !important;
+  width: 32px !important;
+}
+
+#nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #PanelUI-menu-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, .toolbarbutton-combined):last-of-type {
+  margin-inline-end: 0 !important;
 }
 
 #main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover,
@@ -234,6 +244,10 @@
   box-shadow: 0 1px 1px hsla(210, 54%, 20%, 0.1) inset, 0 0 1px hsla(210, 54%, 20%, 0.2) inset, 0 1px 0 hsla(210, 54%, 20%, 0), 0 0 2px hsla(210, 54%, 20%, 0) !important;
   text-shadow: none !important;
   transition: none !important;
+}
+
+#main-window[echelon-style-3] #nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #PanelUI-menu-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #bookmarks-menu-button, #appmenu-button, .toolbarbutton-combined) > .toolbarbutton-icon {
+  padding: 2px 6px !important;
 }
 
 #main-window[echelon-style-3] #back-button {
@@ -421,12 +435,16 @@
   background: url("images/identity-icons-generic.png") 0 0;
 }
 
-#main-window[echelon-style-3] #identity-box:not(.localResource)[pageproxystate=valid] #identity-icon {
+#main-window[echelon-style-3] #identity-box:not(.localResource)[pageproxystate=valid].verifiedDomain #identity-icon {
   background-image: url("images/identity-icons-https.png");
 }
 
-#main-window[echelon-style-3][echelon-appearance-newlogo=true] #identity-box.chromeUI #identity-icon {
+#main-window[echelon-style-3][echelon-appearance-newlogo=true] #urlbar:not([usertyping=true]) #identity-box.chromeUI #identity-icon {
   background-image: url("images/identity-icons-brand.png") !important;
+}
+
+#main-window[echelon-style-3] #urlbar:is([usertyping=true]) #identity-box.chromeUI #identity-icon {
+  opacity: 0.3;
 }
 
 #main-window[echelon-style-3] #identity-box:not([pageproxystate=invalid]) #identity-icon-box:hover #identity-icon {
@@ -447,14 +465,14 @@
   margin-top: 1px !important;
 }
 
-#main-window[echelon-style-3][echelon-appearance-newlogo=true] #identity-box:not(.localResource).chromeUI {
+#main-window[echelon-style-3][echelon-appearance-newlogo=true] #urlbar:not([usertyping=true]) #identity-box:not(.localResource).chromeUI {
   background-image: linear-gradient(rgba(229, 114, 0, 0), rgba(229, 114, 0, 0.5) 35%, rgba(229, 114, 0, 0.5) 65%, rgba(229, 114, 0, 0)) !important;
   background-position: right center;
   background-size: 1px auto;
   background-repeat: no-repeat;
 }
 
-#main-window[echelon-style-3][echelon-appearance-newlogo=true] #identity-box.chromeUI #identity-icon-label {
+#main-window[echelon-style-3][echelon-appearance-newlogo=true] #urlbar:not([usertyping=true]) #identity-box.chromeUI #identity-icon-label {
   color: #e57300 !important;
   text-shadow: none !important;
   font-size: 8pt !important;
@@ -462,7 +480,7 @@
   padding-inline-end: 5px !important;
 }
 
-#main-window[echelon-style-3]:not([echelon-appearance-newlogo=true]) #identity-box.chromeUI #identity-icon-label {
+#main-window[echelon-style-3] #urlbar:is([usertyping=true]) #identity-box.chromeUI #identity-icon-label {
   display: none !important;
 }
 

@@ -312,6 +312,11 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:last-of-type {
   border-bottom-left-radius: 0 !important;
 }
 
+toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined > .toolbarbutton-icon {
+  width: 18px !important;
+  height: 18px !important;
+}
+
 /* HIDE PANEL UI */
 #main-window:not([echelon-style-4]) #PanelUI-menu-button {
   list-style-image: none !important;

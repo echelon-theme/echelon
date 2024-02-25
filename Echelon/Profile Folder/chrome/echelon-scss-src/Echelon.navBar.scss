@@ -318,6 +318,11 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined:last-of-type {
   border-bottom-left-radius: 0 !important;
 }
 
+toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined > .toolbarbutton-icon {
+  width: 18px !important;
+  height: 18px !important;
+}
+
 /* HIDE PANEL UI */
 
 // We can't hide the parent element normally due to the Firefox update

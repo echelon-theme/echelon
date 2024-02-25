@@ -302,6 +302,10 @@
   background-image: url("images/icons/add-to-bookmarks_hover.png") !important;
 }
 
+#urlbar:not([usertyping=true]) #urlbar-input-container[pageproxystate=invalid] > #page-action-buttons > #star-button-box {
+  display: flex !important;
+}
+
 #tracking-protection-icon-container,
 #identity-permission-box,
 #identity-icon-label,
