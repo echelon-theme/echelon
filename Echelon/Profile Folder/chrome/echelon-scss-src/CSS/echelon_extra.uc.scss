@@ -162,3 +162,14 @@ menupopup[type="arrow"]:not(#PlacesChevronPopup, #OtherBookmarksPopup) {
 #main-window[echelon-style-2][tabs-on-top="true"] #tabbrowser-arrowscrollbox::part(scrollbutton-down) {
 	background-image: url("images/tab-arrow-left-inverted.png") !important;
 }
+
+#tabbrowser-arrowscrollbox::part(scrollbutton-up),
+#tabbrowser-arrowscrollbox::part(scrollbutton-down) {
+  width: 22px !important;
+  list-style-image: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  padding-bottom: 2px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
