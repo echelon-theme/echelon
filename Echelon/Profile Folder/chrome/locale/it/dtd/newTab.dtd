@@ -1,0 +1,27 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!-- These strings are used in the about:newtab page -->
+<!ENTITY newtab.pageTitle "Nuova scheda">
+<!ENTITY newtab.customize.classic "Visualizza i siti principali">
+<!ENTITY newtab.customize.cog.enhanced "Includi i siti consigliati">
+<!ENTITY newtab.customize.cog.title2 "CONTROLLI NUOVA SCHEDA">
+<!ENTITY newtab.customize.cog.learn "Ulteriori informazioni su Nuova scheda">
+<!ENTITY newtab.customize.title "Personalizza la pagina Nuova scheda">
+<!ENTITY newtab.customize.blank2 "Pagina bianca">
+<!ENTITY newtab.undo.removedLabel "Miniatura rimossa.">
+<!ENTITY newtab.undo.undoButton "Annulla.">
+<!ENTITY newtab.undo.restoreButton "Ripristina tutto.">
+<!ENTITY newtab.undo.closeTooltip "Nascondi">
+
+<!-- LOCALIZATION NOTE (contentSearchInput.label):
+     This is set as the aria-label attribute for the search input box in the
+     in-content search UI, to be used by screen readers. -->
+     <!ENTITY contentSearchInput.label     "Chiave di ricerca">
+     <!ENTITY contentSearchSubmit.tooltip  "Avvia ricerca">
+     
+     <!-- LOCALIZATION NOTE (searchInput.placeholder):
+          This string is displayed in the search box when the input field is empty. -->
+     <!ENTITY searchInput.placeholder      "Ricerca">
+     <!ENTITY searchIcon.tooltip           "Ricerca">
