@@ -128,6 +128,11 @@
 #save-to-pocket-button[open] {
   list-style-image: url("images/icons/pocket_active.png") !important;
 }
+#save-to-pocket-button::before {
+  content: "";
+  display: inline-block;
+  background-image: url("images/icons/pocket_active.png"), url("images/icons/inverted/pocket_active.png");
+}
 
 #developer-button {
   list-style-image: url("images/icons/developer.png") !important;
