@@ -1,10 +1,10 @@
-.titlebar-buttonbox-container {
+:root:not([echelon-style-4]) .titlebar-buttonbox-container {
   position: fixed !important;
   right: 0 !important;
   top: 0 !important;
 }
 
-:root:not([echelon-appearance-xp])[tabs-on-top][sizemode="maximized"] .titlebar-buttonbox-container {
+:root:not([echelon-style-4], [echelon-appearance-xp])[tabs-on-top][sizemode="maximized"] .titlebar-buttonbox-container {
   position: static !important;
 }
 
@@ -274,6 +274,7 @@
   }
   padding-inline: 0 !important;
   padding-bottom: 1px !important;
+  transition: none !important;
 }
 
 toolbarbutton.bookmark-item {
@@ -294,6 +295,10 @@ toolbarbutton.bookmark-item {
 
 .bookmark-item[container][query] .toolbarbutton-icon {
   background-image: url('images/query.png') !important;
+}
+
+#bookmarksToolbarFolderMenu > .menu-iconic-left > .menu-iconic-icon {
+  background-image: none !important;
 }
 
 /** MENUPOPUPS **/
@@ -771,6 +776,7 @@ treechildren::-moz-tree-image(title, query, hostContainer) {
   list-style-image: url("images/bookmarksFolder.png") !important;
 }
 
+#bookmarksToolbarFolderMenu > .menu-iconic-left > .menu-iconic-icon,
 treechildren::-moz-tree-image(container, queryFolder_toolbar_____) {
   list-style-image: url("images/bookmarksToolbar.png") !important;
 }
@@ -887,4 +893,33 @@ treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
 
 .dialogBox {
   border-radius: 0 !important;;
+}
+
+/* Status Panel */
+
+#statuspanel {
+  transition: opacity 100ms ease-out !important;
+}
+
+#statuspanel-label {
+  padding: 2px 4px !important;
+  background: -moz-linear-gradient(white, #ddd) !important;
+  border: 1px none #ccc !important;
+  border-top-style: solid !important;
+  color: #333 !important;
+  text-shadow: none !important;
+}
+
+#statuspanel:not([mirror]) > #statuspanel-label:-moz-locale-dir(ltr), 
+#statuspanel[mirror] > #statuspanel-label:-moz-locale-dir(rtl) {
+  border-right-style: solid !important;
+  border-top-right-radius: .3em !important;
+  margin-right: 1em !important;
+}
+
+#statuspanel:not([mirror]) > #statuspanel-label:-moz-locale-dir(rtl),
+#statuspanel[mirror] > #statuspanel-label:-moz-locale-dir(ltr) {
+  border-left-style: solid !important;
+  border-top-left-radius: .3em !important;
+  margin-left: 1em !important;
 }

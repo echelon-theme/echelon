@@ -29,11 +29,15 @@
                 paddedBorder--;
             }
 
+            // CAPTION BUTTON MASK SIZE
+            let captionMaskSize = document.querySelector(".titlebar-buttonbox-container").clientWidth;
+
             let style = document.createElement("style");
             style.innerHTML = `
                 :root {
                     --titlebar-height: ${titlebarHeight}px;
                     --padded-border: ${paddedBorder}px;
+                    --caption-mask-width: ${captionMaskSize}px;
                 }
             `;
             document.head.appendChild(style);

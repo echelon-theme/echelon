@@ -1,3 +1,15 @@
+// ==UserScript==
+// @name			Echelon :: Styles
+// @description 	Checks about:config pref and adds an HTML attribute.
+// @author			Travis
+// @include			main
+// @include         chrome://browser/content/browser.xhtml
+// @include         chrome://browser/content/aboutDialog.xhtml
+// @include         about:preferences($|(\?|#)($|.*))
+// @include			about:addons
+// @include			about:echelon
+// ==/UserScript==
+
 this.EXPORTED_SYMBOLS = ["EchelonThemeManager"];
 
 var { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
@@ -14,6 +26,7 @@ class EchelonThemeManager
 	init(root, config = { style: true })
 	{
 		this.root = root;
+		console.log(root);
 		if (!root)
 		{
 			throw new Error("Root not specified");

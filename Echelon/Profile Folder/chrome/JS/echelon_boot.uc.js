@@ -19,6 +19,7 @@ let ECHELON_BOOT_CONFIG = {
 			bools: [
 				"Echelon.Appearance.Blue",
 				"Echelon.Appearance.Australis.EnableFog",
+				"Echelon.Appearance.Australis.Windows8",
 				"Echelon.Appearance.Australis.Windows10",
 				"Echelon.Appearance.XP",
 				"Echelon.FirefoxButton.CustomStyle",
@@ -34,6 +35,10 @@ let ECHELON_BOOT_CONFIG = {
 	},
 	/* Add-ons Manager */
 	"about:addons": {
+		themes: { style: true }
+	},
+	/* Echelon Options page */
+	"about:echelon": {
 		themes: { style: true }
 	},
 	/* "About Mozilla Firefox" dialog */
@@ -55,6 +60,13 @@ let ECHELON_BOOT_CONFIG = {
 			EchelonUpdateChecker.checkForUpdate();
 		}
 
+		if (config?.themes)
+		{
+			let { EchelonThemeManager } = ChromeUtils.import("chrome://modules/content/EchelonThemeManager.js");
+			context.g_themeManager = new EchelonThemeManager;
+			context.g_themeManager.init(context.document.documentElement, config.themes);
+		}
+
 		if (config?.wizard)
 		{
 			let { openEchelonWizardWindow } = ChromeUtils.import("chrome://userscripts/content/echelon_wizard.uc.js");
@@ -68,13 +80,6 @@ let ECHELON_BOOT_CONFIG = {
 				gBrowser?.getNotificationBox()?.getNotificationWithValue("echelon-setup-closed")?.dismiss();
 				openEchelonWizardWindow(false);
 			});
-		}
-
-		if (config?.themes)
-		{
-			let { EchelonThemeManager } = ChromeUtils.import("chrome://modules/content/EchelonThemeManager.js");
-			context.g_themeManager = new EchelonThemeManager;
-			context.g_themeManager.init(context.document.documentElement, config.themes);
 		}
 	}
 

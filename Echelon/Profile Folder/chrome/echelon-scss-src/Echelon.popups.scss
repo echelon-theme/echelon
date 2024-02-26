@@ -40,6 +40,11 @@ panelview {
     :root[echelon-style-4] & {
         --panel-shadow: 0 0 0 1px var(--arrowpanel-border-color), 0 0 5px rgba(0, 0, 0, .35) !important;
     }
+
+    :root:not([echelon-appearance-xp], [echelon-appearance-blue])[echelon-style-4] & {
+        --arrowpanel-border-color: #A0A0A0 !important;
+        --panel-shadow: 0 0 0 1px var(--arrowpanel-border-color) !important;
+    }
 }
 
 :root[echelon-style-4]

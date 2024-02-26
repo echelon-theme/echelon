@@ -1,0 +1,27 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!-- These strings are used in the about:newtab page -->
+<!ENTITY newtab.pageTitle "Nová karta">
+<!ENTITY newtab.customize.classic "Ukažte své nejlepší stránky">
+<!ENTITY newtab.customize.cog.enhanced "Zahrnout navrhované weby">
+<!ENTITY newtab.customize.cog.title2 "NEW TAB CONTROLS">
+<!ENTITY newtab.customize.cog.learn "Přečtěte si o tématu Nová karta">
+<!ENTITY newtab.customize.title "Přizpůsobte si stránku Nová karta">
+<!ENTITY newtab.customize.blank2 "Zobrazit prázdnou stránku">
+<!ENTITY newtab.undo.removedLabel "Miniatura odstraněna">
+<!ENTITY newtab.undo.undoButton "Vrátit">
+<!ENTITY newtab.undo.restoreButton "Obnovit vše">
+<!ENTITY newtab.undo.closeTooltip "Skrýt">
+
+<!-- LOCALIZATION NOTE (contentSearchInput.label):
+     This is set as the aria-label attribute for the search input box in the
+     in-content search UI, to be used by screen readers. -->
+     <!ENTITY contentSearchInput.label     "Vyhledávací dotaz">
+     <!ENTITY contentSearchSubmit.tooltip  "Odeslat vyhledávání">
+     
+     <!-- LOCALIZATION NOTE (searchInput.placeholder):
+          This string is displayed in the search box when the input field is empty. -->
+     <!ENTITY searchInput.placeholder      "Vyhledat">
+     <!ENTITY searchIcon.tooltip           "Vyhledat">

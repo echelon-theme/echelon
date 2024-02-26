@@ -82,21 +82,25 @@ function getTrueWinVer()
 const OS_STYLE_MAP = {
     "winxp": {
         "Echelon.Appearance.XP": true,
+        "Echelon.Appearance.Australis.Windows8": false,
         "Echelon.Appearance.Australis.Windows10": false,
         "Echelon.Appearance.Blue": false
     },
     "win7": {
         "Echelon.Appearance.XP": false,
+        "Echelon.Appearance.Australis.Windows8": false,
         "Echelon.Appearance.Australis.Windows10": false
         // blue can be variable
     },
     "win8": {
         "Echelon.Appearance.XP": false,
+        "Echelon.Appearance.Australis.Windows8": true,
         "Echelon.Appearance.Australis.Windows10": false,
         "Echelon.Appearance.Blue": false
     },
     "win10": {
         "Echelon.Appearance.XP": false,
+        "Echelon.Appearance.Australis.Windows8": false,
         "Echelon.Appearance.Australis.Windows10": true,
         "Echelon.Appearance.Blue": false
     }

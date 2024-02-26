@@ -116,6 +116,18 @@
 
 #save-to-pocket-button {
   list-style-image: url("images/icons/pocket.png") !important;
+
+  &[open] {
+    list-style-image: url("images/icons/pocket_active.png") !important;
+  }
+
+  // Pre-load the fucking open state icon
+  &::before {
+    content: '';
+    display: inline-block;
+    background-image: url("images/icons/pocket_active.png"),
+                      url("images/icons/inverted/pocket_active.png");
+  }
 }
 
 #developer-button {
@@ -186,13 +198,17 @@
   list-style-image: url("images/icons/hamburger.png") !important;
 }
 
+#echelon-button {
+  list-style-image: url("images/icons/echelon.png") !important;
+}
+
 :root[fxastatus="not_configured"] {
   --avatar-image-url: url("chrome://userchrome/content/images/icons/avatar-empty.png") !important;
 }
 
 /* Windows 8+ Icons for Australis Style. */
 @media not (-moz-windows-classic) {
-  #main-window[echelon-style-4]:not([echelon-appearance-blue], [echelon-appearance-xp]) {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] {
     #back-button,
     #context-back {
       list-style-image: url("images/icons/australis/back_large.png") !important;
@@ -285,7 +301,12 @@
     }
     
     #save-to-pocket-button {
-      list-style-image: url("images/icons/australis/pocket.png") !important;
+      fill: #797C80 !important;
+      list-style-image: url("images/icons/australis/pocket.svg") !important;
+      
+      &[open] {
+        fill: #ED4255 !important;
+      }
     }
     
     #developer-button {
@@ -355,6 +376,10 @@
 
     #PanelUI-menu-button {
       list-style-image: url("images/icons/australis/hamburger.png") !important;
+    }
+
+    #echelon-button {
+      list-style-image: url("images/icons/australis/echelon.png") !important;
     }
 
     &[fxastatus="not_configured"] {
@@ -448,6 +473,10 @@
 
   #save-to-pocket-button {
     list-style-image: url("images/icons/inverted/pocket.png") !important;
+    
+    &[open] {
+      list-style-image: url("images/icons/inverted/pocket_active.png") !important;
+    }
   }
 
   #developer-button {
@@ -516,6 +545,10 @@
   
   #PanelUI-menu-button {
     list-style-image: url("images/icons/inverted/hamburger.png") !important;
+  }
+
+  #echelon-button {
+    list-style-image: url("images/icons/inverted/echelon.png") !important;
   }
 }
 
@@ -701,6 +734,10 @@
 
   #PanelUI-menu-button {
     list-style-image: url("images/icons/xp/hamburger.png") !important;
+  }
+
+  #echelon-button {
+    list-style-image: url("images/icons/xp/echelon.png") !important;
   }
 
   &[fxastatus="not_configured"] {

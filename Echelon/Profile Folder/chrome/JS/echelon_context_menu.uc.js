@@ -51,14 +51,22 @@ function ViewImage_viewMedia(e)
     /* The bool pref which determines whether to use View Image. */
     const VIEWIMAGE_CONFIGKEY = "Echelon.Behavior.ViewImage";
 
+    /* Original command. */
+    const VIEWIMAGE_ORIGCOMMAND = "gContextMenu.viewMedia(event);";
+
     /* Our custom command. View Image and View Background Image have the same command now. */
     const VIEWIMAGE_COMMAND = "(ViewImage_viewMedia.bind(gContextMenu))(event);";
 
     /* Original command, label, and accesskey */
     let original = {
-        label: null,
-        accesskey: null,
-        command: null
+        image: {
+            label: null,
+            accesskey: null,
+        },
+        video: {
+            label: null,
+            accesskey: null
+        }
     };
 
     /* Localization string bundle */
@@ -70,28 +78,38 @@ function ViewImage_viewMedia(e)
     /* The View Image menuitem. */
     let viewImage = null;
 
+    /* The View Video menuitem. */
+    let viewVideo = null;
+
     /* Update the menu item. */
     function updateViewImageItem()
     {
-        if (!viewImage)
+        let enabled = PrefUtils.tryGetBoolPref(VIEWIMAGE_CONFIGKEY);
+        if (viewImage)
         {
-            return;
+            viewImage.label = enabled ? strings.GetStringFromName("view_image_label") : original.image.label;
+            viewImage.accessKey = enabled ? strings.GetStringFromName("view_image_accesskey") : original.image.accesskey;
+            viewImage.setAttribute("oncommand", enabled ? VIEWIMAGE_COMMAND : VIEWIMAGE_ORIGCOMMAND);
         }
 
-        let enabled = PrefUtils.tryGetBoolPref(VIEWIMAGE_CONFIGKEY);
-        viewImage.label = enabled ? strings.GetStringFromName("view_image_label") : original.label;
-        viewImage.accessKey = enabled ? strings.GetStringFromName("view_image_accesskey") : original.accesskey;
-        viewImage.setAttribute("oncommand", enabled ? VIEWIMAGE_COMMAND : original.command);
+        if (viewVideo)
+        {
+            viewVideo.label = enabled ? strings.GetStringFromName("view_video_label") : original.video.label;
+            viewVideo.accessKey = enabled ? strings.GetStringFromName("view_video_accesskey") : original.video.accesskey;
+            viewVideo.setAttribute("oncommand", enabled ? VIEWIMAGE_COMMAND : VIEWIMAGE_ORIGCOMMAND);
+        }
     }
 
     /* When the View Image item's label has changed,
        most likely a language change */
     function onViewImageLabelChange()
     {
-        if (viewImage.label != original.label && viewImage.label != strings.GetStringFromName("view_image_label"))
+        if (viewImage.label != original.image.label && viewImage.label != strings.GetStringFromName("view_image_label"))
         {
-            original.label = viewImage.label;
-            original.accesskey = viewImage.accessKey;
+            original.image.label = viewImage.label;
+            original.image.accesskey = viewImage.accessKey;
+            original.video.label = viewVideo.label;
+            original.video.accesskey = viewVideo.accessKey;
             strings = Services.strings.createBundle("chrome://echelon/locale/properties/menus.properties");
 
             let enabled = PrefUtils.tryGetBoolPref(VIEWIMAGE_CONFIGKEY);
@@ -99,6 +117,8 @@ function ViewImage_viewMedia(e)
             {
                 viewImage.label = strings.GetStringFromName("view_image_label");
                 viewImage.accessKey = strings.GetStringFromName("view_image_accesskey");
+                viewVideo.label = strings.GetStringFromName("view_video_label");
+                viewVideo.accessKey = strings.GetStringFromName("view_video_accesskey");
             }
 
             let viewBGImage = document.getElementById("context-viewbgimage");
@@ -159,9 +179,12 @@ function ViewImage_viewMedia(e)
     /* Initialize View Image. */
     waitForElement("menuitem#context-viewimage").then(e => {
         viewImage = e;
-        original.label = e.label;
-        original.accesskey = e.accessKey;
-        original.command = e.getAttribute("oncommand");
+        original.image.label = e.label;
+        original.image.accesskey = e.accessKey;
+
+        viewVideo = document.getElementById("context-viewvideo");
+        original.video.label = viewVideo.label;
+        original.video.accesskey = viewVideo.accessKey;
 
         popup = viewImage.parentNode;
         popup.addEventListener("popupshowing", onPopupShowing);

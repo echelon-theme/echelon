@@ -380,11 +380,72 @@ input, button {
 }
 
 :root[echelon-style="1"] .topSection {
+	height: unset;
 	justify-content: flex-start;
+	overflow: visible;
 }
 
 :root[echelon-style="1"] #launcher {
-	visibility: collapse;
+	background-color: transparent;
+	border: 0;
+	box-shadow: none;
+	flex: 1;
+	align-items: flex-start;
+}
+
+:root[echelon-style="1"] .launchButton,
+:root[echelon-style="1"] #restorePreviousSessionSeparator {
+	display: none;
+}
+
+:root[echelon-style="1"] #restorePreviousSession {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 10px;
+	margin: 0;
+	margin-top: 50px;
+	border: 0;
+	border-radius: 4px;
+	box-shadow: 0 0 0 1px rgba(9,37,59,0),
+				0 1px 2px rgba(9,37,59,0),
+				0 0 10px rgba(255,255,255,0),
+				0 -3px 0 rgba(180,194,212,0) inset;
+	transition-property: background-color, box-shadow;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-out;
+	background-color: transparent;
+	color: rgb(50,50,50);
+	font-family: 'MS Shell Dlg', Arial, sans-serif;
+	font-weight: bold;
+	font-size: 15.5px;
+	cursor: pointer;
+	max-height: none;
+}
+
+:root[echelon-style="1"] #restorePreviousSession:hover {
+	background-image: -moz-linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.2));
+	border-radius: 4px;
+	box-shadow: 0 0 0 1px rgba(9,37,59,.2),
+				0 1px 2px rgba(9,37,59,.2),
+				0 0 10px rgba(255,255,255,.4),
+				0 -3px 0 rgba(180,194,212,.3) inset;
+}
+  
+:root[echelon-style="1"] #restorePreviousSession:hover:active {
+	background-image: -moz-linear-gradient(rgba(255,255,255,.0), rgba(255,255,255,.2));
+	background-color: rgba(23,75,115,.1);
+	box-shadow: 0 0 0 1px rgba(9,37,59,.2),
+				0 1px 2px rgba(9,37,59,.4) inset,
+				0 1px 5px rgba(9,37,59,.15) inset;
+}
+
+:root[echelon-style="1"] #restorePreviousSession::before {
+	content: url("chrome://userchrome/content/pages/home/images/aboutHome-restore-icon.png");
+	margin-right: 10px;
+	width: 78px;
+	height: 66px;
+	position: static;
 }
 
 :root[echelon-style="1"] .searchContainer {
@@ -533,7 +594,7 @@ input, button {
 	text-align: center;
 	position: relative;
 	font-size: 13px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 :root:not([echelon-style="1"]) #aboutMozilla {
@@ -542,7 +603,7 @@ input, button {
 }
 
 :root[echelon-style="1"] .brandSpacer {
-	height: 6.5%;
+	height: 4.5vh;
 }
 
 :root[echelon-style="1"] .brandLogo {

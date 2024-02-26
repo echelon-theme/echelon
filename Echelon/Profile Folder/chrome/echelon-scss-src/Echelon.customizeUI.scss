@@ -11,6 +11,12 @@
   background-attachment: fixed !important;
 }
 
+// Hack to prevent the titlebar mask from moving
+
+#main-window[customizing] .titlebar-buttonbox-container {
+  margin-inline-end: -2em !important;
+}
+
 #main-window[customizing] #customization-container,
 #main-window[customizing] #navigator-toolbox,
 #main-window[customizing] #browser {
@@ -21,7 +27,8 @@
 #navigator-toolbox,
 #customization-container,
 #titlebar,
-#browser {
+#browser,
+.titlebar-buttonbox-container {
   transition-property: margin-left, margin-right !important;
   transition-duration: 150ms !important;
   transition-timing-function: ease-out !important;
@@ -49,6 +56,10 @@
   transition-duration: 150ms !important;
   transition-timing-function: ease-out !important;
   padding-inline: 10px !important;
+}
+
+#main-window[customizing] #TabsToolbar {
+  padding-inline-end: 0 !important;
 }
 
 @media (-moz-windows-compositor) {

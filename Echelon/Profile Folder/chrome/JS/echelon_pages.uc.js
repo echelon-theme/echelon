@@ -128,4 +128,12 @@ EchelonPageManager.registerAboutPage(
     "config",
     "chrome://userchrome/content/pages/config/config.xhtml"
 );
+EchelonPageManager.registerAboutPage(
+    "echelon",
+    "chrome://userchrome/content/windows/options/options.xhtml"
+);
+EchelonPageManager.registerAboutPage(
+    "wizard",
+    "chrome://userchrome/content/windows/wizard/wizard.xhtml"
+);
 let EXPORTED_SYMBOLS = [];

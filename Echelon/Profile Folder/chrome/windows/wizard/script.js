@@ -52,7 +52,8 @@ showPage(currentPage);
 function setOSPref(osName)
 {
 	let isWinXP = false;
-	let isBlue = false;
+	let isBlue = true;
+	let isWin8 = false;
 	let isWin10 = false;
 
 	switch (osName)
@@ -60,31 +61,37 @@ function setOSPref(osName)
 		case "winxp":
 			isWinXP = true;
 			isBlue = false;
+			isWin8 = false;
 			isWin10 = false;
 			break;
 		case "win7":
 			isWinXP = false;
 			isBlue = true;
+			isWin8 = false;
 			isWin10 = false;
 			break;
 		case "win7native":
 			isWinXP = false;
 			isBlue = false;
+			isWin8 = false;
 			isWin10 = false;
 			break;
 		case "win8":
 			isWinXP = false;
-			isBlue = false; // confusing...
+			isBlue = false;
+			isWin8 = true;
 			isWin10 = false;
 			break;
 		case "win10":
 			isWinXP = false;
 			isBlue = false;
+			isWin8 = false;
 			isWin10 = true;
 			break;
 	}
 
 	PrefUtils.trySetBoolPref("Echelon.Appearance.XP", isWinXP);
+	PrefUtils.trySetBoolPref("Echelon.Appearance.Australis.Windows8", isWin8);
 	PrefUtils.trySetBoolPref("Echelon.Appearance.Australis.Windows10", isWin10);
 	PrefUtils.trySetBoolPref(echelonAppearanceBlue, isBlue);
 }
