@@ -5,7 +5,7 @@
     position: relative;
   }
 
-  :root[sizemode="maximized"][tabsintitlebar][tabs-on-top="true"] & {
+  :root[tabsintitlebar][tabs-on-top="true"] & {
     padding-inline-end: 0 !important;
   }
 }

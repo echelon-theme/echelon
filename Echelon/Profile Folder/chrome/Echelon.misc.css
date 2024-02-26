@@ -8,13 +8,13 @@
  * You can find the SCSS source files in echelon-scss-src/
  */
 
-.titlebar-buttonbox-container {
+:root:not([echelon-style-4]) .titlebar-buttonbox-container {
   position: fixed !important;
   right: 0 !important;
   top: 0 !important;
 }
 
-:root:not([echelon-appearance-xp])[tabs-on-top][sizemode=maximized] .titlebar-buttonbox-container {
+:root:not([echelon-style-4], [echelon-appearance-xp])[tabs-on-top][sizemode=maximized] .titlebar-buttonbox-container {
   position: static !important;
 }
 

@@ -194,12 +194,18 @@
   display: none !important;
 }
 
-#main-window[echelon-style-2][tabs-on-top=true] #TabsToolbar #new-tab-button .toolbarbutton-icon {
+#main-window[echelon-style-2][tabs-on-top=true]:not([echelon-style-4]) #TabsToolbar #new-tab-button .toolbarbutton-icon {
   background-image: url("images/newtab-inverted.png") !important;
 }
 
-#main-window[echelon-style-2][tabs-on-top=true] #alltabs-button > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+#main-window[echelon-style-2][tabs-on-top=true]:not([echelon-style-4]) #alltabs-button > .toolbarbutton-badge-stack > .toolbarbutton-icon {
   background-image: url("images/toolbarbutton-dropdown-arrow-inverted.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+}
+
+#main-window[echelon-style-4][tabs-on-top=true] #alltabs-button > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+  background-image: url("images/toolbarbutton-dropdown-arrow.png") !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
 }
@@ -210,7 +216,7 @@
 }
 
 /** ECHELON STYLE 3 (Firefox 14.0 - Firefox 27.0) **/
-#main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button) {
+#main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #TabsToolbar toolbarbutton, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button) {
   background: hsla(210, 32%, 93%, 0) padding-box !important;
   border: 1px solid !important;
   border-color: hsla(210, 54%, 20%, 0) hsla(210, 54%, 20%, 0) hsla(210, 54%, 20%, 0) !important;
@@ -225,19 +231,19 @@
   width: 32px !important;
 }
 
-#nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #PanelUI-menu-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, .toolbarbutton-combined):last-of-type {
+#nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #TabsToolbar toolbarbutton, #tabs-newtab-button, #PanelUI-menu-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, .toolbarbutton-combined):last-of-type {
   margin-inline-end: 0 !important;
 }
 
-#main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover,
+#main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #TabsToolbar toolbarbutton, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover,
 #main-window[echelon-style-4] toolbar:is(#nav-bar, #TabsToolbar) #bookmarks-button:hover + #bookmarks-menu-button {
   background-image: linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
   border-color: hsla(210, 54%, 20%, 0.15) hsla(210, 54%, 20%, 0.2) hsla(210, 54%, 20%, 0.25) !important;
   box-shadow: 0 1px hsla(0, 0%, 100%, 0.3) inset, 0 1px hsla(210, 54%, 20%, 0.03), 0 0 2px hsla(210, 54%, 20%, 0.1) !important;
 }
 
-#main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover:active,
-#main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled])[open] {
+#main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #TabsToolbar toolbarbutton, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled]):hover:active,
+#main-window[echelon-style-3] toolbar:is(#nav-bar, #TabsToolbar) .toolbarbutton-1:not(#back-button, #forward-button, #TabsToolbar toolbarbutton, #tabs-newtab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button):not([disabled])[open] {
   background-image: linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
   background-color: hsla(210, 54%, 20%, 0.15) !important;
   border-color: hsla(210, 54%, 20%, 0.3) hsla(210, 54%, 20%, 0.35) hsla(210, 54%, 20%, 0.4) !important;
@@ -246,7 +252,7 @@
   transition: none !important;
 }
 
-#main-window[echelon-style-3] #nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #tabs-newtab-button, #PanelUI-menu-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #bookmarks-menu-button, #appmenu-button, .toolbarbutton-combined) > .toolbarbutton-icon {
+#main-window[echelon-style-3] #nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #TabsToolbar toolbarbutton, #tabs-newtab-button, #PanelUI-menu-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #bookmarks-menu-button, #appmenu-button, .toolbarbutton-combined) > .toolbarbutton-icon {
   padding: 2px 6px !important;
 }
 
@@ -770,10 +776,7 @@
 #main-window[privatebrowsingnewindicator][echelon-style-4][tabsintitlebar]:not([sizemode=maximized]) .private-browsing-indicator {
   position: fixed !important;
   top: 1px !important;
-  right: calc(var(--caption-mask-width) + 46px) !important;
-}
-#main-window[privatebrowsingnewindicator][echelon-style-4][tabsintitlebar][sizemode=maximized] .private-browsing-indicator {
-  margin-inline-end: 46px !important;
+  right: calc(var(--caption-mask-width) + 4px) !important;
 }
 #main-window[privatebrowsingnewindicator][echelon-style-4][echelon-appearance-australis-windows8] .private-browsing-indicator {
   top: 0 !important;
@@ -786,6 +789,14 @@
 }
 #main-window[privatebrowsingnewindicator][echelon-style-4]:not([tabsintitlebar])[echelon-appearance-australis-windows8] .private-browsing-indicator {
   background-image: url("images/privatebrowsing-mask-tabstrip.png") !important;
+}
+@media not (-moz-windows-compositor) {
+  #main-window[privatebrowsingnewindicator][echelon-style-4][tabsintitlebar]:not([sizemode=maximized]) .private-browsing-indicator {
+    width: 48px !important;
+    height: 32px !important;
+    top: 0 !important;
+    background-image: url("images/privatebrowsing-mask-titlebar-XPVista7-tall.png") !important;
+  }
 }
 
 /* Hide Add to Bookmarks button if the user is not using Style 4 */
@@ -1265,7 +1276,7 @@
 /** BASIC THEME **/
 @media not (-moz-windows-compositor) {
   #main-window:not([echelon-appearance-xp]) .titlebar-buttonbox-container {
-    top: var(--padded-border, 0) !important;
+    padding-top: calc(var(--padded-border) + 1px) !important;
   }
   #main-window[echelon-appearance-xp] .titlebar-buttonbox-container {
     top: calc(var(--padded-border) + 5px) !important;
@@ -1277,6 +1288,7 @@
     height: calc(var(--titlebar-height) + 6px) !important;
   }
   #nav-bar,
+  :root[echelon-style-4] #nav-bar,
   #PersonalToolbar,
   #main-window[sizemode=normal] #browser,
   #customization-container {
