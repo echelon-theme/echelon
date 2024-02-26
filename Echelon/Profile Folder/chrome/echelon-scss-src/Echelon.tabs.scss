@@ -1,6 +1,10 @@
 #TabsToolbar {
   padding-inline: 4px !important;
 
+  &:not(:-moz-lwtheme) {
+    position: relative;
+  }
+
   :root[sizemode="maximized"][tabsintitlebar][tabs-on-top="true"] & {
     padding-inline-end: 0 !important;
   }

@@ -496,7 +496,7 @@
 }
 
 #main-window[echelon-style-4] #PanelUI-button {
-  margin-inline-start: 3px !important;
+  margin-inline-start: 7px !important;
   position: relative !important;
 }
 #main-window[echelon-style-4] #PanelUI-button #PanelUI-menu-button {
@@ -874,7 +874,7 @@
   margin: 0 60px;
   position: absolute;
   pointer-events: none;
-  top: 30px;
+  top: 50%;
   width: -moz-available;
   z-index: -1;
   order: 1001;

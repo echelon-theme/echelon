@@ -11,6 +11,9 @@
 #TabsToolbar {
   padding-inline: 4px !important;
 }
+#TabsToolbar:not(:-moz-lwtheme) {
+  position: relative;
+}
 :root[sizemode=maximized][tabsintitlebar][tabs-on-top=true] #TabsToolbar {
   padding-inline-end: 0 !important;
 }
@@ -377,17 +380,6 @@ spacer[part=overflow-start-indicator] {
   border-radius: 0 !important;
   opacity: 1 !important;
   margin-inline: 0 !important;
-}
-
-#scrollbutton-up,
-#scrollbutton-down {
-  width: 22px !important;
-  list-style-image: none !important;
-  background-color: transparent !important;
-  padding: 0 !important;
-  padding-bottom: 2px !important;
-  border: 0 !important;
-  border-radius: 0 !important;
 }
 
 #scrollbutton-up .toolbarbutton-icon,

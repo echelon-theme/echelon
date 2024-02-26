@@ -125,6 +125,9 @@
 #save-to-pocket-button {
   list-style-image: url("images/icons/pocket.png") !important;
 }
+#save-to-pocket-button[open] {
+  list-style-image: url("images/icons/pocket_active.png") !important;
+}
 
 #developer-button {
   list-style-image: url("images/icons/developer.png") !important;
@@ -274,7 +277,11 @@
     list-style-image: url("images/icons/australis/stop.png") !important;
   }
   #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #save-to-pocket-button {
-    list-style-image: url("images/icons/australis/pocket.png") !important;
+    fill: #797C80 !important;
+    list-style-image: url("images/icons/australis/pocket.svg") !important;
+  }
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #save-to-pocket-button[open] {
+    fill: #ED4255 !important;
   }
   #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #developer-button {
     list-style-image: url("images/icons/australis/developer.png") !important;
@@ -419,6 +426,10 @@
 #main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #save-to-pocket-button,
 #main-window[lwtheme-brighttext=true] #save-to-pocket-button {
   list-style-image: url("images/icons/inverted/pocket.png") !important;
+}
+#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #save-to-pocket-button[open],
+#main-window[lwtheme-brighttext=true] #save-to-pocket-button[open] {
+  list-style-image: url("images/icons/inverted/pocket_active.png") !important;
 }
 #main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #developer-button,
 #main-window[lwtheme-brighttext=true] #developer-button {

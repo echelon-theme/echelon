@@ -116,6 +116,10 @@
 
 #save-to-pocket-button {
   list-style-image: url("images/icons/pocket.png") !important;
+
+  &[open] {
+    list-style-image: url("images/icons/pocket_active.png") !important;
+  }
 }
 
 #developer-button {
@@ -289,7 +293,12 @@
     }
     
     #save-to-pocket-button {
-      list-style-image: url("images/icons/australis/pocket.png") !important;
+      fill: #797C80 !important;
+      list-style-image: url("images/icons/australis/pocket.svg") !important;
+      
+      &[open] {
+        fill: #ED4255 !important;
+      }
     }
     
     #developer-button {
@@ -456,6 +465,10 @@
 
   #save-to-pocket-button {
     list-style-image: url("images/icons/inverted/pocket.png") !important;
+    
+    &[open] {
+      list-style-image: url("images/icons/inverted/pocket_active.png") !important;
+    }
   }
 
   #developer-button {
