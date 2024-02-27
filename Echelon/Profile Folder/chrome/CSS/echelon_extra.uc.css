@@ -173,11 +173,6 @@ menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowpositi
   background-position: right bottom !important;
 }
 
-#main-window[echelon-style-2][tabs-on-top=true] #tabbrowser-arrowscrollbox::part(scrollbutton-up),
-#main-window[echelon-style-2][tabs-on-top=true] #tabbrowser-arrowscrollbox::part(scrollbutton-down) {
-  background-image: url("images/tab-arrow-left-inverted.png") !important;
-}
-
 #tabbrowser-arrowscrollbox::part(scrollbutton-up),
 #tabbrowser-arrowscrollbox::part(scrollbutton-down) {
   width: 22px !important;
@@ -187,4 +182,34 @@ menupopup[type=arrow]:not(#PlacesChevronPopup, #OtherBookmarksPopup)[arrowpositi
   padding-bottom: 2px !important;
   border: 0 !important;
   border-radius: 0 !important;
+}
+
+#tabbrowser-arrowscrollbox::part(scrollbutton-up)::before,
+#tabbrowser-arrowscrollbox::part(scrollbutton-down)::before {
+  content: "" !important;
+  display: inline-block !important;
+  width: 15px !important;
+  height: 17px !important;
+  background-image: url("chrome://userchrome/content/images/tab-arrow-left.png") !important;
+  padding: 0 !important;
+}
+
+#main-window[echelon-style-2]:not([echelon-style-4]) #tabbrowser-arrowscrollbox::part(scrollbutton-up)::before,
+#main-window[echelon-style-2]:not([echelon-style-4]) #tabbrowser-arrowscrollbox::part(scrollbutton-down)::before {
+  background-image: url("chrome://userchrome/content/images/tab-arrow-left-inverted.png") !important;
+}
+
+#tabbrowser-arrowscrollbox::part(scrollbutton-down)::before {
+  transform: scaleX(-1) !important;
+}
+
+#tabbrowser-arrowscrollbox::part(overflow-start-indicator),
+#tabbrowser-arrowscrollbox::part(overflow-end-indicator) {
+  width: 2px !important;
+  height: 100% !important;
+  border: 0;
+  background-image: url("chrome://userchrome/content/images/tab-overflow-border.png") !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  margin-inline: 0 !important;
 }

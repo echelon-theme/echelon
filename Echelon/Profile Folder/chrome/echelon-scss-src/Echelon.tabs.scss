@@ -208,6 +208,8 @@ html:not([echelon-style-5]) {
 }
 
 #alltabs-button {
+  width: 19px !important;
+  margin: 0 !important;
   list-style-image: none !important;
 }
 
@@ -353,25 +355,6 @@ html:not([echelon-style-5]) {
 .tab-icon-stack:not([busy="true"]) .tab-icon-image:not([crashed], [sharing], [pictureinpicture]) {
   display: flex !important;
   opacity: 1 !important;
-}
-
-spacer[part="overflow-end-indicator"],
-spacer[part="overflow-start-indicator"] {
-  width: 2px !important;
-  height: 100% !important;
-  border: 0;
-  background-image: url('images/tab-overflow-border.png') !important;
-  border-radius: 0 !important;
-  opacity: 1 !important;
-  margin-inline: 0 !important;
-}
-
-#scrollbutton-up .toolbarbutton-icon,
-#scrollbutton-down .toolbarbutton-icon {
-  width: 15px !important;
-  height: 17px !important;
-  background-image: url('images/tab-arrow-left.png') !important;
-  padding: 0 !important;
 }
 
 #private-browsing-indicator-with-label {
