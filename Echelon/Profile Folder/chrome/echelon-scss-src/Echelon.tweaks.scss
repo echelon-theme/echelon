@@ -40,7 +40,7 @@
 
 /** ECHELON STYLE 1 (Firefox 5.0 - 9.0) **/
 
-#main-window:not([echelon-style-3])[echelon-style-1] toolbar .toolbarbutton-1:not(#new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button) {
+#main-window:not([echelon-style-3])[echelon-style-1] toolbar .toolbarbutton-1:not(  #new-tab-button, #reload-button.unified, #stop-button.unified, #go-button.unified, #appmenu-button, #alltabs-button) {
   border-radius: 3.5px;
   border-color: rgba(0,0,0,.12) rgba(0,0,0,.19) rgba(0,0,0,.38);
   box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset,
@@ -934,7 +934,7 @@
   margin-top: 1px !important;
 }
 
-#main-window[echelon-style-4] .urlbar-page-action {
+#main-window[echelon-style-4] #star-button-box {
   display: none !important;
 }
 

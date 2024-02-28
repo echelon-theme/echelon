@@ -96,7 +96,6 @@
   display: none !important;
 }
 
-/* Hacky method for shadows */
 .urlbarView::after {
   content: "" !important;
   display: inline-block !important;
@@ -561,6 +560,22 @@
 }
 :root:not([echelon-style-4]) #urlbar-search-mode-indicator-close:active, #urlbar-search-mode-indicator-close:hover:active {
   background-position-x: -32px !important;
+}
+
+#urlbar-zoom-button {
+  font-size: 0.8em !important;
+  padding: 0 8px !important;
+  margin: 0 3px !important;
+  border-radius: 1em !important;
+  background-color: hsla(0, 0%, 0%, 0.05) !important;
+  border: 1px solid ThreeDLightShadow !important;
+  color: inherit !important;
+}
+#urlbar-zoom-button:hover {
+  background-color: hsla(0, 0%, 0%, 0.1) !important;
+}
+#urlbar-zoom-button:hover:active {
+  background-color: hsla(0, 0%, 0%, 0.15) !important;
 }
 
 #main-window:not([echelon-style-2]) #notification-popup-box {

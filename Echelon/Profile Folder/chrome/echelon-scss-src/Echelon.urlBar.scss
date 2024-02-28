@@ -89,8 +89,7 @@
   display: none !important;
 }
 
-/* Hacky method for shadows */
-
+// Hacky method for menupopup styled shadows
 .urlbarView::after {
   content: '' !important;
   display: inline-block !important;
@@ -603,6 +602,26 @@
   :root:not([echelon-style-4]) &:active,
   &:hover:active {
     background-position-x: -32px !important;
+  }
+}
+
+// Urlbar Zoom Button
+
+#urlbar-zoom-button {
+  font-size: .8em !important;
+  padding: 0 8px !important;
+  margin: 0 3px !important;
+  border-radius: 1em !important;
+  background-color: hsla(0,0%,0%,.05) !important;
+  border: 1px solid ThreeDLightShadow !important;
+  color: inherit !important;
+
+  &:hover {
+    background-color: hsla(0,0%,0%,.1) !important;
+
+    &:active {
+      background-color: hsla(0,0%,0%,.15) !important;
+    }
   }
 }
 

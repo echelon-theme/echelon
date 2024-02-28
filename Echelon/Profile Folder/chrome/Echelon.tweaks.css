@@ -856,7 +856,7 @@
   margin-top: 1px !important;
 }
 
-#main-window[echelon-style-4] .urlbar-page-action {
+#main-window[echelon-style-4] #star-button-box {
   display: none !important;
 }
 
