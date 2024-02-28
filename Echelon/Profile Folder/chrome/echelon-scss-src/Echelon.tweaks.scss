@@ -508,7 +508,11 @@
   opacity: 0.3 !important;
 }
 
-#main-window[echelon-style-3] #identity-box.chromeUI #identity-icon-label {
+#main-window[echelon-style-3]:not([echelon-appearance-newlogo="true"]) #identity-box.chromeUI #identity-icon-label {
+  display: none !important;
+}
+
+#main-window[echelon-style-3][echelon-appearance-newlogo="true"] #identity-box.chromeUI #identity-icon-label {
   display: inline-flex !important;
   margin-top: 1px !important;
 }
