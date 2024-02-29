@@ -18,7 +18,7 @@
   --arrowpanel-border-radius: 0 !important;
 }
 
-panelview {
+panelview:not(.PanelUI-subView) {
   border-radius: var(--arrowpanel-border-radius) !important;
 }
 
