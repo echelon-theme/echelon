@@ -9,10 +9,10 @@
  */
 
 #main-window[echelon-style-4] #customization-palette .toolbarbutton-icon {
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
-  min-height: 32px;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
 }
 
 .australis-appmenu-panel .panelUI-grid toolbarbutton[disabled] .toolbarbutton-icon {
@@ -58,12 +58,24 @@
   background-position: -48px 0;
 }
 
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#reload-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#reload-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#reload-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#reload-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url(images/menuPanel.png) !important;
+  background-position: -32px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#reload-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#reload-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#reload-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#reload-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px;
+}
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#home-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#home-button .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#home-button .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#home-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -96px 0;
+  background-position: -96px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#home-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#home-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#home-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -75,11 +87,23 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-menu-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -160px 0;
+  background-position: -160px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#bookmarks-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#bookmarks-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#bookmarks-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#bookmarks-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url(images/menuPanel.png) !important;
+  background-position: -160px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#bookmarks-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#bookmarks-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-button[panel-multiview-anchor=true] .toolbarbutton-icon {
   background-position-y: 32px;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#history-panelmenu .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#history-panelmenu .toolbarbutton-icon,
@@ -87,7 +111,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#history-panelmenu .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -192px 0;
+  background-position: -192px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#history-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#history-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#history-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -99,7 +123,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#downloads-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -224px 0;
+  background-position: -224px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#downloads-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#downloads-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#downloads-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -111,7 +135,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#add-ons-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -256px 0;
+  background-position: -256px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#add-ons-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#add-ons-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#add-ons-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -123,7 +147,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#open-file-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -288px 0;
+  background-position: -288px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#open-file-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#open-file-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#open-file-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -135,7 +159,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-page-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -320px 0;
+  background-position: -320px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#save-page-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-page-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#save-page-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -147,7 +171,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sync-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -992px 0;
+  background-position: -992px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#sync-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sync-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#sync-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -159,7 +183,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#containers-panelmenu .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -1024px 0;
+  background-position: -1024px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#containers-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#containers-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#containers-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -171,7 +195,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#feed-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -384px 0;
+  background-position: -384px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#feed-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#feed-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#feed-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -183,7 +207,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#social-share-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -416px 0;
+  background-position: -416px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#social-share-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#social-share-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#social-share-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -195,7 +219,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#characterencoding-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -448px 0;
+  background-position: -448px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#characterencoding-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#characterencoding-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#characterencoding-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -207,7 +231,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#new-window-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -480px 0;
+  background-position: -480px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#new-window-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#new-window-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#new-window-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -219,7 +243,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#privatebrowsing-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -544px 0;
+  background-position: -544px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#privatebrowsing-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#privatebrowsing-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#privatebrowsing-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -231,7 +255,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#find-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -608px 0;
+  background-position: -608px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#find-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#find-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#find-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -243,7 +267,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#print-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -640px 0;
+  background-position: -640px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#print-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#print-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#print-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -255,7 +279,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#fullscreen-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -672px 0;
+  background-position: -672px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#fullscreen-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#fullscreen-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#fullscreen-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -267,7 +291,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#developer-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -704px 0;
+  background-position: -704px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#developer-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#developer-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#developer-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -279,7 +303,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#preferences-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -736px 0;
+  background-position: -736px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#preferences-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#preferences-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#preferences-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -291,7 +315,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#email-link-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -768px 0;
+  background-position: -768px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#email-link-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#email-link-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#email-link-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -303,7 +327,7 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#panic-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -864px 0;
+  background-position: -864px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#panic-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#panic-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#panic-button[panel-multiview-anchor=true] .toolbarbutton-icon,
@@ -315,11 +339,95 @@
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#webide-button .toolbarbutton-icon {
   list-style-image: none !important;
   background-image: url(images/menuPanel.png) !important;
-  background-position: -928px 0;
+  background-position: -928px 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton#webide-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#webide-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette > toolbarbutton#webide-button[panel-multiview-anchor=true] .toolbarbutton-icon,
 #main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#webide-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#sidebar-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sidebar-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#sidebar-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sidebar-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url(images/menuPanel.png) !important;
+  background-position: -480px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#sidebar-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sidebar-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#sidebar-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sidebar-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#save-to-pocket-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-to-pocket-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#save-to-pocket-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-to-pocket-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url(images/menuPanel.png) !important;
+  background-position: -960px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#save-to-pocket-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-to-pocket-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#save-to-pocket-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-to-pocket-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#echelon-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#echelon-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#echelon-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#echelon-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url(images/menuPanel.png) !important;
+  background-position: -1024px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#echelon-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#echelon-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#echelon-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#echelon-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#library-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#library-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#library-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#library-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url(images/menuPanel.png) !important;
+  background-position: -1056px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#library-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#library-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#library-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#library-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#screenshot-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#screenshot-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#screenshot-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#screenshot-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url(images/menuPanel.png) !important;
+  background-position: -1088px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#screenshot-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#screenshot-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#screenshot-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#screenshot-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#logins-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#logins-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#logins-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#logins-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url(images/menuPanel.png) !important;
+  background-position: -1120px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#logins-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#logins-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#logins-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#logins-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#import-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#import-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#import-button .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#import-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url(images/menuPanel.png) !important;
+  background-position: -1152px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#import-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#import-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette > toolbarbutton#import-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#import-button[panel-multiview-anchor=true] .toolbarbutton-icon {
   background-position-y: 32px;
 }
 
@@ -647,6 +755,9 @@
 .australis-appmenu-panel #PanelUI-fxa-container[fxastatus=signedin] > #PanelUI-fxa-status > #PanelUI-fxa-label {
   padding-inline-start: 0px !important;
 }
+.australis-appmenu-panel #PanelUI-fxa-container {
+  border-top: 1px solid hsla(210, 4%, 10%, 0.14);
+}
 .australis-appmenu-panel #PanelUI-footer > .panel-banner-item {
   width: calc(22.35em + 30px);
   padding-inline-start: 15px;
@@ -751,7 +862,7 @@
 }
 #customization-panelWrapper .australis-appmenu-panel #PanelUI-customize {
   color: white;
-  background-color: hsl(108, 66%, 30%);
+  background-color: rgb(116, 191, 67);
   text-shadow: none;
   margin-top: -1px;
 }
@@ -759,10 +870,10 @@
   display: none;
 }
 #customization-panelWrapper .australis-appmenu-panel #PanelUI-customize:hover {
-  background-color: hsl(109, 65%, 26%);
+  background-color: rgb(105, 173, 61);
 }
 #customization-panelWrapper .australis-appmenu-panel #PanelUI-customize:hover:active {
-  background-color: hsl(109, 65%, 22%);
+  background-color: rgb(105, 173, 61);
 }
 
 #customization-panelWrapper .australis-appmenu-panel #PanelUI-fxa-container {
@@ -789,11 +900,11 @@
 }
 .australis-appmenu-panel #PanelUI-footer-inner {
   display: flex;
-  border-top: 1px solid var(--panel-separator-color);
+  border-top: 1px solid hsla(210, 4%, 10%, 0.14);
 }
 .australis-appmenu-panel #PanelUI-footer-inner > toolbarseparator {
   border: 0 !important;
-  border-left: 1px solid var(--panel-separator-color) !important;
+  border-left: 1px solid hsla(210, 4%, 10%, 0.14) !important;
   margin: 7px 0 7px !important;
   appearance: none !important;
   -moz-appearance: none !important;
@@ -803,7 +914,7 @@
 }
 .australis-appmenu-panel #PanelUI-fxa-container > toolbarseparator {
   border: 0 !important;
-  border-left: 1px solid var(--panel-separator-color) !important;
+  border-left: 1px solid hsla(210, 4%, 10%, 0.14) !important;
   margin: 7px 0 7px !important;
   appearance: none !important;
   -moz-appearance: none !important;
@@ -949,7 +1060,7 @@
   border: none !important;
   margin: 4px -4px -4px !important;
   background-color: var(--arrowpanel-dimmed) !important;
-  border-top: 1px solid var(--panel-separator-color) !important;
+  border-top: 1px solid hsla(210, 4%, 10%, 0.14) !important;
 }
 .australis-appmenu-panel .subviewbutton.panel-subview-footer:not(:is(:not(#zoom-reset-button)[disabled], :active)):is(:hover, :focus) {
   background-color: var(--arrowpanel-dimmed-further) !important;
@@ -992,7 +1103,7 @@
 }
 .australis-appmenu-panel .panel-subview-header {
   margin: -4px -4px 4px !important;
-  border-bottom: 1px solid var(--panel-separator-color);
+  border-bottom: 1px solid hsla(210, 4%, 10%, 0.14);
   color: GrayText;
   font-variant: small-caps;
   height: 41px;
