@@ -1,0 +1,109 @@
+@use "_australisPanelCommon" as *;
+
+$iconRegionMap: (
+    "home-button": 96px,
+    "bookmarks-menu-button": 160px,
+    "history-panelmenu": 192px,
+    "downloads-button": 224px,
+    "add-ons-button": 256px,
+    "open-file-button": 288px,
+    "save-page-button": 320px,
+    "sync-button": 992px,
+    "containers-panelmenu": 1024px,
+    "feed-button": 384px,
+    "social-share-button": 416px,
+    "characterencoding-button": 448px,
+    "new-window-button": 480px,
+    "privatebrowsing-button": 544px,
+    "find-button": 608px,
+    "print-button": 640px,
+    "fullscreen-button": 672px,
+    "developer-button": 704px,
+    "preferences-button": 736px,
+    "email-link-button": 768px,
+    "panic-button": 864px,
+    "webide-button": 928px
+);
+
+@mixin styles()
+{
+#main-window[echelon-style-4] #customization-palette {
+    .toolbarbutton-icon {
+        width: $panel-palette-icon-size;
+        height: $panel-palette-icon-size;
+        min-width: $panel-palette-icon-size;
+        min-height: $panel-palette-icon-size;
+    }
+}
+
+.australis-appmenu-panel {
+    .panelUI-grid {
+        toolbarbutton[disabled] .toolbarbutton-icon {
+            opacity: 100% !important;
+        }
+    }
+
+    #PanelUI-fxa-label .toolbarbutton-icon,
+    #PanelUI-fxa-icon .toolbarbutton-icon {
+        width: 16px;
+        height: 16px;
+        background-image: url(images/sync-horizontalbar.png);
+    }
+
+    #PanelUI-customize .toolbarbutton-icon {
+        width: 16px;
+        height: 16px;
+        background-image: url(images/menuPanel-customize.png);
+
+        @at-root #customization-panelWrapper & {
+            background-image: url(images/menuPanel-customizeFinish.png);
+        }
+    }
+
+    #PanelUI-help .toolbarbutton-icon {
+        width: 16px;
+        height: 16px;
+        background-image: url(images/menuPanel-help.png);
+    }
+
+    #PanelUI-quit .toolbarbutton-icon {
+        border-inline-end-style: none;
+        width: 16px;
+        height: 16px;
+        background-image: url(images/menuPanel-exit.png);
+    }
+
+    #PanelUI-customize:hover .toolbarbutton-icon,
+    #PanelUI-help:not([disabled]):hover .toolbarbutton-icon,
+    #PanelUI-quit:not([disabled]):hover .toolbarbutton-icon {
+        background-position: -16px 0;
+    }
+
+    #PanelUI-customize:hover:active .toolbarbutton-icon,
+    #PanelUI-help:not([disabled]):hover:active .toolbarbutton-icon,
+    #PanelUI-quit:not([disabled]):hover:active .toolbarbutton-icon {
+        background-position: -32px 0;
+    }
+
+    #PanelUI-help[panel-multiview-anchor="true"] .toolbarbutton-icon {
+        background-position: -48px 0;
+    }
+}
+
+.australis-appmenu-panel .panelUI-grid,
+#main-window[echelon-style-4] #customization-palette {
+    #{$panelGridItem} {
+        @each $icon, $offset in $iconRegionMap {
+            &##{$icon} .toolbarbutton-icon {
+                list-style-image: none !important;
+                background-image: url(images/menuPanel.png) !important;
+                background-position: (-$offset) 0;
+            }
+
+            &##{$icon}[panel-multiview-anchor="true"] .toolbarbutton-icon {
+                background-position-y: 32px;
+            }
+        }
+    }
+}
+}

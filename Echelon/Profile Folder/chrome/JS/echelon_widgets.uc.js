@@ -47,7 +47,6 @@ class EchelonWidgetManager
             Services.obs.addObserver(delayedStartupObserver, "browser-delayed-startup-finished");
         });
 
-        /*
         // This was removed "as of 2023", according to a Firefox comment I saw.
         // But we use it in the Australis panel.
         let AddOnsButtonWidget = {
@@ -65,7 +64,6 @@ class EchelonWidgetManager
             defaultArea: "PanelUI-contents"
         };
         this.createWidget(AddOnsButtonWidget);
-        */
 
         let buttonText = "Echelon Options";
         this.createWidget({
