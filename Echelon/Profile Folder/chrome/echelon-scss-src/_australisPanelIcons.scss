@@ -110,7 +110,7 @@ $iconRegionMap: (
             }
 
             &##{$icon}[panel-multiview-anchor="true"] .toolbarbutton-icon {
-                background-position-y: 32px;
+                background-position-y: 32px !important;
             }
         }
     }
