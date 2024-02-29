@@ -99,6 +99,11 @@ $iconRegionMap: (
     }
 }
 
+//
+// This causes the output CSS to have many duplicates of this code.
+// Check Echelon.australisPanel.css and I think you'll understand what I mean.
+//
+
 .australis-appmenu-panel .panelUI-grid,
 #main-window[echelon-style-4] #customization-palette {
     #{$panelGridItem} {
@@ -111,6 +116,25 @@ $iconRegionMap: (
 
             &##{$icon}[panel-multiview-anchor="true"] .toolbarbutton-icon {
                 background-position-y: 32px !important;
+            }
+        }
+    }
+}
+
+// Flat icons for Windows 8+ OS Style
+
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette {
+        #{$panelGridItem} {
+        @each $icon, $offset in $iconRegionMap {
+            &##{$icon} .toolbarbutton-icon {
+                background-image: url(images/customizeUI/menuPanel.svg) !important;
+            }
+
+            // -moz-context-properties doesn't seem to work for me???
+            &##{$icon}[panel-multiview-anchor="true"] .toolbarbutton-icon {
+                filter: url(images/customizeUI/filters.svg#fill) !important; // Stolen from Firefox 52
+                fill: currentColor !important;
             }
         }
     }
