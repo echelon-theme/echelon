@@ -223,7 +223,7 @@ toolbar:not(#nav-bar, #TabsToolbar) .toolbarbutton-1 {
   padding: 3px !important;
 }
 
-:root[echelon-appearance-blue] .toolbaritem-combined-buttons > separator {
+:root[echelon-appearance-blue] toolbar .toolbaritem-combined-buttons > separator {
   appearance: none !important;
   -moz-appearance: none !important;
   width: 3px !important;

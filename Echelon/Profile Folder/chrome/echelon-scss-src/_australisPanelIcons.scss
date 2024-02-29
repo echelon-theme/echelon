@@ -1,8 +1,10 @@
 @use "_australisPanelCommon" as *;
 
 $iconRegionMap: (
+    "reload-button": 32px,
     "home-button": 96px,
     "bookmarks-menu-button": 160px,
+    "bookmarks-button": 160px,
     "history-panelmenu": 192px,
     "downloads-button": 224px,
     "add-ons-button": 256px,
@@ -22,17 +24,24 @@ $iconRegionMap: (
     "preferences-button": 736px,
     "email-link-button": 768px,
     "panic-button": 864px,
-    "webide-button": 928px
+    "webide-button": 928px,
+    "sidebar-button": 480px,
+    "save-to-pocket-button": 960px,
+    "echelon-button": 1024px,
+    "library-button": 1056px,
+    "screenshot-button": 1088px,
+    "logins-button": 1120px,
+    "import-button": 1152px
 );
 
 @mixin styles()
 {
 #main-window[echelon-style-4] #customization-palette {
     .toolbarbutton-icon {
-        width: $panel-palette-icon-size;
-        height: $panel-palette-icon-size;
-        min-width: $panel-palette-icon-size;
-        min-height: $panel-palette-icon-size;
+        width: $panel-palette-icon-size !important;
+        height: $panel-palette-icon-size !important;
+        min-width: $panel-palette-icon-size !important;
+        min-height: $panel-palette-icon-size !important;
     }
 }
 
@@ -97,7 +106,7 @@ $iconRegionMap: (
             &##{$icon} .toolbarbutton-icon {
                 list-style-image: none !important;
                 background-image: url(images/menuPanel.png) !important;
-                background-position: (-$offset) 0;
+                background-position: (-$offset) 0 !important;
             }
 
             &##{$icon}[panel-multiview-anchor="true"] .toolbarbutton-icon {
@@ -106,4 +115,4 @@ $iconRegionMap: (
         }
     }
 }
-}
+}   

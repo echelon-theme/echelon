@@ -122,7 +122,8 @@
 }
 
 .customizationmode-checkbox,
-.customizationmode-button {
+.customizationmode-button,
+#customization-lwtheme-link {
   min-height: 35px !important;
   border: 1px solid #C0C0C0 !important;
   border-radius: 3px !important;
@@ -132,6 +133,8 @@
   background-color: #FBFBFB !important;
   color: #474747 !important; 
   box-shadow: 0px 1px rgba(255, 255, 255, 0.5), 0px 1px rgba(255, 255, 255, 0.5) inset !important;
+  text-decoration: none !important;
+  cursor: unset !important;
 }
 
 .customizationmode-checkbox[checked="true"] {
@@ -143,13 +146,14 @@
 }
 
 #customization-header {
-  font-size: 1.5em !important;
-  line-height: 1.5em !important; 
-  color: #406480 !important;
+  font-size: 1.75em !important;
+  line-height: 1.75em !important;
+  color: #666 !important;
   font-weight: lighter !important;
   margin-bottom: 1em !important;
-  padding: 25px 25px 0px !important;
-  margin: 0 !important;
+  margin: 25px 25px 12px !important;
+  padding-bottom: 12px !important;
+  border-bottom: 1px solid #e5e5e5 !important;
 }
 
 #customization-palette .toolbarbutton-icon {
@@ -160,6 +164,11 @@
 #customization-palette #fxa-avatar-image {
   width: 18px !important;
   height: 18px !important;
+}
+
+#main-window[echelon-style-4] #customization-palette #fxa-avatar-image {
+  width: 32px !important;
+  height: 32px !important;
 }
 
 #customization-panel-container {
@@ -220,6 +229,81 @@
   font-size: 1.5em !important;
   color: #406480 !important;
   font-weight: lighter !important;
+}
+
+toolbarpaletteitem[place="palette"]:-moz-any(#wrapper-zoom-controls, #wrapper-edit-controls) {
+  #edit-controls,
+  #zoom-controls {
+      toolbarbutton {
+        padding: 0 !important;
+        min-width: 24px !important;
+        max-width: 24px !important;
+        height: 24px !important;
+        align-items: center !important;
+
+        .toolbarbutton-icon {
+          width: 16px !important;
+          height: 16px !important;
+          min-width: 16px !important;
+          min-height: 16px !important;
+        } 
+      }
+  }
+}
+
+.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) {
+  border: 1px solid !important;
+  border-color: hsla(210,4%,10%,0) !important;
+  border-bottom-color: hsla(210,4%,10%,.1) !important;
+  margin-bottom: 6px !important;
+
+  separator {
+    min-width: 1px !important;
+    background-image: none !important;
+    background-color: hsla(210,4%,10%,.15) !important;
+    height: 1.5em !important;
+  }
+}
+
+toolbarpaletteitem[place="palette"] {
+  margin: 0 !important;
+  width: 10em !important;
+  min-width: 10em !important;
+  height: calc(50px + 1.5em) !important;
+  margin-bottom: 5px !important;
+
+  toolbarbutton {
+    width: 10em !important;
+    max-width: 10em !important;
+  }
+
+  toolbarspring,
+  #search-container {
+    width: 100% !important;
+    min-width: unset !important;
+    margin-inline: 0 !important;
+    max-height: unset !important;
+    height: 100% !important;
+  }
+}
+
+#customization-lwtheme-link::before {
+  content: '' !important;;
+  display: inline-block !important;
+  width: 20px !important;
+  height: 20px !important;
+  background-image: url("images/customizeUI/theme-switcher-icon.png") !important; 
+  background-size: contain !important;
+  margin-inline-end: 6px !important;
+}
+
+#customization-lwtheme-link::after {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 3px;
+  background-image: url("images/dropdown.png") !important;
+  margin-inline-start: 5px;
 }
 
 /** Hack to make entering CustomizeUI work properly **/
