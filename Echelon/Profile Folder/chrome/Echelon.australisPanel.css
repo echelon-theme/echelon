@@ -431,6 +431,348 @@
   background-position-y: 32px !important;
 }
 
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#reload-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#reload-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#reload-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#reload-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#reload-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#reload-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#reload-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#reload-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#home-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#home-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#home-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#home-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#home-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#home-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#home-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#home-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#bookmarks-menu-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-menu-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#bookmarks-menu-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-menu-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#bookmarks-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#bookmarks-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#bookmarks-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#bookmarks-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#bookmarks-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#bookmarks-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#history-panelmenu .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#history-panelmenu .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#history-panelmenu .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#history-panelmenu .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#history-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#history-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#history-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#history-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#downloads-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#downloads-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#downloads-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#downloads-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#downloads-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#downloads-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#downloads-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#downloads-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#add-ons-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#add-ons-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#add-ons-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#add-ons-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#add-ons-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#add-ons-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#add-ons-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#add-ons-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#open-file-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#open-file-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#open-file-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#open-file-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#open-file-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#open-file-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#open-file-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#open-file-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#save-page-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-page-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#save-page-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-page-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#save-page-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-page-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#save-page-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-page-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#sync-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sync-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#sync-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sync-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#sync-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sync-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#sync-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sync-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#containers-panelmenu .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#containers-panelmenu .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#containers-panelmenu .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#containers-panelmenu .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#containers-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#containers-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#containers-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#containers-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#feed-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#feed-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#feed-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#feed-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#feed-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#feed-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#feed-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#feed-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#social-share-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#social-share-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#social-share-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#social-share-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#social-share-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#social-share-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#social-share-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#social-share-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#characterencoding-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#characterencoding-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#characterencoding-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#characterencoding-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#characterencoding-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#characterencoding-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#characterencoding-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#characterencoding-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#new-window-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#new-window-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#new-window-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#new-window-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#new-window-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#new-window-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#new-window-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#new-window-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#privatebrowsing-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#privatebrowsing-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#privatebrowsing-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#privatebrowsing-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#privatebrowsing-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#privatebrowsing-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#privatebrowsing-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#privatebrowsing-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#find-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#find-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#find-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#find-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#find-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#find-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#find-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#find-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#print-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#print-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#print-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#print-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#print-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#print-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#print-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#print-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#fullscreen-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#fullscreen-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#fullscreen-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#fullscreen-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#fullscreen-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#fullscreen-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#fullscreen-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#fullscreen-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#developer-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#developer-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#developer-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#developer-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#developer-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#developer-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#developer-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#developer-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#preferences-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#preferences-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#preferences-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#preferences-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#preferences-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#preferences-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#preferences-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#preferences-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#email-link-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#email-link-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#email-link-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#email-link-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#email-link-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#email-link-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#email-link-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#email-link-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#panic-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#panic-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#panic-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#panic-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#panic-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#panic-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#panic-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#panic-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#webide-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#webide-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#webide-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#webide-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#webide-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#webide-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#webide-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#webide-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#sidebar-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sidebar-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#sidebar-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sidebar-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#sidebar-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sidebar-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#sidebar-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sidebar-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#save-to-pocket-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-to-pocket-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#save-to-pocket-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-to-pocket-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#save-to-pocket-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-to-pocket-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#save-to-pocket-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-to-pocket-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#echelon-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#echelon-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#echelon-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#echelon-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#echelon-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#echelon-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#echelon-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#echelon-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#library-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#library-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#library-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#library-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#library-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#library-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#library-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#library-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#screenshot-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#screenshot-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#screenshot-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#screenshot-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#screenshot-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#screenshot-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#screenshot-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#screenshot-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#logins-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#logins-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#logins-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#logins-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#logins-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#logins-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#logins-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#logins-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#import-button .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#import-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#import-button .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#import-button .toolbarbutton-icon {
+  background-image: url(images/customizeUI/menuPanel.svg) !important;
+}
+#main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid > toolbarbutton#import-button[panel-multiview-anchor=true] .toolbarbutton-icon, #main-window[echelon-appearance-australis-windows8] .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#import-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette > toolbarbutton#import-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#main-window[echelon-style-4][echelon-appearance-australis-windows8] #customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#import-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  filter: url(images/customizeUI/filters.svg#fill) !important;
+  fill: currentColor !important;
+}
+
 .echelon-customization-hack-container {
   display: flex;
   flex-direction: row;
