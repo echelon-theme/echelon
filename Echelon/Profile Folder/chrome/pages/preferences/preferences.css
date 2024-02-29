@@ -676,6 +676,25 @@
   :root:is([echelon-style-4]) #helpButton:hover:active .help-icon {
     stroke: #666 !important;
   }
+  :root:is([echelon-style-4]) .dialogTitleBar {
+    padding: 3.5px 0 !important;
+    background-color: #F1F1F1 !important;
+    border-bottom: 1px solid #C1C1C1 !important;
+    max-height: 31px !important;
+  }
+  :root:is([echelon-style-4]) .dialogTitle {
+    font-weight: bold !important;
+    font-size: 1em !important;
+    line-height: 22px !important;
+  }
+  :root:is([echelon-style-4]) .close-icon {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 16px !important;
+    min-width: 0 !important;
+  }
   @media (max-width: 830px) {
     :root:is([echelon-style-4]) #categories > .category {
       padding-inline-end: unset !important;
