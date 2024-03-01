@@ -12,7 +12,6 @@ export class EchelonThemeManager
 	init(root, config = { style: true })
 	{
 		this.root = root;
-		console.log(root);
 		if (!root)
 		{
 			throw new Error("Root not specified");
@@ -27,6 +26,11 @@ export class EchelonThemeManager
 			}).bind(this));
 		}
 
+		if (config?.channel)
+		{
+			this.refreshChannel();
+		}
+
 		if (config?.bools && Array.isArray(config.bools))
 		{
 			for (const bool of config.bools)
@@ -34,6 +38,16 @@ export class EchelonThemeManager
 				this.registerBoolAttributeUpdateObserver(bool, EchelonThemeManager.#prefToAttr(bool));
 			}
 		}
+	}
+
+	refreshChannel()
+	{
+		let channel = PrefUtils.tryGetStringPref("Echelon.Option.ChannelSpoof");
+		if (channel == "")
+		{
+			channel = Services.appinfo.defaultUpdateChannel;
+		}
+		this.root.setAttribute("update-channel", channel);
 	}
 	
 	refreshTheme()

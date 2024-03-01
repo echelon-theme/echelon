@@ -16,6 +16,7 @@ let ECHELON_BOOT_CONFIG = {
 		wizard: true,
 		themes: {
 			style: true,
+			channel: true,
 			bools: [
 				"Echelon.Appearance.Blue",
 				"Echelon.Appearance.Australis.EnableFog",
@@ -45,6 +46,7 @@ let ECHELON_BOOT_CONFIG = {
 	"chrome://browser/content/aboutDialog.xhtml": {
 		themes: {
 			style: true,
+			channel: true,
 			bools: ["Echelon.Appearance.NewLogo"]
 		}
 	}
