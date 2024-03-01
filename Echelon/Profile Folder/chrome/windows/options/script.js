@@ -1,5 +1,5 @@
 const { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
-const { EchelonThemeManager } = ChromeUtils.import("chrome://modules/content/EchelonThemeManager.js");
+const { EchelonThemeManager } = ChromeUtils.importESModule("chrome://modules/content/EchelonThemeManager.sys.mjs");
 const { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");
 const gOptionsBundle = document.getElementById("optionsBundle");
 

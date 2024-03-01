@@ -14,7 +14,7 @@
 #TabsToolbar:not(:-moz-lwtheme) {
   position: relative;
 }
-:root[tabsintitlebar][tabs-on-top=true] #TabsToolbar {
+:root[tabsintitlebar][tabs-on-top=true][echelon-style-4] #TabsToolbar {
   padding-inline-end: 0 !important;
 }
 

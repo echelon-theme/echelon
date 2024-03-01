@@ -2,12 +2,10 @@
  * Provides a interface to check for updates and restart on update via GitHub.
  */
 
-this.EXPORTED_SYMBOLS = ["EchelonUpdateChecker"];
-
 var { PrefUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 var { _ucUtils } = ChromeUtils.importESModule("chrome://userchromejs/content/utils.sys.mjs");
 
-class EchelonUpdateChecker
+export class EchelonUpdateChecker
 {
     static DO_NOT_UPDATE_PREF = "Echelon.Option.NoUpdateChecks";
     static LAST_LOADED_VER_PREF = "Echelon.parameter.lastLoadedVersion";

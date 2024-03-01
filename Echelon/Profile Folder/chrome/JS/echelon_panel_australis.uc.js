@@ -269,6 +269,7 @@ class AustralisPanelController
                             elm("xul:toolbarbutton", {
                                 "id": "PanelUI-customize",
                                 "label": str("appmenu_customize.label"),
+                                "tooltip": str("appmenu_customize.tooltip"),
                                 "exitLabel": str("appmenu_customize.exit_label"),
                                 "exitTooltiptext": str("appmenu_customize.exit_tooltip"),
                                 "closemenu": "none",
@@ -1673,6 +1674,7 @@ class AustralisPanelController
             let customizeButton = this.mainView.querySelector("#PanelUI-customize");
             customizeButton.disabled = false;
             customizeButton._previousLabel = customizeButton.label;
+            customizeButton._previousTooltip = customizeButton.tooltip;
             customizeButton.label = customizeButton.getAttribute("exitLabel");
             customizeButton.tooltipText = customizeButton.getAttribute("exitTooltiptext");
 
@@ -1721,6 +1723,7 @@ class AustralisPanelController
 
             let customizeButton = this.mainView.querySelector("#PanelUI-customize");
             customizeButton.label = customizeButton._previousLabel;
+            customizeButton.tooltipText = customizeButton._previousTooltip;
             delete customizeButton._previousLabel;
 
             EchelonDragPositionManager.remove(window, "PanelUI-contents", this.contents);

@@ -1,20 +1,6 @@
-// ==UserScript==
-// @name			Echelon :: Styles
-// @description 	Checks about:config pref and adds an HTML attribute.
-// @author			Travis
-// @include			main
-// @include         chrome://browser/content/browser.xhtml
-// @include         chrome://browser/content/aboutDialog.xhtml
-// @include         about:preferences($|(\?|#)($|.*))
-// @include			about:addons
-// @include			about:echelon
-// ==/UserScript==
+let { PrefUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 
-this.EXPORTED_SYMBOLS = ["EchelonThemeManager"];
-
-var { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
-
-class EchelonThemeManager
+export class EchelonThemeManager
 {
 	root = null;
 
@@ -26,7 +12,6 @@ class EchelonThemeManager
 	init(root, config = { style: true })
 	{
 		this.root = root;
-		console.log(root);
 		if (!root)
 		{
 			throw new Error("Root not specified");
@@ -41,6 +26,11 @@ class EchelonThemeManager
 			}).bind(this));
 		}
 
+		if (config?.channel)
+		{
+			this.refreshChannel();
+		}
+
 		if (config?.bools && Array.isArray(config.bools))
 		{
 			for (const bool of config.bools)
@@ -48,6 +38,16 @@ class EchelonThemeManager
 				this.registerBoolAttributeUpdateObserver(bool, EchelonThemeManager.#prefToAttr(bool));
 			}
 		}
+	}
+
+	refreshChannel()
+	{
+		let channel = PrefUtils.tryGetStringPref("Echelon.Option.ChannelSpoof");
+		if (channel == "")
+		{
+			channel = Services.appinfo.defaultUpdateChannel;
+		}
+		this.root.setAttribute("update-channel", channel);
 	}
 	
 	refreshTheme()
