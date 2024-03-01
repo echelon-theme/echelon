@@ -10,7 +10,7 @@ if (windowRoot?.ownerGlobal?.gBrowser)
     }
 }
 
-const { EchelonThemeManager } = ChromeUtils.import("chrome://modules/content/EchelonThemeManager.js");
+const { EchelonThemeManager } = ChromeUtils.importESModule("chrome://modules/content/EchelonThemeManager.sys.mjs");
 let g_themeManager = new EchelonThemeManager;
 g_themeManager.init(
     document.documentElement,

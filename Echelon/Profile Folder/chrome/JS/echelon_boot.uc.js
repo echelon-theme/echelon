@@ -55,14 +55,14 @@ let ECHELON_BOOT_CONFIG = {
 	{
 		if (config?.updates)
 		{
-			let { EchelonUpdateChecker } = ChromeUtils.import("chrome://modules/content/EchelonUpdateChecker.js");
+			let { EchelonUpdateChecker } = ChromeUtils.importESModule("chrome://modules/content/EchelonUpdateChecker.sys.mjs");
 			EchelonUpdateChecker.setWindow(context);
 			EchelonUpdateChecker.checkForUpdate();
 		}
 
 		if (config?.themes)
 		{
-			let { EchelonThemeManager } = ChromeUtils.import("chrome://modules/content/EchelonThemeManager.js");
+			let { EchelonThemeManager } = ChromeUtils.importESModule("chrome://modules/content/EchelonThemeManager.sys.mjs");
 			context.g_themeManager = new EchelonThemeManager;
 			context.g_themeManager.init(context.document.documentElement, config.themes);
 		}
