@@ -25,6 +25,7 @@
   --tab-border-radius: 0px !important;
   --tab-selected-highlight: rgba(255,255,255,.7) !important;
   --uei-attention-dot-size: 0px !important;
+  --urlbar-separator-color: ThreeDLightShadow !important;
 }
 
 #tabbrowser-tabs {

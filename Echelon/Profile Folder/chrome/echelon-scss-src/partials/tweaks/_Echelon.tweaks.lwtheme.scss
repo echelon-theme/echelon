@@ -1,0 +1,70 @@
+:root:not([default-light-theme], [default-dark-theme]) {
+    #navigator-toolbox:-moz-lwtheme {
+        background-image: none !important;
+
+        #nav-bar {
+            background-color: transparent !important;
+            background-image: none !important;
+            background-repeat: var(--lwt-background-tiling) !important;
+            background-position: var(--lwt-background-alignment) !important;
+        }
+
+        #PersonalToolbar {
+            background: transparent !important;
+        }
+    }
+
+    #TabsToolbar #firefox-view-button[open]:not(:focus-visible)>.toolbarbutton-icon:-moz-lwtheme,
+    .tab-background[selected]:not([multiselected="true"]):-moz-lwtheme {
+        outline: 0 !important;
+    }
+
+    &[tabs-on-top="true"] #navigator-toolbox:-moz-lwtheme #nav-bar {
+        background-image: linear-gradient(var(--toolbar-highlight-top) 15%, var(--toolbar-highlight-bottom)) !important;
+    }
+
+    &:not([echelon-style-4]) #navigator-toolbox:-moz-lwtheme {
+
+        .tab-background,
+        #tabs-newtab-button {
+            background-color: transparent !important;
+            background-image: linear-gradient(rgba(102, 102, 102, 0.6), rgba(76, 76, 76, 0.6) 80%) !important;
+            background-size: 100vh 30px !important;
+        }
+
+        .tabbrowser-tab:hover>.tab-stack>.tab-background:not([selected="true"], [multiselected]),
+        #tabs-newtab-button:hover {
+            background-image: linear-gradient(rgba(153, 153, 153, 0.6), rgba(114, 114, 114, 0.6) 80%) !important;
+        }
+
+        .tab-background:is([selected], [multiselected]) {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5) 50%) !important;
+        }
+    }
+
+    &[echelon-style-4] #navigator-toolbox:-moz-lwtheme #nav-bar {
+        background-image: linear-gradient(rgba(255, 255, 255, .4), transparent) !important;
+        border-top: 1px solid hsla(209, 67%, 12%, 0.35) !important;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .4) inset !important;
+    }
+
+    &[echelon-style-4]:not([lwtheme-image]) #navigator-toolbox:-moz-lwtheme {
+
+        #nav-bar,
+        #PersonalToolbar {
+            background-color: var(--toolbar-bgcolor) !important;
+        }
+    }
+}
+
+/*
+* FIX(ev): Missing Firefox button in Strata theme with lwtheme (persona) without DWM.
+*/
+@media (-moz-windows-compositor: 0) {
+    :root:not([inFullscreen]) #titlebar:-moz-lwtheme {
+        visibility: visible !important;
+
+        // Needed to remove the uxtheme titlebar background
+        appearance: none !important;
+    }
+}
