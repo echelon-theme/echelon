@@ -354,47 +354,135 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined > .toolbarbutton
   overflow: visible !important;
 }
 
-#downloads-indicator-finish-box {
+#downloads-animation-container {
+  min-height: 1px;
+  min-width: 1px;
+  height: 1px;
+  margin-bottom: -1px;
+  /* Makes the outermost animation container element positioned, so that its
+     contents are rendered over the main browser window in the Z order.
+     This is required by the animated event notification. */
+  position: relative;
+  /* The selected tab may overlap #downloads-indicator-notification */
+  z-index: 5;
+}
+
+/*** Main indicator icon ***/
+
+#downloads-indicator-icon-echelon {
+  background-image: url("images/icons/downloads.png") !important;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+#downloads-button[attention] #downloads-indicator-anchor-echelon > #downloads-indicator-icon-echelon {
+  background-image: url("images/icons/download-glow.png") !important;
+}
+
+#downloads-button:not([counter])[attention] > #downloads-indicator-anchor-echelon > #downloads-indicator-progress-area > #downloads-indicator-counter {
+  background-image: url("images/icons/download-glow.png") !important;
+}
+
+/*** Download notifications ***/
+
+#downloads-indicator-notification {
+  opacity: 0;
+  background-size: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: -8px;
+  top: -8px;
+}
+
+@keyframes downloadsIndicatorNotificationStartRight {
+  from { opacity: 0; transform: translate(-128px, 128px) scale(8); }
+  20%  { opacity: .85; animation-timing-function: ease-out; }
+  to   { opacity: 0; transform: translate(0) scale(1); }
+}
+
+@keyframes downloadsIndicatorNotificationStartLeft {
+  from { opacity: 0; transform: translate(128px, 128px) scale(8); }
+  20%  { opacity: .85; animation-timing-function: ease-out; }
+  to   { opacity: 0; transform: translate(0) scale(1); }
+}
+
+#downloads-notification-anchor[notification="start"] > #downloads-indicator-notification {
+  background-image: url("images/download-notification-start.png");
+  animation-name: downloadsIndicatorNotificationStartRight;
+  animation-duration: 1s;
+}
+
+#downloads-notification-anchor[notification="start"]:-moz-locale-dir(rtl) > #downloads-indicator-notification {
+  animation-name: downloadsIndicatorNotificationStartLeft;
+}
+
+@keyframes downloadsIndicatorNotificationFinish {
+  from { opacity: 0; transform: scale(1); }
+  20%  { opacity: .65; animation-timing-function: ease-in; }
+  to   { opacity: 0; transform: scale(8); }
+}
+
+#downloads-notification-anchor[notification="finish"] > #downloads-indicator-notification {
+  background-image: url("images/download-notification-finish.png");
+  animation-name: downloadsIndicatorNotificationFinish;
+  animation-duration: 1s;
+}
+
+/*** Progress bar and text ***/
+
+#downloads-indicator-counter {
+  height: 9px;
+  margin: -3px 0px 0px 0px;
+  color: hsl(0,0%,30%);
+  text-shadow: hsla(0,0%,100%,.5) 0 1px;
+  font-size: 9px;
+  line-height: 9px;
+  text-align: center;
+}
+
+#downloads-indicator-counter:-moz-lwtheme-brighttext {
+  color: white;
+  text-shadow: 0 0 1px rgba(0,0,0,.7),
+               0 1px 1.5px rgba(0,0,0,.5);
+}
+
+#downloads-indicator-progress {
+  width: 16px;
+  height: 5px;
+  min-width: 0;
+  min-height: 0;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.4);
+}
+
+#downloads-indicator-progress > .progress-bar {
+  background-clip: padding-box, border-box;
+  background-color: rgb(90, 201, 66);
+  background-image: linear-gradient(transparent 1px, rgba(255, 255, 255, 0.4) 1px, rgba(255, 255, 255, 0.4) 2px, transparent 2px), none;
+  border: 1px solid;
+  border-color: rgba(0,43,86,.6) rgba(0,43,86,.4) rgba(0,43,86,.4);
+  border-radius: 2px 0 0 2px;
+}
+
+#downloads-indicator-progress > .progress-remainder {
+  -moz-appearance: none;
+  min-width: 0;
+  min-height: 0;
+  background-image: linear-gradient(#505050, #575757);
+  border: 1px solid;
+  border-color: hsla(0,0%,0%,.6) hsla(0,0%,0%,.4) hsla(0,0%,0%,.4);
+  -moz-border-start: none;
+  border-radius: 0 2px 2px 0;
+}
+
+#downloads-button:not([progress="true"]) #downloads-indicator-progress-area,
+#downloads-button[progress="true"] #downloads-indicator-icon-echelon {
   display: none !important;
-}
-
-#downloads-button:not([progress]) > .toolbarbutton-badge-stack > #downloads-indicator-anchor > #downloads-indicator-icon  {
-  visibility: visible !important;
-}
-
-#downloads-button > .toolbarbutton-badge-stack > #downloads-indicator-progress-outer {
-  visibility: visible !important;
-  border: 0 !important;
-}
-
-#downloads-button:not([progress]) > .toolbarbutton-badge-stack > #downloads-indicator-progress-outer {
-  visibility: hidden !important;
-}
-
-#downloads-indicator-progress-inner {
-  width: 18px !important;
-  height: 5px !important;
-  border-radius: 100px !important;
-  background: linear-gradient(to bottom, #515151, #555555) !important;
-  border: 1px solid #313131 !important;
-  border-top: 1px solid #222222 !important;
-  box-shadow: 0 1px 0 rgb(255 255 255 / 25%) !important;
-  position: relative !important;
-}
-
-#downloads-indicator-progress-inner::before {
-  content: '';
-  display: inline-block;
-  width: var(--download-progress-pcent);
-  height: 100%;
-  background-image: linear-gradient(to bottom, #5AC942 0%, #9CDF8E 50%, #5AC942 100%) !important;
-  border-radius: 100px !important;
-  border: green !important;
-  position: absolute !important; 
-  top: -1px !important;
-  left: -1px !important;
-  border: 1px solid #368A4A !important;
-  border-top: 1px solid #246A4E !important;
 }
 
 .bookmark-item:not([container]) {
