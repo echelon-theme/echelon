@@ -47,6 +47,9 @@
         document.documentElement,
         { bools: ["Echelon.Appearance.XP"] }
       );
+
+      const { NativeControls } = ChromeUtils.importESModule("chrome://modules/content/NativeControls.sys.mjs");
+      let g_nativeControls = new NativeControls(document.documentElement, MutationObserver);
     </script>
 
     <commandset id="selectEditMenuItems">
