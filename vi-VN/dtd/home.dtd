@@ -1,0 +1,20 @@
+    <!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!-- These strings are used in the about:home page -->
+
+<!ENTITY abouthome.pageTitle "Trang chủ Mozilla Firefox">
+
+<!ENTITY abouthome.searchEngineButton.label "Tìm kiếm">
+
+<!ENTITY abouthome.bookmarksButton.label "Dấu trang">
+<!ENTITY abouthome.historyButton.label "Lịch sử">
+<!ENTITY abouthome.settingsButton.label "Cài đặt">
+<!ENTITY abouthome.addonsButton.label "Tiện ích">
+<!ENTITY abouthome.appsButton.label "Cửa hàng">
+<!ENTITY abouthome.downloadsButton.label "Tải xuống">
+<!ENTITY abouthome.syncButton.label "Đồng bộ">
+<!ENTITY abouthome.restoreLastSessionButton.label "Khôi phục phiên trước">
+
+<!ENTITY abouthome.aboutMozilla "Giới thiệu về Mozilla">

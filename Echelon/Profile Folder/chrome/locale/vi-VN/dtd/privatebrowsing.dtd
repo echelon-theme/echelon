@@ -1,0 +1,22 @@
+<!ENTITY privatebrowsingpage.title                 "Duyệt web riêng tư">
+<!ENTITY privatebrowsingpage.title.normal          "Bạn có muốn bắt đầu Duyệt web riêng tư không?">
+
+<!ENTITY privatebrowsingpage.issueDesc                 "Firefox sẽ không lưu lại bất kỳ lịch sử nào cho phiên này.">
+<!ENTITY privatebrowsingpage.issueDesc.normal          "Firefox hiện không ở chế độ Duyệt web riêng tư.">
+
+<!ENTITY privatebrowsingpage.description               "Trong phiên Duyệt web riêng tư, Firefox sẽ không lưu giữ bất kỳ lịch sử trình duyệt, lịch sử tìm kiếm, lịch sử tải xuống, lịch sử biểu mẫu web, cookie hoặc tệp internet tạm thời nào. Tuy nhiên, các tệp bạn tải xuống và dấu trang bạn tạo sẽ được giữ lại.">
+
+<!-- LOCALIZATION NOTE (privatebrowsingpage.clearRecentHistoryBefore): include a trailing space as needed -->
+<!-- LOCALIZATION NOTE (privatebrowsingpage.clearRecentHistoryAfter): include a starting space as needed -->
+<!ENTITY privatebrowsingpage.clearRecentHistoryBefore  "Bạn cũng có thể muốn bắt đầu bằng ">
+<!ENTITY privatebrowsingpage.clearRecentHistoryInner   "xóa lịch sử gần đây của bạn">
+<!ENTITY privatebrowsingpage.clearRecentHistoryAfter   ".">
+
+<!ENTITY privatebrowsingpage.startPrivateBrowsing.label "Bắt đầu duyệt web riêng tư">
+<!ENTITY privatebrowsingpage.startPrivateBrowsing.accesskey "P">
+
+<!ENTITY privatebrowsingpage.howToStop                "Để dừng Duyệt web riêng tư, hãy chọn Firefox &gt; Dừng duyệt web riêng tư hoặc đóng Firefox.">
+<!ENTITY privatebrowsingpage.howToStart               "Để bắt đầu Duyệt web riêng tư, bạn cũng có thể chọn Firefox; &gt; Bắt đầu duyệt web riêng tư.">
+
+<!ENTITY privatebrowsingpage.moreInfo                  "Mặc dù máy tính này không có bản ghi lịch sử duyệt web của bạn nhưng nhà cung cấp dịch vụ Internet, chủ lao động hoặc trường học của bạn vẫn có thể theo dõi các trang bạn truy cập.">
+<!ENTITY privatebrowsingpage.learnMore                 "Tìm hiểu thêm">

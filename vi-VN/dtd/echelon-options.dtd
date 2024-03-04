@@ -1,0 +1,105 @@
+<!ENTITY window.title "Cài Đặt Echelon">
+<!ENTITY window.restartRequired "Yêu cầu khởi động lại">
+
+<!ENTITY window.buttons.ok "OK">
+<!ENTITY window.buttons.cancel "Hủy">
+<!ENTITY window.buttons.apply "Áp dụng">
+<!ENTITY window.buttons.apply.accesskey "A">
+
+<!ENTITY tabs.general "Tổng quan">
+<!ENTITY tabs.branding "Thương hiệu">
+<!ENTITY tabs.nativeControls "Điều khiển gốc">
+<!ENTITY tabs.about "Giới thiệu">
+<!ENTITY tabs.debug "Gỡ lỗi">
+
+<!ENTITY general.appearance "Giao diện">
+
+<!ENTITY general.appearance.style "Kiểu:">
+<!ENTITY general.appearance.style.ff4 "Strata (Firefox 4)">
+<!ENTITY general.appearance.style.ff5 "Strata (Firefox 5-9)">
+<!ENTITY general.appearance.style.ff10 "Strata (Firefox 10-13)">
+<!ENTITY general.appearance.style.ff14 "Strata (Firefox 14-28)">
+<!ENTITY general.appearance.style.australis "Australis (Firefox 29 trở lên)">
+
+<!ENTITY general.appearance.os "Kiểu hệ điều hành:">
+<!ENTITY general.appearance.os.xp "Windows XP">
+<!ENTITY general.appearance.os.vista "Windows Vista/7">
+<!ENTITY general.appearance.os.eight "Windows 8">
+<!ENTITY general.appearance.os.ten "Windows 10">
+
+<!ENTITY general.appearance.home "Kiểu trang chủ:">
+<!ENTITY general.appearance.home.ff4 "Firefox 4-9">
+<!ENTITY general.appearance.home.ff10 "Firefox 10-13">
+<!ENTITY general.appearance.home.ff14 "Firefox 14-28">
+<!ENTITY general.appearance.home.ff29 "Firefox 29">
+<!ENTITY general.appearance.home.ff56 "Firefox 56">
+
+<!ENTITY general.appearance.blue "Sử dụng Aero blue (Vista/7)">
+<!ENTITY general.appearance.hideAddons "Ẩn nút &quot;Tiện ích mở rộng&quot; (không khuyến khích)">
+<!ENTITY general.appearance.newLogo "Sử dụng logo Firefox từ năm 2013">
+<!ENTITY general.appearance.australisFog "Bật &quot;fog&quot; (chỉ dành cho Australis)">
+<!ENTITY general.appearance.themeDevTools "Công cụ phát triển chủ đề>
+
+<!ENTITY general.firefoxButton "Nút Firefox">
+
+<!ENTITY general.firefoxButton.useCustomStyle "Kiểu nút Firefox tùy chỉnh">
+<!ENTITY general.firefoxButton.customText "Văn bản nút Firefox:">
+<!ENTITY general.firefoxButton.customColor "Màu nút Firefox:">
+
+<!ENTITY general.behavior "Hành vi">
+
+<!ENTITY general.behavior.viewImage "Chế độ &quot;xem hình ảnh &quot; cũ trong menu ngữ cảnh">
+<!ENTITY general.behavior.noUpdates "Không kiểm tra cập nhật cho Echelon">
+
+<!ENTITY branding.branding "Branding">
+
+<!ENTITY branding.branding.brandName "Tên thương hiệu:">
+<!ENTITY branding.branding.browserSpoof "Tên trình duyệt giả:">
+<!ENTITY branding.branding.channelSpoof "kênh cập nhật giả:">
+
+<!ENTITY branding.windowTitle "Tiêu đề cửa sổ">
+<!ENTITY branding.windowTitle.default "Tiêu đề mặc định:">
+<!ENTITY branding.windowTitle.private "Tiêu đề duyệt web riêng tư:">
+<!-- TODO: How do we get CONTENTTITLE in this bold again? -->
+<!ENTITY branding.windowTitle.contentNotice "Sử dụng CONTENTTITLE thay cho tiêu đề trang.">
+<!ENTITY branding.windowTitle.defaultContent "Tiêu đề nội dung mặc định:">
+<!ENTITY branding.windowTitle.privateContent "Tiêu đề nội dung duyệt web riêng tư:">
+
+<!ENTITY nativeControls.notice "Tab này cho phép bạn định cấu hình bản vá điều khiển gốc của phù duViolette.">
+
+<!ENTITY nativeControls.general "Tổng quan">
+<!ENTITY nativeControls.general.osOverride "Ghi đè phiên bản Windows">
+<!ENTITY nativeControls.general.osOverride.seven "Windows 7">
+<!ENTITY nativeControls.general.osOverride.eight "Windows 8.x">
+<!ENTITY nativeControls.general.osOverride.ten "Windows 10">
+
+<!ENTITY nativeControls.general.glassOverride "Ghi đè Aero Glass">
+<!ENTITY nativeControls.general.glassOverride.default "Mặc định">
+<!ENTITY nativeControls.general.glassOverride.forceOn "Luôn bật">
+<!ENTITY nativeControls.general.glassOverride.forceOff "Luôn tắt">
+
+<!ENTITY nativeControls.general.disableComposition "Vô hiệu hóa tính năng DWM composition">
+
+<!ENTITY nativeControls.captionMask "Mặt nạ nút chú thích Aero">
+<!ENTITY nativeControls.captionMask.width "Chiều rộng:">
+<!ENTITY nativeControls.captionMask.height "Chiều cao:">
+
+<!ENTITY debug.notice "Các tùy chọn này nhằm mục đích gỡ lỗi; bạn không cần phải thay đổi chúng trừ khi bạn là nhà phát triển.">
+
+<!ENTITY debug.wizard "Pháp sư cài đặt">
+
+<!ENTITY debug.wizard.firstRun "Lần chạy đầu tiên đã hoàn thành>
+
+<!ENTITY debug.table.browserName "Tên trình duyệt">
+<!ENTITY debug.table.engineVer "Phiên bản engine">
+<!ENTITY debug.table.updateChannel "Kênh cập nhật">
+<!ENTITY debug.table.winVerManifest "Phiên bản Windows (manifest)">
+<!ENTITY debug.table.winVerTrue "Phiên bản Windows (true)">
+
+<!ENTITY about.credits.madeBy "Echelon được tạo ra bởi">
+<!ENTITY about.credits.developers "Được tạo bởi:">
+<!ENTITY about.credits.honorableMentions "Đề cập đáng trân trọng">
+<!ENTITY about.credits.honorableMentions.privateTesters "Người thử nghiệm riêng Echelon">
+
+<!ENTITY about.viewRepo "xem Echelon trên GitHub">
+<!ENTITY about.reportIssue "Báo cáo sự cố">

@@ -1,0 +1,52 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY window.title "about:config">
+
+<!-- about:config warning page -->
+<!-- LOCALIZATION NOTE: aboutWarningTitle.label should be attention grabbing and playful -->
+<!ENTITY aboutWarningTitle.label "Đang muốn nghịch ngợm với mấy cài đặt này hả? Chờ đã nào!">
+<!ENTITY aboutWarningText.label "Việc thay đổi các cài đặt nâng cao này có thể gây hại cho tính ổn định, bảo mật và hiệu suất của ứng dụng này. Bạn chỉ nên tiếp tục nếu bạn chắc chắn về những gì bạn đang làm.">
+<!ENTITY aboutWarningButton.label "Tôi sẽ cẩn thận, tôi hứa!">
+<!ENTITY aboutWarningCheckbox.label "Hiển thị cảnh báo này vào lần sau">
+<!-- non attention grabbing and playful aboutWarningTitle.label
+<!ENTITY aboutWarningTitle.label "Cảnh Báo!">
+-->
+
+<!ENTITY searchPrefs.label "Tìm kiếm:">
+<!ENTITY searchPrefs.accesskey "r">
+<!ENTITY focusSearch.key "r">
+
+<!-- Columns -->
+<!ENTITY prefColumn.label "Tên ưu tiên">
+<!ENTITY lockColumn.label "Trạng thái">
+<!ENTITY typeColumn.label "Loại">
+<!ENTITY valueColumn.label "Giá trị">
+
+<!-- Tooltips -->
+<!ENTITY prefColumnHeader.tooltip "Click để sắp xếp"> 
+<!ENTITY columnChooser.tooltip "Bấm chọn cột để hiển thị"> 
+
+<!-- Context Menu -->
+<!ENTITY copyPref.key "C">
+<!ENTITY copyPref.label "Sao chép">
+<!ENTITY copyPref.accesskey "C">
+<!ENTITY copyName.label "Sao chép tên">
+<!ENTITY copyName.accesskey "N">
+<!ENTITY copyValue.label "Sao chép giá trị">
+<!ENTITY copyValue.accesskey "V">
+<!ENTITY modify.label "Sửa đổi">
+<!ENTITY modify.accesskey "M">
+<!ENTITY toggle.label "Chuyển đổi">
+<!ENTITY toggle.accesskey "T">
+<!ENTITY reset.label "Đặt lại">
+<!ENTITY reset.accesskey "R">
+<!ENTITY new.label "Tạo">
+<!ENTITY new.accesskey "w">
+<!ENTITY string.label "chuỗi">
+<!ENTITY string.accesskey "S">
+<!ENTITY integer.label "Số nguyên">
+<!ENTITY integer.accesskey "I">
+<!ENTITY boolean.label "Boolean">
+<!ENTITY boolean.accesskey "B">
