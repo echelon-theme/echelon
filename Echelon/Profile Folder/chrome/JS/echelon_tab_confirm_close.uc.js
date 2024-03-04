@@ -188,7 +188,7 @@
                     {
                         // The application is not actually quitting, but the last full browser
                         // window is about to be closed.
-                        this._onQuitRequest(subject, "lastwindow");
+                        BG__onQuitRequest(subject, "lastwindow");
                     }
                     break;
             }
