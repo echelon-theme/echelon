@@ -50,6 +50,9 @@ defaultPref("general.smoothScroll.mouseWheel.durationMaxMS", 400);
 defaultPref("general.smoothScroll.mouseWheel.durationMinMS", 200);
 defaultPref("general.smoothScroll.stopDecelerationWeighting", ".4");
 
+// Restore "View Image Info" menuitem
+defaultPref("browser.menu.showViewImageInfo", true);
+
 // Echelon defaults
 defaultPref("Echelon.Appearance.Blue", false);
 defaultPref("Echelon.Appearance.Style", 0);

@@ -34,7 +34,7 @@
 <!ENTITY general.appearance.home.ff29 "Firefox 29">
 <!ENTITY general.appearance.home.ff56 "Firefox 56">
 
-<!ENTITY general.appearance.blue "Usa "Aero blue" (Vista/7)">
+<!ENTITY general.appearance.blue "Usa &quot;Aero blue&quot; (Vista/7)">
 <!ENTITY general.appearance.hideAddons "Nascondi il tasto delle &quot;Estensioni&quot; (non raccomandato)">
 <!ENTITY general.appearance.newLogo "Usa il logo Firefox del 2013+">
 <!ENTITY general.appearance.australisFog "Abilita nebbia (solo per Australis)">

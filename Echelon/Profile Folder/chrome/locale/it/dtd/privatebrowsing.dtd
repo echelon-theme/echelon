@@ -4,7 +4,7 @@
 <!ENTITY privatebrowsingpage.issueDesc                 "Firefox non conserverà alcuna cronologia per questa finestra.">
 <!ENTITY privatebrowsingpage.issueDesc.normal          "Questa non è una finestra anonima.">
 
-<!ENTITY privatebrowsingpage.description               "In una finestra di Navigazione anonima non verrà conservata in &brandShortName; alcuna cronologia relativa a navigazione, ricerche, download, compilazione di moduli, cookie e file temporanei. Tuttavia verranno mantenuti eventuali file scaricati o segnalibri aggiunti.">
+<!ENTITY privatebrowsingpage.description               "In una finestra di Navigazione anonima non verrà conservata in Firefox alcuna cronologia relativa a navigazione, ricerche, download, compilazione di moduli, cookie e file temporanei. Tuttavia verranno mantenuti eventuali file scaricati o segnalibri aggiunti.">
 
 <!-- LOCALIZATION NOTE (privatebrowsingpage.clearRecentHistoryBefore): include a trailing space as needed -->
 <!-- LOCALIZATION NOTE (privatebrowsingpage.clearRecentHistoryAfter): include a starting space as needed -->
@@ -20,6 +20,3 @@
 
 <!ENTITY privatebrowsingpage.moreInfo                  "Anche se questo computer non conserverà alcuna informazione relativa alla cronologia di navigazione, il fornitore di servizi internet in uso sarà comunque in grado di mantenere un registro delle pagine visitate.">
 <!ENTITY privatebrowsingpage.learnMore                 "Ulteriori informazioni">
-
-<!ENTITY privatebrowsingpage.startPrivateBrowsing.label "Avvia Navigazione anonima">
-<!ENTITY privatebrowsingpage.startPrivateBrowsing.accesskey "P">
