@@ -47,9 +47,6 @@
         document.documentElement,
         { bools: ["Echelon.Appearance.XP"] }
       );
-
-      const { NativeControls } = ChromeUtils.importESModule("chrome://modules/content/NativeControls.sys.mjs");
-      let g_nativeControls = new NativeControls(document.documentElement, MutationObserver);
     </script>
 
     <commandset id="selectEditMenuItems">
@@ -113,7 +110,7 @@
       <div id="checkboxContainer" class="dialogRow" hidden="hidden">
         <div />
         <!-- spacer -->
-        <xul:checkbox id="checkbox" oncommand="Dialog.onCheckbox()" />
+        <xul:checkbox id="checkbox" native="" oncommand="Dialog.onCheckbox()" />
       </div>
     </div>
   </dialog>

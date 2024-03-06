@@ -28,7 +28,8 @@ let ECHELON_BOOT_CONFIG = {
 				"Echelon.Appearance.NewLogo",
 				"Echelon.Option.HideUnifiedExtensions"
 			]
-		}
+		},
+		nativeControls: true
 	},
 	/* Options */
 	"about:preferences": {
@@ -49,6 +50,10 @@ let ECHELON_BOOT_CONFIG = {
 			channel: true,
 			bools: ["Echelon.Appearance.NewLogo"]
 		}
+	},
+	/* "Delete Recent History" dialog */
+	"chrome://browser/content/sanitize.xhtml": {
+		nativeControls: true
 	}
 };
 
@@ -82,6 +87,15 @@ let ECHELON_BOOT_CONFIG = {
 				gBrowser?.getNotificationBox()?.getNotificationWithValue("echelon-setup-closed")?.dismiss();
 				openEchelonWizardWindow(false);
 			});
+		}
+
+		if (config?.nativeControls)
+		{
+			let { NativeControls } = ChromeUtils.importESModule("chrome://modules/content/NativeControls.sys.mjs");
+			context.g_nativeControls = new NativeControls(
+				context.document.documentElement,
+				context.MutationObserver
+			);
 		}
 	}
 

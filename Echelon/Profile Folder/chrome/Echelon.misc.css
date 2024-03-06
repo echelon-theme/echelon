@@ -752,36 +752,6 @@ treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
   left: 0 !important;
 }
 
-/* Message box icons */
-.message-icon {
-  list-style-image: url("chrome://userchrome/content/images/information-32.png") !important;
-}
-
-.alert-icon {
-  list-style-image: url("chrome://userchrome/content/images/Warning.png") !important;
-}
-
-.error-icon {
-  list-style-image: url("chrome://userchrome/content/images/Error.png") !important;
-}
-
-.question-icon {
-  list-style-image: url("chrome://userchrome/content/images/Question.png") !important;
-}
-
-:root[echelon-appearance-xp] .message-icon {
-  list-style-image: url("chrome://userchrome/content/images/information-32-xp.png") !important;
-}
-:root[echelon-appearance-xp] .alert-icon {
-  list-style-image: url("chrome://userchrome/content/images/Warning-xp.png") !important;
-}
-:root[echelon-appearance-xp] .error-icon {
-  list-style-image: url("chrome://userchrome/content/images/Error-xp.png") !important;
-}
-:root[echelon-appearance-xp] .question-icon {
-  list-style-image: url("chrome://userchrome/content/images/Question-xp.png") !important;
-}
-
 :root[sizemode=fullscreen][tabs-on-top=true] #TabsToolbar .toolbar-items, :root[sizemode=fullscreen]:not([tabs-on-top=true]) #nav-bar {
   margin-inline-end: 49px !important;
 }
