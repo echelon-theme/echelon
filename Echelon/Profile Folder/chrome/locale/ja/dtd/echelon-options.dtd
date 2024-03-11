@@ -1,105 +1,105 @@
 <!ENTITY window.title "Echelonのオプション">
-<!ENTITY window.restartRequired "Restart required">
+<!ENTITY window.restartRequired "再起動が必要です">
 
 <!ENTITY window.buttons.ok "OK">
 <!ENTITY window.buttons.cancel "キャンセル">
-<!ENTITY window.buttons.apply "アプライ(A)">
+<!ENTITY window.buttons.apply "適用(A)">
 <!ENTITY window.buttons.apply.accesskey "A">
 
-<!ENTITY tabs.general "General">
-<!ENTITY tabs.branding "Branding">
-<!ENTITY tabs.nativeControls "Native Controls">
-<!ENTITY tabs.about "About">
+<!ENTITY tabs.general "一般">
+<!ENTITY tabs.branding "ブランド名">
+<!ENTITY tabs.nativeControls "ネイティブコントロール">
+<!ENTITY tabs.about "情報">
 <!ENTITY tabs.debug "デバッグ">
 
-<!ENTITY general.appearance "Appearance">
+<!ENTITY general.appearance "見た目">
 
-<!ENTITY general.appearance.style "スタイル：">
+<!ENTITY general.appearance.style "スタイル">
 <!ENTITY general.appearance.style.ff4 "Strata (Firefox 4)">
 <!ENTITY general.appearance.style.ff5 "Strata (Firefox 5-9)">
 <!ENTITY general.appearance.style.ff10 "Strata (Firefox 10-13)">
 <!ENTITY general.appearance.style.ff14 "Strata (Firefox 14-28)">
 <!ENTITY general.appearance.style.australis "Australis (Firefox 29+)">
 
-<!ENTITY general.appearance.os "OSのスタイル：">
+<!ENTITY general.appearance.os "OSのスタイル">
 <!ENTITY general.appearance.os.xp "Windows XP">
 <!ENTITY general.appearance.os.vista "Windows Vista/7">
 <!ENTITY general.appearance.os.eight "Windows 8">
 <!ENTITY general.appearance.os.ten "Windows 10">
 
-<!ENTITY general.appearance.home "ホームページのスタイル：">
+<!ENTITY general.appearance.home "スタートページのスタイル">
 <!ENTITY general.appearance.home.ff4 "Firefox 4-9">
 <!ENTITY general.appearance.home.ff10 "Firefox 10-13">
 <!ENTITY general.appearance.home.ff14 "Firefox 14-28">
 <!ENTITY general.appearance.home.ff29 "Firefox 29">
 <!ENTITY general.appearance.home.ff56 "Firefox 56">
 
-<!ENTITY general.appearance.blue "Use Aero blue (Vista/7)">
-<!ENTITY general.appearance.hideAddons "Hide &quot;Extensions&quot; button (not recommended)">
-<!ENTITY general.appearance.newLogo "Use 2013+ Firefox logo">
-<!ENTITY general.appearance.australisFog "Enable fog (Australis only)">
-<!ENTITY general.appearance.themeDevTools "Theme Developer Tools">
+<!ENTITY general.appearance.blue "Aeroを使用する (Vista/7)">
+<!ENTITY general.appearance.hideAddons "&quot;拡張機能&quot; のボタンを隠す (推奨しません)">
+<!ENTITY general.appearance.newLogo "2013年以降のFirefoxロゴを使う">
+<!ENTITY general.appearance.australisFog "ウィンドウをぼかす (Australisのみ)">
+<!ENTITY general.appearance.themeDevTools "テーマ用の開発ツール">
 
-<!ENTITY general.firefoxButton "Firefoxボタン">
+<!ENTITY general.firefoxButton "Firefox ボタン">
 
-<!ENTITY general.firefoxButton.useCustomStyle "Custom Firefox Button style">
-<!ENTITY general.firefoxButton.customText "Firefox Button text:">
-<!ENTITY general.firefoxButton.customColor "Firefox Button color:">
+<!ENTITY general.firefoxButton.useCustomStyle "カスタム Firefox ボタン">
+<!ENTITY general.firefoxButton.customText "Firefox ボタンのテキスト">
+<!ENTITY general.firefoxButton.customColor "Firefox ボタンの色">
 
-<!ENTITY general.behavior "Behavior">
+<!ENTITY general.behavior "ビーベイアー">
 
-<!ENTITY general.behavior.viewImage "Old &quot;View Image&quot; behavior in context menu">
-<!ENTITY general.behavior.noUpdates "Do not check for updates to Echelon">
+<!ENTITY general.behavior.viewImage "&quot;画像だけを見る&quot; に置き換える">
+<!ENTITY general.behavior.noUpdates "Echelonのアップデートをチェックしない">
 
-<!ENTITY branding.branding "Branding">
+<!ENTITY branding.branding "ブランド名">
 
-<!ENTITY branding.branding.brandName "Brand name:">
-<!ENTITY branding.branding.browserSpoof "Browser name spoof:">
-<!ENTITY branding.branding.channelSpoof "Update channel spoof:">
+<!ENTITY branding.branding.brandName "ブランド名">
+<!ENTITY branding.branding.browserSpoof "ブラウザ名">
+<!ENTITY branding.branding.channelSpoof "更新チャンネル">
 
-<!ENTITY branding.windowTitle "Window Title">
-<!ENTITY branding.windowTitle.default "Default title:">
-<!ENTITY branding.windowTitle.private "Private Browsing title:">
+<!ENTITY branding.windowTitle "ウィンドウ タイトル">
+<!ENTITY branding.windowTitle.default "通常のウィンドウのタイトル">
+<!ENTITY branding.windowTitle.private "プライベートウィンドウのタイトル">
 <!-- TODO: How do we get CONTENTTITLE in this bold again? -->
-<!ENTITY branding.windowTitle.contentNotice "Use CONTENTTITLE in place of where the page title should go.">
-<!ENTITY branding.windowTitle.defaultContent "Default content title:">
-<!ENTITY branding.windowTitle.privateContent "Private Browsing content title:">
+<!ENTITY branding.windowTitle.contentNotice "CONTENTTITLE にはページの名前が入ります。">
+<!ENTITY branding.windowTitle.defaultContent "通常のウィンドウのタイトル (ページ)">
+<!ENTITY branding.windowTitle.privateContent "プライベートウィンドウのタイトル (ページ)">
 
-<!ENTITY nativeControls.notice "This tab allows you to configure ephemeralViolette&apos;s native controls patch.">
+<!ENTITY nativeControls.notice "ephemeralVioletteさんのネイティブコントロールの設定用のタブです。">
 
-<!ENTITY nativeControls.general "General">
-<!ENTITY nativeControls.general.osOverride "Override Windows Version">
+<!ENTITY nativeControls.general "一般">
+<!ENTITY nativeControls.general.osOverride "Windowsのバージョンを偽装する">
 <!ENTITY nativeControls.general.osOverride.seven "Windows 7">
 <!ENTITY nativeControls.general.osOverride.eight "Windows 8.x">
 <!ENTITY nativeControls.general.osOverride.ten "Windows 10">
 
-<!ENTITY nativeControls.general.glassOverride "Override Glass:">
-<!ENTITY nativeControls.general.glassOverride.default "Default">
-<!ENTITY nativeControls.general.glassOverride.forceOn "Force on">
-<!ENTITY nativeControls.general.glassOverride.forceOff "Force off">
+<!ENTITY nativeControls.general.glassOverride "Aeroを偽装する">
+<!ENTITY nativeControls.general.glassOverride.default "デフォルト">
+<!ENTITY nativeControls.general.glassOverride.forceOn "強制的にオン">
+<!ENTITY nativeControls.general.glassOverride.forceOff "強制的にオフ">
 
-<!ENTITY nativeControls.general.disableComposition "Disable DWM composition">
+<!ENTITY nativeControls.general.disableComposition "DWMコンポジションを無効にする">
 
-<!ENTITY nativeControls.captionMask "Aero caption button mask">
-<!ENTITY nativeControls.captionMask.width "Width:">
-<!ENTITY nativeControls.captionMask.height "Height:">
+<!ENTITY nativeControls.captionMask "Aeroのキャプションボタンのマスク">
+<!ENTITY nativeControls.captionMask.width "横幅">
+<!ENTITY nativeControls.captionMask.height "高さ">
 
-<!ENTITY debug.notice "These options are meant for debugging; you should not need to change them unless you are a developer.">
+<!ENTITY debug.notice "もし開発者でなければ、このオプションはむやみに変更すべきではありません！">
 
 <!ENTITY debug.wizard "ウィザード">
 
-<!ENTITY debug.wizard.firstRun "First run has been completed">
+<!ENTITY debug.wizard.firstRun "初期設定は完了済み">
 
-<!ENTITY debug.table.browserName "Browser name">
-<!ENTITY debug.table.engineVer "Engine version">
-<!ENTITY debug.table.updateChannel "Update channel">
+<!ENTITY debug.table.browserName "ブラウザの名前">
+<!ENTITY debug.table.engineVer "ブラウザのバージョン">
+<!ENTITY debug.table.updateChannel "更新チャンネル">
 <!ENTITY debug.table.winVerManifest "Windowsのバージョン（マニフェスト）">
 <!ENTITY debug.table.winVerTrue "Windowsのバージョン (true)">
 
-<!ENTITY about.credits.madeBy "Echelon is made by">
-<!ENTITY about.credits.developers "Developers">
-<!ENTITY about.credits.honorableMentions "Honorable Mentions">
-<!ENTITY about.credits.honorableMentions.privateTesters "Echelon Private Testers">
+<!ENTITY about.credits.madeBy "echelonを作った人は">
+<!ENTITY about.credits.developers "開発者">
+<!ENTITY about.credits.honorableMentions "入選者">
+<!ENTITY about.credits.honorableMentions.privateTesters "Echelonのプライベートテスター">
 
-<!ENTITY about.viewRepo "view GitHub repository">
-<!ENTITY about.reportIssue "report an issue">
+<!ENTITY about.viewRepo "GitHubのリポジトリを見る">
+<!ENTITY about.reportIssue "バグの報告 (英語)">
