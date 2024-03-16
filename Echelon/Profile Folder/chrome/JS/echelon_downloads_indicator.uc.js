@@ -163,7 +163,7 @@
                     <spacer id="downloads-indicator-progress-remainder" class="progress-remainder" flex="1" />
                 </hbox>
             </vbox>
-            <vbox id="downloads-indicator-icon-echelon" />
+            <image id="downloads-indicator-icon-echelon" />
         </stack>
         `);
         e.append(downloadsIndicator);
