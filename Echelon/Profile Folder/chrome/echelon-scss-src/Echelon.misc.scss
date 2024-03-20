@@ -1,267 +1,285 @@
-:root:not([echelon-style-4]) .titlebar-buttonbox-container {
-  position: fixed !important;
-  right: 0 !important;
-  top: 0 !important;
-}
-
-:root:not([echelon-style-4], [echelon-appearance-xp])[tabs-on-top][sizemode="maximized"] .titlebar-buttonbox-container {
-  position: static !important;
-}
-
-#appmenu-button-container {
-  width: max-content !important;
-  min-width: 94px !important;
-  height: calc(var(--titlebar-height) - 1px) !important;
-  border: 1px solid hsla(0,0%,100%,.5) !important;
-  margin-bottom: 1px !important;
-  border-top: 0 !important;
-  padding: 0 !important;
-  border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
-  border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;  
-  width: max-content;
-
-  &:not(:-moz-lwtheme) {
-    margin-top: 1px !important;
+@media not (-moz-platform: macos) {
+  :root:not([echelon-style-4]) .titlebar-buttonbox-container {
+    position: fixed !important;
+    right: 0 !important;
+    top: 0 !important;
   }
-}
 
-:root[sizemode="fullscreen"] #appmenu-button-container,
-:root:not([tabsintitlebar]) #appmenu-button-container {
-  display: none !important;
-}
+  :root:not([echelon-style-4], [echelon-appearance-xp])[tabs-on-top][sizemode="maximized"] .titlebar-buttonbox-container {
+    position: static !important;
+  }
 
-#appmenu-button {
-  appearance: none !important;
-  width: 100% !important;
-  height: 100% !important;
-  background-image: linear-gradient(to bottom, rgb(247, 182, 82), rgb(215, 98, 10) 95%) !important;
-  padding: 0 1.5em .15em !important;
-  margin: 0 !important;
-  border-radius: 0 !important;
-  border: 1px solid rgba(83, 42, 6, 0.9) !important;
-  border-top: 0 !important;
-  box-shadow: 0 1px 0 rgba(255,255,255,.25) inset, 0 0 0 1px rgba(255,255,255,.25) inset !important;
-  border-bottom-left-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
-  border-bottom-right-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
-  color: white !important;
-  text-shadow: 0 0 1px rgba(0,0,0,.7), 0 1px 1.5px rgba(0,0,0,.5) !important;
-  font-weight: bold !important;
-  background-clip: padding-box !important;
-}
+  #appmenu-button-container {
+    width: max-content !important;
+    min-width: 94px !important;
+    height: calc(var(--titlebar-height) - 1px) !important;
+    border: 1px solid hsla(0,0%,100%,.5) !important;
+    margin-bottom: 1px !important;
+    border-top: 0 !important;
+    padding: 0 !important;
+    border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
+    border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;  
+    width: max-content;
 
-#appmenu-button-container:hover:active,
-#appmenu-button-container:hover:active #appmenu-button,
-#appmenu-button[open] {
-  border-radius: 0 !important;
-}
-
-#main-window[privatebrowsingmode=temporary] #appmenu-button {
-  background-image: linear-gradient(to bottom, rgb(153,38,211), rgb(105,19,163) 95%) !important;
-  border-color: rgba(43,8,65,.9) !important;
-}
-
-#appmenu-button:hover:not(:active):not([open]) {
-  background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(252,240,89,.5) 10%, rgba(252,240,89,0) 70%),
-                    -moz-radial-gradient(center bottom, farthest-side, rgb(236,133,0), rgba(255,229,172,0)),
-                    linear-gradient(rgb(246,170,69), rgb(209,74,0) 95%) !important;
-  box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
-              0 0 1.5px 1px rgba(250,234,169,.7) inset,
-              0 -1px 0 rgba(250,234,169,.5) inset !important;
-}
-
-#main-window[privatebrowsingmode=temporary] #appmenu-button:hover:not(:active):not([open]) {
-  background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(240,193,255,.5) 10%, rgba(240,193,255,0) 70%),
-                    -moz-radial-gradient(center bottom, farthest-side, rgb(192,81,247), rgba(236,172,255,0)),
-                    linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%) !important;
-  border-color: rgba(43,8,65,.9) !important;
-  box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
-              0 0 2px 1px rgba(240,193,255,.7) inset,
-              0 -1px 0 rgba(240,193,255,.5) inset !important;
-}
-
-/** Firefox Channels & Forks colors **/
-
-/* DEVELOPER EDITION / AURORA */
-
-#main-window:not([privatebrowsingmode="temporary"]) {
-  &[update-channel="aurora"] #appmenu-button {
-    background-image: linear-gradient(hsl(208,99%,37%), hsl(214,90%,23%) 95%) !important;
-    border-color: hsla(214,89%,21%,.9) !important;
-  }
-  
-  &[update-channel="aurora"] #appmenu-button:hover:not(:active):not([open]) {
-    background-image: radial-gradient(farthest-side at bottom, hsla(202,100%,85%,.5) 10%, hsla(202,100%,85%,0) 70%),
-                      radial-gradient(farthest-side at bottom, hsla(205,100%,72%,.7), hsla(205,100%,72%,0)),
-                      linear-gradient(hsl(208,98%,34%), hsl(213,87%,20%) 95%) !important;
-    border-color: hsla(214,89%,21%,.9) !important;
-    box-shadow: 0 1px 0 hsla(205,100%,72%,.15) inset,
-                0 0 2px 1px hsla(205,100%,72%,.5) inset,
-                0 -1px 0 hsla(205,100%,72%,.2) inset !important;
-  }
-  
-  &[update-channel="aurora"] #appmenu-button:hover:active,
-  &[update-channel="aurora"] #appmenu-button[open] {
-    background-image: linear-gradient(hsl(208,95%,30%), hsl(214,85%,17%) 95%);
-    box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
-                0 1px 1px rgba(0,0,0,.2) inset !important;
-  }
-  
-  /* NIGHTLY */
-  
-  &[update-channel="nightly"] #appmenu-button {
-    background-image: linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
-    border-color: hsla(210,59%,13%,.9) !important;
-    box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
-                0 0 2px 1px hsla(211,65%,85%,.15) inset !important;
-  }
-  
-  &[update-channel="nightly"] #appmenu-button:hover:not(:active):not([open]) {
-    background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210,48%,90%,.5) 10%, hsla(210,48%,90%,0) 70%),
-                      -moz-radial-gradient(center bottom, farthest-side, hsla(211,70%,83%,.5), hsla(211,70%,83%,0)),
-                      linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
-    border-color: hsla(210,59%,13%,.9) !important;
-    box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
-                0 0 2px 1px hsla(210,48%,90%,.4) inset,
-                0 -1px 0 hsla(210,48%,90%,.2) inset !important;
-  }
-  
-  &[update-channel="nightly"] #appmenu-button:hover:active,
-  &[update-channel="nightly"] #appmenu-button[open] {
-    background-image: linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
-    box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
-                0 1px 1px rgba(0,0,0,.2) inset !important;
-  }
-  
-  /* WATERFOX */
-  
-  &[browser-name="Waterfox"] #appmenu-button {
-    background-image: linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
-    border-color: hsla(210,59%,13%,.9) !important;
-    box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
-                0 0 2px 1px hsla(211,65%,85%,.15) inset !important;
-  }
-  
-  &[browser-name="Waterfox"] #appmenu-button:hover:not(:active):not([open]) {
-    background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210,48%,90%,.5) 10%, hsla(210,48%,90%,0) 70%),
-                      -moz-radial-gradient(center bottom, farthest-side, hsla(211,70%,83%,.5), hsla(211,70%,83%,0)),
-                      linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
-    border-color: hsla(210,59%,13%,.9) !important;
-    box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
-                0 0 2px 1px hsla(210,48%,90%,.4) inset,
-                0 -1px 0 hsla(210,48%,90%,.2) inset !important;
-  }
-  
-  &[browser-name="Waterfox"] #appmenu-button:hover:active,
-  &[browser-name="Waterfox"] #appmenu-button[open] {
-    background-image: linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
-    box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
-                0 1px 1px rgba(0,0,0,.2) inset !important;
-  }
-  
-  &[echelon-appearance-newlogo] {
-    &[browser-name="Waterfox"] #appmenu-button {
-      background-image: linear-gradient(rgb(82,182,247), rgb(10,98,215) 95%) !important;
-      border-color: rgba(6,42,83,.9) !important;
-      box-shadow: 0 1px 0 rgba(255,255,255,.25) inset,
-                  0 0 0 1px rgba(255,255,255,.25) inset !important;
+    &:not(:-moz-lwtheme) {
+      margin-top: 1px !important;
     }
-  
-    &[browser-name="Waterfox"] #appmenu-button:hover:not(:active):not([open]) {
-      background-image: radial-gradient(farthest-side at bottom, rgba(89,240,252,.5) 10%, rgba(89,240,252,0) 70%),
-                        radial-gradient(farthest-side at bottom, rgb(60,68,236), rgba(172,229,255,0)),
-                        linear-gradient(rgb(69,170,246), rgb(30,40,209) 95%) !important;
-      border-color: rgba(6,42,83,.9) !important;
-      box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
-                  0 0 2px 1px rgba(169,234,250,.7) inset,
-                  0 -1px 0 rgba(169,234,250,.5) inset !important;
+  }
+
+  :root[sizemode="fullscreen"] #appmenu-button-container,
+  :root:not([tabsintitlebar]) #appmenu-button-container {
+    display: none !important;
+  }
+
+  #appmenu-button {
+    appearance: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-image: linear-gradient(to bottom, rgb(247, 182, 82), rgb(215, 98, 10) 95%) !important;
+    padding: 0 1.5em .15em !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border: 1px solid rgba(83, 42, 6, 0.9) !important;
+    border-top: 0 !important;
+    box-shadow: 0 1px 0 rgba(255,255,255,.25) inset, 0 0 0 1px rgba(255,255,255,.25) inset !important;
+    border-bottom-left-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
+    border-bottom-right-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
+    color: white !important;
+    text-shadow: 0 0 1px rgba(0,0,0,.7), 0 1px 1.5px rgba(0,0,0,.5) !important;
+    font-weight: bold !important;
+    background-clip: padding-box !important;
+  }
+
+  #appmenu-button-container:hover:active,
+  #appmenu-button-container:hover:active #appmenu-button,
+  #appmenu-button[open] {
+    border-radius: 0 !important;
+  }
+
+  #main-window[privatebrowsingmode=temporary] #appmenu-button {
+    background-image: linear-gradient(to bottom, rgb(153,38,211), rgb(105,19,163) 95%) !important;
+    border-color: rgba(43,8,65,.9) !important;
+  }
+
+  #appmenu-button:hover:not(:active):not([open]) {
+    background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(252,240,89,.5) 10%, rgba(252,240,89,0) 70%),
+                      -moz-radial-gradient(center bottom, farthest-side, rgb(236,133,0), rgba(255,229,172,0)),
+                      linear-gradient(rgb(246,170,69), rgb(209,74,0) 95%) !important;
+    box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
+                0 0 1.5px 1px rgba(250,234,169,.7) inset,
+                0 -1px 0 rgba(250,234,169,.5) inset !important;
+  }
+
+  #main-window[privatebrowsingmode=temporary] #appmenu-button:hover:not(:active):not([open]) {
+    background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(240,193,255,.5) 10%, rgba(240,193,255,0) 70%),
+                      -moz-radial-gradient(center bottom, farthest-side, rgb(192,81,247), rgba(236,172,255,0)),
+                      linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%) !important;
+    border-color: rgba(43,8,65,.9) !important;
+    box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
+                0 0 2px 1px rgba(240,193,255,.7) inset,
+                0 -1px 0 rgba(240,193,255,.5) inset !important;
+  }
+
+  /** Firefox Channels & Forks colors **/
+
+  /* DEVELOPER EDITION / AURORA */
+
+  #main-window:not([privatebrowsingmode="temporary"]) {
+    &[update-channel="aurora"] #appmenu-button {
+      background-image: linear-gradient(hsl(208,99%,37%), hsl(214,90%,23%) 95%) !important;
+      border-color: hsla(214,89%,21%,.9) !important;
     }
-  
-    &[browser-name="Waterfox"] #appmenu-button:hover:active,
-    &[browser-name="Waterfox"] #appmenu-button[open] {
-      background-image: linear-gradient(rgb(69,170,246), rgb(0,74,209) 95%) !important;
+    
+    &[update-channel="aurora"] #appmenu-button:hover:not(:active):not([open]) {
+      background-image: radial-gradient(farthest-side at bottom, hsla(202,100%,85%,.5) 10%, hsla(202,100%,85%,0) 70%),
+                        radial-gradient(farthest-side at bottom, hsla(205,100%,72%,.7), hsla(205,100%,72%,0)),
+                        linear-gradient(hsl(208,98%,34%), hsl(213,87%,20%) 95%) !important;
+      border-color: hsla(214,89%,21%,.9) !important;
+      box-shadow: 0 1px 0 hsla(205,100%,72%,.15) inset,
+                  0 0 2px 1px hsla(205,100%,72%,.5) inset,
+                  0 -1px 0 hsla(205,100%,72%,.2) inset !important;
+    }
+    
+    &[update-channel="aurora"] #appmenu-button:hover:active,
+    &[update-channel="aurora"] #appmenu-button[open] {
+      background-image: linear-gradient(hsl(208,95%,30%), hsl(214,85%,17%) 95%);
       box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
                   0 1px 1px rgba(0,0,0,.2) inset !important;
     }
+    
+    /* NIGHTLY */
+    
+    &[update-channel="nightly"] #appmenu-button {
+      background-image: linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
+      border-color: hsla(210,59%,13%,.9) !important;
+      box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
+                  0 0 2px 1px hsla(211,65%,85%,.15) inset !important;
+    }
+    
+    &[update-channel="nightly"] #appmenu-button:hover:not(:active):not([open]) {
+      background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210,48%,90%,.5) 10%, hsla(210,48%,90%,0) 70%),
+                        -moz-radial-gradient(center bottom, farthest-side, hsla(211,70%,83%,.5), hsla(211,70%,83%,0)),
+                        linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
+      border-color: hsla(210,59%,13%,.9) !important;
+      box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
+                  0 0 2px 1px hsla(210,48%,90%,.4) inset,
+                  0 -1px 0 hsla(210,48%,90%,.2) inset !important;
+    }
+    
+    &[update-channel="nightly"] #appmenu-button:hover:active,
+    &[update-channel="nightly"] #appmenu-button[open] {
+      background-image: linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
+      box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
+                  0 1px 1px rgba(0,0,0,.2) inset !important;
+    }
+    
+    /* WATERFOX */
+    
+    &[browser-name="Waterfox"] #appmenu-button {
+      background-image: linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
+      border-color: hsla(210,59%,13%,.9) !important;
+      box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
+                  0 0 2px 1px hsla(211,65%,85%,.15) inset !important;
+    }
+    
+    &[browser-name="Waterfox"] #appmenu-button:hover:not(:active):not([open]) {
+      background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210,48%,90%,.5) 10%, hsla(210,48%,90%,0) 70%),
+                        -moz-radial-gradient(center bottom, farthest-side, hsla(211,70%,83%,.5), hsla(211,70%,83%,0)),
+                        linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
+      border-color: hsla(210,59%,13%,.9) !important;
+      box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
+                  0 0 2px 1px hsla(210,48%,90%,.4) inset,
+                  0 -1px 0 hsla(210,48%,90%,.2) inset !important;
+    }
+    
+    &[browser-name="Waterfox"] #appmenu-button:hover:active,
+    &[browser-name="Waterfox"] #appmenu-button[open] {
+      background-image: linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
+      box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
+                  0 1px 1px rgba(0,0,0,.2) inset !important;
+    }
+    
+    &[echelon-appearance-newlogo] {
+      &[browser-name="Waterfox"] #appmenu-button {
+        background-image: linear-gradient(rgb(82,182,247), rgb(10,98,215) 95%) !important;
+        border-color: rgba(6,42,83,.9) !important;
+        box-shadow: 0 1px 0 rgba(255,255,255,.25) inset,
+                    0 0 0 1px rgba(255,255,255,.25) inset !important;
+      }
+    
+      &[browser-name="Waterfox"] #appmenu-button:hover:not(:active):not([open]) {
+        background-image: radial-gradient(farthest-side at bottom, rgba(89,240,252,.5) 10%, rgba(89,240,252,0) 70%),
+                          radial-gradient(farthest-side at bottom, rgb(60,68,236), rgba(172,229,255,0)),
+                          linear-gradient(rgb(69,170,246), rgb(30,40,209) 95%) !important;
+        border-color: rgba(6,42,83,.9) !important;
+        box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
+                    0 0 2px 1px rgba(169,234,250,.7) inset,
+                    0 -1px 0 rgba(169,234,250,.5) inset !important;
+      }
+    
+      &[browser-name="Waterfox"] #appmenu-button:hover:active,
+      &[browser-name="Waterfox"] #appmenu-button[open] {
+        background-image: linear-gradient(rgb(69,170,246), rgb(0,74,209) 95%) !important;
+        box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
+                    0 1px 1px rgba(0,0,0,.2) inset !important;
+      }
+    }
+  }
+
+  /* Private Browsing icon from Firefox 20 */
+
+  #main-window[echelon-style-3][privatebrowsingmode=temporary] #appmenu-button::before {
+    content: url('images/privatebrowsing-light.png') !important;
+    margin-top: 1px !important;
+  }
+
+  #appmenu-button:hover:active,
+  #appmenu-button[open] {
+    background-image: linear-gradient(to bottom, rgb(246,170,69), rgb(209,74,0) 95%) !important;
+    box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
+                0 1px 1px rgba(0,0,0,.2) inset !important;
+  }
+
+  #main-window[privatebrowsingmode=temporary] #appmenu-button:hover:active,
+  #main-window[privatebrowsingmode=temporary] #appmenu-button[open] {
+    background-image: linear-gradient(to bottom, rgb(144,20,207), rgb(95,0,158) 95%) !important;
+  }
+
+  #appmenu-button .button-menu-dropmarker {
+    width: 9px !important;
+    height: 7px !important;
+    list-style-image: url('images/appmenu-dropmarker.png') !important;
+    margin-inline-start: .4em !important;
+    margin-top: 1px !important;
+  }
+
+  #main-window[custom-fx-button-bg]:not([privatebrowsingmode=temporary]) #appmenu-button {
+    background-color: var(--fx-custom-bg) !important;
+    background-blend-mode: overlay !important;
+    background-image: linear-gradient(to bottom, rgb(255 255 255 / 100%), rgb(255 255 255 / 0%) 95%) !important;
+    border-color: rgba(0, 0, 0, .6) !important;
+  }
+
+  #main-window[custom-fx-button-bg]:not([privatebrowsingmode=temporary]) #appmenu-button:hover:not(:active):not([open]) {
+    background-image: radial-gradient(farthest-side at bottom, rgba(255 255 255 / 75%) 5%, rgba(255, 255, 255, 0) 70%),
+                      radial-gradient(farthest-side at bottom, rgb(255 255 255 / 50%), rgb(255 255 255 / 0%)),
+                      linear-gradient(rgb(255 255 255 / 75%), rgb(255 255 255 / 0%) 95%) !important;
+    background-blend-mode: overlay !important;
+    box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
+                0 0 1.5px 1px rgba(255,255,255,.4) inset,
+                0 -1px 0 rgba(255,255,255,.5) inset !important;
+  }
+
+  /* 
+    Due to the Echelon feature of changing the text of the Firefox button,
+    we will have to use CSS grids for maximized windows.
+  */
+
+  :root[sizemode="maximized"] #titlebar {
+    display: grid !important;
+    grid-template-areas: 
+        'firefox-button menu-bar'
+        'firefox-button tabbar';
+    grid-auto-columns: min-content auto;
+  }
+
+  :root[sizemode="maximized"] #appmenu-button-container {
+    height: calc(var(--titlebar-height) - 2px) !important;
+    margin-top: 0 !important;
+    position: static !important;
+  }
+
+  :root[sizemode="maximized"][tabsintitlebar] #toolbar-menubar {
+    padding-left: 4px !important; 
+  }
+
+  :root[sizemode="maximized"] #appmenu-button-container {
+    grid-area: firefox-button !important;
+  }
+
+  :root[sizemode="maximized"] #toolbar-menubar {
+    grid-area: menu-bar !important;
+  }
+
+  :root[sizemode="maximized"] #TabsToolbar {
+    grid-area: tabbar !important;
   }
 }
 
-/* Private Browsing icon from Firefox 20 */
+@media (-moz-platform: macos) {
+  #appmenu-button-container {
+    display: none !important;
+  }
 
-#main-window[echelon-style-3][privatebrowsingmode=temporary] #appmenu-button::before {
-  content: url('images/privatebrowsing-light.png') !important;
-  margin-top: 1px !important;
-}
+  :root:not([echelon-style-4]) .titlebar-buttonbox-container .titlebar-buttonbox:-moz-locale-dir(ltr) {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
 
-#appmenu-button:hover:active,
-#appmenu-button[open] {
-  background-image: linear-gradient(to bottom, rgb(246,170,69), rgb(209,74,0) 95%) !important;
-  box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
-              0 1px 1px rgba(0,0,0,.2) inset !important;
-}
-
-#main-window[privatebrowsingmode=temporary] #appmenu-button:hover:active,
-#main-window[privatebrowsingmode=temporary] #appmenu-button[open] {
-  background-image: linear-gradient(to bottom, rgb(144,20,207), rgb(95,0,158) 95%) !important;
-}
-
-#appmenu-button .button-menu-dropmarker {
-  width: 9px !important;
-  height: 7px !important;
-  list-style-image: url('images/appmenu-dropmarker.png') !important;
-  margin-inline-start: .4em !important;
-  margin-top: 1px !important;
-}
-
-#main-window[custom-fx-button-bg]:not([privatebrowsingmode=temporary]) #appmenu-button {
-  background-color: var(--fx-custom-bg) !important;
-  background-blend-mode: overlay !important;
-  background-image: linear-gradient(to bottom, rgb(255 255 255 / 100%), rgb(255 255 255 / 0%) 95%) !important;
-  border-color: rgba(0, 0, 0, .6) !important;
-}
-
-#main-window[custom-fx-button-bg]:not([privatebrowsingmode=temporary]) #appmenu-button:hover:not(:active):not([open]) {
-  background-image: radial-gradient(farthest-side at bottom, rgba(255 255 255 / 75%) 5%, rgba(255, 255, 255, 0) 70%),
-                    radial-gradient(farthest-side at bottom, rgb(255 255 255 / 50%), rgb(255 255 255 / 0%)),
-                    linear-gradient(rgb(255 255 255 / 75%), rgb(255 255 255 / 0%) 95%) !important;
-  background-blend-mode: overlay !important;
-  box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
-              0 0 1.5px 1px rgba(255,255,255,.4) inset,
-              0 -1px 0 rgba(255,255,255,.5) inset !important;
-}
-
-/* 
-  Due to the Echelon feature of changing the text of the Firefox button,
-  we will have to use CSS grids for maximized windows.
-*/
-
-:root[sizemode="maximized"] #titlebar {
-  display: grid !important;
-  grid-template-areas: 
-      'firefox-button menu-bar'
-      'firefox-button tabbar';
-  grid-auto-columns: min-content auto;
-}
-
-:root[sizemode="maximized"] #appmenu-button-container {
-  height: calc(var(--titlebar-height) - 2px) !important;
-  margin-top: 0 !important;
-  position: static !important;
-}
-
-:root[sizemode="maximized"][tabsintitlebar] #toolbar-menubar {
-  padding-left: 4px !important; 
-}
-
-:root[sizemode="maximized"] #appmenu-button-container {
-  grid-area: firefox-button !important;
-}
-
-:root[sizemode="maximized"] #toolbar-menubar {
-  grid-area: menu-bar !important;
-}
-
-:root[sizemode="maximized"] #TabsToolbar {
-  grid-area: tabbar !important;
+  :root:not([echelon-style-4]) .titlebar-buttonbox-container .titlebar-buttonbox:-moz-locale-dir(rtl) {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
 }
 
 /** BOOKMARKS TOOLBAR **/

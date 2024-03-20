@@ -13,8 +13,10 @@
 
 // Hack to prevent the titlebar mask from moving
 
-#main-window[customizing] .titlebar-buttonbox-container {
-  margin-inline-end: -2em !important;
+@media not (-moz-platform: macos) {
+  #main-window[customizing] .titlebar-buttonbox-container {
+    margin-inline-end: -2em !important;
+  }
 }
 
 #main-window[customizing] #customization-container,
