@@ -16,21 +16,43 @@ panelview:not(.PanelUI-subView) {
 }
 
 :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type="arrow"] {
-    &:not([animate="false"]) {
-        opacity: 0 !important;
-        transform: translateY(-20px) !important;
-        transition-property: transform, opacity !important;
-        transition-duration: 200ms !important;
-        transition-timing-function: ease-out !important;
-        will-change: transition, opacity !important;
+    @media not (-moz-platform: macos) {
+        &:not([animate="false"]) {
+            opacity: 0 !important;
+            transform: translateY(-20px) !important;
+            transition-property: transform, opacity !important;
+            transition-duration: 200ms !important;
+            transition-timing-function: ease-out !important;
+            will-change: transition, opacity !important;
+        
+            &[arrowposition^="before"], &[side="bottom"] {
+                transform: translateY(20px) !important;
+            }
     
-        &[arrowposition^="before"], &[side="bottom"] {
-            transform: translateY(20px) !important;
+            &[animate="open"], &[animate="cancel"] {
+                opacity: 1.0 !important;
+                transform: none !important;
+            }
         }
+    }
 
-        &[animate="open"], &[animate="cancel"] {
-            opacity: 1.0 !important;
-            transform: none !important;
+    @media (-moz-platform: macos) {
+        &:not([animate="false"]) {
+            -moz-window-opacity: 0 !important;
+            -moz-window-transform: translateY(-20px) !important;
+            transition-property: -moz-window-transform, -moz-window-opacity !important;
+            transition-duration: 200ms !important;
+            transition-timing-function: ease-out !important;
+            will-change: transition, -moz-window-opacity !important;
+        
+            &[arrowposition^="before"], &[side="bottom"] {
+                -moz-window-transform: translateY(20px) !important;
+            }
+    
+            &[animate="open"], &[animate="cancel"] {
+                -moz-window-opacity: 1.0 !important;
+                -moz-window-transform: none !important;
+            }
         }
     }
 
@@ -49,64 +71,129 @@ panelview:not(.PanelUI-subView) {
 
 :root[echelon-style-4]
 {
-    :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type="arrow"] {
-        &:not([animate="false"]) {
-            transform: scale(.4) !important;
-            opacity: 0 !important;
-            transition-property: transform, opacity !important;
-            transition-duration: 0.15s !important;
-            transition-timing-function: ease-out !important;
+    @media not (-moz-platform: macos) {
+        :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type="arrow"] {
+            &:not([animate="false"]) {
+                transform: scale(.4) !important;
+                opacity: 0 !important;
+                transition-property: transform, opacity !important;
+                transition-duration: 0.15s !important;
+                transition-timing-function: ease-out !important;
+            }
+
+            &[animate="open"],
+            &[animate="cancel"] {
+                transform: none !important;
+            }
+            
+            &[animate="open"] {
+                opacity: 1.0 !important;
+            }
         }
 
-        &[animate="open"],
-        &[animate="cancel"] {
-            transform: none !important;
-        }
+        :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup) {
+            &[arrowposition="after_start"]:-moz-locale-dir(ltr),
+            &[arrowposition="after_end"]:-moz-locale-dir(rtl) {
+                transform-origin: 20px top !important;
+            }
         
-        &[animate="open"] {
-            opacity: 1.0 !important;
+            &[arrowposition="after_end"]:-moz-locale-dir(ltr),
+            &[arrowposition="after_start"]:-moz-locale-dir(rtl) {
+                transform-origin: calc(100% - 20px) top !important;
+            }
+        
+            &[arrowposition="before_start"]:-moz-locale-dir(ltr),
+            &[arrowposition="before_end"]:-moz-locale-dir(rtl) {
+                transform-origin: 20px bottom !important;
+            }
+        
+            &[arrowposition="before_end"]:-moz-locale-dir(ltr),
+            &[arrowposition="before_start"]:-moz-locale-dir(rtl) {
+                transform-origin: calc(100% - 20px) bottom !important;
+            }
+        
+            &[arrowposition="start_before"]:-moz-locale-dir(ltr),
+            &[arrowposition="end_before"]:-moz-locale-dir(rtl) {
+                transform-origin: right 20px !important;
+            }
+        
+            &[arrowposition="start_after"]:-moz-locale-dir(ltr),
+            &[arrowposition="end_after"]:-moz-locale-dir(rtl) {
+                transform-origin: right calc(100% - 20px) !important;
+            }
+        
+            &[arrowposition="end_before"]:-moz-locale-dir(ltr),
+            &[arrowposition="start_before"]:-moz-locale-dir(rtl) {
+                transform-origin: left 20px !important;
+            }
+        
+            &[arrowposition="end_after"]:-moz-locale-dir(ltr),
+            &[arrowposition="start_after"]:-moz-locale-dir(rtl) {
+                transform-origin: left calc(100% - 20px) !important;
+            }
         }
     }
+    
+    @media (-moz-platform: macos) {
+        :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup)[type="arrow"] {
+            &:not([animate="false"]) {
+                -moz-window-transform: scale(.4) !important;
+                -moz-window-opacity: 0 !important;
+                transition-property: -moz-window-transform, -moz-window-opacity !important;
+                transition-duration: 0.15s !important;
+                transition-timing-function: ease-out !important;
+            }
 
-    :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup) {
-        &[arrowposition="after_start"]:-moz-locale-dir(ltr),
-        &[arrowposition="after_end"]:-moz-locale-dir(rtl) {
-            transform-origin: 20px top !important;
+            &[animate="open"],
+            &[animate="cancel"] {
+                -moz-window-transform: none !important;
+            }
+            
+            &[animate="open"] {
+                -moz-window-opacity: 1.0 !important;
+            }
         }
-    
-        &[arrowposition="after_end"]:-moz-locale-dir(ltr),
-        &[arrowposition="after_start"]:-moz-locale-dir(rtl) {
-            transform-origin: calc(100% - 20px) top !important;
-        }
-    
-        &[arrowposition="before_start"]:-moz-locale-dir(ltr),
-        &[arrowposition="before_end"]:-moz-locale-dir(rtl) {
-            transform-origin: 20px bottom !important;
-        }
-    
-        &[arrowposition="before_end"]:-moz-locale-dir(ltr),
-        &[arrowposition="before_start"]:-moz-locale-dir(rtl) {
-            transform-origin: calc(100% - 20px) bottom !important;
-        }
-    
-        &[arrowposition="start_before"]:-moz-locale-dir(ltr),
-        &[arrowposition="end_before"]:-moz-locale-dir(rtl) {
-            transform-origin: right 20px !important;
-        }
-    
-        &[arrowposition="start_after"]:-moz-locale-dir(ltr),
-        &[arrowposition="end_after"]:-moz-locale-dir(rtl) {
-            transform-origin: right calc(100% - 20px) !important;
-        }
-    
-        &[arrowposition="end_before"]:-moz-locale-dir(ltr),
-        &[arrowposition="start_before"]:-moz-locale-dir(rtl) {
-            transform-origin: left 20px !important;
-        }
-    
-        &[arrowposition="end_after"]:-moz-locale-dir(ltr),
-        &[arrowposition="start_after"]:-moz-locale-dir(rtl) {
-            transform-origin: left calc(100% - 20px) !important;
+
+        :is(panel, menupopup):not(#PlacesChevronPopup, #OtherBookmarksPopup) {
+            &[arrowposition="after_start"]:-moz-locale-dir(ltr),
+            &[arrowposition="after_end"]:-moz-locale-dir(rtl) {
+                -moz-window-transform-origin: 20px top !important;
+            }
+        
+            &[arrowposition="after_end"]:-moz-locale-dir(ltr),
+            &[arrowposition="after_start"]:-moz-locale-dir(rtl) {
+                -moz-window-transform-origin: calc(100% - 20px) top !important;
+            }
+        
+            &[arrowposition="before_start"]:-moz-locale-dir(ltr),
+            &[arrowposition="before_end"]:-moz-locale-dir(rtl) {
+                -moz-window-transform-origin: 20px bottom !important;
+            }
+        
+            &[arrowposition="before_end"]:-moz-locale-dir(ltr),
+            &[arrowposition="before_start"]:-moz-locale-dir(rtl) {
+                -moz-window-transform-origin: calc(100% - 20px) bottom !important;
+            }
+        
+            &[arrowposition="start_before"]:-moz-locale-dir(ltr),
+            &[arrowposition="end_before"]:-moz-locale-dir(rtl) {
+                -moz-window-transform-origin: right 20px !important;
+            }
+        
+            &[arrowposition="start_after"]:-moz-locale-dir(ltr),
+            &[arrowposition="end_after"]:-moz-locale-dir(rtl) {
+                -moz-window-transform-origin: right calc(100% - 20px) !important;
+            }
+        
+            &[arrowposition="end_before"]:-moz-locale-dir(ltr),
+            &[arrowposition="start_before"]:-moz-locale-dir(rtl) {
+                -moz-window-transform-origin: left 20px !important;
+            }
+        
+            &[arrowposition="end_after"]:-moz-locale-dir(ltr),
+            &[arrowposition="start_after"]:-moz-locale-dir(rtl) {
+                -moz-window-transform-origin: left calc(100% - 20px) !important;
+            }
         }
     }
 }
