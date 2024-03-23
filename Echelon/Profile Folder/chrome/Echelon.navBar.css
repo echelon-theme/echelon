@@ -344,23 +344,14 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined > .toolbarbutton
   min-width: 1px;
   height: 1px;
   margin-bottom: -1px;
-  /* Makes the outermost animation container element positioned, so that its
-     contents are rendered over the main browser window in the Z order.
-     This is required by the animated event notification. */
   position: relative;
-  /* The selected tab may overlap #downloads-indicator-notification */
   z-index: 5;
 }
 
 /*** Main indicator icon ***/
 #downloads-indicator-icon-echelon {
-  background-image: url("images/icons/downloads.png") !important;
   min-width: 18px;
   min-height: 18px;
-}
-
-#downloads-button[attention] #downloads-indicator-anchor-echelon > #downloads-indicator-icon-echelon {
-  background-image: url("images/icons/download-glow.png") !important;
 }
 
 #downloads-button:not([counter])[attention] > #downloads-indicator-anchor-echelon > #downloads-indicator-progress-area > #downloads-indicator-counter {
@@ -378,6 +369,7 @@ toolbar .toolbaritem-combined-buttons > .toolbarbutton-combined > .toolbarbutton
   position: absolute;
   left: -8px;
   top: -8px;
+  pointer-events: none;
 }
 
 @keyframes downloadsIndicatorNotificationStartRight {

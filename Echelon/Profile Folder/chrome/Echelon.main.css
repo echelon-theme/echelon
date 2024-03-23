@@ -102,15 +102,16 @@
   list-style-image: url("images/icons/paste.png") !important;
 }
 
+#add-ons-button,
 #unified-extensions-button {
   list-style-image: url("images/icons/extensions.png") !important;
 }
 
-#downloads-indicator-anchor {
+#downloads-indicator-icon-echelon {
   list-style-image: url("images/icons/downloads.png") !important;
 }
 
-#downloads-button[attention] #downloads-indicator-anchor {
+#downloads-button[attention] #downloads-indicator-icon-echelon {
   list-style-image: url("images/icons/download-glow.png") !important;
 }
 
@@ -269,10 +270,11 @@
   #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #paste-button {
     list-style-image: url("images/icons/australis/paste.png") !important;
   }
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #add-ons-button,
   #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #unified-extensions-button {
     list-style-image: url("images/icons/australis/extensions.png") !important;
   }
-  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #downloads-indicator-anchor {
+  #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #downloads-indicator-icon-echelon {
     list-style-image: url("images/icons/australis/downloads.png") !important;
   }
   #main-window:not([echelon-appearance-blue], [echelon-appearance-xp])[echelon-appearance-australis-windows8][echelon-style-4] #context-reload {
@@ -416,16 +418,18 @@
 #main-window[lwtheme-brighttext=true] #paste-button {
   list-style-image: url("images/icons/inverted/paste.png") !important;
 }
+#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #add-ons-button,
 #main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #unified-extensions-button,
+#main-window[lwtheme-brighttext=true] #add-ons-button,
 #main-window[lwtheme-brighttext=true] #unified-extensions-button {
   list-style-image: url("images/icons/inverted/extensions.png") !important;
 }
-#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #downloads-indicator-anchor,
-#main-window[lwtheme-brighttext=true] #downloads-indicator-anchor {
+#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #downloads-indicator-icon-echelon,
+#main-window[lwtheme-brighttext=true] #downloads-indicator-icon-echelon {
   list-style-image: url("images/icons/inverted/downloads.png") !important;
 }
-#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #downloads-button[attention] #downloads-indicator-anchor,
-#main-window[lwtheme-brighttext=true] #downloads-button[attention] #downloads-indicator-anchor {
+#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #downloads-button[attention] #downloads-indicator-icon-echelon,
+#main-window[lwtheme-brighttext=true] #downloads-button[attention] #downloads-indicator-icon-echelon {
   list-style-image: url("images/icons/download-glow.png") !important;
 }
 #main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #save-to-pocket-button,
@@ -585,10 +589,11 @@
 #main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #paste-button {
   list-style-image: url("images/icons/xp/paste.png") !important;
 }
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #add-ons-button,
 #main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #unified-extensions-button {
   list-style-image: url("images/icons/xp/extensions.png") !important;
 }
-#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #downloads-indicator-anchor {
+#main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #downloads-indicator-icon-echelon {
   list-style-image: url("images/icons/xp/downloads.png") !important;
 }
 #main-window[echelon-style-4][echelon-appearance-xp]:not([echelon-appearance-blue]) #context-reload {

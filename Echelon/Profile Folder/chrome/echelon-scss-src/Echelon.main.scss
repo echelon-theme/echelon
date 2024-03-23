@@ -94,15 +94,16 @@
   list-style-image: url("images/icons/paste.png") !important;
 }
 
+#add-ons-button,
 #unified-extensions-button {
   list-style-image: url("images/icons/extensions.png") !important;
 }
 
-#downloads-indicator-anchor {
+#downloads-indicator-icon-echelon {
   list-style-image: url("images/icons/downloads.png") !important;
 }
 
-#downloads-button[attention] #downloads-indicator-anchor {
+#downloads-button[attention] #downloads-indicator-icon-echelon {
   list-style-image: url("images/icons/download-glow.png") !important;
 }
 
@@ -284,11 +285,12 @@
       list-style-image: url("images/icons/australis/paste.png") !important;
     }
 
+    #add-ons-button,
     #unified-extensions-button {
       list-style-image: url("images/icons/australis/extensions.png") !important;
     }
 
-    #downloads-indicator-anchor {
+    #downloads-indicator-icon-echelon {
       list-style-image: url("images/icons/australis/downloads.png") !important;
     }
     
@@ -459,15 +461,16 @@
     list-style-image: url("images/icons/inverted/paste.png") !important;
   }
 
+  #add-ons-button,
   #unified-extensions-button {
     list-style-image: url("images/icons/inverted/extensions.png") !important;
   }
 
-  #downloads-indicator-anchor {
+  #downloads-indicator-icon-echelon {
     list-style-image: url("images/icons/inverted/downloads.png") !important;
   }
 
-  #downloads-button[attention] #downloads-indicator-anchor {
+  #downloads-button[attention] #downloads-indicator-icon-echelon {
     list-style-image: url("images/icons/download-glow.png") !important;
   }
 
@@ -647,11 +650,12 @@
     list-style-image: url("images/icons/xp/paste.png") !important;
   }
 
+  #add-ons-button,
   #unified-extensions-button {
     list-style-image: url("images/icons/xp/extensions.png") !important;
   }
 
-  #downloads-indicator-anchor {
+  #downloads-indicator-icon-echelon {
     list-style-image: url("images/icons/xp/downloads.png") !important;
   }
   
