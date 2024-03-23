@@ -1082,10 +1082,10 @@
 	}
 	:root:is([echelon-style-4]) .extension-enable-button::after {
 		width: 100% !important;
-		content: 'Disable' !important;
+		content: 'Enable' !important;
 	}
 	:root:is([echelon-style-4]) .extension-enable-button[pressed=""]::after {
-		content: 'Enable' !important;
+		content: 'Disable' !important;
 	}
 	
 	.card-heading-image {
