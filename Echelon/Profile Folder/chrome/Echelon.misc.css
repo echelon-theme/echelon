@@ -8,77 +8,78 @@
  * You can find the SCSS source files in echelon-scss-src/
  */
 
-:root:not([echelon-style-4]) .titlebar-buttonbox-container {
-  position: fixed !important;
-  right: 0 !important;
-  top: 0 !important;
-}
+@media not (-moz-platform: macos) {
+  :root:not([echelon-style-4]) .titlebar-buttonbox-container {
+    position: fixed !important;
+    right: 0 !important;
+    top: 0 !important;
+  }
 
-:root:not([echelon-style-4], [echelon-appearance-xp])[tabs-on-top][sizemode=maximized] .titlebar-buttonbox-container {
-  position: static !important;
-}
+  :root:not([echelon-style-4], [echelon-appearance-xp])[tabs-on-top][sizemode=maximized] .titlebar-buttonbox-container {
+    position: static !important;
+  }
 
-#appmenu-button-container {
-  width: max-content !important;
-  min-width: 94px !important;
-  height: calc(var(--titlebar-height) - 1px) !important;
-  border: 1px solid hsla(0, 0%, 100%, 0.5) !important;
-  margin-bottom: 1px !important;
-  border-top: 0 !important;
-  padding: 0 !important;
-  border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
-  border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;
-  width: max-content;
-}
-#appmenu-button-container:not(:-moz-lwtheme) {
-  margin-top: 1px !important;
-}
+  #appmenu-button-container {
+    width: max-content !important;
+    min-width: 94px !important;
+    height: calc(var(--titlebar-height) - 1px) !important;
+    border: 1px solid hsla(0, 0%, 100%, 0.5) !important;
+    margin-bottom: 1px !important;
+    border-top: 0 !important;
+    padding: 0 !important;
+    border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
+    border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;
+    width: max-content;
+  }
+  #appmenu-button-container:not(:-moz-lwtheme) {
+    margin-top: 1px !important;
+  }
 
-:root[sizemode=fullscreen] #appmenu-button-container,
-:root:not([tabsintitlebar]) #appmenu-button-container {
-  display: none !important;
-}
+  :root[sizemode=fullscreen] #appmenu-button-container,
+  :root:not([tabsintitlebar]) #appmenu-button-container {
+    display: none !important;
+  }
 
-#appmenu-button {
-  appearance: none !important;
-  width: 100% !important;
-  height: 100% !important;
-  background-image: linear-gradient(to bottom, rgb(247, 182, 82), rgb(215, 98, 10) 95%) !important;
-  padding: 0 1.5em 0.15em !important;
-  margin: 0 !important;
-  border-radius: 0 !important;
-  border: 1px solid rgba(83, 42, 6, 0.9) !important;
-  border-top: 0 !important;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
-  border-bottom-left-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
-  border-bottom-right-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
-  color: white !important;
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.7), 0 1px 1.5px rgba(0, 0, 0, 0.5) !important;
-  font-weight: bold !important;
-  background-clip: padding-box !important;
-}
+  #appmenu-button {
+    appearance: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-image: linear-gradient(to bottom, rgb(247, 182, 82), rgb(215, 98, 10) 95%) !important;
+    padding: 0 1.5em 0.15em !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border: 1px solid rgba(83, 42, 6, 0.9) !important;
+    border-top: 0 !important;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
+    border-bottom-left-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
+    border-bottom-right-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
+    color: white !important;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.7), 0 1px 1.5px rgba(0, 0, 0, 0.5) !important;
+    font-weight: bold !important;
+    background-clip: padding-box !important;
+  }
 
-#appmenu-button-container:hover:active,
-#appmenu-button-container:hover:active #appmenu-button,
-#appmenu-button[open] {
-  border-radius: 0 !important;
-}
+  #appmenu-button-container:hover:active,
+  #appmenu-button-container:hover:active #appmenu-button,
+  #appmenu-button[open] {
+    border-radius: 0 !important;
+  }
 
-#main-window[privatebrowsingmode=temporary] #appmenu-button {
-  background-image: linear-gradient(to bottom, rgb(153, 38, 211), rgb(105, 19, 163) 95%) !important;
-  border-color: rgba(43, 8, 65, 0.9) !important;
-}
+  #main-window[privatebrowsingmode=temporary] #appmenu-button {
+    background-image: linear-gradient(to bottom, rgb(153, 38, 211), rgb(105, 19, 163) 95%) !important;
+    border-color: rgba(43, 8, 65, 0.9) !important;
+  }
 
-#appmenu-button:hover:not(:active):not([open]) {
-  background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(252, 240, 89, 0.5) 10%, rgba(252, 240, 89, 0) 70%), -moz-radial-gradient(center bottom, farthest-side, rgb(236, 133, 0), rgba(255, 229, 172, 0)), linear-gradient(rgb(246, 170, 69), rgb(209, 74, 0) 95%) !important;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 0 1.5px 1px rgba(250, 234, 169, 0.7) inset, 0 -1px 0 rgba(250, 234, 169, 0.5) inset !important;
-}
+  #appmenu-button:hover:not(:active):not([open]) {
+    background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(252, 240, 89, 0.5) 10%, rgba(252, 240, 89, 0) 70%), -moz-radial-gradient(center bottom, farthest-side, rgb(236, 133, 0), rgba(255, 229, 172, 0)), linear-gradient(rgb(246, 170, 69), rgb(209, 74, 0) 95%) !important;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 0 1.5px 1px rgba(250, 234, 169, 0.7) inset, 0 -1px 0 rgba(250, 234, 169, 0.5) inset !important;
+  }
 
-#main-window[privatebrowsingmode=temporary] #appmenu-button:hover:not(:active):not([open]) {
-  background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(240, 193, 255, 0.5) 10%, rgba(240, 193, 255, 0) 70%), -moz-radial-gradient(center bottom, farthest-side, rgb(192, 81, 247), rgba(236, 172, 255, 0)), linear-gradient(rgb(144, 20, 207), rgb(95, 0, 158) 95%) !important;
-  border-color: rgba(43, 8, 65, 0.9) !important;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 0 2px 1px rgba(240, 193, 255, 0.7) inset, 0 -1px 0 rgba(240, 193, 255, 0.5) inset !important;
-}
+  #main-window[privatebrowsingmode=temporary] #appmenu-button:hover:not(:active):not([open]) {
+    background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(240, 193, 255, 0.5) 10%, rgba(240, 193, 255, 0) 70%), -moz-radial-gradient(center bottom, farthest-side, rgb(192, 81, 247), rgba(236, 172, 255, 0)), linear-gradient(rgb(144, 20, 207), rgb(95, 0, 158) 95%) !important;
+    border-color: rgba(43, 8, 65, 0.9) !important;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 0 2px 1px rgba(240, 193, 255, 0.7) inset, 0 -1px 0 rgba(240, 193, 255, 0.5) inset !important;
+  }
 
 /** Firefox Channels & Forks colors **/
 /* DEVELOPER EDITION / AURORA */
@@ -210,6 +211,24 @@
 
 :root[sizemode=maximized] #TabsToolbar {
   grid-area: tabbar !important;
+}
+
+}
+
+@media (-moz-platform: macos) {
+  #appmenu-button-container {
+    display: none !important;
+  }
+
+  :root:not([echelon-style-4]) .titlebar-buttonbox-container .titlebar-buttonbox:-moz-locale-dir(ltr) {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
+
+  :root:not([echelon-style-4]) .titlebar-buttonbox-container .titlebar-buttonbox:-moz-locale-dir(rtl) {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
 }
 
 /** BOOKMARKS TOOLBAR **/

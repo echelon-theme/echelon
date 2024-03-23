@@ -408,3 +408,11 @@ html:not([echelon-style-5]) .tabbrowser-tab:first-of-type:last-of-type .tab-clos
 .tab-background:-moz-lwtheme {
   background-image: none !important;
 }
+
+.tabbrowser-tab:last-of-type {
+  z-index: 1 !important;
+}
+
+#tabbrowser-arrowscrollbox-periphery {
+  z-index: 0 !important;
+}
