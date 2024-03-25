@@ -65,6 +65,10 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   -moz-default-appearance: menuimage !important;
 }
 
+#echelon-appmenu-button-menu :is([type=checkbox], [checked=true]) .menu-iconic-left {
+  -moz-default-appearance: menucheckbox !important;
+}
+
 #appmenuSecondaryPane .menu-iconic-text {
   margin-inline-end: 6px !important;
 }
