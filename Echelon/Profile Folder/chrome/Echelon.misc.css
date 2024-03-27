@@ -9,45 +9,6 @@
  */
 
 @media not (-moz-platform: macos) {
-  #echelon-titlebar-mask {
-    position: absolute;
-    top: 0;
-    left: -200%;
-    z-index: -2147483648;
-    width: 100%;
-    height: 100%;
-    background: white;
-  }
-  #echelon-titlebar-mask .echelon-titlebar-mask-caption-buttons {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: black;
-    border-end-start-radius: 3px;
-  }
-  #main-window[sizemode=maximized] #echelon-titlebar-mask .echelon-titlebar-mask-caption-buttons {
-    top: 6px;
-    right: 4px;
-  }
-  .echelon-masked-titlebar {
-    mask-image: -moz-element(#echelon-titlebar-mask);
-    mask-repeat: no-repeat;
-    mask-mode: luminance;
-  }
-  .echelon-has-masked-titlebar-window[lwtheme-image] {
-    background: transparent !important;
-  }
-  .echelon-has-masked-titlebar-window[lwtheme-image] #navigator-toolbox-background {
-    background-image: var(--lwt-header-image, linear-gradient(transparent, transparent)), var(--lwt-additional-images) !important;
-    background-repeat: no-repeat, var(--lwt-background-tiling);
-    background-position: right top, var(--lwt-background-alignment) !important;
-  }
-  .echelon-has-masked-titlebar-window .titlebar-buttonbox {
-    appearance: auto !important;
-    -moz-default-appearance: -moz-window-button-box !important;
-    width: 0.1px !important;
-    height: 0.1px !important;
-  }
   :root:not([echelon-style-4]) .titlebar-buttonbox-container {
     position: fixed !important;
     right: 0 !important;
