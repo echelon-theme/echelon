@@ -1,4 +1,92 @@
 @media not (-moz-platform: macos) {
+  /////////////////////////////////////////////////////////////////////////////////////////////
+  // Caption button masking for DWM server-side caption buttons (Windows Vista through 8):
+  //
+  #echelon-titlebar-mask {
+    position: absolute;
+    top: 0;
+
+    // We don't want the mask to be visible onscreen, but other methods of hiding it prevent
+    // the mask element from being used as a mask, so we just position it offscreen.
+    left: -200%;
+    z-index: -2147483648;
+
+    width: 100%;
+    height: 100%;
+
+    // White area is included in the final composite.
+    background: white;
+
+    .echelon-titlebar-mask-caption-buttons {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        // Black area is excluded from the final composite.
+        background: black;
+
+        //&.win7 {
+            // Bottom left/right for LTR/RTL respectively.
+            border-end-start-radius: 3px;
+        //}
+
+        @at-root #main-window[sizemode=maximized] & {
+            // I'm not entirely sure why it's offset, but this does the trick:
+            top: 6px;
+            right: 4px;
+        }
+    }
+  }
+
+  .echelon-masked-titlebar {
+    // SCSS linter doesn't like this line, so hack:
+    mask-image: #{"-moz-element(#echelon-titlebar-mask)"};
+    mask-repeat: no-repeat;
+    mask-mode: luminance;
+  }
+
+
+  .echelon-has-masked-titlebar-window {
+    // Lightweight theme backgrounds are applied on the root element, but our clip can't
+    // be on there or everything breaks. Hack: apply lwtheme backgrounds on the toolbox
+    // background element.
+    &[lwtheme-image] {
+        background: transparent !important;
+
+        #navigator-toolbox-background {
+            background-image: var(--lwt-header-image, linear-gradient(transparent, transparent)), var(--lwt-additional-images) !important;
+            background-repeat: no-repeat, var(--lwt-background-tiling);
+            background-position: right top, var(--lwt-background-alignment) !important;
+        }
+    }
+
+    // Hack for hittesting without subclassing via JS-ctypes. This is less than ideal
+    // and should probably be replaced in the future with the aforementioned idea
+    // in order to have no dependency on native controls patch configuration.
+    .titlebar-buttonbox {
+        appearance: auto !important;
+
+        // This still depends on the native controls option being set to Windows 7, because this
+        // appearance style is disabled for Windows 10 hosts.
+        -moz-default-appearance: -moz-window-button-box !important;
+
+        // Any width and height will work to enable the DWM hittesting for the entire
+        // button area. There is one caveat: the element must be visible on-screen.
+        // The element has differing behaviour on different WebRender backends:
+        //  - Rectangle clipping on SWGL or SWGL + D3D11 (gfx.webrender.software = true)
+        //  - No visual effect at all on ANGLE (observed on some actual Windows 7 configurations too)
+        //  - Solid black box on ANGLE + DirectComposition, which is the default on most Windows 10
+        //    configurations.
+        // The hacky solution I came up with was to make it too small to have any visible output,
+        // but still technically rendered so that the hittesting is available.
+        width: 0.1px !important;
+        height: 0.1px !important;
+    }
+  }
+
+  //////////////////////////////////////////////////////////////////////////////////////////
+  // Titlebar miscellaneous styles:
+  //
   :root:not([echelon-style-4]) .titlebar-buttonbox-container {
     position: fixed !important;
     right: 0 !important;
