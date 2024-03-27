@@ -393,10 +393,12 @@ html:not([echelon-style-5]) {
   background-image: none !important;
 }
 
-.tabbrowser-tab:last-of-type {
-  z-index: 1 !important;
-}
+:root[echelon-style-4] {
+  .tabbrowser-tab:last-of-type {
+    z-index: 1 !important;
+  }
 
-#tabbrowser-arrowscrollbox-periphery {
-  z-index: 0 !important;
+  #tabbrowser-arrowscrollbox-periphery {
+    z-index: 0 !important;
+  }
 }

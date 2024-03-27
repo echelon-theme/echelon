@@ -409,10 +409,9 @@ html:not([echelon-style-5]) .tabbrowser-tab:first-of-type:last-of-type .tab-clos
   background-image: none !important;
 }
 
-.tabbrowser-tab:last-of-type {
+:root[echelon-style-4] .tabbrowser-tab:last-of-type {
   z-index: 1 !important;
 }
-
-#tabbrowser-arrowscrollbox-periphery {
+:root[echelon-style-4] #tabbrowser-arrowscrollbox-periphery {
   z-index: 0 !important;
 }
