@@ -286,7 +286,8 @@
 
     &[echelon-appearance-newlogo="true"] {
         #urlbar:not([usertyping="true"]) #identity-box.chromeUI #identity-icon {
-            background-image: url("images/identity-icons-brand.png") !important;
+            background-size: cover !important;
+            background-image: url("images/identity-icons-brand.svg") !important;
         }
 
         #identity-box.chromeUI #identity-icon-label {
