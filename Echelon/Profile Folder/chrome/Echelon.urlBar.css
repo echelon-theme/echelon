@@ -380,6 +380,11 @@
   background-position-x: -32px !important;
 }
 
+@media (min-resolution: 1.25dppx) {
+  .search-go-button {
+    background-image: url("images/Search-glass@2x.svg") !important;
+  }
+}
 #urlbar-input-container::after {
   content: "";
   display: inline-block;

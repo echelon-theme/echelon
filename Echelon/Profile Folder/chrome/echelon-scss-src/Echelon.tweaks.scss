@@ -283,6 +283,35 @@
   background-size: var(--tab-curve-width) 100%, calc(100% - (2 * var(--tab-curve-width))) 100%, var(--tab-curve-width) 100% !important;
 }
 
+@media (min-resolution: 1.25dppx) {
+  #main-window[echelon-style-4] {
+    .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"]),
+    #tabs-newtab-button:hover {
+      background-image: url('images/tab-background-start@2x.png'), url('images/tab-background-middle@2x.png'), url('images/tab-background-end@2x.png') !important;
+    }
+        
+    .tab-background:is([selected], [multiselected]) {
+      background-image: url('images/tab-active-middle@2x.png'),
+                        linear-gradient(transparent 2px, rgba(255,255,255,.4) 2px, rgba(255,255,255,.4)),
+                        none !important;
+    }
+
+    &[lwtheme-image="true"] #tabbrowser-tabs:not([movingtab]) .tab-background:is([selected], [multiselected]):-moz-lwtheme {
+      background-image: url('images/tab-active-middle@2x.png'),
+                        linear-gradient(transparent 2px, rgba(255,255,255,.4) 2px, rgba(255,255,255,.4)),
+                        var(--lwt-header-image) !important;
+    }
+    
+    .tab-background:is([selected], [multiselected]):before {
+      background-image: url('images/tab-stroke-start@2x.png') !important;
+    }
+
+    .tab-background:is([selected], [multiselected]):after {
+      background-image: url('images/tab-stroke-end@2x.png') !important;
+    }
+  }
+}
+
 #main-window[echelon-style-4] #appmenu-button-container {
   display: none !important;
 }
