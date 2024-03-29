@@ -235,6 +235,14 @@ input, button {
   display: none;
 }
 
+.launchButton::before {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 6px;
+    line-height: 0;
+}
+
 #downloads:before {
     content: url('chrome://userchrome/content/pages/home/images/downloads.png');
 }
@@ -314,6 +322,53 @@ input, button {
   right: 12px;
   width: 69px;
   height: 19px;
+}
+
+@media not all and (max-resolution: 1dppx) {
+	#downloads:before {
+		content: url('chrome://userchrome/content/pages/home/images/downloads@2x.png');
+	}
+	
+	#bookmarks:before {
+		content: url('chrome://userchrome/content/pages/home/images/bookmarks@2x.png');
+	}
+	
+	#history:before {
+		content: url('chrome://userchrome/content/pages/home/images/history@2x.png');
+	}
+	
+	#addons:before {
+		content: url('chrome://userchrome/content/pages/home/images/addons@2x.png');
+	}
+	
+	#sync:before {
+		content: url('chrome://userchrome/content/pages/home/images/sync@2x.png');
+	}
+	
+	#settings:before {
+		content: url('chrome://userchrome/content/pages/home/images/settings@2x.png');
+	}
+
+	.launchButton::before,
+	#aboutMozilla::before {
+		transform: scale(.5);
+		transform-origin: 0 0;
+	}
+
+	.launchButton:-moz-dir(rtl)::before,
+	#aboutMozilla:-moz-dir(rtl)::before {
+	  transform: scale(.5) translateX(32px);
+	}
+
+	#restorePreviousSession::before {
+		width: 96px;
+		content: url("chrome://userchrome/content/pages/home/images/restore-large@2x.png");
+	}
+
+	#restorePreviousSession:-moz-dir(rtl)::before {
+		transform: scale(-0.5, 0.5) translateX(24px);
+		transform-origin: top center;
+	}
 }
 
 /*

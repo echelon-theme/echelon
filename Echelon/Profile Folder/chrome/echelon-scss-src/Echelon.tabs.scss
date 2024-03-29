@@ -137,8 +137,8 @@
   margin-inline-end: -2px !important;
 }
 
-// Hide the close button on single-tab views, except in Australis (Firefox 56).
-html:not([echelon-style-5]) {
+// Hide the close button on single-tab views, except in Australis.
+#main-window:not([echelon-style-4]) {
   .tabbrowser-tab:first-of-type:last-of-type .tab-close-button {
     display: none !important;
   }
@@ -393,10 +393,12 @@ html:not([echelon-style-5]) {
   background-image: none !important;
 }
 
-.tabbrowser-tab:last-of-type {
-  z-index: 1 !important;
-}
+:root[echelon-style-4] {
+  .tabbrowser-tab:last-of-type {
+    z-index: 1 !important;
+  }
 
-#tabbrowser-arrowscrollbox-periphery {
-  z-index: 0 !important;
+  #tabbrowser-arrowscrollbox-periphery {
+    z-index: 0 !important;
+  }
 }

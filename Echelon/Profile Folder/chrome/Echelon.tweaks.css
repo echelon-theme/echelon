@@ -390,7 +390,8 @@
   display: none !important;
 }
 #main-window[echelon-style-3][echelon-appearance-newlogo=true] #urlbar:not([usertyping=true]) #identity-box.chromeUI #identity-icon {
-  background-image: url("images/identity-icons-brand.png") !important;
+  background-size: cover !important;
+  background-image: url("images/identity-icons-brand.svg") !important;
 }
 #main-window[echelon-style-3][echelon-appearance-newlogo=true] #identity-box.chromeUI #identity-icon-label {
   display: inline-flex !important;
@@ -619,6 +620,24 @@
   background-size: var(--tab-curve-width) 100%, calc(100% - 2 * var(--tab-curve-width)) 100%, var(--tab-curve-width) 100% !important;
 }
 
+@media (min-resolution: 1.25dppx) {
+  #main-window[echelon-style-4] .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected=true]),
+  #main-window[echelon-style-4] #tabs-newtab-button:hover {
+    background-image: url("images/tab-background-start@2x.png"), url("images/tab-background-middle@2x.png"), url("images/tab-background-end@2x.png") !important;
+  }
+  #main-window[echelon-style-4] .tab-background:is([selected], [multiselected]) {
+    background-image: url("images/tab-active-middle@2x.png"), linear-gradient(transparent 2px, rgba(255, 255, 255, 0.4) 2px, rgba(255, 255, 255, 0.4)), none !important;
+  }
+  #main-window[echelon-style-4][lwtheme-image=true] #tabbrowser-tabs:not([movingtab]) .tab-background:is([selected], [multiselected]):-moz-lwtheme {
+    background-image: url("images/tab-active-middle@2x.png"), linear-gradient(transparent 2px, rgba(255, 255, 255, 0.4) 2px, rgba(255, 255, 255, 0.4)), var(--lwt-header-image) !important;
+  }
+  #main-window[echelon-style-4] .tab-background:is([selected], [multiselected]):before {
+    background-image: url("images/tab-stroke-start@2x.png") !important;
+  }
+  #main-window[echelon-style-4] .tab-background:is([selected], [multiselected]):after {
+    background-image: url("images/tab-stroke-end@2x.png") !important;
+  }
+}
 #main-window[echelon-style-4] #appmenu-button-container {
   display: none !important;
 }
