@@ -18,13 +18,18 @@
     color: black;
     border-radius: 4px;
   }
-  html:not([echelon-appearance-xp])[sizemode=normal] #navigator-toolbox:-moz-lwtheme {
+  html:not([echelon-appearance-xp])[tabsintitlebar][sizemode=normal] #navigator-toolbox:-moz-lwtheme {
     border-top: 1px solid var(--glass-active-border-color);
     padding-top: 1px;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
   }
-  html:not([echelon-appearance-xp])[sizemode=normal] #navigator-toolbox:-moz-lwtheme:-moz-window-inactive {
+  html:not([echelon-appearance-xp])[tabsintitlebar][sizemode=normal] #navigator-toolbox:-moz-lwtheme:-moz-window-inactive {
     border-top-color: var(--glass-inactive-border-color);
+  }
+  html:not([echelon-appearance-xp])[sizemode=normal]:not([tabsintitlebar]) #navigator-toolbox:-moz-lwtheme {
+    border-top: 0 !important;
+    box-shadow: none !important;
+    padding-top: 0 !important;
   }
 }
 #main-menubar > menu {

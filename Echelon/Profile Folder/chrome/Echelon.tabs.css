@@ -17,6 +17,9 @@
 :root[tabsintitlebar][tabs-on-top=true][echelon-style-4] #TabsToolbar {
   padding-inline-end: 0 !important;
 }
+:root:not([lwtheme-image]) #TabsToolbar, :root[echelon-style-4] #TabsToolbar {
+  margin-bottom: -1px !important;
+}
 
 #main-window:not([echelon-appearance-xp]) #TabsToolbar {
   background-image: none !important;
@@ -389,20 +392,9 @@
 
 /* Restore tab close animation */
 :root:not([echelon-style-4]) .tabbrowser-tab:not([pinned], [fadein]),
-:root:not([echelon-style-4]) .tab-icon-pending:not([fadein]),
-:root:not([echelon-style-4]) .tab-icon-image:not([fadein]),
-:root:not([echelon-style-4]) .tab-close-button:not([fadein]),
 :root:not([echelon-style-4]) .tabbrowser-tab:not([fadein])::after,
 :root:not([echelon-style-4]) .tab-background:not([fadein]) {
   visibility: visible !important;
-}
-
-:root:not([echelon-style-4]) .tab-label:not([fadein]) {
-  display: block !important;
-}
-
-:root:not([echelon-style-4]) .tab-throbber:not([fadein]) {
-  display: flex !important;
 }
 
 .tab-background:-moz-lwtheme {
