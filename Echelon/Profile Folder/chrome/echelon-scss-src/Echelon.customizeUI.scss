@@ -3,12 +3,17 @@
 }
 
 #customization-content-container {
+  flex-direction: column !important;
   background-color: #F7F7F7 !important;
 }
 
 #main-window[customizing] {
-  background-image: var(--lwt-header-image), url('images/customizeUI/customizeMode-gridTexture.png') !important;
+  background-image: url('images/customizeUI/customizeMode-gridTexture.png') !important;
   background-attachment: fixed !important;
+
+  &:-moz-lwtheme {
+    background-image: url('images/customizeUI/customizeMode-gridTexture.png'), var(--lwt-header-image) !important;
+  }
 }
 
 // Hack to prevent the titlebar mask from moving
@@ -90,6 +95,10 @@
   background-color: #ECECEC !important;
 }
 
+#customization-done-button {
+  display: none !important;
+}
+
 :root:not([echelon-style-4]) #customization-titlebar-visibility-checkbox {
   display: none !important;
 }
@@ -126,6 +135,7 @@
 .customizationmode-checkbox,
 .customizationmode-button,
 #customization-lwtheme-link {
+  appearance: none !important;
   min-height: 35px !important;
   border: 1px solid #C0C0C0 !important;
   border-radius: 3px !important;
