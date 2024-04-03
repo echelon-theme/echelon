@@ -356,11 +356,11 @@
 }
 
 #main-window[echelon-style-4] #nav-bar {
-  height: 41px !important;
+  height: 42px !important;
 }
 
 #main-window[echelon-style-4] #back-button {
-  margin-inline-start: 6px !important;
+  margin-inline-start: 5px !important;
 }
 
 #main-window[echelon-style-4] #bookmarks-menu-button::after {
@@ -379,6 +379,10 @@
   width: 31px !important;
   border-right: 0 !important;
   margin-inline-end: 0 !important;
+}
+
+#main-window[echelon-style-4]:not([customizing]) #TabsToolbar:not(:-moz-lwtheme) {
+  background-image: linear-gradient(to top, hsla(209,67%,12%,0.35) 1px, rgba(0,0,0,.05) 1px, transparent 50%) !important;
 }
 
 #main-window[privatebrowsingnewindicator][echelon-style-4] {

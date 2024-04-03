@@ -40,7 +40,6 @@
   border-right: 1px solid rgba(26, 26, 26, 0.4) !important;
   border-top-left-radius: var(--toolbar-border-radius);
   border-top-right-radius: var(--toolbar-border-radius);
-  margin-top: -1px !important;
 }
 
 :root[echelon-style-4] #nav-bar:-moz-lwtheme {

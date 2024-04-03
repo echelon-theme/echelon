@@ -8,6 +8,11 @@
   :root[tabsintitlebar][tabs-on-top="true"][echelon-style-4] & {
     padding-inline-end: 0 !important;
   }
+
+  :root:not([lwtheme-image]) &,
+  :root[echelon-style-4] & {
+    margin-bottom: -1px !important;
+  }
 }
 
 #main-window:not([echelon-appearance-xp]) {
