@@ -7,7 +7,7 @@
 
 {
     const ABOUT_PAGES = {
-        "newtab": "chrome://userchrome/content/pages/newtab/newTab.xhtml",
+        "newtab": "chrome://userchrome/content/pages/home/home.xhtml",
         "home": "chrome://userchrome/content/pages/home/home.xhtml",
         "privatebrowsing": "chrome://userchrome/content/pages/privatebrowsing/privatebrowsing.xhtml",
         "config": "chrome://userchrome/content/pages/config/config.xhtml",
