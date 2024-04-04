@@ -11,7 +11,7 @@ While these are not requirements, it is very recommended to use the following:
 
 Before installing Echelon, it is recommended to install a patch for Mozilla Firefox to ensure a proper experience with the theme. This patch makes the theme look closer to the real deal, changing certain elements like the Scrollbar.
 
-You can download the patch here, there are pre-compiled versions of `xul.dll` for Firefox ESR in the releases section on the right. [Firefox Native Patch](https://github.com/ephemeralViolette/firefox-native-controls/releases)
+You can download the patch here, there are pre-compiled versions of `xul.dll` for Firefox ESR in the releases section on the right. [Firefox Native Patch](https://github.com/kawapure/firefox-native-controls/releases)
 
 To install the patch, replace the `xul.dll` file in your Mozilla Firefox program directory with the downloaded `xul.dll` file.
 
