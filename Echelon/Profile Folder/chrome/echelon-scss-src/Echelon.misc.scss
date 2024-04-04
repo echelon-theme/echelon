@@ -1,908 +1,910 @@
 @media not (-moz-platform: macos) {
-  :root:not([echelon-style-4]) .titlebar-buttonbox-container {
-    position: fixed !important;
-    right: 0 !important;
-    top: 0 !important;
-  }
-
-  :root:not([echelon-style-4], [echelon-appearance-xp])[tabs-on-top][sizemode="maximized"] .titlebar-buttonbox-container {
-    position: static !important;
-  }
-
-  #appmenu-button-container {
-    width: max-content !important;
-    min-width: 94px !important;
-    height: calc(var(--titlebar-height) - 1px) !important;
-    border: 1px solid hsla(0,0%,100%,.5) !important;
-    margin-bottom: 1px !important;
-    border-top: 0 !important;
-    padding: 0 !important;
-    border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
-    border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;  
-    width: max-content;
-
-    &:not(:-moz-lwtheme) {
-      margin-top: 1px !important;
+    :root:not([echelon-style-4]) .titlebar-buttonbox-container {
+        position: fixed !important;
+        right: 0 !important;
+        top: 0 !important;
     }
-  }
 
-  :root[sizemode="fullscreen"] #appmenu-button-container,
-  :root:not([tabsintitlebar]) #appmenu-button-container {
-    display: none !important;
-  }
-
-  #appmenu-button {
-    appearance: none !important;
-    width: 100% !important;
-    height: 100% !important;
-    background-image: linear-gradient(to bottom, rgb(247, 182, 82), rgb(215, 98, 10) 95%) !important;
-    padding: 0 1.5em .15em !important;
-    margin: 0 !important;
-    border-radius: 0 !important;
-    border: 1px solid rgba(83, 42, 6, 0.9) !important;
-    border-top: 0 !important;
-    box-shadow: 0 1px 0 rgba(255,255,255,.25) inset, 0 0 0 1px rgba(255,255,255,.25) inset !important;
-    border-bottom-left-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
-    border-bottom-right-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
-    color: white !important;
-    text-shadow: 0 0 1px rgba(0,0,0,.7), 0 1px 1.5px rgba(0,0,0,.5) !important;
-    font-weight: bold !important;
-    background-clip: padding-box !important;
-  }
-
-  #appmenu-button-container:hover:active,
-  #appmenu-button-container:hover:active #appmenu-button,
-  #appmenu-button[open] {
-    border-radius: 0 !important;
-  }
-
-  #main-window[privatebrowsingmode=temporary] #appmenu-button {
-    background-image: linear-gradient(to bottom, rgb(153,38,211), rgb(105,19,163) 95%) !important;
-    border-color: rgba(43,8,65,.9) !important;
-  }
-
-  #appmenu-button:hover:not(:active):not([open]) {
-    background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(252,240,89,.5) 10%, rgba(252,240,89,0) 70%),
-                      -moz-radial-gradient(center bottom, farthest-side, rgb(236,133,0), rgba(255,229,172,0)),
-                      linear-gradient(rgb(246,170,69), rgb(209,74,0) 95%) !important;
-    box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
-                0 0 1.5px 1px rgba(250,234,169,.7) inset,
-                0 -1px 0 rgba(250,234,169,.5) inset !important;
-  }
-
-  #main-window[privatebrowsingmode=temporary] #appmenu-button:hover:not(:active):not([open]) {
-    background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(240,193,255,.5) 10%, rgba(240,193,255,0) 70%),
-                      -moz-radial-gradient(center bottom, farthest-side, rgb(192,81,247), rgba(236,172,255,0)),
-                      linear-gradient(rgb(144,20,207), rgb(95,0,158) 95%) !important;
-    border-color: rgba(43,8,65,.9) !important;
-    box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
-                0 0 2px 1px rgba(240,193,255,.7) inset,
-                0 -1px 0 rgba(240,193,255,.5) inset !important;
-  }
-
-  /** Firefox Channels & Forks colors **/
-
-  /* DEVELOPER EDITION / AURORA */
-
-  #main-window:not([privatebrowsingmode="temporary"]) {
-    &[update-channel="aurora"] #appmenu-button {
-      background-image: linear-gradient(hsl(208,99%,37%), hsl(214,90%,23%) 95%) !important;
-      border-color: hsla(214,89%,21%,.9) !important;
+    :root:not([echelon-style-4], [echelon-appearance-xp])[tabs-on-top][sizemode="maximized"] .titlebar-buttonbox-container {
+        position: static !important;
     }
-    
-    &[update-channel="aurora"] #appmenu-button:hover:not(:active):not([open]) {
-      background-image: radial-gradient(farthest-side at bottom, hsla(202,100%,85%,.5) 10%, hsla(202,100%,85%,0) 70%),
-                        radial-gradient(farthest-side at bottom, hsla(205,100%,72%,.7), hsla(205,100%,72%,0)),
-                        linear-gradient(hsl(208,98%,34%), hsl(213,87%,20%) 95%) !important;
-      border-color: hsla(214,89%,21%,.9) !important;
-      box-shadow: 0 1px 0 hsla(205,100%,72%,.15) inset,
-                  0 0 2px 1px hsla(205,100%,72%,.5) inset,
-                  0 -1px 0 hsla(205,100%,72%,.2) inset !important;
-    }
-    
-    &[update-channel="aurora"] #appmenu-button:hover:active,
-    &[update-channel="aurora"] #appmenu-button[open] {
-      background-image: linear-gradient(hsl(208,95%,30%), hsl(214,85%,17%) 95%);
-      box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
-                  0 1px 1px rgba(0,0,0,.2) inset !important;
-    }
-    
-    /* NIGHTLY */
-    
-    &[update-channel="nightly"] #appmenu-button {
-      background-image: linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
-      border-color: hsla(210,59%,13%,.9) !important;
-      box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
-                  0 0 2px 1px hsla(211,65%,85%,.15) inset !important;
-    }
-    
-    &[update-channel="nightly"] #appmenu-button:hover:not(:active):not([open]) {
-      background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210,48%,90%,.5) 10%, hsla(210,48%,90%,0) 70%),
-                        -moz-radial-gradient(center bottom, farthest-side, hsla(211,70%,83%,.5), hsla(211,70%,83%,0)),
-                        linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
-      border-color: hsla(210,59%,13%,.9) !important;
-      box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
-                  0 0 2px 1px hsla(210,48%,90%,.4) inset,
-                  0 -1px 0 hsla(210,48%,90%,.2) inset !important;
-    }
-    
-    &[update-channel="nightly"] #appmenu-button:hover:active,
-    &[update-channel="nightly"] #appmenu-button[open] {
-      background-image: linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
-      box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
-                  0 1px 1px rgba(0,0,0,.2) inset !important;
-    }
-    
-    /* WATERFOX */
-    
-    &[browser-name="Waterfox"] #appmenu-button {
-      background-image: linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
-      border-color: hsla(210,59%,13%,.9) !important;
-      box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
-                  0 0 2px 1px hsla(211,65%,85%,.15) inset !important;
-    }
-    
-    &[browser-name="Waterfox"] #appmenu-button:hover:not(:active):not([open]) {
-      background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210,48%,90%,.5) 10%, hsla(210,48%,90%,0) 70%),
-                        -moz-radial-gradient(center bottom, farthest-side, hsla(211,70%,83%,.5), hsla(211,70%,83%,0)),
-                        linear-gradient(hsl(211,33%,32%), hsl(209,53%,10%) 95%) !important;
-      border-color: hsla(210,59%,13%,.9) !important;
-      box-shadow: 0 1px 0 hsla(210,48%,90%,.15) inset,
-                  0 0 2px 1px hsla(210,48%,90%,.4) inset,
-                  0 -1px 0 hsla(210,48%,90%,.2) inset !important;
-    }
-    
-    &[browser-name="Waterfox"] #appmenu-button:hover:active,
-    &[browser-name="Waterfox"] #appmenu-button[open] {
-      background-image: linear-gradient(hsl(211,33%,26%), hsl(209,53%,6%) 95%);
-      box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
-                  0 1px 1px rgba(0,0,0,.2) inset !important;
-    }
-    
-    &[echelon-appearance-newlogo] {
-      &[browser-name="Waterfox"] #appmenu-button {
-        background-image: linear-gradient(rgb(82,182,247), rgb(10,98,215) 95%) !important;
-        border-color: rgba(6,42,83,.9) !important;
-        box-shadow: 0 1px 0 rgba(255,255,255,.25) inset,
-                    0 0 0 1px rgba(255,255,255,.25) inset !important;
-      }
-    
-      &[browser-name="Waterfox"] #appmenu-button:hover:not(:active):not([open]) {
-        background-image: radial-gradient(farthest-side at bottom, rgba(89,240,252,.5) 10%, rgba(89,240,252,0) 70%),
-                          radial-gradient(farthest-side at bottom, rgb(60,68,236), rgba(172,229,255,0)),
-                          linear-gradient(rgb(69,170,246), rgb(30,40,209) 95%) !important;
-        border-color: rgba(6,42,83,.9) !important;
-        box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
-                    0 0 2px 1px rgba(169,234,250,.7) inset,
-                    0 -1px 0 rgba(169,234,250,.5) inset !important;
-      }
-    
-      &[browser-name="Waterfox"] #appmenu-button:hover:active,
-      &[browser-name="Waterfox"] #appmenu-button[open] {
-        background-image: linear-gradient(rgb(69,170,246), rgb(0,74,209) 95%) !important;
-        box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
-                    0 1px 1px rgba(0,0,0,.2) inset !important;
-      }
-    }
-  }
 
-  /* Private Browsing icon from Firefox 20 */
+    #appmenu-button-container {
+        width: max-content !important;
+        min-width: 94px !important;
+        height: calc(var(--titlebar-height) - 1px) !important;
+        border: 1px solid hsla(0, 0%, 100%, .5) !important;
+        margin-bottom: 1px !important;
+        border-top: 0 !important;
+        padding: 0 !important;
+        border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
+        border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;
+        width: max-content;
 
-  #main-window[echelon-style-3][privatebrowsingmode=temporary] #appmenu-button::before {
-    content: url('images/privatebrowsing-light.png') !important;
-    margin-top: 1px !important;
-  }
+        &:not(:-moz-lwtheme) {
+            margin-top: 1px !important;
+        }
+    }
 
-  #appmenu-button:hover:active,
-  #appmenu-button[open] {
-    background-image: linear-gradient(to bottom, rgb(246,170,69), rgb(209,74,0) 95%) !important;
-    box-shadow: 0 2px 3px rgba(0,0,0,.4) inset,
-                0 1px 1px rgba(0,0,0,.2) inset !important;
-  }
+    :root[sizemode="fullscreen"] #appmenu-button-container,
+    :root:not([tabsintitlebar]) #appmenu-button-container {
+        display: none !important;
+    }
 
-  #main-window[privatebrowsingmode=temporary] #appmenu-button:hover:active,
-  #main-window[privatebrowsingmode=temporary] #appmenu-button[open] {
-    background-image: linear-gradient(to bottom, rgb(144,20,207), rgb(95,0,158) 95%) !important;
-  }
+    #appmenu-button {
+        appearance: none !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-image: linear-gradient(to bottom, rgb(247, 182, 82), rgb(215, 98, 10) 95%) !important;
+        padding: 0 1.5em .15em !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        border: 1px solid rgba(83, 42, 6, 0.9) !important;
+        border-top: 0 !important;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .25) inset, 0 0 0 1px rgba(255, 255, 255, .25) inset !important;
+        border-bottom-left-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
+        border-bottom-right-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
+        color: white !important;
+        text-shadow: 0 0 1px rgba(0, 0, 0, .7), 0 1px 1.5px rgba(0, 0, 0, .5) !important;
+        font-weight: bold !important;
+        background-clip: padding-box !important;
+    }
 
-  #appmenu-button .button-menu-dropmarker {
-    width: 9px !important;
-    height: 7px !important;
-    list-style-image: url('images/appmenu-dropmarker.png') !important;
-    margin-inline-start: .4em !important;
-    margin-top: 1px !important;
-  }
+    #appmenu-button-container:hover:active,
+    #appmenu-button-container:hover:active #appmenu-button,
+    #appmenu-button[open] {
+        border-radius: 0 !important;
+    }
 
-  #main-window[custom-fx-button-bg]:not([privatebrowsingmode=temporary]) #appmenu-button {
-    background-color: var(--fx-custom-bg) !important;
-    background-blend-mode: overlay !important;
-    background-image: linear-gradient(to bottom, rgb(255 255 255 / 100%), rgb(255 255 255 / 0%) 95%) !important;
-    border-color: rgba(0, 0, 0, .6) !important;
-  }
+    #main-window[privatebrowsingmode=temporary] #appmenu-button {
+        background-image: linear-gradient(to bottom, rgb(153, 38, 211), rgb(105, 19, 163) 95%) !important;
+        border-color: rgba(43, 8, 65, .9) !important;
+    }
 
-  #main-window[custom-fx-button-bg]:not([privatebrowsingmode=temporary]) #appmenu-button:hover:not(:active):not([open]) {
-    background-image: radial-gradient(farthest-side at bottom, rgba(255 255 255 / 75%) 5%, rgba(255, 255, 255, 0) 70%),
-                      radial-gradient(farthest-side at bottom, rgb(255 255 255 / 50%), rgb(255 255 255 / 0%)),
-                      linear-gradient(rgb(255 255 255 / 75%), rgb(255 255 255 / 0%) 95%) !important;
-    background-blend-mode: overlay !important;
-    box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
-                0 0 1.5px 1px rgba(255,255,255,.4) inset,
-                0 -1px 0 rgba(255,255,255,.5) inset !important;
-  }
+    #appmenu-button:hover:not(:active):not([open]) {
+        background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(252, 240, 89, .5) 10%, rgba(252, 240, 89, 0) 70%),
+            -moz-radial-gradient(center bottom, farthest-side, rgb(236, 133, 0), rgba(255, 229, 172, 0)),
+            linear-gradient(rgb(246, 170, 69), rgb(209, 74, 0) 95%) !important;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .1) inset,
+            0 0 1.5px 1px rgba(250, 234, 169, .7) inset,
+            0 -1px 0 rgba(250, 234, 169, .5) inset !important;
+    }
 
-  /* 
+    #main-window[privatebrowsingmode=temporary] #appmenu-button:hover:not(:active):not([open]) {
+        background-image: -moz-radial-gradient(center bottom, farthest-side, rgba(240, 193, 255, .5) 10%, rgba(240, 193, 255, 0) 70%),
+            -moz-radial-gradient(center bottom, farthest-side, rgb(192, 81, 247), rgba(236, 172, 255, 0)),
+            linear-gradient(rgb(144, 20, 207), rgb(95, 0, 158) 95%) !important;
+        border-color: rgba(43, 8, 65, .9) !important;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .1) inset,
+            0 0 2px 1px rgba(240, 193, 255, .7) inset,
+            0 -1px 0 rgba(240, 193, 255, .5) inset !important;
+    }
+
+    /** Firefox Channels & Forks colors **/
+
+    /* DEVELOPER EDITION / AURORA */
+
+    #main-window:not([privatebrowsingmode="temporary"]) {
+        &[update-channel="aurora"] #appmenu-button {
+            background-image: linear-gradient(hsl(208, 99%, 37%), hsl(214, 90%, 23%) 95%) !important;
+            border-color: hsla(214, 89%, 21%, .9) !important;
+        }
+
+        &[update-channel="aurora"] #appmenu-button:hover:not(:active):not([open]) {
+            background-image: radial-gradient(farthest-side at bottom, hsla(202, 100%, 85%, .5) 10%, hsla(202, 100%, 85%, 0) 70%),
+                radial-gradient(farthest-side at bottom, hsla(205, 100%, 72%, .7), hsla(205, 100%, 72%, 0)),
+                linear-gradient(hsl(208, 98%, 34%), hsl(213, 87%, 20%) 95%) !important;
+            border-color: hsla(214, 89%, 21%, .9) !important;
+            box-shadow: 0 1px 0 hsla(205, 100%, 72%, .15) inset,
+                0 0 2px 1px hsla(205, 100%, 72%, .5) inset,
+                0 -1px 0 hsla(205, 100%, 72%, .2) inset !important;
+        }
+
+        &[update-channel="aurora"] #appmenu-button:hover:active,
+        &[update-channel="aurora"] #appmenu-button[open] {
+            background-image: linear-gradient(hsl(208, 95%, 30%), hsl(214, 85%, 17%) 95%);
+            box-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+                0 1px 1px rgba(0, 0, 0, .2) inset !important;
+        }
+
+        /* NIGHTLY */
+
+        &[update-channel="nightly"] #appmenu-button {
+            background-image: linear-gradient(hsl(211, 33%, 32%), hsl(209, 53%, 10%) 95%) !important;
+            border-color: hsla(210, 59%, 13%, .9) !important;
+            box-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset,
+                0 0 2px 1px hsla(211, 65%, 85%, .15) inset !important;
+        }
+
+        &[update-channel="nightly"] #appmenu-button:hover:not(:active):not([open]) {
+            background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210, 48%, 90%, .5) 10%, hsla(210, 48%, 90%, 0) 70%),
+                -moz-radial-gradient(center bottom, farthest-side, hsla(211, 70%, 83%, .5), hsla(211, 70%, 83%, 0)),
+                linear-gradient(hsl(211, 33%, 32%), hsl(209, 53%, 10%) 95%) !important;
+            border-color: hsla(210, 59%, 13%, .9) !important;
+            box-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset,
+                0 0 2px 1px hsla(210, 48%, 90%, .4) inset,
+                0 -1px 0 hsla(210, 48%, 90%, .2) inset !important;
+        }
+
+        &[update-channel="nightly"] #appmenu-button:hover:active,
+        &[update-channel="nightly"] #appmenu-button[open] {
+            background-image: linear-gradient(hsl(211, 33%, 26%), hsl(209, 53%, 6%) 95%);
+            box-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+                0 1px 1px rgba(0, 0, 0, .2) inset !important;
+        }
+
+        /* WATERFOX */
+
+        &[browser-name="Waterfox"] #appmenu-button {
+            background-image: linear-gradient(hsl(211, 33%, 32%), hsl(209, 53%, 10%) 95%) !important;
+            border-color: hsla(210, 59%, 13%, .9) !important;
+            box-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset,
+                0 0 2px 1px hsla(211, 65%, 85%, .15) inset !important;
+        }
+
+        &[browser-name="Waterfox"] #appmenu-button:hover:not(:active):not([open]) {
+            background-image: -moz-radial-gradient(center bottom, farthest-side, hsla(210, 48%, 90%, .5) 10%, hsla(210, 48%, 90%, 0) 70%),
+                -moz-radial-gradient(center bottom, farthest-side, hsla(211, 70%, 83%, .5), hsla(211, 70%, 83%, 0)),
+                linear-gradient(hsl(211, 33%, 32%), hsl(209, 53%, 10%) 95%) !important;
+            border-color: hsla(210, 59%, 13%, .9) !important;
+            box-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset,
+                0 0 2px 1px hsla(210, 48%, 90%, .4) inset,
+                0 -1px 0 hsla(210, 48%, 90%, .2) inset !important;
+        }
+
+        &[browser-name="Waterfox"] #appmenu-button:hover:active,
+        &[browser-name="Waterfox"] #appmenu-button[open] {
+            background-image: linear-gradient(hsl(211, 33%, 26%), hsl(209, 53%, 6%) 95%);
+            box-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+                0 1px 1px rgba(0, 0, 0, .2) inset !important;
+        }
+
+        &[echelon-appearance-newlogo] {
+            &[browser-name="Waterfox"] #appmenu-button {
+                background-image: linear-gradient(rgb(82, 182, 247), rgb(10, 98, 215) 95%) !important;
+                border-color: rgba(6, 42, 83, .9) !important;
+                box-shadow: 0 1px 0 rgba(255, 255, 255, .25) inset,
+                    0 0 0 1px rgba(255, 255, 255, .25) inset !important;
+            }
+
+            &[browser-name="Waterfox"] #appmenu-button:hover:not(:active):not([open]) {
+                background-image: radial-gradient(farthest-side at bottom, rgba(89, 240, 252, .5) 10%, rgba(89, 240, 252, 0) 70%),
+                    radial-gradient(farthest-side at bottom, rgb(60, 68, 236), rgba(172, 229, 255, 0)),
+                    linear-gradient(rgb(69, 170, 246), rgb(30, 40, 209) 95%) !important;
+                border-color: rgba(6, 42, 83, .9) !important;
+                box-shadow: 0 1px 0 rgba(255, 255, 255, .1) inset,
+                    0 0 2px 1px rgba(169, 234, 250, .7) inset,
+                    0 -1px 0 rgba(169, 234, 250, .5) inset !important;
+            }
+
+            &[browser-name="Waterfox"] #appmenu-button:hover:active,
+            &[browser-name="Waterfox"] #appmenu-button[open] {
+                background-image: linear-gradient(rgb(69, 170, 246), rgb(0, 74, 209) 95%) !important;
+                box-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+                    0 1px 1px rgba(0, 0, 0, .2) inset !important;
+            }
+        }
+    }
+
+    /* Private Browsing icon from Firefox 20 */
+
+    #main-window[echelon-style-3][privatebrowsingmode=temporary] #appmenu-button::before {
+        content: url('images/privatebrowsing-light.png') !important;
+        margin-top: 1px !important;
+    }
+
+    #appmenu-button:hover:active,
+    #appmenu-button[open] {
+        background-image: linear-gradient(to bottom, rgb(246, 170, 69), rgb(209, 74, 0) 95%) !important;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+            0 1px 1px rgba(0, 0, 0, .2) inset !important;
+    }
+
+    #main-window[privatebrowsingmode=temporary] #appmenu-button:hover:active,
+    #main-window[privatebrowsingmode=temporary] #appmenu-button[open] {
+        background-image: linear-gradient(to bottom, rgb(144, 20, 207), rgb(95, 0, 158) 95%) !important;
+    }
+
+    #appmenu-button .button-menu-dropmarker {
+        width: 9px !important;
+        height: 7px !important;
+        list-style-image: url('images/appmenu-dropmarker.png') !important;
+        margin-inline-start: .4em !important;
+        margin-top: 1px !important;
+    }
+
+    #main-window[custom-fx-button-bg]:not([privatebrowsingmode=temporary]) #appmenu-button {
+        background-color: var(--fx-custom-bg) !important;
+        background-blend-mode: overlay !important;
+        background-image: linear-gradient(to bottom, rgb(255 255 255 / 100%), rgb(255 255 255 / 0%) 95%) !important;
+        border-color: rgba(0, 0, 0, .6) !important;
+    }
+
+    #main-window[custom-fx-button-bg]:not([privatebrowsingmode=temporary]) #appmenu-button:hover:not(:active):not([open]) {
+        background-image: radial-gradient(farthest-side at bottom, rgba(255 255 255 / 75%) 5%, rgba(255, 255, 255, 0) 70%),
+            radial-gradient(farthest-side at bottom, rgb(255 255 255 / 50%), rgb(255 255 255 / 0%)),
+            linear-gradient(rgb(255 255 255 / 75%), rgb(255 255 255 / 0%) 95%) !important;
+        background-blend-mode: overlay !important;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .1) inset,
+            0 0 1.5px 1px rgba(255, 255, 255, .4) inset,
+            0 -1px 0 rgba(255, 255, 255, .5) inset !important;
+    }
+
+    /* 
     Due to the Echelon feature of changing the text of the Firefox button,
     we will have to use CSS grids for maximized windows.
   */
 
-  :root[sizemode="maximized"] #titlebar {
-    display: grid !important;
-    grid-template-areas: 
-        'firefox-button menu-bar'
-        'firefox-button tabbar';
-    grid-auto-columns: min-content auto;
-  }
+    :root[sizemode="maximized"] #titlebar {
+        display: grid !important;
+        grid-template-areas:
+            'firefox-button menu-bar'
+            'firefox-button tabbar';
+        grid-auto-columns: min-content auto;
+    }
 
-  :root[sizemode="maximized"] #appmenu-button-container {
-    height: calc(var(--titlebar-height) - 2px) !important;
-    margin-top: 0 !important;
-    position: static !important;
-  }
+    :root[sizemode="maximized"] #appmenu-button-container {
+        height: calc(var(--titlebar-height) - 2px) !important;
+        margin-top: 0 !important;
+        position: static !important;
+    }
 
-  :root[sizemode="maximized"][tabsintitlebar] #toolbar-menubar {
-    padding-left: 4px !important; 
-  }
+    :root[sizemode="maximized"][tabsintitlebar] #toolbar-menubar {
+        padding-left: 4px !important;
+    }
 
-  :root[sizemode="maximized"] #appmenu-button-container {
-    grid-area: firefox-button !important;
-  }
+    :root[sizemode="maximized"] #appmenu-button-container {
+        grid-area: firefox-button !important;
+    }
 
-  :root[sizemode="maximized"] #toolbar-menubar {
-    grid-area: menu-bar !important;
-  }
+    :root[sizemode="maximized"] #toolbar-menubar {
+        grid-area: menu-bar !important;
+    }
 
-  :root[sizemode="maximized"] #TabsToolbar {
-    grid-area: tabbar !important;
-  }
+    :root[sizemode="maximized"] #TabsToolbar {
+        grid-area: tabbar !important;
+    }
 }
 
 @media (-moz-platform: macos) {
-  #appmenu-button-container {
-    display: none !important;
-  }
+    #appmenu-button-container {
+        display: none !important;
+    }
 
-  :root:not([echelon-style-4]) .titlebar-buttonbox-container .titlebar-buttonbox:-moz-locale-dir(ltr) {
-    margin-left: 12px !important;
-    margin-right: 12px !important;
-  }
+    :root:not([echelon-style-4]) .titlebar-buttonbox-container .titlebar-buttonbox:-moz-locale-dir(ltr) {
+        margin-left: 12px !important;
+        margin-right: 12px !important;
+    }
 
-  :root:not([echelon-style-4]) .titlebar-buttonbox-container .titlebar-buttonbox:-moz-locale-dir(rtl) {
-    margin-left: 12px !important;
-    margin-right: 12px !important;
-  }
+    :root:not([echelon-style-4]) .titlebar-buttonbox-container .titlebar-buttonbox:-moz-locale-dir(rtl) {
+        margin-left: 12px !important;
+        margin-right: 12px !important;
+    }
 }
 
 /** BOOKMARKS TOOLBAR **/
 
 #PersonalToolbar {
-  :root:not([lwtheme-image]) &
-  {
-    border-left: 1px solid rgba(10%,10%,10%,.4) !important;
-    border-right: 1px solid rgba(10%,10%,10%,.4) !important;
-  }
-  padding-inline: 0 !important;
-  padding-bottom: 1px !important;
-  transition: none !important;
+    :root:not([lwtheme-image]) & {
+        border-left: 1px solid rgba(10%, 10%, 10%, .4) !important;
+        border-right: 1px solid rgba(10%, 10%, 10%, .4) !important;
+    }
+
+    padding-inline: 0 !important;
+    padding-bottom: 1px !important;
+    transition: none !important;
 }
 
 toolbarbutton.bookmark-item {
-  appearance: toolbarbutton !important;
-  margin: 0 !important;
+    appearance: toolbarbutton !important;
+    margin: 0 !important;
 }
 
 .bookmark-item[container] .toolbarbutton-icon,
-.menu-iconic[container] > .menu-iconic-left > .menu-iconic-icon {
-  background-image: url('images/folder-item.png') !important;
-  list-style-image: none !important;
-  background-position-x: -16px !important;
+.menu-iconic[container]>.menu-iconic-left>.menu-iconic-icon {
+    background-image: url('images/folder-item.png') !important;
+    list-style-image: none !important;
+    background-position-x: -16px !important;
 
-  :root[echelon-appearance-xp] & {
-    background-image: url("images/xp/folder-item.png");
-  }
+    :root[echelon-appearance-xp] & {
+        background-image: url("images/xp/folder-item.png");
+    }
 }
 
 .bookmark-item[container][query] .toolbarbutton-icon {
-  background-image: url('images/query.png') !important;
+    background-image: url('images/query.png') !important;
 }
 
-#bookmarksToolbarFolderMenu > .menu-iconic-left > .menu-iconic-icon {
-  background-image: none !important;
+#bookmarksToolbarFolderMenu>.menu-iconic-left>.menu-iconic-icon {
+    background-image: none !important;
 }
 
 /** MENUPOPUPS **/
 
 /* Context Navigation */
 
-#context-navigation > .menuitem-iconic {
-  width: 45px !important;
+#context-navigation>.menuitem-iconic {
+    width: 45px !important;
 }
 
-#context-navigation > .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {
-  width: 18px !important;
+#context-navigation>.menuitem-iconic>.menu-iconic-left>.menu-iconic-icon {
+    width: 18px !important;
 }
 
 #context-forward [disabled="true"] .menu-iconic-icon {
-  opacity: 0.4 !important;
+    opacity: 0.4 !important;
 }
 
 #context-inspect-a11y {
-  display: none !important;
+    display: none !important;
 }
 
 /* Findbar */
 
 findbar {
-  max-height: 27px !important;
-  background-size: 100% 2px;
-  background-repeat: no-repeat;
-  border-top: 0 !important;
-  padding-block: 0 !important;
-  padding-top: 1px !important;
-  align-items: center !important;
-  overflow: hidden !important;
+    max-height: 27px !important;
+    background-size: 100% 2px;
+    background-repeat: no-repeat;
+    border-top: 0 !important;
+    padding-block: 0 !important;
+    padding-top: 1px !important;
+    align-items: center !important;
+    overflow: hidden !important;
 
-  &:not(:-moz-lwtheme) {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,.15) 1px, rgba(255,255,255,.15) 1px);
-  }
+    &:not(:-moz-lwtheme) {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, .15) 1px, rgba(255, 255, 255, .15) 1px);
+    }
 }
 
 .findbar-find-next,
 .findbar-highlight {
-  margin-inline: 0 !important;
+    margin-inline: 0 !important;
 }
 
 .findbar-find-next,
 .findbar-find-previous,
 .findbar-highlight,
 #main-window[echelon-style-4] checkbox:not(.customizationmode-checkbox) {
-  padding: 0 3px !important;
-  appearance: toolbarbutton !important;
-  list-style-image: none !important;
+    padding: 0 3px !important;
+    appearance: toolbarbutton !important;
+    list-style-image: none !important;
 }
 
 .findbar-find-next .toolbarbutton-icon,
 .findbar-find-previous .toolbarbutton-icon,
 .findbar-highlight .checkbox-icon {
-  width: 16px !important;
-  height: 16px !important;
-  background-image: url('images/find.png') !important;
+    width: 16px !important;
+    height: 16px !important;
+    background-image: url('images/find.png') !important;
 }
 
 .findbar-find-next .toolbarbutton-icon {
-  background-position-x: -16px !important;
+    background-position-x: -16px !important;
 }
 
 .findbar-highlight .checkbox-icon {
-  background-position-x: -32px !important;
+    background-position-x: -32px !important;
 }
 
-#main-window:not([echelon-style-4]) .findbar-find-previous[disabled="true"] > .toolbarbutton-icon, 
-#main-window:not([echelon-style-4]) .findbar-find-next[disabled="true"] > .toolbarbutton-icon {
-  opacity: 1 !important;
-  background-position-y: -32px !important;
+#main-window:not([echelon-style-4]) .findbar-find-previous[disabled="true"]>.toolbarbutton-icon,
+#main-window:not([echelon-style-4]) .findbar-find-next[disabled="true"]>.toolbarbutton-icon {
+    opacity: 1 !important;
+    background-position-y: -32px !important;
 }
 
 .findbar-highlight .checkbox-check {
-  visibility: collapse !important;
+    visibility: collapse !important;
 }
 
 #main-window:not([echelon-style-4]) .findbar-textbox {
-  margin-top: 2px !important;
-  max-height: 22px !important;
-  appearance: textfield !important;
-  -moz-default-appearance: textfield !important;
-  background-color: unset !important;
-  border-radius: unset !important;
-  border: unset !important;
-  outline: 0 !important;
-  box-shadow: none !important;
-  padding: 0 !important;
+    margin-top: 2px !important;
+    max-height: 22px !important;
+    appearance: textfield !important;
+    -moz-default-appearance: textfield !important;
+    background-color: unset !important;
+    border-radius: unset !important;
+    border: unset !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
 }
 
 #main-window:not([echelon-style-4]) hbox[anonid="findbar-textbox-wrapper"]::before {
-  content: 'Find:';
-  display: flex;
-  align-self: center;
-  margin-inline-end: 8px;
-  margin-bottom: 2px;
+    content: 'Find:';
+    display: flex;
+    align-self: center;
+    margin-inline-end: 8px;
+    margin-bottom: 2px;
 }
 
 #main-window:not([echelon-style-4]) .findbar-closebutton {
-  order: -1 !important;
-  margin-inline: 6px !important;
+    order: -1 !important;
+    margin-inline: 6px !important;
 }
 
 .findbar-find-previous::after,
 .findbar-find-next::after {
-  margin-inline-start: 5px !important;
+    margin-inline-start: 5px !important;
 }
 
 #main-window:not([echelon-style-4]) .findbar-find-previous::after {
-  content: 'Previous';
+    content: 'Previous';
 }
 
 #main-window:not([echelon-style-4]) .findbar-find-next::after {
-  content: 'Next';
+    content: 'Next';
 }
 
 findbar .checkbox-check {
-  appearance: auto !important;
-  -moz-default-appearance: checkbox !important;
-  margin-block-start: 2px !important;
-  margin-inline-end: 4px !important;
+    appearance: auto !important;
+    -moz-default-appearance: checkbox !important;
+    margin-block-start: 2px !important;
+    margin-inline-end: 4px !important;
 }
 
 .findbar-find-status[status="notfound"] {
-  display: flex !important;
-  align-items: center !important;
-  font-weight: revert !important;
+    display: flex !important;
+    align-items: center !important;
+    font-weight: revert !important;
 }
 
 #main-window:not([echelon-style-4]) .findbar-find-status[status="notfound"]::before {
-  content: '';
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-image: url('images/information-16.png');
-  margin-inline-end: 4px;
-  margin-top: 2px !important;
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('images/information-16.png');
+    margin-inline-end: 4px;
+    margin-top: 2px !important;
 }
 
 /* Echelon Style 4 */
 
 #main-window[echelon-style-4] findbar {
-  height: 100% !important;
-  max-height: 35px !important;
-  box-shadow: 0 1px 1px rgba(0,0,0,.1) inset !important;
-  background-size: 100% 2px !important;
-  background-repeat: no-repeat !important;
+    height: 100% !important;
+    max-height: 35px !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1) inset !important;
+    background-size: 100% 2px !important;
+    background-repeat: no-repeat !important;
 
-  &:not(:-moz-lwtheme) {
-    background-image: linear-gradient(rgba(0,0,0,.15) 1px, rgba(255,255,255,.15) 1px) !important;
-    background-color: -moz-Dialog !important;
-  }
+    &:not(:-moz-lwtheme) {
+        background-image: linear-gradient(rgba(0, 0, 0, .15) 1px, rgba(255, 255, 255, .15) 1px) !important;
+        background-color: -moz-Dialog !important;
+    }
 }
 
 
 #main-window[echelon-style-4] .findbar-label {
-  color: GrayText !important;
-  flex: 1 !important;
+    color: GrayText !important;
+    flex: 1 !important;
 }
 
 #main-window[echelon-style-4] findbar .checkbox-icon,
 #main-window[echelon-style-4] findbar .checkbox-check,
 #main-window[echelon-style-4] .found-matches {
-  visibility: collapse !important;
+    visibility: collapse !important;
 }
 
 #main-window[echelon-style-4] findbar checkbox {
-  margin-inline: 0 !important;
-  margin-inline-start: 5px !important;
-  order: 1001 !important;
+    margin-inline: 0 !important;
+    margin-inline-start: 5px !important;
+    order: 1001 !important;
 }
 
 
 #main-window[echelon-style-4] .findbar-textbox {
-  min-height: 21px !important;
-  border: 1px solid ThreeDShadow !important;
-  border-radius: 2px 0 0 2px !important;
-  margin: 0 !important;
-  padding: 1px 5px !important;
-  width: 14em !important;
-  outline: none !important;
-  box-shadow: none !important;
+    min-height: 21px !important;
+    border: 1px solid ThreeDShadow !important;
+    border-radius: 2px 0 0 2px !important;
+    margin: 0 !important;
+    padding: 1px 5px !important;
+    width: 14em !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 #main-window[echelon-style-4] .findbar-textbox:focus {
-  border-color: Highlight !important;
+    border-color: Highlight !important;
 }
 
 #main-window .findbar-textbox[status="notfound"] {
-  background-color: #f66 !important;
-  color: white !important;
+    background-color: #f66 !important;
+    color: white !important;
 }
 
 #main-window:not([echelon-style-4]) .findbar-textbox[status="notfound"] {
-  appearance: none !important;
-  padding: 2px !important;
+    appearance: none !important;
+    padding: 2px !important;
 }
 
 #main-window[echelon-style-4] .findbar-find-next,
 #main-window[echelon-style-4] .findbar-find-previous {
-  appearance: none !important;
-  margin: 0 !important;
-  border-radius: 0 !important;
-  background-image: linear-gradient(to bottom, rgba(255,255,255,.9), rgba(255,255,255,.2)) !important;
-  border: 1px solid ThreeDShadow !important;
-  box-shadow: 0 1px #fff inset !important;
-  padding: 1px 5px !important;
-  line-height: 1em !important;
-  background-color: -moz-Dialog !important;
+    appearance: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .9), rgba(255, 255, 255, .2)) !important;
+    border: 1px solid ThreeDShadow !important;
+    box-shadow: 0 1px #fff inset !important;
+    padding: 1px 5px !important;
+    line-height: 1em !important;
+    background-color: -moz-Dialog !important;
 }
 
 #main-window[echelon-style-4] .findbar-find-previous:not([disabled]):active,
 #main-window[echelon-style-4] .findbar-find-next:not([disabled]):active {
-  background-color: rgba(23,50,76,.2) !important;
-  box-shadow: 0 1px 2px rgba(10,31,51,.2) inset !important;
+    background-color: rgba(23, 50, 76, .2) !important;
+    box-shadow: 0 1px 2px rgba(10, 31, 51, .2) inset !important;
 }
 
 #main-window[echelon-style-4] .findbar-find-previous,
 #main-window[echelon-style-4] .findbar-find-previous:not([disabled]):active {
-  border-right: none !important;
-  border-left: none !important;
+    border-right: none !important;
+    border-left: none !important;
 }
 
 #main-window[echelon-style-4] .findbar-find-next:-moz-locale-dir(ltr) {
-  border-top-right-radius: 2px !important;
-  border-bottom-right-radius: 2px !important;
+    border-top-right-radius: 2px !important;
+    border-bottom-right-radius: 2px !important;
 }
 
 #main-window[echelon-style-4] .findbar-find-next:-moz-locale-dir(rtl) {
-  border-top-left-radius: 2px !important;
-  border-bottom-left-radius: 2px !important;
+    border-top-left-radius: 2px !important;
+    border-bottom-left-radius: 2px !important;
 }
 
-#main-window[echelon-style-4] .findbar-find-next .toolbarbutton-icon, 
+#main-window[echelon-style-4] .findbar-find-next .toolbarbutton-icon,
 #main-window[echelon-style-4] .findbar-find-previous .toolbarbutton-icon {
-  width: 12px !important;
-  height: 9px !important;
-  background-image: url('images/find-arrows.png') !important;
+    width: 12px !important;
+    height: 9px !important;
+    background-image: url('images/find-arrows.png') !important;
 }
 
 #main-window[echelon-style-4] .findbar-find-next .toolbarbutton-icon {
-  background-position-x: -12px !important;
+    background-position-x: -12px !important;
 }
 
 /* Pop Ups */
 #tab-notification-deck {
-  border-left: 1px solid rgba(26, 26, 26, 0.4) !important;
-  border-right: 1px solid rgba(26, 26, 26, 0.4) !important;
+    border-left: 1px solid rgba(26, 26, 26, 0.4) !important;
+    border-right: 1px solid rgba(26, 26, 26, 0.4) !important;
 }
 
 notification-message {
-  border-top: 1px solid ThreeDHighlight !important;
-  border-left: 1px solid ThreeDHighlight !important;
-  border-bottom: 1px solid ThreeDShadow !important;
-  border-right: 1px solid ThreeDShadow !important;
+    border-top: 1px solid ThreeDHighlight !important;
+    border-left: 1px solid ThreeDHighlight !important;
+    border-bottom: 1px solid ThreeDShadow !important;
+    border-right: 1px solid ThreeDShadow !important;
 }
 
 .notification-button {
-  appearance: button !important;
-  font-size: revert !important;
-  font-weight: revert !important;
-  margin: 0 !important;
+    appearance: button !important;
+    font-size: revert !important;
+    font-weight: revert !important;
+    margin: 0 !important;
 }
 
 /* Hack to remove padding but don't break the notification message */
 
 notification-message {
-  margin: 0 !important;
-  border-radius: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
 }
 
 notification-message[style="margin-top: -34px; opacity: 0;"] {
-  margin-top: -34px !important;
+    margin-top: -34px !important;
 }
 
 .container.infobar {
-  align-items: center !important;
-  border-radius: 0 !important;
-  background-color: infobackground !important;
-  color: infotext !important;
+    align-items: center !important;
+    border-radius: 0 !important;
+    background-color: infobackground !important;
+    color: infotext !important;
 }
 
 .container.infobar::before {
-  display: none !important;
+    display: none !important;
 }
 
-.infobar > .icon,
+.infobar>.icon,
 .notification-content {
-  margin-inline-start: 6px !important;
+    margin-inline-start: 6px !important;
 }
 
 .ghost-button {
-  background-size: unset !important;
+    background-size: unset !important;
 }
 
 .notification-content {
-  display: flex !important;
-  width: 100% !important;
+    display: flex !important;
+    width: 100% !important;
 }
 
 .notification-message {
-  flex: 1 !important;
+    flex: 1 !important;
 }
 
 /* Sidebar */
 
 .sidebar-panel {
-  background-color: -moz-Dialog !important;
+    background-color: -moz-Dialog !important;
 }
 
 #sidebar-header {
-  min-height: 25px !important;
-  background-color: -moz-Dialog !important;
-  color: -moz-dialogText !important;
-  appearance: auto !important;
-  -moz-default-appearance: toolbox !important;
-  border-bottom: 1px solid ThreeDLightShadow;
-  border-top: 1px solid ThreeDHighlight;
+    min-height: 25px !important;
+    background-color: -moz-Dialog !important;
+    color: -moz-dialogText !important;
+    appearance: auto !important;
+    -moz-default-appearance: toolbox !important;
+    border-bottom: 1px solid ThreeDLightShadow;
+    border-top: 1px solid ThreeDHighlight;
 }
 
 #main-window:not([echelon-style-5]) #sidebar-header {
-  padding: 0 !important;
-  padding-inline: 1px !important;
-  font-size: revert !important;
+    padding: 0 !important;
+    padding-inline: 1px !important;
+    font-size: revert !important;
 }
 
 #main-window:not([echelon-style-5]) #sidebar-close {
-  margin-top: 1px !important;
-  margin-inline: 6px !important;
+    margin-top: 1px !important;
+    margin-inline: 6px !important;
 }
 
 .sidebar-placesTree {
-  border: 0 !important;
-  margin: 0 !important;
-  border-top: 1px solid ThreeDShadow !important;
-  background-color: #FFF !important;
+    border: 0 !important;
+    margin: 0 !important;
+    border-top: 1px solid ThreeDShadow !important;
+    background-color: #FFF !important;
 }
 
 #main-window:not([echelon-style-5]) #sidebar-switcher-target {
-  appearance: toolbarbutton !important;
+    appearance: toolbarbutton !important;
 }
 
 #main-window:not([echelon-style-5]) #sidebar-title {
-  padding-inline: 0 !important;
+    padding-inline: 0 !important;
 }
 
 #main-window:not([echelon-style-5]) #sidebar-icon,
 #main-window:not([echelon-style-5]) #sidebar-switcher-arrow {
-  visibility: collapse !important;
+    visibility: collapse !important;
 }
 
 #viewButton {
-  appearance: button !important;
-  margin-inline-start: 10px !important;
+    appearance: button !important;
+    margin-inline-start: 10px !important;
 }
 
-#viewButton > .button-box > .button-menu-dropmarker {
-  width: 5px !important;
-  height: 3px !important;
-  list-style-image: url('images/dropdown.png') !important;
-  margin-left: 2px !important;
+#viewButton>.button-box>.button-menu-dropmarker {
+    width: 5px !important;
+    height: 3px !important;
+    list-style-image: url('images/dropdown.png') !important;
+    margin-left: 2px !important;
 }
 
 #sidebar-search-container {
-  padding: 3px 6px !important;
-  align-items: center !important;
+    padding: 3px 6px !important;
+    align-items: center !important;
 }
 
 #sidebar-search-container::before {
-  content: 'Search:';
-  margin-inline-end: 9px !important;
+    content: 'Search:';
+    margin-inline-end: 9px !important;
 }
 
 #search-box {
-  height: 100% !important;
-  max-height: 22px !important;
+    height: 100% !important;
+    max-height: 22px !important;
 }
 
 .textbox-search-sign {
-  width: 16px !important;
-  height: 16px !important;
-  list-style-image: none !important;
-  background-image: url('images/Search-glass.png') !important;
-  order: 1001 !important;
-  margin-inline-end: 1px !important;
-  margin-top: 1px !important;
+    width: 16px !important;
+    height: 16px !important;
+    list-style-image: none !important;
+    background-image: url('images/Search-glass.png') !important;
+    order: 1001 !important;
+    margin-inline-end: 1px !important;
+    margin-top: 1px !important;
 }
 
 #sidebar-splitter {
-  margin-inline-start: 0 !important;
-  border-width: 0 1px !important;
-  border-left-color: ThreeDShadow !important;
-  border-right-color: ThreeDDarkShadow !important;
-  box-shadow: inset 1px 0 ThreeDHighlight !important;
-  min-width: 6px !important;
-  background-color: ThreeDFace !important;
+    margin-inline-start: 0 !important;
+    border-width: 0 1px !important;
+    border-left-color: ThreeDShadow !important;
+    border-right-color: ThreeDDarkShadow !important;
+    box-shadow: inset 1px 0 ThreeDHighlight !important;
+    min-width: 6px !important;
+    background-color: ThreeDFace !important;
 }
 
 treechildren::-moz-tree-indentation {
-  width: 12px !important;
+    width: 12px !important;
 }
 
 treechildren::-moz-tree-twisty {
-  padding-inline: 0 !important;
-  width: 9px !important;
+    padding-inline: 0 !important;
+    width: 9px !important;
 }
 
 treechildren::-moz-tree-row {
-  min-height: 18px !important;
-  padding: 0 !important;
+    min-height: 18px !important;
+    padding: 0 !important;
 }
 
 treechildren::-moz-tree-row(hover) {
-  background-color: unset !important;
+    background-color: unset !important;
 }
 
 treechildren::-moz-tree-row(selected, hover),
 treechildren::-moz-tree-row(selected) {
-  background-color: -moz-Dialog !important;
+    background-color: -moz-Dialog !important;
 }
 
 treechildren::-moz-tree-row(selected, hover, focus),
 treechildren::-moz-tree-row(selected, focus) {
-  background-color: Highlight !important;
+    background-color: Highlight !important;
 }
 
 treechildren::-moz-tree-row(current, focus) {
-  outline: 1px dotted transparent !important;
-  outline-offset: -1px !important;
+    outline: 1px dotted transparent !important;
+    outline-offset: -1px !important;
 }
 
 treechildren::-moz-tree-row(selected, current, focus) {
-  outline-color: #F3D982 !important;
+    outline-color: #F3D982 !important;
 }
 
 treechildren::-moz-tree-twisty {
-  list-style-image: url('images/twisty-clsd.png') !important;
+    list-style-image: url('images/twisty-clsd.png') !important;
 }
 
 treechildren::-moz-tree-twisty(hover) {
-  list-style-image: url('images/twisty-clsd-hover.png') !important;
+    list-style-image: url('images/twisty-clsd-hover.png') !important;
 }
 
 treechildren::-moz-tree-twisty(open) {
-  list-style-image: url('images/twisty-open.png') !important;
+    list-style-image: url('images/twisty-open.png') !important;
 }
 
 treechildren::-moz-tree-twisty(hover, open) {
-  list-style-image: url('images/twisty-open-hover.png') !important;
+    list-style-image: url('images/twisty-open-hover.png') !important;
 }
 
 /* Default favicons */
 treechildren::-moz-tree-image(title) {
-  list-style-image: url("images/defaultFavicon.png") !important;
-  
-  :root[echelon-style-5] & {
-    list-style-image: url("images/ff56/defaultFavicon.png") !important;
-  }
+    list-style-image: url("images/defaultFavicon.png") !important;
+
+    :root[echelon-style-5] & {
+        list-style-image: url("images/ff56/defaultFavicon.png") !important;
+    }
 }
 
 /* Trees don't support background-image */
 treechildren::-moz-tree-image(title, container),
 treechildren::-moz-tree-image(title, query, hostContainer) {
-  list-style-image: url("images/bookmarksFolder.png") !important;
+    list-style-image: url("images/bookmarksFolder.png") !important;
 }
 
 treechildren::-moz-tree-image(title, container, query) {
-  list-style-image: url("images/query.png") !important;
+    list-style-image: url("images/query.png") !important;
 }
 
 /* Have to do this because Smart Folders above this changes the icon */
 treechildren::-moz-tree-image(title, query, hostContainer) {
-  list-style-image: url("images/bookmarksFolder.png") !important;
+    list-style-image: url("images/bookmarksFolder.png") !important;
 }
 
-#bookmarksToolbarFolderMenu > .menu-iconic-left > .menu-iconic-icon,
+#bookmarksToolbarFolderMenu>.menu-iconic-left>.menu-iconic-icon,
 treechildren::-moz-tree-image(container, queryFolder_toolbar_____) {
-  list-style-image: url("images/bookmarksToolbar.png") !important;
+    list-style-image: url("images/bookmarksToolbar.png") !important;
 }
 
 treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksMenu),
 treechildren::-moz-tree-image(container, queryFolder_menu________) {
-  list-style-image: url("images/bookmarksMenu.png") !important;
+    list-style-image: url("images/bookmarksMenu.png") !important;
 }
 
 treechildren::-moz-tree-image(container, OrganizerQuery_UnfiledBookmarks),
 treechildren::-moz-tree-image(container, queryFolder_unfiled_____) {
-  list-style-image: url("images/unsortedBookmarks.png") !important;
+    list-style-image: url("images/unsortedBookmarks.png") !important;
 }
 
 treechildren::-moz-tree-image(query, OrganizerQuery_history____v),
 treechildren::-moz-tree-image(title, query, dayContainer) {
-  list-style-image: url("images/history-sidebar.png") !important;
+    list-style-image: url("images/history-sidebar.png") !important;
 }
 
 treechildren::-moz-tree-image(query, OrganizerQuery_downloads__v) {
-  list-style-image: url("images/downloads.png") !important;
+    list-style-image: url("images/downloads.png") !important;
 }
 
 treechildren::-moz-tree-image(title, query, tagContainer),
 treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
-  list-style-image: url("images/tag.png") !important;
+    list-style-image: url("images/tag.png") !important;
 }
 
 /** MAXIMIZED CHANGES **/
 
 #main-window[sizemode="maximized"] #navigator-toolbox toolbar {
-  border-radius: 0 !important;
-  border-left: 0 !important;
-  border-right: 0 !important;
+    border-radius: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
 }
 
 #main-window[sizemode="maximized"] #navigator-toolbox::after {
-  width: 100% !important;
-  left: 0 !important;
+    width: 100% !important;
+    left: 0 !important;
 }
 
 :root[sizemode="fullscreen"] {
-  &[tabs-on-top="true"] #TabsToolbar .toolbar-items,
-  &:not([tabs-on-top="true"]) #nav-bar {
-    margin-inline-end: 49px !important;
-  }
 
-  .titlebar-button:not(.titlebar-max) {
-    display: flex !important;
-    appearance: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 16px !important;
-    height: 16px;
-    background-image: url("images/windowControls.png") !important;
-
-    &:hover {
-      background-position-y: -16px !important;
-
-      &:active {
-        background-position-y: -32px !important;
-      }
+    &[tabs-on-top="true"] #TabsToolbar .toolbar-items,
+    &:not([tabs-on-top="true"]) #nav-bar {
+        margin-inline-end: 49px !important;
     }
 
-    &.titlebar-restore {
-      background-position-x: -16px !important;
+    .titlebar-button:not(.titlebar-max) {
+        display: flex !important;
+        appearance: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 16px !important;
+        height: 16px;
+        background-image: url("images/windowControls.png") !important;
+
+        &:hover {
+            background-position-y: -16px !important;
+
+            &:active {
+                background-position-y: -32px !important;
+            }
+        }
+
+        &.titlebar-restore {
+            background-position-x: -16px !important;
+        }
+
+        &.titlebar-close {
+            background-position-x: -32px !important;
+            width: 17px !important;
+        }
     }
 
-    &.titlebar-close {
-      background-position-x: -32px !important;
-      width: 17px !important;
+    &[echelon-appearance-xp] .titlebar-button:not(.titlebar-max) {
+        background-image: url("images/windowControls-XP.png") !important;
     }
-  }
-
-  &[echelon-appearance-xp] .titlebar-button:not(.titlebar-max) {
-    background-image: url("images/windowControls-XP.png") !important;
-  }
 }
 
 .dialogBox {
-  border-radius: 0 !important;;
+    border-radius: 0 !important;
+    ;
 }
 
 /* Status Panel */
 
 #statuspanel {
-  transition: opacity 100ms ease-out !important;
+    transition: opacity 100ms ease-out !important;
 }
 
 #statuspanel-label {
-  padding: 2px 4px !important;
-  background: -moz-linear-gradient(white, #ddd) !important;
-  border: 1px none #ccc !important;
-  border-top-style: solid !important;
-  color: #333 !important;
-  text-shadow: none !important;
+    padding: 2px 4px !important;
+    background: -moz-linear-gradient(white, #ddd) !important;
+    border: 1px none #ccc !important;
+    border-top-style: solid !important;
+    color: #333 !important;
+    text-shadow: none !important;
 }
 
-#statuspanel:not([mirror]) > #statuspanel-label:-moz-locale-dir(ltr), 
-#statuspanel[mirror] > #statuspanel-label:-moz-locale-dir(rtl) {
-  border-right-style: solid !important;
-  border-top-right-radius: .3em !important;
-  margin-right: 1em !important;
+#statuspanel:not([mirror])>#statuspanel-label:-moz-locale-dir(ltr),
+#statuspanel[mirror]>#statuspanel-label:-moz-locale-dir(rtl) {
+    border-right-style: solid !important;
+    border-top-right-radius: .3em !important;
+    margin-right: 1em !important;
 }
 
-#statuspanel:not([mirror]) > #statuspanel-label:-moz-locale-dir(rtl),
-#statuspanel[mirror] > #statuspanel-label:-moz-locale-dir(ltr) {
-  border-left-style: solid !important;
-  border-top-left-radius: .3em !important;
-  margin-left: 1em !important;
+#statuspanel:not([mirror])>#statuspanel-label:-moz-locale-dir(rtl),
+#statuspanel[mirror]>#statuspanel-label:-moz-locale-dir(ltr) {
+    border-left-style: solid !important;
+    border-top-left-radius: .3em !important;
+    margin-left: 1em !important;
 }

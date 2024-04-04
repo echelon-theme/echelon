@@ -101,7 +101,7 @@
 }
 
 #placesView {
-    & > splitter:not(.tree-splitter ) {
+    & > splitter:not(.tree-splitter) {
         margin-inline-start: 0 !important;
         border-inline: 1px solid !important;
         border-left-color: ThreeDShadow !important;

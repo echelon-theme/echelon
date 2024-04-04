@@ -175,7 +175,8 @@
   list-style-image: url("images/icons/private_browsing.png") !important;
 }
 
-#PlacesChevron, #nav-bar-overflow-button {
+#PlacesChevron,
+#nav-bar-overflow-button {
   list-style-image: url("images/icons/chevron.png") !important;
 }
 
@@ -480,7 +481,8 @@
 #main-window[lwtheme-brighttext=true] #privatebrowsing-button {
   list-style-image: url("images/icons/inverted/print.png") !important;
 }
-#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #PlacesChevron, #main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #nav-bar-overflow-button,
+#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #PlacesChevron,
+#main-window[echelon-style-3]:not([tabs-on-top=true]) #nav-bar #nav-bar-overflow-button,
 #main-window[lwtheme-brighttext=true] #PlacesChevron,
 #main-window[lwtheme-brighttext=true] #nav-bar-overflow-button {
   list-style-image: url("images/icons/inverted/chevron.png") !important;
