@@ -10,27 +10,10 @@
 
 /* ::::: Aero blue style ::::: */
 :root[echelon-appearance-blue], :root[echelon-appearance-blue]:is([default-light-theme]) {
-  --toolbar-custom-color: hsl(214,44%,87%) !important;
+  --toolbar-custom-color: hsl(214, 44%, 87%) !important;
 }
-:root[echelon-appearance-blue] #navigator-toolbox > toolbar:not(:-moz-lwtheme), :root[echelon-appearance-blue]:is([default-light-theme]) #navigator-toolbox > toolbar:not(:-moz-lwtheme) {
-  background-color: var(--toolbar-custom-color) !important;
-}
-:root[echelon-appearance-blue] .tab-background,
-:root[echelon-appearance-blue] #tabs-newtab-button {
-  background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px), var(--tab-background), linear-gradient(var(--toolbar-custom-color), var(--toolbar-custom-color)) !important;
-}
-:root[echelon-appearance-blue] #tabs-newtab-button:hover,
-:root[echelon-appearance-blue] #tabs-newtab-button[open] {
-  background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px), var(--tab-background-hover), linear-gradient(var(--toolbar-custom-color), var(--toolbar-custom-color)) !important;
-}
-:root[echelon-appearance-blue]:not([lwtheme-image]) .tab-background:is([selected], [multiselected]) {
-  background-image: linear-gradient(var(--tab-selected-highlight), var(--toolbar-highlight-top) 50%), linear-gradient(var(--toolbar-custom-color), var(--toolbar-custom-color)) !important;
-}
-:root[echelon-appearance-blue] .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected=true], [multiselected]) {
-  background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px), var(--tab-background-hover), linear-gradient(var(--toolbar-custom-color), var(--toolbar-custom-color)) !important;
-}
-:root[echelon-appearance-blue] ::placeholder {
-  opacity: 1 !important;
+:root[echelon-appearance-blue] #urlbar-input::placeholder,
+:root[echelon-appearance-blue] .searchbar-textbox::placeholder {
   font-style: italic !important;
 }
 
@@ -412,7 +395,7 @@
 }
 
 /** ECHELON STYLE 4 (Australis) **/
-[echelon-style-4]:root {
+:root[echelon-style-4] {
   --inline-tab-padding: 9px !important;
   --toolbar-border-radius: 0 !important;
   --tab-width: 210px !important;
@@ -523,7 +506,7 @@
   border-right: var(--tab-curve-width) solid transparent !important;
   border-image: none !important;
   background-clip: padding-box, padding-box, content-box !important;
-  background-color: -moz-dialog !important;
+  background-color: var(--toolbar-custom-color) !important;
   background-image: url("images/tab-active-middle.png"), linear-gradient(transparent 2px, rgba(255, 255, 255, 0.4) 2px, rgba(255, 255, 255, 0.4)), none !important;
   background-repeat: repeat-x !important;
   background-size: var(--tab-stroke-background-size), auto 100% !important;
@@ -581,7 +564,7 @@
   display: inline-block;
   width: var(--tab-curve-width);
   height: 31px;
-  background-color: -moz-dialog !important;
+  background-color: var(--toolbar-custom-color) !important;
   background-image: linear-gradient(transparent 2px, rgba(255, 255, 255, 0.4) 2px, rgba(255, 255, 255, 0.4)), none !important;
   position: absolute !important;
   top: 0 !important;
@@ -1129,7 +1112,8 @@
   background-image: linear-gradient(hsla(51, 34%, 89%, 0.9), hsla(51, 15%, 79%, 0.9) 1px, hsla(51, 9%, 68%, 0.9));
 }
 #main-window[echelon-appearance-xp] .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected=true], [multiselected]),
-#main-window[echelon-appearance-xp] #tabs-newtab-button:hover, #main-window[echelon-appearance-xp] #tabs-newtab-button[open] {
+#main-window[echelon-appearance-xp] #tabs-newtab-button:hover,
+#main-window[echelon-appearance-xp] #tabs-newtab-button[open] {
   background-image: linear-gradient(hsla(51, 34%, 100%, 0.9), hsla(51, 15%, 94%, 0.9) 1px, hsla(51, 9%, 83%, 0.9));
 }
 #main-window[echelon-appearance-xp] #TabsToolbar {
@@ -1271,7 +1255,8 @@
   background-color: rgba(0, 0, 0, 0.35);
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 1px;
+  z-index: 1;
 }
 
 #main-window:not([tabs-on-top], [echelon-style-4]) #PersonalToolbar[collapsed=true] + #TabsToolbar:not(:-moz-lwtheme) {
@@ -1697,14 +1682,17 @@
   }
 }
 /* ::::: Windows eXPerience Mod Luna msstyles fixes ::::: */
-:root[echelon-appearance-experiencelunamsstylesfixes][echelon-appearance-xp] .titlebar-buttonbox-container, #main-window[echelon-appearance-experiencelunamsstylesfixes][echelon-appearance-xp] .titlebar-buttonbox-container {
+:root[echelon-appearance-experiencelunamsstylesfixes][echelon-appearance-xp] .titlebar-buttonbox-container,
+#main-window[echelon-appearance-experiencelunamsstylesfixes][echelon-appearance-xp] .titlebar-buttonbox-container {
   top: 0 !important;
 }
-:root[echelon-appearance-experiencelunamsstylesfixes][echelon-appearance-xp][sizemode=maximized] .titlebar-buttonbox-container, #main-window[echelon-appearance-experiencelunamsstylesfixes][echelon-appearance-xp][sizemode=maximized] .titlebar-buttonbox-container {
+:root[echelon-appearance-experiencelunamsstylesfixes][echelon-appearance-xp][sizemode=maximized] .titlebar-buttonbox-container,
+#main-window[echelon-appearance-experiencelunamsstylesfixes][echelon-appearance-xp][sizemode=maximized] .titlebar-buttonbox-container {
   top: 4px !important;
 }
 @media not (-moz-windows-non-native-menus) {
-  :root[echelon-appearance-experiencelunamsstylesfixes] menupopup, #main-window[echelon-appearance-experiencelunamsstylesfixes] menupopup {
+  :root[echelon-appearance-experiencelunamsstylesfixes] menupopup,
+  #main-window[echelon-appearance-experiencelunamsstylesfixes] menupopup {
     appearance: none !important;
     padding: 1px !important;
   }

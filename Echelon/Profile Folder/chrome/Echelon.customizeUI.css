@@ -80,7 +80,7 @@
     right: calc(-11px - 2em) !important;
   }
 }
-#nav-bar[customizing] {
+#nav-bar[customizing=true] {
   outline: 1px dashed;
   outline-offset: -3px;
 }
