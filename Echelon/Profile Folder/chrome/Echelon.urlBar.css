@@ -501,7 +501,7 @@
   list-style-image: url("images/icons/stop.png") !important;
 }
 
-#main-window[echelon-style-3]:not([default-dark-theme]) {
+#main-window[echelon-style-3][echelon-appearance-blue]:not([default-dark-theme]) {
   --toolbar-custom-color: rgb(219, 234, 249) !important;
 }
 #main-window[echelon-style-3][tabs-on-top=true] #urlbar-background,

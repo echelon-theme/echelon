@@ -530,7 +530,7 @@
 }
 
 #main-window[echelon-style-3] {
-    &:not([default-dark-theme]) {
+    &[echelon-appearance-blue]:not([default-dark-theme]) {
         --toolbar-custom-color: rgb(219, 234, 249) !important;
     }
 
