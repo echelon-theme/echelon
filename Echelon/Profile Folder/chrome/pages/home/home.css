@@ -703,16 +703,6 @@ input, button {
 	background-image: url('chrome://userchrome/content/images/icons/alt/waterfox/old/about-logo.png');
 }
 
-/* Superfox */
-:root[browser-name="Superfox"] .brandLogo {
-	background-image: url('chrome://userchrome/content/images/icons/alt/superfox/about-logo.png');
-}
-
-:root:not([echelon-style="1"])[browser-name="Superfox"] #aboutMozilla::before {
-	width: 49px;
-	content: url("chrome://userchrome/content/images/icons/alt/superfox/win32-wordmark.png");
-}
-
 /* Aurora (Firefox Dev Edition) */
 :root[update-channel="aurora"] .brandLogo {
 	background-image: url('chrome://userchrome/content/images/icons/alt/aurora/old/about-logo.png');

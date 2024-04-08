@@ -69,10 +69,6 @@
         }
     }
 
-    &[browser-name="Superfox"] {
-        @include replace-favicon("chrome://branding/content/icon32.png", "images/icons/alt/superfox/info16.png");
-    }
-
     &[update-channel="aurora"] {
         @include replace-favicon("chrome://branding/content/icon32.png", "images/icons/alt/aurora/old/icon16.png");
 

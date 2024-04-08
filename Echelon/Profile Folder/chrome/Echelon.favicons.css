@@ -87,12 +87,6 @@
 #main-window[browser-name=Waterfox][echelon-appearance-newlogo] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
   list-style-image: url("images/icons/alt/waterfox/info16.png") !important;
 }
-#main-window[browser-name=Superfox] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-  content: url("images/icons/alt/superfox/info16.png") !important;
-}
-#main-window[browser-name=Superfox] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-  list-style-image: url("images/icons/alt/superfox/info16.png") !important;
-}
 #main-window[update-channel=aurora] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
   content: url("images/icons/alt/aurora/old/icon16.png") !important;
 }
