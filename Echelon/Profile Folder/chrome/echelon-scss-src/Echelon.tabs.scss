@@ -9,8 +9,7 @@
         padding-inline-end: 0 !important;
     }
 
-    :root:not([lwtheme-image]) &,
-    :root[echelon-style-4] & {
+    :root[echelon-style-4]:not([lwtheme-image]) & {
         margin-bottom: -1px !important;
     }
 }
