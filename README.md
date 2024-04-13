@@ -22,8 +22,7 @@ Detailed instructions on how to install the theme can be seen here.
 ### Australis (Firefox 29)
 ![Screenshot](images/ff29.png)
 
-## Credits
-* Echelon was made by Travis
-* Codebase port to SCSS, improvements, and Firefox Button by ephemeralViolette
-* Code improvement, Echelon Style 3 and Echelon Options window by [aubymori](https://github.com/aubymori)
-* Echelon Private Testers
+## Developers
+* [Travis](https://github.com/travy-patty/)
+* [aubymori](https://github.com/aubymori) 
+* ephemeralViolette
