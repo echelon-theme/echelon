@@ -1629,17 +1629,19 @@
 
 /* ::::: lwtheme support ::::: */
 @media not (-moz-platform: macos) {
-  :root:not([default-light-theme], [default-dark-theme]) #navigator-toolbox:-moz-lwtheme {
-    background-image: none !important;
-  }
-  :root:not([default-light-theme], [default-dark-theme]) #navigator-toolbox:-moz-lwtheme #nav-bar {
-    background-color: transparent !important;
-    background-image: none !important;
-    background-repeat: var(--lwt-background-tiling) !important;
-    background-position: var(--lwt-background-alignment) !important;
-  }
-  :root:not([default-light-theme], [default-dark-theme]) #navigator-toolbox:-moz-lwtheme #PersonalToolbar {
-    background: transparent !important;
+  @media not (-moz-platform: linux) {
+    :root:not([default-light-theme], [default-dark-theme]) #navigator-toolbox:-moz-lwtheme {
+      background-image: none !important;
+    }
+    :root:not([default-light-theme], [default-dark-theme]) #navigator-toolbox:-moz-lwtheme #nav-bar {
+      background-color: transparent !important;
+      background-image: none !important;
+      background-repeat: var(--lwt-background-tiling) !important;
+      background-position: var(--lwt-background-alignment) !important;
+    }
+    :root:not([default-light-theme], [default-dark-theme]) #navigator-toolbox:-moz-lwtheme #PersonalToolbar {
+      background: transparent !important;
+    }
   }
 }
 :root:not([default-light-theme], [default-dark-theme]) #TabsToolbar #firefox-view-button[open]:not(:focus-visible) > .toolbarbutton-icon:-moz-lwtheme,
