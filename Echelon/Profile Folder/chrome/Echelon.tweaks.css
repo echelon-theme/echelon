@@ -1697,3 +1697,10 @@
     padding: 1px !important;
   }
 }
+
+html|*.pointerlockfswarning[data-identity=verifiedDomain]::before {
+  background-image: url("images/secure.svg");
+}
+html|*.pointerlockfswarning[data-identity=unknownIdentity]::before {
+  background-image: url("images/insecure.svg");
+}
