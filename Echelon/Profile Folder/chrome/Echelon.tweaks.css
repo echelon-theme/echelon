@@ -8,6 +8,7 @@
  * You can find the SCSS source files in echelon-scss-src/
  */
 
+@namespace html url("http://www.w3.org/1999/xhtml");
 /* ::::: Aero blue style ::::: */
 :root[echelon-appearance-blue], :root[echelon-appearance-blue]:is([default-light-theme]) {
   --toolbar-custom-color: hsl(214, 44%, 87%) !important;
@@ -1699,8 +1700,8 @@
 }
 
 html|*.pointerlockfswarning[data-identity=verifiedDomain]::before {
-  background-image: url("images/secure.svg");
+  background-image: url("images/secure.svg") !important;
 }
 html|*.pointerlockfswarning[data-identity=unknownIdentity]::before {
-  background-image: url("images/insecure.svg");
+  background-image: url("images/insecure.svg") !important;
 }
