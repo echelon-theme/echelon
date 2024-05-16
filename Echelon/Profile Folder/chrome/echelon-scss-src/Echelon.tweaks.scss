@@ -1,3 +1,5 @@
+@namespace html url("http://www.w3.org/1999/xhtml");
+
 /* ::::: Aero blue style ::::: */
 
 :root[echelon-appearance-blue] {
@@ -1168,5 +1170,15 @@
                 padding: 1px !important;
             }
         }
+    }
+}
+
+html|*.pointerlockfswarning {
+    &[data-identity="verifiedDomain"]::before {
+        background-image: url("images/secure.svg") !important;
+    }
+
+    &[data-identity="unknownIdentity"]::before {
+        background-image: url("images/insecure.svg") !important;
     }
 }
