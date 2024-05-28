@@ -1161,14 +1161,16 @@
   border-right: 0 !important;
   background-color: -moz-Dialog !important;
 }
-#main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar]) #main-menubar > menu {
+#main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar], [lwtheme-brighttext]) #main-menubar > menu {
   color: WindowText !important;
 }
-#main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar]) #main-menubar > menu[_moz-menuactive=true] {
-  color: HighlightText !important;
-}
-#main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar]) #main-menubar > menu:-moz-window-inactive {
-  color: ThreeDShadow !important;
+@media not (-moz-windows-classic) {
+  #main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar], [lwtheme-brighttext]) #main-menubar > menu[_moz-menuactive=true] {
+    color: HighlightText !important;
+  }
+  #main-window[echelon-appearance-xp]:not([echelon-style-4][tabsintitlebar], [lwtheme-brighttext]) #main-menubar > menu:-moz-window-inactive {
+    color: ThreeDShadow !important;
+  }
 }
 #main-window[echelon-appearance-xp][echelon-style-4][tabsintitlebar] #tabs-newtab-button .toolbarbutton-icon {
   background-image: url("images/newtab-inverted.png") !important;
