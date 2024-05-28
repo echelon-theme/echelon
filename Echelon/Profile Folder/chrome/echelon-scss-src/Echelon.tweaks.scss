@@ -986,15 +986,17 @@
         }
     }
 
-    &:not([echelon-style-4][tabsintitlebar]) #main-menubar>menu {
+    &:not([echelon-style-4][tabsintitlebar], [lwtheme-brighttext]) #main-menubar>menu {
         color: WindowText !important;
 
-        &[_moz-menuactive="true"] {
-            color: HighlightText !important;
-        }
+        @media not (-moz-windows-classic) {
+            &[_moz-menuactive="true"] {
+                color: HighlightText !important;
+            }
 
-        &:-moz-window-inactive {
-            color: ThreeDShadow !important;
+            &:-moz-window-inactive {
+                color: ThreeDShadow !important;
+            }
         }
     }
 
