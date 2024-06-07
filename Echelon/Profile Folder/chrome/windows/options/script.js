@@ -146,6 +146,11 @@ if (!ncpQueryResult.matches)
     document.querySelector("#section-native-controls").style.display = "none";
 }
 
+if (Services.appinfo.OS != "WINNT")
+{
+    document.querySelector("#firefox-button-gbox").style.display = "none";
+}
+
 function refreshViewProperties()
 {
     // Handle local display changes when the user changes configuration.
