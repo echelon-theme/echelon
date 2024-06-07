@@ -36,10 +36,16 @@
 
     function launchEchelonOptions()
     {
+        var flags = "chrome,centerscreen,resizeable=no,dependent";
+        if (Services.appinfo.OS != "WINNT")
+        {
+            flags = "chrome,centerscreen,resizeable=no,width=400,height=585,dependent";
+        }
+
         window.openDialog(
             "chrome://userchrome/content/windows/options/options.xhtml",
             "Echelon Options",
-            "chrome,centerscreen,resizeable=no,dependent"
+            flags
         ); 
     }
 
