@@ -160,6 +160,11 @@ if (!ncpQueryResult.matches)
 if (Services.appinfo.OS != "WINNT")
 {
     document.querySelector("#firefox-button-gbox").style.display = "none";
+    //if (Services.appinfo.OS == "Linux")
+}
+else
+{
+    document.querySelector('menuitem[value="linux"]').style.display = "none";
 }
 
 function refreshViewProperties()
