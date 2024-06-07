@@ -219,7 +219,7 @@
   padding-bottom: 1px !important;
   transition: none !important;
 }
-:root:not([lwtheme-image]) #PersonalToolbar {
+:root:not([lwtheme-image]):not([echelon-appereance-linux]) #PersonalToolbar {
   border-left: 1px solid rgba(26, 26, 26, 0.4) !important;
   border-right: 1px solid rgba(26, 26, 26, 0.4) !important;
 }
