@@ -23,6 +23,7 @@ let ECHELON_BOOT_CONFIG = {
 				"Echelon.Appearance.Australis.Windows8",
 				"Echelon.Appearance.Australis.Windows10",
 				"Echelon.Appearance.XP",
+				"Echelon.Appereance.Linux",
 				"Echelon.FirefoxButton.CustomStyle",
 				"Echelon.Appearance.eXPerienceLunaMsstylesFixes",
 				"Echelon.Appearance.NewLogo",

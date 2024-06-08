@@ -26,8 +26,10 @@
 }
 
 @media not (-moz-platform: macos) {
-  #main-window[customizing] .titlebar-buttonbox-container {
-    margin-inline-end: -2em !important;
+  @media not (-moz-platform: linux) {
+    #main-window[customizing] .titlebar-buttonbox-container {
+      margin-inline-end: -2em !important;
+    }
   }
 }
 #main-window[customizing] #customization-container,
@@ -132,6 +134,7 @@
 }
 
 .customizationmode-button > .box-inherit > .button-menu-dropmarker {
+  appearance: none !important;
   width: 5px !important;
   height: 3px !important;
   list-style-image: url("images/dropdown.png") !important;

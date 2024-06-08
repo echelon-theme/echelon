@@ -1,31 +1,35 @@
 /* Fix Menu Bar */
 
 @media not (-moz-windows-classic) {
-    html:not([echelon-appearance-xp]) {
-        #toolbar-menubar:not(:-moz-lwtheme) {
-            text-shadow: 0 0 .5em white, 0 0 .5em white, 0 1px 0 rgba(255,255,255,.4);
-        }
-    
-        #main-menubar:not(:-moz-lwtheme, :-moz-window-inactive) {
-            background-color: rgba(255,255,255,.5);
-            color: black;
-            border-radius: 4px;
-        }
+    @media not (-moz-platform: macos) {
+        @media not (-moz-platform: linux) {
+            html:not([echelon-appearance-xp]) {
+                #toolbar-menubar:not(:-moz-lwtheme) {
+                    text-shadow: 0 0 .5em white, 0 0 .5em white, 0 1px 0 rgba(255,255,255,.4);
+                }
+            
+                #main-menubar:not(:-moz-lwtheme, :-moz-window-inactive) {
+                    background-color: rgba(255,255,255,.5);
+                    color: black;
+                    border-radius: 4px;
+                }
 
-        &[tabsintitlebar][sizemode="normal"] #navigator-toolbox:-moz-lwtheme {
-            border-top: 1px solid var(--glass-active-border-color);
-            padding-top: 1px;
-            box-shadow: 0 1px 0 rgba(255,255,255,.6) inset;
+                &[tabsintitlebar][sizemode="normal"] #navigator-toolbox:-moz-lwtheme {
+                    border-top: 1px solid var(--glass-active-border-color);
+                    padding-top: 1px;
+                    box-shadow: 0 1px 0 rgba(255,255,255,.6) inset;
 
-            &:-moz-window-inactive {
-                border-top-color: var(--glass-inactive-border-color);
+                    &:-moz-window-inactive {
+                        border-top-color: var(--glass-inactive-border-color);
+                    }
+                }
+
+                &[sizemode="normal"]:not([tabsintitlebar]) #navigator-toolbox:-moz-lwtheme {
+                    border-top: 0 !important;
+                    box-shadow: none !important;
+                    padding-top: 0 !important;
+                }
             }
-        }
-
-        &[sizemode="normal"]:not([tabsintitlebar]) #navigator-toolbox:-moz-lwtheme {
-            border-top: 0 !important;
-            box-shadow: none !important;
-            padding-top: 0 !important;
         }
     }
 }

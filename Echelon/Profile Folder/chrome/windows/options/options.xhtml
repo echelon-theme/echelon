@@ -66,6 +66,7 @@
                                     <menuitem label="&general.appearance.os.vista;" value="win7"/>
                                     <menuitem label="&general.appearance.os.eight;" value="win8" australis-only="true"/>
                                     <menuitem label="&general.appearance.os.ten;" value="win10" australis-only="true"/>
+                                    <menuitem label="&general.appearance.os.linux;" value="linux"/>
                                 </menupopup>
                             </menulist>
                         </html:div>
@@ -87,7 +88,7 @@
                         <checkbox native="" label="&general.appearance.australisFog;" class="option" data-type="bool" data-option="Echelon.Appearance.Australis.EnableFog" australis-only="true"/>
                         <checkbox native="" label="&general.appearance.themeDevTools;" class="option" data-type="bool" data-option="Echelon.Appearance.DevTools" change-requires-restart="true"/>
                     </groupbox>
-                    <groupbox>
+                    <groupbox id="firefox-button-gbox">
                         <caption>&general.firefoxButton;</caption>
                         <checkbox native="" label="&general.firefoxButton.useCustomStyle;" class="option" data-type="bool" data-option="Echelon.FirefoxButton.CustomStyle" change-requires-restart="true"/>
                         <html:div class="option-container">

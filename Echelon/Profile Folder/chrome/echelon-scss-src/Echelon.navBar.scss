@@ -32,6 +32,11 @@ $unified-refresh-buttons: "#reload-button.unified, #stop-button.unified, #go-but
         border-top-right-radius: var(--toolbar-border-radius);
     }
 
+    :root:not([lwtheme-image])[echelon-appereance-linux] & {
+        border-left: none !important;
+        border-right: none !important;
+    }
+
     padding-right: 2px !important;
     padding-bottom: 1px !important;
     align-items: center !important;

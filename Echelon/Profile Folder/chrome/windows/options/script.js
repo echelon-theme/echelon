@@ -84,25 +84,36 @@ const OS_STYLE_MAP = {
         "Echelon.Appearance.XP": true,
         "Echelon.Appearance.Australis.Windows8": false,
         "Echelon.Appearance.Australis.Windows10": false,
-        "Echelon.Appearance.Blue": false
+        "Echelon.Appearance.Blue": false,
+        "Echelon.Appereance.Linux": false
     },
     "win7": {
         "Echelon.Appearance.XP": false,
         "Echelon.Appearance.Australis.Windows8": false,
-        "Echelon.Appearance.Australis.Windows10": false
+        "Echelon.Appearance.Australis.Windows10": false,
+        "Echelon.Appereance.Linux": false
         // blue can be variable
     },
     "win8": {
         "Echelon.Appearance.XP": false,
         "Echelon.Appearance.Australis.Windows8": true,
         "Echelon.Appearance.Australis.Windows10": false,
-        "Echelon.Appearance.Blue": false
+        "Echelon.Appearance.Blue": false,
+        "Echelon.Appereance.Linux": false
     },
     "win10": {
         "Echelon.Appearance.XP": false,
         "Echelon.Appearance.Australis.Windows8": false,
         "Echelon.Appearance.Australis.Windows10": true,
-        "Echelon.Appearance.Blue": false
+        "Echelon.Appearance.Blue": false,
+        "Echelon.Appereance.Linux": false
+    },
+    "linux": {
+        "Echelon.Appearance.XP": false,
+        "Echelon.Appearance.Australis.Windows8": false,
+        "Echelon.Appearance.Australis.Windows10": false,
+        "Echelon.Appearance.Blue": false,
+        "Echelon.Appereance.Linux": true
     }
 };
 
@@ -144,6 +155,16 @@ let ncpQueryResult = window.matchMedia("(-moz-ev-native-controls-patch)");
 if (!ncpQueryResult.matches)
 {
     document.querySelector("#section-native-controls").style.display = "none";
+}
+
+if (Services.appinfo.OS != "WINNT")
+{
+    document.querySelector("#firefox-button-gbox").style.display = "none";
+    //if (Services.appinfo.OS == "Linux")
+}
+else
+{
+    document.querySelector('menuitem[value="linux"]').style.display = "none";
 }
 
 function refreshViewProperties()

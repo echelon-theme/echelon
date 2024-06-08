@@ -1,18 +1,23 @@
 :root:not([default-light-theme], [default-dark-theme]) {
     @media not (-moz-platform: macos) {
-        #navigator-toolbox:-moz-lwtheme {
-            background-image: none !important;
-
-            #nav-bar {
-                background-color: transparent !important;
+        @media not (-moz-platform: linux) {
+            #navigator-toolbox:-moz-lwtheme {
                 background-image: none !important;
-                background-repeat: var(--lwt-background-tiling) !important;
-                background-position: var(--lwt-background-alignment) !important;
             }
+        }
+    }
 
-            #PersonalToolbar {
-                background: transparent !important;
-            }
+    #navigator-toolbox:-moz-lwtheme {
+
+        #nav-bar {
+            background-color: transparent !important;
+            background-image: none !important;
+            background-repeat: var(--lwt-background-tiling) !important;
+            background-position: var(--lwt-background-alignment) !important;
+        }
+
+        #PersonalToolbar {
+            background: transparent !important;
         }
     }
 

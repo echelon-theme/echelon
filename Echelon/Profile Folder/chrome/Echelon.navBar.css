@@ -42,6 +42,11 @@
   border-top-right-radius: var(--toolbar-border-radius);
 }
 
+:root:not([lwtheme-image])[echelon-appereance-linux] #nav-bar {
+  border-left: none !important;
+  border-right: none !important;
+}
+
 :root[echelon-style-4] #nav-bar:-moz-lwtheme {
   margin-top: -2px !important;
 }
