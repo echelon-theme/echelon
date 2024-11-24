@@ -1,0 +1,6 @@
+:root {
+	// Fix titlebar background in Firefox 133+
+	#TabsToolbar {
+		background-color: transparent !important;
+	}
+}

@@ -1,0 +1,32 @@
+:root {
+    --toolbarbutton-icon-width: 18px;
+    --toolbarbutton-icon-height: 18px;
+
+    $iconRegionMap: (
+        "back-button": rect(18px, 20px, 38px, 0),
+        "forward-button": rect(0, 36px, 18px, 18px),
+        "stop-button": rect(0, 54px, 18px, 36px),
+        "reload-button": rect(0, 72px, 18px, 54px),
+        "home-button": rect(0, 90px, 18px, 72px),
+        "downloads-button": rect(0, 108px, 18px, 90px),
+        "history-button": rect(0, 126px, 18px, 108px),
+        "bookmarks-button": rect(0, 144px, 18px, 126px),
+        "bookmarks-menu-button": rect(0, 144px, 18px, 126px),
+        "print-button": rect(0, 162px, 18px, 144px),
+        "new-tab-button": rect(0, 180px, 18px, 162px),
+        "new-window-button": rect(0, 198px, 18px, 180px),
+        "cut-button": rect(0, 216px, 18px, 198px),
+        "copy-button": rect(0, 234px, 18px, 216px),
+        "paste-button": rect(0, 252px, 18px, 234px),
+        "fullscreen-button": rect(0, 270px, 18px, 252px),
+        "zoom-out-button": rect(0, 288px, 18px, 270px),
+        "zoom-in-button": rect(0, 306px, 18px, 288px)
+    );
+
+    @each $icon, $offset in $iconRegionMap {
+        ##{$icon} {
+            -moz-image-region: $offset !important;
+            list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+        }
+    }
+}
