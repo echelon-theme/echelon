@@ -50,7 +50,7 @@
 :root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button) .toolbarbutton-badge-stack {
   padding: 0 !important;
   border-radius: 0 !important;
-  background-color: none !important;
+  background-color: transparent !important;
 }
 :root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button) .toolbarbutton-icon {
   --toolbarbutton-inner-padding: 0 !important;
@@ -60,10 +60,15 @@
   height: var(--toolbarbutton-icon-height) !important;
 }
 :root #nav-bar {
+  height: 38px !important;
+  box-shadow: none !important;
   padding-inline: 2px !important;
   align-items: center !important;
 }
-:root #nav-bar :not(.widget-overflow-list) > .toolbarbutton-1:not(#back-button, #forward-button) {
+:root #nav-bar #nav-bar-customization-target {
+  align-items: center !important;
+}
+:root #nav-bar :not(.widget-overflow-list) > .toolbarbutton-1:not(#back-button, #forward-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button) {
   margin: var(--toolbarbutton-outer-padding) !important;
   min-width: var(--toolbarbutton-width) !important;
   max-width: var(--toolbarbutton-width) !important;
@@ -76,6 +81,7 @@
   z-index: 1 !important;
   margin-top: -2px !important;
   margin-bottom: -2px !important;
+  margin-inline-start: 3px !important;
   border-radius: 50% !important;
   padding: 0 !important;
   border: none !important;
@@ -99,8 +105,33 @@
   height: var(--toolbarbutton-height) !important;
   margin: var(--toolbarbutton-outer-padding) !important;
   margin-inline-start: -6px !important;
-  padding-left: 7px !important;
-  padding-right: 3px !important;
+  padding-left: 6px !important;
+  padding-right: 4px !important;
+}
+:root .toolbaritem-combined-buttons > separator {
+  display: none !important;
+}
+:root #zoom-controls {
+  margin: var(--toolbarbutton-outer-padding) !important;
+}
+:root #zoom-controls #zoom-reset-button {
+  display: none !important;
+}
+:root #zoom-controls .toolbarbutton-1 {
+  margin: 0 !important;
+}
+:root #zoom-controls .toolbarbutton-1:not(:first-of-type, :last-of-type) {
+  --toolbarbutton-border-radius: 0 !important;
+  border-left: 0 !important;
+}
+:root #zoom-controls .toolbarbutton-1:first-of-type {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+:root #zoom-controls .toolbarbutton-1:last-of-type {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-left: 0 !important;
 }
 
 :root {
