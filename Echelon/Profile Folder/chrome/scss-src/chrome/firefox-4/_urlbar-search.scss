@@ -20,6 +20,16 @@
             .urlbar-input-container {
                 padding: var(--urlbar-container-padding) !important;
                 height: var(--urlbar-min-height) !important;
+
+                &::after { // lazy hack for dropdown button
+                    content: "";
+                    display: inline-block;
+                    width: 13px;
+                    height: 11px;
+                    background-image: url("chrome://userchrome/content/assets/images/firefox-4/mainwindow-dropdown-arrow.png") !important; // list-view-image doesn't work on psuedo elements???
+                    align-self: center !important;
+                    margin-inline-end: -2px !important;
+                }
             }
 		}
 
@@ -166,14 +176,9 @@
         }
         
         #go-button,
-        .toolbarbutton-animatable-box { // holy shit bro
+        .toolbarbutton-animatable-box,
+        #reload-button:not([displaystop="true"]) + #go-button + #stop-button { // holy shit bro
             visibility: collapse !important;
-        }
-
-        #stop-button {
-            &[disabled="true"] { // add back the fucking hiding stop button shit
-                visibility: collapse !important;
-            }
         }
     }
 

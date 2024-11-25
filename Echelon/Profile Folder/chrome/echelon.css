@@ -251,6 +251,15 @@
   padding: var(--urlbar-container-padding) !important;
   height: var(--urlbar-min-height) !important;
 }
+:root #urlbar[breakout] .urlbar-input-container::after, :root #urlbar[breakout][breakout-extend] .urlbar-input-container::after {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 11px;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/mainwindow-dropdown-arrow.png") !important;
+  align-self: center !important;
+  margin-inline-end: -2px !important;
+}
 :root #urlbar #identity-box {
   background-color: -moz-dialog !important;
   background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.15)) !important;
@@ -363,10 +372,8 @@
   background-image: linear-gradient(rgb(244, 156, 128), rgb(215, 101, 77) 49%, rgb(194, 66, 48) 51%, rgb(170, 41, 23)) !important;
 }
 :root #stop-reload-button #go-button,
-:root #stop-reload-button .toolbarbutton-animatable-box {
-  visibility: collapse !important;
-}
-:root #stop-reload-button #stop-button[disabled=true] {
+:root #stop-reload-button .toolbarbutton-animatable-box,
+:root #stop-reload-button #reload-button:not([displaystop=true]) + #go-button + #stop-button {
   visibility: collapse !important;
 }
 :root #searchbar .searchbar-search-button {
