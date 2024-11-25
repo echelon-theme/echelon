@@ -17,7 +17,7 @@
   --toolbarbutton-shadow-active: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.4);
   /* toolbarbutton */
 }
-:root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button) {
+:root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified) {
   padding: 1px 5px !important;
   background: var(--toolbarbutton-background) !important;
   background-clip: padding-box !important;
@@ -29,30 +29,30 @@
   text-shadow: 0 0 2px white;
   transition: background-color var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction), border-color var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction), box-shadow var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction) !important;
 }
-:root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button):not([disabled=true]):hover {
+:root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified):not([disabled=true]):hover {
   background-color: hsla(190, 60%, 70%, 0.5) !important;
   --toolbarbutton-border-color: hsla(190,50%,65%,.8) hsla(190,50%,50%,.8) hsla(190,50%,40%,.8) !important;
   box-shadow: var(--toolbarbutton-shadow-hot) !important;
 }
-:root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button):not([disabled=true]):hover:active, :root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button):not([disabled=true])[open] {
+:root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified):not([disabled=true]):hover:active, :root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified):not([disabled=true])[open] {
   background-color: transparent !important;
   --toolbarbutton-border-color: rgba(0,0,0,.65) rgba(0,0,0,.55) rgba(0,0,0,.5) !important;
   box-shadow: var(--toolbarbutton-shadow-active) !important;
   text-shadow: none !important;
   transition: none !important;
 }
-:root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button)[disabled=true] {
+:root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified)[disabled=true] {
   opacity: 0.8 !important;
 }
-:root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button)[disabled=true] .toolbarbutton-icon {
+:root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified)[disabled=true] .toolbarbutton-icon {
   opacity: 0.5 !important;
 }
-:root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button) .toolbarbutton-badge-stack {
+:root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified) .toolbarbutton-badge-stack {
   padding: 0 !important;
   border-radius: 0 !important;
   background-color: transparent !important;
 }
-:root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button) .toolbarbutton-icon {
+:root :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified) .toolbarbutton-icon {
   --toolbarbutton-inner-padding: 0 !important;
   --toolbarbutton-border-radius: 0 !important;
   background-color: transparent !important;
@@ -68,7 +68,7 @@
 :root #nav-bar #nav-bar-customization-target {
   align-items: center !important;
 }
-:root #nav-bar :not(.widget-overflow-list) > .toolbarbutton-1:not(#back-button, #forward-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button) {
+:root #nav-bar :not(.widget-overflow-list) > .toolbarbutton-1:not(#back-button, #forward-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, .unified) {
   margin: var(--toolbarbutton-outer-padding) !important;
   min-width: var(--toolbarbutton-width) !important;
   max-width: var(--toolbarbutton-width) !important;
@@ -274,6 +274,9 @@
   background-color: transparent !important;
   outline: 0 !important;
 }
+:root #urlbar-container, :root #search-container {
+  margin-inline: 6px !important;
+}
 :root #urlbar, :root #searchbar {
   font: message-box !important;
 }
@@ -289,6 +292,80 @@
   outline: 0 !important;
   color: black !important;
   animation: none !important;
+}
+:root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button {
+  margin-inline-end: 0 !important;
+}
+:root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button #urlbar-background {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-inline-end: 0 !important;
+}
+:root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button:not([focused=true]) + #stop-reload-button > #go-button {
+  visibility: collapse !important;
+}
+:root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] + #stop-reload-button > :not(#go-button) {
+  visibility: collapse !important;
+}
+:root #stop-reload-button.unified {
+  height: var(--urlbar-min-height) !important;
+  border: 1px solid !important;
+  border-color: var(--urlbar-border-color) !important;
+  border-inline-start: 0 !important;
+  border-top-right-radius: var(--toolbarbutton-border-radius) !important;
+  border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;
+  box-shadow: var(--urlbar-shadow-normal) !important;
+  background-color: var(--urlbar-background-color) !important;
+  background-clip: padding-box !important;
+  overflow: hidden !important;
+}
+:root #stop-reload-button.unified .toolbarbutton-1 {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/reload-stop-go.png") !important;
+  padding: 0 3px !important;
+  border-inline-start: 1px solid rgba(0, 0, 0, 0.25) !important;
+  background-origin: border-box !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+}
+:root #stop-reload-button.unified .toolbarbutton-1:hover {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset, -1px -1px 1px rgba(255, 255, 255, 0.25) inset !important;
+}
+:root #stop-reload-button.unified .toolbarbutton-1:hover:active {
+  box-shadow: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset !important;
+}
+:root #stop-reload-button.unified .toolbarbutton-1 .toolbarbutton-icon {
+  width: 14px !important;
+  height: 14px !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  opacity: 1 !important;
+}
+:root #stop-reload-button.unified .toolbarbutton-1 .toolbarbutton-animatable-box {
+  visibility: collapse !important;
+}
+:root #stop-reload-button.unified #reload-button {
+  -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
+}
+:root #stop-reload-button.unified #reload-button:hover {
+  -moz-image-region: rect(0px, 28px, 14px, 14px) !important;
+  background-image: linear-gradient(rgb(162, 207, 241), rgb(111, 178, 225) 49%, rgb(91, 159, 217) 51%, rgb(62, 138, 200)) !important;
+}
+:root #stop-reload-button.unified #go-button {
+  -moz-image-region: rect(0px, 56px, 14px, 42px) !important;
+  background-image: linear-gradient(rgb(115, 213, 115), rgb(96, 190, 96) 49%, rgb(82, 174, 82) 51%, rgb(79, 155, 79)) !important;
+}
+:root #stop-reload-button.unified #stop-button {
+  -moz-image-region: rect(0px, 42px, 14px, 28px) !important;
+  background-image: -moz-linear-gradient(rgb(231, 162, 140), rgb(209, 119, 100) 49%, rgb(193, 92, 78) 51%, rgb(173, 72, 58)) !important;
+}
+:root #stop-reload-button.unified #stop-button:hover {
+  background-image: linear-gradient(rgb(244, 156, 128), rgb(215, 101, 77) 49%, rgb(194, 66, 48) 51%, rgb(170, 41, 23)) !important;
+}
+:root #stop-reload-button.unified #stop-button[disabled=true] {
+  visibility: collapse !important;
+}
+:root #stop-reload-button #go-button:not(.unified) {
+  visibility: collapse !important;
 }
 :root #searchbar .searchbar-search-button {
   margin-inline-end: 4px !important;

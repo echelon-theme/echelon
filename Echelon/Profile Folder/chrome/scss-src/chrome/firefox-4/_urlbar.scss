@@ -56,6 +56,10 @@
         }
     }
 
+    #urlbar-container, #search-container {
+        margin-inline: 6px !important;
+    }
+
     #urlbar, #searchbar {
         font: message-box !important;
     }
@@ -72,6 +76,108 @@
         outline: 0 !important;
         color: black !important;
         animation: none !important;
+    }
+
+    // unified urlbar and refresh/stop/go buttons
+    &:not([chromehidden~="toolbar"]) {
+        #urlbar-container.unified-refresh-button {
+            margin-inline-end: 0 !important;
+
+            #urlbar-background {
+                border-top-right-radius: 0 !important;
+                border-bottom-right-radius: 0 !important;
+                border-inline-end: 0 !important;
+            }
+
+            // hide go button when urlbar is not focused
+            &:not([focused="true"]) {
+                + #stop-reload-button > #go-button {
+                    visibility: collapse !important;
+                }
+            }
+
+            // hide errythang but go button when urlbar IS focused
+            &[focused="true"] {
+                + #stop-reload-button > :not(#go-button) {
+                    visibility: collapse !important;
+                }
+            }
+        }
+    }
+
+    #stop-reload-button {
+        &.unified {
+            height: var(--urlbar-min-height) !important;
+            border: 1px solid !important;
+            border-color: var(--urlbar-border-color) !important;
+            border-inline-start: 0 !important;
+            border-top-right-radius: var(--toolbarbutton-border-radius) !important;
+            border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;
+            box-shadow: var(--urlbar-shadow-normal) !important;
+            background-color: var(--urlbar-background-color) !important;
+            background-clip: padding-box !important;
+            overflow: hidden !important;
+
+            .toolbarbutton-1 {
+                list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/reload-stop-go.png") !important;
+                padding: 0 3px !important;
+                border-inline-start: 1px solid rgba(0, 0, 0, 0.25) !important;
+                background-origin: border-box !important;
+                margin: 0 !important;
+                opacity: 1 !important;
+
+                &:hover {
+                    box-shadow: 0 1px 0 rgba(0,0,0,.1) inset, -1px -1px 1px rgba(255,255,255,.25) inset !important;
+
+                    &:active {
+                        box-shadow: 0 0 6.5px rgba(0,0,0,.4) inset, 0 0 2px rgba(0,0,0,.4) inset !important;
+                    }
+                }
+
+                .toolbarbutton-icon {
+                    width: 14px !important;
+                    height: 14px !important;
+                    padding: 0 !important;
+                    background-color: transparent !important;
+                    opacity: 1 !important;
+                }
+
+                .toolbarbutton-animatable-box { // hide the dog ass animations
+                    visibility: collapse !important;
+                }
+            }
+
+            #reload-button {
+                -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
+                &:hover {
+                    -moz-image-region: rect(0px, 28px, 14px, 14px) !important;
+                    background-image: linear-gradient(rgb(162, 207, 241), rgb(111, 178, 225) 49%, rgb(91, 159, 217) 51%, rgb(62, 138, 200)) !important;
+                }
+            }
+
+            #go-button {
+                -moz-image-region: rect(0px, 56px, 14px, 42px) !important;
+                background-image: linear-gradient(rgb(115,213,115), rgb(96,190,96) 49%, rgb(82,174,82) 51%, rgb(79,155,79)) !important;
+            }
+
+            #stop-button {
+                -moz-image-region: rect(0px, 42px, 14px, 28px) !important;
+                background-image: -moz-linear-gradient(rgb(231,162,140), rgb(209,119,100) 49%, rgb(193,92,78) 51%, rgb(173,72,58)) !important;
+                
+                &:hover {
+                    background-image: linear-gradient(rgb(244,156,128), rgb(215,101,77) 49%, rgb(194,66,48) 51%, rgb(170,41,23)) !important;
+                }
+
+                &[disabled="true"] { // add back the fucking hiding stop button shit
+                    visibility: collapse !important;
+                }
+            }
+        }
+
+        // hide go button when its not unified
+        #go-button:not(.unified) {
+            visibility: collapse !important;
+        }
     }
 
     #searchbar {
