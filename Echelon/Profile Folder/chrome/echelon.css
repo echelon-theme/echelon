@@ -301,11 +301,11 @@
   border-bottom-right-radius: 0 !important;
   border-inline-end: 0 !important;
 }
-:root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button:not([focused=true]) + #stop-reload-button > #go-button {
+:root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] + #stop-reload-button > .toolbarbutton-1:not(#go-button) {
   visibility: collapse !important;
 }
-:root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] + #stop-reload-button > :not(#go-button) {
-  visibility: collapse !important;
+:root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] + #stop-reload-button > #go-button {
+  visibility: visible !important;
 }
 :root #stop-reload-button.unified {
   height: var(--urlbar-min-height) !important;
@@ -353,6 +353,7 @@
 :root #stop-reload-button.unified #go-button {
   -moz-image-region: rect(0px, 56px, 14px, 42px) !important;
   background-image: linear-gradient(rgb(115, 213, 115), rgb(96, 190, 96) 49%, rgb(82, 174, 82) 51%, rgb(79, 155, 79)) !important;
+  visibility: collapse !important;
 }
 :root #stop-reload-button.unified #stop-button {
   -moz-image-region: rect(0px, 42px, 14px, 28px) !important;
@@ -362,9 +363,6 @@
   background-image: linear-gradient(rgb(244, 156, 128), rgb(215, 101, 77) 49%, rgb(194, 66, 48) 51%, rgb(170, 41, 23)) !important;
 }
 :root #stop-reload-button.unified #stop-button[disabled=true] {
-  visibility: collapse !important;
-}
-:root #stop-reload-button #go-button:not(.unified) {
   visibility: collapse !important;
 }
 :root #searchbar .searchbar-search-button {

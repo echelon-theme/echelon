@@ -89,17 +89,16 @@
                 border-inline-end: 0 !important;
             }
 
-            // hide go button when urlbar is not focused
-            &:not([focused="true"]) {
-                + #stop-reload-button > #go-button {
-                    visibility: collapse !important;
-                }
-            }
-
-            // hide errythang but go button when urlbar IS focused
+            
             &[focused="true"] {
-                + #stop-reload-button > :not(#go-button) {
-                    visibility: collapse !important;
+                + #stop-reload-button {
+                    > .toolbarbutton-1:not(#go-button) { // hide errthang but go button
+                        visibility: collapse !important;
+                    }
+
+                    > #go-button { // welcome back go button
+                        visibility: visible !important;
+                    }
                 }
             }
         }
@@ -158,6 +157,7 @@
             #go-button {
                 -moz-image-region: rect(0px, 56px, 14px, 42px) !important;
                 background-image: linear-gradient(rgb(115,213,115), rgb(96,190,96) 49%, rgb(82,174,82) 51%, rgb(79,155,79)) !important;
+                visibility: collapse !important;
             }
 
             #stop-button {
@@ -172,11 +172,6 @@
                     visibility: collapse !important;
                 }
             }
-        }
-
-        // hide go button when its not unified
-        #go-button:not(.unified) {
-            visibility: collapse !important;
         }
     }
 
