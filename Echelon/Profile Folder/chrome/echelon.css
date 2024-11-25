@@ -1,4 +1,8 @@
 /* ::::: Firefox 4 ::::: */
+:root[echelon-option-hideunifiedextensions] #unified-extensions-button {
+  display: none !important;
+}
+
 :root #TabsToolbar {
   background-color: transparent !important;
 }

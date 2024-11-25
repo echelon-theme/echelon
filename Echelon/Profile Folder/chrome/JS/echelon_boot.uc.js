@@ -14,7 +14,8 @@ let ECHELON_BOOT_CONFIG = {
 		themes: {
 			style: true,
 			bools: [
-				"Echelon.Appearance.Blue"
+				"Echelon.Appearance.Blue",
+				"Echelon.Option.HideUnifiedExtensions"
 			]
 		},
 		nativeControls: true
