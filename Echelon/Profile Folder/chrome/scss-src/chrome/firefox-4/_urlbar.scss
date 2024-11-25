@@ -140,10 +140,6 @@
                     background-color: transparent !important;
                     opacity: 1 !important;
                 }
-
-                .toolbarbutton-animatable-box { // hide the dog ass animations
-                    visibility: collapse !important;
-                }
             }
 
             #reload-button {
@@ -157,7 +153,6 @@
             #go-button {
                 -moz-image-region: rect(0px, 56px, 14px, 42px) !important;
                 background-image: linear-gradient(rgb(115,213,115), rgb(96,190,96) 49%, rgb(82,174,82) 51%, rgb(79,155,79)) !important;
-                visibility: collapse !important;
             }
 
             #stop-button {
@@ -167,10 +162,17 @@
                 &:hover {
                     background-image: linear-gradient(rgb(244,156,128), rgb(215,101,77) 49%, rgb(194,66,48) 51%, rgb(170,41,23)) !important;
                 }
+            }
+        }
+        
+        #go-button,
+        .toolbarbutton-animatable-box { // holy shit bro
+            visibility: collapse !important;
+        }
 
-                &[disabled="true"] { // add back the fucking hiding stop button shit
-                    visibility: collapse !important;
-                }
+        #stop-button {
+            &[disabled="true"] { // add back the fucking hiding stop button shit
+                visibility: collapse !important;
             }
         }
     }

@@ -340,9 +340,6 @@
   background-color: transparent !important;
   opacity: 1 !important;
 }
-:root #stop-reload-button.unified .toolbarbutton-1 .toolbarbutton-animatable-box {
-  visibility: collapse !important;
-}
 :root #stop-reload-button.unified #reload-button {
   -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
 }
@@ -353,7 +350,6 @@
 :root #stop-reload-button.unified #go-button {
   -moz-image-region: rect(0px, 56px, 14px, 42px) !important;
   background-image: linear-gradient(rgb(115, 213, 115), rgb(96, 190, 96) 49%, rgb(82, 174, 82) 51%, rgb(79, 155, 79)) !important;
-  visibility: collapse !important;
 }
 :root #stop-reload-button.unified #stop-button {
   -moz-image-region: rect(0px, 42px, 14px, 28px) !important;
@@ -362,7 +358,11 @@
 :root #stop-reload-button.unified #stop-button:hover {
   background-image: linear-gradient(rgb(244, 156, 128), rgb(215, 101, 77) 49%, rgb(194, 66, 48) 51%, rgb(170, 41, 23)) !important;
 }
-:root #stop-reload-button.unified #stop-button[disabled=true] {
+:root #stop-reload-button #go-button,
+:root #stop-reload-button .toolbarbutton-animatable-box {
+  visibility: collapse !important;
+}
+:root #stop-reload-button #stop-button[disabled=true] {
   visibility: collapse !important;
 }
 :root #searchbar .searchbar-search-button {
