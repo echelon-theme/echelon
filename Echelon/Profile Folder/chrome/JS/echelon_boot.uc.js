@@ -6,6 +6,8 @@
 // @loadOrder       0
 // ==/UserScript==
 
+let { PrefUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+
 let ECHELON_BOOT_CONFIG = {
 	/* Main browser window */
 	"chrome://browser/content/browser.xhtml": {

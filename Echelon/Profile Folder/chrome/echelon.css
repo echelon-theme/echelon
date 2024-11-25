@@ -210,6 +210,120 @@
   -moz-image-region: rect(0, 306px, 18px, 288px) !important;
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
 }
+:root #page-action-buttons .urlbar-page-action {
+  all: revert !important;
+  padding: 0 2px !important;
+}
+:root #page-action-buttons #star-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/bookmark.png") !important;
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+}
+:root #page-action-buttons #star-button:hover {
+  -moz-image-region: rect(0px 32px 16px 16px) !important;
+}
+:root #page-action-buttons #star-button:hover:active {
+  -moz-image-region: rect(0px 48px 16px 32px) !important;
+}
+:root #page-action-buttons #star-button[starred=true] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/editbookmark.png") !important;
+}
+
+:root {
+  --urlbar-border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.37) !important;
+  --urlbar-shadow-normal: 0 1px 0 rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+  --urlbar-background-color: rgba(255, 255, 255, 0.725) !important;
+  --urlbar-container-padding: 2px !important;
+  --urlbar-height-echelon: var(--toolbarbutton-height) !important;
+  --urlbar-min-height: var(--urlbar-height-echelon) !important;
+  --searchbar-search-icon: url("chrome://userchrome/content/assets/images/firefox-4/defaultFavicon.png") !important;
+}
+:root #urlbar[breakout], :root #urlbar[breakout][breakout-extend] {
+  height: var(--urlbar-min-height) !important;
+  margin: 0 !important;
+  width: var(--urlbar-width) !important;
+  top: calc((var(--urlbar-height) - 2) / 2) !important;
+}
+:root #urlbar[breakout] .urlbar-input-container, :root #urlbar[breakout][breakout-extend] .urlbar-input-container {
+  padding: var(--urlbar-container-padding) !important;
+  height: var(--urlbar-min-height) !important;
+}
+:root #urlbar #identity-box {
+  background-color: -moz-dialog !important;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.15)) !important;
+  color: -moz-dialogText !important;
+  border-radius: 2px !important;
+  order: -1 !important;
+}
+:root #urlbar #identity-box:hover {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(127.5, 127.5, 127.5, 0.2), rgba(0, 0, 0, 0.15)) !important;
+}
+:root #urlbar #identity-box:hover:active {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)) !important;
+}
+:root #urlbar #identity-box[pageproxystate=valid] {
+  color: white !important;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25) !important;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset !important;
+  background-color: hsl(219, 45%, 60%) !important;
+}
+:root #urlbar #identity-box #identity-icon-box {
+  width: 24px !important;
+  height: 18px !important;
+  padding: 1px 4px !important;
+  background: url("chrome://userchrome/content/assets/images/firefox-4/urlbar-favicon-glow.png") center center no-repeat !important;
+  background-color: transparent !important;
+  outline: 0 !important;
+}
+:root #urlbar, :root #searchbar {
+  font: message-box !important;
+}
+:root #urlbar-background, :root #searchbar {
+  height: var(--urlbar-min-height) !important;
+  padding: 2px !important;
+  border: 1px solid;
+  border-color: var(--urlbar-border-color) !important;
+  border-radius: var(--toolbarbutton-border-radius) !important;
+  background-clip: padding-box !important;
+  background-color: var(--urlbar-background-color) !important;
+  box-shadow: var(--urlbar-shadow-normal) !important;
+  outline: 0 !important;
+  color: black !important;
+  animation: none !important;
+}
+:root #searchbar .searchbar-search-button {
+  margin-inline-end: 4px !important;
+}
+:root #searchbar .searchbar-search-button .searchbar-search-icon {
+  margin-inline: 2px !important;
+  margin-right: 0 !important;
+  list-style-image: var(--searchbar-search-icon) !important;
+}
+:root #searchbar .searchbar-search-button .searchbar-search-icon-overlay {
+  width: 13px !important;
+  height: 11px !important;
+  margin-inline: 0 !important;
+  margin-top: 0 !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/mainwindow-dropdown-arrow.png") !important;
+  -moz-image-region: rect(0, 13px, 11px, 0) !important;
+}
+:root #searchbar .searchbar-search-button[aria-expanded=true] .searchbar-search-icon-overlay {
+  -moz-image-region: rect(0, 26px, 11px, 13px) !important;
+}
+:root #searchbar .search-go-button {
+  all: unset !important;
+  width: 16px !important;
+  height: 16px !important;
+  display: flex !important;
+  padding: 1px !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/Search-glass.png") !important;
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+}
+:root #searchbar .search-go-button:hover {
+  -moz-image-region: rect(0px 32px 16px 16px) !important;
+}
+:root #searchbar .search-go-button:active {
+  -moz-image-region: rect(0px, 48px, 16px, 32px) !important;
+}
 
 /* ::::: Firefox 5 ::::: */
 /* ::::: Firefox 10 ::::: */
