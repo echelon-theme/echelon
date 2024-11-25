@@ -23,6 +23,14 @@ let g_echelonLayoutManager;
 			this.refreshToolboxLayout();
 			this.hookTabArrowScrollbox();
 
+			let tabsContainer = document.querySelector("#TabsToolbar");
+			let menubarContainer = document.querySelector("#toolbar-menubar");
+			this.titlebarElem = document.createXULElement("vbox");
+			this.titlebarElem.id = "titlebar";
+			toolboxRoot.insertBefore(this.titlebarElem, toolboxRoot.firstChild);
+			this.titlebarElem.appendChild(menubarContainer);
+			this.titlebarElem.appendChild(tabsContainer);
+
 			let tabsBox = await waitForElement("#tabbrowser-tabs");
 			tabsBox.addEventListener("TabSelect", this.onTabSwitch.bind(this));
 		}
@@ -73,6 +81,8 @@ let g_echelonLayoutManager;
 			if (style < ECHELON_LAYOUT_AUSTRALIS || state)
 			{
 				let tabsContainer = document.querySelector("#TabsToolbar");
+				let menubarContainer = document.querySelector("#toolbar-menubar");
+				document.querySelector("#titlebar").appendChild(menubarContainer);
 				
 				if (!tabsContainer)
 				{

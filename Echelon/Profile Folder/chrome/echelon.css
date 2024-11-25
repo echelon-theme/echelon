@@ -72,7 +72,7 @@
 :root #nav-bar #nav-bar-customization-target {
   align-items: center !important;
 }
-:root #nav-bar :not(.widget-overflow-list) > .toolbarbutton-1:not(#back-button, #forward-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, .unified) {
+:root #nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, .unified) {
   margin: var(--toolbarbutton-outer-padding) !important;
   min-width: var(--toolbarbutton-width) !important;
   max-width: var(--toolbarbutton-width) !important;

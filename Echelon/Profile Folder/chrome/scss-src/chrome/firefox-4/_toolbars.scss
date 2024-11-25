@@ -78,7 +78,7 @@
             align-items: center !important;
         }
 
-        :not(.widget-overflow-list) > .toolbarbutton-1 {
+        .toolbarbutton-1 {
             &:not(#back-button, #forward-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, .unified) {
                 margin: var(--toolbarbutton-outer-padding) !important;
                 min-width: var(--toolbarbutton-width) !important;
@@ -86,6 +86,7 @@
                 height: var(--toolbarbutton-height) !important;
             }
         }
+        
         // back and forward buttons
         #back-button {
             width: 30px !important;
