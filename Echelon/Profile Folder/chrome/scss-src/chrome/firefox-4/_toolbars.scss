@@ -14,6 +14,9 @@
     --toolbarbutton-shadow-hot: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 1.5px rgba(255, 255, 255, 0.1) inset, 0 1px 0 rgba(0, 0, 0, 0.1), 0 0 3.5px hsl(190, 90%, 80%);
     --toolbarbutton-shadow-active: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.4);
 
+    --toolbar-highlight-top: rgba(255, 255, 255, .5) !important;
+    --toolbar-highlight-bottom: transparent !important;
+    --toolbar-background-color: -moz-Dialog !important;
     --toolbar-border-color: rgba(26, 26, 26, 0.4) !important;
 
     /* toolbarbutton */
@@ -76,6 +79,10 @@
         padding-inline: 2px !important;
         align-items: center !important;
         border-top: 0 !important;
+        background-image: linear-gradient(var(--toolbar-highlight-top) 15%, var(--toolbar-highlight-bottom)) !important;
+        margin-top: calc(-1 * var(--navbar-tab-toolbar-highlight-overlap)) !important;
+        position: relative !important;
+        z-index: 1 !important;
 
         #nav-bar-customization-target {
             align-items: center !important;
@@ -196,5 +203,16 @@
                 }
             }
         }
+    }
+
+    // Aero blue style
+    &:not([echelon-appearance-xp]) {
+        &[echelon-appearance-blue] {
+            --toolbar-background-color: hsl(214, 44%, 87%) !important;
+        }
+    }
+
+    #nav-bar, #PersonalToolbar {
+        background-color: var(--toolbar-background-color) !important;
     }
 }

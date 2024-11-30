@@ -1,0 +1,53 @@
+:root {
+    --tab-background: linear-gradient(transparent, hsla(0, 0%, 45%, .1) 1px, hsla(0, 0%, 32%, .2) 80%, hsla(0, 0%, 0%, .2)) !important;
+    --tab-background-hover: linear-gradient(hsla(0, 0%, 100%, .3) 1px, hsla(0, 0%, 75%, .2) 80%, hsla(0, 0%, 60%, .2)) !important;
+    --tab-selected-highlight: rgba(255, 255, 255, .7) !important;
+
+    --inline-tab-padding: 5px !important;
+    --tab-border-radius: 0 !important;
+    --navbar-tab-toolbar-highlight-overlap: 1px !important;
+    --tab-overflow-clip-margin: 0 !important;
+}
+
+#TabsToolbar {
+    padding-inline: 4px !important;
+    z-index: 2 !important;
+
+    .titlebar-spacer { // Hide spacers
+        visibility: collapse !important;
+    }
+
+    .tabbrowser-tab {
+        z-index: 0 !important;
+
+        &:is([visuallyselected="true"]) { // make tab above outer border from navbar
+            position: relative !important;
+            z-index: 2 !important;
+        }
+    }
+
+    :root:not([echelon-style-4]) & {
+        .tabbrowser-tab {
+            .tab-background {
+                box-shadow: none !important;
+                border-image: url("chrome://userchrome/content/assets/images/firefox-4/tab.png") 6 3 4/6px 3px 4px repeat stretch !important;
+                background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px), var(--tab-background), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color));
+                background-color: transparent !important;
+                background-position: -2px -2px !important;
+                background-size: calc(100% + 4px) calc(100% + 2px) !important;
+                background-repeat: no-repeat !important;
+                border-radius: var(--tab-border-radius) !important;
+                border-width: 4px 3px 0 !important;
+                border-style: solid !important;
+                margin-block: 0 !important;        
+            }
+            
+            &:is([selected], [multiselected]) {
+                .tab-background {
+                    background-image: linear-gradient(var(--tab-selected-highlight), var(--toolbar-highlight-top) 50%), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
+                    background-repeat: no-repeat !important;
+                }
+            }
+        }
+    }
+}

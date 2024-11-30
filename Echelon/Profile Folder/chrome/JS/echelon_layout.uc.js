@@ -270,7 +270,7 @@ let g_echelonLayoutManager;
 		waitForElement("#titlebar-content").then(e => {
 			let echelonTitlebarButtonBox = window.MozXULElement.parseXULToFragment(`
 				<spacer id="titlebar-spacer" flex="1"/>
-				<hbox class="titlebar-buttonbox-container echelon-custom-butonbox" skipintoolbarset="true">
+				<hbox class="titlebar-buttonbox-container echelon-custom-buttonbox" skipintoolbarset="true">
 					<hbox class="titlebar-buttonbox">
 						<toolbarbutton class="titlebar-button titlebar-min" oncommand="window.minimize();" data-l10n-id="browser-window-minimize-button" tooltiptext="Minimize"></toolbarbutton>
 						<toolbarbutton class="titlebar-button titlebar-max" oncommand="window.maximize();" data-l10n-id="browser-window-maximize-button" tooltiptext="Maximize"></toolbarbutton>

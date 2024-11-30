@@ -1,4 +1,6 @@
 :root {
+	--inactive-titlebar-opacity: 1 !important; // remove the shit inactive titlebar transparency
+	
 	// Fix titlebar background in Firefox 133+
 	#TabsToolbar {
 		background-color: transparent !important;
@@ -8,7 +10,16 @@
 		-moz-window-dragging: drag !important;
 	}
 
-	.titlebar-buttonbox-container:not(.echelon-custom-butonbox) {
-		visibility: collapse !important;
+	// maximized behavior
+	#toolbar-menubar,
+	&:not([sizemode="maximized"]) #TabsToolbar,
+	&[sizemode="maximized"] #titlebar-content {
+		.titlebar-buttonbox-container {
+			visibility: collapse !important;
+		}
+	}
+
+	&[sizemode="maximized"] {
+		
 	}
 }

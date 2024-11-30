@@ -3,16 +3,18 @@
   display: none !important;
 }
 
+:root {
+  --inactive-titlebar-opacity: 1 !important;
+}
 :root #TabsToolbar {
   background-color: transparent !important;
 }
 :root #titlebar {
   -moz-window-dragging: drag !important;
 }
-:root .titlebar-buttonbox-container:not(.echelon-custom-butonbox) {
+:root #toolbar-menubar .titlebar-buttonbox-container, :root:not([sizemode=maximized]) #TabsToolbar .titlebar-buttonbox-container, :root[sizemode=maximized] #titlebar-content .titlebar-buttonbox-container {
   visibility: collapse !important;
 }
-
 :root {
   --toolbarbutton-width: 30px !important;
   --toolbarbutton-height: 24px !important;
@@ -25,6 +27,9 @@
   --toolbarbutton-shadow-normal: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
   --toolbarbutton-shadow-hot: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 1.5px rgba(255, 255, 255, 0.1) inset, 0 1px 0 rgba(0, 0, 0, 0.1), 0 0 3.5px hsl(190, 90%, 80%);
   --toolbarbutton-shadow-active: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.4);
+  --toolbar-highlight-top: rgba(255, 255, 255, .5) !important;
+  --toolbar-highlight-bottom: transparent !important;
+  --toolbar-background-color: -moz-Dialog !important;
   --toolbar-border-color: rgba(26, 26, 26, 0.4) !important;
   /* toolbarbutton */
 }
@@ -76,6 +81,10 @@
   padding-inline: 2px !important;
   align-items: center !important;
   border-top: 0 !important;
+  background-image: linear-gradient(var(--toolbar-highlight-top) 15%, var(--toolbar-highlight-bottom)) !important;
+  margin-top: calc(-1 * var(--navbar-tab-toolbar-highlight-overlap)) !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 :root #nav-bar #nav-bar-customization-target {
   align-items: center !important;
@@ -165,6 +174,54 @@
   border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
   border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;
   overflow: clip !important;
+}
+:root:not([echelon-appearance-xp])[echelon-appearance-blue] {
+  --toolbar-background-color: hsl(214, 44%, 87%) !important;
+}
+:root #nav-bar, :root #PersonalToolbar {
+  background-color: var(--toolbar-background-color) !important;
+}
+
+:root {
+  --tab-background: linear-gradient(transparent, hsla(0, 0%, 45%, .1) 1px, hsla(0, 0%, 32%, .2) 80%, hsla(0, 0%, 0%, .2)) !important;
+  --tab-background-hover: linear-gradient(hsla(0, 0%, 100%, .3) 1px, hsla(0, 0%, 75%, .2) 80%, hsla(0, 0%, 60%, .2)) !important;
+  --tab-selected-highlight: rgba(255, 255, 255, .7) !important;
+  --inline-tab-padding: 5px !important;
+  --tab-border-radius: 0 !important;
+  --navbar-tab-toolbar-highlight-overlap: 1px !important;
+  --tab-overflow-clip-margin: 0 !important;
+}
+
+#TabsToolbar {
+  padding-inline: 4px !important;
+  z-index: 2 !important;
+}
+#TabsToolbar .titlebar-spacer {
+  visibility: collapse !important;
+}
+#TabsToolbar .tabbrowser-tab {
+  z-index: 0 !important;
+}
+#TabsToolbar .tabbrowser-tab:is([visuallyselected=true]) {
+  position: relative !important;
+  z-index: 2 !important;
+}
+:root:not([echelon-style-4]) #TabsToolbar .tabbrowser-tab .tab-background {
+  box-shadow: none !important;
+  border-image: url("chrome://userchrome/content/assets/images/firefox-4/tab.png") 6 3 4/6px 3px 4px repeat stretch !important;
+  background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px), var(--tab-background), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color));
+  background-color: transparent !important;
+  background-position: -2px -2px !important;
+  background-size: calc(100% + 4px) calc(100% + 2px) !important;
+  background-repeat: no-repeat !important;
+  border-radius: var(--tab-border-radius) !important;
+  border-width: 4px 3px 0 !important;
+  border-style: solid !important;
+  margin-block: 0 !important;
+}
+:root:not([echelon-style-4]) #TabsToolbar .tabbrowser-tab:is([selected], [multiselected]) .tab-background {
+  background-image: linear-gradient(var(--tab-selected-highlight), var(--toolbar-highlight-top) 50%), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
+  background-repeat: no-repeat !important;
 }
 
 :root {
