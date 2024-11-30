@@ -14,6 +14,8 @@
     --toolbarbutton-shadow-hot: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 1.5px rgba(255, 255, 255, 0.1) inset, 0 1px 0 rgba(0, 0, 0, 0.1), 0 0 3.5px hsl(190, 90%, 80%);
     --toolbarbutton-shadow-active: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.4);
 
+    --toolbar-border-color: rgba(26, 26, 26, 0.4) !important;
+
     /* toolbarbutton */
 
     :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified) {
@@ -73,6 +75,7 @@
         box-shadow: none !important;
         padding-inline: 2px !important;
         align-items: center !important;
+        border-top: 0 !important;
 
         #nav-bar-customization-target {
             align-items: center !important;
@@ -161,6 +164,36 @@
                 border-top-left-radius: 0 !important;
                 border-bottom-left-radius: 0 !important;
                 border-left: 0 !important;
+            }
+        }
+    }
+
+    // Toolbar borders
+    &[sizemode="normal"] {
+        &:not([lwtheme-image]) {
+            #nav-bar {
+                border-inline: 1px solid var(--toolbar-border-color) !important;
+                border-top: 1px solid var(--toolbar-border-color) !important;
+                border-top-left-radius: var(--toolbarbutton-border-radius) !important;
+                border-top-right-radius: var(--toolbarbutton-border-radius) !important;
+                background-clip: padding-box !important;
+            }
+
+            #PersonalToolbar {
+                border-inline: 1px solid var(--toolbar-border-color) !important;
+                background-clip: padding-box !important;
+            }
+
+            #browser, #customization-container {
+                border-inline: 1px solid var(--toolbar-border-color) !important;
+                border-bottom: 1px solid var(--toolbar-border-color) !important;
+                background-clip: padding-box !important;
+
+                &[findbar-focused] {
+                    border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
+                    border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;  
+                    overflow: clip !important;
+                }
             }
         }
     }

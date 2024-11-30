@@ -3,4 +3,12 @@
 	#TabsToolbar {
 		background-color: transparent !important;
 	}
+
+	#titlebar {
+		-moz-window-dragging: drag !important;
+	}
+
+	.titlebar-buttonbox-container:not(.echelon-custom-butonbox) {
+		visibility: collapse !important;
+	}
 }

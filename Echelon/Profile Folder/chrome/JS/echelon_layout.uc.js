@@ -23,13 +23,16 @@ let g_echelonLayoutManager;
 			this.refreshToolboxLayout();
 			this.hookTabArrowScrollbox();
 
-			let tabsContainer = document.querySelector("#TabsToolbar");
-			let menubarContainer = document.querySelector("#toolbar-menubar");
 			this.titlebarElem = document.createXULElement("vbox");
 			this.titlebarElem.id = "titlebar";
+
+			this.titlebarContent = document.createXULElement("hbox");
+			this.titlebarContent.id = "titlebar-content";
+			this.titlebarElem.insertBefore(this.titlebarContent, this.titlebarElem.firstChild);
+
 			toolboxRoot.insertBefore(this.titlebarElem, toolboxRoot.firstChild);
-			this.titlebarElem.appendChild(menubarContainer);
-			this.titlebarElem.appendChild(tabsContainer);
+			this.titlebarElem.appendChild(document.querySelector("#toolbar-menubar"));
+			this.titlebarElem.appendChild(document.querySelector("#TabsToolbar"));
 
 			let tabsBox = await waitForElement("#tabbrowser-tabs");
 			tabsBox.addEventListener("TabSelect", this.onTabSwitch.bind(this));
@@ -260,6 +263,23 @@ let g_echelonLayoutManager;
 				}
 			}
 			contextMenuItem.parentNode.addEventListener("popupshowing", g_echelonLayoutManager.onCustomizePopupShowing);
+		});
+	});
+
+	waitForElement("#titlebar").then(e => {
+		waitForElement("#titlebar-content").then(e => {
+			let echelonTitlebarButtonBox = window.MozXULElement.parseXULToFragment(`
+				<spacer id="titlebar-spacer" flex="1"/>
+				<hbox class="titlebar-buttonbox-container echelon-custom-butonbox" skipintoolbarset="true">
+					<hbox class="titlebar-buttonbox">
+						<toolbarbutton class="titlebar-button titlebar-min" oncommand="window.minimize();" data-l10n-id="browser-window-minimize-button" tooltiptext="Minimize"></toolbarbutton>
+						<toolbarbutton class="titlebar-button titlebar-max" oncommand="window.maximize();" data-l10n-id="browser-window-maximize-button" tooltiptext="Maximize"></toolbarbutton>
+						<toolbarbutton class="titlebar-button titlebar-restore" oncommand="window.fullScreen ? BrowserCommands.fullScreen() : window.restore();" data-l10n-id="browser-window-restore-down-button" tooltiptext="Restore Down"></toolbarbutton>
+						<toolbarbutton class="titlebar-button titlebar-close" command="cmd_closeWindow" data-l10n-id="browser-window-close-button" tooltiptext="Close"></toolbarbutton>
+					</hbox>
+				</hbox>
+			`);
+			e.appendChild(echelonTitlebarButtonBox);
 		});
 	});
 }
