@@ -21,7 +21,7 @@
 
     /* toolbarbutton */
 
-    :not(.widget-overflow-list) > .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified) {
+    :not(.widget-overflow-list, .australis-appmenu-panel) .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified) {
         padding: 1px 5px !important;
         background: var(--toolbarbutton-background) !important;
         background-clip: padding-box !important;
@@ -147,7 +147,7 @@
         display: none !important;
     }
 
-    #zoom-controls {
+    :not(.australis-appmenu-panel) #zoom-controls {
         margin: var(--toolbarbutton-outer-padding) !important;
 
         #zoom-reset-button {
