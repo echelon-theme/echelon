@@ -26,6 +26,7 @@
 <!ENTITY general.appearance.os.vista "Windows Vista/7">
 <!ENTITY general.appearance.os.eight "Windows 8">
 <!ENTITY general.appearance.os.ten "Windows 10">
+<!ENTITY general.appearance.os.linux "Linux">
 
 <!ENTITY general.appearance.home "スタートページのスタイル">
 <!ENTITY general.appearance.home.ff4 "Firefox 4-9">
