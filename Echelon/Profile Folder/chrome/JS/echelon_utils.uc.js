@@ -118,104 +118,70 @@ class PrefUtils
 
 class BrandUtils
 {
-	static getBrowserName()
-	{
-		let spoof = PrefUtils.tryGetStringPref("Echelon.Option.BrowserSpoof");
-		if (spoof == "")
-		{
-			return Services.appinfo.name;
+	static branding = {
+		"firefox": {
+			"fullName": "Mozilla Firefox",
+			"productName": "Firefox",
+			"vendorName": "Mozilla"
+		},
+		"aurora": {
+			"fullName": "Aurora",
+			"productName": "Aurora",
+			"vendorName": "Mozilla"
+		},
+		"nightly": {
+			"fullName": "Nightly",
+			"productName": "Nightly",
+			"vendorName": "Mozilla"
+		},
+		"fallback": {
+			"fullName": Services.appinfo.name,
+			"productName": Services.appinfo.name,
+			"vendorName": Services.appinfo.vendor
 		}
-		return spoof;
-	}
+	};
 
 	static getUpdateChannel()
 	{
-		let spoof = PrefUtils.tryGetStringPref("Echelon.Option.ChannelSpoof");
-		if (spoof == "")
-		{
-			return Services.appinfo.defaultUpdateChannel;
-		}
-		return spoof;
+		return Services.appinfo.defaultUpdateChannel;
 	}
 
-	static getShortProductName()
+	static getBrowserName()
 	{
-		let custom = PrefUtils.tryGetStringPref("Echelon.Option.BrandName");
-		if (custom != "")
-		{
-			return custom;
-		}
+		let prefChoice = PrefUtils.tryGetStringPref("Echelon.Option.BrowserSpoof");
 
 		switch (this.getUpdateChannel())
 		{
 			case "nightly":
-				return "Nightly";
+				return "nightly";
 			case "aurora":
-				return "Aurora";
-			default:
-				return this.getBrowserName();
-		}
-	}
-
-	static getDefaultProductName()
-	{
-		switch (this.getUpdateChannel())
-		{
-			case "nightly":
-				return "Nightly";
-			case "aurora":
-				return "Aurora";
-			default:
-				if (this.getBrowserName() == "Firefox")
-				{
-					return "Mozilla Firefox";
+				return "aurora";
+			default: 
+				if (Object.keys(this.branding).includes(prefChoice)) {
+					return prefChoice;
 				}
-				return this.getBrowserName();
+				return "fallback";
 		}
 	}
 
-	static getFullProductName()
+	static getBrandingKey(key)
 	{
-		let custom = PrefUtils.tryGetStringPref("Echelon.Option.BrandName");
-		if (custom == "")
-		{
-			return this.getDefaultProductName();
-		}
-		return custom;
+		let prefChoice = this.getBrowserName();
+
+		return this.branding[prefChoice][key];
 	}
 
 	static getDefaultTitles()
 	{
-		let product = this.getFullProductName();
+		let prefChoice = this.getBrowserName();
+		let fullName = this.branding[prefChoice]["fullName"];
+
 		return {
-			"default": product,
-			"private": `${product} (Private Browsing)`,
-			"contentDefault": `CONTENTTITLE - ${product}`,
-			"contentPrivate": `CONTENTTITLE - ${product} (Private Browsing)`
+			"default": fullName,
+			"private": `${fullName} (Private Browsing)`,
+			"contentDefault": `CONTENTTITLE - ${fullName}`,
+			"contentPrivate": `CONTENTTITLE - ${fullName} (Private Browsing)`
 		};
-	}
-
-	static getUserTitles()
-	{
-		let result = this.getDefaultTitles();
-		
-		const prefmap = {
-			"default": "Echelon.WindowTitle.Default",
-			"private": "Echelon.WindowTitle.Private",
-			"contentDefault": "Echelon.WindowTitle.ContentDefault",
-			"contentPrivate": "Echelon.WindowTitle.ContentPrivate"
-		};
-
-		for (const prop in prefmap)
-		{
-			let string = PrefUtils.tryGetStringPref(prefmap[prop]);
-			if (string != "")
-			{
-				result[prop] = string;
-			}
-		}
-
-		return result;
 	}
 }
 

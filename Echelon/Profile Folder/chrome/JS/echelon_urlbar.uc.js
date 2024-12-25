@@ -5,6 +5,7 @@
 // @include			main
 // ==/UserScript==
 
+var { BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 const DEFAULT_FAVICON = "chrome://userchrome/content/images/icon16.png";
 
 function updateIcon()
@@ -25,6 +26,23 @@ function updateIcon()
 				document.querySelector("#identity-icon").setAttribute("style", `list-style-image: url('${favicon}');`);
 			}
 		}, 1);
+	}
+	catch (e) {}
+
+	try {
+		let documentURIHost = gBrowser.selectedBrowser.documentURI;
+		let displayHost = documentURIHost.host.replace(/^www\./i, "");
+
+		if (documentURIHost.scheme == "https") {
+			document.querySelector("#identity-icon-label").setAttribute("value", displayHost);
+			document.querySelector("#identity-icon-label").removeAttribute("collapsed");
+		}
+
+		if (documentURIHost.scheme == "about") {
+			let browserName = BrandUtils.getBrandingKey("productName");
+
+			document.querySelector("#identity-icon-label").setAttribute("value", browserName);
+		}
 	}
 	catch (e) {}
 }

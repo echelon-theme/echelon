@@ -1,0 +1,130 @@
+@import "../_mixins.scss";
+
+panel[type="arrow"] {
+    appearance: none;
+    background: transparent;
+    border: none;
+
+    &[side="top"],
+    &[side="bottom"] {
+        margin-inline: -20px;
+    }
+
+    &[side="left"],
+    &[side="right"] {
+        margin-block: -20px;
+    }
+}
+
+menupopup[type="arrow"] {
+    &[side="top"],
+    &[side="bottom"] {
+        margin-inline: -6px;
+    }
+
+    &[side="left"],
+    &[side="right"] {
+        margin-block: -6px;
+    }
+}
+
+/* These specifically for some reason has weird positioning */
+#appMenu-popup,
+#widget-overflow {
+    margin-inline: -6px !important;
+}
+
+/* More weird positioning at the edge of the screen */
+#sidebarMenu-popup {
+    margin-inline: -7px !important;
+}
+
+:is(panel, menupopup[placespopup]) {
+    --panel-shadow: 0 0 4px rgba(0,0,0,0.2) !important;
+
+    &::part(arrowcontent) {
+        padding: var(--arrowpanel-padding);
+        color: var(--arrowpanel-color);
+        background: var(--arrowpanel-background);
+        border-radius: var(--arrowpanel-border-radius);
+        background-clip: padding-box;
+        border: 1px solid var(--arrowpanel-border-color);
+        box-shadow: 0 0 4px hsla(0,0%,0%,.2);
+        margin: 4px;
+        box-shadow: 0 0 4px hsla(210,4%,10%,.2);
+
+        & > slot {
+            /* propagate border-radius from arrowcontent to slotted children */
+            border-radius: inherit;
+        }
+    }
+
+    &[orient="vertical"]::part(arrowcontent) {
+        flex-direction: column;
+    }
+
+    &.panel-no-padding::part(arrowcontent) {
+        padding: 0;
+        overflow: hidden; /* Don't let panel content overflow the border-radius */
+    }
+    
+    &::part(arrow) {
+        -moz-context-properties: fill, stroke;
+        fill: var(--arrowpanel-background);
+        stroke: var(--arrowpanel-border-color);
+    }
+
+    &[side="top"],
+    &[side="bottom"] {
+        &::part(arrow) {
+            list-style-image: url("chrome://userchrome/content/images/arrow/panelarrow-vertical.svg");
+            position: relative;
+            margin-inline: 10px;
+        }
+    }
+
+    &[side="top"]::part(arrow) {
+        margin-bottom: -5px;
+    }
+
+    &[side="bottom"]::part(arrow) {
+        transform: scaleY(-1);
+        margin-top: -5px;
+    }
+
+    &[side="left"],
+    &[side="right"] {
+        &::part(arrow) {
+            list-style-image: url("chrome://userchrome/content/images/arrow/panelarrow-horizontal.svg");
+            position: relative;
+            margin-block: 10px;
+        }
+    }
+
+    &[side="left"]::part(arrow) {
+        margin-right: -5px;
+    }
+    
+    &[side="right"]::part(arrow) {
+        transform: scaleX(-1);
+        margin-left: -5px;
+    }
+}
+
+#protections-popup[mainviewshowing][side="top"]::part(arrow) {
+    fill: #0A51BF;
+}
+
+.ac-dropmarker {
+    width: 12px !important;
+
+    &::part(icon) {
+        @include set-icon("arrow-dropdown-12");
+        width: 12px !important;
+        height: 16px !important;
+    }
+}
+
+.popup-notification-dropmarker > .button-box > .button-menu-dropmarker::part(icon) {
+    @include set-icon("arrow-dropdown-16");
+}

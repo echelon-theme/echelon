@@ -4,5 +4,5 @@ content modules ../JS/modules/
 
 locale echelon en-US ../locale/en-US/
 
-skin userstyles classic/1.0 ../CSS/
+skin	userstyles	classic/1.0	../CSS/
 content userchrome ../ contentaccessible=yes

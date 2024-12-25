@@ -1,0 +1,64 @@
+@use "sass:list";
+@use "sass:string";
+
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+@function icon($name, $hash: false) {
+    @if ($hash) {
+        @return url("chrome://userchrome/content/icons/#{$name}.svg##{$hash}");
+    }
+    @return url("chrome://userchrome/content/icons/#{$name}.svg");
+}
+
+@mixin set-icon($icon-id, $icon-hash: false) {
+    list-style-image: icon($icon-id, $icon-hash) !important;
+}
+
+@mixin set-background($icon-id, $icon-hash: false) {
+    background-image: icon($icon-id, $icon-hash) !important;
+}
+
+@mixin toolbar-icon($toolbar-ids, $icon-id, $icon-hash: false) {
+    $selector: "##{list.nth($toolbar-ids, 1)}";
+
+    @if (list.length($toolbar-ids) > 1) {
+        @for $i from 2 through list.length($toolbar-ids) {
+            $selector: "#{$selector}, ##{list.nth($toolbar-ids, $i)}";
+        }
+    }
+
+    #{$selector} {
+        @include set-icon($icon-id, $icon-hash);
+    }
+}
+
+@mixin toolbar-icons($map) {
+    @each $id, $icon in $map {
+        @include toolbar-icon($id, $icon);
+    }
+}
+
+@mixin toolbar-icons-simple($ids) {
+    @each $id in $ids {
+        @include toolbar-icon("#{string.to-lower-case($id)}-button", $id);
+    }
+}
+
+@mixin start($amount) {
+    left: $amount !important;
+
+    &:-moz-locale-dir(rtl) {
+        left: unset !important;
+        right: $amount !important;
+    }
+}
+
+@mixin end($amount) {
+    right: $amount !important;
+
+    &:-moz-locale-dir(rtl) {
+        right: unset !important;
+        left: $amount !important;
+    }
+}
