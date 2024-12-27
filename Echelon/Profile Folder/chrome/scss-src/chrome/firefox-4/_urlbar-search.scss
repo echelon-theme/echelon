@@ -8,6 +8,7 @@
     --urlbar-min-height: var(--urlbar-height-echelon) !important;
 
     --searchbar-search-icon: url("chrome://userchrome/content/assets/images/firefox-4/defaultFavicon.png") !important;
+    --searchbar-go-button: url("chrome://userchrome/content/assets/images/firefox-4/Search-glass.png") !important;
 
     #urlbar {
         &[breakout],
@@ -22,16 +23,22 @@
                 height: var(--urlbar-min-height) !important;
 
                 &::after { // lazy hack for dropdown button
+                    @include set-background("firefox-4/mainwindow-dropdown-arrow.png");
+
                     content: "";
                     display: inline-block;
                     width: 13px;
                     height: 11px;
-                    background-image: url("chrome://userchrome/content/assets/images/firefox-4/mainwindow-dropdown-arrow.png") !important; // list-view-image doesn't work on psuedo elements???
                     align-self: center !important;
                     margin-inline-end: -2px !important;
                 }
             }
 		}
+
+        // hide original go button on urlbar
+        #urlbar-go-button {
+            visibility: collapse !important;
+        }
 
         #identity-box {
             background-color: -moz-dialog !important;
@@ -127,7 +134,6 @@
             overflow: hidden !important;
 
             .toolbarbutton-1 {
-                list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/reload-stop-go.png") !important;
                 padding: 0 3px !important;
                 border-inline-start: 1px solid rgba(0, 0, 0, 0.25) !important;
                 background-origin: border-box !important;
@@ -143,6 +149,7 @@
                 }
 
                 .toolbarbutton-icon {
+                    @include set-background("firefox-4/reload-stop-go.png");
                     width: 14px !important;
                     height: 14px !important;
                     padding: 0 !important;
@@ -152,24 +159,28 @@
             }
 
             #reload-button {
-                -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
                 &:hover {
-                    -moz-image-region: rect(0px, 28px, 14px, 14px) !important;
                     background-image: linear-gradient(rgb(162, 207, 241), rgb(111, 178, 225) 49%, rgb(91, 159, 217) 51%, rgb(62, 138, 200)) !important;
+
+                    .toolbarbutton-icon {
+                        background-position-x: -14px !important;
+                    }
                 }
             }
 
             #go-button {
-                -moz-image-region: rect(0px, 56px, 14px, 42px) !important;
                 background-image: linear-gradient(rgb(115,213,115), rgb(96,190,96) 49%, rgb(82,174,82) 51%, rgb(79,155,79)) !important;
+
+                .toolbarbutton-icon {
+                    background-position-x: -42px !important;
+                }
             }
 
             #stop-button {
-                -moz-image-region: rect(0px, 42px, 14px, 28px) !important;
                 background-image: -moz-linear-gradient(rgb(231,162,140), rgb(209,119,100) 49%, rgb(193,92,78) 51%, rgb(173,72,58)) !important;
                 
-                &:hover {
-                    background-image: linear-gradient(rgb(244,156,128), rgb(215,101,77) 49%, rgb(194,66,48) 51%, rgb(170,41,23)) !important;
+                .toolbarbutton-icon {
+                    background-position-x: -28px !important;
                 }
             }
         }
@@ -196,13 +207,12 @@
                 height: 11px !important;
                 margin-inline: 0 !important;
                 margin-top: 0 !important;
-                list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/mainwindow-dropdown-arrow.png") !important;
-                -moz-image-region: rect(0, 13px, 11px, 0) !important;
+                @include set-background("firefox-4/mainwindow-dropdown-arrow.png");
             }
 
             &[aria-expanded="true"] {
                 .searchbar-search-icon-overlay {
-                    -moz-image-region: rect(0, 26px, 11px, 13px) !important;
+                    background-position-x: -13px !important;
                 }
             }
         }
@@ -212,17 +222,11 @@
             width: 16px !important;
             height: 16px !important;
             display: flex !important;
-            padding: 1px !important;
-            list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/Search-glass.png") !important;
-            -moz-image-region: rect(0px 16px 16px 0px) !important;
+            margin: 1px !important;
+            background-image: url("chrome://userchrome/content/assets/images/firefox-4/Search-glass.png") !important;
+            list-style-image: none !important;
 
-            &:hover {
-                -moz-image-region: rect(0px 32px 16px 16px) !important;
-            }
-
-            &:active {
-                -moz-image-region: rect(0px, 48px, 16px, 32px) !important;
-            }
+            @include set-horizontal-states(0, 16px, 32px);
         }
     }
 }

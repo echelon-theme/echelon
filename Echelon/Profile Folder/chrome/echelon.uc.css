@@ -94,13 +94,13 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
   width: 12px !important;
 }
 .ac-dropmarker::part(icon) {
-  list-style-image: url("chrome://userchrome/content/icons/arrow-dropdown-12.svg") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/arrow-dropdown-12") !important;
   width: 12px !important;
   height: 16px !important;
 }
 
 .popup-notification-dropmarker > .button-box > .button-menu-dropmarker::part(icon) {
-  list-style-image: url("chrome://userchrome/content/icons/arrow-dropdown-16.svg") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/arrow-dropdown-16") !important;
 }
 
 /*# sourceMappingURL=echelon.uc.css.map */

@@ -1,34 +1,29 @@
+@import "_mixins.scss";
+
 :root {
     --toolbarbutton-icon-width: 18px;
     --toolbarbutton-icon-height: 18px;
 
-    $iconRegionMap: (
-        "back-button": rect(18px, 20px, 38px, 0),
-        "forward-button": rect(0, 36px, 18px, 18px),
-        "stop-button": rect(0, 54px, 18px, 36px),
-        "reload-button": rect(0, 72px, 18px, 54px),
-        "home-button": rect(0, 90px, 18px, 72px),
-        "downloads-button": rect(0, 108px, 18px, 90px),
-        "history-button": rect(0, 126px, 18px, 108px),
-        "bookmarks-button": rect(0, 144px, 18px, 126px),
-        "bookmarks-menu-button": rect(0, 144px, 18px, 126px),
-        "print-button": rect(0, 162px, 18px, 144px),
-        "new-tab-button": rect(0, 180px, 18px, 162px),
-        "new-window-button": rect(0, 198px, 18px, 180px),
-        "cut-button": rect(0, 216px, 18px, 198px),
-        "copy-button": rect(0, 234px, 18px, 216px),
-        "paste-button": rect(0, 252px, 18px, 234px),
-        "fullscreen-button": rect(0, 270px, 18px, 252px),
-        "zoom-out-button": rect(0, 288px, 18px, 270px),
-        "zoom-in-button": rect(0, 306px, 18px, 288px),
-    );
-
-    @each $icon, $offset in $iconRegionMap {
-        ##{$icon} {
-            -moz-image-region: $offset !important;
-            list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
-        }
-    }
+    @include toolbar-icons((    
+        "back": "firefox-4/toolbar/back.png",
+        "forward": "firefox-4/toolbar/forward.png",
+        "stop": "firefox-4/toolbar/stop.png",
+        "reload": "firefox-4/toolbar/reload.png",
+        "home": "firefox-4/toolbar/home.png",
+        "downloads": "firefox-4/toolbar/downloads.png",
+        "history": "firefox-4/toolbar/history.png",
+        "bookmarks": "firefox-4/toolbar/bookmarks.png",
+        "bookmarks-menu": "firefox-4/toolbar/bookmarks.png",
+        "print": "firefox-4/toolbar/print.png",
+        "new-tab": "firefox-4/toolbar/new-tab.png",
+        "new-window": "firefox-4/toolbar/new-window.png",
+        "cut": "firefox-4/toolbar/cut.png",
+        "copy": "firefox-4/toolbar/copy.png",
+        "paste": "firefox-4/toolbar/paste.png",
+        "fullscreen": "firefox-4/toolbar/fullscreen.png",
+        "zoom-out": "firefox-4/toolbar/zoom-out.png",
+        "zoom-in": "firefox-4/toolbar/zoom-in.png",
+    ));
 
     #page-action-buttons {
         .urlbar-page-action {
@@ -38,18 +33,12 @@
 
         // travis: star button bullshit
         #star-button {
-            list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/bookmark.png") !important;
-            -moz-image-region: rect(0px 16px 16px 0px) !important;
-            &:hover {
-                -moz-image-region: rect(0px 32px 16px 16px) !important;
-                    
-                &:active {
-                    -moz-image-region: rect(0px 48px 16px 32px) !important;
-                }
-            }
+            @include set-background("firefox-4/bookmark.png");
+            
+            @include set-horizontal-states(0, 16px, 32px);
             
             &[starred="true"] {
-                list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/editbookmark.png") !important;
+                @include set-background("firefox-4/editBookmark.png");
             }
         }
     }

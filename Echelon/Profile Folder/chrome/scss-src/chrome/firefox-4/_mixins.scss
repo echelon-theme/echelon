@@ -8,7 +8,7 @@
     @if ($hash) {
         @return url("chrome://userchrome/content/icons/#{$name}.svg##{$hash}");
     }
-    @return url("chrome://userchrome/content/icons/#{$name}.svg");
+    @return url("chrome://userchrome/content/assets/images/#{$name}");
 }
 
 @mixin set-icon($icon-id, $icon-hash: false) {
@@ -17,6 +17,7 @@
 
 @mixin set-background($icon-id, $icon-hash: false) {
     background-image: icon($icon-id, $icon-hash) !important;
+    list-style-image: none !important;
 }
 
 @mixin toolbar-icon($toolbar-ids, $icon-id, $icon-hash: false) {
@@ -35,7 +36,7 @@
 
 @mixin toolbar-icons($map) {
     @each $id, $icon in $map {
-        @include toolbar-icon($id, $icon);
+        @include toolbar-icon("#{string.to-lower-case($id)}-button", $icon);
     }
 }
 
@@ -60,5 +61,30 @@
     &:-moz-locale-dir(rtl) {
         right: unset !important;
         left: $amount !important;
+    }
+}
+
+@mixin set-vertical-states($icon-normal, $icon-hover, $icon-active) {
+    background-position-y: $icon-normal * -1 !important;
+
+    &:hover {
+        background-position-y: $icon-hover * -1 !important;
+        
+        &:active {
+            background-position-y: $icon-active * -1 !important;
+        }
+    }
+}
+
+@mixin set-horizontal-states($icon-normal, $icon-hover, $icon-active) {
+    background-position-x: -($icon-normal) !important;
+
+    &:hover {
+        background-position-x: -($icon-hover) !important;
+    }
+
+    &:hover:active,
+    &[open] {
+        background-position-x: -($icon-active) !important;
     }
 }

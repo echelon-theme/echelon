@@ -224,98 +224,84 @@
   background-repeat: no-repeat !important;
 }
 
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
 :root {
   --toolbarbutton-icon-width: 18px;
   --toolbarbutton-icon-height: 18px;
 }
 :root #back-button {
-  -moz-image-region: rect(18px, 20px, 38px, 0) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/back.png") !important;
 }
 :root #forward-button {
-  -moz-image-region: rect(0, 36px, 18px, 18px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/forward.png") !important;
 }
 :root #stop-button {
-  -moz-image-region: rect(0, 54px, 18px, 36px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/stop.png") !important;
 }
 :root #reload-button {
-  -moz-image-region: rect(0, 72px, 18px, 54px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/reload.png") !important;
 }
 :root #home-button {
-  -moz-image-region: rect(0, 90px, 18px, 72px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/home.png") !important;
 }
 :root #downloads-button {
-  -moz-image-region: rect(0, 108px, 18px, 90px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/downloads.png") !important;
 }
 :root #history-button {
-  -moz-image-region: rect(0, 126px, 18px, 108px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/history.png") !important;
 }
 :root #bookmarks-button {
-  -moz-image-region: rect(0, 144px, 18px, 126px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/bookmarks.png") !important;
 }
 :root #bookmarks-menu-button {
-  -moz-image-region: rect(0, 144px, 18px, 126px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/bookmarks.png") !important;
 }
 :root #print-button {
-  -moz-image-region: rect(0, 162px, 18px, 144px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/print.png") !important;
 }
 :root #new-tab-button {
-  -moz-image-region: rect(0, 180px, 18px, 162px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/new-tab.png") !important;
 }
 :root #new-window-button {
-  -moz-image-region: rect(0, 198px, 18px, 180px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/new-window.png") !important;
 }
 :root #cut-button {
-  -moz-image-region: rect(0, 216px, 18px, 198px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/cut.png") !important;
 }
 :root #copy-button {
-  -moz-image-region: rect(0, 234px, 18px, 216px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/copy.png") !important;
 }
 :root #paste-button {
-  -moz-image-region: rect(0, 252px, 18px, 234px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/paste.png") !important;
 }
 :root #fullscreen-button {
-  -moz-image-region: rect(0, 270px, 18px, 252px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/fullscreen.png") !important;
 }
 :root #zoom-out-button {
-  -moz-image-region: rect(0, 288px, 18px, 270px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/zoom-out.png") !important;
 }
 :root #zoom-in-button {
-  -moz-image-region: rect(0, 306px, 18px, 288px) !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/zoom-in.png") !important;
 }
 :root #page-action-buttons .urlbar-page-action {
   all: revert !important;
   padding: 0 2px !important;
 }
 :root #page-action-buttons #star-button {
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/bookmark.png") !important;
-  -moz-image-region: rect(0px 16px 16px 0px) !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/bookmark.png") !important;
+  list-style-image: none !important;
+  background-position-x: 0 !important;
 }
 :root #page-action-buttons #star-button:hover {
-  -moz-image-region: rect(0px 32px 16px 16px) !important;
+  background-position-x: -16px !important;
 }
-:root #page-action-buttons #star-button:hover:active {
-  -moz-image-region: rect(0px 48px 16px 32px) !important;
+:root #page-action-buttons #star-button:hover:active, :root #page-action-buttons #star-button[open] {
+  background-position-x: -32px !important;
 }
 :root #page-action-buttons #star-button[starred=true] {
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/editbookmark.png") !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/editBookmark.png") !important;
+  list-style-image: none !important;
 }
 
 :root {
@@ -326,6 +312,7 @@
   --urlbar-height-echelon: var(--toolbarbutton-height) !important;
   --urlbar-min-height: var(--urlbar-height-echelon) !important;
   --searchbar-search-icon: url("chrome://userchrome/content/assets/images/firefox-4/defaultFavicon.png") !important;
+  --searchbar-go-button: url("chrome://userchrome/content/assets/images/firefox-4/Search-glass.png") !important;
 }
 :root #urlbar[breakout], :root #urlbar[breakout][breakout-extend] {
   height: var(--urlbar-min-height) !important;
@@ -338,13 +325,17 @@
   height: var(--urlbar-min-height) !important;
 }
 :root #urlbar[breakout] .urlbar-input-container::after, :root #urlbar[breakout][breakout-extend] .urlbar-input-container::after {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/mainwindow-dropdown-arrow.png") !important;
+  list-style-image: none !important;
   content: "";
   display: inline-block;
   width: 13px;
   height: 11px;
-  background-image: url("chrome://userchrome/content/assets/images/firefox-4/mainwindow-dropdown-arrow.png") !important;
   align-self: center !important;
   margin-inline-end: -2px !important;
+}
+:root #urlbar #urlbar-go-button {
+  visibility: collapse !important;
 }
 :root #urlbar #identity-box {
   background-color: -moz-dialog !important;
@@ -418,7 +409,6 @@
   overflow: hidden !important;
 }
 :root #stop-reload-button.unified .toolbarbutton-1 {
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/reload-stop-go.png") !important;
   padding: 0 3px !important;
   border-inline-start: 1px solid rgba(0, 0, 0, 0.25) !important;
   background-origin: border-box !important;
@@ -432,29 +422,31 @@
   box-shadow: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset !important;
 }
 :root #stop-reload-button.unified .toolbarbutton-1 .toolbarbutton-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/reload-stop-go.png") !important;
+  list-style-image: none !important;
   width: 14px !important;
   height: 14px !important;
   padding: 0 !important;
   background-color: transparent !important;
   opacity: 1 !important;
 }
-:root #stop-reload-button.unified #reload-button {
-  -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
-}
 :root #stop-reload-button.unified #reload-button:hover {
-  -moz-image-region: rect(0px, 28px, 14px, 14px) !important;
   background-image: linear-gradient(rgb(162, 207, 241), rgb(111, 178, 225) 49%, rgb(91, 159, 217) 51%, rgb(62, 138, 200)) !important;
 }
+:root #stop-reload-button.unified #reload-button:hover .toolbarbutton-icon {
+  background-position-x: -14px !important;
+}
 :root #stop-reload-button.unified #go-button {
-  -moz-image-region: rect(0px, 56px, 14px, 42px) !important;
   background-image: linear-gradient(rgb(115, 213, 115), rgb(96, 190, 96) 49%, rgb(82, 174, 82) 51%, rgb(79, 155, 79)) !important;
 }
+:root #stop-reload-button.unified #go-button .toolbarbutton-icon {
+  background-position-x: -42px !important;
+}
 :root #stop-reload-button.unified #stop-button {
-  -moz-image-region: rect(0px, 42px, 14px, 28px) !important;
   background-image: -moz-linear-gradient(rgb(231, 162, 140), rgb(209, 119, 100) 49%, rgb(193, 92, 78) 51%, rgb(173, 72, 58)) !important;
 }
-:root #stop-reload-button.unified #stop-button:hover {
-  background-image: linear-gradient(rgb(244, 156, 128), rgb(215, 101, 77) 49%, rgb(194, 66, 48) 51%, rgb(170, 41, 23)) !important;
+:root #stop-reload-button.unified #stop-button .toolbarbutton-icon {
+  background-position-x: -28px !important;
 }
 :root #stop-reload-button #go-button,
 :root #stop-reload-button .toolbarbutton-animatable-box,
@@ -474,26 +466,27 @@
   height: 11px !important;
   margin-inline: 0 !important;
   margin-top: 0 !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/mainwindow-dropdown-arrow.png") !important;
-  -moz-image-region: rect(0, 13px, 11px, 0) !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/mainwindow-dropdown-arrow.png") !important;
+  list-style-image: none !important;
 }
 :root #searchbar .searchbar-search-button[aria-expanded=true] .searchbar-search-icon-overlay {
-  -moz-image-region: rect(0, 26px, 11px, 13px) !important;
+  background-position-x: -13px !important;
 }
 :root #searchbar .search-go-button {
   all: unset !important;
   width: 16px !important;
   height: 16px !important;
   display: flex !important;
-  padding: 1px !important;
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/Search-glass.png") !important;
-  -moz-image-region: rect(0px 16px 16px 0px) !important;
+  margin: 1px !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/Search-glass.png") !important;
+  list-style-image: none !important;
+  background-position-x: 0 !important;
 }
 :root #searchbar .search-go-button:hover {
-  -moz-image-region: rect(0px 32px 16px 16px) !important;
+  background-position-x: -16px !important;
 }
-:root #searchbar .search-go-button:active {
-  -moz-image-region: rect(0px, 48px, 16px, 32px) !important;
+:root #searchbar .search-go-button:hover:active, :root #searchbar .search-go-button[open] {
+  background-position-x: -32px !important;
 }
 
 .echelon-customization-hack-container {
