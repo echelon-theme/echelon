@@ -2,6 +2,8 @@ content userchromejs ./
 content userscripts ../JS/
 content modules ../JS/modules/
 
+override chrome://global/skin/arrowscrollbox.css                  ../assets/override/global/skin/arrowscrollbox.css
+
 locale echelon en-US ../locale/en-US/
 
 skin	userstyles	classic/1.0	../CSS/

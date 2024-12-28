@@ -182,12 +182,20 @@
   background-color: var(--toolbar-background-color) !important;
 }
 
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
 :root {
+  --tab-min-height: 28px !important;
+  --tabstrip-min-height: var(--tab-min-height) !important;
   --tab-background: linear-gradient(transparent, hsla(0, 0%, 45%, .1) 1px, hsla(0, 0%, 32%, .2) 80%, hsla(0, 0%, 0%, .2)) !important;
   --tab-background-hover: linear-gradient(hsla(0, 0%, 100%, .3) 1px, hsla(0, 0%, 75%, .2) 80%, hsla(0, 0%, 60%, .2)) !important;
   --tab-selected-highlight: rgba(255, 255, 255, .7) !important;
-  --inline-tab-padding: 5px !important;
-  --tab-border-radius: 0 !important;
+  --tab-inline-padding: 3px !important;
+  --tab-icon-start-margin: 2px !important;
+  --tab-icon-end-margin: 3px !important;
+  --tab-pinned-icon-start-margin: 5px !important;
+  --tab-pinned-icon-end-margin: 5px !important;
+  --tab-border-radius: 7px 7px 0 0 !important;
   --navbar-tab-toolbar-highlight-overlap: 1px !important;
   --tab-overflow-clip-margin: 0 !important;
 }
@@ -199,14 +207,58 @@
 #TabsToolbar .titlebar-spacer {
   visibility: collapse !important;
 }
+#TabsToolbar .toolbarbutton-1:not(#alltabs-button) {
+  min-height: var(--tab-min-height) !important;
+}
+#TabsToolbar .toolbarbutton-1:not(#alltabs-button) .toolbarbutton-icon,
+#TabsToolbar .toolbarbutton-1:not(#alltabs-button) .toolbarbutton-badge-stack {
+  width: 16px !important;
+  height: 16px !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
 #TabsToolbar .tabbrowser-tab {
   z-index: 0 !important;
+}
+#TabsToolbar .tabbrowser-tab:not([pinned]) {
+  margin-inline: 0 !important;
 }
 #TabsToolbar .tabbrowser-tab:is([visuallyselected=true]) {
   position: relative !important;
   z-index: 2 !important;
 }
-:root:not([echelon-style-4]) #TabsToolbar .tabbrowser-tab .tab-background {
+#TabsToolbar .tabbrowser-tab .tab-content {
+  padding: 0 var(--tab-inline-padding) !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content[pinned] .tab-icon-stack .tab-throbber,
+#TabsToolbar .tabbrowser-tab .tab-content[pinned] .tab-icon-stack .tab-icon-pending,
+#TabsToolbar .tabbrowser-tab .tab-content[pinned] .tab-icon-stack .tab-icon-image,
+#TabsToolbar .tabbrowser-tab .tab-content[pinned] .tab-icon-stack .tab-sharing-icon-overlay {
+  margin-inline-end: var(--tab-pinned-icon-end-margin) !important;
+  margin-inline-start: var(--tab-pinned-icon-start-margin) !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-stack .tab-throbber,
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-stack .tab-icon-pending,
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-stack .tab-icon-image,
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-stack .tab-sharing-icon-overlay {
+  margin-inline-end: var(--tab-icon-end-margin) !important;
+  margin-inline-start: var(--tab-icon-start-margin) !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-label-container {
+  height: var(--tab-min-height) !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-close-button {
+  margin-inline-end: 0 !important;
+  background-position-x: -48px !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-close-button[selected] {
+  background-position-x: 0 !important;
+}
+:root:not([echelon-style-4]) #TabsToolbar .tab-background,
+:root:not([echelon-style-4]) #TabsToolbar #tabs-newtab-button {
   box-shadow: none !important;
   border-image: url("chrome://userchrome/content/assets/images/firefox-4/tab.png") 6 3 4/6px 3px 4px repeat stretch !important;
   background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px), var(--tab-background), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color));
@@ -219,9 +271,48 @@
   border-style: solid !important;
   margin-block: 0 !important;
 }
+:root:not([echelon-style-4]) #TabsToolbar .tabbrowser-tab:hover .tab-background,
+:root:not([echelon-style-4]) #TabsToolbar #tabs-newtab-button:hover,
+:root:not([echelon-style-4]) #TabsToolbar #tabs-newtab-button[open] {
+  background-image: linear-gradient(to top, rgba(25.5, 25.5, 25.5, 0.4) 1px, transparent 1px), var(--tab-background-hover), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
+}
+:root:not([echelon-style-4]) #TabsToolbar #tabs-newtab-button {
+  width: 30px !important;
+}
 :root:not([echelon-style-4]) #TabsToolbar .tabbrowser-tab:is([selected], [multiselected]) .tab-background {
   background-image: linear-gradient(var(--tab-selected-highlight), var(--toolbar-highlight-top) 50%), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
   background-repeat: no-repeat !important;
+}
+#TabsToolbar #tabs-newtab-button .toolbarbutton-icon,
+#TabsToolbar #new-tab-button .toolbarbutton-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/newtab.png") !important;
+  list-style-image: none !important;
+  margin-top: -1px !important;
+  margin-bottom: -1px !important;
+}
+:root:not([echelon-style-4]) #TabsToolbar #tabs-newtab-button:hover:active .toolbarbutton-icon,
+:root:not([echelon-style-4]) #TabsToolbar #new-tab-button:hover:active .toolbarbutton-icon {
+  background-position-x: -16px !important;
+}
+#TabsToolbar #alltabs-button {
+  min-height: var(--tab-min-height) !important;
+}
+#TabsToolbar #alltabs-button .toolbarbutton-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/mainwindow-dropdown-arrow.png") !important;
+  list-style-image: none !important;
+}
+#TabsToolbar #alltabs-button .toolbarbutton-icon,
+#TabsToolbar #alltabs-button .toolbarbutton-badge-stack {
+  width: 13px !important;
+  height: 11px !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+#TabsToolbar #alltabs-button[open] .toolbarbutton-icon {
+  background-position-x: -13px !important;
 }
 
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -284,6 +375,70 @@
 :root #zoom-in-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/zoom-in.png") !important;
 }
+:root #TabsToolbar #back-button,
+:root #toolbar-menubar #back-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/back.png") !important;
+}
+:root #TabsToolbar #forward-button,
+:root #toolbar-menubar #forward-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/forward.png") !important;
+}
+:root #TabsToolbar #stop-button,
+:root #toolbar-menubar #stop-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/stop.png") !important;
+}
+:root #TabsToolbar #reload-button,
+:root #toolbar-menubar #reload-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/reload.png") !important;
+}
+:root #TabsToolbar #home-button,
+:root #toolbar-menubar #home-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbarinverted//home.png") !important;
+}
+:root #TabsToolbar #downloads-button,
+:root #toolbar-menubar #downloads-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/downloads.png") !important;
+}
+:root #TabsToolbar #history-button,
+:root #toolbar-menubar #history-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/history.png") !important;
+}
+:root #TabsToolbar #print-button,
+:root #toolbar-menubar #print-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/print.png") !important;
+}
+:root #TabsToolbar #new-tab-button,
+:root #toolbar-menubar #new-tab-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/new-tab.png") !important;
+}
+:root #TabsToolbar #new-window-button,
+:root #toolbar-menubar #new-window-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/new-window.png") !important;
+}
+:root #TabsToolbar #cut-button,
+:root #toolbar-menubar #cut-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/cut.png") !important;
+}
+:root #TabsToolbar #copy-button,
+:root #toolbar-menubar #copy-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/copy.png") !important;
+}
+:root #TabsToolbar #paste-button,
+:root #toolbar-menubar #paste-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/paste.png") !important;
+}
+:root #TabsToolbar #fullscreen-button,
+:root #toolbar-menubar #fullscreen-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/fullscreen.png") !important;
+}
+:root #TabsToolbar #zoom-out-button,
+:root #toolbar-menubar #zoom-out-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/zoom-out.png") !important;
+}
+:root #TabsToolbar #zoom-in-button,
+:root #toolbar-menubar #zoom-in-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/zoom-in.png") !important;
+}
 :root #page-action-buttons .urlbar-page-action {
   all: revert !important;
   padding: 0 2px !important;
@@ -302,6 +457,24 @@
 :root #page-action-buttons #star-button[starred=true] {
   background-image: url("chrome://userchrome/content/assets/images/firefox-4/editBookmark.png") !important;
   list-style-image: none !important;
+}
+:root .close-icon {
+  width: 16px !important;
+  height: 16px !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/close.png") !important;
+  list-style-image: none !important;
+  background-position-x: 0 !important;
+}
+:root .close-icon:hover {
+  background-position-x: -16px !important;
+}
+:root .close-icon:hover:active, :root .close-icon[open] {
+  background-position-x: -32px !important;
 }
 
 :root {
@@ -1180,6 +1353,25 @@
 }
 
 /* ::::: Firefox 10 ::::: */
+:root[echelon-style-2] #TabsToolbar #alltabs-button .toolbarbutton-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-10/mainwindow-dropdown-arrow-inverted.png") !important;
+  list-style-image: none !important;
+}
+:root[echelon-style-2] #TabsToolbar #alltabs-button .toolbarbutton-icon,
+:root[echelon-style-2] #TabsToolbar #alltabs-button .toolbarbutton-badge-stack {
+  width: 13px !important;
+  height: 10px !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+:root[echelon-style-2] #TabsToolbar #new-tab-button .toolbarbutton-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-10/tabs/newtab-inverted.png") !important;
+  list-style-image: none !important;
+}
+
 /* ::::: Firefox 14 ::::: */
 /* ::::: Firefox 29 ::::: */
 /* ::::: Firefox 56 ::::: */

@@ -1,10 +1,18 @@
+@import "_mixins.scss";
+
 :root {
+    --tab-min-height: 28px !important;
+    --tabstrip-min-height: var(--tab-min-height) !important;
     --tab-background: linear-gradient(transparent, hsla(0, 0%, 45%, .1) 1px, hsla(0, 0%, 32%, .2) 80%, hsla(0, 0%, 0%, .2)) !important;
     --tab-background-hover: linear-gradient(hsla(0, 0%, 100%, .3) 1px, hsla(0, 0%, 75%, .2) 80%, hsla(0, 0%, 60%, .2)) !important;
     --tab-selected-highlight: rgba(255, 255, 255, .7) !important;
 
-    --inline-tab-padding: 5px !important;
-    --tab-border-radius: 0 !important;
+    --tab-inline-padding: 3px !important;
+    --tab-icon-start-margin: 2px !important;
+    --tab-icon-end-margin: 3px !important;
+    --tab-pinned-icon-start-margin: 5px !important;
+    --tab-pinned-icon-end-margin: 5px !important;
+    --tab-border-radius: 7px 7px 0 0 !important;
     --navbar-tab-toolbar-highlight-overlap: 1px !important;
     --tab-overflow-clip-margin: 0 !important;
 }
@@ -17,36 +25,130 @@
         visibility: collapse !important;
     }
 
+    .toolbarbutton-1:not(#alltabs-button) {
+        min-height: var(--tab-min-height) !important;
+
+        .toolbarbutton-icon,
+        .toolbarbutton-badge-stack {
+            @include set-size(16px, 16px);
+        }
+    }
+
     .tabbrowser-tab {
         z-index: 0 !important;
+        
+        &:not([pinned]) {
+            margin-inline: 0 !important; // remove fucking pinned tab margin
+        }
 
         &:is([visuallyselected="true"]) { // make tab above outer border from navbar
             position: relative !important;
             z-index: 2 !important;
         }
+
+        .tab-content {
+            padding: 0 var(--tab-inline-padding) !important;
+            &[pinned] {
+                .tab-icon-stack {
+                    .tab-throbber,
+                    .tab-icon-pending,
+                    .tab-icon-image,
+                    .tab-sharing-icon-overlay
+                    {
+                        margin-inline-end: var(--tab-pinned-icon-end-margin) !important;
+                        margin-inline-start: var(--tab-pinned-icon-start-margin) !important;
+                    }
+                }
+            }
+            .tab-icon-stack {
+                .tab-throbber,
+                .tab-icon-pending,
+                .tab-icon-image,
+                .tab-sharing-icon-overlay
+                {
+                    margin-inline-end: var(--tab-icon-end-margin) !important;
+                    margin-inline-start: var(--tab-icon-start-margin) !important;
+                }
+            }
+        }
+
+        .tab-label-container {
+            height: var(--tab-min-height) !important;
+        }
+
+        .tab-close-button {
+            margin-inline-end: 0 !important;
+            background-position-x: -48px !important;
+
+            &[selected] {
+                background-position-x: 0 !important;
+            }
+        }
     }
 
     :root:not([echelon-style-4]) & {
-        .tabbrowser-tab {
+        .tab-background,
+        #tabs-newtab-button
+        {
+            box-shadow: none !important;
+            border-image: url("chrome://userchrome/content/assets/images/firefox-4/tab.png") 6 3 4/6px 3px 4px repeat stretch !important;
+            background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px), var(--tab-background), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color));
+            background-color: transparent !important;
+            background-position: -2px -2px !important;
+            background-size: calc(100% + 4px) calc(100% + 2px) !important;
+            background-repeat: no-repeat !important;
+            border-radius: var(--tab-border-radius) !important;
+            border-width: 4px 3px 0 !important;
+            border-style: solid !important;
+            margin-block: 0 !important;     
+        }
+
+        .tabbrowser-tab:hover .tab-background,
+        #tabs-newtab-button:hover,
+        #tabs-newtab-button[open] {
+            background-image: linear-gradient(to top, rgba(10%, 10%, 10%, .4) 1px, transparent 1px), var(--tab-background-hover), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
+        }
+
+        #tabs-newtab-button {
+            width: 30px !important;
+        }
+        
+        .tabbrowser-tab:is([selected], [multiselected]) {
             .tab-background {
-                box-shadow: none !important;
-                border-image: url("chrome://userchrome/content/assets/images/firefox-4/tab.png") 6 3 4/6px 3px 4px repeat stretch !important;
-                background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px), var(--tab-background), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color));
-                background-color: transparent !important;
-                background-position: -2px -2px !important;
-                background-size: calc(100% + 4px) calc(100% + 2px) !important;
+                background-image: linear-gradient(var(--tab-selected-highlight), var(--toolbar-highlight-top) 50%), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
                 background-repeat: no-repeat !important;
-                border-radius: var(--tab-border-radius) !important;
-                border-width: 4px 3px 0 !important;
-                border-style: solid !important;
-                margin-block: 0 !important;        
             }
-            
-            &:is([selected], [multiselected]) {
-                .tab-background {
-                    background-image: linear-gradient(var(--tab-selected-highlight), var(--toolbar-highlight-top) 50%), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
-                    background-repeat: no-repeat !important;
-                }
+        }
+    }
+
+    #tabs-newtab-button,
+    #new-tab-button {
+        .toolbarbutton-icon {
+            @include set-background("firefox-4/tabs/newtab.png");
+            margin-top: -1px !important;
+            margin-bottom: -1px !important;
+        }
+
+        :root:not([echelon-style-4]) &:hover:active {
+            .toolbarbutton-icon {
+                background-position-x: -16px !important;
+            }
+        }
+    }
+
+    #alltabs-button {
+        min-height: var(--tab-min-height) !important;
+        .toolbarbutton-icon {
+            @include set-background("firefox-4/mainwindow-dropdown-arrow.png");
+        }
+        .toolbarbutton-icon,
+        .toolbarbutton-badge-stack {
+            @include set-size(13px, 11px);
+        }
+        
+        &[open] {
+            .toolbarbutton-icon {
+                background-position-x: -13px !important;
             }
         }
     }

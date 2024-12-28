@@ -40,6 +40,15 @@
     }
 }
 
+@mixin toolbar-icons-inverted($map) {
+    @each $id, $icon in $map {
+        #TabsToolbar,
+        #toolbar-menubar {
+            @include toolbar-icon("#{string.to-lower-case($id)}-button", $icon);
+        }
+    }
+}
+
 @mixin toolbar-icons-simple($ids) {
     @each $id in $ids {
         @include toolbar-icon("#{string.to-lower-case($id)}-button", $id);
@@ -87,4 +96,15 @@
     &[open] {
         background-position-x: -($icon-active) !important;
     }
+}
+
+// removes padding border all them properties and set width
+@mixin set-size($width, $height) {
+    width: $width !important;
+    height: $height !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
 }

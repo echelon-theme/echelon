@@ -25,6 +25,25 @@
         "zoom-in": "firefox-4/toolbar/zoom-in.png",
     ));
 
+    @include toolbar-icons-inverted((    
+        "back": "firefox-4/toolbar/inverted/back.png",
+        "forward": "firefox-4/toolbar/inverted/forward.png",
+        "stop": "firefox-4/toolbar/inverted/stop.png",
+        "reload": "firefox-4/toolbar/inverted/reload.png",
+        "home": "firefox-4/toolbarinverted//home.png",
+        "downloads": "firefox-4/toolbar/inverted/downloads.png",
+        "history": "firefox-4/toolbar/inverted/history.png",
+        "print": "firefox-4/toolbar/inverted/print.png",
+        "new-tab": "firefox-4/toolbar/inverted/new-tab.png",
+        "new-window": "firefox-4/toolbar/inverted/new-window.png",
+        "cut": "firefox-4/toolbar/inverted/cut.png",
+        "copy": "firefox-4/toolbar/inverted/copy.png",
+        "paste": "firefox-4/toolbar/inverted/paste.png",
+        "fullscreen": "firefox-4/toolbar/inverted/fullscreen.png",
+        "zoom-out": "firefox-4/toolbar/inverted/zoom-out.png",
+        "zoom-in": "firefox-4/toolbar/inverted/zoom-in.png",
+    ));
+
     #page-action-buttons {
         .urlbar-page-action {
             all: revert !important;
@@ -34,12 +53,18 @@
         // travis: star button bullshit
         #star-button {
             @include set-background("firefox-4/bookmark.png");
-            
+
             @include set-horizontal-states(0, 16px, 32px);
             
             &[starred="true"] {
                 @include set-background("firefox-4/editBookmark.png");
             }
         }
+    }
+
+    .close-icon {
+        @include set-size(16px, 16px);
+        @include set-background("firefox-4/close.png");
+        @include set-horizontal-states(0, 16px, 32px);
     }
 }

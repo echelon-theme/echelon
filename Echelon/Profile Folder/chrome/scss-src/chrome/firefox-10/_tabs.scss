@@ -1,0 +1,17 @@
+#TabsToolbar {
+    #alltabs-button {
+        .toolbarbutton-icon {
+            @include set-background("firefox-10/mainwindow-dropdown-arrow-inverted.png");
+        }
+        .toolbarbutton-icon,
+        .toolbarbutton-badge-stack {
+            @include set-size(13px, 10px);
+        }
+    }
+
+    #new-tab-button {
+        .toolbarbutton-icon {
+            @include set-background("firefox-10/tabs/newtab-inverted.png");
+        }
+    }
+}
