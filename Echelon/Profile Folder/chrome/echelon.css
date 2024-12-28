@@ -33,7 +33,7 @@
   --toolbar-border-color: rgba(26, 26, 26, 0.4) !important;
   /* toolbarbutton */
 }
-:root :not(.widget-overflow-list, .australis-appmenu-panel) .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified) {
+:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
   padding: 1px 5px !important;
   background: var(--toolbarbutton-background) !important;
   background-clip: padding-box !important;
@@ -45,35 +45,69 @@
   text-shadow: 0 0 2px white;
   transition: background-color var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction), border-color var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction), box-shadow var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction) !important;
 }
-:root :not(.widget-overflow-list, .australis-appmenu-panel) .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified):not([disabled=true]):hover {
+:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true]):hover {
   background-color: hsla(190, 60%, 70%, 0.5) !important;
   --toolbarbutton-border-color: hsla(190,50%,65%,.8) hsla(190,50%,50%,.8) hsla(190,50%,40%,.8) !important;
   box-shadow: var(--toolbarbutton-shadow-hot) !important;
 }
-:root :not(.widget-overflow-list, .australis-appmenu-panel) .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified):not([disabled=true]):hover:active, :root :not(.widget-overflow-list, .australis-appmenu-panel) .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified):not([disabled=true])[open] {
+:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true]):hover:active, :root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true])[open] {
   background-color: transparent !important;
   --toolbarbutton-border-color: rgba(0,0,0,.65) rgba(0,0,0,.55) rgba(0,0,0,.5) !important;
   box-shadow: var(--toolbarbutton-shadow-active) !important;
   text-shadow: none !important;
   transition: none !important;
 }
-:root :not(.widget-overflow-list, .australis-appmenu-panel) .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified)[disabled=true] {
+:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)[disabled=true] {
   opacity: 0.8 !important;
 }
-:root :not(.widget-overflow-list, .australis-appmenu-panel) .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified)[disabled=true] .toolbarbutton-icon {
+:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)[disabled=true] .toolbarbutton-icon {
   opacity: 0.5 !important;
 }
-:root :not(.widget-overflow-list, .australis-appmenu-panel) .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified) .toolbarbutton-badge-stack {
+:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) .toolbarbutton-badge-stack {
   padding: 0 !important;
   border-radius: 0 !important;
   background-color: transparent !important;
 }
-:root :not(.widget-overflow-list, .australis-appmenu-panel) .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified) .toolbarbutton-icon {
+:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) .toolbarbutton-icon {
   --toolbarbutton-inner-padding: 0 !important;
   --toolbarbutton-border-radius: 0 !important;
   background-color: transparent !important;
   width: var(--toolbarbutton-icon-width) !important;
   height: var(--toolbarbutton-icon-height) !important;
+}
+:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button {
+  width: 30px !important;
+  height: 30px !important;
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: -2px !important;
+  margin-bottom: -2px !important;
+  margin-inline-start: 3px !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3), 1px 2px 1px rgba(0, 0, 0, 0.2) !important;
+}
+:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button:not([disabled=true]):hover {
+  background-color: hsla(190, 60%, 70%, 0.5) !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px hsla(190, 50%, 40%, 0.3), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3), 1px 2px 1px rgba(0, 0, 0, 0.2), 0 0 5px 1px hsl(190, 90%, 80%) !important;
+}
+:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button:not([disabled=true]):hover:active, :root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button:not([disabled=true])[open] {
+  background-color: transparent !important;
+  box-shadow: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset, 0 0 0 1px rgba(0, 0, 0, 0.65), 0 2px 0 rgba(255, 255, 255, 0.4) !important;
+}
+:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button .toolbarbutton-icon {
+  --toolbarbutton-icon-width: 20px !important;
+  --toolbarbutton-icon-height: 20px !important;
+}
+:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button {
+  clip-path: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CclipPath id='windows-keyhole-forward-clip-path' clipPathUnits='objectBoundingBox'%3E%3Cpath d='M 0,0 C 0.16,0.11 0.28,0.29 0.28,0.5 0.28,0.71 0.16,0.89 0,1 L 1,1 1,0 0,0 z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E#windows-keyhole-forward-clip-path") !important;
+  width: 29px !important;
+  height: var(--toolbarbutton-height) !important;
+  margin: var(--toolbarbutton-outer-padding) !important;
+  margin-inline-start: -6px !important;
+  padding-left: 6px !important;
+  padding-right: 4px !important;
 }
 :root #nav-bar {
   height: 38px !important;
@@ -94,40 +128,6 @@
   min-width: var(--toolbarbutton-width) !important;
   max-width: var(--toolbarbutton-width) !important;
   height: var(--toolbarbutton-height) !important;
-}
-:root #nav-bar #back-button {
-  width: 30px !important;
-  height: 30px !important;
-  position: relative !important;
-  z-index: 1 !important;
-  margin-top: -2px !important;
-  margin-bottom: -2px !important;
-  margin-inline-start: 3px !important;
-  border-radius: 50% !important;
-  padding: 0 !important;
-  border: none !important;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3), 1px 2px 1px rgba(0, 0, 0, 0.2) !important;
-}
-:root #nav-bar #back-button:not([disabled=true]):hover {
-  background-color: hsla(190, 60%, 70%, 0.5) !important;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px hsla(190, 50%, 40%, 0.3), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3), 1px 2px 1px rgba(0, 0, 0, 0.2), 0 0 5px 1px hsl(190, 90%, 80%) !important;
-}
-:root #nav-bar #back-button:not([disabled=true]):hover:active, :root #nav-bar #back-button:not([disabled=true])[open] {
-  background-color: transparent !important;
-  box-shadow: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset, 0 0 0 1px rgba(0, 0, 0, 0.65), 0 2px 0 rgba(255, 255, 255, 0.4) !important;
-}
-:root #nav-bar #back-button .toolbarbutton-icon {
-  --toolbarbutton-icon-width: 20px !important;
-  --toolbarbutton-icon-height: 20px !important;
-}
-:root #nav-bar #forward-button {
-  clip-path: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CclipPath id='windows-keyhole-forward-clip-path' clipPathUnits='objectBoundingBox'%3E%3Cpath d='M 0,0 C 0.16,0.11 0.28,0.29 0.28,0.5 0.28,0.71 0.16,0.89 0,1 L 1,1 1,0 0,0 z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E#windows-keyhole-forward-clip-path") !important;
-  width: 29px !important;
-  height: var(--toolbarbutton-height) !important;
-  margin: var(--toolbarbutton-outer-padding) !important;
-  margin-inline-start: -6px !important;
-  padding-left: 6px !important;
-  padding-right: 4px !important;
 }
 :root .toolbaritem-combined-buttons > separator {
   display: none !important;
@@ -153,6 +153,19 @@
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
   border-left: 0 !important;
+}
+:root #navigator-toolbox {
+  border-bottom: 0 !important;
+}
+:root #navigator-toolbox::after {
+  content: "" !important;
+  display: flex !important;
+  height: 1px !important;
+  background-color: ThreeDShadow !important;
+}
+:root[sizemode=normal]:not([lwtheme-image]) #navigator-toolbox::after {
+  border-inline: 1px solid var(--toolbar-border-color) !important;
+  background-clip: padding-box !important;
 }
 :root[sizemode=normal]:not([lwtheme-image]) #nav-bar {
   border-inline: 1px solid var(--toolbar-border-color) !important;
@@ -212,8 +225,8 @@
 }
 #TabsToolbar .toolbarbutton-1:not(#alltabs-button) .toolbarbutton-icon,
 #TabsToolbar .toolbarbutton-1:not(#alltabs-button) .toolbarbutton-badge-stack {
-  width: 16px !important;
-  height: 16px !important;
+  width: 18px !important;
+  height: 18px !important;
   padding: 0 !important;
   border-radius: 0 !important;
   outline: 0 !important;
@@ -375,68 +388,68 @@
 :root #zoom-in-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/zoom-in.png") !important;
 }
-:root #TabsToolbar #back-button,
-:root #toolbar-menubar #back-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #back-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #back-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/back.png") !important;
 }
-:root #TabsToolbar #forward-button,
-:root #toolbar-menubar #forward-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #forward-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #forward-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/forward.png") !important;
 }
-:root #TabsToolbar #stop-button,
-:root #toolbar-menubar #stop-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #stop-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #stop-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/stop.png") !important;
 }
-:root #TabsToolbar #reload-button,
-:root #toolbar-menubar #reload-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #reload-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #reload-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/reload.png") !important;
 }
-:root #TabsToolbar #home-button,
-:root #toolbar-menubar #home-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #home-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #home-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbarinverted//home.png") !important;
 }
-:root #TabsToolbar #downloads-button,
-:root #toolbar-menubar #downloads-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #downloads-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #downloads-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/downloads.png") !important;
 }
-:root #TabsToolbar #history-button,
-:root #toolbar-menubar #history-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #history-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #history-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/history.png") !important;
 }
-:root #TabsToolbar #print-button,
-:root #toolbar-menubar #print-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #print-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #print-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/print.png") !important;
 }
-:root #TabsToolbar #new-tab-button,
-:root #toolbar-menubar #new-tab-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #new-tab-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #new-tab-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/new-tab.png") !important;
 }
-:root #TabsToolbar #new-window-button,
-:root #toolbar-menubar #new-window-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #new-window-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #new-window-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/new-window.png") !important;
 }
-:root #TabsToolbar #cut-button,
-:root #toolbar-menubar #cut-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #cut-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #cut-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/cut.png") !important;
 }
-:root #TabsToolbar #copy-button,
-:root #toolbar-menubar #copy-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #copy-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #copy-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/copy.png") !important;
 }
-:root #TabsToolbar #paste-button,
-:root #toolbar-menubar #paste-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #paste-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #paste-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/paste.png") !important;
 }
-:root #TabsToolbar #fullscreen-button,
-:root #toolbar-menubar #fullscreen-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #fullscreen-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #fullscreen-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/fullscreen.png") !important;
 }
-:root #TabsToolbar #zoom-out-button,
-:root #toolbar-menubar #zoom-out-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #zoom-out-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #zoom-out-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/zoom-out.png") !important;
 }
-:root #TabsToolbar #zoom-in-button,
-:root #toolbar-menubar #zoom-in-button {
+:root :root:not([echelon-style-2]) #TabsToolbar #zoom-in-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #zoom-in-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/zoom-in.png") !important;
 }
 :root #page-action-buttons .urlbar-page-action {

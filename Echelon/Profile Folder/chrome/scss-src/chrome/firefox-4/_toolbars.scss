@@ -21,7 +21,7 @@
 
     /* toolbarbutton */
 
-    :not(.widget-overflow-list, .australis-appmenu-panel) .toolbarbutton-1:not(#tabs-newtab-button, #new-tab-button, .subviewbutton, #alltabs-button, .unified) {
+    #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
         padding: 1px 5px !important;
         background: var(--toolbarbutton-background) !important;
         background-clip: padding-box !important;
@@ -71,6 +71,51 @@
             width: var(--toolbarbutton-icon-width) !important;
             height: var(--toolbarbutton-icon-height) !important;
         }
+
+        // back and forward buttons
+        &#back-button {
+            width: 30px !important;
+            height: 30px !important;
+            position: relative !important;
+            z-index: 1 !important;
+            margin-top: -2px !important;
+            margin-bottom: -2px !important;
+            margin-inline-start: 3px !important;
+            border-radius: 50% !important;
+            padding: 0 !important;
+            border: none !important;
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3), 1px 2px 1px rgba(0, 0, 0, 0.2) !important;
+
+            &:not([disabled="true"]) {
+                &:hover {
+                    background-color: hsla(190,60%,70%,.5) !important;
+                    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px hsla(190, 50%, 40%, 0.3), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3), 1px 2px 1px rgba(0, 0, 0, 0.2), 0 0 5px 1px hsl(190, 90%, 80%) !important;
+                }
+
+                &:hover:active,
+                &[open] {
+                    background-color: transparent !important;
+                    box-shadow: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset, 0 0 0 1px rgba(0, 0, 0, 0.65), 0 2px 0 rgba(255, 255, 255, 0.4) !important;
+                }
+            }
+
+            .toolbarbutton-icon {
+                --toolbarbutton-icon-width: 20px !important;
+                --toolbarbutton-icon-height: 20px !important;
+            }
+
+        }
+
+        &#forward-button {
+            // travis: this from echelon 115 this is ass
+            clip-path: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CclipPath id='windows-keyhole-forward-clip-path' clipPathUnits='objectBoundingBox'%3E%3Cpath d='M 0,0 C 0.16,0.11 0.28,0.29 0.28,0.5 0.28,0.71 0.16,0.89 0,1 L 1,1 1,0 0,0 z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E#windows-keyhole-forward-clip-path") !important;
+            width: 29px !important;
+            height: var(--toolbarbutton-height) !important;
+            margin: var(--toolbarbutton-outer-padding) !important;
+            margin-inline-start: -6px !important;  
+            padding-left: 6px !important;
+            padding-right: 4px !important;
+        }
     }
 
     #nav-bar {
@@ -95,51 +140,6 @@
                 max-width: var(--toolbarbutton-width) !important;
                 height: var(--toolbarbutton-height) !important;
             }
-        }
-        
-        // back and forward buttons
-        #back-button {
-            width: 30px !important;
-            height: 30px !important;
-            position: relative !important;
-            z-index: 1 !important;
-            margin-top: -2px !important;
-            margin-bottom: -2px !important;
-            margin-inline-start: 3px !important;
-            border-radius: 50% !important;
-            padding: 0 !important;
-            border: none !important;
-            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3), 1px 2px 1px rgba(0, 0, 0, 0.2) !important;
-  
-            &:not([disabled="true"]) {
-                &:hover {
-                    background-color: hsla(190,60%,70%,.5) !important;
-                    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px hsla(190, 50%, 40%, 0.3), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3), 1px 2px 1px rgba(0, 0, 0, 0.2), 0 0 5px 1px hsl(190, 90%, 80%) !important;
-                }
-
-                &:hover:active,
-                &[open] {
-                    background-color: transparent !important;
-                    box-shadow: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset, 0 0 0 1px rgba(0, 0, 0, 0.65), 0 2px 0 rgba(255, 255, 255, 0.4) !important;
-                }
-            }
-
-            .toolbarbutton-icon {
-                --toolbarbutton-icon-width: 20px !important;
-                --toolbarbutton-icon-height: 20px !important;
-            }
-
-        }
-
-        #forward-button {
-            // travis: this from echelon 115 this is ass
-            clip-path: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CclipPath id='windows-keyhole-forward-clip-path' clipPathUnits='objectBoundingBox'%3E%3Cpath d='M 0,0 C 0.16,0.11 0.28,0.29 0.28,0.5 0.28,0.71 0.16,0.89 0,1 L 1,1 1,0 0,0 z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E#windows-keyhole-forward-clip-path") !important;
-            width: 29px !important;
-            height: var(--toolbarbutton-height) !important;
-            margin: var(--toolbarbutton-outer-padding) !important;
-            margin-inline-start: -6px !important;  
-            padding-left: 6px !important;
-            padding-right: 4px !important;
         }
     }
     
@@ -175,9 +175,25 @@
         }
     }
 
+    #navigator-toolbox {
+        border-bottom: 0 !important; // remove bottom border and use a hacky way (mozilla mfs used it too)
+
+        &::after {
+            content: '' !important;
+            display: flex !important;
+            height: 1px !important;
+            background-color: ThreeDShadow !important;
+        }
+    }
+
     // Toolbar borders
     &[sizemode="normal"] {
         &:not([lwtheme-image]) {
+            #navigator-toolbox::after {
+                border-inline: 1px solid var(--toolbar-border-color) !important;
+                background-clip: padding-box !important;
+            }
+
             #nav-bar {
                 border-inline: 1px solid var(--toolbar-border-color) !important;
                 border-top: 1px solid var(--toolbar-border-color) !important;

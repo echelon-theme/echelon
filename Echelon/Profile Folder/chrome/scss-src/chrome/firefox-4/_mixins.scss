@@ -42,9 +42,11 @@
 
 @mixin toolbar-icons-inverted($map) {
     @each $id, $icon in $map {
-        #TabsToolbar,
-        #toolbar-menubar {
-            @include toolbar-icon("#{string.to-lower-case($id)}-button", $icon);
+        :root:not([echelon-style-2]) {
+            #TabsToolbar,
+            #toolbar-menubar {
+                @include toolbar-icon("#{string.to-lower-case($id)}-button", $icon);
+            }
         }
     }
 }
