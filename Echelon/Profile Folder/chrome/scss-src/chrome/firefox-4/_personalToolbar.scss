@@ -1,0 +1,48 @@
+#PersonalToolbar {
+    padding-inline: 0 !important;
+
+    #personal-bookmarks {
+        min-height: 24px !important;
+    }
+
+    .bookmark-item:not(.subviewbutton),
+    .toolbarbutton-1 {
+        margin: 0 !important;
+        appearance: toolbarbutton !important;
+        -moz-default-appearance: toolbarbutton !important;
+        align-items: center !important;
+
+        .toolbarbutton-icon {
+            padding: 0 !important;
+            border-radius: 0 !important;
+            outline: 0 !important;
+            background-color: transparent !important;
+
+            &[label]:not([label=""]) {
+                margin-inline-end: 5px !important;
+            }
+        }
+    }
+
+    .toolbarbutton-1:not(#bookmarks-menu-button) {
+        .toolbarbutton-icon {
+            width: 18px !important;
+            height: 18px !important;
+            margin-inline-end: 0 !important;
+        }
+    }
+
+    #bookmarks-menu-button {
+        .toolbarbutton-icon {
+            width: 16px !important;
+            height: 16px !important;
+        }
+
+        .toolbarbutton-text {
+            display: flex !important;
+            padding: 0 !important;
+            min-height: unset !important;
+            background-color: transparent !important;
+        }
+    }
+}

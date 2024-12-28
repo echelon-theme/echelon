@@ -131,7 +131,7 @@
             box-shadow: var(--urlbar-shadow-normal) !important;
             background-color: var(--urlbar-background-color) !important;
             background-clip: padding-box !important;
-            overflow: hidden !important;
+            overflow: clip !important;
 
             .toolbarbutton-1 {
                 padding: 0 3px !important;

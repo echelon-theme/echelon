@@ -220,11 +220,11 @@
 #TabsToolbar .titlebar-spacer {
   visibility: collapse !important;
 }
-#TabsToolbar .toolbarbutton-1:not(#alltabs-button) {
+#TabsToolbar .toolbarbutton-1:not(#alltabs-button, #tabs-newtab-button) {
   min-height: var(--tab-min-height) !important;
 }
-#TabsToolbar .toolbarbutton-1:not(#alltabs-button) .toolbarbutton-icon,
-#TabsToolbar .toolbarbutton-1:not(#alltabs-button) .toolbarbutton-badge-stack {
+#TabsToolbar .toolbarbutton-1:not(#alltabs-button, #tabs-newtab-button) .toolbarbutton-icon,
+#TabsToolbar .toolbarbutton-1:not(#alltabs-button, #tabs-newtab-button) .toolbarbutton-badge-stack {
   width: 18px !important;
   height: 18px !important;
   padding: 0 !important;
@@ -296,10 +296,21 @@
   background-image: linear-gradient(var(--tab-selected-highlight), var(--toolbar-highlight-top) 50%), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
   background-repeat: no-repeat !important;
 }
+#TabsToolbar #tabs-newtab-button,
+#TabsToolbar #new-tab-button {
+  min-height: var(--tab-min-height) !important;
+}
 #TabsToolbar #tabs-newtab-button .toolbarbutton-icon,
 #TabsToolbar #new-tab-button .toolbarbutton-icon {
   background-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/newtab.png") !important;
   list-style-image: none !important;
+  width: 16px !important;
+  height: 16px !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
   margin-top: -1px !important;
   margin-bottom: -1px !important;
 }
@@ -592,7 +603,7 @@
   box-shadow: var(--urlbar-shadow-normal) !important;
   background-color: var(--urlbar-background-color) !important;
   background-clip: padding-box !important;
-  overflow: hidden !important;
+  overflow: clip !important;
 }
 :root #stop-reload-button.unified .toolbarbutton-1 {
   padding: 0 3px !important;
@@ -673,6 +684,46 @@
 }
 :root #searchbar .search-go-button:hover:active, :root #searchbar .search-go-button[open] {
   background-position-x: -32px !important;
+}
+
+#PersonalToolbar {
+  padding-inline: 0 !important;
+}
+#PersonalToolbar #personal-bookmarks {
+  min-height: 24px !important;
+}
+#PersonalToolbar .bookmark-item:not(.subviewbutton),
+#PersonalToolbar .toolbarbutton-1 {
+  margin: 0 !important;
+  appearance: toolbarbutton !important;
+  -moz-default-appearance: toolbarbutton !important;
+  align-items: center !important;
+}
+#PersonalToolbar .bookmark-item:not(.subviewbutton) .toolbarbutton-icon,
+#PersonalToolbar .toolbarbutton-1 .toolbarbutton-icon {
+  padding: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  background-color: transparent !important;
+}
+#PersonalToolbar .bookmark-item:not(.subviewbutton) .toolbarbutton-icon[label]:not([label=""]),
+#PersonalToolbar .toolbarbutton-1 .toolbarbutton-icon[label]:not([label=""]) {
+  margin-inline-end: 5px !important;
+}
+#PersonalToolbar .toolbarbutton-1:not(#bookmarks-menu-button) .toolbarbutton-icon {
+  width: 18px !important;
+  height: 18px !important;
+  margin-inline-end: 0 !important;
+}
+#PersonalToolbar #bookmarks-menu-button .toolbarbutton-icon {
+  width: 16px !important;
+  height: 16px !important;
+}
+#PersonalToolbar #bookmarks-menu-button .toolbarbutton-text {
+  display: flex !important;
+  padding: 0 !important;
+  min-height: unset !important;
+  background-color: transparent !important;
 }
 
 .echelon-customization-hack-container {

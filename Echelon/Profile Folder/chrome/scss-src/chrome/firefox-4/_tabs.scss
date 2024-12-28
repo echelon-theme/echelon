@@ -25,7 +25,7 @@
         visibility: collapse !important;
     }
 
-    .toolbarbutton-1:not(#alltabs-button) {
+    .toolbarbutton-1:not(#alltabs-button, #tabs-newtab-button) {
         min-height: var(--tab-min-height) !important;
 
         .toolbarbutton-icon,
@@ -123,8 +123,11 @@
 
     #tabs-newtab-button,
     #new-tab-button {
+        min-height: var(--tab-min-height) !important;
+
         .toolbarbutton-icon {
             @include set-background("firefox-4/tabs/newtab.png");
+            @include set-size(16px, 16px);
             margin-top: -1px !important;
             margin-bottom: -1px !important;
         }
