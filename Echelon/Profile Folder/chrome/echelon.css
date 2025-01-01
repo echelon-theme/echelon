@@ -210,7 +210,7 @@
 }
 :root[sizemode=normal]:not([lwtheme-image]) #nav-bar {
   border-inline: 1px solid var(--toolbar-border-color) !important;
-  border-top-left-radius: var(--toolbarbutton-border-radius) !important;
+  border-top-left-radius: 3.5px !important;
   border-top-right-radius: var(--toolbarbutton-border-radius) !important;
 }
 :root[sizemode=normal]:not([lwtheme-image]) #PersonalToolbar {
@@ -223,8 +223,8 @@
   background-clip: padding-box !important;
 }
 :root[sizemode=normal]:not([lwtheme-image]) #browser[findbar-focused], :root[sizemode=normal]:not([lwtheme-image]) #customization-container[findbar-focused] {
-  border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
-  border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;
+  border-bottom-left-radius: 3.5px !important;
+  border-bottom-right-radius: 3.5px !important;
   overflow: clip !important;
 }
 :root:not([echelon-appearance-xp])[echelon-appearance-blue] {
@@ -580,11 +580,11 @@
   left: 0 !important;
   inset: unset !important;
 }
-#urlbar[breakout] .urlbar-input-container, #urlbar[breakout][breakout-extend] .urlbar-input-container {
+#urlbar .urlbar-input-container {
   padding: var(--urlbar-container-padding) !important;
   height: var(--urlbar-min-height) !important;
 }
-#urlbar[breakout] .urlbar-input-container::after, #urlbar[breakout][breakout-extend] .urlbar-input-container::after {
+#urlbar .urlbar-input-container::after {
   background-image: url("chrome://userchrome/content/assets/images/firefox-4/mainwindow-dropdown-arrow.png") !important;
   list-style-image: none !important;
   content: "";
@@ -706,22 +706,22 @@
   background-color: transparent !important;
   opacity: 1 !important;
 }
-#stop-reload-button.unified #reload-button:hover {
+:root:not([echelon-style-2]) #stop-reload-button.unified #reload-button:hover {
   background-image: linear-gradient(rgb(162, 207, 241), rgb(111, 178, 225) 49%, rgb(91, 159, 217) 51%, rgb(62, 138, 200)) !important;
 }
-#stop-reload-button.unified #reload-button:hover .toolbarbutton-icon {
+:root:not([echelon-style-2]) #stop-reload-button.unified #reload-button:hover .toolbarbutton-icon {
   background-position-x: -14px !important;
 }
-#stop-reload-button.unified #go-button {
+:root:not([echelon-style-2]) #stop-reload-button.unified #go-button {
   background-image: linear-gradient(rgb(115, 213, 115), rgb(96, 190, 96) 49%, rgb(82, 174, 82) 51%, rgb(79, 155, 79)) !important;
 }
-#stop-reload-button.unified #go-button .toolbarbutton-icon {
+:root:not([echelon-style-2]) #stop-reload-button.unified #go-button .toolbarbutton-icon {
   background-position-x: -42px !important;
 }
-#stop-reload-button.unified #stop-button {
+:root:not([echelon-style-2]) #stop-reload-button.unified #stop-button {
   background-image: -moz-linear-gradient(rgb(231, 162, 140), rgb(209, 119, 100) 49%, rgb(193, 92, 78) 51%, rgb(173, 72, 58)) !important;
 }
-#stop-reload-button.unified #stop-button .toolbarbutton-icon {
+:root:not([echelon-style-2]) #stop-reload-button.unified #stop-button .toolbarbutton-icon {
   background-position-x: -28px !important;
 }
 #stop-reload-button #go-button,
@@ -893,8 +893,8 @@
   height: min-content !important;
   border-inline: 1px solid hsla(0, 0%, 100%, 0.5) !important;
   border-block-end: 1px solid hsla(0, 0%, 100%, 0.5) !important;
-  border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
-  border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;
+  border-bottom-left-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
   margin: 0 0 2px !important;
 }
 :root[sizemode=normal] #appmenu-button-container {
@@ -913,8 +913,8 @@
   border: 1px solid var(--appmenu-button-border-color) !important;
   border-block-start: 0 !important;
   box-shadow: var(--appmenu-button-normal-shadow) !important;
-  border-bottom-left-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
-  border-bottom-right-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
+  border-bottom-left-radius: 3px !important;
+  border-bottom-right-radius: 3px !important;
   color: white !important;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.7), 0 1px 1.5px rgba(0, 0, 0, 0.5) !important;
   font-weight: bold !important;
@@ -1806,6 +1806,30 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-image: url("chrome://userchrome/content/assets/images/firefox-10/tabs/newtab-inverted.png") !important;
   list-style-image: none !important;
 }
+:root[echelon-style-2] #page-action-buttons #star-button {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-10/bookmark.png") !important;
+  list-style-image: none !important;
+  background-position-x: 0 !important;
+}
+:root[echelon-style-2] #page-action-buttons #star-button:hover {
+  background-position-x: -16px !important;
+}
+:root[echelon-style-2] #page-action-buttons #star-button:hover:active, :root[echelon-style-2] #page-action-buttons #star-button[open] {
+  background-position-x: -32px !important;
+}
+:root[echelon-style-2] #page-action-buttons #star-button[starred=true] {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-10/editBookmark.png") !important;
+  list-style-image: none !important;
+}
+:root[echelon-style-2] {
+  --toolbarbutton-border-radius: 2.5px !important;
+}
+:root[echelon-style-2] #navigator-toolbox > #nav-bar .toolbarbutton-1[disabled=true] {
+  opacity: 0.4 !important;
+}
+:root[echelon-style-2] #navigator-toolbox > #nav-bar .toolbarbutton-1[disabled=true] .toolbarbutton-icon {
+  opacity: 1 !important;
+}
 :root[echelon-style-2] #navigator-toolbox > #nav-bar .toolbarbutton-1#forward-button {
   border-radius: 0 !important;
   margin-inline-end: 0 !important;
@@ -1813,6 +1837,11 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-2] {
   --urlbar-container-padding: 0 !important;
   --default-favicon: url("chrome://userchrome/content/assets/images/firefox-10/defaultFavicon.png") !important;
+  --urlbar-shadow-normal: none !important;
+  --urlbar-border-color: ThreeDShadow !important;
+}
+:root[echelon-style-2]:not([echelon-appearance-xp])[echelon-appearance-blue] {
+  --urlbar-border-color: rgba(0,0,0,.32) !important;
 }
 :root[echelon-style-2] #urlbar-container {
   margin-inline-start: 0 !important;
@@ -1823,6 +1852,17 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 :root[echelon-style-2] #urlbar .urlbar-input-box {
   padding-inline-start: 3px !important;
+}
+:root[echelon-style-2] #urlbar-background, :root[echelon-style-2] #searchbar {
+  border-radius: 2.5px !important;
+}
+:root[echelon-style-2]:not([echelon-style-3]) #urlbar .urlbar-input-container::after {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-10/urlbar/urlbar-history-dropmarker.png") !important;
+  list-style-image: none !important;
+  width: 11px !important;
+  height: 14px !important;
+  margin-inline-start: 4px !important;
+  margin-inline-end: 2px !important;
 }
 :root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box {
   background-image: linear-gradient(hsl(0, 0%, 98%), hsl(0, 0%, 92%)) !important;
@@ -1874,6 +1914,48 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-color: transparent !important;
   outline: 0 !important;
   color: inherit !important;
+}
+:root[echelon-style-2] #stop-reload-button.unified {
+  padding-inline-end: 2px !important;
+}
+:root[echelon-style-2] #stop-reload-button.unified .toolbarbutton-1 {
+  padding: 0 2px !important;
+  border-inline-start: 0 !important;
+  box-shadow: none !important;
+}
+:root[echelon-style-2] #stop-reload-button.unified .toolbarbutton-1 .toolbarbutton-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-10/reload-stop-go.png") !important;
+  list-style-image: none !important;
+}
+:root[echelon-style-2] #stop-reload-button.unified .toolbarbutton-1:not([disabled]):hover .toolbarbutton-icon {
+  background-position-y: -14px !important;
+}
+:root[echelon-style-2] #stop-reload-button.unified .toolbarbutton-1:not([disabled]):hover:active .toolbarbutton-icon {
+  background-position-y: -28px !important;
+}
+:root[echelon-style-2] #stop-reload-button.unified #reload-button:not([disabled]):hover {
+  background-image: -moz-radial-gradient(center, circle closest-side, hsla(200, 100%, 70%, 0.2), hsla(200, 100%, 70%, 0)) !important;
+}
+:root[echelon-style-2] #stop-reload-button.unified #reload-button:not([disabled]):hover:active {
+  background-image: -moz-radial-gradient(center, circle closest-side, hsla(200, 100%, 60%, 0.1), hsla(200, 100%, 60%, 0)) !important;
+}
+:root[echelon-style-2] #stop-reload-button.unified #stop-button .toolbarbutton-icon {
+  background-position-x: -14px !important;
+}
+:root[echelon-style-2] #stop-reload-button.unified #stop-button:not([disabled]):hover {
+  background-image: -moz-radial-gradient(center, circle closest-side, hsla(5, 100%, 75%, 0.3), hsla(5, 100%, 75%, 0)) !important;
+}
+:root[echelon-style-2] #stop-reload-button.unified #stop-button:not([disabled]):hover:active {
+  background-image: -moz-radial-gradient(center, circle closest-side, hsla(5, 100%, 75%, 0.1), hsla(5, 100%, 75%, 0)) !important;
+}
+:root[echelon-style-2] #stop-reload-button.unified #go-button .toolbarbutton-icon {
+  background-position-x: -28px !important;
+}
+:root[echelon-style-2] #stop-reload-button.unified #go-button:not([disabled]):hover {
+  background-image: -moz-radial-gradient(center, circle closest-side, hsla(110, 70%, 50%, 0.2), hsla(110, 70%, 50%, 0)) !important;
+}
+:root[echelon-style-2] #stop-reload-button.unified #go-button:not([disabled]):hover:active {
+  background-image: -moz-radial-gradient(center, circle closest-side, hsla(110, 70%, 50%, 0.1), hsla(110, 70%, 50%, 0)) !important;
 }
 :root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button:not(:hover)[disabled] {
   opacity: 0 !important;

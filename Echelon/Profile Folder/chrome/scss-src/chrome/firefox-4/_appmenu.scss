@@ -107,8 +107,8 @@
     height: min-content !important;
     border-inline: 1px solid hsla(0, 0%, 100%, 0.5) !important;
     border-block-end: 1px solid hsla(0, 0%, 100%, 0.5) !important;
-    border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
-    border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;
+    border-bottom-left-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
     margin: 0 0 2px !important;
 
     :root[sizemode="normal"] & {
@@ -128,8 +128,8 @@
         border: 1px solid var(--appmenu-button-border-color) !important;
         border-block-start: 0 !important;
         box-shadow: var(--appmenu-button-normal-shadow) !important;
-        border-bottom-left-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
-        border-bottom-right-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
+        border-bottom-left-radius: 3px !important;
+        border-bottom-right-radius: 3px !important;
         color: white !important;
         text-shadow: 0 0 1px rgba(0, 0, 0, 0.7), 0 1px 1.5px rgba(0, 0, 0, 0.5) !important;
         font-weight: bold !important;

@@ -1,0 +1,13 @@
+& {
+    #page-action-buttons {
+        #star-button {
+            @include set-background("firefox-10/bookmark.png");
+
+            @include set-horizontal-states(0, 16px, 32px);
+            
+            &[starred="true"] {
+                @include set-background("firefox-10/editBookmark.png");
+            }
+        }
+    }
+}

@@ -199,8 +199,8 @@
 
             #nav-bar {
                 border-inline: 1px solid var(--toolbar-border-color) !important;
-                border-top-left-radius: var(--toolbarbutton-border-radius) !important;
-                border-top-right-radius: var(--toolbarbutton-border-radius) !important;
+                border-top-left-radius: 3.5px !important;
+                border-top-right-radius: 3.5px !important;
             }
 
             #PersonalToolbar {
@@ -214,8 +214,8 @@
                 background-clip: padding-box !important;
 
                 &[findbar-focused] {
-                    border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
-                    border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;  
+                    border-bottom-left-radius: 3.5px !important;
+                    border-bottom-right-radius: 3.5px !important;  
                     overflow: clip !important;
                 }
             }

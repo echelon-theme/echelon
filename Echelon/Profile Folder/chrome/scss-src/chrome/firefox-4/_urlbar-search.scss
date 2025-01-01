@@ -22,21 +22,21 @@
         top: calc((var(--urlbar-height) - 2) / 2) !important;
         left: 0 !important;
         inset: unset !important;
+    }
 
-        .urlbar-input-container {
-            padding: var(--urlbar-container-padding) !important;
-            height: var(--urlbar-min-height) !important;
+    .urlbar-input-container {
+        padding: var(--urlbar-container-padding) !important;
+        height: var(--urlbar-min-height) !important;
 
-            &::after { // lazy hack for dropdown button
-                @include set-background("firefox-4/mainwindow-dropdown-arrow.png");
+        &::after { // lazy hack for dropdown button
+            @include set-background("firefox-4/mainwindow-dropdown-arrow.png");
 
-                content: "";
-                display: inline-block;
-                width: 13px;
-                height: 11px;
-                align-self: center !important;
-                margin-inline-end: -2px !important;
-            }
+            content: "";
+            display: inline-block;
+            width: 13px;
+            height: 11px;
+            align-self: center !important;
+            margin-inline-end: -2px !important;
         }
     }
 
@@ -177,7 +177,7 @@
             }
         }
 
-        #reload-button {
+        :root:not([echelon-style-2]) & #reload-button {
             &:hover {
                 background-image: linear-gradient(rgb(162, 207, 241), rgb(111, 178, 225) 49%, rgb(91, 159, 217) 51%, rgb(62, 138, 200)) !important;
 
@@ -187,7 +187,7 @@
             }
         }
 
-        #go-button {
+        :root:not([echelon-style-2]) & #go-button {
             background-image: linear-gradient(rgb(115,213,115), rgb(96,190,96) 49%, rgb(82,174,82) 51%, rgb(79,155,79)) !important;
 
             .toolbarbutton-icon {
@@ -195,7 +195,7 @@
             }
         }
 
-        #stop-button {
+        :root:not([echelon-style-2]) & #stop-button {
             background-image: -moz-linear-gradient(rgb(231,162,140), rgb(209,119,100) 49%, rgb(193,92,78) 51%, rgb(173,72,58)) !important;
             
             .toolbarbutton-icon {
