@@ -602,6 +602,7 @@
   background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.15)) !important;
   color: -moz-dialogText !important;
   border-radius: 2px !important;
+  margin-inline-end: 4px !important;
   order: -1 !important;
 }
 :root:not([echelon-style-2]) #urlbar #identity-box:hover {
@@ -610,11 +611,14 @@
 :root:not([echelon-style-2]) #urlbar #identity-box:hover:active {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)) !important;
 }
-:root:not([echelon-style-2]) #urlbar #identity-box[pageproxystate=valid] {
+:root:not([echelon-style-2]) #urlbar #identity-box:not(.chromeUI)[pageproxystate=valid] {
   color: white !important;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25) !important;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset !important;
   background-color: hsl(219, 45%, 60%) !important;
+}
+:root:not([echelon-style-2]) #urlbar #identity-box.chromeUI #identity-icon-label {
+  display: none !important;
 }
 :root:not([echelon-style-2]) #urlbar #identity-box #identity-icon-box {
   height: 18px !important;

@@ -62,3 +62,4 @@ let FaviconInUrlbar = {
 
 // initiate script after DOM/browser content is loaded
 document.addEventListener("DOMContentLoaded", FaviconInUrlbar.init, false);
+Services.prefs.addObserver("Echelon.Option.BrowserSpoof", FaviconInUrlbar.init, false);

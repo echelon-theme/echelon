@@ -50,6 +50,7 @@
         background-image: linear-gradient(rgba(255,255,255,.25), rgba(0,0,0,.15)) !important;
         color: -moz-dialogText !important;
         border-radius: 2px !important;
+        margin-inline-end: 4px !important;
         order: -1 !important;
 
         &:hover {
@@ -60,11 +61,17 @@
             }
         }
 
-        &[pageproxystate="valid"] {
+        &:not(.chromeUI)[pageproxystate="valid"] {
             color: white !important;
             text-shadow: 0 1px 0 rgba(0,0,0,.25) !important;
             box-shadow: 0 0 0 1px rgba(0,0,0,.2) inset !important;
             background-color: hsl(219,45%,60%) !important;
+        }
+
+        &.chromeUI {
+            #identity-icon-label {
+                display: none !important;
+            }
         }
 
         #identity-icon-box {
