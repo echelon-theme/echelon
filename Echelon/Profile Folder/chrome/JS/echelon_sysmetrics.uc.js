@@ -6,17 +6,14 @@
 // ==/UserScript==
 
 {
-    window.addEventListener("load", function() {
-           // CAPTION BUTTON MASK SIZE
-           let captionMask = document.querySelector(".titlebar-buttonbox");
-
-           let style = document.createElement("style");
-           style.innerHTML = `
-               :root {
-                   --buttonbox-width: ${captionMask.clientWidth}px;
-                   --buttonbox-height: ${captionMask.clientHeight}px;
-               }
-           `;
-           document.head.appendChild(style);
+    waitForElement(".titlebar-buttonbox").then((e) => {
+        let style = document.createElement("style");
+        style.innerHTML = `
+            :root {
+                --buttonbox-width: ${e.clientWidth}px;
+                --buttonbox-height: ${e.clientHeight}px;
+            }
+        `;
+        document.head.appendChild(style);
     });
 }

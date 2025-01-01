@@ -47,6 +47,7 @@
 }
 :root[sizemode=maximized] #toolbar-menubar {
   grid-area: menu-bar !important;
+  margin-inline-start: 4px !important;
 }
 :root[sizemode=maximized] #TabsToolbar {
   grid-area: tabbar !important;
