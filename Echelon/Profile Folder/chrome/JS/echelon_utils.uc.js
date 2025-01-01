@@ -141,11 +141,6 @@ class BrandUtils
 			"productName": "Echelon",
 			"vendorName": "The Echelon Team"
 		},
-		"nara": {
-			"fullName": "Nara",
-			"productName": "Nara",
-			"vendorName": "Network Neighborhood"
-		},
 		"fallback": {
 			"fullName": Services.appinfo.name,
 			"productName": brandBundle.GetStringFromName("brandShorterName"),

@@ -11,7 +11,7 @@ function chromeMargin() {
     let platform = AppConstants.platform;
     
     if (platform == "win" || hiddenTitlebar) {
-        if (style < ECHELON_LAYOUT_AUSTRALIS)
+        if (style < ECHELON_LAYOUT_FF14)
         {
             window.windowUtils.setChromeMargin(0, 1, 1, 1);
         }

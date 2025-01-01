@@ -412,6 +412,12 @@
   --toolbarbutton-icon-width: 18px;
   --toolbarbutton-icon-height: 18px;
   --icon16: url("chrome://branding/content/icon32.png") !important;
+  --identity-icons-brand: url("chrome://branding/content/icon32.png") !important;
+  --identity-color-brand: rgb(229,115,0) !important;
+  --identity-background-brand: linear-gradient(rgba(229,114,0,0),
+                               rgba(229,114,0,.5) 35%,
+                               rgba(229,114,0,.5) 65%,
+                               rgba(229,114,0,0)) !important;
 }
 :root #back-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/back.png") !important;
@@ -478,6 +484,9 @@
 }
 :root #save-to-pocket-button[open] {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/pocket_active.png") !important;
+}
+:root #unified-extensions-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/addons.png") !important;
 }
 :root :root:not([echelon-style-2]) #TabsToolbar #back-button,
 :root :root:not([echelon-style-2]) #toolbar-menubar #back-button {
@@ -559,6 +568,13 @@
 :root :root:not([echelon-style-2]) #toolbar-menubar #save-to-pocket-button[open] {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/inverted/pocket_active.png") !important;
 }
+:root :root:not([echelon-style-2]) #TabsToolbar #unified-extensions-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #unified-extensions-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/inverted/addons.png") !important;
+}
+:root[titleShortName=firefox] {
+  --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/identity-icons-brand.png") !important;
+}
 :root[titleShortName=firefox] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
   content: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon16.png") !important;
 }
@@ -570,6 +586,14 @@
 }
 :root[titleShortName=firefox][echelon-appearance-newlogo] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/icon16.png") !important;
+}
+:root[titleShortName=nightly] {
+  --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/new/identity-icons-brand.png") !important;
+  --identity-color-brand: rgb(0,33,71) !important;
+  --identity-background-brand: linear-gradient(rgba(0,33,71,0),
+                             rgba(0,33,71,.5) 35%,
+                             rgba(0,33,71,.5) 65%,
+                             rgba(0,33,71,0)) !important;
 }
 :root[titleShortName=nightly] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
   content: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/icon16.png") !important;
@@ -583,6 +607,14 @@
 :root[titleShortName=nightly][echelon-appearance-newlogo] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/new/icon16.png") !important;
 }
+:root[titleShortName=aurora] {
+  --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/new/identity-icons-brand.png") !important;
+  --identity-color-brand: rgb(51,30,84) !important;
+  --identity-background-brand: linear-gradient(rgba(51,30,84,0),
+                             rgba(51,30,84,.5) 35%,
+                             rgba(51,30,84,.5) 65%,
+                             rgba(51,30,84,0)) !important;
+}
 :root[titleShortName=aurora] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
   content: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/icon16.png") !important;
 }
@@ -594,6 +626,9 @@
 }
 :root[titleShortName=aurora][echelon-appearance-newlogo] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/new/icon16.png") !important;
+}
+:root[titleShortName=echelon] {
+  --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/identity-icons-brand.png") !important;
 }
 :root[titleShortName=echelon] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
   content: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/icon16.png") !important;
@@ -940,7 +975,7 @@
                                      radial-gradient(farthest-side at bottom, hsla(205, 100%, 72%, .7), hsla(205, 100%, 72%, 0)),
                                      linear-gradient(hsl(208, 98%, 34%), hsl(213, 87%, 20%) 95%) !important;
   --appmenu-button-active-background: linear-gradient(hsl(208, 95%, 30%), hsl(214, 85%, 17%) 95%) !important;
-  --appmenu-button-normal-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
+  --appmenu-button-normal-shadow: 0 1px 0 hsla(205,100%,72%,.2) inset, 0 0 2px 1px hsla(205,100%,72%,.25) inset !important;
   --appmenu-button-hover-shadow: 0 1px 0 hsla(205, 100%, 72%, .15) inset,
                                  0 0 2px 1px hsla(205, 100%, 72%, .5) inset,
                                  0 -1px 0 hsla(205, 100%, 72%, .2) inset !important;
@@ -957,22 +992,6 @@
                                      linear-gradient(hsl(211, 33%, 32%), hsl(209, 53%, 10%) 95%) !important;
   --appmenu-button-active-background: linear-gradient(hsl(211, 33%, 26%), hsl(209, 53%, 6%) 95%) !important;
   --appmenu-button-normal-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset, 0 0 2px 1px hsla(211, 65%, 85%, .15) inset !important;
-  --appmenu-button-hover-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset,
-                                 0 0 2px 1px hsla(210, 48%, 90%, .4) inset,
-                                 0 -1px 0 hsla(210, 48%, 90%, .2) inset !important;
-  --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
-                                  0 1px 1px rgba(0, 0, 0, .2) inset !important;
-}
-:root:not([privatebrowsingmode=temporary])[titleShortName=nara] {
-  --appmenu-button-border-color: rgba(28, 13, 56, .9) !important;
-  --appmenu-button-hover-border-color: rgba(28, 13, 56, .9) !important;
-  --appmenu-button-active-border-color: rgba(28, 13, 56, .9) !important;
-  --appmenu-button-normal-background: linear-gradient(rgb(194, 69, 105), rgb(48, 18, 59) 95%) !important;
-  --appmenu-button-hover-background: -moz-radial-gradient(center bottom, farthest-side, hsla(210, 48%, 90%, .5) 10%, hsla(210, 48%, 90%, 0) 70%),
-                                     -moz-radial-gradient(center bottom, farthest-side, hsla(211, 70%, 83%, .5), hsla(211, 70%, 83%, 0)),
-                                     linear-gradient(rgb(194, 69, 105), rgb(48, 18, 59) 95%) !important;
-  --appmenu-button-active-background: linear-gradient(hsl(211, 33%, 26%), hsl(209, 53%, 6%) 95%) !important;
-  --appmenu-button-normal-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
   --appmenu-button-hover-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset,
                                  0 0 2px 1px hsla(210, 48%, 90%, .4) inset,
                                  0 -1px 0 hsla(210, 48%, 90%, .2) inset !important;
@@ -1947,7 +1966,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-2] #urlbar-background, :root[echelon-style-2] #searchbar {
   border-radius: 2.5px !important;
 }
-:root[echelon-style-2]:not([echelon-style-3]) #urlbar .urlbar-input-container::after {
+:root[echelon-style-2] #urlbar .urlbar-input-container::after {
   background-image: url("chrome://userchrome/content/assets/images/firefox-10/urlbar/urlbar-history-dropmarker.png") !important;
   list-style-image: none !important;
   width: 11px !important;
@@ -2143,6 +2162,70 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   content: url("chrome://userchrome/content/assets/images/firefox-14/toolbarbutton-dropdown-arrow.png") !important;
   margin-block-start: 1px !important;
   margin-inline-start: 3px !important;
+}
+:root[echelon-style-3] #home-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-14/toolbar/home.png") !important;
+}
+:root[echelon-style-3] :root:not([echelon-style-2]) #TabsToolbar #home-button,
+:root[echelon-style-3] :root:not([echelon-style-2]) #toolbar-menubar #home-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-14/toolbar/inverted/home.png") !important;
+}
+:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box {
+  padding: 2px !important;
+  font-size: 0.9em !important;
+  order: -1 !important;
+  margin-inline-end: 0 !important;
+}
+:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-box {
+  background-color: transparent !important;
+  color: inherit !important;
+  padding-inline: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+}
+:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-box:hover #identity-icon {
+  background-position-x: -16px !important;
+}
+:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-box:hover:active #identity-icon, :root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-box[open=true] #identity-icon {
+  background-position-x: -32px !important;
+}
+:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box #identity-icon {
+  margin-block: 1px !important;
+  margin-inline-start: 3px !important;
+}
+:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box[pageproxystate=invalid] #identity-icon, :root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box.chromeUI #identity-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-14/urlbar/identity-icons-generic.png") !important;
+  list-style-image: none !important;
+}
+:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box[pageproxystate=valid]:not(.chromeUI) #identity-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-14/urlbar/identity-icons-https.png") !important;
+  list-style-image: none !important;
+}
+:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-label {
+  padding-inline-start: 0 !important;
+  padding-inline-end: 5px !important;
+  padding-block-start: 1px !important;
+  margin: 0 !important;
+  visibility: collapse !important;
+}
+:root[echelon-style-3]:not([echelon-style-5]) #urlbar .urlbar-input-box {
+  padding-inline-start: 2px !important;
+}
+:root[echelon-style-3][echelon-appearance-newlogo] #urlbar #identity-box.chromeUI, :root[echelon-style-3][echelon-style-4] #urlbar #identity-box.chromeUI {
+  color: var(--identity-color-brand) !important;
+  background-image: var(--identity-background-brand) !important;
+  margin-inline-end: 3px !important;
+  background-position: right !important;
+  background-size: 1px !important;
+  background-repeat: no-repeat !important;
+}
+:root[echelon-style-3][echelon-appearance-newlogo] #urlbar #identity-box.chromeUI #identity-icon, :root[echelon-style-3][echelon-style-4] #urlbar #identity-box.chromeUI #identity-icon {
+  margin-inline-end: 3px !important;
+  background-image: var(--identity-icons-brand) !important;
+  background-size: cover !important;
+}
+:root[echelon-style-3][echelon-appearance-newlogo] #urlbar #identity-box.chromeUI #identity-icon-label, :root[echelon-style-3][echelon-style-4] #urlbar #identity-box.chromeUI #identity-icon-label {
+  visibility: visible !important;
 }
 
 /* ::::: Firefox 29 ::::: */

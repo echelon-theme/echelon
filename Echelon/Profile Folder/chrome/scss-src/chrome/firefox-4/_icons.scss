@@ -4,6 +4,12 @@
     --toolbarbutton-icon-width: 18px;
     --toolbarbutton-icon-height: 18px;
     --icon16: url("chrome://branding/content/icon32.png") !important;
+    --identity-icons-brand: url("chrome://branding/content/icon32.png") !important;
+    --identity-color-brand: rgb(229,115,0) !important;
+    --identity-background-brand: linear-gradient(rgba(229,114,0,0),
+                                 rgba(229,114,0,.5) 35%,
+                                 rgba(229,114,0,.5) 65%,
+                                 rgba(229,114,0,0)) !important;
 
     @include toolbar-icons((    
         "back-button": "firefox-4/toolbar/back.png",
@@ -28,6 +34,7 @@
         "PanelUI-menu-button": "firefox-29/toolbar/panelui.png",
         "save-to-pocket-button": "firefox-29/toolbar/pocket.png",
         "save-to-pocket-button[open]": "firefox-29/toolbar/pocket_active.png",
+        "unified-extensions-button": "firefox-29/toolbar/addons.png"
     ));
 
     @include toolbar-icons-inverted((    
@@ -51,9 +58,12 @@
         "PanelUI-menu-button": "firefox-29/toolbar/inverted/panelui.png",
         "save-to-pocket-button": "firefox-29/toolbar/inverted/pocket.png",
         "save-to-pocket-button[open]": "firefox-29/toolbar/inverted/pocket_active.png",
+        "unified-extensions-button": "firefox-29/toolbar/inverted/addons.png"
     ));
 
     &[titleShortName="firefox"] {
+        --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/identity-icons-brand.png") !important;
+        
         @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon16.png");
         &[echelon-appearance-newlogo] {
             @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/icon16.png");
@@ -61,6 +71,13 @@
     }
 
     &[titleShortName="nightly"] {
+        --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/new/identity-icons-brand.png") !important;
+        --identity-color-brand: rgb(0,33,71) !important;
+        --identity-background-brand: linear-gradient(rgba(0,33,71,0),
+                                   rgba(0,33,71,.5) 35%,
+                                   rgba(0,33,71,.5) 65%,
+                                   rgba(0,33,71,0)) !important;
+
         @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/nightly/icon16.png");
         &[echelon-appearance-newlogo] {
             @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/nightly/new/icon16.png");
@@ -68,6 +85,13 @@
     }
 
     &[titleShortName="aurora"] {
+        --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/new/identity-icons-brand.png") !important;
+        --identity-color-brand: rgb(51,30,84) !important;
+        --identity-background-brand: linear-gradient(rgba(51,30,84,0),
+                                   rgba(51,30,84,.5) 35%,
+                                   rgba(51,30,84,.5) 65%,
+                                   rgba(51,30,84,0)) !important;
+
         @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/aurora/icon16.png");
         &[echelon-appearance-newlogo] {
             @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/aurora/new/icon16.png");
@@ -75,6 +99,8 @@
     }
 
     &[titleShortName="echelon"] {
+        --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/identity-icons-brand.png") !important;
+
         @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/echelon/icon16.png");
     }
 

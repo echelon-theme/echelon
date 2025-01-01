@@ -29,19 +29,21 @@
     border-radius: 2.5px !important;
 }
 
+#urlbar {
+    .urlbar-input-container {
+        &::after {
+            @include set-background("firefox-10/urlbar/urlbar-history-dropmarker.png");
+
+            width: 11px !important;
+            height: 14px !important;
+            margin-inline-start: 4px !important;
+            margin-inline-end: 2px !important;
+        }
+    }
+}
+
 &:not([echelon-style-3]) {
     #urlbar {
-        .urlbar-input-container {
-            &::after {
-                @include set-background("firefox-10/urlbar/urlbar-history-dropmarker.png");
-
-                width: 11px !important;
-                height: 14px !important;
-                margin-inline-start: 4px !important;
-                margin-inline-end: 2px !important;
-            }
-        }
-
         & #identity-box {
             background-image: linear-gradient(hsl(0,0%,98%), hsl(0,0%,92%)) !important;
             box-shadow: 0 1px 0 hsla(0,0%,0%,.05) inset !important;
