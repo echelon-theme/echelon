@@ -36,7 +36,7 @@
 
 @mixin toolbar-icons($map) {
     @each $id, $icon in $map {
-        @include toolbar-icon("#{string.to-lower-case($id)}-button", $icon);
+        @include toolbar-icon("#{$id}", $icon);
     }
 }
 
@@ -45,7 +45,7 @@
         :root:not([echelon-style-2]) {
             #TabsToolbar,
             #toolbar-menubar {
-                @include toolbar-icon("#{string.to-lower-case($id)}-button", $icon);
+                @include toolbar-icon("#{$id}", $icon);
             }
         }
     }
@@ -109,4 +109,37 @@
     outline: 0 !important;
     box-shadow: none !important;
     background-color: transparent !important;
+}
+
+
+@mixin replace-favicon($old, $new, $urlbar: true) {
+    .tab-icon-image[src="#{$old}"] {
+        content: var($new) !important;
+    }
+
+    @if ($urlbar) {
+        #identity-icon[style="list-style-image: url('#{$old}');"] {
+            list-style-image: var($new) !important;
+        }
+    }
+}
+
+@mixin default-favicon($url, $maxStyle: 5) {
+    @include replace-favicon($url, "images/defaultFavicon.png");
+
+    &[echelon-appearance-xp] {
+        @include replace-favicon($url, "images/xp/defaultFavicon.png");
+    }
+
+    @if ($maxStyle >= 3) {
+        &[echelon-style-3] {
+            @include replace-favicon($url, "images/defaultFavicon-new.png", false);
+        }
+    }
+
+    @if ($maxStyle >= 4) {
+        .tab-icon-image[src="#{$url}"]:not([pinned]) {
+            display: none !important;
+        }
+    }
 }

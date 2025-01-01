@@ -147,6 +147,14 @@
   padding-left: 6px !important;
   padding-right: 4px !important;
 }
+:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#bookmarks-menu-button {
+  min-width: 35px !important;
+}
+:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#bookmarks-menu-button::after {
+  display: flex !important;
+  content: url("chrome://userchrome/content/assets/images/firefox-4/arrow-dn.gif") !important;
+  margin-block-start: 1px !important;
+}
 :root #nav-bar {
   height: 38px !important;
   box-shadow: none !important;
@@ -211,7 +219,7 @@
 :root[sizemode=normal]:not([lwtheme-image]) #nav-bar {
   border-inline: 1px solid var(--toolbar-border-color) !important;
   border-top-left-radius: 3.5px !important;
-  border-top-right-radius: var(--toolbarbutton-border-radius) !important;
+  border-top-right-radius: 3.5px !important;
 }
 :root[sizemode=normal]:not([lwtheme-image]) #PersonalToolbar {
   border-inline: 1px solid var(--toolbar-border-color) !important;
@@ -403,6 +411,7 @@
 :root {
   --toolbarbutton-icon-width: 18px;
   --toolbarbutton-icon-height: 18px;
+  --icon16: url("chrome://branding/content/icon32.png") !important;
 }
 :root #back-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/back.png") !important;
@@ -420,6 +429,9 @@
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/home.png") !important;
 }
 :root #downloads-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/downloads.png") !important;
+}
+:root #downloads-indicator-anchor {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/downloads.png") !important;
 }
 :root #history-button {
@@ -458,6 +470,15 @@
 :root #zoom-in-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/zoom-in.png") !important;
 }
+:root #PanelUI-menu-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/panelui.png") !important;
+}
+:root #save-to-pocket-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/pocket.png") !important;
+}
+:root #save-to-pocket-button[open] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/pocket_active.png") !important;
+}
 :root :root:not([echelon-style-2]) #TabsToolbar #back-button,
 :root :root:not([echelon-style-2]) #toolbar-menubar #back-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/back.png") !important;
@@ -480,6 +501,10 @@
 }
 :root :root:not([echelon-style-2]) #TabsToolbar #downloads-button,
 :root :root:not([echelon-style-2]) #toolbar-menubar #downloads-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/downloads.png") !important;
+}
+:root :root:not([echelon-style-2]) #TabsToolbar #downloads-indicator-anchor,
+:root :root:not([echelon-style-2]) #toolbar-menubar #downloads-indicator-anchor {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/downloads.png") !important;
 }
 :root :root:not([echelon-style-2]) #TabsToolbar #history-button,
@@ -521,6 +546,36 @@
 :root :root:not([echelon-style-2]) #TabsToolbar #zoom-in-button,
 :root :root:not([echelon-style-2]) #toolbar-menubar #zoom-in-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/zoom-in.png") !important;
+}
+:root :root:not([echelon-style-2]) #TabsToolbar #PanelUI-menu-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #PanelUI-menu-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/inverted/panelui.png") !important;
+}
+:root :root:not([echelon-style-2]) #TabsToolbar #save-to-pocket-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #save-to-pocket-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/inverted/pocket.png") !important;
+}
+:root :root:not([echelon-style-2]) #TabsToolbar #save-to-pocket-button[open],
+:root :root:not([echelon-style-2]) #toolbar-menubar #save-to-pocket-button[open] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/inverted/pocket_active.png") !important;
+}
+:root[titleShortName=firefox] {
+  --icon16: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon16.png") !important;
+}
+:root[titleShortName=nightly] {
+  --icon16: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/icon16.png") !important;
+}
+:root[titleShortName=aurora] {
+  --icon16: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/icon16.png") !important;
+}
+:root[titleShortName=echelon] {
+  --icon16: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/icon16.png") !important;
+}
+:root .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+  content: var(--icon16) !important;
+}
+:root #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+  list-style-image: var(--icon16) !important;
 }
 :root #page-action-buttons .urlbar-page-action {
   all: revert !important;

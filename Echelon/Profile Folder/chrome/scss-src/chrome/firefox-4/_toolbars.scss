@@ -116,6 +116,15 @@
             padding-left: 6px !important;
             padding-right: 4px !important;
         }
+
+        &#bookmarks-menu-button {
+            min-width: 35px !important;
+            &::after {
+                display: flex !important;
+                content: url("chrome://userchrome/content/assets/images/firefox-4/arrow-dn.gif") !important;
+                margin-block-start: 1px !important;
+            }
+        }
     }
 
     #nav-bar {

@@ -3,46 +3,73 @@
 :root {
     --toolbarbutton-icon-width: 18px;
     --toolbarbutton-icon-height: 18px;
+    --icon16: url("chrome://branding/content/icon32.png") !important;
 
     @include toolbar-icons((    
-        "back": "firefox-4/toolbar/back.png",
-        "forward": "firefox-4/toolbar/forward.png",
-        "stop": "firefox-4/toolbar/stop.png",
-        "reload": "firefox-4/toolbar/reload.png",
-        "home": "firefox-4/toolbar/home.png",
-        "downloads": "firefox-4/toolbar/downloads.png",
-        "history": "firefox-4/toolbar/history.png",
-        "bookmarks": "firefox-4/toolbar/bookmarks.png",
-        "bookmarks-menu": "firefox-4/toolbar/bookmarks.png",
-        "print": "firefox-4/toolbar/print.png",
-        "new-tab": "firefox-4/toolbar/new-tab.png",
-        "new-window": "firefox-4/toolbar/new-window.png",
-        "cut": "firefox-4/toolbar/cut.png",
-        "copy": "firefox-4/toolbar/copy.png",
-        "paste": "firefox-4/toolbar/paste.png",
-        "fullscreen": "firefox-4/toolbar/fullscreen.png",
-        "zoom-out": "firefox-4/toolbar/zoom-out.png",
-        "zoom-in": "firefox-4/toolbar/zoom-in.png",
+        "back-button": "firefox-4/toolbar/back.png",
+        "forward-button": "firefox-4/toolbar/forward.png",
+        "stop-button": "firefox-4/toolbar/stop.png",
+        "reload-button": "firefox-4/toolbar/reload.png",
+        "home-button": "firefox-4/toolbar/home.png",
+        "downloads-button": "firefox-4/toolbar/downloads.png",
+        "downloads-indicator-anchor": "firefox-4/toolbar/downloads.png",
+        "history-button": "firefox-4/toolbar/history.png",
+        "bookmarks-button": "firefox-4/toolbar/bookmarks.png",
+        "bookmarks-menu-button": "firefox-4/toolbar/bookmarks.png",
+        "print-button": "firefox-4/toolbar/print.png",
+        "new-tab-button": "firefox-4/toolbar/new-tab.png",
+        "new-window-button": "firefox-4/toolbar/new-window.png",
+        "cut-button": "firefox-4/toolbar/cut.png",
+        "copy-button": "firefox-4/toolbar/copy.png",
+        "paste-button": "firefox-4/toolbar/paste.png",
+        "fullscreen-button": "firefox-4/toolbar/fullscreen.png",
+        "zoom-out-button": "firefox-4/toolbar/zoom-out.png",
+        "zoom-in-button": "firefox-4/toolbar/zoom-in.png",
+        "PanelUI-menu-button": "firefox-29/toolbar/panelui.png",
+        "save-to-pocket-button": "firefox-29/toolbar/pocket.png",
+        "save-to-pocket-button[open]": "firefox-29/toolbar/pocket_active.png",
     ));
 
     @include toolbar-icons-inverted((    
-        "back": "firefox-4/toolbar/inverted/back.png",
-        "forward": "firefox-4/toolbar/inverted/forward.png",
-        "stop": "firefox-4/toolbar/inverted/stop.png",
-        "reload": "firefox-4/toolbar/inverted/reload.png",
-        "home": "firefox-4/toolbarinverted//home.png",
-        "downloads": "firefox-4/toolbar/inverted/downloads.png",
-        "history": "firefox-4/toolbar/inverted/history.png",
-        "print": "firefox-4/toolbar/inverted/print.png",
-        "new-tab": "firefox-4/toolbar/inverted/new-tab.png",
-        "new-window": "firefox-4/toolbar/inverted/new-window.png",
-        "cut": "firefox-4/toolbar/inverted/cut.png",
-        "copy": "firefox-4/toolbar/inverted/copy.png",
-        "paste": "firefox-4/toolbar/inverted/paste.png",
-        "fullscreen": "firefox-4/toolbar/inverted/fullscreen.png",
-        "zoom-out": "firefox-4/toolbar/inverted/zoom-out.png",
-        "zoom-in": "firefox-4/toolbar/inverted/zoom-in.png",
+        "back-button": "firefox-4/toolbar/inverted/back.png",
+        "forward-button": "firefox-4/toolbar/inverted/forward.png",
+        "stop-button": "firefox-4/toolbar/inverted/stop.png",
+        "reload-button": "firefox-4/toolbar/inverted/reload.png",
+        "home-button": "firefox-4/toolbarinverted//home.png",
+        "downloads-button": "firefox-4/toolbar/inverted/downloads.png",
+        "downloads-indicator-anchor": "firefox-4/toolbar/inverted/downloads.png",
+        "history-button": "firefox-4/toolbar/inverted/history.png",
+        "print-button": "firefox-4/toolbar/inverted/print.png",
+        "new-tab-button": "firefox-4/toolbar/inverted/new-tab.png",
+        "new-window-button": "firefox-4/toolbar/inverted/new-window.png",
+        "cut-button": "firefox-4/toolbar/inverted/cut.png",
+        "copy-button": "firefox-4/toolbar/inverted/copy.png",
+        "paste-button": "firefox-4/toolbar/inverted/paste.png",
+        "fullscreen-button": "firefox-4/toolbar/inverted/fullscreen.png",
+        "zoom-out-button": "firefox-4/toolbar/inverted/zoom-out.png",
+        "zoom-in-button": "firefox-4/toolbar/inverted/zoom-in.png",
+        "PanelUI-menu-button": "firefox-29/toolbar/inverted/panelui.png",
+        "save-to-pocket-button": "firefox-29/toolbar/inverted/pocket.png",
+        "save-to-pocket-button[open]": "firefox-29/toolbar/inverted/pocket_active.png",
     ));
+
+    &[titleShortName="firefox"] {
+        --icon16: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon16.png") !important;
+    }
+
+    &[titleShortName="nightly"] {
+        --icon16: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/icon16.png") !important;
+    }
+
+    &[titleShortName="aurora"] {
+        --icon16: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/icon16.png") !important;
+    }
+
+    &[titleShortName="echelon"] {
+        --icon16: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/icon16.png") !important;
+    }
+
+    @include replace-favicon("chrome://branding/content/icon32.png", --icon16);
 
     #page-action-buttons {
         .urlbar-page-action {
