@@ -885,6 +885,7 @@
 }
 
 #appmenu-button-container {
+  height: min-content !important;
   border-inline: 1px solid hsla(0, 0%, 100%, 0.5) !important;
   border-block-end: 1px solid hsla(0, 0%, 100%, 0.5) !important;
   border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
@@ -898,7 +899,7 @@
   -moz-user-focus: ignore !important;
   min-width: 94px !important;
   min-height: 0 !important;
-  height: var(--buttonbox-height) !important;
+  height: calc(var(--buttonbox-height) - 1px) !important;
   appearance: none !important;
   background-image: var(--appmenu-button-normal-background) !important;
   padding: 0 1.5em 0.15em !important;
@@ -913,6 +914,9 @@
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.7), 0 1px 1.5px rgba(0, 0, 0, 0.5) !important;
   font-weight: bold !important;
   background-clip: padding-box !important;
+}
+:root[sizemode=maximized] #appmenu-button-container #appmenu-button {
+  height: calc(var(--buttonbox-height) - 2px) !important;
 }
 #appmenu-button-container #appmenu-button:hover {
   background-image: var(--appmenu-button-hover-background) !important;
