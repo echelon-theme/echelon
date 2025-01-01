@@ -575,7 +575,7 @@
 #urlbar[breakout], #urlbar[breakout][breakout-extend] {
   height: var(--urlbar-min-height) !important;
   margin: 0 !important;
-  width: 100% !important;
+  width: -moz-available !important;
   top: calc((var(--urlbar-height) - 2) / 2) !important;
   left: 0 !important;
   inset: unset !important;
@@ -1821,7 +1821,10 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-2] #urlbar {
   pointer-events: all !important;
 }
-:root[echelon-style-2] #urlbar #identity-box {
+:root[echelon-style-2] #urlbar .urlbar-input-box {
+  padding-inline-start: 3px !important;
+}
+:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box {
   background-image: linear-gradient(hsl(0, 0%, 98%), hsl(0, 0%, 92%)) !important;
   box-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.05) inset !important;
   border-inline-end: 1px solid hsla(0, 0%, 0%, 0.1) !important;
@@ -1830,50 +1833,47 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   order: -1 !important;
   margin-inline-end: 0 !important;
 }
-:root[echelon-style-2] #urlbar #identity-box:hover {
+:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box:hover {
   background-image: linear-gradient(hsl(0, 0%, 95%), hsl(0, 0%, 87%)) !important;
 }
-:root[echelon-style-2] #urlbar #identity-box[open=true], :root[echelon-style-2] #urlbar #identity-box:hover:active {
+:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box[open=true], :root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box:hover:active {
   background-image: linear-gradient(hsl(0, 0%, 92%), hsl(0, 0%, 82%)) !important;
   box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.3) inset, 0 1px 3px hsla(0, 0%, 0%, 0.3) inset !important;
 }
-:root[echelon-style-2] #urlbar #identity-box[pageproxystate=invalid] #identity-icon {
+:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box[pageproxystate=invalid] #identity-icon {
   opacity: 0.5 !important;
 }
-:root[echelon-style-2] #urlbar #identity-box.verifiedDomain {
+:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedDomain {
   background-image: linear-gradient(hsl(215, 60%, 92%), hsl(215, 58%, 88%)) !important;
   box-shadow: 0 1px 0 hsla(215, 54%, 33%, 0.05) inset !important;
   border-inline-end-color: hsla(215, 54%, 33%, 0.2) !important;
   color: hsl(215, 54%, 33%) !important;
 }
-:root[echelon-style-2] #urlbar #identity-box.verifiedDomain:hover {
+:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedDomain:hover {
   background-image: linear-gradient(hsl(215, 85%, 85%), hsl(215, 70%, 68%)) !important;
 }
-:root[echelon-style-2] #urlbar #identity-box.verifiedDomain[open=true], :root[echelon-style-2] #urlbar #identity-box.verifiedDomain:hover:active {
+:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedDomain[open=true], :root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedDomain:hover:active {
   background-image: linear-gradient(hsl(215, 80%, 80%), hsl(215, 67%, 65%)) !important;
   box-shadow: 0 1px 1px hsla(215, 54%, 33%, 0.7) inset, 0 1px 3px 1px hsla(215, 54%, 33%, 0.5) inset !important;
 }
-:root[echelon-style-2] #urlbar #identity-box.chromeUI #identity-icon-label {
+:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.chromeUI #identity-icon-label {
   visibility: collapse !important;
 }
-:root[echelon-style-2] #urlbar #identity-box #identity-icon {
+:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box #identity-icon {
   margin-block: 1px !important;
   margin-inline: 4px !important;
 }
-:root[echelon-style-2] #urlbar #identity-box #identity-icon-label {
+:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box #identity-icon-label {
   padding-inline: 0 !important;
   margin-inline-start: 1px !important;
   margin-inline-end: 3px !important;
 }
-:root[echelon-style-2] #urlbar #identity-box #identity-icon-box {
+:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box #identity-icon-box {
   padding: 0 !important;
   border-radius: 0 !important;
   background-color: transparent !important;
   outline: 0 !important;
   color: inherit !important;
-}
-:root[echelon-style-2] #urlbar .urlbar-input-box {
-  padding-inline-start: 3px !important;
 }
 :root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button:not(:hover)[disabled] {
   opacity: 0 !important;

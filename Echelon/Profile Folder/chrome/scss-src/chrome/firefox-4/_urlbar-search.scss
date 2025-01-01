@@ -18,7 +18,7 @@
     &[breakout][breakout-extend] {
         height: var(--urlbar-min-height) !important;
         margin: 0 !important;
-        width: 100% !important;
+        width: -moz-available !important; // ??????????? -travis
         top: calc((var(--urlbar-height) - 2) / 2) !important;
         left: 0 !important;
         inset: unset !important;
