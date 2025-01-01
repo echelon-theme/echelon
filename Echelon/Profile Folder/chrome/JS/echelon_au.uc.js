@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name           userChrome_author_css
+// @name           Echelon :: Author Sheet
 // @namespace      userChrome_Author_Sheet_CSS
 // @version        0.0.6
 // @description    Load userChrome.au.css file as author sheet from resources folder using chrome: uri. The file is loaded only into the document where this script runs which by default is browser.xhtml
