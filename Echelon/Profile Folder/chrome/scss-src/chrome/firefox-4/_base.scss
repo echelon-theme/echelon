@@ -1,3 +1,8 @@
+:root {
+    --browser-area-z-index-toolbox: 1 !important;
+    --browser-area-z-index-tabbox: 0 !important;
+    --browser-area-z-index-sidebar-splitter: 1 !important;
+}
 // hide unified extensions
 :root[echelon-option-hideunifiedextensions] {
     #unified-extensions-button {

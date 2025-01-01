@@ -1,0 +1,339 @@
+// Default Appmenu Colors ("Firefox")
+:root {
+    --appmenu-button-border-color: rgba(83, 42, 6, 0.9) !important;
+    --appmenu-button-hover-border-color: rgba(83, 42, 6, 0.9) !important;
+    --appmenu-button-active-border-color: rgba(83, 42, 6, 0.9) !important;
+    
+    --appmenu-button-normal-background: linear-gradient(to bottom, rgb(247, 182, 82), rgb(215, 98, 10) 95%) !important;
+    --appmenu-button-hover-background: -moz-radial-gradient(center bottom, farthest-side, rgba(252, 240, 89, .5) 10%, rgba(252, 240, 89, 0) 70%),
+                                       -moz-radial-gradient(center bottom, farthest-side, rgb(236, 133, 0), rgba(255, 229, 172, 0)),
+                                       linear-gradient(rgb(246, 170, 69), rgb(209, 74, 0) 95%) !important;
+    --appmenu-button-active-background: linear-gradient(to bottom, rgb(246, 170, 69), rgb(209, 74, 0) 95%) !important;
+    
+    --appmenu-button-normal-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
+    --appmenu-button-hover-shadow: 0 1px 0 rgba(255, 255, 255, .1) inset,
+                                   0 0 1.5px 1px rgba(250, 234, 169, .7) inset,
+                                   0 -1px 0 rgba(250, 234, 169, .5) inset !important;
+    --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+                                    0 1px 1px rgba(0, 0, 0, .2) inset !important;
+}
+
+// Private Browsing Colors
+:root[privatebrowsingmode="temporary"] {
+    --appmenu-button-border-color: rgba(43, 8, 65, .9) !important;
+    --appmenu-button-hover-border-color: rgba(43, 8, 65, .9) !important;
+    --appmenu-button-active-border-color: rgba(43, 8, 65, .9) !important;
+    
+    --appmenu-button-normal-background: linear-gradient(to bottom, rgb(153, 38, 211), rgb(105, 19, 163) 95%) !important;
+    --appmenu-button-hover-background: -moz-radial-gradient(center bottom, farthest-side, rgba(240, 193, 255, .5) 10%, rgba(240, 193, 255, 0) 70%),
+                                       -moz-radial-gradient(center bottom, farthest-side, rgb(192, 81, 247), rgba(236, 172, 255, 0)),
+                                       linear-gradient(rgb(144, 20, 207), rgb(95, 0, 158) 95%) !important;
+    --appmenu-button-active-background: linear-gradient(to bottom, rgb(144, 20, 207), rgb(95, 0, 158) 95%) !important;
+    
+    --appmenu-button-normal-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
+    --appmenu-button-hover-shadow: 0 1px 0 rgba(255, 255, 255, .1) inset,
+                                   0 0 2px 1px rgba(240, 193, 255, .7) inset,
+                                   0 -1px 0 rgba(240, 193, 255, .5) inset !important;
+    --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+                                    0 1px 1px rgba(0, 0, 0, .2) inset !important;
+}
+
+:root:not([privatebrowsingmode="temporary"]) {
+    // Channels (Aurora, Nightly)
+
+    &[titleShortName="aurora"] {
+        --appmenu-button-border-color: hsla(214, 89%, 21%, .9) !important;
+        --appmenu-button-hover-border-color: hsla(214, 89%, 21%, .9) !important;
+        --appmenu-button-active-border-color: hsla(214, 89%, 21%, .9) !important;
+        
+        --appmenu-button-normal-background: linear-gradient(hsl(208, 99%, 37%), hsl(214, 90%, 23%) 95%) !important;
+        --appmenu-button-hover-background: radial-gradient(farthest-side at bottom, hsla(202, 100%, 85%, .5) 10%, hsla(202, 100%, 85%, 0) 70%),
+                                           radial-gradient(farthest-side at bottom, hsla(205, 100%, 72%, .7), hsla(205, 100%, 72%, 0)),
+                                           linear-gradient(hsl(208, 98%, 34%), hsl(213, 87%, 20%) 95%) !important;
+        --appmenu-button-active-background: linear-gradient(hsl(208, 95%, 30%), hsl(214, 85%, 17%) 95%) !important;
+        
+        --appmenu-button-normal-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
+        --appmenu-button-hover-shadow: 0 1px 0 hsla(205, 100%, 72%, .15) inset,
+                                       0 0 2px 1px hsla(205, 100%, 72%, .5) inset,
+                                       0 -1px 0 hsla(205, 100%, 72%, .2) inset !important;
+        --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+                                        0 1px 1px rgba(0, 0, 0, .2) inset !important;
+    }
+
+    &[titleShortName="nightly"] {
+        --appmenu-button-border-color: hsla(210, 59%, 13%, .9) !important;
+        --appmenu-button-hover-border-color: hsla(210, 59%, 13%, .9) !important;
+        --appmenu-button-active-border-color: hsla(210, 59%, 13%, .9) !important;
+        
+        --appmenu-button-normal-background: linear-gradient(hsl(211, 33%, 32%), hsl(209, 53%, 10%) 95%) !important;
+        --appmenu-button-hover-background: -moz-radial-gradient(center bottom, farthest-side, hsla(210, 48%, 90%, .5) 10%, hsla(210, 48%, 90%, 0) 70%),
+                                           -moz-radial-gradient(center bottom, farthest-side, hsla(211, 70%, 83%, .5), hsla(211, 70%, 83%, 0)),
+                                           linear-gradient(hsl(211, 33%, 32%), hsl(209, 53%, 10%) 95%) !important;
+        --appmenu-button-active-background: linear-gradient(hsl(211, 33%, 26%), hsl(209, 53%, 6%) 95%) !important;
+        
+        --appmenu-button-normal-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset, 0 0 2px 1px hsla(211, 65%, 85%, .15) inset !important;
+        --appmenu-button-hover-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset,
+                                       0 0 2px 1px hsla(210, 48%, 90%, .4) inset,
+                                       0 -1px 0 hsla(210, 48%, 90%, .2) inset !important;
+        --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+                                        0 1px 1px rgba(0, 0, 0, .2) inset !important;
+    }
+
+    // Other (Browser Forks, etc)
+
+    &[titleShortName="nara"] {
+        --appmenu-button-border-color: rgba(28, 13, 56, .9) !important;
+        --appmenu-button-hover-border-color: rgba(28, 13, 56, .9) !important;
+        --appmenu-button-active-border-color: rgba(28, 13, 56, .9) !important;
+        
+        --appmenu-button-normal-background: linear-gradient(rgb(194, 69, 105), rgb(48, 18, 59) 95%) !important;
+        --appmenu-button-hover-background: -moz-radial-gradient(center bottom, farthest-side, hsla(210, 48%, 90%, .5) 10%, hsla(210, 48%, 90%, 0) 70%),
+                                           -moz-radial-gradient(center bottom, farthest-side, hsla(211, 70%, 83%, .5), hsla(211, 70%, 83%, 0)),
+                                           linear-gradient(rgb(194, 69, 105), rgb(48, 18, 59) 95%) !important;
+        --appmenu-button-active-background: linear-gradient(hsl(211, 33%, 26%), hsl(209, 53%, 6%) 95%) !important;
+        
+        --appmenu-button-normal-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
+        --appmenu-button-hover-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset,
+                                       0 0 2px 1px hsla(210, 48%, 90%, .4) inset,
+                                       0 -1px 0 hsla(210, 48%, 90%, .2) inset !important;
+        --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+                                        0 1px 1px rgba(0, 0, 0, .2) inset !important;
+    }
+}
+
+
+
+#appmenu-button-container {
+    border-inline: 1px solid hsla(0, 0%, 100%, 0.5) !important;
+    border-block-end: 1px solid hsla(0, 0%, 100%, 0.5) !important;
+    border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
+    border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;
+    margin: 0 0 2px !important;
+
+    :root[sizemode="normal"] & {
+        margin-block-start: 1px !important;
+    }
+
+    #appmenu-button {
+        -moz-user-focus: ignore !important;
+        min-width: 94px !important;
+        min-height: 0 !important;
+        height: var(--buttonbox-height) !important;
+        appearance: none !important;
+        background-image: var(--appmenu-button-normal-background) !important;
+        padding: 0 1.5em 0.15em !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        border: 1px solid var(--appmenu-button-border-color) !important;
+        border-block-start: 0 !important;
+        box-shadow: var(--appmenu-button-normal-shadow) !important;
+        border-bottom-left-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
+        border-bottom-right-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
+        color: white !important;
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.7), 0 1px 1.5px rgba(0, 0, 0, 0.5) !important;
+        font-weight: bold !important;
+        background-clip: padding-box !important;
+
+        &:hover {
+            background-image: var(--appmenu-button-hover-background) !important;
+            box-shadow: var(--appmenu-button-hover-shadow) !important;
+            border-color: var(--appmenu-button-hover-border-color) !important;
+        }
+
+        &:active,
+        &[open="true"] {
+            background-image: var(--appmenu-button-active-background) !important;
+            box-shadow: var(--appmenu-button-active-shadow) !important;
+            border-color: var(--appmenu-button-active-border-color) !important;
+        }
+
+        .button-menu-dropmarker {
+            content: url("chrome://userchrome/content/assets/images/firefox-4/appmenu/appmenu-dropmarker.png") !important;
+            margin-inline-start: .5em !important;
+        }
+    }
+}
+
+#appmenu-button-container[open="true"],
+#appmenu-button[open="true"] {
+    border-radius: 0 !important;
+}
+
+/* Container properties */
+#echelon-appmenu-button-menu {
+	appearance: none !important;
+}
+
+.splitmenu-menuitem {
+	flex: 1;
+	appearance: menuitem;
+    align-items: center;
+	font: menu;
+	list-style-image: none;
+	margin-right: 1px;
+	
+	&[disabled="true"] {
+		color: GrayText;
+		text-shadow: none;
+		
+		@media all and (-moz-windows-classic) {
+			& {
+				color: ThreeDShadow;
+				text-shadow: 1px 1px ThreeDHighlight;
+			}
+		}
+	}
+}
+
+echelon-splitmenu {
+	display: flex;
+
+	&[active="true"] {
+		& .splitmenu-menuitem,
+		& .splitmenu-menu {
+			background-color: highlight;
+			color: -moz-menuhovertext;
+		}
+	}
+}
+
+// Thin expander buttons
+// The labels must be hidden, but in such a way to prevent the glyph
+// from being uncentred.
+echelon-splitmenu .splitmenu-menu > label,
+#appmenu-editmenu > label {
+	appearance: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+echelon-splitmenu .splitmenu-menu > .menu-accel-container,
+#appmenu-editmenu > .menu-accel-container {
+	display: none !important;
+}
+
+// Hide keybind displays on main appmenu menu items.
+#appmenuPrimaryPane, #appmenuSecondaryPane {
+	& > menuitem > .menu-accel-container {
+		display: none;
+	}
+}
+
+#appmenuSecondaryPane-spacer {
+	min-height: 1em;
+}
+
+#echelon-appmenu-button-menu .menu-iconic-left {
+	appearance: auto !important;
+	-moz-default-appearance: menuimage !important;
+}
+
+#echelon-appmenu-button-menu :is([type="checkbox"], [checked="true"]) .menu-iconic-left {
+	-moz-default-appearance: menucheckbox !important;
+}
+
+#appmenuSecondaryPane .menu-iconic-text {
+	margin-inline-end: 6px !important;
+}
+
+@media not (-moz-windows-classic)
+{
+
+    #appmenuPrimaryPane {
+        border-inline-end: 1px solid ThreeDShadow;
+      }
+
+    :root[echelon-appearance-blue] {
+        #appmenuPrimaryPane {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 2px;
+            border-inline-end: none;
+        }
+        
+        #appmenuSecondaryPane {
+            background-color: #f1f5fb;
+            box-shadow: 1px 0 2px rgb(204, 214, 234) inset;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            border-inline-start: 3px;
+            border-inline-end: 2px;
+            font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+        }
+        
+        #appmenuSecondaryPane:-moz-locale-dir(rtl) {
+            box-shadow: -1px 0 2px rgb(204, 214, 234) inset;
+        }
+    }
+	
+	#appmenuSecondaryPane menupopup {
+		appearance: none !important;
+		background-color: #f1f5fb !important;
+		border: 1px solid ThreeDShadow !important;
+		padding: 2px !important;
+	}
+	
+	#appmenuPrimaryPane menuitem:where([disabled="true"]) {
+		font-style: italic !important;
+	}
+}
+
+#appmenuPrimaryPane toolbarbutton .toolbarbutton-icon {
+	width: 16px !important;
+	height: 16px !important;
+	background-image: url("chrome://userchrome/content/assets/images/firefox-4/appmenu/appmenu-icons.png") !important;
+}
+
+/* Disable hover effect on "Edit" menu. */
+#appmenu-edit-label {
+	pointer-events: none !important;
+}
+
+/* Container Icons */
+
+#appmenu_privateBrowsing,
+#appmenu_print,
+#appmenu-quit,
+#appmenu_bookmarks,
+#appmenu_addons,
+#appmenu-editmenu-cut,
+#appmenu-editmenu-copy,
+#appmenu-editmenu-paste {
+	.menu-iconic-icon {
+		background-image: url("chrome://userchrome/content/assets/images/firefox-4/appmenu/appmenu-icons.png") !important;
+	}
+}
+
+#appmenu_privateBrowsing .menu-iconic-icon {
+	background-position-x: 0 !important;
+}
+
+#appmenu-cut .toolbarbutton-icon,
+#appmenu-editmenu-cut .menu-iconic-icon {
+	background-position-x: -16px !important;
+}
+
+#appmenu-copy .toolbarbutton-icon,
+#appmenu-editmenu-copy .menu-iconic-icon {
+	background-position-x: -32px !important;
+}
+
+#appmenu-paste .toolbarbutton-icon,
+#appmenu-editmenu-paste .menu-iconic-icon {
+	background-position-x: -48px !important;
+}
+
+#appmenu_print .menu-iconic-icon {
+	background-position-x: -64px !important;
+}
+
+#appmenu-quit .menu-iconic-icon {
+	background-position-x: -80px !important;
+}
+
+#appmenu_addons .menu-iconic-icon {
+	background-position-x: -96px !important;
+}
+
+#appmenu_bookmarks .menu-iconic-icon {
+	background-position-x: -112px !important;
+}

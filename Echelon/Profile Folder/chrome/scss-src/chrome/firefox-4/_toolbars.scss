@@ -126,6 +126,8 @@
         border-top: 0 !important;
         background-image: linear-gradient(var(--toolbar-highlight-top) 15%, var(--toolbar-highlight-bottom)) !important;
         margin-top: calc(-1 * var(--navbar-tab-toolbar-highlight-overlap)) !important;
+        border-top: 1px solid var(--toolbar-border-color) !important;
+        background-clip: padding-box !important;
         position: relative !important;
         z-index: 1 !important;
 
@@ -147,7 +149,7 @@
         display: none !important;
     }
 
-    :not(.australis-appmenu-panel) #zoom-controls {
+    #navigator-toolbox > #nav-bar #zoom-controls {
         margin: var(--toolbarbutton-outer-padding) !important;
 
         #zoom-reset-button {
@@ -155,6 +157,7 @@
         }
 
         .toolbarbutton-1 {
+            height: var(--toolbarbutton-height) !important;
             margin: 0 !important;
 
             &:not(:first-of-type, :last-of-type) {
@@ -196,10 +199,8 @@
 
             #nav-bar {
                 border-inline: 1px solid var(--toolbar-border-color) !important;
-                border-top: 1px solid var(--toolbar-border-color) !important;
                 border-top-left-radius: var(--toolbarbutton-border-radius) !important;
                 border-top-right-radius: var(--toolbarbutton-border-radius) !important;
-                background-clip: padding-box !important;
             }
 
             #PersonalToolbar {

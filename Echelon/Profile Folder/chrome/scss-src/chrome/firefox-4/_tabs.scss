@@ -70,6 +70,20 @@
                     margin-inline-start: var(--tab-icon-start-margin) !important;
                 }
             }
+
+            .tab-icon-image {
+                &:not([src], [pinned], [crashed], [sharing], [pictureinpicture]) {
+                    display: flex !important;
+                }
+
+                &:not([src]), &:-moz-broken {
+                    content: var(--default-favicon) !important;
+                }
+            }
+        }
+
+        .tab-loading-burst {
+            visibility: collapse !important;
         }
 
         .tab-label-container {
@@ -78,11 +92,27 @@
 
         .tab-close-button {
             margin-inline-end: 0 !important;
-            background-position-x: -48px !important;
+            &:not(:hover) {
+                background-position-x: -48px !important;
 
-            &[selected] {
-                background-position-x: 0 !important;
+                &[selected] {
+                    background-position-x: 0 !important;
+                }
             }
+        }
+    }
+
+    .tab-throbber {
+        &::before {
+            visibility: collapse !important;
+        }
+
+        &[busy] {
+            background-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/connecting.png");
+        }
+        
+        &[progress] {
+            background-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/loading.png");
         }
     }
 
@@ -91,7 +121,7 @@
         #tabs-newtab-button
         {
             box-shadow: none !important;
-            border-image: url("chrome://userchrome/content/assets/images/firefox-4/tab.png") 6 3 4/6px 3px 4px repeat stretch !important;
+            border-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/tab.png") 6 3 4/6px 3px 4px repeat stretch !important;
             background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px), var(--tab-background), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color));
             background-color: transparent !important;
             background-position: -2px -2px !important;

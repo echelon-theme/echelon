@@ -6,7 +6,6 @@
 // ==/UserScript==
 
 var { BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
-const DEFAULT_FAVICON = "chrome://userchrome/content/images/icon16.png";
 
 function updateIcon()
 {
@@ -15,15 +14,16 @@ function updateIcon()
 		setTimeout(function()
 		{
 			let favicon = gBrowser.selectedTab.image;
-			if (!gBrowser.selectedTab.image || gBrowser.selectedTab.image == null)
-			{
-				favicon = DEFAULT_FAVICON;
-			}
 				
 			let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
 			if (style < ECHELON_LAYOUT_FF14)
 			{
 				document.querySelector("#identity-icon").setAttribute("style", `list-style-image: url('${favicon}');`);
+
+				if (!gBrowser.selectedTab.image || gBrowser.selectedTab.image == null)
+				{
+					document.querySelector("#identity-icon").setAttribute("style", `list-style-image: var(--default-favicon);`);
+				}
 			}
 		}, 1);
 	}

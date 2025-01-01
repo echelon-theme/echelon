@@ -1,0 +1,146 @@
+& {
+    --urlbar-container-padding: 0 !important;
+    --default-favicon: url("chrome://userchrome/content/assets/images/firefox-10/defaultFavicon.png") !important;
+}
+
+#urlbar-container {
+    margin-inline-start: 0 !important;
+    pointer-events: none !important;
+}
+
+#urlbar {
+    pointer-events: all !important;
+    
+    #identity-box {
+        background-image: linear-gradient(hsl(0,0%,98%), hsl(0,0%,92%)) !important;
+        box-shadow: 0 1px 0 hsla(0,0%,0%,.05) inset !important;
+        border-inline-end: 1px solid hsla(0,0%,0%,.1) !important;
+        padding: 2px !important;
+        border-radius: 0 !important;
+        order: -1 !important;
+        margin-inline-end: 0 !important;
+
+        &:hover {
+            background-image: linear-gradient(hsl(0,0%,95%), hsl(0,0%,87%)) !important;
+        }
+
+        &[open="true"],
+        &:hover:active {
+            background-image: linear-gradient(hsl(0,0%,92%), hsl(0,0%,82%)) !important;
+            box-shadow: 0 1px 1px hsla(0,0%,0%,.3) inset,
+                        0 1px 3px hsla(0,0%,0%,.3) inset !important;
+        }
+
+        &[pageproxystate="invalid"] {
+            #identity-icon {
+                opacity: 0.5 !important;
+            }
+        }
+
+        &.verifiedDomain {
+            background-image: linear-gradient(hsl(215,60%,92%), hsl(215,58%,88%)) !important;
+            box-shadow: 0 1px 0 hsla(215,54%,33%,.05) inset !important;
+            border-inline-end-color: hsla(215,54%,33%,.2) !important;
+            color: hsl(215,54%,33%) !important;
+
+            &:hover {
+                background-image: linear-gradient(hsl(215,85%,85%), hsl(215,70%,68%)) !important;
+            }
+    
+            &[open="true"],
+            &:hover:active {
+                background-image: linear-gradient(hsl(215,80%,80%), hsl(215,67%,65%)) !important;
+                box-shadow: 0 1px 1px hsla(215,54%,33%,.7) inset,
+                            0 1px 3px 1px hsla(215,54%,33%,.5) inset !important;
+            }
+        }
+
+        &.chromeUI {
+            #identity-icon-label {
+                visibility: collapse !important;
+            }
+        }
+
+        #identity-icon {
+            margin-block: 1px !important;
+            margin-inline: 4px !important;
+        }
+        
+        #identity-icon-label {
+            padding-inline: 0 !important;
+            margin-inline-start: 1px !important;
+            margin-inline-end: 3px !important;
+        }
+
+        #identity-icon-box {
+            padding: 0 !important;
+            border-radius: 0 !important;
+            background-color: transparent !important;
+            outline: 0 !important;
+            color: inherit !important;
+        }
+    }
+
+    .urlbar-input-box {
+        padding-inline-start: 3px !important;
+    }
+}
+
+// unified urlbar behavior
+
+&:not([chromehidden~="toolbar"]) {
+    #nav-bar {
+        #forward-button:not(:hover)[disabled] {
+            opacity: 0 !important;
+
+            & + #urlbar-container {            
+                & > #urlbar {
+                    margin-left: -27px !important;
+                }
+    
+                #urlbar-background,
+                .urlbar-input-container {
+                    mask: url("chrome://userchrome/content/assets/images/firefox-10/urlbar/winstripe-urlbar-back-button-mask.svg") !important;
+                    mask-repeat: no-repeat !important;
+                    mask-position: left !important;
+                }
+
+                #identity-box {
+                    padding-inline-start: 5px !important;
+                }
+            }
+        }
+
+        #forward-button {
+            & + #urlbar-container {
+                padding-inline-start: 27px !important;
+                margin-inline-start: -27px !important;
+
+                #urlbar-background,
+                .urlbar-input-container {
+                    border-top-left-radius: 0 !important;
+                    border-bottom-left-radius: 0 !important;
+                    border-inline-start: 0 !important;
+                }
+            }
+        }
+    }
+
+    &:not([echelon-tabchanging="true"]) {
+        #nav-bar {
+            #forward-button {
+                transition: opacity 150ms ease-out !important;
+
+                &:not(:hover)[disabled] {
+                    #identity-box {
+                        transition: padding-inline-start !important;
+                    }
+                }
+
+                & + #urlbar-container > #urlbar {
+                    transition: margin-inline-start 150ms ease-out !important;
+                }
+            }
+        }
+    }
+}

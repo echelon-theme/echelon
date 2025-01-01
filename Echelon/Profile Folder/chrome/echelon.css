@@ -1,6 +1,28 @@
 /* ::::: Firefox 4 ::::: */
+:root {
+  --browser-area-z-index-toolbox: 1 !important;
+  --browser-area-z-index-tabbox: 0 !important;
+  --browser-area-z-index-sidebar-splitter: 1 !important;
+}
+
 :root[echelon-option-hideunifiedextensions] #unified-extensions-button {
   display: none !important;
+}
+
+.autoscroller {
+  height: 28px !important;
+  width: 28px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/autoscroll.png") !important;
+  background-position: right top !important;
+}
+.autoscroller[scrolldir=NS] {
+  background-position: right center !important;
+}
+.autoscroller[scrolldir=EW] {
+  background-position: right bottom !important;
 }
 
 :root {
@@ -12,9 +34,24 @@
 :root #titlebar {
   -moz-window-dragging: drag !important;
 }
-:root #toolbar-menubar .titlebar-buttonbox-container, :root:not([sizemode=maximized]) #TabsToolbar .titlebar-buttonbox-container, :root[sizemode=maximized] #titlebar-content .titlebar-buttonbox-container {
+:root #toolbar-menubar[inactive=true] .titlebar-buttonbox-container, :root:not([sizemode=maximized]) #TabsToolbar .titlebar-buttonbox-container, :root[sizemode=maximized] #titlebar-content .titlebar-buttonbox-container, :root[sizemode=maximized] #toolbar-menubar:not([inactive=true]) #TabsToolbar .titlebar-buttonbox-container {
   visibility: collapse !important;
 }
+:root[sizemode=maximized] #titlebar {
+  display: grid !important;
+  grid-template-areas: "firefox-button menu-bar" "firefox-button tabbar" !important;
+  grid-auto-columns: min-content auto !important;
+}
+:root[sizemode=maximized] #titlebar-content {
+  grid-area: firefox-button !important;
+}
+:root[sizemode=maximized] #toolbar-menubar {
+  grid-area: menu-bar !important;
+}
+:root[sizemode=maximized] #TabsToolbar {
+  grid-area: tabbar !important;
+}
+
 :root {
   --toolbarbutton-width: 30px !important;
   --toolbarbutton-height: 24px !important;
@@ -117,6 +154,8 @@
   border-top: 0 !important;
   background-image: linear-gradient(var(--toolbar-highlight-top) 15%, var(--toolbar-highlight-bottom)) !important;
   margin-top: calc(-1 * var(--navbar-tab-toolbar-highlight-overlap)) !important;
+  border-top: 1px solid var(--toolbar-border-color) !important;
+  background-clip: padding-box !important;
   position: relative !important;
   z-index: 1 !important;
 }
@@ -132,24 +171,25 @@
 :root .toolbaritem-combined-buttons > separator {
   display: none !important;
 }
-:root :not(.australis-appmenu-panel) #zoom-controls {
+:root #navigator-toolbox > #nav-bar #zoom-controls {
   margin: var(--toolbarbutton-outer-padding) !important;
 }
-:root :not(.australis-appmenu-panel) #zoom-controls #zoom-reset-button {
+:root #navigator-toolbox > #nav-bar #zoom-controls #zoom-reset-button {
   display: none !important;
 }
-:root :not(.australis-appmenu-panel) #zoom-controls .toolbarbutton-1 {
+:root #navigator-toolbox > #nav-bar #zoom-controls .toolbarbutton-1 {
+  height: var(--toolbarbutton-height) !important;
   margin: 0 !important;
 }
-:root :not(.australis-appmenu-panel) #zoom-controls .toolbarbutton-1:not(:first-of-type, :last-of-type) {
+:root #navigator-toolbox > #nav-bar #zoom-controls .toolbarbutton-1:not(:first-of-type, :last-of-type) {
   --toolbarbutton-border-radius: 0 !important;
   border-left: 0 !important;
 }
-:root :not(.australis-appmenu-panel) #zoom-controls .toolbarbutton-1:first-of-type {
+:root #navigator-toolbox > #nav-bar #zoom-controls .toolbarbutton-1:first-of-type {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
-:root :not(.australis-appmenu-panel) #zoom-controls .toolbarbutton-1:last-of-type {
+:root #navigator-toolbox > #nav-bar #zoom-controls .toolbarbutton-1:last-of-type {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
   border-left: 0 !important;
@@ -169,10 +209,8 @@
 }
 :root[sizemode=normal]:not([lwtheme-image]) #nav-bar {
   border-inline: 1px solid var(--toolbar-border-color) !important;
-  border-top: 1px solid var(--toolbar-border-color) !important;
   border-top-left-radius: var(--toolbarbutton-border-radius) !important;
   border-top-right-radius: var(--toolbarbutton-border-radius) !important;
-  background-clip: padding-box !important;
 }
 :root[sizemode=normal]:not([lwtheme-image]) #PersonalToolbar {
   border-inline: 1px solid var(--toolbar-border-color) !important;
@@ -260,20 +298,40 @@
   margin-inline-end: var(--tab-icon-end-margin) !important;
   margin-inline-start: var(--tab-icon-start-margin) !important;
 }
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]) {
+  display: flex !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src]), #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:-moz-broken {
+  content: var(--default-favicon) !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-loading-burst {
+  visibility: collapse !important;
+}
 #TabsToolbar .tabbrowser-tab .tab-label-container {
   height: var(--tab-min-height) !important;
 }
 #TabsToolbar .tabbrowser-tab .tab-close-button {
   margin-inline-end: 0 !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-close-button:not(:hover) {
   background-position-x: -48px !important;
 }
-#TabsToolbar .tabbrowser-tab .tab-close-button[selected] {
+#TabsToolbar .tabbrowser-tab .tab-close-button:not(:hover)[selected] {
   background-position-x: 0 !important;
+}
+#TabsToolbar .tab-throbber::before {
+  visibility: collapse !important;
+}
+#TabsToolbar .tab-throbber[busy] {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/connecting.png");
+}
+#TabsToolbar .tab-throbber[progress] {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/loading.png");
 }
 :root:not([echelon-style-4]) #TabsToolbar .tab-background,
 :root:not([echelon-style-4]) #TabsToolbar #tabs-newtab-button {
   box-shadow: none !important;
-  border-image: url("chrome://userchrome/content/assets/images/firefox-4/tab.png") 6 3 4/6px 3px 4px repeat stretch !important;
+  border-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/tab.png") 6 3 4/6px 3px 4px repeat stretch !important;
   background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px), var(--tab-background), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color));
   background-color: transparent !important;
   background-position: -2px -2px !important;
@@ -510,18 +568,22 @@
   --urlbar-min-height: var(--urlbar-height-echelon) !important;
   --searchbar-search-icon: url("chrome://userchrome/content/assets/images/firefox-4/defaultFavicon.png") !important;
   --searchbar-go-button: url("chrome://userchrome/content/assets/images/firefox-4/Search-glass.png") !important;
+  --default-favicon: url("chrome://userchrome/content/assets/images/firefox-4/defaultFavicon.png") !important;
 }
-:root #urlbar[breakout], :root #urlbar[breakout][breakout-extend] {
+
+#urlbar[breakout], #urlbar[breakout][breakout-extend] {
   height: var(--urlbar-min-height) !important;
   margin: 0 !important;
-  width: var(--urlbar-width) !important;
+  width: 100% !important;
   top: calc((var(--urlbar-height) - 2) / 2) !important;
+  left: 0 !important;
+  inset: unset !important;
 }
-:root #urlbar[breakout] .urlbar-input-container, :root #urlbar[breakout][breakout-extend] .urlbar-input-container {
+#urlbar[breakout] .urlbar-input-container, #urlbar[breakout][breakout-extend] .urlbar-input-container {
   padding: var(--urlbar-container-padding) !important;
   height: var(--urlbar-min-height) !important;
 }
-:root #urlbar[breakout] .urlbar-input-container::after, :root #urlbar[breakout][breakout-extend] .urlbar-input-container::after {
+#urlbar[breakout] .urlbar-input-container::after, #urlbar[breakout][breakout-extend] .urlbar-input-container::after {
   background-image: url("chrome://userchrome/content/assets/images/firefox-4/mainwindow-dropdown-arrow.png") !important;
   list-style-image: none !important;
   content: "";
@@ -531,42 +593,52 @@
   align-self: center !important;
   margin-inline-end: -2px !important;
 }
-:root #urlbar #urlbar-go-button {
+#urlbar #urlbar-go-button {
   visibility: collapse !important;
 }
-:root #urlbar #identity-box {
+:root:not([echelon-style-2]) #urlbar #identity-box {
   background-color: -moz-dialog !important;
   background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.15)) !important;
   color: -moz-dialogText !important;
   border-radius: 2px !important;
   order: -1 !important;
 }
-:root #urlbar #identity-box:hover {
+:root:not([echelon-style-2]) #urlbar #identity-box:hover {
   background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(127.5, 127.5, 127.5, 0.2), rgba(0, 0, 0, 0.15)) !important;
 }
-:root #urlbar #identity-box:hover:active {
+:root:not([echelon-style-2]) #urlbar #identity-box:hover:active {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)) !important;
 }
-:root #urlbar #identity-box[pageproxystate=valid] {
+:root:not([echelon-style-2]) #urlbar #identity-box[pageproxystate=valid] {
   color: white !important;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25) !important;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset !important;
   background-color: hsl(219, 45%, 60%) !important;
 }
-:root #urlbar #identity-box #identity-icon-box {
+:root:not([echelon-style-2]) #urlbar #identity-box #identity-icon-box {
   height: 18px !important;
   padding: 1px 4px !important;
   background: url("chrome://userchrome/content/assets/images/firefox-4/urlbar-favicon-glow.png") left center no-repeat !important;
   background-color: transparent !important;
   outline: 0 !important;
 }
-:root #urlbar-container, :root #search-container {
+
+#urlbar-container, #search-container {
+  position: relative !important;
   margin-inline: 6px !important;
+  align-items: unset !important;
 }
-:root #urlbar, :root #searchbar {
+
+#urlbar, #searchbar {
   font: message-box !important;
 }
-:root #urlbar-background, :root #searchbar {
+
+#urlbar[breakout][breakout-extend], #urlbar[breakout][breakout-extend-disabled][open] {
+  z-index: 3 !important;
+  height: auto !important;
+}
+
+#urlbar-background, #searchbar {
   height: var(--urlbar-min-height) !important;
   padding: 2px !important;
   border: 1px solid;
@@ -579,6 +651,7 @@
   color: black !important;
   animation: none !important;
 }
+
 :root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button {
   margin-inline-end: 0 !important;
 }
@@ -593,7 +666,8 @@
 :root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] + #stop-reload-button > #go-button {
   visibility: visible !important;
 }
-:root #stop-reload-button.unified {
+
+#stop-reload-button.unified {
   height: var(--urlbar-min-height) !important;
   border: 1px solid !important;
   border-color: var(--urlbar-border-color) !important;
@@ -605,20 +679,20 @@
   background-clip: padding-box !important;
   overflow: clip !important;
 }
-:root #stop-reload-button.unified .toolbarbutton-1 {
+#stop-reload-button.unified .toolbarbutton-1 {
   padding: 0 3px !important;
   border-inline-start: 1px solid rgba(0, 0, 0, 0.25) !important;
   background-origin: border-box !important;
   margin: 0 !important;
   opacity: 1 !important;
 }
-:root #stop-reload-button.unified .toolbarbutton-1:hover {
+#stop-reload-button.unified .toolbarbutton-1:hover {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset, -1px -1px 1px rgba(255, 255, 255, 0.25) inset !important;
 }
-:root #stop-reload-button.unified .toolbarbutton-1:hover:active {
+#stop-reload-button.unified .toolbarbutton-1:hover:active {
   box-shadow: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset !important;
 }
-:root #stop-reload-button.unified .toolbarbutton-1 .toolbarbutton-icon {
+#stop-reload-button.unified .toolbarbutton-1 .toolbarbutton-icon {
   background-image: url("chrome://userchrome/content/assets/images/firefox-4/reload-stop-go.png") !important;
   list-style-image: none !important;
   width: 14px !important;
@@ -627,38 +701,39 @@
   background-color: transparent !important;
   opacity: 1 !important;
 }
-:root #stop-reload-button.unified #reload-button:hover {
+#stop-reload-button.unified #reload-button:hover {
   background-image: linear-gradient(rgb(162, 207, 241), rgb(111, 178, 225) 49%, rgb(91, 159, 217) 51%, rgb(62, 138, 200)) !important;
 }
-:root #stop-reload-button.unified #reload-button:hover .toolbarbutton-icon {
+#stop-reload-button.unified #reload-button:hover .toolbarbutton-icon {
   background-position-x: -14px !important;
 }
-:root #stop-reload-button.unified #go-button {
+#stop-reload-button.unified #go-button {
   background-image: linear-gradient(rgb(115, 213, 115), rgb(96, 190, 96) 49%, rgb(82, 174, 82) 51%, rgb(79, 155, 79)) !important;
 }
-:root #stop-reload-button.unified #go-button .toolbarbutton-icon {
+#stop-reload-button.unified #go-button .toolbarbutton-icon {
   background-position-x: -42px !important;
 }
-:root #stop-reload-button.unified #stop-button {
+#stop-reload-button.unified #stop-button {
   background-image: -moz-linear-gradient(rgb(231, 162, 140), rgb(209, 119, 100) 49%, rgb(193, 92, 78) 51%, rgb(173, 72, 58)) !important;
 }
-:root #stop-reload-button.unified #stop-button .toolbarbutton-icon {
+#stop-reload-button.unified #stop-button .toolbarbutton-icon {
   background-position-x: -28px !important;
 }
-:root #stop-reload-button #go-button,
-:root #stop-reload-button .toolbarbutton-animatable-box,
-:root #stop-reload-button #reload-button:not([displaystop=true]) + #go-button + #stop-button {
+#stop-reload-button #go-button,
+#stop-reload-button .toolbarbutton-animatable-box,
+#stop-reload-button #reload-button:not([displaystop=true]) + #go-button + #stop-button {
   visibility: collapse !important;
 }
-:root #searchbar .searchbar-search-button {
+
+#searchbar .searchbar-search-button {
   margin-inline-end: 4px !important;
 }
-:root #searchbar .searchbar-search-button .searchbar-search-icon {
+#searchbar .searchbar-search-button .searchbar-search-icon {
   margin-inline: 2px !important;
   margin-right: 0 !important;
   list-style-image: var(--searchbar-search-icon) !important;
 }
-:root #searchbar .searchbar-search-button .searchbar-search-icon-overlay {
+#searchbar .searchbar-search-button .searchbar-search-icon-overlay {
   width: 13px !important;
   height: 11px !important;
   margin-inline: 0 !important;
@@ -666,10 +741,10 @@
   background-image: url("chrome://userchrome/content/assets/images/firefox-4/mainwindow-dropdown-arrow.png") !important;
   list-style-image: none !important;
 }
-:root #searchbar .searchbar-search-button[aria-expanded=true] .searchbar-search-icon-overlay {
+#searchbar .searchbar-search-button[aria-expanded=true] .searchbar-search-icon-overlay {
   background-position-x: -13px !important;
 }
-:root #searchbar .search-go-button {
+#searchbar .search-go-button {
   all: unset !important;
   width: 16px !important;
   height: 16px !important;
@@ -679,10 +754,10 @@
   list-style-image: none !important;
   background-position-x: 0 !important;
 }
-:root #searchbar .search-go-button:hover {
+#searchbar .search-go-button:hover {
   background-position-x: -16px !important;
 }
-:root #searchbar .search-go-button:hover:active, :root #searchbar .search-go-button[open] {
+#searchbar .search-go-button:hover:active, #searchbar .search-go-button[open] {
   background-position-x: -32px !important;
 }
 
@@ -724,6 +799,293 @@
   padding: 0 !important;
   min-height: unset !important;
   background-color: transparent !important;
+}
+
+:root {
+  --appmenu-button-border-color: rgba(83, 42, 6, 0.9) !important;
+  --appmenu-button-hover-border-color: rgba(83, 42, 6, 0.9) !important;
+  --appmenu-button-active-border-color: rgba(83, 42, 6, 0.9) !important;
+  --appmenu-button-normal-background: linear-gradient(to bottom, rgb(247, 182, 82), rgb(215, 98, 10) 95%) !important;
+  --appmenu-button-hover-background: -moz-radial-gradient(center bottom, farthest-side, rgba(252, 240, 89, .5) 10%, rgba(252, 240, 89, 0) 70%),
+                                     -moz-radial-gradient(center bottom, farthest-side, rgb(236, 133, 0), rgba(255, 229, 172, 0)),
+                                     linear-gradient(rgb(246, 170, 69), rgb(209, 74, 0) 95%) !important;
+  --appmenu-button-active-background: linear-gradient(to bottom, rgb(246, 170, 69), rgb(209, 74, 0) 95%) !important;
+  --appmenu-button-normal-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
+  --appmenu-button-hover-shadow: 0 1px 0 rgba(255, 255, 255, .1) inset,
+                                 0 0 1.5px 1px rgba(250, 234, 169, .7) inset,
+                                 0 -1px 0 rgba(250, 234, 169, .5) inset !important;
+  --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+                                  0 1px 1px rgba(0, 0, 0, .2) inset !important;
+}
+
+:root[privatebrowsingmode=temporary] {
+  --appmenu-button-border-color: rgba(43, 8, 65, .9) !important;
+  --appmenu-button-hover-border-color: rgba(43, 8, 65, .9) !important;
+  --appmenu-button-active-border-color: rgba(43, 8, 65, .9) !important;
+  --appmenu-button-normal-background: linear-gradient(to bottom, rgb(153, 38, 211), rgb(105, 19, 163) 95%) !important;
+  --appmenu-button-hover-background: -moz-radial-gradient(center bottom, farthest-side, rgba(240, 193, 255, .5) 10%, rgba(240, 193, 255, 0) 70%),
+                                     -moz-radial-gradient(center bottom, farthest-side, rgb(192, 81, 247), rgba(236, 172, 255, 0)),
+                                     linear-gradient(rgb(144, 20, 207), rgb(95, 0, 158) 95%) !important;
+  --appmenu-button-active-background: linear-gradient(to bottom, rgb(144, 20, 207), rgb(95, 0, 158) 95%) !important;
+  --appmenu-button-normal-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
+  --appmenu-button-hover-shadow: 0 1px 0 rgba(255, 255, 255, .1) inset,
+                                 0 0 2px 1px rgba(240, 193, 255, .7) inset,
+                                 0 -1px 0 rgba(240, 193, 255, .5) inset !important;
+  --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+                                  0 1px 1px rgba(0, 0, 0, .2) inset !important;
+}
+
+:root:not([privatebrowsingmode=temporary])[titleShortName=aurora] {
+  --appmenu-button-border-color: hsla(214, 89%, 21%, .9) !important;
+  --appmenu-button-hover-border-color: hsla(214, 89%, 21%, .9) !important;
+  --appmenu-button-active-border-color: hsla(214, 89%, 21%, .9) !important;
+  --appmenu-button-normal-background: linear-gradient(hsl(208, 99%, 37%), hsl(214, 90%, 23%) 95%) !important;
+  --appmenu-button-hover-background: radial-gradient(farthest-side at bottom, hsla(202, 100%, 85%, .5) 10%, hsla(202, 100%, 85%, 0) 70%),
+                                     radial-gradient(farthest-side at bottom, hsla(205, 100%, 72%, .7), hsla(205, 100%, 72%, 0)),
+                                     linear-gradient(hsl(208, 98%, 34%), hsl(213, 87%, 20%) 95%) !important;
+  --appmenu-button-active-background: linear-gradient(hsl(208, 95%, 30%), hsl(214, 85%, 17%) 95%) !important;
+  --appmenu-button-normal-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
+  --appmenu-button-hover-shadow: 0 1px 0 hsla(205, 100%, 72%, .15) inset,
+                                 0 0 2px 1px hsla(205, 100%, 72%, .5) inset,
+                                 0 -1px 0 hsla(205, 100%, 72%, .2) inset !important;
+  --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+                                  0 1px 1px rgba(0, 0, 0, .2) inset !important;
+}
+:root:not([privatebrowsingmode=temporary])[titleShortName=nightly] {
+  --appmenu-button-border-color: hsla(210, 59%, 13%, .9) !important;
+  --appmenu-button-hover-border-color: hsla(210, 59%, 13%, .9) !important;
+  --appmenu-button-active-border-color: hsla(210, 59%, 13%, .9) !important;
+  --appmenu-button-normal-background: linear-gradient(hsl(211, 33%, 32%), hsl(209, 53%, 10%) 95%) !important;
+  --appmenu-button-hover-background: -moz-radial-gradient(center bottom, farthest-side, hsla(210, 48%, 90%, .5) 10%, hsla(210, 48%, 90%, 0) 70%),
+                                     -moz-radial-gradient(center bottom, farthest-side, hsla(211, 70%, 83%, .5), hsla(211, 70%, 83%, 0)),
+                                     linear-gradient(hsl(211, 33%, 32%), hsl(209, 53%, 10%) 95%) !important;
+  --appmenu-button-active-background: linear-gradient(hsl(211, 33%, 26%), hsl(209, 53%, 6%) 95%) !important;
+  --appmenu-button-normal-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset, 0 0 2px 1px hsla(211, 65%, 85%, .15) inset !important;
+  --appmenu-button-hover-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset,
+                                 0 0 2px 1px hsla(210, 48%, 90%, .4) inset,
+                                 0 -1px 0 hsla(210, 48%, 90%, .2) inset !important;
+  --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+                                  0 1px 1px rgba(0, 0, 0, .2) inset !important;
+}
+:root:not([privatebrowsingmode=temporary])[titleShortName=nara] {
+  --appmenu-button-border-color: rgba(28, 13, 56, .9) !important;
+  --appmenu-button-hover-border-color: rgba(28, 13, 56, .9) !important;
+  --appmenu-button-active-border-color: rgba(28, 13, 56, .9) !important;
+  --appmenu-button-normal-background: linear-gradient(rgb(194, 69, 105), rgb(48, 18, 59) 95%) !important;
+  --appmenu-button-hover-background: -moz-radial-gradient(center bottom, farthest-side, hsla(210, 48%, 90%, .5) 10%, hsla(210, 48%, 90%, 0) 70%),
+                                     -moz-radial-gradient(center bottom, farthest-side, hsla(211, 70%, 83%, .5), hsla(211, 70%, 83%, 0)),
+                                     linear-gradient(rgb(194, 69, 105), rgb(48, 18, 59) 95%) !important;
+  --appmenu-button-active-background: linear-gradient(hsl(211, 33%, 26%), hsl(209, 53%, 6%) 95%) !important;
+  --appmenu-button-normal-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
+  --appmenu-button-hover-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset,
+                                 0 0 2px 1px hsla(210, 48%, 90%, .4) inset,
+                                 0 -1px 0 hsla(210, 48%, 90%, .2) inset !important;
+  --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+                                  0 1px 1px rgba(0, 0, 0, .2) inset !important;
+}
+
+#appmenu-button-container {
+  border-inline: 1px solid hsla(0, 0%, 100%, 0.5) !important;
+  border-block-end: 1px solid hsla(0, 0%, 100%, 0.5) !important;
+  border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
+  border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;
+  margin: 0 0 2px !important;
+}
+:root[sizemode=normal] #appmenu-button-container {
+  margin-block-start: 1px !important;
+}
+#appmenu-button-container #appmenu-button {
+  -moz-user-focus: ignore !important;
+  min-width: 94px !important;
+  min-height: 0 !important;
+  height: var(--buttonbox-height) !important;
+  appearance: none !important;
+  background-image: var(--appmenu-button-normal-background) !important;
+  padding: 0 1.5em 0.15em !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border: 1px solid var(--appmenu-button-border-color) !important;
+  border-block-start: 0 !important;
+  box-shadow: var(--appmenu-button-normal-shadow) !important;
+  border-bottom-left-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
+  border-bottom-right-radius: calc(var(--toolbarbutton-border-radius) - 1px) !important;
+  color: white !important;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.7), 0 1px 1.5px rgba(0, 0, 0, 0.5) !important;
+  font-weight: bold !important;
+  background-clip: padding-box !important;
+}
+#appmenu-button-container #appmenu-button:hover {
+  background-image: var(--appmenu-button-hover-background) !important;
+  box-shadow: var(--appmenu-button-hover-shadow) !important;
+  border-color: var(--appmenu-button-hover-border-color) !important;
+}
+#appmenu-button-container #appmenu-button:active, #appmenu-button-container #appmenu-button[open=true] {
+  background-image: var(--appmenu-button-active-background) !important;
+  box-shadow: var(--appmenu-button-active-shadow) !important;
+  border-color: var(--appmenu-button-active-border-color) !important;
+}
+#appmenu-button-container #appmenu-button .button-menu-dropmarker {
+  content: url("chrome://userchrome/content/assets/images/firefox-4/appmenu/appmenu-dropmarker.png") !important;
+  margin-inline-start: 0.5em !important;
+}
+
+#appmenu-button-container[open=true],
+#appmenu-button[open=true] {
+  border-radius: 0 !important;
+}
+
+/* Container properties */
+#echelon-appmenu-button-menu {
+  appearance: none !important;
+}
+
+.splitmenu-menuitem {
+  flex: 1;
+  appearance: menuitem;
+  align-items: center;
+  font: menu;
+  list-style-image: none;
+  margin-right: 1px;
+}
+.splitmenu-menuitem[disabled=true] {
+  color: GrayText;
+  text-shadow: none;
+}
+@media all and (-moz-windows-classic) {
+  .splitmenu-menuitem[disabled=true] {
+    color: ThreeDShadow;
+    text-shadow: 1px 1px ThreeDHighlight;
+  }
+}
+
+echelon-splitmenu {
+  display: flex;
+}
+echelon-splitmenu[active=true] .splitmenu-menuitem, echelon-splitmenu[active=true] .splitmenu-menu {
+  background-color: highlight;
+  color: -moz-menuhovertext;
+}
+
+echelon-splitmenu .splitmenu-menu > label,
+#appmenu-editmenu > label {
+  appearance: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+echelon-splitmenu .splitmenu-menu > .menu-accel-container,
+#appmenu-editmenu > .menu-accel-container {
+  display: none !important;
+}
+
+#appmenuPrimaryPane > menuitem > .menu-accel-container, #appmenuSecondaryPane > menuitem > .menu-accel-container {
+  display: none;
+}
+
+#appmenuSecondaryPane-spacer {
+  min-height: 1em;
+}
+
+#echelon-appmenu-button-menu .menu-iconic-left {
+  appearance: auto !important;
+  -moz-default-appearance: menuimage !important;
+}
+
+#echelon-appmenu-button-menu :is([type=checkbox], [checked=true]) .menu-iconic-left {
+  -moz-default-appearance: menucheckbox !important;
+}
+
+#appmenuSecondaryPane .menu-iconic-text {
+  margin-inline-end: 6px !important;
+}
+
+@media not (-moz-windows-classic) {
+  #appmenuPrimaryPane {
+    border-inline-end: 1px solid ThreeDShadow;
+  }
+  :root[echelon-appearance-blue] #appmenuPrimaryPane {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2px;
+    border-inline-end: none;
+  }
+  :root[echelon-appearance-blue] #appmenuSecondaryPane {
+    background-color: #f1f5fb;
+    box-shadow: 1px 0 2px rgb(204, 214, 234) inset;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-inline-start: 3px;
+    border-inline-end: 2px;
+    font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+  }
+  :root[echelon-appearance-blue] #appmenuSecondaryPane:-moz-locale-dir(rtl) {
+    box-shadow: -1px 0 2px rgb(204, 214, 234) inset;
+  }
+  #appmenuSecondaryPane menupopup {
+    appearance: none !important;
+    background-color: #f1f5fb !important;
+    border: 1px solid ThreeDShadow !important;
+    padding: 2px !important;
+  }
+  #appmenuPrimaryPane menuitem:where([disabled=true]) {
+    font-style: italic !important;
+  }
+}
+#appmenuPrimaryPane toolbarbutton .toolbarbutton-icon {
+  width: 16px !important;
+  height: 16px !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/appmenu/appmenu-icons.png") !important;
+}
+
+/* Disable hover effect on "Edit" menu. */
+#appmenu-edit-label {
+  pointer-events: none !important;
+}
+
+/* Container Icons */
+#appmenu_privateBrowsing .menu-iconic-icon,
+#appmenu_print .menu-iconic-icon,
+#appmenu-quit .menu-iconic-icon,
+#appmenu_bookmarks .menu-iconic-icon,
+#appmenu_addons .menu-iconic-icon,
+#appmenu-editmenu-cut .menu-iconic-icon,
+#appmenu-editmenu-copy .menu-iconic-icon,
+#appmenu-editmenu-paste .menu-iconic-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/appmenu/appmenu-icons.png") !important;
+}
+
+#appmenu_privateBrowsing .menu-iconic-icon {
+  background-position-x: 0 !important;
+}
+
+#appmenu-cut .toolbarbutton-icon,
+#appmenu-editmenu-cut .menu-iconic-icon {
+  background-position-x: -16px !important;
+}
+
+#appmenu-copy .toolbarbutton-icon,
+#appmenu-editmenu-copy .menu-iconic-icon {
+  background-position-x: -32px !important;
+}
+
+#appmenu-paste .toolbarbutton-icon,
+#appmenu-editmenu-paste .menu-iconic-icon {
+  background-position-x: -48px !important;
+}
+
+#appmenu_print .menu-iconic-icon {
+  background-position-x: -64px !important;
+}
+
+#appmenu-quit .menu-iconic-icon {
+  background-position-x: -80px !important;
+}
+
+#appmenu_addons .menu-iconic-icon {
+  background-position-x: -96px !important;
+}
+
+#appmenu_bookmarks .menu-iconic-icon {
+  background-position-x: -112px !important;
 }
 
 .echelon-customization-hack-container {
@@ -1409,7 +1771,7 @@
   --toolbarbutton-border-radius: 3.5px !important;
   --toolbarbutton-shadow-normal: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset !important;
 }
-:root[echelon-style-1] #nav-bar #back-button {
+:root[echelon-style-1] #navigator-toolbox > #nav-bar .toolbarbutton-1#back-button {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3) !important;
 }
 :root[echelon-style-1] {
@@ -1434,6 +1796,109 @@
 :root[echelon-style-2] #TabsToolbar #new-tab-button .toolbarbutton-icon {
   background-image: url("chrome://userchrome/content/assets/images/firefox-10/tabs/newtab-inverted.png") !important;
   list-style-image: none !important;
+}
+:root[echelon-style-2] #navigator-toolbox > #nav-bar .toolbarbutton-1#forward-button {
+  border-radius: 0 !important;
+  margin-inline-end: 0 !important;
+}
+:root[echelon-style-2] {
+  --urlbar-container-padding: 0 !important;
+  --default-favicon: url("chrome://userchrome/content/assets/images/firefox-10/defaultFavicon.png") !important;
+}
+:root[echelon-style-2] #urlbar-container {
+  margin-inline-start: 0 !important;
+  pointer-events: none !important;
+}
+:root[echelon-style-2] #urlbar {
+  pointer-events: all !important;
+}
+:root[echelon-style-2] #urlbar #identity-box {
+  background-image: linear-gradient(hsl(0, 0%, 98%), hsl(0, 0%, 92%)) !important;
+  box-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.05) inset !important;
+  border-inline-end: 1px solid hsla(0, 0%, 0%, 0.1) !important;
+  padding: 2px !important;
+  border-radius: 0 !important;
+  order: -1 !important;
+  margin-inline-end: 0 !important;
+}
+:root[echelon-style-2] #urlbar #identity-box:hover {
+  background-image: linear-gradient(hsl(0, 0%, 95%), hsl(0, 0%, 87%)) !important;
+}
+:root[echelon-style-2] #urlbar #identity-box[open=true], :root[echelon-style-2] #urlbar #identity-box:hover:active {
+  background-image: linear-gradient(hsl(0, 0%, 92%), hsl(0, 0%, 82%)) !important;
+  box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.3) inset, 0 1px 3px hsla(0, 0%, 0%, 0.3) inset !important;
+}
+:root[echelon-style-2] #urlbar #identity-box[pageproxystate=invalid] #identity-icon {
+  opacity: 0.5 !important;
+}
+:root[echelon-style-2] #urlbar #identity-box.verifiedDomain {
+  background-image: linear-gradient(hsl(215, 60%, 92%), hsl(215, 58%, 88%)) !important;
+  box-shadow: 0 1px 0 hsla(215, 54%, 33%, 0.05) inset !important;
+  border-inline-end-color: hsla(215, 54%, 33%, 0.2) !important;
+  color: hsl(215, 54%, 33%) !important;
+}
+:root[echelon-style-2] #urlbar #identity-box.verifiedDomain:hover {
+  background-image: linear-gradient(hsl(215, 85%, 85%), hsl(215, 70%, 68%)) !important;
+}
+:root[echelon-style-2] #urlbar #identity-box.verifiedDomain[open=true], :root[echelon-style-2] #urlbar #identity-box.verifiedDomain:hover:active {
+  background-image: linear-gradient(hsl(215, 80%, 80%), hsl(215, 67%, 65%)) !important;
+  box-shadow: 0 1px 1px hsla(215, 54%, 33%, 0.7) inset, 0 1px 3px 1px hsla(215, 54%, 33%, 0.5) inset !important;
+}
+:root[echelon-style-2] #urlbar #identity-box.chromeUI #identity-icon-label {
+  visibility: collapse !important;
+}
+:root[echelon-style-2] #urlbar #identity-box #identity-icon {
+  margin-block: 1px !important;
+  margin-inline: 4px !important;
+}
+:root[echelon-style-2] #urlbar #identity-box #identity-icon-label {
+  padding-inline: 0 !important;
+  margin-inline-start: 1px !important;
+  margin-inline-end: 3px !important;
+}
+:root[echelon-style-2] #urlbar #identity-box #identity-icon-box {
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  outline: 0 !important;
+  color: inherit !important;
+}
+:root[echelon-style-2] #urlbar .urlbar-input-box {
+  padding-inline-start: 3px !important;
+}
+:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button:not(:hover)[disabled] {
+  opacity: 0 !important;
+}
+:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button:not(:hover)[disabled] + #urlbar-container > #urlbar {
+  margin-left: -27px !important;
+}
+:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button:not(:hover)[disabled] + #urlbar-container #urlbar-background,
+:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button:not(:hover)[disabled] + #urlbar-container .urlbar-input-container {
+  mask: url("chrome://userchrome/content/assets/images/firefox-10/urlbar/winstripe-urlbar-back-button-mask.svg") !important;
+  mask-repeat: no-repeat !important;
+  mask-position: left !important;
+}
+:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button:not(:hover)[disabled] + #urlbar-container #identity-box {
+  padding-inline-start: 5px !important;
+}
+:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button + #urlbar-container {
+  padding-inline-start: 27px !important;
+  margin-inline-start: -27px !important;
+}
+:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button + #urlbar-container #urlbar-background,
+:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button + #urlbar-container .urlbar-input-container {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-inline-start: 0 !important;
+}
+:root[echelon-style-2]:not([chromehidden~=toolbar]):not([echelon-tabchanging=true]) #nav-bar #forward-button {
+  transition: opacity 150ms ease-out !important;
+}
+:root[echelon-style-2]:not([chromehidden~=toolbar]):not([echelon-tabchanging=true]) #nav-bar #forward-button:not(:hover)[disabled] #identity-box {
+  transition: padding-inline-start !important;
+}
+:root[echelon-style-2]:not([chromehidden~=toolbar]):not([echelon-tabchanging=true]) #nav-bar #forward-button + #urlbar-container > #urlbar {
+  transition: margin-inline-start 150ms ease-out !important;
 }
 
 /* ::::: Firefox 14 ::::: */

@@ -134,6 +134,16 @@ class BrandUtils
 			"productName": "Nightly",
 			"vendorName": "Mozilla"
 		},
+		"echelon": {
+			"fullName": "Echelon",
+			"productName": "Echelon",
+			"vendorName": "The Echelon Team"
+		},
+		"nara": {
+			"fullName": "Nara",
+			"productName": "Nara",
+			"vendorName": "Network Neighborhood"
+		},
 		"fallback": {
 			"fullName": Services.appinfo.name,
 			"productName": Services.appinfo.name,
@@ -176,11 +186,16 @@ class BrandUtils
 		let prefChoice = this.getBrowserName();
 		let fullName = this.branding[prefChoice]["fullName"];
 
+		if (prefChoice == "fallback") {
+			prefChoice = Services.appinfo.name;
+		}
+
 		return {
 			"default": fullName,
 			"private": `${fullName} (Private Browsing)`,
 			"contentDefault": `CONTENTTITLE - ${fullName}`,
-			"contentPrivate": `CONTENTTITLE - ${fullName} (Private Browsing)`
+			"contentPrivate": `CONTENTTITLE - ${fullName} (Private Browsing)`,
+			"appmenuName": prefChoice
 		};
 	}
 }

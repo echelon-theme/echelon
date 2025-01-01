@@ -11,19 +11,6 @@ waitForElement("#tabbrowser-arrowscrollbox").then(e => {
     {
         for (tab of e.children)
         {
-            let echelonTabBackground = MozXULElement.parseXULToFragment(`
-                <hbox class="tab-background-start" />
-                <hbox class="tab-background-middle" />
-                <hbox class="tab-background-end" />
-            `);
-            
-            // Tab Background for Australis
-            let tabBackgroundElm = tab.querySelector(".tab-background");
-            if (!tab.querySelector(".tab-background-start"))
-            {
-                tabBackgroundElm.prepend(echelonTabBackground);
-            }
-
             // Tab Icon Overlay
             let overlay = tab.querySelector(".tab-icon-stack .tab-icon-overlay");
             let labelContainer = tab.querySelector(".tab-label-container");

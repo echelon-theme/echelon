@@ -11,15 +11,33 @@
 	}
 
 	// maximized behavior
-	#toolbar-menubar,
+	#toolbar-menubar[inactive="true"],
 	&:not([sizemode="maximized"]) #TabsToolbar,
-	&[sizemode="maximized"] #titlebar-content {
+	&[sizemode="maximized"] #titlebar-content,
+	&[sizemode="maximized"] #toolbar-menubar:not([inactive="true"]) #TabsToolbar {
 		.titlebar-buttonbox-container {
 			visibility: collapse !important;
 		}
 	}
 
+	// grid area for maximized layout
 	&[sizemode="maximized"] {
-		
+		#titlebar {
+			display: grid !important;
+			grid-template-areas: "firefox-button menu-bar" "firefox-button tabbar" !important;
+			grid-auto-columns: min-content auto !important;
+		}
+
+		#titlebar-content {
+			grid-area: firefox-button !important;
+		}
+
+		#toolbar-menubar {
+			grid-area: menu-bar !important;
+		}
+
+		#TabsToolbar {
+			grid-area: tabbar !important;
+		}
 	}
 }
