@@ -559,23 +559,59 @@
 :root :root:not([echelon-style-2]) #toolbar-menubar #save-to-pocket-button[open] {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/inverted/pocket_active.png") !important;
 }
-:root[titleShortName=firefox] {
-  --icon16: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon16.png") !important;
+:root[titleShortName=firefox] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+  content: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon16.png") !important;
 }
-:root[titleShortName=nightly] {
-  --icon16: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/icon16.png") !important;
+:root[titleShortName=firefox] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon16.png") !important;
 }
-:root[titleShortName=aurora] {
-  --icon16: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/icon16.png") !important;
+:root[titleShortName=firefox][echelon-appearance-newlogo] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+  content: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/icon16.png") !important;
 }
-:root[titleShortName=echelon] {
-  --icon16: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/icon16.png") !important;
+:root[titleShortName=firefox][echelon-appearance-newlogo] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/icon16.png") !important;
 }
-:root .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-  content: var(--icon16) !important;
+:root[titleShortName=nightly] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+  content: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/icon16.png") !important;
 }
-:root #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-  list-style-image: var(--icon16) !important;
+:root[titleShortName=nightly] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/icon16.png") !important;
+}
+:root[titleShortName=nightly][echelon-appearance-newlogo] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+  content: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/new/icon16.png") !important;
+}
+:root[titleShortName=nightly][echelon-appearance-newlogo] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/new/icon16.png") !important;
+}
+:root[titleShortName=aurora] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+  content: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/icon16.png") !important;
+}
+:root[titleShortName=aurora] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/icon16.png") !important;
+}
+:root[titleShortName=aurora][echelon-appearance-newlogo] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+  content: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/new/icon16.png") !important;
+}
+:root[titleShortName=aurora][echelon-appearance-newlogo] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/new/icon16.png") !important;
+}
+:root[titleShortName=echelon] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+  content: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/icon16.png") !important;
+}
+:root[titleShortName=echelon] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/icon16.png") !important;
+}
+:root .tab-icon-image[src="chrome://mozapps/skin/extensions/extension.svg"] {
+  content: url("chrome://userchrome/content/assets/images/firefox-4/extensions/extensionGeneric-16.png") !important;
+}
+:root #identity-icon[style="list-style-image: url('chrome://mozapps/skin/extensions/extension.svg');"] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/extensions/extensionGeneric-16.png") !important;
+}
+:root[echelon-appearance-xp] .tab-icon-image[src="chrome://mozapps/skin/extensions/extension.svg"] {
+  content: url("chrome://userchrome/content/assets/images/firefox-4/xp/extensions/extensionGeneric-16.png") !important;
+}
+:root[echelon-appearance-xp] #identity-icon[style="list-style-image: url('chrome://mozapps/skin/extensions/extension.svg');"] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/extensions/extensionGeneric-16.png") !important;
 }
 :root #page-action-buttons .urlbar-page-action {
   all: revert !important;
@@ -2048,6 +2084,67 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 
 /* ::::: Firefox 14 ::::: */
+:root[echelon-style-3] {
+  --toolbarbutton-width: 32px !important;
+  --toolbarbutton-background: hsla(210,32%,93%,0) !important;
+  --toolbarbutton-background-active: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1)) !important;
+  --toolbarbutton-border-radius: 2px !important;
+  --toolbarbutton-border-color: hsla(210,54%,20%,0) hsla(210,54%,20%,0) hsla(210,54%,20%,0) !important;
+  --toolbarbutton-shadow-normal: 0 1px hsla(0,0%,100%,0) inset, 0 1px hsla(210,54%,20%,0), 0 0 2px hsla(210,54%,20%,0) !important;
+  --toolbarbutton-shadow-hot: 0 1px hsla(0,0%,100%,.3) inset, 0 1px hsla(210,54%,20%,.03), 0 0 2px hsla(210,54%,20%,.1) !important;
+  --toolbarbutton-shadow-active: 0 1px 1px hsla(210,54%,20%,.1) inset, 0 0 1px hsla(210,54%,20%,.2) inset, 0 1px 0 hsla(210,54%,20%,0), 0 0 2px hsla(210,54%,20%,0) !important;
+}
+:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
+  padding: 2px 6px !important;
+  transition-property: background-color, border-color, box-shadow !important;
+  transition-duration: 150ms !important;
+}
+:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true]):hover, :root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button:not([open], :active) {
+  background-image: -moz-linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
+  background-color: var(--toolbarbutton-background) !important;
+  --toolbarbutton-border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25) !important;
+}
+:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true]):hover:active, :root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true])[open] {
+  background-image: var(--toolbarbutton-background-active) !important;
+  background-color: hsla(210, 54%, 20%, 0.15) !important;
+  --toolbarbutton-border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
+  transition: none !important;
+}
+:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button:not([open], [disabled=true], :active):hover {
+  background-color: hsla(210, 48%, 96%, 0.75) !important;
+  background-image: none !important;
+  --toolbarbutton-border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
+}
+:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button {
+  background-image: -moz-linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
+  box-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.3) inset, 0 0 0 1px hsla(0, 0%, 100%, 0.3) inset, 0 0 0 1px hsla(210, 54%, 20%, 0.25), 0 1px 0 hsla(210, 54%, 20%, 0.35) !important;
+  transition-property: background-color, box-shadow !important;
+  transition-duration: 250ms !important;
+}
+:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button:not([open], [disabled=true], :active):hover {
+  background-color: hsla(210, 48%, 96%, 0.75) !important;
+  box-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.3) inset, 0 0 0 1px hsla(0, 0%, 100%, 0.3) inset, 0 0 0 1px hsla(210, 54%, 20%, 0.3), 0 1px 0 hsla(210, 54%, 20%, 0.4), 0 0 4px hsla(210, 54%, 20%, 0.2) !important;
+}
+:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button:not([disabled=true]):hover:active, :root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button:not([disabled=true])[open] {
+  background-image: var(--toolbarbutton-background-active) !important;
+  background-color: hsla(210, 54%, 20%, 0.15) !important;
+  box-shadow: 0 1px 1px hsla(210, 54%, 20%, 0.1) inset, 0 0 1px hsla(210, 54%, 20%, 0.2) inset, 0 0 0 1px hsla(210, 54%, 20%, 0.4), 0 1px 0 hsla(210, 54%, 20%, 0.2) !important;
+  transition: none !important;
+}
+:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button[disabled=true] {
+  box-shadow: 0 0 0 1px hsla(210, 54%, 20%, 0.55), 0 1px 0 hsla(210, 54%, 20%, 0.65) !important;
+  transition: none !important;
+}
+:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#bookmarks-menu-button {
+  min-width: 43px !important;
+}
+:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#bookmarks-menu-button::after {
+  display: flex !important;
+  content: url("chrome://userchrome/content/assets/images/firefox-14/toolbarbutton-dropdown-arrow.png") !important;
+  margin-block-start: 1px !important;
+  margin-inline-start: 3px !important;
+}
+
 /* ::::: Firefox 29 ::::: */
 /* ::::: Firefox 56 ::::: */
 

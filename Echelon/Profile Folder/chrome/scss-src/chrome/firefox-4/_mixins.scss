@@ -114,12 +114,12 @@
 
 @mixin replace-favicon($old, $new, $urlbar: true) {
     .tab-icon-image[src="#{$old}"] {
-        content: var($new) !important;
+        content: url($new) !important;
     }
 
     @if ($urlbar) {
         #identity-icon[style="list-style-image: url('#{$old}');"] {
-            list-style-image: var($new) !important;
+            list-style-image: url($new) !important;
         }
     }
 }

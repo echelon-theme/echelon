@@ -15,11 +15,12 @@ let ECHELON_BOOT_CONFIG = {
 			style: true,
 			bools: [
 				"Echelon.Appearance.Blue",
+				"Echelon.Appearance.NewLogo",
 				"Echelon.Option.HideUnifiedExtensions"
 			]
 		},
 		nativeControls: true
-	}
+	},
 };
 
 {
