@@ -9,6 +9,8 @@
 // @backgroundmodule
 // ==/UserScript==
 
+let brandBundle = Services.strings.createBundle("chrome://branding/locale/brand.properties");
+
 function renderElement(nodeName, attrMap = {}, childrenArr = [])
 {
 	let namespace = "html";
@@ -117,7 +119,7 @@ class PrefUtils
 }
 
 class BrandUtils
-{
+{	
 	static branding = {
 		"firefox": {
 			"fullName": "Mozilla Firefox",
@@ -146,7 +148,7 @@ class BrandUtils
 		},
 		"fallback": {
 			"fullName": Services.appinfo.name,
-			"productName": Services.appinfo.name,
+			"productName": brandBundle.GetStringFromName("brandShorterName"),
 			"vendorName": Services.appinfo.vendor
 		}
 	};

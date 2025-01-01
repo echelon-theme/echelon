@@ -31,9 +31,10 @@ function updateIcon()
 
 	try {
 		let documentURIHost = gBrowser.selectedBrowser.documentURI;
-		let displayHost = documentURIHost.host.replace(/^www\./i, "");
+		let displayHost = null;
 
 		if (documentURIHost.scheme == "https") {
+			displayHost = documentURIHost.host.replace(/^www\./i, "");
 			document.querySelector("#identity-icon-label").setAttribute("value", displayHost);
 			document.querySelector("#identity-icon-label").removeAttribute("collapsed");
 		}
