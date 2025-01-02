@@ -206,11 +206,14 @@
 :root #navigator-toolbox {
   border-bottom: 0 !important;
 }
-:root:not([disablechrome]) #navigator-toolbox::after {
+:root #navigator-toolbox::after {
   content: "" !important;
   display: flex !important;
   height: 1px !important;
   background-color: ThreeDShadow !important;
+}
+:root:not([echelon-style-4])[disablechrome] #navigator-toolbox::after {
+  display: none !important;
 }
 :root[sizemode=normal]:not([lwtheme-image]) #navigator-toolbox::after {
   border-inline: 1px solid var(--toolbar-border-color) !important;
@@ -241,7 +244,7 @@
 :root #nav-bar, :root #PersonalToolbar {
   background-color: var(--toolbar-background-color) !important;
 }
-:root[disablechrome] #navigator-toolbox toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
+:root:not([echelon-style-4])[disablechrome] #navigator-toolbox toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
   visibility: collapse;
 }
 

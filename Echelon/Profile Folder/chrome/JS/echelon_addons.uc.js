@@ -6,10 +6,9 @@
 // ==/UserScript==
 
 function isAddons() {
-    let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
     let currentTabURL = gBrowser.currentURI.spec;
 
-    if (currentTabURL == "about:addons" || style > ECHELON_LAYOUT_AUSTRALIS) {
+    if (currentTabURL == "about:addons") {
         document.documentElement.setAttribute("disablechrome", "true");
     }
     else {
@@ -23,4 +22,3 @@ document.addEventListener("TabOpen", isAddons, false);
 document.addEventListener("TabClose", isAddons, false);
 
 document.addEventListener("DOMContentLoaded", isAddons, false);
-Services.prefs.addObserver("Echelon.Appearance.Style", isAddons, false);
