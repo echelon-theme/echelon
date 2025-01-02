@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://userchrome/content/pages/home/home.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://echelon/locale/dtd/home.dtd">
+
+<html xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+	  xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>&abouthome.pageTitle;</title>
+		<link rel="icon" type="image/png" href="chrome://branding/content/icon32.png" />
+		<script id="refresh-tab-name" src="chrome://userchrome/content/pages/common/_selfLoadTitle.js"></script>
+	</head>
+	<body>
+		<script>
+			var { AppConstants } = ChromeUtils.importESModule("resource://gre/modules/AppConstants.sys.mjs");
+			const homeBundle = Services.strings.createBundle("chrome://echelon/locale/properties/home.properties");
+		</script>
+
+		<script src="chrome://userchrome/content/pages/home/home.js" defer="true"></script>
+	</body>
+</html>

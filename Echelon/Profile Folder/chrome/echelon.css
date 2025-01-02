@@ -2225,6 +2225,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-size: cover !important;
 }
 :root[echelon-style-3][echelon-appearance-newlogo] #urlbar #identity-box.chromeUI #identity-icon-label, :root[echelon-style-3][echelon-style-4] #urlbar #identity-box.chromeUI #identity-icon-label {
+  display: flex !important;
   visibility: visible !important;
 }
 
