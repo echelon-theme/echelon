@@ -189,13 +189,13 @@
 
     #navigator-toolbox {
         border-bottom: 0 !important; // remove bottom border and use a hacky way (mozilla mfs used it too)
+    }
 
-        &::after {
-            content: '' !important;
-            display: flex !important;
-            height: 1px !important;
-            background-color: ThreeDShadow !important;
-        }
+    &:not([disablechrome]) #navigator-toolbox::after {
+        content: '' !important;
+        display: flex !important;
+        height: 1px !important;
+        background-color: ThreeDShadow !important;
     }
 
     // Toolbar borders
@@ -240,5 +240,10 @@
 
     #nav-bar, #PersonalToolbar {
         background-color: var(--toolbar-background-color) !important;
+    }
+
+    // Hide Toolbars when chrome is disabled
+    &[disablechrome] #navigator-toolbox toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
+        visibility: collapse;
     }
 }

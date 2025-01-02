@@ -50,7 +50,7 @@ function createHomePage() {
 
                 <div id="bottomSection">
                 <div id="aboutMozilla">
-                    <a href="http://www.mozilla.com/about/">${homeBundle.GetStringFromName("aboutMozilla")}</a>
+                    <html:a href="http://www.mozilla.com/about/">${homeBundle.GetStringFromName("aboutMozilla")}</html:a>
                 </div>
                 </div>
         `

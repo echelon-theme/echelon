@@ -206,7 +206,7 @@
 :root #navigator-toolbox {
   border-bottom: 0 !important;
 }
-:root #navigator-toolbox::after {
+:root:not([disablechrome]) #navigator-toolbox::after {
   content: "" !important;
   display: flex !important;
   height: 1px !important;
@@ -240,6 +240,9 @@
 }
 :root #nav-bar, :root #PersonalToolbar {
   background-color: var(--toolbar-background-color) !important;
+}
+:root[disablechrome] #navigator-toolbox toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
+  visibility: collapse;
 }
 
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -941,10 +944,10 @@
                                      -moz-radial-gradient(center bottom, farthest-side, rgb(236, 133, 0), rgba(255, 229, 172, 0)),
                                      linear-gradient(rgb(246, 170, 69), rgb(209, 74, 0) 95%) !important;
   --appmenu-button-active-background: linear-gradient(to bottom, rgb(246, 170, 69), rgb(209, 74, 0) 95%) !important;
-  --appmenu-button-normal-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
-  --appmenu-button-hover-shadow: 0 1px 0 rgba(255, 255, 255, .1) inset,
-                                 0 0 1.5px 1px rgba(250, 234, 169, .7) inset,
-                                 0 -1px 0 rgba(250, 234, 169, .5) inset !important;
+  --appmenu-button-normal-shadow: 0 1px 0 rgba(255,255,255,.25) inset, 0 0 2px 1px rgba(255,255,255,.25) inset !important;
+  --appmenu-button-hover-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
+                                 0 0 2px 1px rgba(250,234,169,.7) inset,
+                                 0 -1px 0 rgba(250,234,169,.5) inset !important;
   --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
                                   0 1px 1px rgba(0, 0, 0, .2) inset !important;
 }
@@ -1883,6 +1886,20 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   color: GrayText;
   font-variant: small-caps;
   height: 41px;
+}
+
+.unified-nav-current {
+  font-weight: bold !important;
+}
+
+.unified-nav-back[_moz-menuactive]:-moz-locale-dir(ltr),
+.unified-nav-forward[_moz-menuactive]:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/menupopup/menu-back.png") !important;
+}
+
+.unified-nav-forward[_moz-menuactive]:-moz-locale-dir(ltr),
+.unified-nav-back[_moz-menuactive]:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/menupopup/menu-forward.png") !important;
 }
 
 /* ::::: Firefox 5 ::::: */

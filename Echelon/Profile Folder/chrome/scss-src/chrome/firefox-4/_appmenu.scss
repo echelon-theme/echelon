@@ -10,10 +10,10 @@
                                        linear-gradient(rgb(246, 170, 69), rgb(209, 74, 0) 95%) !important;
     --appmenu-button-active-background: linear-gradient(to bottom, rgb(246, 170, 69), rgb(209, 74, 0) 95%) !important;
     
-    --appmenu-button-normal-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 0 0 1px rgba(255, 255, 255, 0.25) inset !important;
-    --appmenu-button-hover-shadow: 0 1px 0 rgba(255, 255, 255, .1) inset,
-                                   0 0 1.5px 1px rgba(250, 234, 169, .7) inset,
-                                   0 -1px 0 rgba(250, 234, 169, .5) inset !important;
+    --appmenu-button-normal-shadow: 0 1px 0 rgba(255,255,255,.25) inset, 0 0 2px 1px rgba(255,255,255,.25) inset !important;
+    --appmenu-button-hover-shadow: 0 1px 0 rgba(255,255,255,.1) inset,
+                                   0 0 2px 1px rgba(250,234,169,.7) inset,
+                                   0 -1px 0 rgba(250,234,169,.5) inset !important;
     --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
                                     0 1px 1px rgba(0, 0, 0, .2) inset !important;
 }
