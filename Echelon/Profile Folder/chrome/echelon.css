@@ -34,6 +34,9 @@
 :root #titlebar {
   -moz-window-dragging: drag !important;
 }
+:root:not([tabsintitlebar=true]) #appmenu-button-container {
+  visibility: collapse !important;
+}
 :root #toolbar-menubar[inactive=true] .titlebar-buttonbox-container, :root:not([sizemode=maximized]) #TabsToolbar .titlebar-buttonbox-container, :root[sizemode=maximized] #titlebar-content .titlebar-buttonbox-container, :root[sizemode=maximized] #toolbar-menubar:not([inactive=true]) #TabsToolbar .titlebar-buttonbox-container {
   visibility: collapse !important;
 }

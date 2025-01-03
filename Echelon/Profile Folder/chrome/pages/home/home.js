@@ -5,6 +5,7 @@ Components.utils.import("resource:///modules/sessionstore/SessionStore.jsm", thi
 
 let root = document.documentElement;
 let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Homepage.Style");
+let snippets = Services.prefs.getBoolPref("Echelon.Homepage.HideCustomSnippets");
 let product = BrandUtils.getBrandingKey("fullName");
 let titles = BrandUtils.getDefaultTitles();
 
@@ -144,7 +145,25 @@ function insertCustomSnippets()
                 snippetElem.querySelector("a").href = snippet.link;
             }
 
-            document.getElementById("defaultSnippets").appendChild(snippetElem);
+            // Option to hide custom snippets
+
+            try
+			{
+                if (!snippets) {
+                    document.getElementById("defaultSnippets").appendChild(snippetElem);
+                }
+			}
+			catch (e)
+			{
+				if (e.name == "NS_ERROR_UNEXPECTED") // preference does not exist
+				{
+					try
+					{
+						PrefUtils.trySetBoolPref("Echelon.Appearance.TabsOnTop", true);
+					}
+					catch (e) {}
+				}
+			}
         }
 
         showSnippets();

@@ -10,6 +10,11 @@
 		-moz-window-dragging: drag !important;
 	}
 
+	// hide app menu when titlebar enabled
+	&:not([tabsintitlebar="true"]) #appmenu-button-container {
+		visibility: collapse !important;
+	}
+
 	// maximized behavior
 	#toolbar-menubar[inactive="true"],
 	&:not([sizemode="maximized"]) #TabsToolbar,
