@@ -712,6 +712,15 @@
   --searchbar-go-button: url("chrome://userchrome/content/assets/images/firefox-4/Search-glass.png") !important;
   --default-favicon: url("chrome://userchrome/content/assets/images/firefox-4/defaultFavicon.png") !important;
 }
+:root[echelon-appearance-blue] #urlbar-input::placeholder,
+:root[echelon-appearance-blue] .searchbar-textbox::placeholder {
+  font-style: italic !important;
+}
+
+#urlbar-input::placeholder,
+.searchbar-textbox::placeholder {
+  color: #777 !important;
+}
 
 #urlbar[breakout], #urlbar[breakout][breakout-extend] {
   height: var(--urlbar-min-height) !important;
