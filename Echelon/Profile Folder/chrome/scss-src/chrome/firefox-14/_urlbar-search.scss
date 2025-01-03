@@ -39,9 +39,33 @@
                 }
             }
 
-            &[pageproxystate="valid"]:not(.chromeUI) {
+            &[pageproxystate="valid"]:not(.chromeUI, .verifiedIdentity) {
                 #identity-icon {
                     @include set-background("firefox-14/urlbar/identity-icons-https.png");
+                }
+            }
+
+            &.verifiedIdentity {
+                color: hsl(92,100%,30%) !important;
+                background-image: -moz-linear-gradient(hsla(92,81%,16%,0),
+                                hsla(92,81%,16%,.2) 25%,
+                                hsla(92,81%,16%,.2) 75%,
+                                hsla(92,81%,16%,0)) !important;
+                margin-inline-end: 3px !important;
+
+                background-position: right !important;
+                background-size: 1px !important;
+                background-repeat: no-repeat !important;
+
+                #identity-icon {
+                    margin-inline-end: 3px !important;
+                    @include set-background("firefox-14/urlbar/identity-icons-https-ev.png");
+                    background-size: cover !important;
+                }
+
+                #identity-icon-label {
+                    display: flex !important;
+                    visibility: visible !important;
                 }
             }
 

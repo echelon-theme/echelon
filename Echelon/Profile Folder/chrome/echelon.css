@@ -765,7 +765,12 @@
   color: white !important;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25) !important;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset !important;
+}
+:root:not([echelon-style-2]) #urlbar #identity-box.verifiedDomain {
   background-color: hsl(219, 45%, 60%) !important;
+}
+:root:not([echelon-style-2]) #urlbar #identity-box.verifiedIdentity {
+  background-color: hsl(92, 45%, 52%) !important;
 }
 :root:not([echelon-style-2]) #urlbar #identity-box.chromeUI #identity-icon-label {
   display: none !important;
@@ -2044,6 +2049,19 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-image: linear-gradient(hsl(215, 80%, 80%), hsl(215, 67%, 65%)) !important;
   box-shadow: 0 1px 1px hsla(215, 54%, 33%, 0.7) inset, 0 1px 3px 1px hsla(215, 54%, 33%, 0.5) inset !important;
 }
+:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedIdentity {
+  background-image: linear-gradient(hsl(91, 70%, 90%), hsl(93, 60%, 81%)) !important;
+  box-shadow: 0 1px 0 hsla(92, 81%, 16%, 0.05) inset;
+  border-inline-end-color: hsla(92, 81%, 16%, 0.2);
+  color: hsl(92, 100%, 20%);
+}
+:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedIdentity:hover {
+  background-image: linear-gradient(hsl(92, 69%, 77%), hsl(92, 44%, 51%)) !important;
+}
+:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedIdentity[open=true], :root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedIdentity:hover:active {
+  background-image: linear-gradient(hsl(92, 65%, 70%), hsl(92, 40%, 48%)) !important;
+  box-shadow: 0 1px 1px hsla(92, 81%, 16%, 0.6) inset, 0 1px 3px 1px hsla(92, 81%, 16%, 0.5) inset !important;
+}
 :root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.chromeUI #identity-icon-label {
   visibility: collapse !important;
 }
@@ -2235,9 +2253,27 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-image: url("chrome://userchrome/content/assets/images/firefox-14/urlbar/identity-icons-generic.png") !important;
   list-style-image: none !important;
 }
-:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box[pageproxystate=valid]:not(.chromeUI) #identity-icon {
+:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box[pageproxystate=valid]:not(.chromeUI, .verifiedIdentity) #identity-icon {
   background-image: url("chrome://userchrome/content/assets/images/firefox-14/urlbar/identity-icons-https.png") !important;
   list-style-image: none !important;
+}
+:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box.verifiedIdentity {
+  color: hsl(92, 100%, 30%) !important;
+  background-image: -moz-linear-gradient(hsla(92, 81%, 16%, 0), hsla(92, 81%, 16%, 0.2) 25%, hsla(92, 81%, 16%, 0.2) 75%, hsla(92, 81%, 16%, 0)) !important;
+  margin-inline-end: 3px !important;
+  background-position: right !important;
+  background-size: 1px !important;
+  background-repeat: no-repeat !important;
+}
+:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box.verifiedIdentity #identity-icon {
+  margin-inline-end: 3px !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-14/urlbar/identity-icons-https-ev.png") !important;
+  list-style-image: none !important;
+  background-size: cover !important;
+}
+:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box.verifiedIdentity #identity-icon-label {
+  display: flex !important;
+  visibility: visible !important;
 }
 :root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-label {
   padding-inline-start: 0 !important;

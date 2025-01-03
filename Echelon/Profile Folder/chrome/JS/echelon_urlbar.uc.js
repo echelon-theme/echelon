@@ -7,6 +7,9 @@
 
 var { BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 
+let strings = Services.strings.createBundle("chrome://echelon/locale/properties/urlbar.properties");
+let lang = Services.locale.requestedLocale;
+
 function updateIcon()
 {
 	try
@@ -18,11 +21,11 @@ function updateIcon()
 			let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
 			if (style < ECHELON_LAYOUT_FF14)
 			{
-				document.querySelector("#identity-icon").setAttribute("style", `list-style-image: url('${favicon}');`);
+				gIdentityHandler._identityIcon.setAttribute("style", `list-style-image: url('${favicon}');`);
 
 				if (!gBrowser.selectedTab.image || gBrowser.selectedTab.image == null)
 				{
-					document.querySelector("#identity-icon").setAttribute("style", `list-style-image: var(--default-favicon);`);
+					gIdentityHandler._identityIcon.setAttribute("style", `list-style-image: var(--default-favicon);`);
 				}
 			}
 		}, 1);
@@ -32,17 +35,37 @@ function updateIcon()
 	try {
 		let documentURIHost = gBrowser.selectedBrowser.documentURI;
 		let displayHost = null;
+		let iData = null;
 
-		if (documentURIHost.scheme == "https") {
+		if (gIdentityHandler._uriHasHost && gIdentityHandler._isSecureConnection) {
 			displayHost = documentURIHost.host.replace(/^www\./i, "");
-			document.querySelector("#identity-icon-label").setAttribute("value", displayHost);
-			document.querySelector("#identity-icon-label").removeAttribute("collapsed");
+			gIdentityHandler._identityIconLabel.setAttribute("value", displayHost);
+			gIdentityHandler._identityIconLabel.removeAttribute("collapsed");
 		}
 
-		if (documentURIHost.scheme == "about") {
+		if (gIdentityHandler._isSecureInternalUI) {
 			let browserName = BrandUtils.getBrandingKey("productName");
 
-			document.querySelector("#identity-icon-label").setAttribute("value", browserName);
+			gIdentityHandler._identityIconLabel.setAttribute("value", browserName);
+		}
+
+		
+		if (gIdentityHandler._uriHasHost && gIdentityHandler._isEV) {
+			iData = gIdentityHandler.getIdentityData();
+
+			if (iData.subjectOrg && iData.state) {
+				if (lang != Services.locale.requestedLocale)
+				{
+					lang = Services.locale.requestedLocale;
+					strings = Services.strings.createBundle("chrome://echelon/locale/properties/urlbar.properties");
+				}
+
+				let evString = strings.formatStringFromName("identity.identified.org_and_country", [iData.subjectOrg, iData.country]);
+
+				gIdentityHandler._identityIconLabel.setAttribute("value", evString);
+
+				gIdentityHandler._identityBox.classList.replace("verifiedDomain", "verifiedIdentity");
+			}
 		}
 	}
 	catch (e) {}

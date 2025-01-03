@@ -87,6 +87,24 @@
                                 0 1px 3px 1px hsla(215,54%,33%,.5) inset !important;
                 }
             }
+
+            &.verifiedIdentity {
+                background-image: linear-gradient(hsl(91,70%,90%), hsl(93,60%,81%)) !important;
+                box-shadow: 0 1px 0 hsla(92,81%,16%,.05) inset;
+                border-inline-end-color: hsla(92,81%,16%,.2);
+                color: hsl(92,100%,20%);
+
+                &:hover {
+                    background-image: linear-gradient(hsl(92,69%,77%), hsl(92,44%,51%)) !important;
+                }
+
+                &[open="true"],
+                &:hover:active {
+                    background-image: linear-gradient(hsl(92,65%,70%), hsl(92,40%,48%)) !important;
+                    box-shadow: 0 1px 1px hsla(92,81%,16%,.6) inset,
+                                0 1px 3px 1px hsla(92,81%,16%,.5) inset !important;
+                }
+            }
     
             &.chromeUI {
                 #identity-icon-label {

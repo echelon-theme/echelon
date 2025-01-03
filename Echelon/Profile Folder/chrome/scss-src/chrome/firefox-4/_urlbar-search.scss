@@ -78,7 +78,14 @@
             color: white !important;
             text-shadow: 0 1px 0 rgba(0,0,0,.25) !important;
             box-shadow: 0 0 0 1px rgba(0,0,0,.2) inset !important;
+        }
+
+        &.verifiedDomain {
             background-color: hsl(219,45%,60%) !important;
+        }
+
+        &.verifiedIdentity {
+            background-color: hsl(92,45%,52%) !important;
         }
 
         &.chromeUI {
