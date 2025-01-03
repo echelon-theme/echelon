@@ -494,6 +494,12 @@
 :root #unified-extensions-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/addons.png") !important;
 }
+:root #fxa-toolbar-menu-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/sync.png") !important;
+}
+:root #fxa-toolbar-menu-button[status=active] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/sync-throbber.png") !important;
+}
 :root :root:not([echelon-style-2]) #TabsToolbar #back-button,
 :root :root:not([echelon-style-2]) #toolbar-menubar #back-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/back.png") !important;
@@ -672,6 +678,9 @@
 :root #page-action-buttons #star-button[starred=true] {
   background-image: url("chrome://userchrome/content/assets/images/firefox-4/editBookmark.png") !important;
   list-style-image: none !important;
+}
+:root #fxa-toolbar-menu-button #fxa-avatar-image {
+  display: none !important;
 }
 :root .close-icon {
   width: 16px !important;

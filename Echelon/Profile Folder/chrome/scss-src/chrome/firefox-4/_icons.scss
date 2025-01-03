@@ -34,7 +34,9 @@
         "PanelUI-menu-button": "firefox-29/toolbar/panelui.png",
         "save-to-pocket-button": "firefox-29/toolbar/pocket.png",
         "save-to-pocket-button[open]": "firefox-29/toolbar/pocket_active.png",
-        "unified-extensions-button": "firefox-29/toolbar/addons.png"
+        "unified-extensions-button": "firefox-29/toolbar/addons.png",
+        "fxa-toolbar-menu-button": "firefox-4/toolbar/sync.png",
+        "fxa-toolbar-menu-button[status="active"]": "firefox-4/toolbar/sync-throbber.png",
     ));
 
     @include toolbar-icons-inverted((    
@@ -124,6 +126,13 @@
             &[starred="true"] {
                 @include set-background("firefox-4/editBookmark.png");
             }
+        }
+    }
+
+    // remove dog ass account picture from sync button
+    #fxa-toolbar-menu-button {
+        #fxa-avatar-image {
+            display: none !important;
         }
     }
 
