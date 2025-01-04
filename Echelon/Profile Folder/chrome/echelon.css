@@ -206,6 +206,62 @@
   border-bottom-left-radius: 0 !important;
   border-left: 0 !important;
 }
+:root #downloads-indicator-anchor-echelon {
+  min-width: 18px !important;
+  min-height: 18px !important;
+}
+:root #downloads-indicator-progress-area-echelon {
+  align-items: center !important;
+  margin-top: 3px !important;
+}
+:root #downloads-indicator-counter-echelon {
+  height: 9px !important;
+  margin: -3px 0px 0px 0px !important;
+  color: hsl(0, 0%, 30%) !important;
+  text-shadow: hsla(0, 0%, 100%, 0.5) 0 1px !important;
+  font-size: 9px !important;
+  line-height: 9px !important;
+  text-align: center !important;
+  justify-content: center !important;
+  margin-bottom: 1px !important;
+}
+:root #downloads-indicator-progress-echelon {
+  width: 16px !important;
+  height: 5px !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin-top: 1px !important;
+  margin-bottom: 2px !important;
+  border-radius: 2px !important;
+  box-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.4) !important;
+}
+:root #downloads-indicator-progress-echelon > .progress-bar {
+  width: var(--percent) !important;
+  background-clip: padding-box, border-box !important;
+  background-color: rgb(90, 201, 66) !important;
+  background-image: linear-gradient(transparent 1px, rgba(255, 255, 255, 0.4) 1px, rgba(255, 255, 255, 0.4) 2px, transparent 2px), none !important;
+  border: 1px solid !important;
+  border-color: rgba(0, 43, 86, 0.6) rgba(0, 43, 86, 0.4) rgba(0, 43, 86, 0.4) !important;
+  border-radius: 2px 0 0 2px !important;
+}
+:root #downloads-indicator-progress-echelon > .progress-remainder {
+  background-image: linear-gradient(#505050, #575757) !important;
+  border: 1px solid !important;
+  border-color: hsla(0, 0%, 0%, 0.6) hsla(0, 0%, 0%, 0.4) hsla(0, 0%, 0%, 0.4) !important;
+  border-inline-start: none !important;
+  border-radius: 0 2px 2px 0 !important;
+}
+:root #downloads-button:not([counter]) #downloads-indicator-counter-echelon {
+  color: transparent !important;
+  background: url("chrome://userchrome/content/assets/firefox-4/toolbar/inverted/downloads.png") center no-repeat !important;
+  background-size: 12px !important;
+}
+:root #downloads-button:not([progress]) #downloads-indicator-progress-area-echelon {
+  display: none !important;
+}
+:root #downloads-button[progress] #downloads-indicator-icon {
+  display: none !important;
+}
 :root #navigator-toolbox {
   border-bottom: 0 !important;
 }
@@ -448,6 +504,9 @@
 }
 :root #downloads-indicator-anchor {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/downloads.png") !important;
+}
+:root #downloads-button[attention=success] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/download-glow.png") !important;
 }
 :root #history-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/history.png") !important;

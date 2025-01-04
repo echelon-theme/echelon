@@ -7,7 +7,7 @@ let root = document.documentElement;
 let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Homepage.Style");
 let newLogo = PrefUtils.tryGetBoolPref("Echelon.Appearance.NewLogo");
 let snippets = PrefUtils.tryGetBoolPref("Echelon.Homepage.HideCustomSnippets");
-let product = BrandUtils.getBrandingKey("fullName");
+let product = BrandUtils.getBrandingKey("productName");
 let titles = BrandUtils.getDefaultTitles();
 
 function createHomePage() {
@@ -151,7 +151,7 @@ function insertCustomSnippets()
     }
 
     // TODO: CHANGE URL WHEN RELEASE CANIDATE 1
-    const snippetsURL = "https://raw.githack.com/echelon-theme/echelon-theme.github.io/refs/heads/main/snippets.json";
+    const snippetsURL = "https://raw.githack.com/echelon-theme/echelon-theme.github.io/main/snippets.json";
 
     fetch(snippetsURL, {method: "Get"})
     .then((response) => response.json())
