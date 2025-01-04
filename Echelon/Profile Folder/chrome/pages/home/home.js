@@ -67,7 +67,7 @@ function createHomePage() {
                 <html:form name="searchForm" id="searchForm" onsubmit="onSearchSubmit(event)">
                 <div id="searchLogoContainer"><img id="searchEngineLogo"/></div>
                 <html:input type="text" name="q" value="" id="searchText" maxlength="256"
-                        autofocus="autofocus"/>
+                        autofocus="autofocus" />
                 <html:input id="searchSubmit" type="submit" value="${homeBundle.GetStringFromName("searchEngineButton")}"/>
                 </html:form>
             </div>
@@ -111,20 +111,22 @@ function createHomePage() {
 		window.engine = engine;
 		
 		/* Only Google has a logo. Others use placeholder. */
-		if (engine._name != "Google" && echelonHomepageStyle == 3)
+		if (engine._name != "Google" && style == 1)
 		{
 			document.getElementById("searchEngineLogo").hidden = true;
 			document.getElementById("searchText").placeholder = engine._name;
 		}
 	});
 
+    focusInput();
     updateHomepageStyle();
     insertCustomSnippets();
 }
 
 function insertCustomSnippets()
 {
-    const snippetsURL = "https://rawcdn.githack.com/echelon-theme/echelon-theme.github.io/0d2cc67936690454e8bea88ac488c478d8e889d1/snippets.json";
+    // TODO: CHANGE URL WHEN RELEASE CANIDATE 1
+    const snippetsURL = "https://raw.githack.com/echelon-theme/echelon-theme.github.io/refs/heads/main/snippets.json";
 
     fetch(snippetsURL, {method: "Get"})
     .then((response) => response.json())
@@ -219,6 +221,10 @@ if (location.href.startsWith("about:newtab"))
         // Do not localize. New Tab will be added as a separate page eventually.
         document.title = "New Tab";
     }
+}
+
+function focusInput() {
+    setTimeout(() => document.getElementById("searchText").focus(), 50); // hack to autofocus on input box
 }
 
 addEventListener("load", createHomePage);
