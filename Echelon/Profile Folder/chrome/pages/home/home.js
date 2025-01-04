@@ -98,7 +98,7 @@ function createHomePage() {
             <button class="launchButton" id="restorePreviousSession">${homeBundle.GetStringFromName("restoreLastSessionButton")}</button>
             </div>
 
-            <a id="aboutMozilla" href="${homeBundle.GetStringFromName("aboutMozilla")}"/>
+            <html:a id="aboutMozilla" href="${homeBundle.GetStringFromName("aboutMozilla")}"/>
         `
 
         stylesheet = `
