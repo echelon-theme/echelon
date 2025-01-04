@@ -262,6 +262,80 @@
 :root #downloads-button[progress] #downloads-indicator-icon {
   display: none !important;
 }
+:root #downloads-animation-container {
+  min-height: 1px !important;
+  min-width: 1px !important;
+  height: 1px !important;
+  margin-bottom: -1px !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+:root #downloads-notification-anchor {
+  min-height: 16px !important;
+}
+:root #downloads-indicator-notification {
+  opacity: 0;
+  background-size: 16px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+@keyframes downloadsIndicatorNotificationStartRight {
+  from {
+    opacity: 0;
+    transform: translate(-128px, 128px) scale(8);
+  }
+  20% {
+    opacity: 0.85;
+    animation-timing-function: ease-out;
+  }
+  to {
+    opacity: 0;
+    transform: translate(0) scale(1);
+  }
+}
+@keyframes downloadsIndicatorNotificationStartLeft {
+  from {
+    opacity: 0;
+    transform: translate(128px, 128px) scale(8);
+  }
+  20% {
+    opacity: 0.85;
+    animation-timing-function: ease-out;
+  }
+  to {
+    opacity: 0;
+    transform: translate(0) scale(1);
+  }
+}
+:root #downloads-notification-anchor[notification=start] > #downloads-indicator-notification {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/downloads/download-notification-start.png") !important;
+  animation-name: downloadsIndicatorNotificationStartRight !important;
+  animation-duration: 1s !important;
+}
+:root #downloads-notification-anchor[notification=start]:-moz-locale-dir(rtl) > #downloads-indicator-notification {
+  animation-name: downloadsIndicatorNotificationStartLeft !important;
+}
+@keyframes downloadsIndicatorNotificationFinish {
+  from {
+    opacity: 0;
+    transform: scale(1);
+  }
+  20% {
+    opacity: 0.65;
+    animation-timing-function: ease-in;
+  }
+  to {
+    opacity: 0;
+    transform: scale(8);
+  }
+}
+:root #downloads-notification-anchor[notification=finish] > #downloads-indicator-notification {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/downloads/download-notification-finish.png") !important;
+  animation-name: downloadsIndicatorNotificationFinish !important;
+  animation-duration: 1s !important;
+}
 :root #navigator-toolbox {
   border-bottom: 0 !important;
 }

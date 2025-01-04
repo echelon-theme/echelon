@@ -101,57 +101,27 @@
         // container.
         // Note: no notifier animation for download finished in Photon
         let notifier = this.notifier;
-    
-        if (aType == "start")
-        {
-            // Show the notifier before measuring for size/placement. Being hidden by default
-            // avoids the interference with scrolling/APZ when the notifier element is
-            // tall enough to overlap the tabbrowser element
+
+
+        if (notifier.style.transform == '') {
             notifier.removeAttribute("hidden");
-    
-            // the anchor height may vary if font-size is changed or
-            // compact/tablet mode is selected so recalculate this each time
+
             let anchorRect = anchor.getBoundingClientRect();
             let notifierRect = notifier.getBoundingClientRect();
             let topDiff = anchorRect.top - notifierRect.top;
             let leftDiff = anchorRect.left - notifierRect.left;
             let heightDiff = anchorRect.height - notifierRect.height;
             let widthDiff = anchorRect.width - notifierRect.width;
-            let translateX = leftDiff + 0.5 * widthDiff + "px";
-            let translateY = topDiff + 0.5 * heightDiff + "px";
-            notifier.style.transform =
-                "translate(" + translateX + ", " + translateY + ")";
+            let translateX = (leftDiff + .5 * widthDiff) + "px";
+            let translateY = (topDiff + .5 * heightDiff) + "px";
+            notifier.style.transform = "translate(" +  translateX + ", " + translateY + ")";
             notifier.setAttribute("notification", aType);
         }
         anchor.setAttribute("notification", aType);
-    
-        let animationDuration;
-        // This value is determined by the overall duration of animation in CSS.
-        animationDuration = aType == "start" ? 760 : 850;
-    
-        this._currentNotificationType = aType;
-    
-        setTimeout(() =>
-        {
-            requestAnimationFrame(() =>
-            {
-                notifier.hidden = true;
-                notifier.removeAttribute("notification");
-                notifier.style.transform = "";
-                anchor.removeAttribute("notification");
-    
-                requestAnimationFrame(() =>
-                {
-                    let nextType = this._nextNotificationType;
-                    this._currentNotificationType = null;
-                    this._nextNotificationType = null;
-                    if (nextType)
-                    {
-                        this._showNotification(nextType);
-                    }
-                });
-            });
-        }, animationDuration);
+        this._notificationTimeout = setTimeout(() => {
+            notifier.removeAttribute("notification");
+            notifier.style.transform = '';
+        }, 1000);
     };
 
     waitForElement("#downloads-button > .toolbarbutton-badge-stack").then(e => {
