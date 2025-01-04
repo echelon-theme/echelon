@@ -5,7 +5,8 @@ Components.utils.import("resource:///modules/sessionstore/SessionStore.jsm", thi
 
 let root = document.documentElement;
 let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Homepage.Style");
-let snippets = Services.prefs.getBoolPref("Echelon.Homepage.HideCustomSnippets");
+let newLogo = PrefUtils.tryGetBoolPref("Echelon.Appearance.NewLogo");
+let snippets = PrefUtils.tryGetBoolPref("Echelon.Homepage.HideCustomSnippets");
 let product = BrandUtils.getBrandingKey("fullName");
 let titles = BrandUtils.getDefaultTitles();
 
@@ -65,7 +66,7 @@ function createHomePage() {
         homeFragment = `
             <div class="spacer"/>
             <div id="topSection">
-            <html:img id="brandLogo" alt=""/>
+            <html:img id="brandLogo"/>
 
             <div id="searchContainer">
                 <html:form name="searchForm" id="searchForm" onsubmit="onSearchSubmit(event)">
@@ -122,6 +123,15 @@ function createHomePage() {
 			document.getElementById("searchText").placeholder = engine._name;
 		}
 	});
+
+    if (style >= 3) {
+        let brandLogo = document.createElement("div");
+        brandLogo.id = "brandLogo";
+
+        let brandLogoImg = document.getElementById("brandLogo");
+
+        brandLogoImg.replaceWith(brandLogo);
+    }
 
     focusInput();
     updateHomepageStyle();
@@ -181,29 +191,37 @@ function insertCustomSnippets()
 
 function showSnippets()
 {
-  let snippetsElt = document.getElementById("snippets");
-  // Show default snippets otherwise.
-  let defaultSnippetsElt = document.getElementById("defaultSnippets");
-  let entries = defaultSnippetsElt.querySelectorAll("span");
-  // Choose a random snippet.  Assume there is always at least one.
-  let randIndex = Math.round(Math.random() * (entries.length - 1));
-  let entry = entries[randIndex];
+    let snippetsElt = document.getElementById("snippets");
+    // Show default snippets otherwise.
+    let defaultSnippetsElt = document.getElementById("defaultSnippets");
+    let entries = defaultSnippetsElt.querySelectorAll("span");
+    // Choose a random snippet.  Assume there is always at least one.
+    let randIndex = Math.round(Math.random() * (entries.length - 1));
+    let entry = entries[randIndex];
 
-  // Move the default snippet to the snippets element.
-  snippetsElt.appendChild(entry);
+    // Move the default snippet to the snippets element.
+    snippetsElt.appendChild(entry);
 
-  if (!style && style == 0) {
-    let snippethref = document.querySelector("#snippets > span > a").href;
+    if (!style && style == 0) {
+        let snippethref = document.querySelector("#snippets > span > a").href;
 
-    if (snippethref) {
-        snippetsElt.onclick = function(){window.open(snippethref, "_self")};
+        if (snippethref) {
+            snippetsElt.onclick = function(){window.open(snippethref, "_self")};
+        }
     }
-}
+
+    if (!snippets & style == 2) {
+        snippetsElt.setAttribute("hidden", "true");
+    }
 }
 
 
 function updateHomepageStyle() {
     root.setAttribute("titleShortName", titles.appmenuName);
+    
+    if (newLogo) {
+        root.setAttribute("echelon-appearance-newlogo", "true");
+    }
     
     for (let i = 1; i <= style; i++)
     {

@@ -16,6 +16,18 @@ body {
         -moz-linear-gradient(hsla(0, 0%, 100%, .7), hsla(0, 0%, 100%, .4));
 }
 
+[hidden="true"] {
+    display: none !important;
+}
+
+:root[echelon-style-3] {
+    background-color: hsl(0,0%,95%);
+}
+
+:root[echelon-style-3] body {
+    background-image: none;
+}
+
 input,
 button {
     font-size: inherit;
@@ -36,10 +48,20 @@ a {
     display: block;
 }
 
-#brandLogo {
+:root:not([echelon-style-3]) #brandLogo {
     height: 154px;
     margin: 22px 0 31px;
     content: var(--about-logo);
+}
+
+:root[echelon-style-3] #brandLogo {
+    height: 192px;
+    width: 192px;
+    margin: 22px auto 31px;
+    background-image: var(--about-logo);
+    background-size: 192px auto;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 #searchForm,
@@ -62,8 +84,11 @@ a {
     display: inline-block;
 }
 
-#searchEngineLogo[hidden="true"] {
-    display: none;
+:root[echelon-style-3] #searchEngineLogo {
+    height: 28px;
+    width: 70px;
+    min-width: 70px;
+    content: url("chrome://userchrome/content/pages/home/images/firefox-14/google.png");
 }
 
 #searchContainer,

@@ -18,6 +18,18 @@
     --about-logo: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/about-logo.png");
 }
 
+:root[echelon-appearance-newlogo][titleShortName="firefox"] {
+    --about-logo: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/about-logo.png");
+}
+
+:root[echelon-appearance-newlogo][titleShortName="nightly"] {
+    --about-logo: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/new/about-logo.png");
+}
+
+:root[echelon-appearance-newlogo][titleShortName="aurora"] {
+    --about-logo: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/new/about-logo.png");
+}
+
 body {
     display: none;
 }
