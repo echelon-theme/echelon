@@ -62,6 +62,10 @@ a {
     display: inline-block;
 }
 
+#searchEngineLogo[hidden="true"] {
+    display: none;
+}
+
 #searchContainer,
 #snippetContainer {
     justify-content: center;
@@ -149,6 +153,10 @@ body[dir=rtl] #defaultSnippet1,
 body[dir=rtl] #defaultSnippet2,
 body[dir=rtl] .customSnippet {
     background-position: right 30px center;
+}
+
+.customSnippet {
+    background-image: var(--background-image);
 }
 
 #defaultSnippet1 {

@@ -24,6 +24,7 @@ span p {
 a {
     color: rgb(0, 0, 238);
     text-decoration: none;
+    cursor: pointer;
 }
 
 a:hover {
@@ -92,6 +93,10 @@ a:focus {
     display: inline-block;
     margin-inline-end: 2.5%;
     content: url("chrome://userchrome/content/pages/home/images/firefox-4/google.png");
+}
+
+#searchEngineLogo[hidden="true"] {
+    display: none;
 }
 
 #searchInputContainer {
@@ -360,9 +365,42 @@ body[dir=rtl] #restorePreviousSession::before {
     display: none !important;
 }
 
-.customSnippet {
+#syncLinksContainer {
+    display: none;
+}
+
+:root[echelon-style-1] #syncLinksContainer {
     display: block;
-    min-height: 38px;
-    background: 18px center no-repeat;
-    padding-inline-start: 79px;
+    padding-top: 1em;
+}
+  
+:root[echelon-style-1] .sync-link {
+    padding: 1em;
+}
+
+:root[echelon-style-1] #defaultSnippet1,
+:root[echelon-style-1] #defaultSnippet2,
+:root[echelon-style-1] .customSnippet {
+  display: table-row;
+  text-align: start;
+}
+
+:root[echelon-style-1] #defaultSnippet1::before,
+:root[echelon-style-1] #defaultSnippet2::before,
+:root[echelon-style-1] .customSnippet::before {
+    display: table-cell;
+    vertical-align: middle;
+    padding-inline-end: 1em;
+}
+
+:root[echelon-style-1] #defaultSnippet1::before {
+    content: url("chrome://userchrome/content/pages/home/images/firefox-14/snippet1.png");
+}
+
+:root[echelon-style-1] #defaultSnippet2::before {
+    content: url("chrome://userchrome/content/pages/home/images/firefox-14/snippet2.png");
+}
+
+:root[echelon-style-1] .customSnippet::before {
+    content: var(--background-image);
 }

@@ -15,40 +15,44 @@ function createHomePage() {
     homeFragment = `
         <div id="brandStartSpacer" />
 
-            <div id="brandStart">
+        <div id="brandStart">
             <img id="brandStartLogo" alt="" />
-            </div>
+        </div>
 
-            <div id="searchContainer">
-            <html:form method="get" name="searchForm" id="searchForm" onsubmit="onSearchSubmit(event)">
-                <div id="searchLogoContainer"><img id="searchEngineLogo" /></div>
-                <div id="searchInputContainer">
-                <html:input type="text" name="q" value="" id="searchText" maxlength="256" placeholder="" />
+        <div id="searchContainer">
+        <html:form method="get" name="searchForm" id="searchForm" onsubmit="onSearchSubmit(event)">
+            <div id="searchLogoContainer"><img id="searchEngineLogo" /></div>
+            <div id="searchInputContainer">
+            <html:input type="text" name="q" value="" id="searchText" maxlength="256" placeholder="" />
 
-                </div>
-                <div id="searchButtons">
-                <html:input id="searchSubmit" type="submit" value="${homeBundle.GetStringFromName("searchEngineButton")}" />
-                </div>
-            </html:form>
             </div>
+            <div id="searchButtons">
+            <html:input id="searchSubmit" type="submit" value="${homeBundle.GetStringFromName("searchEngineButton")}" />
+            </div>
+        </html:form>
+        </div>
 
-            <div id="contentContainer">
-            <div id="snippetContainer">
-                <div id="defaultSnippets" hidden="true">
-                    <span id="defaultSnippet1">${homeBundle.formatStringFromName("snippet_1", [product])}</span>
-                    <span id="defaultSnippet2">${homeBundle.formatStringFromName("snippet_2", [product])}</span>
-                </div>
-                <div id="snippets"/>
+        <div id="contentContainer">
+        <div id="snippetContainer">
+            <div id="defaultSnippets" hidden="true">
+                <span id="defaultSnippet1">${homeBundle.formatStringFromName("snippet_1", [product])}</span>
+                <span id="defaultSnippet2">${homeBundle.formatStringFromName("snippet_2", [product])}</span>
             </div>
+            <div id="snippets"/>
+        </div>
 
-            <div id="launcher">
-                <button id="restorePreviousSession" onclick="restoreLastSession()">${homeBundle.GetStringFromName("restoreLastSessionButton")}</button>
-            </div>
-            </div>
+        <div id="launcher">
+            <button id="restorePreviousSession" onclick="restoreLastSession()">${homeBundle.GetStringFromName("restoreLastSessionButton")}</button>
+        </div>
+        </div>
 
-            <div id="bottomSection">
+        <div id="bottomSection">
             <div id="aboutMozilla">
                 <html:a href="http://www.mozilla.com/about/">${homeBundle.GetStringFromName("aboutMozilla")}</html:a>
+            </div>
+            <div id="syncLinksContainer">
+                <html:a onclick="windowRoot.ownerGlobal.openPreferences('sync');" class="sync-link" id="setupSyncLink">${homeBundle.GetStringFromName("syncSetup")}</html:a>
+                <html:a onclick="windowRoot.ownerGlobal.gSync.openConnectAnotherDevice();" class="sync-link" id="pairDeviceLink">${homeBundle.GetStringFromName("pairDevice")}</html:a>
             </div>
         </div>
     `
@@ -57,7 +61,7 @@ function createHomePage() {
         <html:link rel="stylesheet" href="chrome://userchrome/content/pages/home/home-old.css" />
     `
     
-    if (style >= 1) {
+    if (style >= 2) {
         homeFragment = `
             <div class="spacer"/>
             <div id="topSection">
@@ -104,6 +108,7 @@ function createHomePage() {
     document.head.appendChild(MozXULElement.parseXULToFragment(stylesheet));
     container.appendChild(MozXULElement.parseXULToFragment(homeFragment));
 
+    // Set links on snippets
     document.querySelector("#defaultSnippet1 a").href = "https://www.mozilla.org/firefox/features/?utm_source=snippet&utm_medium=snippet&utm_campaign=default+feature+snippet";
     document.querySelector("#defaultSnippet2 a").href = "https://addons.mozilla.org/firefox/?utm_source=snippet&utm_medium=snippet&utm_campaign=addons";
 
@@ -111,7 +116,7 @@ function createHomePage() {
 		window.engine = engine;
 		
 		/* Only Google has a logo. Others use placeholder. */
-		if (engine._name != "Google" && style == 1)
+		if (engine._name != "Google")
 		{
 			document.getElementById("searchEngineLogo").hidden = true;
 			document.getElementById("searchText").placeholder = engine._name;
@@ -137,7 +142,7 @@ function insertCustomSnippets()
 
             snippetElem.id = snippet.id;
             snippetElem.classList.add("customSnippet");
-            snippetElem.style.setProperty("background-image", `url(${snippet.image})`);
+            snippetElem.style.setProperty("--background-image", `url(${snippet.image})`);
             snippetElem.innerHTML = snippet.text;
 
             if (snippet.link) {
@@ -186,6 +191,14 @@ function showSnippets()
 
   // Move the default snippet to the snippets element.
   snippetsElt.appendChild(entry);
+
+  if (!style && style == 0) {
+    let snippethref = document.querySelector("#snippets > span > a").href;
+
+    if (snippethref) {
+        snippetsElt.onclick = function(){window.open(snippethref, "_self")};
+    }
+}
 }
 
 
@@ -224,7 +237,7 @@ if (location.href.startsWith("about:newtab"))
 }
 
 function focusInput() {
-    setTimeout(() => document.getElementById("searchText").focus(), 50); // hack to autofocus on input box
+    setTimeout(() => document.getElementById("searchText").focus(), 100); // hack to autofocus on input box
 }
 
 addEventListener("load", createHomePage);
