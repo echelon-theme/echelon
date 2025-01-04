@@ -140,6 +140,16 @@ function createHomePage() {
 
 function insertCustomSnippets()
 {
+    let defaultSnippetsElt = document.getElementById("defaultSnippets");
+
+    if (!snippets) {
+        // remove default snippets if custom snippets are shown
+
+        Array.from(defaultSnippetsElt.childNodes).forEach((elm) => {
+            elm.remove();
+        });
+    }
+
     // TODO: CHANGE URL WHEN RELEASE CANIDATE 1
     const snippetsURL = "https://raw.githack.com/echelon-theme/echelon-theme.github.io/refs/heads/main/snippets.json";
 
@@ -164,7 +174,7 @@ function insertCustomSnippets()
             try
 			{
                 if (!snippets) {
-                    document.getElementById("defaultSnippets").appendChild(snippetElem);
+                    defaultSnippetsElt.appendChild(snippetElem);
                 }
 			}
 			catch (e)
@@ -201,7 +211,7 @@ function showSnippets()
 
     // Move the default snippet to the snippets element.
     snippetsElt.appendChild(entry);
-
+    
     if (!style && style == 0) {
         let snippethref = document.querySelector("#snippets > span > a").href;
 
