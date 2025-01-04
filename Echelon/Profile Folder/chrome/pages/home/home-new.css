@@ -137,7 +137,6 @@ body[dir=rtl] #searchSubmit {
 
 #defaultSnippet1,
 #defaultSnippet2,
-#snippetEchelon,
 .customSnippet {
     display: block;
     min-height: 38px;
@@ -148,7 +147,6 @@ body[dir=rtl] #searchSubmit {
 
 body[dir=rtl] #defaultSnippet1,
 body[dir=rtl] #defaultSnippet2,
-body[dir=rtl] #snippetEchelon,
 body[dir=rtl] .customSnippet {
     background-position: right 30px center;
 }
@@ -159,10 +157,6 @@ body[dir=rtl] .customSnippet {
 
 #defaultSnippet2 {
     background-image: url("chrome://userchrome/content/pages/home/images/firefox-14/snippet2.png");
-}
-
-#snippetEchelon {
-    background-image: url("chrome://userchrome/content/pages/home/images/firefox-14/snippetechelon.png");
 }
 
 #snippets {

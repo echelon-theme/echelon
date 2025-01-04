@@ -319,7 +319,7 @@
 #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]) {
   display: flex !important;
 }
-#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src]), #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:-moz-broken {
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [busy], [progress]), #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:-moz-broken {
   content: var(--default-favicon) !important;
 }
 #TabsToolbar .tabbrowser-tab .tab-loading-burst {

@@ -76,7 +76,7 @@
                     display: flex !important;
                 }
 
-                &:not([src]), &:-moz-broken {
+                &:not([src], [busy], [progress]), &:-moz-broken {
                     content: var(--default-favicon) !important;
                 }
             }

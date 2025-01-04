@@ -37,7 +37,6 @@ function createHomePage() {
                 <div id="defaultSnippets" hidden="true">
                     <span id="defaultSnippet1">${homeBundle.formatStringFromName("snippet_1", [product])}</span>
                     <span id="defaultSnippet2">${homeBundle.formatStringFromName("snippet_2", [product])}</span>
-                    <span id="snippetEchelon">${homeBundle.GetStringFromName("snippet_echelon")}</span>
                 </div>
                 <div id="snippets"/>
             </div>
@@ -77,7 +76,6 @@ function createHomePage() {
                 <div id="defaultSnippets" hidden="true">
                     <span id="defaultSnippet1">${homeBundle.formatStringFromName("snippet_1", [product])}</span>
                     <span id="defaultSnippet2">${homeBundle.formatStringFromName("snippet_2", [product])}</span>
-                    <span id="snippetEchelon">${homeBundle.GetStringFromName("snippet_echelon")}</span>
                 </div>
                 <div id="snippets"/>
             </div>
@@ -108,7 +106,6 @@ function createHomePage() {
 
     document.querySelector("#defaultSnippet1 a").href = "https://www.mozilla.org/firefox/features/?utm_source=snippet&utm_medium=snippet&utm_campaign=default+feature+snippet";
     document.querySelector("#defaultSnippet2 a").href = "https://addons.mozilla.org/firefox/?utm_source=snippet&utm_medium=snippet&utm_campaign=addons";
-    document.querySelector("#snippetEchelon a").href = "https://github.com/echelon-theme/echelon/issues";
 
     Services.search.getDefault().then(engine => {
 		window.engine = engine;
@@ -159,7 +156,7 @@ function insertCustomSnippets()
 				{
 					try
 					{
-						PrefUtils.trySetBoolPref("Echelon.Appearance.TabsOnTop", true);
+						PrefUtils.trySetBoolPref("Echelon.Homepage.HideCustomSnippets", false);
 					}
 					catch (e) {}
 				}
