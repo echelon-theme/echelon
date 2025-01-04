@@ -117,11 +117,17 @@ function createHomePage() {
 		window.engine = engine;
 		
 		/* Only Google has a logo. Others use placeholder. */
-		if (engine._name != "Google")
+		if (engine._name != "Google" && style > 4)
 		{
 			document.getElementById("searchEngineLogo").hidden = true;
 			document.getElementById("searchText").placeholder = engine._name;
 		}
+
+        if (style == 4)
+        {
+            document.getElementById("searchText").placeholder = homeBundle.GetStringFromName("searchEngineButton");
+            document.getElementById("searchSubmit").value = "▶";
+        }
 	});
 
     if (style >= 3) {
