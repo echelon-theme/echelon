@@ -116,15 +116,6 @@
             padding-left: 6px !important;
             padding-right: 4px !important;
         }
-
-        &#bookmarks-menu-button {
-            min-width: 35px !important;
-            &::after {
-                display: flex !important;
-                content: url("chrome://userchrome/content/assets/images/firefox-4/arrow-dn.gif") !important;
-                margin-block-start: 1px !important;
-            }
-        }
     }
 
     #nav-bar {
@@ -150,6 +141,41 @@
                 min-width: var(--toolbarbutton-width) !important;
                 max-width: var(--toolbarbutton-width) !important;
                 height: var(--toolbarbutton-height) !important;
+            }
+
+            &.echelon-unified-bookmarks-menu-button {
+                padding: 0 !important;
+                margin: var(--toolbarbutton-outer-padding) !important;
+                height: var(--toolbarbutton-height) !important;
+        
+                .toolbarbutton-1 {
+                    --toolbarbutton-outer-padding: 0 !important;
+                }
+        
+                .toolbarbutton-menubutton-button {
+                    visibility: collapse !important;
+                }
+
+                .toolbarbutton-menubutton-dropmarker {
+                    --toolbarbutton-width: 35px !important;
+                    align-items: center !important;
+
+                    &::after {
+                        display: flex !important;
+                        width: 5px !important;
+                        height: 3px !important;
+                        content: url("chrome://userchrome/content/assets/images/firefox-4/arrow-dn.gif") !important;
+                        margin-block-start: 1px !important;
+                    }
+
+                    .dropmarker-icon {
+                        --toolbarbutton-inner-padding: 0 !important;
+                        --toolbarbutton-border-radius: 0 !important;
+                        background-color: transparent !important;
+                        width: var(--toolbarbutton-icon-width) !important;
+                        height: var(--toolbarbutton-icon-height) !important;
+                    }
+                }
             }
         }
     }
@@ -272,6 +298,10 @@
         background-repeat: no-repeat !important;
         width: 16px !important;
         height: 16px !important;
+    }
+
+    &:not([echelon-style-4]) #bookmarked-notification-container {
+        display: none !important;
     }
     
     @keyframes downloadsIndicatorNotificationStartRight {

@@ -150,14 +150,6 @@
   padding-left: 6px !important;
   padding-right: 4px !important;
 }
-:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#bookmarks-menu-button {
-  min-width: 35px !important;
-}
-:root #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#bookmarks-menu-button::after {
-  display: flex !important;
-  content: url("chrome://userchrome/content/assets/images/firefox-4/arrow-dn.gif") !important;
-  margin-block-start: 1px !important;
-}
 :root #nav-bar {
   height: 38px !important;
   box-shadow: none !important;
@@ -179,6 +171,35 @@
   min-width: var(--toolbarbutton-width) !important;
   max-width: var(--toolbarbutton-width) !important;
   height: var(--toolbarbutton-height) !important;
+}
+:root #nav-bar .toolbarbutton-1.echelon-unified-bookmarks-menu-button {
+  padding: 0 !important;
+  margin: var(--toolbarbutton-outer-padding) !important;
+  height: var(--toolbarbutton-height) !important;
+}
+:root #nav-bar .toolbarbutton-1.echelon-unified-bookmarks-menu-button .toolbarbutton-1 {
+  --toolbarbutton-outer-padding: 0 !important;
+}
+:root #nav-bar .toolbarbutton-1.echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-button {
+  visibility: collapse !important;
+}
+:root #nav-bar .toolbarbutton-1.echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker {
+  --toolbarbutton-width: 35px !important;
+  align-items: center !important;
+}
+:root #nav-bar .toolbarbutton-1.echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker::after {
+  display: flex !important;
+  width: 5px !important;
+  height: 3px !important;
+  content: url("chrome://userchrome/content/assets/images/firefox-4/arrow-dn.gif") !important;
+  margin-block-start: 1px !important;
+}
+:root #nav-bar .toolbarbutton-1.echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker .dropmarker-icon {
+  --toolbarbutton-inner-padding: 0 !important;
+  --toolbarbutton-border-radius: 0 !important;
+  background-color: transparent !important;
+  width: var(--toolbarbutton-icon-width) !important;
+  height: var(--toolbarbutton-icon-height) !important;
 }
 :root .toolbaritem-combined-buttons > separator {
   display: none !important;
@@ -280,6 +301,9 @@
   background-repeat: no-repeat !important;
   width: 16px !important;
   height: 16px !important;
+}
+:root:not([echelon-style-4]) #bookmarked-notification-container {
+  display: none !important;
 }
 @keyframes downloadsIndicatorNotificationStartRight {
   from {
@@ -2346,11 +2370,13 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   box-shadow: 0 0 0 1px hsla(210, 54%, 20%, 0.55), 0 1px 0 hsla(210, 54%, 20%, 0.65) !important;
   transition: none !important;
 }
-:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#bookmarks-menu-button {
-  min-width: 43px !important;
+:root[echelon-style-3] #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker {
+  --toolbarbutton-width: 43px !important;
 }
-:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#bookmarks-menu-button::after {
+:root[echelon-style-3] #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker::after {
   display: flex !important;
+  width: 9px !important;
+  height: 7px !important;
   content: url("chrome://userchrome/content/assets/images/firefox-14/toolbarbutton-dropdown-arrow.png") !important;
   margin-block-start: 1px !important;
   margin-inline-start: 3px !important;
@@ -2440,6 +2466,149 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 
 /* ::::: Firefox 29 ::::: */
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button {
+  position: relative !important;
+}
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1 {
+  background-image: -moz-linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
+  background-color: var(--toolbarbutton-background) !important;
+  box-shadow: var(--toolbarbutton-shadow-hot) !important;
+  --toolbarbutton-border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25) !important;
+}
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([open], [disabled=true], :active):hover {
+  background-color: hsla(210, 48%, 96%, 0.75) !important;
+  border-color: hsla(210, 54%, 20%, 0.3) hsla(210, 54%, 20%, 0.35) hsla(210, 54%, 20%, 0.4) !important;
+}
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([disabled=true]):hover:active, :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([disabled=true])[open] {
+  background-image: var(--toolbarbutton-background-active) !important;
+  background-color: hsla(210, 54%, 20%, 0.15) !important;
+  box-shadow: var(--toolbarbutton-shadow-active) !important;
+  --toolbarbutton-border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
+  transition: none !important;
+}
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-menubutton-button {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-menubutton-dropmarker {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-button {
+  visibility: visible !important;
+}
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker {
+  --toolbarbutton-width: 30px !important;
+}
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker::after {
+  display: none !important;
+}
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not(:hover):not(:active) .toolbarbutton-menubutton-dropmarker::before {
+  content: "" !important;
+  display: flex !important;
+  min-width: 1px !important;
+  min-height: 18px !important;
+  background-image: linear-gradient(hsla(210, 54%, 20%, 0.2) 0, hsla(210, 54%, 20%, 0.2) 16px) !important;
+  background-clip: padding-box !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 1px 18px !important;
+  box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.2) !important;
+  position: absolute !important;
+  left: 31px !important;
+}
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-button {
+  --toolbarbutton-width: 31px !important;
+  border-inline-end: 0 !important;
+}
+@keyframes animation-bookmarkAdded {
+  from {
+    transform: rotate(0deg) translateX(-16px) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  60% {
+    transform: rotate(180deg) translateX(-16px) rotate(-180deg) scale(2.2);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  to {
+    transform: rotate(180deg) translateX(-16px) rotate(-180deg) scale(1);
+    opacity: 0;
+  }
+}
+@keyframes animation-bookmarkPulse {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+:root[echelon-style-4] #bookmarked-notification-container {
+  min-height: 1px;
+  min-width: 1px;
+  height: 1px;
+  margin-bottom: -1px;
+  z-index: 5;
+  position: relative;
+}
+:root[echelon-style-4] #bookmarked-notification-anchor {
+  min-height: 18px;
+}
+:root[echelon-style-4] #bookmarked-notification {
+  background-size: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+}
+:root[echelon-style-4] #bookmarked-notification-dropmarker-anchor {
+  z-index: -1;
+  position: relative;
+  min-height: 18px;
+}
+:root[echelon-style-4] #bookmarked-notification-dropmarker-icon {
+  width: 18px;
+  height: 18px;
+  visibility: hidden;
+}
+:root[echelon-style-4] #bookmarked-notification-anchor[notification=finish] > #bookmarked-notification {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/places/bookmarks-notification-finish.png");
+  animation: animation-bookmarkAdded 800ms;
+  animation-timing-function: ease, ease, ease;
+}
+:root[echelon-style-4] #bookmarks-menu-button[notification=finish] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+  list-style-image: none !important;
+}
+:root[echelon-style-4] #bookmarked-notification-dropmarker-anchor[notification=finish] > #bookmarked-notification-dropmarker-icon {
+  visibility: visible;
+  animation: animation-bookmarkPulse 300ms;
+  animation-delay: 600ms;
+  animation-timing-function: ease-out;
+}
+:root[echelon-style-4] #bookmarks-menu-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/bookmarks.png") !important;
+}
+:root[echelon-style-4] #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/bookmarkStarred.png") !important;
+}
+:root[echelon-style-4] #bookmarks-menu-button .toolbarbutton-menubutton-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/bookmark.png") !important;
+}
+:root[echelon-style-4] :root:not([echelon-style-2]) #TabsToolbar #bookmarks-menu-button,
+:root[echelon-style-4] :root:not([echelon-style-2]) #toolbar-menubar #bookmarks-menu-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/inverted/bookmarks.png") !important;
+}
+:root[echelon-style-4] #urlbar #star-button-box {
+  visibility: collapse !important;
+}
+
 /* ::::: Firefox 56 ::::: */
 
 /*# sourceMappingURL=echelon.css.map */

@@ -73,11 +73,15 @@
                 transition: none !important;
             }
         }
+    }
 
-        &#bookmarks-menu-button {
-            min-width: 43px !important;
+    #nav-bar {
+        .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker {
+            --toolbarbutton-width: 43px !important;
             &::after {
                 display: flex !important;
+                width: 9px !important;
+                height: 7px !important;
                 content: url("chrome://userchrome/content/assets/images/firefox-14/toolbarbutton-dropdown-arrow.png") !important;
                 margin-block-start: 1px !important;
                 margin-inline-start: 3px !important;

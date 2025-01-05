@@ -1,0 +1,11 @@
+& {
+    @include toolbar-icons((    
+        "bookmarks-menu-button": "firefox-29/toolbar/bookmarks.png",
+        "bookmarks-menu-button[starred] .toolbarbutton-menubutton-button": "firefox-29/toolbar/bookmarkStarred.png",
+        "bookmarks-menu-button .toolbarbutton-menubutton-button": "firefox-29/toolbar/bookmark.png"
+    ));
+
+    @include toolbar-icons-inverted((    
+        "bookmarks-menu-button": "firefox-29/toolbar/inverted/bookmarks.png",
+    ));
+}
