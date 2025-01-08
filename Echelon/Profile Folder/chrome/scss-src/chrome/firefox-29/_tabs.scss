@@ -148,9 +148,9 @@
 }
 
 // TODO: sass this
-#tabbrowser-tabs[movingtab] > .tabbrowser-tab:not([last-visible-tab])::after,
+#tabbrowser-tabs[movingtab] > .tabbrowser-tab:last-of-type::after,
 .tabbrowser-tab:not([selected]):not(:hover + .tabbrowser-tab):not(:first-of-type):not(:hover)::before,
-#tabbrowser-tabs:not([overflow]) .tabbrowser-tab:last-of-type:not([beforehovered]):not(:hover)::after {
+#tabbrowser-tabs:not([overflow]) .tabbrowser-tab:not([selected]):last-of-type:not([beforehovered]):not(:hover)::after {
     margin-inline-start: -1.5px;
     margin-inline-end: -1.5px;
     background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-separator.png");
