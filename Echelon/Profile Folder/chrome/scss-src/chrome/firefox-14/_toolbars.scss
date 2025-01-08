@@ -88,4 +88,15 @@
             }
         }
     }
+
+    // Aero blue style
+    &:not([echelon-appearance-xp]) {
+        &[echelon-appearance-blue] {
+            --toolbar-background-color: hsl(210,75%,92%) !important;
+
+            #navigator-toolbox::after {
+                background-color: #aabccf !important;
+            }
+        }
+    }
 }

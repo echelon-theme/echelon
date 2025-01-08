@@ -228,7 +228,6 @@ body[narrow] #launcher[session] {
     min-width: 88px;
     max-width: 176px;
     max-height: 85px;
-    vertical-align: top;
     white-space: normal;
     background: transparent padding-box;
     border: 1px solid transparent;
@@ -288,6 +287,7 @@ body[narrow] #restorePreviousSessionSeparator {
 }
 
 #restorePreviousSession {
+    display: block;
     max-width: none;
     font-size: 90%;
 }

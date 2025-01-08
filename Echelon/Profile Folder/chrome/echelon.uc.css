@@ -11,6 +11,9 @@
 :root[echelon-style-2] {
   --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-10/tabs/tab-arrow-left-inverted.png") !important;
 }
+:root[echelon-style-4] {
+  --tabbrowser-arrowbox-inline-padding: 15px !important;
+}
 
 #TabsToolbar .toolbarbutton-1:not(#tabs-newtab-button),
 #tabbrowser-arrowscrollbox::part(scrollbutton-up),
@@ -19,6 +22,10 @@
   border: 0 !important;
   border-radius: 0 !important;
   background-color: transparent !important;
+}
+
+#tabbrowser-arrowscrollbox::part(scrollbox) {
+  padding-inline: var(--tabbrowser-arrowbox-inline-padding) !important;
 }
 
 #TabsToolbar .toolbarbutton-1:not(#tabs-newtab-button):hover,

@@ -8,4 +8,10 @@
     @include toolbar-icons-inverted((    
         "bookmarks-menu-button": "firefox-29/toolbar/inverted/bookmarks.png",
     ));
+
+    .close-icon {
+        @include set-size(16px, 16px);
+        @include set-background("firefox-29/close.png");
+        @include set-horizontal-states(0, 16px, 32px);
+    }
 }

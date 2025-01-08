@@ -408,6 +408,7 @@
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
 :root {
+  --tab-max-width: 250px !important;
   --tab-min-height: 28px !important;
   --tabstrip-min-height: var(--tab-min-height) !important;
   --tab-background: linear-gradient(transparent, hsla(0, 0%, 45%, .1) 1px, hsla(0, 0%, 32%, .2) 80%, hsla(0, 0%, 0%, .2)) !important;
@@ -447,10 +448,18 @@
   z-index: 0 !important;
 }
 #TabsToolbar .tabbrowser-tab:not([pinned]) {
+  max-width: var(--tab-max-width) !important;
   margin-inline: 0 !important;
 }
-#TabsToolbar .tabbrowser-tab:is([visuallyselected=true]) {
+#TabsToolbar .tabbrowser-tab:not([pinned])[visuallyselected] {
   position: relative !important;
+}
+#TabsToolbar .tabbrowser-tab:not([pinned], [fadein]) {
+  max-width: 0.1px !important;
+  min-width: 0.1px !important;
+  visibility: hidden !important;
+}
+#TabsToolbar .tabbrowser-tab[visuallyselected] {
   z-index: 2 !important;
 }
 #TabsToolbar .tabbrowser-tab .tab-content {
@@ -485,11 +494,8 @@
 #TabsToolbar .tabbrowser-tab .tab-close-button {
   margin-inline-end: 0 !important;
 }
-#TabsToolbar .tabbrowser-tab .tab-close-button:not(:hover) {
+#TabsToolbar .tabbrowser-tab .tab-close-button:not(:hover, :hover:active, [selected]) {
   background-position-x: -48px !important;
-}
-#TabsToolbar .tabbrowser-tab .tab-close-button:not(:hover)[selected] {
-  background-position-x: 0 !important;
 }
 #TabsToolbar .tab-throbber::before {
   visibility: collapse !important;
@@ -2381,12 +2387,21 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin-block-start: 1px !important;
   margin-inline-start: 3px !important;
 }
+:root[echelon-style-3]:not([echelon-appearance-xp])[echelon-appearance-blue] {
+  --toolbar-background-color: hsl(210,75%,92%) !important;
+}
+:root[echelon-style-3]:not([echelon-appearance-xp])[echelon-appearance-blue] #navigator-toolbox::after {
+  background-color: #aabccf !important;
+}
 :root[echelon-style-3] #home-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-14/toolbar/home.png") !important;
 }
 :root[echelon-style-3] :root:not([echelon-style-2]) #TabsToolbar #home-button,
 :root[echelon-style-3] :root:not([echelon-style-2]) #toolbar-menubar #home-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-14/toolbar/inverted/home.png") !important;
+}
+:root[echelon-style-3] {
+  --urlbar-border-color: hsla(210,54%,20%,.25) hsla(210,54%,20%,.27) hsla(210,54%,20%,.3) !important;
 }
 :root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box {
   padding: 2px !important;
@@ -2466,31 +2481,55 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 
 /* ::::: Firefox 29 ::::: */
+:root[echelon-style-4] {
+  /* preload images involving australis tabs */
+}
+:root[echelon-style-4] {
+  --toolbarbutton-outer-padding: 1px 2px !important;
+  --toolbar-border-color: hsla(209,67%,12%,0.35) !important;
+}
+:root[echelon-style-4] #nav-bar {
+  z-index: 1 !important;
+  height: 41px !important;
+  box-shadow: 0 1px 0 rgba(253, 253, 253, 0.45) inset !important;
+}
+:root[echelon-style-4] #nav-bar #PanelUI-button {
+  min-height: 100% !important;
+  align-items: center !important;
+  padding-inline-start: 4px !important;
+  background-image: linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.3) 30%, hsla(0, 0%, 100%, 0.3) 70%, hsla(0, 0%, 100%, 0)), linear-gradient(hsla(210, 54%, 20%, 0), hsla(210, 54%, 20%, 0.3) 30%, hsla(210, 54%, 20%, 0.3) 70%, hsla(210, 54%, 20%, 0)), linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.3) 30%, hsla(0, 0%, 100%, 0.3) 70%, hsla(0, 0%, 100%, 0)) !important;
+  background-size: 1px calc(100% - 1px), 1px calc(100% - 1px), 1px calc(100% - 1px) !important;
+  background-position: 0px 0px, 1px 0px, 2px 0px !important;
+  background-repeat: no-repeat !important;
+}
+:root[echelon-style-4] #search-container {
+  margin-inline-end: 3px !important;
+}
 :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button {
   position: relative !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1 {
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1, :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1 {
   background-image: -moz-linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
   background-color: var(--toolbarbutton-background) !important;
   box-shadow: var(--toolbarbutton-shadow-hot) !important;
   --toolbarbutton-border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25) !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([open], [disabled=true], :active):hover {
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([open], [disabled=true], :active):hover, :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1:not([open], [disabled=true], :active):hover {
   background-color: hsla(210, 48%, 96%, 0.75) !important;
   border-color: hsla(210, 54%, 20%, 0.3) hsla(210, 54%, 20%, 0.35) hsla(210, 54%, 20%, 0.4) !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([disabled=true]):hover:active, :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([disabled=true])[open] {
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([disabled=true]):hover:active, :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([disabled=true])[open], :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1:not([disabled=true]):hover:active, :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1:not([disabled=true])[open] {
   background-image: var(--toolbarbutton-background-active) !important;
   background-color: hsla(210, 54%, 20%, 0.15) !important;
   box-shadow: var(--toolbarbutton-shadow-active) !important;
   --toolbarbutton-border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
   transition: none !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-menubutton-button {
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-menubutton-button, :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-menubutton-button {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-menubutton-dropmarker {
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-menubutton-dropmarker, :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-menubutton-dropmarker {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
 }
@@ -2503,7 +2542,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker::after {
   display: none !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not(:hover):not(:active) .toolbarbutton-menubutton-dropmarker::before {
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not(:hover, :active, [open]) .toolbarbutton-menubutton-dropmarker::before {
   content: "" !important;
   display: flex !important;
   min-width: 1px !important;
@@ -2592,6 +2631,14 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   animation-delay: 600ms;
   animation-timing-function: ease-out;
 }
+:root[echelon-style-4][sizemode=normal]:not([lwtheme-image]) #nav-bar {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+:root[echelon-style-4][sizemode=normal]:not([lwtheme-image]) #browser[findbar-focused], :root[echelon-style-4][sizemode=normal]:not([lwtheme-image]) #customization-container[findbar-focused] {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
 :root[echelon-style-4] #bookmarks-menu-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/bookmarks.png") !important;
 }
@@ -2605,7 +2652,187 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-4] :root:not([echelon-style-2]) #toolbar-menubar #bookmarks-menu-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/inverted/bookmarks.png") !important;
 }
+:root[echelon-style-4] .close-icon {
+  width: 16px !important;
+  height: 16px !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/close.png") !important;
+  list-style-image: none !important;
+  background-position-x: 0 !important;
+}
+:root[echelon-style-4] .close-icon:hover {
+  background-position-x: -16px !important;
+}
+:root[echelon-style-4] .close-icon:hover:active, :root[echelon-style-4] .close-icon[open] {
+  background-position-x: -32px !important;
+}
 :root[echelon-style-4] #urlbar #star-button-box {
+  visibility: collapse !important;
+}
+:root[echelon-style-4] {
+  --tab-min-height: 31px !important;
+  --tab-max-width: 210px !important;
+  --tab-inline-padding: 9px !important;
+  --tab-pinned-icon-end-margin: 0 !important;
+  --tab-pinned-icon-start-margin: 0 !important;
+  --tab-icon-start-margin: 0 !important;
+  --tab-icon-end-margin: 6px !important;
+}
+:root[echelon-style-4] #tabbrowser-tabs::before {
+  order: -1 !important;
+  content: "" !important;
+  display: block;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-start.png"), url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-middle.png"), url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-end.png");
+}
+:root[echelon-style-4] #TabsToolbar {
+  z-index: 2 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  margin-block-end: -1px !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab {
+  pointer-events: none !important;
+  overflow: visible !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background {
+  flex-direction: row !important;
+  border-radius: 0 !important;
+  margin-block: 0 !important;
+  outline: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-context-line,
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-loading-burst,
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-group-line {
+  visibility: collapse !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-middle {
+  flex: 1 !important;
+  background-clip: padding-box !important;
+  border-inline: 15px solid transparent !important;
+  margin: 0 -15px !important;
+  pointer-events: auto !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-middle[selected] {
+  background-clip: padding-box, padding-box, content-box !important;
+  background-color: var(--toolbar-background-color) !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-active-middle.png"), linear-gradient(transparent, transparent 2px, rgba(254, 254, 254, 0.72) 2px, rgba(254, 254, 254, 0.72) 2px, rgba(250, 250, 250, 0.88) 3px, rgba(250, 250, 250, 0.88) 3px, rgba(254, 254, 254, 0.72) 4px, rgba(254, 254, 254, 0.72) 4px, rgba(253, 253, 253, 0.45)), none !important;
+  background-size: auto 100% !important;
+  padding-top: 2px !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start,
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end {
+  width: 30px !important;
+  min-height: var(--tab-min-height) !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::before, :root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::after,
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::before,
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::after {
+  width: 30px !important;
+  min-height: var(--tab-min-height) !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::before,
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::before {
+  content: "" !important;
+  display: flex !important;
+  /* In Firefox 29, Mozilla used a SVG background image that had CSS to color the tab curves.
+     instead, we are going to use a CSS mask and CSS gradients to recreate the same effect. */
+  mask-size: 100% 100% !important;
+  background-color: var(--toolbar-background-color) !important;
+  background-image: linear-gradient(transparent, transparent 2px, rgba(254, 254, 254, 0.72) 2px, rgba(254, 254, 254, 0.72) 2px, rgba(250, 250, 250, 0.88) 3px, rgba(250, 250, 250, 0.88) 3px, rgba(254, 254, 254, 0.72) 4px, rgba(254, 254, 254, 0.72) 4px, rgba(253, 253, 253, 0.45)) !important;
+  background-repeat: no-repeat !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::after,
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::after {
+  margin-inline-start: -30px !important;
+  background-size: 100% 100% !important;
+  content: "" !important;
+  display: flex !important;
+  position: relative !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::before {
+  mask-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-selected-start.svg") !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::after {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-stroke-start.png") !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::before {
+  mask-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-selected-end.svg") !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::after {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-stroke-end.png") !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-label-container {
+  padding-block-end: 1px !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-close-button {
+  pointer-events: auto !important;
+  margin-inline-end: -2px !important;
+  margin-inline-start: 4px !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-close-button:not(:hover, :hover:active, [selected]) {
+  background-position-x: 0 !important;
+}
+:root[echelon-style-4] #TabsToolbar #tabs-newtab-button {
+  width: 66px !important;
+  pointer-events: auto !important;
+}
+:root[echelon-style-4] #TabsToolbar #tabs-newtab-button .toolbarbutton-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/newtab.png") !important;
+  list-style-image: none !important;
+}
+:root[echelon-style-4] #tabbrowser-tabs[movingtab] > .tabbrowser-tab:not([last-visible-tab])::after,
+:root[echelon-style-4] .tabbrowser-tab:not([selected]):not(:hover + .tabbrowser-tab):not(:first-of-type):not(:hover)::before,
+:root[echelon-style-4] #tabbrowser-tabs:not([overflow]) .tabbrowser-tab:last-of-type:not([beforehovered]):not(:hover)::after {
+  margin-inline-start: -1.5px;
+  margin-inline-end: -1.5px;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-separator.png");
+  background-position: left bottom 1px;
+  background-repeat: no-repeat;
+  background-size: 3px 100%;
+  content: "";
+  display: flex;
+  width: 3px;
+}
+:root[echelon-style-4] #main-window[sizemode=normal] #TabsToolbar {
+  padding-inline: 1px !important;
+}
+:root[echelon-style-4]:not([sizemode=maximized]) #tabbrowser-tabs[haspinnedtabs][overflow] {
+  padding-inline: calc(var(--tab-overflow-pinned-tabs-width) + 15px) 0 !important;
+}
+:root[echelon-style-4] .tab-background,
+:root[echelon-style-4] #tabs-newtab-button {
+  /* overlap the tab curves */
+  margin-inline: -15px !important;
+}
+:root[echelon-style-4] .tabbrowser-tab:hover .tab-background:not([selected]),
+:root[echelon-style-4] #tabs-newtab-button:hover {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-start.png"), url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-middle.png"), url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-end.png") !important;
+  background-position: left bottom, 30px bottom, right bottom !important;
+  background-repeat: no-repeat !important;
+  background-size: 30px 100%, calc(100% - 60px) 100%, 30px 100% !important;
+}
+:root[echelon-style-4] #editBookmarkPanel {
+  font: message-box !important;
+}
+:root[echelon-style-4] #editBookmarkPanel .footer-button {
+  appearance: button !important;
+  color: ButtonText !important;
+  background-color: ButtonFace !important;
+  padding: 2px 3px !important;
+  margin: 1px 5px 2px !important;
+  font-weight: normal !important;
+}
+:root[echelon-style-4] #editBookmarkPanel #editBookmarkPanel .expander-up,
+:root[echelon-style-4] #editBookmarkPanel #editBookmarkPanel .expander-down {
+  appearance: button !important;
+}
+:root[echelon-style-4] #appmenu-button-container {
   visibility: collapse !important;
 }
 

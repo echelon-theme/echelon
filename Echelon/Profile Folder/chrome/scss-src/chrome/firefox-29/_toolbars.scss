@@ -1,9 +1,36 @@
 & {
+    --toolbarbutton-outer-padding: 1px 2px !important;
+
+    --toolbar-border-color: hsla(209,67%,12%,0.35) !important;
+
+    #nav-bar {
+        z-index: 1 !important;
+        height: 41px !important;
+        box-shadow: 0 1px 0 rgba(253,253,253,0.45) inset !important;
+
+        #PanelUI-button {
+            min-height: 100% !important;
+            align-items: center !important;
+            padding-inline-start: 4px !important;
+            background-image: linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,.3) 30%, hsla(0,0%,100%,.3) 70%, hsla(0,0%,100%,0)),
+                              linear-gradient(hsla(210,54%,20%,0), hsla(210,54%,20%,.3) 30%, hsla(210,54%,20%,.3) 70%, hsla(210,54%,20%,0)),
+                              linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,.3) 30%, hsla(0,0%,100%,.3) 70%, hsla(0,0%,100%,0)) !important;
+            background-size: 1px calc(100% - 1px), 1px calc(100% - 1px), 1px  calc(100% - 1px) !important;
+            background-position: 0px 0px, 1px 0px, 2px 0px !important;
+            background-repeat: no-repeat !important;
+        }
+    }
+
+    #search-container {
+        margin-inline-end: 3px !important;
+    }
+
     // unified bookmark button styling
     #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button {
         position: relative !important;
 
-        &:not([disabled="true"]):hover {
+        &:not([disabled="true"]):hover,
+        &:not([disabled="true"])[open="true"] {
             .toolbarbutton-1 {
                 background-image: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1)) !important;
                 background-color: var(--toolbarbutton-background) !important;
@@ -48,7 +75,7 @@
             }
         }
 
-        &:not(:hover):not(:active) {
+        &:not(:hover, :active, [open]) {
             .toolbarbutton-menubutton-dropmarker::before {
                 content: '' !important; 
                 display: flex !important;
@@ -155,5 +182,22 @@
         animation: animation-bookmarkPulse 300ms;
         animation-delay: 600ms;
         animation-timing-function: ease-out;
+    }
+
+    // Toolbar borders
+    &[sizemode="normal"] {
+        &:not([lwtheme-image]) {
+            #nav-bar {
+                border-top-left-radius: 0 !important;
+                border-top-right-radius: 0 !important;
+            }
+            
+            #browser, #customization-container {
+                &[findbar-focused] {
+                    border-bottom-left-radius: 0 !important;
+                    border-bottom-right-radius: 0 !important;  
+                }
+            }
+        }
     }
 }

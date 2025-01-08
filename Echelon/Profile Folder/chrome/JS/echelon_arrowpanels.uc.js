@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name			Echelon :: Arrowpanels
+// @name			Phroton :: Arrowpanels
 // @description 	Adds arrows back to panels and places popups.
 // @author			aubymori
 // @include			main
@@ -29,7 +29,7 @@
     Object.defineProperty(panel.prototype, "panelContent", {
         get: function()
         {
-            return this.shadowRoot.querySelector("[part=arrowcontent]");
+            return this.shadowRoot.querySelector("[part=content]");
         }
     });
 

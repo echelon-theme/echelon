@@ -1,6 +1,7 @@
 @import "_mixins.scss";
 
 :root {
+    --tab-max-width: 250px !important;
     --tab-min-height: 28px !important;
     --tabstrip-min-height: var(--tab-min-height) !important;
     --tab-background: linear-gradient(transparent, hsla(0, 0%, 45%, .1) 1px, hsla(0, 0%, 32%, .2) 80%, hsla(0, 0%, 0%, .2)) !important;
@@ -38,11 +39,21 @@
         z-index: 0 !important;
         
         &:not([pinned]) {
+            max-width: var(--tab-max-width) !important;
             margin-inline: 0 !important; // remove fucking pinned tab margin
+
+            &[visuallyselected] {
+                position: relative !important;
+            }
         }
 
-        &:is([visuallyselected="true"]) { // make tab above outer border from navbar
-            position: relative !important;
+        &:not([pinned], [fadein]) {
+            max-width: 0.1px !important;
+            min-width: 0.1px !important;
+            visibility: hidden !important;
+        }
+
+        &[visuallyselected] { // make tab above outer border from navbar
             z-index: 2 !important;
         }
 
@@ -92,12 +103,8 @@
 
         .tab-close-button {
             margin-inline-end: 0 !important;
-            &:not(:hover) {
+            &:not(:hover, :hover:active, [selected]) {
                 background-position-x: -48px !important;
-
-                &[selected] {
-                    background-position-x: 0 !important;
-                }
             }
         }
     }

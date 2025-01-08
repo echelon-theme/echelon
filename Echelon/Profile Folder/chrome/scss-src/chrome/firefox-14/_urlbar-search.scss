@@ -1,3 +1,7 @@
+& {
+    --urlbar-border-color: hsla(210,54%,20%,.25) hsla(210,54%,20%,.27) hsla(210,54%,20%,.3) !important;
+}
+
 &:not([echelon-style-5]) {
     #urlbar {
         & #identity-box {
