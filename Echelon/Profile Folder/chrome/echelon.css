@@ -667,6 +667,9 @@
 :root #fxa-toolbar-menu-button[status=active] {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/sync-throbber.png") !important;
 }
+:root #nav-bar-overflow-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/overflow.png") !important;
+}
 :root :root:not([echelon-style-2]) #TabsToolbar #back-button,
 :root :root:not([echelon-style-2]) #toolbar-menubar #back-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/back.png") !important;
@@ -2300,7 +2303,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button:not(:hover)[disabled] + #urlbar-container .urlbar-input-container {
   mask: url("chrome://userchrome/content/assets/images/firefox-10/urlbar/winstripe-urlbar-back-button-mask.svg") !important;
   mask-repeat: no-repeat !important;
-  mask-position: left !important;
+  mask-position-x: -1px !important;
 }
 :root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button:not(:hover)[disabled] + #urlbar-container #identity-box {
   padding-inline-start: 5px !important;
@@ -2496,6 +2499,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   z-index: 1 !important;
   height: 41px !important;
   box-shadow: 0 1px 0 rgba(253, 253, 253, 0.45) inset !important;
+  background-image: linear-gradient(rgba(253, 253, 253, 0.45), rgba(255, 255, 255, 0)) !important;
 }
 :root[echelon-style-4] #nav-bar #PanelUI-button {
   min-height: 100% !important;
@@ -2652,9 +2656,16 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-4] #bookmarks-menu-button .toolbarbutton-menubutton-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/bookmark.png") !important;
 }
+:root[echelon-style-4] #fxa-toolbar-menu-button[status=active] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/syncProgress-toolbar.png") !important;
+}
 :root[echelon-style-4] :root:not([echelon-style-2]) #TabsToolbar #bookmarks-menu-button,
 :root[echelon-style-4] :root:not([echelon-style-2]) #toolbar-menubar #bookmarks-menu-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/inverted/bookmarks.png") !important;
+}
+:root[echelon-style-4] :root:not([echelon-style-2]) #TabsToolbar #fxa-toolbar-menu-button[status=active],
+:root[echelon-style-4] :root:not([echelon-style-2]) #toolbar-menubar #fxa-toolbar-menu-button[status=active] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/syncProgress-toolbar-inverted.png") !important;
 }
 :root[echelon-style-4] .close-icon {
   width: 16px !important;
@@ -2700,6 +2711,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 :root[echelon-style-4] #TabsToolbar .toolbar-items {
   padding-top: 0 !important;
+  padding-inline: 1px !important;
 }
 :root[echelon-style-4] #TabsToolbar #alltabs-button {
   min-width: 19px !important;
