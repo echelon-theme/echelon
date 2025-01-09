@@ -9,8 +9,8 @@
         }
     }
 
-    &[tabsintitlebar][sizemode="normal"][chromehidden~="menubar"] #toolbar-menubar ~ #TabsToolbar,
-    &[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"][inactive] ~ #TabsToolbar {
+    &[tabsintitlebar][sizemode="normal"][chromehidden~="menubar"] #toolbar-menubar ~ #TabsToolbar .toolbar-items,
+    &[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"][inactive] ~ #TabsToolbar .toolbar-items {
         margin-top: 15px !important;
     }
 }

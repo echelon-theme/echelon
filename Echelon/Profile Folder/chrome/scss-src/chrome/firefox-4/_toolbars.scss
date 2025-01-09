@@ -180,7 +180,7 @@
         }
     }
     
-    .toolbaritem-combined-buttons > separator {
+    .toolbaritem-combined-buttons[cui-areatype="toolbar"] > separator {
         display: none !important;
     }
 

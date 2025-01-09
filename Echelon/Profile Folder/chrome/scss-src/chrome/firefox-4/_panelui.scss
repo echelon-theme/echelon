@@ -496,7 +496,7 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
     #PanelUI-customize:hover,
     #PanelUI-quit:not([disabled]):hover {
         outline: 1px solid var(--arrowpanel-dimmed);
-        background-color: var(--arrowpanel-dimmed);
+        background-color: var(--arrowpanel-dimmed) !important;
     }
     
     #PanelUI-fxa-status:hover:active,
@@ -505,7 +505,7 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
     #PanelUI-customize:hover:active,
     #PanelUI-quit:not([disabled]):hover:active {
         outline: 1px solid var(--arrowpanel-dimmed-further);
-        background-color: var(--arrowpanel-dimmed-further);
+        background-color: var(--arrowpanel-dimmed-further) !important;
         box-shadow: 0 1px 0 hsla(210, 4%, 10%, 0.05) inset;
     }
     
@@ -518,49 +518,49 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
     
     #PanelUI-fxa-container[fxastatus="login-failed"],
     #PanelUI-fxa-container[fxastatus="unverified"] {
-        background-color: hsl(42, 94%, 88%);
+        background-color: hsl(42, 94%, 88%) !important;
         border-top: 1px solid hsl(42, 94%, 70%);
     }
     
     #PanelUI-fxa-container[fxastatus="login-failed"] > #PanelUI-fxa-status:hover,
     #PanelUI-fxa-container[fxastatus="unverified"] > #PanelUI-fxa-status:hover {
-        background-color: hsl(42, 94%, 85%);
+        background-color: hsl(42, 94%, 85%) !important;
     }
     
     #PanelUI-fxa-container[fxastatus="login-failed"]
       > #PanelUI-fxa-status:hover:active,
     #PanelUI-fxa-container[fxastatus="unverified"]
       > #PanelUI-fxa-status:hover:active {
-        background-color: hsl(42, 94%, 82%);
+        background-color: hsl(42, 94%, 82%) !important;
         box-shadow: 0 1px 0 hsla(210, 4%, 10%, 0.05) inset;
     }
     
     .panel-banner-item {
         color: black;
-        background-color: hsla(96, 65%, 75%, 0.5);
+        background-color: hsla(96, 65%, 75%, 0.5) !important;
     }
     
     .panel-banner-item:not([disabled]):hover {
-        background-color: hsla(96, 65%, 75%, 0.8);
+        background-color: hsla(96, 65%, 75%, 0.8) !important;
     }
     
     .panel-banner-item:not([disabled]):hover:active {
-        background-color: hsl(96, 65%, 75%);
+        background-color: hsl(96, 65%, 75%) !important;
     }
     
     #PanelUI-quit:not([disabled]):hover {
-        background-color: #d94141;
+        background-color: #d94141 !important;
         outline-color: #c23a3a;
     }
     
     #PanelUI-quit:not([disabled]):hover:active {
-       background-color: #ad3434;
+       background-color: #ad3434 !important;
        outline-color: #992e2e;
     }
 
     @at-root #customization-panelWrapper & #PanelUI-customize {
         color: white;
-        background-color: rgb(116,191,67);
+        background-color: rgb(116,191,67) !important;
         text-shadow: none;
         margin-top: -1px;
 
@@ -569,11 +569,11 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
         }
 
         &:hover {
-            background-color: rgb(105,173,61);
+            background-color: rgb(105,173,61) !important;
         }
 
         &:hover:active {
-            background-color: rgb(105,173,61);
+            background-color: rgb(105,173,61) !important;
         }
     }
 
@@ -607,7 +607,7 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
         display: flex;
         flex-shrink: 0;
         flex-direction: column;
-        background-color: var(--arrowpanel-dimmed);
+        background-color: var(--arrowpanel-dimmed) !important;
         padding: 0;
         margin: 0;
 
@@ -871,6 +871,67 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
         // Workaround for min-height not being accounted for in vertical layout:
         height: 41px;
     }
+}
 
+#main-window[echelon-style-4] #customization-palette {
+    .toolbarbutton-icon {
+        width: $panel-palette-icon-size !important;
+        height: $panel-palette-icon-size !important;
+        min-width: $panel-palette-icon-size !important;
+        min-height: $panel-palette-icon-size !important;
+    }
+}
 
+.australis-appmenu-panel {
+    .panelUI-grid {
+        toolbarbutton[disabled] .toolbarbutton-icon {
+            opacity: 100% !important;
+        }
+    }
+
+    #PanelUI-fxa-label .toolbarbutton-icon,
+    #PanelUI-fxa-icon .toolbarbutton-icon {
+        width: 16px;
+        height: 16px;
+        background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/sync-horizontalbar.png");
+    }
+
+    #PanelUI-customize .toolbarbutton-icon {
+        width: 16px;
+        height: 16px;
+        background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-customize.png");
+
+        @at-root #customization-panelWrapper & {
+            background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-customizeFinish.png");
+        }
+    }
+
+    #PanelUI-help .toolbarbutton-icon {
+        width: 16px;
+        height: 16px;
+        background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-help.png");
+    }
+
+    #PanelUI-quit .toolbarbutton-icon {
+        border-inline-end-style: none;
+        width: 16px;
+        height: 16px;
+        background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-exit.png");
+    }
+
+    #PanelUI-customize:hover .toolbarbutton-icon,
+    #PanelUI-help:not([disabled]):hover .toolbarbutton-icon,
+    #PanelUI-quit:not([disabled]):hover .toolbarbutton-icon {
+        background-position: -16px 0;
+    }
+
+    #PanelUI-customize:hover:active .toolbarbutton-icon,
+    #PanelUI-help:not([disabled]):hover:active .toolbarbutton-icon,
+    #PanelUI-quit:not([disabled]):hover:active .toolbarbutton-icon {
+        background-position: -32px 0;
+    }
+
+    #PanelUI-help[panel-multiview-anchor="true"] .toolbarbutton-icon {
+        background-position: -48px 0;
+    }
 }

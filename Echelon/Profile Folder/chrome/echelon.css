@@ -202,7 +202,7 @@
   width: var(--toolbarbutton-icon-width) !important;
   height: var(--toolbarbutton-icon-height) !important;
 }
-:root .toolbaritem-combined-buttons > separator {
+:root .toolbaritem-combined-buttons[cui-areatype=toolbar] > separator {
   display: none !important;
 }
 :root #navigator-toolbox > #nav-bar #zoom-controls {
@@ -480,10 +480,10 @@
   margin-inline-end: var(--tab-icon-end-margin) !important;
   margin-inline-start: var(--tab-icon-start-margin) !important;
 }
-#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]) {
+:root:not([echelon-style-4]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]) {
   display: flex !important;
 }
-#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [busy], [progress]), #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:-moz-broken {
+:root:not([echelon-style-4]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [busy], [progress]), :root:not([echelon-style-4]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:-moz-broken {
   content: var(--default-favicon) !important;
 }
 #TabsToolbar .tabbrowser-tab .tab-loading-burst {
@@ -1794,7 +1794,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 .australis-appmenu-panel #PanelUI-customize:hover,
 .australis-appmenu-panel #PanelUI-quit:not([disabled]):hover {
   outline: 1px solid var(--arrowpanel-dimmed);
-  background-color: var(--arrowpanel-dimmed);
+  background-color: var(--arrowpanel-dimmed) !important;
 }
 .australis-appmenu-panel #PanelUI-fxa-status:hover:active,
 .australis-appmenu-panel #PanelUI-fxa-icon:hover:active,
@@ -1802,7 +1802,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 .australis-appmenu-panel #PanelUI-customize:hover:active,
 .australis-appmenu-panel #PanelUI-quit:not([disabled]):hover:active {
   outline: 1px solid var(--arrowpanel-dimmed-further);
-  background-color: var(--arrowpanel-dimmed-further);
+  background-color: var(--arrowpanel-dimmed-further) !important;
   box-shadow: 0 1px 0 hsla(210, 4%, 10%, 0.05) inset;
 }
 .australis-appmenu-panel #PanelUI-fxa-status:hover,
@@ -1813,39 +1813,39 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 .australis-appmenu-panel #PanelUI-fxa-container[fxastatus=login-failed],
 .australis-appmenu-panel #PanelUI-fxa-container[fxastatus=unverified] {
-  background-color: hsl(42, 94%, 88%);
+  background-color: hsl(42, 94%, 88%) !important;
   border-top: 1px solid hsl(42, 94%, 70%);
 }
 .australis-appmenu-panel #PanelUI-fxa-container[fxastatus=login-failed] > #PanelUI-fxa-status:hover,
 .australis-appmenu-panel #PanelUI-fxa-container[fxastatus=unverified] > #PanelUI-fxa-status:hover {
-  background-color: hsl(42, 94%, 85%);
+  background-color: hsl(42, 94%, 85%) !important;
 }
 .australis-appmenu-panel #PanelUI-fxa-container[fxastatus=login-failed] > #PanelUI-fxa-status:hover:active,
 .australis-appmenu-panel #PanelUI-fxa-container[fxastatus=unverified] > #PanelUI-fxa-status:hover:active {
-  background-color: hsl(42, 94%, 82%);
+  background-color: hsl(42, 94%, 82%) !important;
   box-shadow: 0 1px 0 hsla(210, 4%, 10%, 0.05) inset;
 }
 .australis-appmenu-panel .panel-banner-item {
   color: black;
-  background-color: hsla(96, 65%, 75%, 0.5);
+  background-color: hsla(96, 65%, 75%, 0.5) !important;
 }
 .australis-appmenu-panel .panel-banner-item:not([disabled]):hover {
-  background-color: hsla(96, 65%, 75%, 0.8);
+  background-color: hsla(96, 65%, 75%, 0.8) !important;
 }
 .australis-appmenu-panel .panel-banner-item:not([disabled]):hover:active {
-  background-color: hsl(96, 65%, 75%);
+  background-color: hsl(96, 65%, 75%) !important;
 }
 .australis-appmenu-panel #PanelUI-quit:not([disabled]):hover {
-  background-color: #d94141;
+  background-color: #d94141 !important;
   outline-color: #c23a3a;
 }
 .australis-appmenu-panel #PanelUI-quit:not([disabled]):hover:active {
-  background-color: #ad3434;
+  background-color: #ad3434 !important;
   outline-color: #992e2e;
 }
 #customization-panelWrapper .australis-appmenu-panel #PanelUI-customize {
   color: white;
-  background-color: rgb(116, 191, 67);
+  background-color: rgb(116, 191, 67) !important;
   text-shadow: none;
   margin-top: -1px;
 }
@@ -1853,10 +1853,10 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   display: none;
 }
 #customization-panelWrapper .australis-appmenu-panel #PanelUI-customize:hover {
-  background-color: rgb(105, 173, 61);
+  background-color: rgb(105, 173, 61) !important;
 }
 #customization-panelWrapper .australis-appmenu-panel #PanelUI-customize:hover:active {
-  background-color: rgb(105, 173, 61);
+  background-color: rgb(105, 173, 61) !important;
 }
 
 #customization-panelWrapper .australis-appmenu-panel #PanelUI-fxa-container {
@@ -1872,7 +1872,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   display: flex;
   flex-shrink: 0;
   flex-direction: column;
-  background-color: var(--arrowpanel-dimmed);
+  background-color: var(--arrowpanel-dimmed) !important;
   padding: 0;
   margin: 0;
 }
@@ -2090,6 +2090,56 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   color: GrayText;
   font-variant: small-caps;
   height: 41px;
+}
+
+#main-window[echelon-style-4] #customization-palette .toolbarbutton-icon {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+}
+
+.australis-appmenu-panel .panelUI-grid toolbarbutton[disabled] .toolbarbutton-icon {
+  opacity: 100% !important;
+}
+.australis-appmenu-panel #PanelUI-fxa-label .toolbarbutton-icon,
+.australis-appmenu-panel #PanelUI-fxa-icon .toolbarbutton-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/sync-horizontalbar.png");
+}
+.australis-appmenu-panel #PanelUI-customize .toolbarbutton-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-customize.png");
+}
+#customization-panelWrapper .australis-appmenu-panel #PanelUI-customize .toolbarbutton-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-customizeFinish.png");
+}
+
+.australis-appmenu-panel #PanelUI-help .toolbarbutton-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-help.png");
+}
+.australis-appmenu-panel #PanelUI-quit .toolbarbutton-icon {
+  border-inline-end-style: none;
+  width: 16px;
+  height: 16px;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-exit.png");
+}
+.australis-appmenu-panel #PanelUI-customize:hover .toolbarbutton-icon,
+.australis-appmenu-panel #PanelUI-help:not([disabled]):hover .toolbarbutton-icon,
+.australis-appmenu-panel #PanelUI-quit:not([disabled]):hover .toolbarbutton-icon {
+  background-position: -16px 0;
+}
+.australis-appmenu-panel #PanelUI-customize:hover:active .toolbarbutton-icon,
+.australis-appmenu-panel #PanelUI-help:not([disabled]):hover:active .toolbarbutton-icon,
+.australis-appmenu-panel #PanelUI-quit:not([disabled]):hover:active .toolbarbutton-icon {
+  background-position: -32px 0;
+}
+.australis-appmenu-panel #PanelUI-help[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position: -48px 0;
 }
 
 .unified-nav-current {
@@ -2620,6 +2670,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin-bottom: -1px;
   z-index: 5;
   position: relative;
+  pointer-events: none;
 }
 :root[echelon-style-4] #bookmarked-notification-anchor {
   min-height: 18px;
@@ -2727,7 +2778,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin-block-end: -1px !important;
 }
 :root[echelon-style-4] #TabsToolbar .toolbar-items {
-  padding-top: 0 !important;
+  padding-top: 1px !important;
   padding-inline: 1px !important;
 }
 :root[echelon-style-4] #TabsToolbar #alltabs-button {
@@ -2905,7 +2956,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-4][tabsintitlebar][sizemode=normal] #titlebar {
   appearance: none !important;
 }
-:root[echelon-style-4][tabsintitlebar][sizemode=normal][chromehidden~=menubar] #toolbar-menubar ~ #TabsToolbar, :root[echelon-style-4][tabsintitlebar][sizemode=normal] #toolbar-menubar[autohide=true][inactive] ~ #TabsToolbar {
+:root[echelon-style-4][tabsintitlebar][sizemode=normal][chromehidden~=menubar] #toolbar-menubar ~ #TabsToolbar .toolbar-items, :root[echelon-style-4][tabsintitlebar][sizemode=normal] #toolbar-menubar[autohide=true][inactive] ~ #TabsToolbar .toolbar-items {
   margin-top: 15px !important;
 }
 
