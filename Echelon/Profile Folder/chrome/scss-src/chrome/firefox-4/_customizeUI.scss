@@ -1,0 +1,12 @@
+#customization-panel-container {
+    padding: 15px 25px 25px !important;
+    background-image: url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-separatorHorizontal.png"),
+                      url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-separatorVertical.png"),
+                      url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-gridTexture.png"),
+                      url("chrome://userchrome/content/assets/images/firefox-29/customizableui/background-noise-toolbar.png"),
+                      linear-gradient(to bottom, #3e86ce, #3878ba) !important;
+    background-position: center top, left center, left top, left top, left top !important;
+    background-repeat: no-repeat, no-repeat, repeat, repeat, no-repeat !important;
+    background-size: auto 12px, 12px 100%, auto, auto, auto !important;
+    background-attachment: scroll, scroll, fixed, fixed, scroll !important;
+}

@@ -670,6 +670,15 @@
 :root #nav-bar-overflow-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/overflow.png") !important;
 }
+:root #characterencoding-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/encoding.png") !important;
+}
+:root #history-panelmenu {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/history.png") !important;
+}
+:root #developer-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/developer.png") !important;
+}
 :root :root:not([echelon-style-2]) #TabsToolbar #back-button,
 :root :root:not([echelon-style-2]) #toolbar-menubar #back-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/back.png") !important;
@@ -1547,7 +1556,6 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
           which means each horizontal margin should be the half the button's width - (46/2) px.
   */
   margin: 4px calc((7.45em - 0.1px) / 2 - 23px);
-  margin-inline-start: 0 !important;
 }
 .australis-appmenu-panel .panelUI-grid > toolbarbutton > .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid > toolbarbutton > .toolbarbutton-badge-stack, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton > .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton > .toolbarbutton-badge-stack {
   width: 32px;
@@ -1964,7 +1972,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   left: 32px;
   height: 100%;
   width: var(--panel-ui-exit-subview-gutter-width);
-  background-image: url(images/subView-arrow-back-inverted.png), linear-gradient(rgba(255, 255, 255, 0.3), transparent);
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/subView-arrow-back-inverted.png"), linear-gradient(rgba(255, 255, 255, 0.3), transparent);
   background-repeat: no-repeat;
   background-color: Highlight;
   background-position: left 10px center, 0;
@@ -1974,7 +1982,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-position: right 10px center, 0;
 }
 .australis-appmenu-panel toolbarbutton[panel-multiview-anchor=true] {
-  background-image: url(images/subView-arrow-back-inverted.png), linear-gradient(rgba(255, 255, 255, 0.3), transparent);
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/subView-arrow-back-inverted.png"), linear-gradient(rgba(255, 255, 255, 0.3), transparent);
   background-position: right calc((7.45em - 0.1px) / 2 - var(--panel-ui-exit-subview-gutter-width) + 2px) center;
   background-repeat: no-repeat, repeat;
 }
@@ -2096,6 +2104,15 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 .unified-nav-forward[_moz-menuactive]:-moz-locale-dir(ltr),
 .unified-nav-back[_moz-menuactive]:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/menupopup/menu-forward.png") !important;
+}
+
+#customization-panel-container {
+  padding: 15px 25px 25px !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-separatorHorizontal.png"), url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-separatorVertical.png"), url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-gridTexture.png"), url("chrome://userchrome/content/assets/images/firefox-29/customizableui/background-noise-toolbar.png"), linear-gradient(to bottom, #3e86ce, #3878ba) !important;
+  background-position: center top, left center, left top, left top, left top !important;
+  background-repeat: no-repeat, no-repeat, repeat, repeat, no-repeat !important;
+  background-size: auto 12px, 12px 100%, auto, auto, auto !important;
+  background-attachment: scroll, scroll, fixed, fixed, scroll !important;
 }
 
 /* ::::: Firefox 5 ::::: */

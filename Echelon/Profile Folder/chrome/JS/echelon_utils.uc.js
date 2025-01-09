@@ -142,7 +142,7 @@ class BrandUtils
 			"vendorName": "The Echelon Team"
 		},
 		"fallback": {
-			"fullName": Services.appinfo.name,
+			"fullName": brandBundle.GetStringFromName("brandShortName"),
 			"productName": brandBundle.GetStringFromName("brandShorterName"),
 			"vendorName": Services.appinfo.vendor
 		}

@@ -181,10 +181,6 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
                         which means each horizontal margin should be the half the button's width - (46/2) px.
                 */
                 margin: 4px calc($menu-panel-button-width / 2 - 23px);
-
-                // Required to properly center the icon on newer versions of Firefox.
-                // (margin-inline-end is already set to 0 !important)
-                margin-inline-start: 0 !important;
             }
 
             & > .toolbarbutton-icon,
@@ -709,7 +705,7 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
             left: 32px; // evil hack
             height: 100%;
             width: var(--panel-ui-exit-subview-gutter-width);
-            background-image: url(images/subView-arrow-back-inverted.png),
+            background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/subView-arrow-back-inverted.png"),
                               linear-gradient(rgba(255,255,255,0.3), transparent);
             background-repeat: no-repeat;
             background-color: Highlight;
@@ -725,7 +721,7 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
     }
 
     toolbarbutton[panel-multiview-anchor="true"] {
-        background-image: url(images/subView-arrow-back-inverted.png),
+        background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/subView-arrow-back-inverted.png"),
                           linear-gradient(rgba(255,255,255,0.3), transparent);
         background-position: right calc($menu-panel-button-width / 2 - var(--panel-ui-exit-subview-gutter-width) + 2px) center;
         background-repeat: no-repeat, repeat;
