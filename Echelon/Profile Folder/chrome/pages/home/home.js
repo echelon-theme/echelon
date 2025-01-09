@@ -1,8 +1,5 @@
 var { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 
-let { PrivateBrowsingUtils } = ChromeUtils.importESModule("resource://gre/modules/PrivateBrowsingUtils.sys.mjs");
-Components.utils.import("resource:///modules/sessionstore/SessionStore.jsm", this);
-
 let root = document.documentElement;
 let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Homepage.Style");
 let newLogo = PrefUtils.tryGetBoolPref("Echelon.Appearance.NewLogo");
@@ -87,15 +84,15 @@ function createHomePage() {
             </div>
             <div class="spacer"/>
 
-            <div id="launcher" session="true">
-            <button class="launchButton" id="downloads">${homeBundle.GetStringFromName("downloadsButton")}</button>
-            <button class="launchButton" id="bookmarks">${homeBundle.GetStringFromName("bookmarksButton")}</button>
-            <button class="launchButton" id="history">${homeBundle.GetStringFromName("historyButton")}</button>
-            <button class="launchButton" id="addons">${homeBundle.GetStringFromName("addonsButton")}</button>
-            <button class="launchButton" id="sync">${homeBundle.GetStringFromName("syncButton")}</button>
-            <button class="launchButton" id="settings">${homeBundle.GetStringFromName("settingsButton")}</button>
+            <div id="launcher">
+            <button class="launchButton" id="downloads" onclick="windowRoot.ownerGlobal.DownloadsPanel.showDownloadsHistory();">${homeBundle.GetStringFromName("downloadsButton")}</button>
+            <button class="launchButton" id="bookmarks" onclick="windowRoot.ownerGlobal.PlacesCommandHook.showPlacesOrganizer('UnfiledBookmarks');">${homeBundle.GetStringFromName("bookmarksButton")}</button>
+            <button class="launchButton" id="history" onclick="windowRoot.ownerGlobal.PlacesCommandHook.showPlacesOrganizer('History');">${homeBundle.GetStringFromName("historyButton")}</button>
+            <button class="launchButton" id="addons" onclick="windowRoot.ownerGlobal.BrowserAddonUI.openAddonsMgr('addons://list/extension');">${homeBundle.GetStringFromName("addonsButton")}</button>
+            <button class="launchButton" id="sync" onclick="windowRoot.ownerGlobal.openPreferences('sync');">${homeBundle.GetStringFromName("syncButton")}</button>
+            <button class="launchButton" id="settings" onclick="windowRoot.ownerGlobal.openPreferences();">${homeBundle.GetStringFromName("settingsButton")}</button>
             <div id="restorePreviousSessionSeparator"/>
-            <button class="launchButton" id="restorePreviousSession">${homeBundle.GetStringFromName("restoreLastSessionButton")}</button>
+            <button class="launchButton" id="restorePreviousSession" onclick="restoreLastSession()">${homeBundle.GetStringFromName("restoreLastSessionButton")}</button>
             </div>
 
             <html:a id="aboutMozilla" href="${homeBundle.GetStringFromName("aboutMozilla")}"/>
@@ -287,6 +284,9 @@ function restoreLastSession()
 		document.getElementById("launcher").removeAttribute("session");
 	}
 }
+
+let { PrivateBrowsingUtils } = ChromeUtils.importESModule("resource://gre/modules/PrivateBrowsingUtils.sys.mjs");
+Components.utils.import("resource:///modules/sessionstore/SessionStore.jsm", this);
 
 if (SessionStore.canRestoreLastSession && !PrivateBrowsingUtils.isWindowPrivate(window))
 {
