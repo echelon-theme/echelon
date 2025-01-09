@@ -1,0 +1,16 @@
+& {
+    #titlebar-content {
+        visibility: collapse !important;
+    } 
+
+    &[tabsintitlebar][sizemode="normal"] {
+        #titlebar {
+            appearance: none !important;
+        }
+    }
+
+    &[tabsintitlebar][sizemode="normal"][chromehidden~="menubar"] #toolbar-menubar ~ #TabsToolbar,
+    &[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"][inactive] ~ #TabsToolbar {
+        margin-top: 15px !important;
+    }
+}

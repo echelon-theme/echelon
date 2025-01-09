@@ -22,6 +22,10 @@
 }
 
 #TabsToolbar {
+    .toolbar-items {
+        padding-top: 0 !important;
+    }
+
     #alltabs-button {
         min-width: 19px !important;
 
@@ -49,6 +53,9 @@
     margin-block-end: -1px !important;
 
     .tabbrowser-tab {
+        &[pinned] {
+            margin-block-start: 1px !important;
+        }
         pointer-events: none !important;
         overflow: visible !important;
     

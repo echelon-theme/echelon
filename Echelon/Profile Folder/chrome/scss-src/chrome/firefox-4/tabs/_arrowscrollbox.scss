@@ -5,7 +5,6 @@
     }
     &[echelon-style-4] {
         --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-arrow-left.png") !important;
-        --arrowscrollbox-offset: 1px !important;
         --tabbrowser-arrowbox-inline-padding: 15px !important;
     }
 }
@@ -17,7 +16,6 @@
     border: 0 !important;
     border-radius: 0 !important;
     background-color: transparent !important;
-    margin-bottom: var(--arrowscrollbox-offset) !important;
 }
 
 #tabbrowser-arrowscrollbox::part(scrollbox) {
@@ -43,7 +41,6 @@
     padding-inline-end: 2px !important;
     border-inline-end: 2px solid transparent !important;
     background-origin: border-box !important;
-    margin-bottom: var(--arrowscrollbox-offset) !important;
 }
 
 #tabbrowser-arrowscrollbox:not([scrolledtostart])::part(scrollbutton-up),

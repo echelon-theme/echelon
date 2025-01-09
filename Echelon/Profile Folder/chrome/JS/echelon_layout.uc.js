@@ -32,7 +32,7 @@ let g_echelonLayoutManager;
 
 			toolboxRoot.insertBefore(this.titlebarElem, toolboxRoot.firstChild);
 			this.titlebarElem.appendChild(document.querySelector("#toolbar-menubar"));
-			document.querySelector("#nav-bar").insertAdjacentElement("beforebegin", tabsContainer);
+			this.titlebarElem.appendChild(document.querySelector("#TabsToolbar"));
 
 			let tabsBox = await waitForElement("#tabbrowser-tabs");
 			tabsBox.addEventListener("TabSelect", this.onTabSwitch.bind(this));
@@ -95,7 +95,7 @@ let g_echelonLayoutManager;
 				
 				if (state == true)
 				{
-					document.querySelector("#nav-bar").insertAdjacentElement("beforebegin", tabsContainer);
+					document.querySelector("#titlebar").appendChild(tabsContainer);
 					document.documentElement.setAttribute("tabs-on-top", "true");
 				}
 				else

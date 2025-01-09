@@ -2698,6 +2698,9 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-color: transparent !important;
   margin-block-end: -1px !important;
 }
+:root[echelon-style-4] #TabsToolbar .toolbar-items {
+  padding-top: 0 !important;
+}
 :root[echelon-style-4] #TabsToolbar #alltabs-button {
   min-width: 19px !important;
 }
@@ -2726,6 +2729,9 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-4] #TabsToolbar .tabbrowser-tab {
   pointer-events: none !important;
   overflow: visible !important;
+}
+:root[echelon-style-4] #TabsToolbar .tabbrowser-tab[pinned] {
+  margin-block-start: 1px !important;
 }
 :root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background {
   flex-direction: row !important;
@@ -2863,6 +2869,15 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 :root[echelon-style-4] #appmenu-button-container {
   visibility: collapse !important;
+}
+:root[echelon-style-4] #titlebar-content {
+  visibility: collapse !important;
+}
+:root[echelon-style-4][tabsintitlebar][sizemode=normal] #titlebar {
+  appearance: none !important;
+}
+:root[echelon-style-4][tabsintitlebar][sizemode=normal][chromehidden~=menubar] #toolbar-menubar ~ #TabsToolbar, :root[echelon-style-4][tabsintitlebar][sizemode=normal] #toolbar-menubar[autohide=true][inactive] ~ #TabsToolbar {
+  margin-top: 15px !important;
 }
 
 /* ::::: Firefox 56 ::::: */
