@@ -26,7 +26,7 @@
         visibility: collapse !important;
     }
 
-    .toolbarbutton-1:not(#alltabs-button, #tabs-newtab-button) {
+    .toolbarbutton-1:not(#alltabs-button, #tabs-newtab-button, #new-tab-button) {
         min-height: var(--tab-min-height) !important;
 
         .toolbarbutton-icon,

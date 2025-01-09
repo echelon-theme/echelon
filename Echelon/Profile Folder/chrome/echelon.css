@@ -34,25 +34,26 @@
 :root #titlebar {
   -moz-window-dragging: drag !important;
 }
-:root:not([tabsintitlebar=true]) #appmenu-button-container {
+
+:root:not([echelon-style-4]):not([tabsintitlebar=true]) #appmenu-button-container {
   visibility: collapse !important;
 }
-:root #toolbar-menubar[inactive=true] .titlebar-buttonbox-container, :root:not([sizemode=maximized]) #TabsToolbar .titlebar-buttonbox-container, :root[sizemode=maximized] #titlebar-content .titlebar-buttonbox-container, :root[sizemode=maximized] #toolbar-menubar:not([inactive=true]) #TabsToolbar .titlebar-buttonbox-container {
+:root:not([echelon-style-4]) #toolbar-menubar[inactive=true] .titlebar-buttonbox-container, :root:not([echelon-style-4]):not([sizemode=maximized]) #TabsToolbar .titlebar-buttonbox-container, :root:not([echelon-style-4])[sizemode=maximized] #titlebar-content .titlebar-buttonbox-container, :root:not([echelon-style-4])[sizemode=maximized] #toolbar-menubar:not([inactive=true]) #TabsToolbar .titlebar-buttonbox-container {
   visibility: collapse !important;
 }
-:root[sizemode=maximized] #titlebar {
+:root:not([echelon-style-4])[sizemode=maximized] #titlebar {
   display: grid !important;
   grid-template-areas: "firefox-button menu-bar" "firefox-button tabbar" !important;
   grid-auto-columns: min-content auto !important;
 }
-:root[sizemode=maximized] #titlebar-content {
+:root:not([echelon-style-4])[sizemode=maximized] #titlebar-content {
   grid-area: firefox-button !important;
 }
-:root[sizemode=maximized] #toolbar-menubar {
+:root:not([echelon-style-4])[sizemode=maximized] #toolbar-menubar {
   grid-area: menu-bar !important;
   margin-inline-start: 4px !important;
 }
-:root[sizemode=maximized] #TabsToolbar {
+:root:not([echelon-style-4])[sizemode=maximized] #TabsToolbar {
   grid-area: tabbar !important;
 }
 
@@ -431,11 +432,11 @@
 #TabsToolbar .titlebar-spacer {
   visibility: collapse !important;
 }
-#TabsToolbar .toolbarbutton-1:not(#alltabs-button, #tabs-newtab-button) {
+#TabsToolbar .toolbarbutton-1:not(#alltabs-button, #tabs-newtab-button, #new-tab-button) {
   min-height: var(--tab-min-height) !important;
 }
-#TabsToolbar .toolbarbutton-1:not(#alltabs-button, #tabs-newtab-button) .toolbarbutton-icon,
-#TabsToolbar .toolbarbutton-1:not(#alltabs-button, #tabs-newtab-button) .toolbarbutton-badge-stack {
+#TabsToolbar .toolbarbutton-1:not(#alltabs-button, #tabs-newtab-button, #new-tab-button) .toolbarbutton-icon,
+#TabsToolbar .toolbarbutton-1:not(#alltabs-button, #tabs-newtab-button, #new-tab-button) .toolbarbutton-badge-stack {
   width: 18px !important;
   height: 18px !important;
   padding: 0 !important;
@@ -2400,6 +2401,9 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-3] :root:not([echelon-style-2]) #toolbar-menubar #home-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-14/toolbar/inverted/home.png") !important;
 }
+:root[echelon-style-3] #tabbrowser-tabs:not([overflow], [hashiddentabs]) ~ #alltabs-button {
+  display: none !important;
+}
 :root[echelon-style-3] {
   --urlbar-border-color: hsla(210,54%,20%,.25) hsla(210,54%,20%,.27) hsla(210,54%,20%,.3) !important;
 }
@@ -2693,6 +2697,31 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   padding: 0 !important;
   background-color: transparent !important;
   margin-block-end: -1px !important;
+}
+:root[echelon-style-4] #TabsToolbar #alltabs-button {
+  min-width: 19px !important;
+}
+:root[echelon-style-4] #TabsToolbar #alltabs-button .toolbarbutton-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-14/toolbarbutton-dropdown-arrow.png") !important;
+  list-style-image: none !important;
+  background-position: 0 !important;
+}
+:root[echelon-style-4] #TabsToolbar #alltabs-button .toolbarbutton-icon,
+:root[echelon-style-4] #TabsToolbar #alltabs-button .toolbarbutton-badge-stack {
+  width: 9px !important;
+  height: 7px !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+:root[echelon-style-4] #TabsToolbar #new-tab-button {
+  min-width: 26px !important;
+}
+:root[echelon-style-4] #TabsToolbar #new-tab-button .toolbarbutton-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/newtab.png") !important;
+  list-style-image: none !important;
 }
 :root[echelon-style-4] #TabsToolbar .tabbrowser-tab {
   pointer-events: none !important;

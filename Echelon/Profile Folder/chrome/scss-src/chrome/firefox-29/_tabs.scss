@@ -22,6 +22,27 @@
 }
 
 #TabsToolbar {
+    #alltabs-button {
+        min-width: 19px !important;
+
+        .toolbarbutton-icon {
+            @include set-background("firefox-14/toolbarbutton-dropdown-arrow.png");
+            background-position: 0 !important;
+        }
+        .toolbarbutton-icon,
+        .toolbarbutton-badge-stack {
+            @include set-size(9px, 7px);
+        }
+    }
+
+    #new-tab-button {
+        min-width: 26px !important;
+
+        .toolbarbutton-icon {
+            @include set-background("firefox-29/tabbrowser/newtab.png");
+        }
+    }
+
     z-index: 2 !important;
     padding: 0 !important;
     background-color: transparent !important;

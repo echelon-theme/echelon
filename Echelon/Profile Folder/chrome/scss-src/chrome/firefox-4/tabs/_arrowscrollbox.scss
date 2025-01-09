@@ -4,6 +4,8 @@
         --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-10/tabs/tab-arrow-left-inverted.png") !important;
     }
     &[echelon-style-4] {
+        --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-arrow-left.png") !important;
+        --arrowscrollbox-offset: 1px !important;
         --tabbrowser-arrowbox-inline-padding: 15px !important;
     }
 }
@@ -15,6 +17,7 @@
     border: 0 !important;
     border-radius: 0 !important;
     background-color: transparent !important;
+    margin-bottom: var(--arrowscrollbox-offset) !important;
 }
 
 #tabbrowser-arrowscrollbox::part(scrollbox) {
@@ -40,11 +43,17 @@
     padding-inline-end: 2px !important;
     border-inline-end: 2px solid transparent !important;
     background-origin: border-box !important;
+    margin-bottom: var(--arrowscrollbox-offset) !important;
 }
 
 #tabbrowser-arrowscrollbox:not([scrolledtostart])::part(scrollbutton-up),
 #tabbrowser-arrowscrollbox:not([scrolledtoend])::part(scrollbutton-down) {
     border-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/tab-overflow-border.png") 0 2 0 2 / 0 2px 0 0 !important;
+}
+
+#tabbrowser-arrowscrollbox[scrolledtostart]::part(scrollbutton-up),
+#tabbrowser-arrowscrollbox[scrolledtoend]::part(scrollbutton-down) {
+    opacity: 0.4 !important;
 }
 
 #tabbrowser-arrowscrollbox:-moz-locale-dir(rtl)::part(scrollbutton-up),

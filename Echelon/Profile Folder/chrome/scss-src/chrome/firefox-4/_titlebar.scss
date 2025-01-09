@@ -1,6 +1,6 @@
 :root {
 	--inactive-titlebar-opacity: 1 !important; // remove the shit inactive titlebar transparency
-	
+
 	// Fix titlebar background in Firefox 133+
 	#TabsToolbar {
 		background-color: transparent !important;
@@ -9,7 +9,9 @@
 	#titlebar {
 		-moz-window-dragging: drag !important;
 	}
+}
 
+:root:not([echelon-style-4]) {
 	// hide app menu when titlebar enabled
 	&:not([tabsintitlebar="true"]) #appmenu-button-container {
 		visibility: collapse !important;
