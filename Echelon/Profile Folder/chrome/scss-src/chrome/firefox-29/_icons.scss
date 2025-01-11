@@ -8,7 +8,9 @@
 
     @include toolbar-icons-inverted((    
         "bookmarks-menu-button": "firefox-29/toolbar/inverted/bookmarks.png",
-        "fxa-toolbar-menu-button[status="active"]": "firefox-29/toolbar/syncProgress-toolbar-inverted.png"
+        "bookmarks-menu-button[starred] .toolbarbutton-menubutton-button": "firefox-29/toolbar/inverted/bookmarkStarred.png",
+        "bookmarks-menu-button .toolbarbutton-menubutton-button": "firefox-29/toolbar/inverted/bookmark.png",
+        "fxa-toolbar-menu-button[status="active"]": "firefox-29/toolbar/inverted/syncProgress-toolbar.png"
     ));
 
     .close-icon {

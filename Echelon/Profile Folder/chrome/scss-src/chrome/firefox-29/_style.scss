@@ -5,3 +5,7 @@
 @import "places";
 @import "appmenu";
 @import "titlebar";
+
+&[echelon-system-style="win8"] {
+    @import "tweaks/win8/style";
+}

@@ -6,9 +6,12 @@
 // ==/UserScript==
 
 {
-    const IDENTITY_BOX_HTML = `<!-- Security Section -->
+    const IDENTITY_BOX_HTML = `
+    <!-- Security Section -->
     <hbox id="identity-popup-security" class="identity-popup-section">
     <vbox class="identity-popup-security-content" flex="1">
+
+        <label crop="start" class="identity-popup-headline" value="" />
 
         <vbox class="identity-popup-security-connection">
             <hbox flex="1">
@@ -68,7 +71,8 @@
             class="identity-popup-expander"
             when-connection="not-secure secure secure-ev secure-cert-user-overridden cert-error-page https-only-error-page"
             oncommand="gIdentityHandler.showSecuritySubView();"/>
-    </hbox>`;
+    </hbox>
+    `;
 
     var { waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
     waitForElement = waitForElement.bind(this);
@@ -83,6 +87,25 @@
                 box,
                 e.querySelector("#identity-popup-clear-sitedata-footer")
             );
+            updateProtocal();
         }
     });
+
+    function updateProtocal() {
+        let displayHost = null;
+        let mainView = document.querySelector("#identity-popup-mainView");
+
+        if (gIdentityHandler._uriHasHost) {
+            displayHost = gBrowser.selectedBrowser.documentURI.displayHost;
+            mainView.querySelector(".identity-popup-headline").setAttribute("value", displayHost);
+        }
+
+        if (gIdentityHandler._isSecureInternalUI) {
+            displayHost = gBrowser.selectedBrowser.documentURI.displaySpec;
+            mainView.querySelector(".identity-popup-headline").setAttribute("value", displayHost);
+		}
+    }
+
+    window.addEventListener("load", updateProtocal);
+    window.addEventListener("TabAttrModified", updateProtocal);
 }

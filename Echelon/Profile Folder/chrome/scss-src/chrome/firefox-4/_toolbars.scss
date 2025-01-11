@@ -77,7 +77,7 @@
             width: 30px !important;
             height: 30px !important;
             position: relative !important;
-            z-index: 1 !important;
+            z-index: 4 !important;
             margin-top: -2px !important;
             margin-bottom: -2px !important;
             margin-inline-start: 3px !important;
@@ -420,7 +420,7 @@
     }
 
     // Aero blue style
-    &:not([echelon-appearance-xp]) {
+    &:not([echelon-system-style="winxp"], [echelon-style-4][echelon-system-style="win8"], [echelon-style-4][echelon-system-style="win10"]) {
         &[echelon-appearance-blue] {
             --toolbar-background-color: hsl(214, 44%, 87%) !important;
         }

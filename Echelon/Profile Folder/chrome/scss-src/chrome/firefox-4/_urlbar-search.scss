@@ -58,6 +58,10 @@
         visibility: collapse !important;
     }
 
+    #tracking-protection-icon-container {
+        visibility: collapse !important;
+    }
+
     :root:not([echelon-style-2]) & #identity-box {
         background-color: -moz-dialog !important;
         background-image: linear-gradient(rgba(255,255,255,.25), rgba(0,0,0,.15)) !important;
