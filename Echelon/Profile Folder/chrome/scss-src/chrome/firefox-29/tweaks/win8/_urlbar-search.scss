@@ -3,3 +3,15 @@
 {
     border-radius: 0 !important;
 }
+
+&:not([echelon-style-5]) {
+    #urlbar {
+        & #identity-box {
+            &[pageproxystate="valid"]:not(.chromeUI, .verifiedIdentity) {
+                #identity-icon {
+                    @include set-background("firefox-29/urlbar/identity-icons-https.png");
+                }
+            }
+        }
+    }
+}

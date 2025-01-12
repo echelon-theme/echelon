@@ -9,11 +9,38 @@
     const IDENTITY_BOX_HTML = `
     <!-- Security Section -->
     <hbox id="identity-popup-security" class="identity-popup-section">
+    <image id="identity-popup-icon"/>
     <vbox class="identity-popup-security-content" flex="1">
 
-        <label crop="start" class="identity-popup-headline" value="" />
+        <label when-connection="chrome" id="identity-popup-brandName" class="identity-popup-label" value=""/>
 
-        <vbox class="identity-popup-security-connection">
+        <label when-connection="chrome" id="identity-popup-chromeLabel" class="identity-popup-label"></label>
+
+        <label when-connection="secure secure-ev" id="identity-popup-connectedToLabel" class="identity-popup-label" value=""/>
+
+        <label when-connection="not-secure" id="identity-popup-connectedToLabel2" class="identity-popup-label" value=""/>
+
+        <label when-connection="secure secure-ev" id="identity-popup-content-host" class="identity-popup-description" value="" />
+
+        <label when-connection="secure secure-ev" id="identity-popup-runByLabel" class="identity-popup-label" value=""/>
+
+        <description when-connection="secure secure-ev" id="identity-popup-content-owner" class="identity-popup-description"></description>
+
+        <description when-connection="secure-ev" id="identity-popup-content-supplemental" class="identity-popup-description"></description>
+
+        <description when-connection="secure secure-ev" id="identity-popup-content-verifier" class="identity-popup-description"></description>
+
+        <hbox id="identity-popup-encryption" flex="1">
+            <vbox>
+                <image id="identity-popup-encryption-icon"/>
+            </vbox>
+            <description id="identity-popup-encryption-label" flex="1" class="identity-popup-description"></description>
+        </hbox>
+
+
+
+
+        <vbox class="identity-popup-security-connection" hidden="true">
             <hbox flex="1">
                 <description class="identity-popup-connection-not-secure"
                             when-connection="not-secure secure-cert-user-overridden secure-custom-root cert-error-page https-only-error-page" data-l10n-id="identity-connection-not-secure"></description>
@@ -27,7 +54,7 @@
             </hbox>
         </vbox>
 
-        <vbox id="identity-popup-security-description">
+        <vbox id="identity-popup-security-description" hidden="true">
             <description id="identity-popup-security-ev-content-owner"
                         when-connection="secure-ev"/>
             <description class="identity-popup-warning-box identity-popup-warning-gray"
@@ -43,7 +70,7 @@
                         when-ciphers="weak" data-l10n-id="identity-weak-encryption"></description>
         </vbox>
 
-        <vbox id="identity-popup-security-httpsonlymode" when-httpsonlystatus="exception upgraded failed-top failed-sub">
+        <vbox id="identity-popup-security-httpsonlymode" when-httpsonlystatus="exception upgraded failed-top failed-sub" hidden="true">
             <label flex="1" data-l10n-id="identity-https-only-label"></label>
             <div>
                 <menulist id="identity-popup-security-httpsonlymode-menulist"
@@ -70,8 +97,14 @@
     <button id="identity-popup-security-button"
             class="identity-popup-expander"
             when-connection="not-secure secure secure-ev secure-cert-user-overridden cert-error-page https-only-error-page"
-            oncommand="gIdentityHandler.showSecuritySubView();"/>
+            oncommand="gIdentityHandler.showSecuritySubView();" hidden="true"/>
     </hbox>
+    `;
+
+    const IDENTITY_BOX_FOOTER = `
+        <button id="identity-popup-help-icon" oncommand="handleHelpCommand(event);" tooltiptext="How do I tell if my connection to a website is secure?" />
+        <spacer flex="1" />
+        <button id="identity-popup-more-info-echelon" data-l10n-id="identity-more-info-link-text" oncommand="gIdentityHandler.handleMoreInfoClick(event);"></button>
     `;
 
     var { waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
@@ -91,19 +124,76 @@
         }
     });
 
+    waitForElement("#identity-popup-clear-sitedata-footer").then(e => {
+        e.innerHTML = "";
+
+        let footer = MozXULElement.parseXULToFragment(IDENTITY_BOX_FOOTER);
+
+        e.appendChild(footer);
+    });
+
+    function handleHelpCommand(event) {
+        openHelpLink("secure-connection");
+    }
+
     function updateProtocal() {
+        if (lang != Services.locale.requestedLocale)
+        {
+            lang = Services.locale.requestedLocale;
+            strings = Services.strings.createBundle("chrome://echelon/locale/properties/urlbar.properties");
+        }
+
+        let documentURIHost = null;
         let displayHost = null;
+        let iData = null;
         let mainView = document.querySelector("#identity-popup-mainView");
+        let encryptionLabel = null;
 
         if (gIdentityHandler._uriHasHost) {
-            displayHost = gBrowser.selectedBrowser.documentURI.displayHost;
-            mainView.querySelector(".identity-popup-headline").setAttribute("value", displayHost);
+            encryptionLabel = strings.GetStringFromName("identity.unencrypted");
+            documentURIHost = gBrowser.selectedBrowser.documentURI;
+			displayHost = documentURIHost.host.replace(/^www\./i, "");
+            mainView.querySelector("#identity-popup-content-host").setAttribute("value", displayHost);
+            mainView.querySelector("#identity-popup-connectedToLabel2").setAttribute("value", strings.GetStringFromName("identity.unverifiedsite2"));
+        }
+
+        if (gIdentityHandler._uriHasHost && gIdentityHandler._isSecureContext) {
+            encryptionLabel = strings.GetStringFromName("identity.encrypted2");
+            mainView.querySelector("#identity-popup-connectedToLabel").setAttribute("value", strings.GetStringFromName("identity.connectedTo"));
+            mainView.querySelector("#identity-popup-runByLabel").setAttribute("value", strings.GetStringFromName("identity.runBy"));
+            mainView.querySelector("#identity-popup-content-owner").setAttribute("value", strings.GetStringFromName("identity.unknown"));
+            mainView.querySelector("#identity-popup-content-verifier").setAttribute("value", gIdentityHandler._identityIcon.tooltipText);
+        }
+
+        if (gIdentityHandler._uriHasHost && gIdentityHandler._isEV) {
+            iData = gIdentityHandler.getIdentityData();
+            let supplemental = "";
+
+            mainView.querySelector("#identity-popup-content-owner").setAttribute("value", iData.subjectOrg);
+
+            if (iData.city)
+                supplemental += iData.city + "\n";
+            if (iData.state && iData.country)
+                supplemental += gNavigatorBundle.getFormattedString("identity.identified.state_and_country",
+                                                                    [iData.state, iData.country]);
+            else if (iData.state) // State only
+                supplemental += iData.state;
+            else if (iData.country) // Country only
+                supplemental += iData.country;
+
+            mainView.querySelector("#identity-popup-content-supplemental").textContent = supplemental;
         }
 
         if (gIdentityHandler._isSecureInternalUI) {
-            displayHost = gBrowser.selectedBrowser.documentURI.displaySpec;
-            mainView.querySelector(".identity-popup-headline").setAttribute("value", displayHost);
+            let fullName = BrandUtils.getBrandingKey("fullName");
+            let productName = BrandUtils.getBrandingKey("productName");
+
+            mainView.querySelector("#identity-popup-brandName").setAttribute("value", fullName);
+
+            mainView.querySelector("#identity-popup-chromeLabel").textContent = strings.formatStringFromName("identity.chrome", [productName]);
 		}
+
+        mainView.querySelector("#identity-popup-encryption-label").textContent = encryptionLabel;
     }
 
     window.addEventListener("load", updateProtocal);

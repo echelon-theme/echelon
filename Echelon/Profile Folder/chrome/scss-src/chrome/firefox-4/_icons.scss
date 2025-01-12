@@ -4,6 +4,7 @@
     --toolbarbutton-icon-width: 18px;
     --toolbarbutton-icon-height: 18px;
     --icon16: url("chrome://branding/content/icon32.png") !important;
+    --icon64: url("chrome://branding/content/icon64.png") !important;
     --identity-icons-brand: url("chrome://branding/content/icon32.png") !important;
     --identity-color-brand: rgb(229,115,0) !important;
     --identity-background-brand: linear-gradient(rgba(229,114,0,0),
@@ -78,6 +79,11 @@
         @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon16.png");
         &[echelon-appearance-newlogo] {
             @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/icon16.png");
+        }
+
+        --icon64: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon64.png") !important;
+        &[echelon-appearance-newlogo] {
+            --icon64: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/icon64.png") !important;
         }
     }
 

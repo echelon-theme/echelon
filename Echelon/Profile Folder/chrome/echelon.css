@@ -582,6 +582,7 @@
   --toolbarbutton-icon-width: 18px;
   --toolbarbutton-icon-height: 18px;
   --icon16: url("chrome://branding/content/icon32.png") !important;
+  --icon64: url("chrome://branding/content/icon64.png") !important;
   --identity-icons-brand: url("chrome://branding/content/icon32.png") !important;
   --identity-color-brand: rgb(229,115,0) !important;
   --identity-background-brand: linear-gradient(rgba(229,114,0,0),
@@ -781,6 +782,7 @@
 }
 :root[titleShortName=firefox] {
   --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/identity-icons-brand.png") !important;
+  --icon64: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon64.png") !important;
 }
 :root[titleShortName=firefox] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
   content: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon16.png") !important;
@@ -793,6 +795,9 @@
 }
 :root[titleShortName=firefox][echelon-appearance-newlogo] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/icon16.png") !important;
+}
+:root[titleShortName=firefox][echelon-appearance-newlogo] {
+  --icon64: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/icon64.png") !important;
 }
 :root[titleShortName=nightly] {
   --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/new/identity-icons-brand.png") !important;
@@ -2175,73 +2180,98 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/menupopup/menu-forward.png") !important;
 }
 
+#identity-popup {
+  --popup-width: unset !important;
+}
 #identity-popup .panel-header,
-#identity-popup toolbarseparator,
-#identity-popup .panel-subview-footer-button {
+#identity-popup toolbarseparator {
   visibility: collapse !important;
 }
 #identity-popup .identity-popup-section {
-  padding-inline: 0 !important;
-  margin-inline: 0 !important;
-}
-#identity-popup .identity-popup-security-content {
-  padding: 0.5em 0 1em !important;
-  padding-inline-start: calc(2em + 24px) !important;
-  padding-inline-end: 1em !important;
-  background-repeat: no-repeat !important;
-  background-position: 1em 1em !important;
-  background-size: 24px auto !important;
-}
-#identity-popup .identity-popup-security-content {
-  background-image: url("chrome://userchrome/content/assets/images/firefox-56/controlcenter/conn-not-secure.svg") !important;
-}
-#identity-popup[connection^=secure] .identity-popup-security-content {
-  background-image: url("chrome://userchrome/content/assets/images/firefox-56/controlcenter/conn-secure.svg") !important;
-}
-#identity-popup .identity-popup-headline {
-  margin: 3px 0 4px !important;
-  font-size: 150% !important;
-}
-#identity-popup .identity-popup-security-connection {
-  list-style-image: none !important;
-  min-height: unset !important;
+  min-width: 280px !important;
+  padding: 10px !important;
   margin: 0 !important;
-  padding: 0 !important;
 }
-#identity-popup .identity-popup-connection-secure {
-  color: #418220 !important;
+#identity-popup #identity-popup-icon {
+  height: 64px;
+  width: 64px;
+  padding: 0;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/urlbar/identity.png");
 }
-#identity-popup .identity-popup-connection-not-secure {
-  color: #d74345 !important;
+#identity-popup[connection=secure] #identity-popup-icon {
+  background-position-y: -64px !important;
 }
-#identity-popup .identity-popup-expander {
+#identity-popup[connection=secure-ev] #identity-popup-icon {
+  background-position-y: -128px !important;
+}
+#identity-popup[connection=chrome] #identity-popup-icon {
+  background-image: var(--icon64) !important;
+}
+#identity-popup .identity-popup-description {
+  white-space: pre-wrap !important;
+  padding-inline-start: 15px !important;
+  margin: 2px 0 4px !important;
+}
+#identity-popup .identity-popup-label {
+  white-space: pre-wrap !important;
   margin: 0 !important;
-  padding: 4px 0 !important;
-  min-width: auto !important;
-  width: 38px !important;
-  border: 0 none !important;
+  margin-inline-start: 15px !important;
+}
+#identity-popup #identity-popup-content-host {
+  font-size: 1.2em !important;
+  margin-top: 3px !important;
+  margin-bottom: 5px !important;
+  font-weight: bold !important;
+  max-width: 300px !important;
+}
+#identity-popup #identity-popup-brandName {
+  font-weight: bold !important;
+  font-size: 1.25em !important;
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important;
+}
+#identity-popup #identity-popup-content-owner {
+  margin-top: 4px !important;
+  margin-bottom: 0 !important;
+  font-weight: bold !important;
+  max-width: 300px !important;
+}
+#identity-popup[connection=secure] #identity-popup-content-owner {
+  font-weight: normal !important;
+}
+#identity-popup[connection=secure-ev] #identity-popup-content-owner {
+  font-size: 1.2em !important;
+}
+#identity-popup #identity-popup-content-verifier {
+  margin: 4px 0 2px !important;
+}
+#identity-popup[connection=secure] #identity-popup-encryption, #identity-popup[connection=secure-ev] #identity-popup-encryption {
+  margin-top: 10px !important;
+  margin-inline-start: -24px !important;
+}
+#identity-popup[connection=secure] #identity-popup-encryption #identity-popup-encryption-icon, #identity-popup[connection=secure-ev] #identity-popup-encryption #identity-popup-encryption-icon {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/urlbar/Secure24.png");
+}
+#identity-popup #identity-popup-help-icon {
   appearance: none !important;
-  background-image: url("chrome://userchrome/content/assets/images/firefox-56/controlcenter/arrow-subview.svg"), linear-gradient(rgba(255, 255, 255, 0.3), transparent) !important;
-  background-size: 16px, auto !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-color: transparent !important;
+  border: none !important;
+  margin: 7px 0 0 -3px !important;
+  background: none !important;
+  min-width: 0 !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/icons/question-16.png") !important;
+  cursor: pointer !important;
 }
-#identity-popup .identity-popup-expander .button-box {
-  padding: 0 !important;
-  appearance: none !important;
-  border-style: none !important;
-  border-left: 1px solid var(--panel-separator-color) !important;
+#identity-popup #identity-popup-more-info-button {
+  margin-top: 6px !important;
+  margin-bottom: 0 !important;
+  margin-inline-end: 0 !important;
 }
-#identity-popup .identity-popup-expander::after {
-  display: none !important;
-}
-#identity-popup .identity-popup-expander:hover {
-  background-color: hsla(210, 4%, 10%, 0.07) !important;
-}
-#identity-popup .identity-popup-expander:hover:active {
-  background-color: hsla(210, 4%, 10%, 0.12);
-  box-shadow: 0 1px 0 hsla(210, 4%, 10%, 0.05) inset !important;
+#identity-popup #identity-popup-clear-sitedata-footer {
+  flex-direction: row !important;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 60%, transparent) !important;
+  padding: 10px !important;
+  margin-top: 5px !important;
+  margin-bottom: 0 !important;
 }
 
 #customization-panel-container {
@@ -3242,6 +3272,10 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-4][echelon-system-style=win8] #urlbar-background,
 :root[echelon-style-4][echelon-system-style=win8] #searchbar {
   border-radius: 0 !important;
+}
+:root[echelon-style-4][echelon-system-style=win8]:not([echelon-style-5]) #urlbar #identity-box[pageproxystate=valid]:not(.chromeUI, .verifiedIdentity) #identity-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/urlbar/identity-icons-https.png") !important;
+  list-style-image: none !important;
 }
 
 /* ::::: Firefox 56 ::::: */
