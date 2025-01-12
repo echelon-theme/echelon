@@ -2700,16 +2700,27 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 
 #navigator-toolbox,
 #browser,
-#customization-container {
+#customization-container,
+.titlebar-buttonbox-container {
   transition-property: margin-left, margin-right !important;
   transition-duration: 150ms !important;
   transition-timing-function: ease-out !important;
 }
 
+:root[customizing] {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-gridTexture.png") !important;
+  background-attachment: fixed !important;
+}
+:root[customizing]:-moz-lwtheme {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-gridTexture.png"), var(--lwt-header-image) !important;
+}
 :root[customizing] #navigator-toolbox,
 :root[customizing] #browser,
 :root[customizing] #customization-container {
   margin-inline: 2em !important;
+}
+:root[customizing] .titlebar-buttonbox-container {
+  margin-inline-end: -2em !important;
 }
 :root[customizing] #browser,
 :root[customizing] #customization-container {

@@ -1,16 +1,28 @@
 #navigator-toolbox,
 #browser,
-#customization-container {
+#customization-container,
+.titlebar-buttonbox-container {
     transition-property: margin-left, margin-right !important;
     transition-duration: 150ms !important;
     transition-timing-function: ease-out !important;
 }
 
 :root[customizing] {
+    background-image: url('chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-gridTexture.png') !important;
+    background-attachment: fixed !important;
+  
+    &:-moz-lwtheme {
+        background-image: url('chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-gridTexture.png'), var(--lwt-header-image) !important;
+    }
+
     #navigator-toolbox,
     #browser,
     #customization-container {
         margin-inline: 2em !important;
+    }
+
+    .titlebar-buttonbox-container {
+        margin-inline-end: -2em !important;
     }
 
     #browser,
