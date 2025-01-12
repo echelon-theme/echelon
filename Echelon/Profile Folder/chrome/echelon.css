@@ -1465,7 +1465,6 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   max-width: 22.35em;
 }
 .australis-appmenu-panel #PanelUI-contents > .panel-customization-placeholder {
-  -moz-outline-radius: 2.5px;
   border-radius: 6.566666px;
   outline: 1px dashed transparent;
   cursor: auto;
@@ -1487,7 +1486,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   width: calc(22.35em + var(--scrollbar-width, 17px) + 5px + 5px);
   padding-left: 5px;
   padding-right: 5px;
-  align-content: center;
+  align-content: flex-start;
 }
 .australis-appmenu-panel .subviewbutton {
   appearance: none !important;
@@ -1734,8 +1733,8 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 .australis-appmenu-panel .panel-banner-item > .toolbarbutton-text,
 .australis-appmenu-panel #PanelUI-fxa-label > .toolbarbutton-text,
 .australis-appmenu-panel #PanelUI-customize > .toolbarbutton-text {
-  margin: 0;
-  padding: 0 6px;
+  margin: 0 !important;
+  padding: 0 6px !important;
   text-align: start;
 }
 .australis-appmenu-panel #PanelUI-help > .toolbarbutton-text,
@@ -2052,6 +2051,15 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   border-start-end-radius: var(--arrowpanel-border-radius);
   border-end-end-radius: var(--arrowpanel-border-radius);
 }
+.australis-appmenu-panel .panel-subview-body menuseparator {
+  appearance: none !important;
+  min-height: 0 !important;
+  border-top: 1px solid hsla(210, 4%, 10%, 0.15) !important;
+  margin: 6px 0 !important;
+  margin-inline-start: -5px !important;
+  margin-inline-end: -4px !important;
+  padding: 0 !important;
+}
 .australis-appmenu-panel .panel-view-body-unscrollable {
   overflow: hidden;
   flex: 1;
@@ -2110,17 +2118,424 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 .australis-appmenu-panel .panel-subview-header {
   margin: -4px -4px 4px !important;
-  border-bottom: 1px solid hsla(210, 4%, 10%, 0.14);
-  color: GrayText;
-  font-variant: small-caps;
+  background-color: hsla(210, 4%, 10%, 0.05) !important;
+  box-shadow: 0 -1px 0 hsla(210, 4%, 10%, 0.05) inset !important;
+  color: hsl(0, 0%, 50%) !important;
   height: 41px;
 }
 
-#main-window[echelon-style-4] #customization-palette .toolbarbutton-icon {
+#customization-palette .toolbarbutton-icon {
   width: 32px !important;
   height: 32px !important;
   min-width: 32px !important;
   min-height: 32px !important;
+}
+
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#reload-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#reload-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#reload-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#reload-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -32px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#reload-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#reload-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#reload-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#reload-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#home-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#home-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#home-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#home-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -96px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#home-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#home-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#home-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#home-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#bookmarks-menu-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-menu-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#bookmarks-menu-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-menu-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -160px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#bookmarks-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#bookmarks-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#bookmarks-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#bookmarks-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -160px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#bookmarks-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#bookmarks-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#bookmarks-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#history-panelmenu .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#history-panelmenu .toolbarbutton-icon,
+#customization-palette > toolbarbutton#history-panelmenu .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#history-panelmenu .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -192px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#history-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#history-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#history-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#history-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#downloads-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#downloads-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#downloads-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#downloads-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -224px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#downloads-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#downloads-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#downloads-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#downloads-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#add-ons-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#add-ons-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#add-ons-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#add-ons-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -256px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#add-ons-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#add-ons-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#add-ons-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#add-ons-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#open-file-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#open-file-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#open-file-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#open-file-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -288px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#open-file-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#open-file-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#open-file-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#open-file-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#save-page-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-page-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#save-page-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-page-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -320px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#save-page-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-page-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#save-page-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-page-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#fxa-toolbar-menu-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#fxa-toolbar-menu-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#fxa-toolbar-menu-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#fxa-toolbar-menu-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -352px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#fxa-toolbar-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#fxa-toolbar-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#fxa-toolbar-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#fxa-toolbar-menu-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#sync-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sync-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#sync-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sync-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -992px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#sync-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sync-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#sync-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sync-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#containers-panelmenu .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#containers-panelmenu .toolbarbutton-icon,
+#customization-palette > toolbarbutton#containers-panelmenu .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#containers-panelmenu .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -1024px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#containers-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#containers-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#containers-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#containers-panelmenu[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#feed-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#feed-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#feed-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#feed-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -384px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#feed-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#feed-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#feed-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#feed-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#social-share-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#social-share-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#social-share-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#social-share-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -416px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#social-share-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#social-share-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#social-share-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#social-share-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#characterencoding-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#characterencoding-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#characterencoding-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#characterencoding-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -448px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#characterencoding-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#characterencoding-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#characterencoding-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#characterencoding-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#new-window-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#new-window-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#new-window-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#new-window-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -480px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#new-window-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#new-window-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#new-window-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#new-window-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#privatebrowsing-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#privatebrowsing-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#privatebrowsing-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#privatebrowsing-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -544px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#privatebrowsing-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#privatebrowsing-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#privatebrowsing-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#privatebrowsing-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#find-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#find-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#find-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#find-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -608px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#find-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#find-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#find-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#find-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#print-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#print-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#print-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#print-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -640px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#print-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#print-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#print-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#print-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#fullscreen-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#fullscreen-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#fullscreen-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#fullscreen-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -672px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#fullscreen-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#fullscreen-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#fullscreen-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#fullscreen-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#developer-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#developer-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#developer-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#developer-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -704px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#developer-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#developer-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#developer-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#developer-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#preferences-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#preferences-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#preferences-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#preferences-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -736px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#preferences-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#preferences-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#preferences-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#preferences-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#email-link-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#email-link-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#email-link-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#email-link-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -768px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#email-link-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#email-link-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#email-link-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#email-link-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#panic-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#panic-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#panic-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#panic-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -864px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#panic-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#panic-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#panic-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#panic-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#webide-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#webide-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#webide-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#webide-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -928px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#webide-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#webide-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#webide-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#webide-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#sidebar-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sidebar-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#sidebar-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sidebar-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -480px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#sidebar-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sidebar-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#sidebar-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#sidebar-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#save-to-pocket-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-to-pocket-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#save-to-pocket-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-to-pocket-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -960px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#save-to-pocket-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-to-pocket-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#save-to-pocket-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#save-to-pocket-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#echelon-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#echelon-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#echelon-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#echelon-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -1024px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#echelon-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#echelon-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#echelon-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#echelon-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#library-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#library-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#library-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#library-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -1056px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#library-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#library-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#library-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#library-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#screenshot-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#screenshot-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#screenshot-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#screenshot-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -1088px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#screenshot-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#screenshot-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#screenshot-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#screenshot-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#logins-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#logins-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#logins-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#logins-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -1120px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#logins-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#logins-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#logins-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#logins-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#import-button .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#import-button .toolbarbutton-icon,
+#customization-palette > toolbarbutton#import-button .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#import-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+  background-position: -1152px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid > toolbarbutton#import-button[panel-multiview-anchor=true] .toolbarbutton-icon, .australis-appmenu-panel .panelUI-grid *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#import-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette > toolbarbutton#import-button[panel-multiview-anchor=true] .toolbarbutton-icon,
+#customization-palette *:not(#edit-controls, #zoom-controls, .panel-customization-placeholder) > toolbarbutton#import-button[panel-multiview-anchor=true] .toolbarbutton-icon {
+  background-position-y: 32px !important;
+}
+
+.australis-appmenu-panel .panelUI-grid #cut-button .toolbarbutton-icon {
+  width: 16px !important;
+  height: 16px !important;
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-small.png") !important;
+  background-position: -16px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid #copy-button .toolbarbutton-icon {
+  width: 16px !important;
+  height: 16px !important;
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-small.png") !important;
+  background-position: -32px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid #paste-button .toolbarbutton-icon {
+  width: 16px !important;
+  height: 16px !important;
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-small.png") !important;
+  background-position: -48px 0 !important;
 }
 
 .australis-appmenu-panel .panelUI-grid toolbarbutton[disabled] .toolbarbutton-icon {
@@ -2284,12 +2699,135 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 
 #customization-panel-container {
+  grid-area: 1/2/3/3;
+  overflow-y: hidden !important;
   padding: 15px 25px 25px !important;
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-separatorHorizontal.png"), url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-separatorVertical.png"), url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-gridTexture.png"), url("chrome://userchrome/content/assets/images/firefox-29/customizableui/background-noise-toolbar.png"), linear-gradient(to bottom, #3e86ce, #3878ba) !important;
   background-position: center top, left center, left top, left top, left top !important;
   background-repeat: no-repeat, no-repeat, repeat, repeat, no-repeat !important;
   background-size: auto 12px, 12px 100%, auto, auto, auto !important;
   background-attachment: scroll, scroll, fixed, fixed, scroll !important;
+}
+#customization-panel-container .panel-arrowcontent {
+  flex: 1 !important;
+}
+#customization-panel-container .panel-arrowcontent #PanelUI-mainView {
+  height: 100% !important;
+}
+
+#customization-container {
+  grid-template-columns: 1fr auto !important;
+  grid-template-rows: 1fr auto !important;
+}
+#customization-container:not([hidden]) {
+  display: grid !important;
+}
+#customization-container #customization-content-container {
+  grid-area: 1/1/2/2 !important;
+}
+#customization-container toolbarpaletteitem[place=palette] {
+  width: 10em !important;
+  max-width: 10em !important;
+  height: calc(40px + 2em) !important;
+  display: inline-flex !important;
+  margin: 0 !important;
+  margin-block-end: 5px !important;
+}
+#customization-container #customization-header {
+  font-size: 18px !important;
+  line-height: 18px !important;
+  color: rgb(64, 100, 128) !important;
+  font-weight: lighter !important;
+  margin: 0 !important;
+  margin-bottom: 1em !important;
+  padding: 25px 25px 0 !important;
+}
+#customization-container #customization-palette {
+  padding: 0 25px 25px !important;
+}
+#customization-container #customization-palette:not([hidden]) {
+  margin-bottom: 25px !important;
+}
+#customization-container #customization-footer {
+  grid-area: 2/1/3/2 !important;
+  background-color: rgb(236, 236, 236) !important;
+  border-top: 1px solid rgb(221, 221, 221) !important;
+  padding: 15px !important;
+}
+#customization-container .footer-button,
+#customization-container #customization-titlebar-visibility-checkbox {
+  appearance: none !important;
+  border: 1px solid rgb(192, 192, 192) !important;
+  border-radius: 3px !important;
+  margin: 0 !important;
+  padding: 2px 12px !important;
+  background-color: rgb(251, 251, 251) !important;
+  color: rgb(71, 71, 71) !important;
+  box-shadow: 0 1px rgba(255, 255, 255, 0.5), inset 0 1px rgba(255, 255, 255, 0.5) !important;
+  font-weight: normal !important;
+  min-height: 35px !important;
+  margin-inline-end: 10px !important;
+}
+#customization-container .footer-button[disabled=true],
+#customization-container #customization-titlebar-visibility-checkbox[disabled=true] {
+  opacity: 0.5 !important;
+}
+#customization-container .footer-button .button-box,
+#customization-container #customization-titlebar-visibility-checkbox .button-box {
+  margin-inline-start: 3px !important;
+  margin-inline-end: 4px !important;
+  padding-block-start: 1px !important;
+  padding-block-end: 2px !important;
+}
+#customization-container .footer-button[type=menu] .button-menu-dropmarker,
+#customization-container #customization-titlebar-visibility-checkbox[type=menu] .button-menu-dropmarker {
+  margin: 1px !important;
+  width: 11px !important;
+  height: 11px !important;
+  content: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/arrow-dn.gif") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+}
+#customization-container #customization-titlebar-visibility-checkbox {
+  padding: 2px 7px !important;
+}
+#customization-container #customization-titlebar-visibility-checkbox .checkbox-check {
+  visibility: collapse !important;
+}
+#customization-container #customization-titlebar-visibility-checkbox .checkbox-label-box {
+  margin-inline-start: 3px !important;
+  margin-inline-end: 4px !important;
+  padding-block-start: 1px !important;
+  padding-block-end: 2px !important;
+  align-items: center !important;
+}
+#customization-container #customization-titlebar-visibility-checkbox .checkbox-icon {
+  display: flex !important;
+  width: 24px !important;
+  height: 24px !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customize-titleBar-toggle.png") !important;
+}
+#customization-container #customization-titlebar-visibility-checkbox .checkbox-label {
+  margin-inline-start: 6px !important;
+}
+#customization-container #customization-titlebar-visibility-checkbox[checked] {
+  background-color: rgb(218, 218, 218) !important;
+  border-color: rgb(168, 168, 168) !important;
+  text-shadow: 0 1px rgb(236, 236, 236) !important;
+  box-shadow: 0 1px rgba(255, 255, 255, 0.5), inset 0 1px rgb(196, 196, 196) !important;
+}
+#customization-container #customization-titlebar-visibility-checkbox[checked] .checkbox-icon {
+  background-position-x: -24px !important;
+}
+:root:not([echelon-style-4]) #customization-container #customization-titlebar-visibility-checkbox {
+  visibility: collapse !important;
+}
+#customization-container #customization-reset-button {
+  margin-inline-end: 0 !important;
+}
+#customization-container #customization-done-button {
+  visibility: collapse !important;
 }
 
 /* ::::: Firefox 5 ::::: */

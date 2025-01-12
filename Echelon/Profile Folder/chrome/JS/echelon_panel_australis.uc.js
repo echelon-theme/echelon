@@ -55,6 +55,7 @@ const DEFAULT_PANEL_LAYOUT = [
     "fullscreen-button",
     "find-button",
     "preferences-button",
+    "echelon-button",
     "add-ons-button",
     "developer-button"
 ];
@@ -1563,12 +1564,7 @@ class AustralisPanelController
             let contentContainer = document.querySelector("#customization-content-container");
             let panelContainer = document.querySelector("#customization-panel-container");
 
-            let hackWrapper = renderElement("div", {
-                "class": "echelon-customization-hack-container"
-            });
-            footer.insertAdjacentElement("beforebegin", hackWrapper);
-            hackWrapper.appendChild(contentContainer);
-            hackWrapper.appendChild(panelContainer);
+            customizationContainer.appendChild(panelContainer);
 
             panelContainer.querySelector("#customization-panelHolder").style.display = "none";
         }

@@ -133,6 +133,12 @@ menupopup[type="arrow"] {
     margin-inline: -7px !important;
 }
 
+#PanelUI-popup {
+    margin-inline: -11px !important;
+}
+
+/* even more weird positioning shit */
+
 :is(panel, menupopup[placespopup]) {
     --panel-shadow: var(--arrowpanel-echelon-shadow) !important;
 

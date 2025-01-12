@@ -43,7 +43,6 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
         max-width: $menu-panel-width;
 
         > .panel-customization-placeholder {
-            -moz-outline-radius: 2.5px;
             border-radius: 6.566666px; // number that looks good since -moz-outline-radius was removed.
             outline: 1px dashed transparent;
             cursor: auto;
@@ -87,7 +86,7 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
 
         padding-left: 5px;
         padding-right: 5px;
-        align-content: center;
+        align-content: flex-start;
     }
 
     @mixin buttonStyle($important: false) {
@@ -382,8 +381,8 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
     .panel-banner-item > .toolbarbutton-text,
     #PanelUI-fxa-label > .toolbarbutton-text,
     #PanelUI-customize > .toolbarbutton-text {
-        margin: 0;
-        padding: 0 6px;
+        margin: 0 !important;
+        padding: 0 6px !important;
         text-align: start;
     }
 
@@ -790,6 +789,16 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
 
         border-start-end-radius: var(--arrowpanel-border-radius);
         border-end-end-radius: var(--arrowpanel-border-radius);
+        
+        menuseparator {
+            appearance: none !important;
+            min-height: 0 !important;
+            border-top: 1px solid hsla(210,4%,10%,.15) !important;
+            margin: 6px 0 !important;
+            margin-inline-start: -5px !important;
+            margin-inline-end: -4px !important;
+            padding: 0 !important;
+        }
     }
 
     .panel-view-body-unscrollable {
@@ -864,21 +873,91 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
 
     .panel-subview-header {
         margin: -4px -4px 4px !important;
-        border-bottom: 1px solid hsla(210,4%,10%,.14);
-        color: GrayText;
-        font-variant: small-caps;
+        background-color: hsla(210,4%,10%,.05) !important;
+        box-shadow: 0 -1px 0 hsla(210,4%,10%,.05) inset !important;
+        color: hsl(0,0%,50%) !important;
 
         // Workaround for min-height not being accounted for in vertical layout:
         height: 41px;
     }
 }
 
-#main-window[echelon-style-4] #customization-palette {
+$iconRegionMap: (
+    "reload-button": 32px,
+    "home-button": 96px,
+    "bookmarks-menu-button": 160px,
+    "bookmarks-button": 160px,
+    "history-panelmenu": 192px,
+    "downloads-button": 224px,
+    "add-ons-button": 256px,
+    "open-file-button": 288px,
+    "save-page-button": 320px,
+    "fxa-toolbar-menu-button": 352px,
+    "sync-button": 992px,
+    "containers-panelmenu": 1024px,
+    "feed-button": 384px,
+    "social-share-button": 416px,
+    "characterencoding-button": 448px,
+    "new-window-button": 480px,
+    "privatebrowsing-button": 544px,
+    "find-button": 608px,
+    "print-button": 640px,
+    "fullscreen-button": 672px,
+    "developer-button": 704px,
+    "preferences-button": 736px,
+    "email-link-button": 768px,
+    "panic-button": 864px,
+    "webide-button": 928px,
+    "sidebar-button": 480px,
+    "save-to-pocket-button": 960px,
+    "echelon-button": 1024px,
+    "library-button": 1056px,
+    "screenshot-button": 1088px,
+    "logins-button": 1120px,
+    "import-button": 1152px
+);
+
+$iconSmallRegionMap: (
+    "cut-button": 16px,
+    "copy-button": 32px,
+    "paste-button": 48px
+);
+
+#customization-palette {
     .toolbarbutton-icon {
         width: $panel-palette-icon-size !important;
         height: $panel-palette-icon-size !important;
         min-width: $panel-palette-icon-size !important;
         min-height: $panel-palette-icon-size !important;
+    }
+}
+
+.australis-appmenu-panel .panelUI-grid,
+#customization-palette {
+    #{$panelGridItem} {
+        @each $icon, $offset in $iconRegionMap {
+            &##{$icon} .toolbarbutton-icon {
+                list-style-image: none !important;
+                background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+                background-position: (-$offset) 0 !important;
+            }
+
+            &##{$icon}[panel-multiview-anchor="true"] .toolbarbutton-icon {
+                background-position-y: 32px !important;
+            }
+        }
+    }
+}
+
+.australis-appmenu-panel .panelUI-grid {
+    @each $icon, $offset in $iconSmallRegionMap {
+        & ##{$icon} .toolbarbutton-icon {
+            width: 16px !important;
+            height: 16px !important;
+            list-style-image: none !important;
+            background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-small.png") !important;
+            background-position: (-$offset) 0 !important;
+        }
     }
 }
 
