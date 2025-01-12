@@ -1,3 +1,37 @@
+#navigator-toolbox,
+#browser,
+#customization-container {
+    transition-property: margin-left, margin-right !important;
+    transition-duration: 150ms !important;
+    transition-timing-function: ease-out !important;
+}
+
+:root[customizing] {
+    #navigator-toolbox,
+    #browser,
+    #customization-container {
+        margin-inline: 2em !important;
+    }
+
+    #browser,
+    #customization-container {
+        margin-block-end: 2em !important;
+    }
+
+    #nav-bar-customization-target,
+    #TabsToolbar,
+    #toolbar-menubar,
+    #PersonalToolbar {
+        padding-inline: 10px !important;
+    }
+}
+
+:root:not([customizing]) #customization-container {
+    display: grid !important;
+    min-height: 0 !important;
+    visibility: collapse !important;
+}
+
 #customization-panel-container {
     grid-area: 1 / 2 / 3 / 3;
     overflow-y: hidden !important;

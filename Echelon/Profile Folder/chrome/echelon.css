@@ -2698,6 +2698,36 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin-bottom: 0 !important;
 }
 
+#navigator-toolbox,
+#browser,
+#customization-container {
+  transition-property: margin-left, margin-right !important;
+  transition-duration: 150ms !important;
+  transition-timing-function: ease-out !important;
+}
+
+:root[customizing] #navigator-toolbox,
+:root[customizing] #browser,
+:root[customizing] #customization-container {
+  margin-inline: 2em !important;
+}
+:root[customizing] #browser,
+:root[customizing] #customization-container {
+  margin-block-end: 2em !important;
+}
+:root[customizing] #nav-bar-customization-target,
+:root[customizing] #TabsToolbar,
+:root[customizing] #toolbar-menubar,
+:root[customizing] #PersonalToolbar {
+  padding-inline: 10px !important;
+}
+
+:root:not([customizing]) #customization-container {
+  display: grid !important;
+  min-height: 0 !important;
+  visibility: collapse !important;
+}
+
 #customization-panel-container {
   grid-area: 1/2/3/3;
   overflow-y: hidden !important;
