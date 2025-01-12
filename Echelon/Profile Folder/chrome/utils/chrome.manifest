@@ -5,6 +5,7 @@ content modules ../JS/modules/
 override chrome://global/skin/arrowscrollbox.css                  ../assets/override/global/skin/arrowscrollbox.css
 override chrome://browser/content/browser.xhtml                   ../assets/override/browser/content/browser.xhtml
 override chrome://browser/content/tabbrowser/tab.js                     ../assets/override/browser/content/browser/tabbrowser/tab.js
+override chrome://global/content/elements/panel.js                      ../assets/override/widgets/panel.js
 
 locale echelon en-US ../locale/en-US/
 

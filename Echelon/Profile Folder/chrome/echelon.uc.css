@@ -1,8 +1,180 @@
 /* ::::: Firefox 4 ::::: */
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
-.autoscroller::part(content) {
-  visibility: collapse !important;
+:root:not([echelon-style-4]) {
+  --arrowpanel-padding: 10px !important;
+  --arrowpanel-color: -moz-DialogText !important;
+  --arrowpanel-background: -moz-Dialog !important;
+  --arrowpanel-border-radius: 6px !important;
+  --arrowpanel-border: 1px solid var(--arrowpanel-border-color) !important;
+  --arrowpanel-border-color: ThreeDShadow !important;
+  --arrowpanel-margin: 0 !important;
+  --arrowpanel-echelon-shadow: none !important;
+  --arrowpanel-arrow-margin: -23px !important;
+  --arrowpanel-arrow-offset: 6px !important;
+  --arrowpanel-arrow-position: -1px !important;
+  --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-vertical.svg");
+  --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-horizontal.svg");
+}
+
+:root[echelon-style-3]:not([echelon-style-4]) {
+  --arrowpanel-border-radius: 4px !important;
+  --arrowpanel-margin: 4px !important;
+  --arrowpanel-arrow-margin: -20px !important;
+  --arrowpanel-arrow-offset: 10px !important;
+  --arrowpanel-arrow-position: -5px !important;
+  --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-14/panelarrow/panelarrow-vertical.svg");
+  --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-14/panelarrow/panelarrow-horizontal.svg");
+}
+
+:root[echelon-appearance-blue]:not([echelon-style-2]) {
+  --arrowpanel-border-radius: 6px !important;
+  --arrowpanel-background: -moz-linear-gradient(rgba(250,253,255,.9), rgba(250,253,255,.75) 20px, rgba(250,253,255,.70) 39px, rgba(250,253,255,0) 41px, rgba(250,253,255,0)), rgba(179,230,255,.35) !important;
+  --arrowpanel-border: none !important;
+  --arrowpanel-margin: 5px !important;
+  --arrowpanel-echelon-shadow: 0 0 0 1px rgba(255,255,255,.65) inset, 0 1px 0 rgba(255,255,255,.3) inset, 0 0 0 1px rgba(0,0,0,.75), 0 1px 3px 2px rgba(0,0,0,.65) !important;
+  --arrowpanel-arrow-position: -5px !important;
+  --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-up.png");
+  --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-horiz.png");
+  --arrowpanel-inner-background: rgb(250,250,250) !important;
+  --arrowpanel-inner-margin: 5px !important;
+  --arrowpanel-inner-border-radius: 2px !important;
+  --arrowpanel-inner-padding: 16px !important;
+  --arrowpanel-inner-border: 1px solid rgba(0,0,0,.7) !important;
+  --arrowpanel-inner-shadow: 0 0 0 1px rgba(255,255,255,.6) !important;
+}
+
+:root[echelon-style-4] {
+  --arrowpanel-padding: 10px !important;
+  --arrowpanel-color: -moz-FieldText !important;
+  --arrowpanel-background: -moz-field !important;
+  --arrowpanel-border-radius: 6px !important;
+  --arrowpanel-border: 1px solid var(--arrowpanel-border-color) !important;
+  --arrowpanel-border-color: ThreeDShadow !important;
+  --arrowpanel-margin: 4px !important;
+  --arrowpanel-echelon-shadow: none !important;
+  --arrowpanel-arrow-margin: -20px !important;
+  --arrowpanel-arrow-offset: 10px !important;
+  --arrowpanel-arrow-position: -5px !important;
+  --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-29/panelarrow/panelarrow-vertical.svg");
+  --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-29/panelarrow/panelarrow-horizontal.svg");
+}
+:root[echelon-style-4][echelon-appearance-blue] {
+  --arrowpanel-border-color: hsla(210,4%,10%,.2) !important;
+  --arrowpanel-echelon-shadow: 0 0 4px hsla(210,4%,10%,.2) !important;
+}
+:root[echelon-style-4][echelon-system-style=win8] {
+  --arrowpanel-border-radius: 0 !important;
+}
+
+panel[type=arrow] {
+  appearance: none;
+  background: transparent;
+  border: none;
+}
+panel[type=arrow][side=top], panel[type=arrow][side=bottom] {
+  margin-inline: var(--arrowpanel-arrow-margin);
+}
+panel[type=arrow][side=left], panel[type=arrow][side=right] {
+  margin-block: var(--arrowpanel-arrow-margin);
+}
+
+menupopup[type=arrow][side=top], menupopup[type=arrow][side=bottom] {
+  margin-inline: -6px;
+}
+menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
+  margin-block: -6px;
+}
+
+/* These specifically for some reason has weird positioning */
+#appMenu-popup,
+#widget-overflow {
+  margin-inline: -6px !important;
+}
+
+/* More weird positioning at the edge of the screen */
+#sidebarMenu-popup {
+  margin-inline: -7px !important;
+}
+
+:is(panel, menupopup[placespopup]) {
+  --panel-shadow: var(--arrowpanel-echelon-shadow) !important;
+}
+:is(panel, menupopup[placespopup])::part(arrowcontent) {
+  padding: var(--arrowpanel-padding);
+  color: var(--arrowpanel-color);
+  background: var(--arrowpanel-background);
+  border-radius: var(--arrowpanel-border-radius);
+  background-clip: padding-box;
+  border: var(--arrowpanel-border);
+  box-shadow: var(--arrowpanel-echelon-shadow);
+  margin: var(--arrowpanel-margin);
+}
+:is(panel, menupopup[placespopup])::part(arrowcontent) > slot {
+  /* propagate border-radius from arrowcontent to slotted children */
+  border-radius: inherit;
+}
+:is(panel, menupopup[placespopup])::part(innerarrowcontent) {
+  background: var(--arrowpanel-inner-background);
+  margin: var(--arrowpanel-inner-margin);
+  border-radius: var(--arrowpanel-inner-border-radius);
+  padding: var(--arrowpanel-inner-padding);
+  border: var(--arrowpanel-inner-border);
+  box-shadow: var(--arrowpanel-inner-shadow);
+  background-clip: padding-box;
+}
+:is(panel, menupopup[placespopup])[orient=vertical]::part(arrowcontent) {
+  flex-direction: column;
+}
+:is(panel, menupopup[placespopup]).panel-no-padding::part(arrowcontent), :is(panel, menupopup[placespopup]).panel-no-padding::part(innerarrowcontent) {
+  padding: 0;
+  overflow: hidden; /* Don't let panel content overflow the border-radius */
+}
+:is(panel, menupopup[placespopup])::part(arrow) {
+  -moz-context-properties: fill, stroke;
+  fill: var(--arrowpanel-background);
+  stroke: var(--arrowpanel-border-color);
+}
+:is(panel, menupopup[placespopup])[side=top]::part(arrow), :is(panel, menupopup[placespopup])[side=bottom]::part(arrow) {
+  list-style-image: var(--arrowpanel-vertical);
+  position: relative;
+  margin-inline: var(--arrowpanel-arrow-offset);
+}
+:is(panel, menupopup[placespopup])[side=top]::part(arrow) {
+  margin-bottom: var(--arrowpanel-arrow-position);
+}
+:is(panel, menupopup[placespopup])[side=bottom]::part(arrow) {
+  transform: scaleY(-1);
+  margin-top: var(--arrowpanel-arrow-position);
+}
+:is(panel, menupopup[placespopup])[side=left]::part(arrow), :is(panel, menupopup[placespopup])[side=right]::part(arrow) {
+  list-style-image: var(--arrowpanel-hortizontal);
+  position: relative;
+  margin-block: var(--arrowpanel-arrow-offset);
+}
+:is(panel, menupopup[placespopup])[side=left]::part(arrow) {
+  margin-right: var(--arrowpanel-arrow-position);
+}
+:is(panel, menupopup[placespopup])[side=right]::part(arrow) {
+  transform: scaleX(-1);
+  margin-left: var(--arrowpanel-arrow-position);
+}
+
+#protections-popup[mainviewshowing][side=top]::part(arrow) {
+  fill: #0A51BF;
+}
+
+.ac-dropmarker {
+  width: 12px !important;
+}
+.ac-dropmarker::part(icon) {
+  list-style-image: url("chrome://userchrome/content/assets/images/arrow-dropdown-12") !important;
+  width: 12px !important;
+  height: 16px !important;
+}
+
+.popup-notification-dropmarker > .button-box > .button-menu-dropmarker::part(icon) {
+  list-style-image: url("chrome://userchrome/content/assets/images/arrow-dropdown-16") !important;
 }
 
 :root {
