@@ -2198,6 +2198,9 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   padding: 0;
   background-image: url("chrome://userchrome/content/assets/images/firefox-4/urlbar/identity.png");
 }
+:root[echelon-system-style=winxp] #identity-popup #identity-popup-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/urlbar/identity.png");
+}
 #identity-popup[connection=secure] #identity-popup-icon {
   background-position-y: -64px !important;
 }
@@ -2252,6 +2255,9 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 #identity-popup[connection=secure] #identity-popup-encryption #identity-popup-encryption-icon, #identity-popup[connection=secure-ev] #identity-popup-encryption #identity-popup-encryption-icon {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/urlbar/Secure24.png");
 }
+:root[echelon-system-style=winxp] #identity-popup[connection=secure] #identity-popup-encryption #identity-popup-encryption-icon, :root[echelon-system-style=winxp] #identity-popup[connection=secure-ev] #identity-popup-encryption #identity-popup-encryption-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/urlbar/Secure24.png");
+}
 #identity-popup #identity-popup-help-icon {
   appearance: none !important;
   border: none !important;
@@ -2260,6 +2266,9 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   min-width: 0 !important;
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/icons/question-16.png") !important;
   cursor: pointer !important;
+}
+:root[echelon-system-style=winxp] #identity-popup #identity-popup-help-icon {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/icons/question-16.png") !important;
 }
 #identity-popup #identity-popup-more-info-button {
   margin-top: 6px !important;

@@ -31,6 +31,10 @@
 		width: 64px;
 		padding: 0;
 		background-image: url("chrome://userchrome/content/assets/images/firefox-4/urlbar/identity.png");
+
+		:root[echelon-system-style="winxp"] & {
+			background-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/urlbar/identity.png");
+		}
 	}	 
 	
 	&[connection=secure] #identity-popup-icon {
@@ -98,6 +102,10 @@
 
 		#identity-popup-encryption-icon {
 			list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/urlbar/Secure24.png");
+
+			:root[echelon-system-style="winxp"] & {
+				background-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/urlbar/Secure24.png");
+			}
 		}
 	}
 
@@ -109,6 +117,10 @@
 		min-width: 0 !important;
 		list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/icons/question-16.png") !important;
 		cursor: pointer !important;
+
+		:root[echelon-system-style="winxp"] & {
+			list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/icons/question-16.png") !important;
+		}
 	}
 
 	#identity-popup-more-info-button {

@@ -17,6 +17,20 @@
 
     --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-vertical.svg");
     --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-horizontal.svg");
+
+    &:not([echelon-style-3])[echelon-system-style="winxp"] {
+        --arrowpanel-padding: 16px !important;
+        --arrowpanel-background: rgb(250,251,253) !important;
+        --arrowpanel-border-radius: 6px !important;
+        --arrowpanel-border: none !important;
+        --arrowpanel-margin: 3px !important;
+        --arrowpanel-echelon-shadow: 0 0 5px 1px rgba(184,205,232,1) inset, 0 0 0 1px rgba(0,0,0,.25), 0 1px 5px rgba(0,0,0,.5) !important;
+    
+        --arrowpanel-arrow-margin: -25px !important;
+
+        --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-4/xp/panelarrow/panelarrow-up.png");
+        --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-4/xp/panelarrow/panelarrow-down.png");
+    }
 }
 
 :root[echelon-style-3]:not([echelon-style-4]) {
@@ -32,7 +46,7 @@
     --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-14/panelarrow/panelarrow-horizontal.svg");
 }
 
-:root[echelon-appearance-blue]:not([echelon-style-2]) {
+:root[echelon-appearance-blue]:not([echelon-system-style="winxp"]):not([echelon-style-2]) {
     --arrowpanel-border-radius: 6px !important;
     --arrowpanel-background: -moz-linear-gradient(rgba(250,253,255,.9), rgba(250,253,255,.75) 20px, rgba(250,253,255,.70) 39px, rgba(250,253,255,0) 41px, rgba(250,253,255,0)), rgba(179,230,255,.35) !important;
     --arrowpanel-border: none !important;
@@ -198,6 +212,36 @@ menupopup[type="arrow"] {
     &[side="right"]::part(arrow) {
         transform: scaleX(-1);
         margin-left: var(--arrowpanel-arrow-position);
+    }
+}
+
+:root:not([echelon-style-4]):not([echelon-style-3])[echelon-system-style="winxp"] :is(panel, menupopup[placespopup]) {
+    &[side="top"]::part(arrow) {
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-bottom: -13px;
+        margin-top: -4px;    
+    }
+
+    &[side="bottom"]::part(arrow) {
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-top: -12px;
+        margin-bottom: -4px;
+    }
+
+    &[side="left"]::part(arrow) {
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-right: -12px;
+        margin-left: -4px;
+    }
+    
+    &[side="right"]::part(arrow) {
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-left: -12px;
+        margin-right: -4px;
     }
 }
 
