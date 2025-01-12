@@ -26,7 +26,7 @@
 
         <description when-connection="secure secure-ev" id="identity-popup-content-owner" class="identity-popup-description"></description>
 
-        <description when-connection="secure-ev" id="identity-popup-content-supplemental" class="identity-popup-description"></description>
+        <description id="identity-popup-content-supplemental" class="identity-popup-description"></description>
 
         <description when-connection="secure secure-ev" id="identity-popup-content-verifier" class="identity-popup-description"></description>
 
@@ -122,6 +122,71 @@
             );
             updateProtocal();
         }
+
+        function updateProtocal() {
+            if (lang != Services.locale.requestedLocale)
+            {
+                lang = Services.locale.requestedLocale;
+                strings = Services.strings.createBundle("chrome://echelon/locale/properties/urlbar.properties");
+            }
+
+            let documentURIHost = null;
+            let displayHost = null;
+            let iData = null;
+            let mainView = document.querySelector("#identity-popup-mainView");
+            let encryptionLabel = null;
+
+            mainView.querySelector("#identity-popup-content-supplemental").textContent = "";
+
+            if (gIdentityHandler._uriHasHost) {
+                encryptionLabel = strings.GetStringFromName("identity.unencrypted");
+                documentURIHost = gBrowser.selectedBrowser.documentURI;
+                displayHost = documentURIHost.host.replace(/^www\./i, "");
+                mainView.querySelector("#identity-popup-content-host").setAttribute("value", displayHost);
+                mainView.querySelector("#identity-popup-connectedToLabel2").setAttribute("value", strings.GetStringFromName("identity.unverifiedsite2"));
+            }
+
+            if (gIdentityHandler._uriHasHost && gIdentityHandler._isSecureContext) {
+                encryptionLabel = strings.GetStringFromName("identity.encrypted2");
+                mainView.querySelector("#identity-popup-connectedToLabel").setAttribute("value", strings.GetStringFromName("identity.connectedTo"));
+                mainView.querySelector("#identity-popup-runByLabel").setAttribute("value", strings.GetStringFromName("identity.runBy"));
+                mainView.querySelector("#identity-popup-content-owner").setAttribute("value", strings.GetStringFromName("identity.unknown"));
+                mainView.querySelector("#identity-popup-content-verifier").setAttribute("value", gIdentityHandler._identityIcon.tooltipText);
+            }
+
+            if (gIdentityHandler._uriHasHost && gIdentityHandler._isEV) {
+                iData = gIdentityHandler.getIdentityData();
+                let supplemental = "";
+
+                mainView.querySelector("#identity-popup-content-owner").setAttribute("value", iData.subjectOrg);
+
+                if (iData.city)
+                    supplemental += iData.city + "\n";
+                if (iData.state && iData.country)
+                    supplemental += gNavigatorBundle.getFormattedString("identity.identified.state_and_country",
+                                                                        [iData.state, iData.country]);
+                else if (iData.state) // State only
+                    supplemental += iData.state;
+                else if (iData.country) // Country only
+                    supplemental += iData.country;
+
+                mainView.querySelector("#identity-popup-content-supplemental").textContent = supplemental;
+            }
+
+            if (gIdentityHandler._isSecureInternalUI) {
+                let fullName = BrandUtils.getBrandingKey("fullName");
+                let productName = BrandUtils.getBrandingKey("productName");
+
+                mainView.querySelector("#identity-popup-brandName").setAttribute("value", fullName);
+
+                mainView.querySelector("#identity-popup-chromeLabel").textContent = strings.formatStringFromName("identity.chrome", [productName]);
+            }
+
+            mainView.querySelector("#identity-popup-encryption-label").textContent = encryptionLabel;
+        }
+
+        window.addEventListener("load", updateProtocal);
+        window.addEventListener("TabAttrModified", updateProtocal);
     });
 
     waitForElement("#identity-popup-clear-sitedata-footer").then(e => {
@@ -135,67 +200,4 @@
     function handleHelpCommand(event) {
         openHelpLink("secure-connection");
     }
-
-    function updateProtocal() {
-        if (lang != Services.locale.requestedLocale)
-        {
-            lang = Services.locale.requestedLocale;
-            strings = Services.strings.createBundle("chrome://echelon/locale/properties/urlbar.properties");
-        }
-
-        let documentURIHost = null;
-        let displayHost = null;
-        let iData = null;
-        let mainView = document.querySelector("#identity-popup-mainView");
-        let encryptionLabel = null;
-
-        if (gIdentityHandler._uriHasHost) {
-            encryptionLabel = strings.GetStringFromName("identity.unencrypted");
-            documentURIHost = gBrowser.selectedBrowser.documentURI;
-			displayHost = documentURIHost.host.replace(/^www\./i, "");
-            mainView.querySelector("#identity-popup-content-host").setAttribute("value", displayHost);
-            mainView.querySelector("#identity-popup-connectedToLabel2").setAttribute("value", strings.GetStringFromName("identity.unverifiedsite2"));
-        }
-
-        if (gIdentityHandler._uriHasHost && gIdentityHandler._isSecureContext) {
-            encryptionLabel = strings.GetStringFromName("identity.encrypted2");
-            mainView.querySelector("#identity-popup-connectedToLabel").setAttribute("value", strings.GetStringFromName("identity.connectedTo"));
-            mainView.querySelector("#identity-popup-runByLabel").setAttribute("value", strings.GetStringFromName("identity.runBy"));
-            mainView.querySelector("#identity-popup-content-owner").setAttribute("value", strings.GetStringFromName("identity.unknown"));
-            mainView.querySelector("#identity-popup-content-verifier").setAttribute("value", gIdentityHandler._identityIcon.tooltipText);
-        }
-
-        if (gIdentityHandler._uriHasHost && gIdentityHandler._isEV) {
-            iData = gIdentityHandler.getIdentityData();
-            let supplemental = "";
-
-            mainView.querySelector("#identity-popup-content-owner").setAttribute("value", iData.subjectOrg);
-
-            if (iData.city)
-                supplemental += iData.city + "\n";
-            if (iData.state && iData.country)
-                supplemental += gNavigatorBundle.getFormattedString("identity.identified.state_and_country",
-                                                                    [iData.state, iData.country]);
-            else if (iData.state) // State only
-                supplemental += iData.state;
-            else if (iData.country) // Country only
-                supplemental += iData.country;
-
-            mainView.querySelector("#identity-popup-content-supplemental").textContent = supplemental;
-        }
-
-        if (gIdentityHandler._isSecureInternalUI) {
-            let fullName = BrandUtils.getBrandingKey("fullName");
-            let productName = BrandUtils.getBrandingKey("productName");
-
-            mainView.querySelector("#identity-popup-brandName").setAttribute("value", fullName);
-
-            mainView.querySelector("#identity-popup-chromeLabel").textContent = strings.formatStringFromName("identity.chrome", [productName]);
-		}
-
-        mainView.querySelector("#identity-popup-encryption-label").textContent = encryptionLabel;
-    }
-
-    window.addEventListener("load", updateProtocal);
-    window.addEventListener("TabAttrModified", updateProtocal);
 }
