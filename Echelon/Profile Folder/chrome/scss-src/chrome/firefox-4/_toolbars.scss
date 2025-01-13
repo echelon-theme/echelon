@@ -100,8 +100,8 @@
             }
 
             .toolbarbutton-icon {
-                --toolbarbutton-icon-width: 20px !important;
-                --toolbarbutton-icon-height: 20px !important;
+                --toolbarbutton-icon-width: var(--toolbarbutton-icon-large-width) !important;
+                --toolbarbutton-icon-height: var(--toolbarbutton-icon-large-height) !important;
             }
 
         }
@@ -214,8 +214,8 @@
     }
 
     #downloads-indicator-anchor-echelon {
-        min-width: 18px !important;
-        min-height: 18px !important;
+        min-width: var(--toolbarbutton-icon-width) !important;
+        min-height: var(--toolbarbutton-icon-height) !important;
     }
 
     #downloads-indicator-progress-area-echelon {
