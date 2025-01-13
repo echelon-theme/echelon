@@ -42,7 +42,8 @@
         "nav-bar-overflow-button": "firefox-29/toolbar/overflow.png",
         "characterencoding-button": "firefox-29/toolbar/encoding.png",
         "history-panelmenu": "firefox-29/toolbar/history.png",
-        "developer-button": "firefox-29/toolbar/developer.png"
+        "developer-button": "firefox-29/toolbar/developer.png",
+        "echelon-button": "firefox-4/toolbar/echelon.png"
     ));
 
     @include toolbar-icons-inverted((    
@@ -70,7 +71,8 @@
         "nav-bar-overflow-button": "firefox-29/toolbar/inverted/overflow.png",
         "characterencoding-button": "firefox-29/toolbar/inverted/encoding.png",
         "history-panelmenu": "firefox-29/toolbar/inverted/history.png",
-        "developer-button": "firefox-29/toolbar/inverted/developer.png"
+        "developer-button": "firefox-29/toolbar/inverted/developer.png",
+        "echelon-button": "firefox-4/toolbar/inverted/echelon.png"
     ));
 
     &[titleShortName="firefox"] {

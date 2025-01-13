@@ -731,6 +731,9 @@
 :root #developer-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/developer.png") !important;
 }
+:root #echelon-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/echelon.png") !important;
+}
 :root :root:not([echelon-style-2]) #TabsToolbar #back-button,
 :root :root:not([echelon-style-2]) #toolbar-menubar #back-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/back.png") !important;
@@ -830,6 +833,10 @@
 :root :root:not([echelon-style-2]) #TabsToolbar #developer-button,
 :root :root:not([echelon-style-2]) #toolbar-menubar #developer-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/inverted/developer.png") !important;
+}
+:root :root:not([echelon-style-2]) #TabsToolbar #echelon-button,
+:root :root:not([echelon-style-2]) #toolbar-menubar #echelon-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/echelon.png") !important;
 }
 :root[titleShortName=firefox] {
   --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/identity-icons-brand.png") !important;
@@ -3819,6 +3826,9 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 :root[echelon-style-4][echelon-system-style=win8] #developer-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/developer.png") !important;
+}
+:root[echelon-style-4][echelon-system-style=win8] #echelon-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/echelon.png") !important;
 }
 :root[echelon-style-4][echelon-system-style=win8] {
   --toolbarbutton-background: transparent !important;
