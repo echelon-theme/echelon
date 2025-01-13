@@ -477,6 +477,7 @@
 #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-stack .tab-icon-pending,
 #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-stack .tab-icon-image,
 #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-stack .tab-sharing-icon-overlay {
+  opacity: 1 !important;
   margin-inline-end: var(--tab-icon-end-margin) !important;
   margin-inline-start: var(--tab-icon-start-margin) !important;
 }
@@ -485,6 +486,56 @@
 }
 :root:not([echelon-style-4]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [busy], [progress]), :root:not([echelon-style-4]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:-moz-broken {
   content: var(--default-favicon) !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-secondary-label {
+  visibility: collapse !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-overlay {
+  padding: 0 !important;
+  margin-inline-end: 0 !important;
+  pointer-events: auto !important;
+  background-image: none !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-overlay:not([crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-overlay:not([crashed])[soundplaying] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab") !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-overlay:not([crashed])[soundplaying]:hover {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-hover") !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-overlay:not([crashed])[soundplaying]:hover:active {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-pressed") !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-overlay:not([crashed])[muted] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted") !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-overlay:not([crashed])[muted]:hover {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-hover") !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-overlay:not([crashed])[muted]:hover:active {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-pressed") !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-overlay:not([crashed])[selected][soundplaying] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio") !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-overlay:not([crashed])[selected][soundplaying]:hover {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-hover") !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-overlay:not([crashed])[selected][soundplaying]:hover:active {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-pressed") !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-overlay:not([crashed])[selected][muted] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted") !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-overlay:not([crashed])[selected][muted]:hover {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted-hover") !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-overlay:not([crashed])[selected][muted]:hover:active {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted-pressed") !important;
 }
 #TabsToolbar .tabbrowser-tab .tab-loading-burst {
   visibility: collapse !important;

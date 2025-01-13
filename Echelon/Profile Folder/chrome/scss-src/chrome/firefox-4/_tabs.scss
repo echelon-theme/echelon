@@ -77,6 +77,7 @@
                 .tab-icon-image,
                 .tab-sharing-icon-overlay
                 {
+                    opacity: 1 !important;
                     margin-inline-end: var(--tab-icon-end-margin) !important;
                     margin-inline-start: var(--tab-icon-start-margin) !important;
                 }
@@ -89,6 +90,75 @@
 
                 &:not([src], [busy], [progress]), &:-moz-broken {
                     content: var(--default-favicon) !important;
+                }
+            }
+
+            .tab-secondary-label {
+                visibility: collapse !important;
+            }
+
+            .tab-icon-overlay {
+                padding: 0 !important;
+                margin-inline-end: 0 !important;
+                pointer-events: auto !important;
+                background-image: none !important;
+
+                &:not([crashed]) {
+                    &:is([soundplaying], [muted], [activemedia-blocked]) {
+                        background-color: transparent !important;
+                        border-radius: 0 !important;
+                        opacity: 1 !important;
+                    }
+
+                    &[soundplaying] {
+                        list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab") !important;
+
+                        &:hover {
+                            list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-hover") !important;
+
+                            &:active {
+                                list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-pressed") !important;
+                            }
+                        }
+                    }
+
+                    &[muted] {
+                        list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted") !important;
+
+                        &:hover {
+                            list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-hover") !important;
+
+                            &:active {
+                                list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-pressed") !important;
+                            }
+                        }
+                    }
+
+                    &[selected] {
+                        &[soundplaying] {
+                            list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio") !important;
+    
+                            &:hover {
+                                list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-hover") !important;
+    
+                                &:active {
+                                    list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-pressed") !important;
+                                }
+                            }
+                        }
+    
+                        &[muted] {
+                            list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted") !important;
+    
+                            &:hover {
+                                list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted-hover") !important;
+    
+                                &:active {
+                                    list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted-pressed") !important;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
