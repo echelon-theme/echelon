@@ -1675,6 +1675,9 @@ class AustralisPanelController
             customizeButton.tooltipText = customizeButton.getAttribute("exitTooltiptext");
 
             EchelonDragPositionManager.add(window, "PanelUI-contents", this.contents);
+
+            let contentContainer = document.querySelector("#customization-content-container");
+            contentContainer.querySelector("#customization-header").textContent = str("customizeMode.menuAndToolbars.header2");
         }
 
         /**
