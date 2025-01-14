@@ -1394,7 +1394,7 @@
   background-clip: padding-box !important;
 }
 :root[sizemode=maximized] #appmenu-button-container #appmenu-button {
-  height: calc(var(--buttonbox-height) - 2px) !important;
+  height: calc(var(--buttonbox-height) - 8px) !important;
 }
 #appmenu-button-container #appmenu-button:hover {
   background-image: var(--appmenu-button-hover-background) !important;

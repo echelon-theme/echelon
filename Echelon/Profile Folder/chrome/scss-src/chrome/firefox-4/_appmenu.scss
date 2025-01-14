@@ -119,7 +119,7 @@
         background-clip: padding-box !important;
 
         :root[sizemode="maximized"] & {
-            height: calc(var(--buttonbox-height) - 2px) !important;
+            height: calc(var(--buttonbox-height) - 8px) !important;
         }
 
         &:hover {
