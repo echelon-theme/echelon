@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+
+:root {
+	--echelon-wizard-width: 558px;
+	--echelon-wizard-height: 492px;
+}
+
+#echelonOptions {
+	background-color: #FFF;
+	font-family: 'Open Sans', 'MS Shell Dlg', sans-serif;
+	color: #3E4E5B;
+	font-size: 13px;
+	font-weight: 400;
+}
+
+.options-categories {
+	background-image: url("chrome://userchrome/content/assets/images/firefox-29/customizableui/background-noise-toolbar.png");
+	min-width: 152px !important;
+	background-color: #252C33;
+	box-shadow: inset -4px 0 0 #21282E;
+	border-inline-end: 1px solid #000;
+	padding-block-start: 40px;
+	color: #B6BABF;
+}
+
+.category {
+	min-height: 40px;
+	align-items: center;
+	padding-inline: 21px;
+	box-shadow: inset 0 -1px 0 #42484F;
+}
+
+.category[selected="true"] {
+	text-shadow: 0 1px 0 #153852;
+	background-color: #1A4666;
+	border-inline-start: 4px solid #D7F1FF;
+	border-inline-end: 4px solid #153852;
+	padding-inline: 17px;
+	box-shadow: inset 4px 0 2px -2px #246B9B;
+}

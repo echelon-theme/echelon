@@ -13,8 +13,11 @@
 }
 
 #urlbar-container {
-    margin-inline-start: 0 !important;
     pointer-events: none !important;
+}
+
+#urlbar-container.unified-forward-button {
+    margin-inline-start: 0 !important;
 }
 
 #urlbar {
@@ -205,7 +208,7 @@
 
 &:not([chromehidden~="toolbar"]) {
     #nav-bar {
-        #forward-button:not(:hover)[disabled] {
+        #forward-button.unified-with-urlbar:not(:hover)[disabled] {
             opacity: 0 !important;
 
             & + #urlbar-container {            
@@ -226,7 +229,7 @@
             }
         }
 
-        #forward-button {
+        #forward-button.unified-with-urlbar {
             & + #urlbar-container {
                 padding-inline-start: 27px !important;
                 margin-inline-start: -27px !important;
@@ -243,7 +246,7 @@
 
     &:not([echelon-tabchanging="true"]) {
         #nav-bar {
-            #forward-button {
+            #forward-button.unified-with-urlbar {
                 transition: opacity 150ms ease-out !important;
 
                 &:not(:hover)[disabled] {

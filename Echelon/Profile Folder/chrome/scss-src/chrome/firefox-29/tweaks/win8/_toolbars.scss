@@ -13,7 +13,7 @@
     #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
         background-clip: border-box !important;
 
-        &#forward-button:not([open], :active) {
+        &#forward-button.unified-with-urlbar:not([open], :active) {
             background-clip: padding-box !important;
             background-image: none !important;
             background-color: transparent !important;
@@ -21,7 +21,7 @@
         }
 
         &:not([disabled="true"]):hover,
-        &#forward-button:not([open], [disabled="true"], :active):hover {
+        &#forward-button.unified-with-urlbar:not([open], [disabled="true"], :active):hover {
             background-image: none !important;
             background-color: var(--toolbarbutton-background-hot) !important;
             --toolbarbutton-border-color: hsla(200, 6%, 10%, 0.1) !important;
@@ -38,7 +38,7 @@
             transition-duration: 10ms !important;
         }
 
-        &#back-button {
+        &#back-button.unified-with-urlbar {
             width: 32px !important;
             height: 32px !important;
             background-clip: padding-box !important;

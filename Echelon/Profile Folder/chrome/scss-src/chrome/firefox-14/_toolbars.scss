@@ -18,7 +18,7 @@
         transition-duration: 150ms !important;
 
         &:not([disabled="true"]):hover,
-        &#forward-button:not([open], :active) {
+        &#forward-button.unified-with-urlbar:not([open], :active) {
             background-image: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1)) !important;
             background-color: var(--toolbarbutton-background) !important;
             --toolbarbutton-border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25) !important;
@@ -32,13 +32,13 @@
             transition: none !important;
         }
 
-        &#forward-button:not([open], [disabled="true"], :active):hover {
+        &#forward-button.unified-with-urlbar:not([open], [disabled="true"], :active):hover {
             background-color: hsla(210,48%,96%,.75) !important;
             background-image: none !important;
             --toolbarbutton-border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
         }
 
-        &#back-button {
+        &#back-button.unified-with-urlbar {
             background-image: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1)) !important;
             box-shadow: 0 1px 0 hsla(0,0%,100%,.3) inset,
                         0 0 0 1px hsla(0,0%,100%,.3) inset,
@@ -72,6 +72,14 @@
                             0 1px 0 hsla(210,54%,20%,.65) !important;
                 transition: none !important;
             }
+        }
+
+        &#back-button:not(.unified-with-urlbar),
+        &#forward-button:not(.unified-with-urlbar) {
+            margin: var(--toolbarbutton-outer-padding) !important;
+            min-width: var(--toolbarbutton-width) !important;
+            max-width: var(--toolbarbutton-width) !important;
+            height: var(--toolbarbutton-height) !important;
         }
     }
 

@@ -11,6 +11,7 @@
 
 @include toolbar-icons((    
     "back-button": "firefox-29/toolbar/win8/back-large.svg",
+    "back-button:not(.unified-with-urlbar)": "firefox-29/toolbar/win8/back.svg",
     "forward-button": "firefox-29/toolbar/win8/forward.svg",
     "stop-button": "firefox-29/toolbar/win8/stop.svg",
     "reload-button": "firefox-29/toolbar/win8/reload.svg",

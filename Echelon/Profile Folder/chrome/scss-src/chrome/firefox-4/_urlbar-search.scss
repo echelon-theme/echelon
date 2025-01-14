@@ -26,6 +26,23 @@
     color: #777 !important;
 }
 
+#urlbar-container.unified-refresh-button {
+    // hide original go button on urlbar
+    #urlbar-go-button {
+        visibility: collapse !important;
+    }
+}
+
+#urlbar-container:not(.unified-refresh-button) {
+    #urlbar {
+        &[focused] {
+            #page-action-buttons {
+                visibility: collapse !important;
+            }
+        }
+    }
+}
+
 #urlbar {
     &[breakout],
     &[breakout][breakout-extend] {
@@ -53,13 +70,21 @@
         }
     }
 
-    // hide original go button on urlbar
-    #urlbar-go-button {
+    #tracking-protection-icon-container {
         visibility: collapse !important;
     }
 
-    #tracking-protection-icon-container {
-        visibility: collapse !important;
+    #urlbar-go-button {
+        @include set-background("firefox-4/urlbar/Go-arrow.png");
+
+        width: 20px !important;
+        background-repeat: no-repeat;
+        background-color: transparent !important;
+        background-position: center 3px !important;
+
+        &:hover {
+            background-position: center -13px !important;
+        }
     }
 
     :root:not([echelon-style-2]) & #identity-box {

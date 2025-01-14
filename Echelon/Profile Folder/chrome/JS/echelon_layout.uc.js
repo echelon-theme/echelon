@@ -15,8 +15,6 @@ let g_echelonLayoutManager;
 		
 		async init()
 		{
-			this.initTabsOnTop();
-			
 			let toolboxRoot = await waitForElement("#navigator-toolbox");
 			toolboxRoot.addEventListener("customizationchange", this);
 			toolboxRoot.addEventListener("aftercustomization", this);
@@ -36,6 +34,8 @@ let g_echelonLayoutManager;
 
 			let tabsBox = await waitForElement("#tabbrowser-tabs");
 			tabsBox.addEventListener("TabSelect", this.onTabSwitch.bind(this));
+
+			this.initTabsOnTop();
 		}
 		
 		initTabsOnTop()
@@ -161,6 +161,46 @@ let g_echelonLayoutManager;
 					
 					reloadButtonEl.classList.remove("unified");
 					Array.from(reloadButtonEl.children).forEach(elm => elm.classList.remove("unified"));
+				}
+			}
+
+			// Update back/forward button
+			let backButtonel = document.querySelector("#back-button");
+			let forwardButtonEl;
+			if (forwardButtonEl = document.querySelector("#forward-button"))
+			{
+				// We need to figure out what the previous element is as well:
+				let nextEl = null;
+				
+				if (forwardButtonEl.parentNode?.nodeName == "toolbarpaletteitem")
+				{
+					// Customise mode is active, so we need to hack around to resolve
+					// the non-wrapped previous element.
+					nextEl = forwardButtonEl.parentNode.nextSibling?.children[0];
+				}
+				else
+				{
+					nextEl = forwardButtonEl.nextSibling;
+				}
+				
+				if (nextEl?.id == "urlbar-container")
+				{
+					nextEl.classList.add("unified-forward-button");
+
+					backButtonel.classList.add("unified-with-urlbar");
+					forwardButtonEl.classList.add("unified-with-urlbar");
+					Array.from(forwardButtonEl.children).forEach(elm => elm.classList.add("unified"));
+					
+					this.urlbarEl = nextEl;
+				}
+				else
+				{
+					// Previous element is not guaranteed to exist.
+					this.urlbarEl?.classList.remove("unified-forward-button");
+					
+					backButtonel.classList.remove("unified-with-urlbar");
+					forwardButtonEl.classList.remove("unified-with-urlbar");
+					Array.from(forwardButtonEl.children).forEach(elm => elm.classList.remove("unified"));
 				}
 			}
 		}

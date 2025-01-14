@@ -46,3 +46,25 @@
         }
     }
 }
+
+.bookmark-item[container] .toolbarbutton-icon,
+.menu-iconic[container] > .menu-iconic-left > .menu-iconic-icon {
+    background-image: url("chrome://userchrome/content/assets/images/firefox-4/bookmarks/folder-item.png") !important;
+    background-position-x: -16px !important;
+    list-style-image: none !important;
+}
+
+.bookmark-item[container][query] .toolbarbutton-icon,
+.menu-iconic[container][query] > .menu-iconic-left > .menu-iconic-icon {
+    background-image: url("chrome://userchrome/content/assets/images/firefox-4/bookmarks/query.png") !important;
+}
+
+.bookmark-item:not([container]) {
+    .default-favicon {
+        list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/bookmarks/defaultFavicon.png") !important;
+        
+        :root[echelon-style-2] & {
+            list-style-image: url("chrome://userchrome/content/assets/images/firefox-10/defaultFavicon.png") !important;
+        }
+    }
+}

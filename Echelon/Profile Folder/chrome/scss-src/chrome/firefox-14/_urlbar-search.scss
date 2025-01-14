@@ -116,3 +116,9 @@
         }
     }
 }
+
+#urlbar-container {
+    &:not(.unified-forward-button) {
+        margin-inline-start: 2px !important;
+    }
+}

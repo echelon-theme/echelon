@@ -36,6 +36,10 @@
     #PersonalToolbar {
         padding-inline: 10px !important;
     }
+
+    #nav-bar-overflow-button {
+        visibility: collapse !important;
+    }
 }
 
 :root:not([customizing]) #customization-container {
