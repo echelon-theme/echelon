@@ -1100,6 +1100,10 @@
   align-items: unset !important;
 }
 
+#urlbar-container {
+  margin-inline-end: 0 !important;
+}
+
 #urlbar, #searchbar {
   font: message-box !important;
 }
