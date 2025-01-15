@@ -430,7 +430,9 @@
 }
 
 :root:not([echelon-style-4])[disablechrome] #navigator-toolbox toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
-  visibility: collapse;
+  position: absolute !important;
+  min-width: 100% !important;
+  left: -999em !important;
 }
 
 :root:not([echelon-style-4]) #PanelUI-button {
