@@ -8,7 +8,7 @@
 function isAddons() {
     let currentTabURL = gBrowser.currentURI.spec;
 
-    if (currentTabURL == "about:addons") {
+    if (currentTabURL == "about:addons" || currentTabURL == "about:echelon") {
         document.documentElement.setAttribute("disablechrome", "true");
     }
     else {

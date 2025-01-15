@@ -436,6 +436,7 @@
 :root:not([echelon-style-4]) #PanelUI-button {
   max-width: 1px !important;
   margin-inline-end: -1px !important;
+  opacity: 0 !important;
 }
 
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -1044,7 +1045,8 @@
   align-self: center !important;
   margin-inline-end: -2px !important;
 }
-#urlbar #tracking-protection-icon-container {
+#urlbar #tracking-protection-icon-container,
+#urlbar #pageActionButton {
   visibility: collapse !important;
 }
 #urlbar #urlbar-go-button {

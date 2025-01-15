@@ -36,11 +36,7 @@
 
     function launchEchelonOptions()
     {
-        window.openDialog(
-            "chrome://userchrome/content/windows/options/options.xhtml",
-            "Echelon Options",
-            "chrome,centerscreen,resizeable=no,dependent"
-        ); 
+        openTrustedLinkIn('about:echelon', 'tab');
     }
 
     echelonPrefsItem = window.MozXULElement.parseXULToFragment(`

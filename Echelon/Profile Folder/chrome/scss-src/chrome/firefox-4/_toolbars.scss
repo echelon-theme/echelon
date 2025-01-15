@@ -435,12 +435,17 @@
 
 // Hide Toolbars when chrome is disabled
 :root:not([echelon-style-4])[disablechrome] #navigator-toolbox toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
-    visibility: collapse;
+    position: absolute !important; 
+    min-width: 100% !important;
+    left: -999em !important;
+
+    //holy fuck bro
 }
 
 :root:not([echelon-style-4]) {
     #PanelUI-button {
         max-width: 1px !important;
         margin-inline-end: -1px !important;
+        opacity: 0 !important;
     }
 }
