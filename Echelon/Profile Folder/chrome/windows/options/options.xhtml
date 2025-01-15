@@ -10,98 +10,104 @@
 		windowtype="Browser:EchelonOptions" 
 		role="dialog" 
 		resizable="false" 
-		title="asfd" 
+		title="Echelon Options" 
 		chromemargin="0,0,0,0">
 
-	<vbox id="options-toolbox" flex="1">
-		<hbox class="options-container" flex="1">
-            <richlistbox id="categories" class="options-categories">
-                <richlistitem id="category-general" value="section-general" class="category">
-                    <image class="category-image" />
-					<label class="category-text" value="Appearance" />
-                </richlistitem>
-                <richlistitem id="category-branding" value="section-branding" class="category">
-                    <image class="category-image" />
-					<label class="category-text" value="Branding" />
-				</richlistitem>
-                <richlistitem id="category-native-controls" value="section-native-controls" class="category">
-                    <image class="category-image" />
-					<label class="category-text" value="Native Controls" />
-				</richlistitem>
-                <richlistitem id="category-about" value="section-about" class="category">
-                    <image class="category-image" />
-					<label class="category-text" value="About Echelon" />
-				</richlistitem>
-            </richlistbox>
-			<vbox id="options-sections" flex="1">
-				<vbox id="section-general" class="section" flex="1">
-					<hbox class="options-header">
-						<image class="header-image" />
-						<label class="header-text" value="THIS IS A PLACEHOLDER PAGE OVERHAUL SOON" />
-					</hbox>
-					<vbox class="options-content">
-						<hbox align="center" flex="1">
-							<label value="Echelon Style" flex="1"/>
-							<menulist type="int" preference="Echelon.Appearance.Style" flex="1">
-								<menupopup>
-									<menuitem label="Firefox 4" value="0"/>
-									<menuitem label="Firefox 5" value="1"/>
-									<menuitem label="Firefox 10" value="2"/>
-									<menuitem label="Firefox 14" value="3"/>
-									<menuitem label="Firefox 29" value="4"/>
-								</menupopup>
-							</menulist>
+	<head>
+		<html:link rel="shortcut icon" href="chrome://userchrome/content/windows/options/images/icon.png"/>
+	</head>
+
+	<html:body>
+		<vbox id="options-toolbox" flex="1">
+			<hbox class="options-container" flex="1">
+				<richlistbox id="categories" class="options-categories">
+					<richlistitem id="category-general" value="section-general" class="category">
+						<image class="category-image" />
+						<label class="category-text" value="Appearance" />
+					</richlistitem>
+					<richlistitem id="category-branding" value="section-branding" class="category">
+						<image class="category-image" />
+						<label class="category-text" value="Branding" />
+					</richlistitem>
+					<richlistitem id="category-native-controls" value="section-native-controls" class="category">
+						<image class="category-image" />
+						<label class="category-text" value="Native Controls" />
+					</richlistitem>
+					<richlistitem id="category-about" value="section-about" class="category">
+						<image class="category-image" />
+						<label class="category-text" value="About Echelon" />
+					</richlistitem>
+				</richlistbox>
+				<vbox id="options-sections" flex="1">
+					<vbox id="section-general" class="section" flex="1">
+						<hbox class="options-header">
+							<image class="header-image" />
+							<label class="header-text" value="THIS IS A PLACEHOLDER PAGE OVERHAUL SOON" />
 						</hbox>
-						<hbox align="center" flex="1">
-							<label value="Homepage Style" flex="1"/>
-							<menulist type="int" preference="Echelon.Appearance.Homepage.Style" flex="1">
-								<menupopup>
-									<menuitem label="Firefox 4-9" value="0"/>
-									<menuitem label="Firefox 10-13" value="1"/>
-									<menuitem label="Firefox 14" value="2"/>
-									<menuitem label="Firefox 28" value="3"/>
-									<menuitem label="Firefox 56" value="4"/>
-								</menupopup>
-							</menulist>
+						<vbox class="options-content">
+							<hbox align="center" flex="1">
+								<label value="Echelon Style" flex="1"/>
+								<menulist type="int" preference="Echelon.Appearance.Style" flex="1">
+									<menupopup>
+										<menuitem label="Firefox 4" value="0"/>
+										<menuitem label="Firefox 5" value="1"/>
+										<menuitem label="Firefox 10" value="2"/>
+										<menuitem label="Firefox 14" value="3"/>
+										<menuitem label="Firefox 29" value="4"/>
+									</menupopup>
+								</menulist>
+							</hbox>
+							<hbox align="center" flex="1">
+								<label value="Homepage Style" flex="1"/>
+								<menulist type="int" preference="Echelon.Appearance.Homepage.Style" flex="1">
+									<menupopup>
+										<menuitem label="Firefox 4-9" value="0"/>
+										<menuitem label="Firefox 10-13" value="1"/>
+										<menuitem label="Firefox 14" value="2"/>
+										<menuitem label="Firefox 28" value="3"/>
+										<menuitem label="Firefox 56" value="4"/>
+									</menupopup>
+								</menulist>
+							</hbox>
+							<hbox align="center" flex="1">
+								<label value="System Style" flex="1"/>
+								<menulist type="string" preference="Echelon.Appearance.systemStyle" flex="1">
+									<menupopup>
+										<menuitem label="Default" value="win"/>
+										<menuitem label="Windows XP" value="winxp"/>
+										<menuitem label="Windows 8" value="win8"/>
+										<menuitem label="Windows 10" value="win10"/>
+									</menupopup>
+								</menulist>
+							</hbox>
+							<checkbox label="Use Aero blue style" preference="Echelon.Appearance.Blue"/>
+							<checkbox label="Use new Firefox logo" preference="Echelon.Appearance.NewLogo"/>
+							<checkbox label="Disable custom homepage snippets" preference="Echelon.Homepage.HideCustomSnippets"/>
+							<checkbox label="Disable Unified Extensions button" preference="Echelon.Option.HideUnifiedExtensions"/>					
+						</vbox>
+					</vbox>
+					<vbox id="section-branding" class="section" flex="1">
+						<hbox class="options-header">
+							<image class="header-image" />
+							<label class="header-text" value="Branding" />
 						</hbox>
-						<hbox align="center" flex="1">
-							<label value="System Style" flex="1"/>
-							<menulist type="string" preference="Echelon.Appearance.systemStyle" flex="1">
-								<menupopup>
-									<menuitem label="Default" value="win"/>
-									<menuitem label="Windows XP" value="winxp"/>
-									<menuitem label="Windows 8" value="win8"/>
-									<menuitem label="Windows 10" value="win10"/>
-								</menupopup>
-							</menulist>
+					</vbox>
+					<vbox id="section-native-controls" class="section" flex="1">
+						<hbox class="options-header">
+							<image class="header-image" />
+							<label class="header-text" value="Native Controls" />
 						</hbox>
-						<checkbox label="Use Aero blue style" preference="Echelon.Appearance.Blue"/>
-						<checkbox label="Use new Firefox logo" preference="Echelon.Appearance.NewLogo"/>
-						<checkbox label="Disable custom homepage snippets" preference="Echelon.Homepage.HideCustomSnippets"/>
-						<checkbox label="Disable Unified Extensions button" preference="Echelon.Option.HideUnifiedExtensions"/>					
+					</vbox>
+					<vbox id="section-about" class="section" flex="1">
+						<hbox class="options-header">
+							<image class="header-image" />
+							<label class="header-text" value="About Echelon" />
+						</hbox>
 					</vbox>
 				</vbox>
-				<vbox id="section-branding" class="section" flex="1">
-					<hbox class="options-header">
-						<image class="header-image" />
-						<label class="header-text" value="Branding" />
-					</hbox>
-				</vbox>
-				<vbox id="section-native-controls" class="section" flex="1">
-					<hbox class="options-header">
-						<image class="header-image" />
-						<label class="header-text" value="Native Controls" />
-					</hbox>
-				</vbox>
-				<vbox id="section-about" class="section" flex="1">
-					<hbox class="options-header">
-						<image class="header-image" />
-						<label class="header-text" value="About Echelon" />
-					</hbox>
-				</vbox>
-			</vbox>
-		</hbox>
-	</vbox>
+			</hbox>
+		</vbox>
+	</html:body>
 
 	<script src="chrome://userchrome/content/windows/options/script.js" type="text/javascript"></script>
 

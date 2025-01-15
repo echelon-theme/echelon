@@ -33,6 +33,11 @@
 	font-weight: 400;
 }
 
+body {
+	margin: 0;
+	padding: 0;
+}
+
 .options-categories {
 	min-width: 210px;
 	padding-block: 20px;
