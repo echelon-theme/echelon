@@ -2707,6 +2707,20 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-small.png") !important;
   background-position: -48px 0 !important;
 }
+.australis-appmenu-panel .panelUI-grid #zoom-out-button .toolbarbutton-icon {
+  width: 16px !important;
+  height: 16px !important;
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-small.png") !important;
+  background-position: -64px 0 !important;
+}
+.australis-appmenu-panel .panelUI-grid #zoom-in-button .toolbarbutton-icon {
+  width: 16px !important;
+  height: 16px !important;
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-small.png") !important;
+  background-position: -80px 0 !important;
+}
 
 .australis-appmenu-panel .panelUI-grid toolbarbutton[disabled] .toolbarbutton-icon {
   opacity: 100% !important;
