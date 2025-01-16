@@ -48,6 +48,7 @@ body {
 	background-color: transparent;
 	color: revert;
 	border: 0;
+	overflow-x: hidden;
 }
 
 .category {
@@ -60,6 +61,29 @@ body {
 	text-shadow: 0 1px 0 white;
 	cursor: pointer;
 	background-color: transparent;
+	position: relative;
+
+	background-image: radial-gradient(0.28% 50% at 99.76% 50%, rgba(39, 160, 239, 0) 0%, rgba(39, 160, 239, 0) 75%, rgba(39, 160, 239, 0) 100%), radial-gradient(1.32% 50% at 99.49% 50%, rgba(39, 160, 239, 0) 50.98%, rgba(232, 239, 245, 0) 100%);
+	background-position: center right;
+	background-repeat: no-repeat;
+
+	transition-property: color !important;
+	transition-duration: 150ms !important;
+}
+
+.category::after {
+	content: '';
+	width: 10px;
+	height: 17px;
+	display: flex;
+	background-image: url("chrome://userchrome/content/windows/options/images/category-arrow.png");
+	position: absolute;
+	right: 0;
+
+	transition-property: opacity, transform !important;
+  	transition-duration: 350ms !important;
+	opacity: 0;
+	transform: translateX(10px);
 }
 
 .category:hover {
@@ -67,17 +91,24 @@ body {
 }
 
 .category[selected="true"] {
-	background-image: url("chrome://userchrome/content/windows/options/images/category-arrow.png"), radial-gradient(0.28% 50% at 99.76% 50%, #27A0EF 0%, #27A0EF 75%, rgba(39, 160, 239, 0) 100%), radial-gradient(1.32% 50% at 99.49% 50%, rgba(39, 160, 239, 0.15) 50.98%, rgba(232, 239, 245, 0) 100%);
-	background-position: center right;
-	background-repeat: no-repeat;
+	background-image: radial-gradient(0.28% 50% at 99.76% 50%, rgba(39, 160, 239, 1) 0%, rgba(39, 160, 239, 1) 75%, rgba(39, 160, 239, 0) 100%), radial-gradient(1.32% 50% at 99.49% 50%, rgba(39, 160, 239, 0.15) 50.98%, rgba(232, 239, 245, 0) 100%);
 	color: #27A0EF;
 	background-color: transparent;
+}
+
+.category[selected="true"]::after {
+	opacity: 1;
+	transform: translateX(0);
 }
 
 .category .category-image {
 	width: 18px;
 	height: 18px;
 	background-image: url("chrome://userchrome/content/windows/options/images/categories.png");
+	opacity: 0.5;
+
+	transition-property: opacity !important;
+	transition-duration: 150ms !important;
 }
 
 #category-branding .category-image {
@@ -93,11 +124,12 @@ body {
 }
 
 .category:hover .category-image {
-	background-position-y: -18px;
+	opacity: 1;
 }
 
 .category[selected="true"] .category-image {
-	background-position-y: -36px;
+	opacity: 1;
+	background-position-y: -18px;
 }
 
 .category .category-text {
@@ -118,7 +150,12 @@ body {
 	font-weight: lighter;
 	font-size: 18px;
 	padding: 28px 25px;
+	padding-block-end: 0;
 	text-shadow: 0 1px 0 white;
+}
+
+.options-content {
+	padding: 25px;
 }
 
 .header-image {
