@@ -5,17 +5,17 @@
 &:not([echelon-style-5]) {
     #urlbar {
         & #identity-box {
-            padding: 2px !important;
-            font-size: .9em !important;
             order: -1 !important;
             margin-inline-end: 0 !important;
 
             #identity-icon-box {
+                order: -1 !important;
                 background-color: transparent !important;
-                color: inherit !important;
-                padding-inline: 0 !important;
                 border-radius: 0 !important;
                 outline: 0 !important;
+                padding: 2px !important;
+                font-size: .9em !important;
+                margin-inline-end: 0 !important;
 
                 &:hover {
                     #identity-icon {
@@ -32,44 +32,42 @@
             }
 
             #identity-icon {
+                @include set-background("firefox-14/urlbar/identity-icons-generic.png");
                 margin-block: 1px !important;
                 margin-inline-start: 3px !important;
             }
 
-            &[pageproxystate="invalid"],
-            &.chromeUI {
-                #identity-icon {
-                    @include set-background("firefox-14/urlbar/identity-icons-generic.png");
-                }
-            }
-
-            &[pageproxystate="valid"]:not(.chromeUI, .verifiedIdentity) {
-                #identity-icon {
-                    @include set-background("firefox-14/urlbar/identity-icons-https.png");
+            &[pageproxystate="valid"]:not(.chromeUI, .verifiedIdentity, .notSecure, .localResource) {
+                #identity-icon-box {
+                    #identity-icon {
+                        @include set-background("firefox-14/urlbar/identity-icons-https.png");
+                    }
                 }
             }
 
             &.verifiedIdentity {
-                color: hsl(92,100%,30%) !important;
-                background-image: -moz-linear-gradient(hsla(92,81%,16%,0),
-                                hsla(92,81%,16%,.2) 25%,
-                                hsla(92,81%,16%,.2) 75%,
-                                hsla(92,81%,16%,0)) !important;
-                margin-inline-end: 3px !important;
-
-                background-position: right !important;
-                background-size: 1px !important;
-                background-repeat: no-repeat !important;
-
-                #identity-icon {
+                #identity-icon-box {
+                    color: hsl(92,100%,30%) !important;
+                    background-image: -moz-linear-gradient(hsla(92,81%,16%,0),
+                                    hsla(92,81%,16%,.2) 25%,
+                                    hsla(92,81%,16%,.2) 75%,
+                                    hsla(92,81%,16%,0)) !important;
                     margin-inline-end: 3px !important;
-                    @include set-background("firefox-14/urlbar/identity-icons-https-ev.png");
-                    background-size: cover !important;
-                }
 
-                #identity-icon-label {
-                    display: flex !important;
-                    visibility: visible !important;
+                    background-position: right !important;
+                    background-size: 1px !important;
+                    background-repeat: no-repeat !important;
+
+                    #identity-icon {
+                        margin-inline-end: 3px !important;
+                        @include set-background("firefox-14/urlbar/identity-icons-https-ev.png");
+                        background-size: cover !important;
+                    }
+
+                    #identity-icon-label {
+                        display: flex !important;
+                        visibility: visible !important;
+                    }
                 }
             }
 
@@ -79,38 +77,50 @@
                 padding-block-start: 1px !important;
                 margin: 0 !important;
                 visibility: collapse !important;
-            }
+            }    
         }
 
         .urlbar-input-box {
             padding-inline-start: 2px !important;
         }
     }
-}
 
+    &:not([chromehidden~="toolbar"]) #forward-button.unified-with-urlbar[disabled] + #urlbar-container #notification-popup-box { 
+        padding-inline-start: 5px !important;
+        margin-inline-end: -5px !important;
+    }
+}
 
 &[echelon-appearance-newlogo],
 &[echelon-style-4] {
     #urlbar {
         & #identity-box {
             &.chromeUI {
-                color: var(--identity-color-brand) !important;
-                background-image: var(--identity-background-brand) !important;
-                margin-inline-end: 3px !important;
-
-                background-position: right !important;
-                background-size: 1px !important;
-                background-repeat: no-repeat !important;
-
-                #identity-icon {
+                #identity-icon-box {
+                    color: var(--identity-color-brand) !important;
+                    background-image: var(--identity-background-brand) !important;
                     margin-inline-end: 3px !important;
-                    background-image: var(--identity-icons-brand) !important;
-                    background-size: cover !important;
-                }
 
-                #identity-icon-label {
-                    display: flex !important;
-                    visibility: visible !important;
+                    background-position: right !important;
+                    background-size: 1px !important;
+                    background-repeat: no-repeat !important;
+
+                    #identity-icon {
+                        margin-inline-end: 3px !important;
+                        background-image: var(--identity-icons-brand) !important;
+                        background-size: cover !important;
+                    }
+
+                    #identity-icon-label {
+                        display: flex !important;
+                        visibility: visible !important;
+                    }
+                }
+            }
+
+            &[pageproxystate="valid"]:not(.chromeUI, .verifiedIdentity, .notSecure, .localResource) {
+                #identity-icon {
+                    @include set-background("firefox-29/urlbar/identity-icons-https.png");
                 }
             }
         }
