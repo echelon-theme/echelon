@@ -71,7 +71,8 @@
     }
 
     #tracking-protection-icon-container,
-    #pageActionButton {
+    #pageActionButton,
+    #identity-permission-box {
         visibility: collapse !important;
     }
 
@@ -252,6 +253,9 @@
         .toolbarbutton-1 {
             padding: 0 3px !important;
             border-inline-start: 1px solid rgba(0, 0, 0, 0.25) !important;
+            :root[echelon-style-3]:not([echelon-style-4]) &:not(#stop-button, #go-button, :hover, :hover:active) {
+                border-inline-start: 1px solid transparent !important;
+            }
             background-origin: border-box !important;
             margin: 0 !important;
             opacity: 1 !important;
@@ -274,7 +278,7 @@
             }
         }
 
-        :root:not([echelon-style-2]) & #reload-button {
+        :root:not([echelon-style-4]) & #reload-button {
             &:hover {
                 background-image: linear-gradient(rgb(162, 207, 241), rgb(111, 178, 225) 49%, rgb(91, 159, 217) 51%, rgb(62, 138, 200)) !important;
 
@@ -284,7 +288,7 @@
             }
         }
 
-        :root:not([echelon-style-2]) & #go-button {
+        :root:not([echelon-style-4]) & #go-button {
             background-image: linear-gradient(rgb(115,213,115), rgb(96,190,96) 49%, rgb(82,174,82) 51%, rgb(79,155,79)) !important;
 
             .toolbarbutton-icon {
@@ -292,7 +296,7 @@
             }
         }
 
-        :root:not([echelon-style-2]) & #stop-button {
+        :root:not([echelon-style-4]) & #stop-button {
             background-image: -moz-linear-gradient(rgb(231,162,140), rgb(209,119,100) 49%, rgb(193,92,78) 51%, rgb(173,72,58)) !important;
             
             .toolbarbutton-icon {

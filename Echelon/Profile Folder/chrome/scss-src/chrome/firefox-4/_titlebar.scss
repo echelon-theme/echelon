@@ -11,7 +11,7 @@
 	}
 }
 
-:root:not([echelon-style-4]) {
+:root:not([echelon-style-6]) {
 	// hide app menu when titlebar enabled
 	&:not([tabsintitlebar="true"]) #appmenu-button-container {
 		visibility: collapse !important;

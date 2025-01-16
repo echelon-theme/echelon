@@ -1,6 +1,6 @@
 @import "../_mixins.scss";
 
-:root:not([echelon-style-4]) {
+:root:not([echelon-style-6]) {
     --arrowpanel-padding: 10px !important;
     --arrowpanel-color: -moz-DialogText !important;
     --arrowpanel-background: -moz-Dialog !important;
@@ -33,7 +33,7 @@
     }
 }
 
-:root[echelon-style-3]:not([echelon-style-4]) {
+:root[echelon-style-5]:not([echelon-style-6]) {
     --arrowpanel-border-radius: 4px !important;
     --arrowpanel-margin: 4px !important;
 
@@ -46,7 +46,7 @@
     --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-14/panelarrow/panelarrow-horizontal.svg");
 }
 
-:root[echelon-appearance-blue]:not([echelon-system-style="winxp"]):not([echelon-style-2]) {
+:root[echelon-appearance-blue]:not([echelon-system-style="winxp"]):not([echelon-style-4]) {
     --arrowpanel-border-radius: 6px !important;
     --arrowpanel-background: -moz-linear-gradient(rgba(250,253,255,.9), rgba(250,253,255,.75) 20px, rgba(250,253,255,.70) 39px, rgba(250,253,255,0) 41px, rgba(250,253,255,0)), rgba(179,230,255,.35) !important;
     --arrowpanel-border: none !important;
@@ -66,7 +66,7 @@
     --arrowpanel-inner-shadow: 0 0 0 1px rgba(255,255,255,.6) !important;
 }
 
-:root[echelon-style-4] {
+:root[echelon-style-6] {
     --arrowpanel-padding: 10px !important;
     --arrowpanel-color: -moz-FieldText !important;
     --arrowpanel-background: -moz-field !important;
@@ -221,7 +221,7 @@ menupopup[type="arrow"] {
     }
 }
 
-:root:not([echelon-style-4]):not([echelon-style-3])[echelon-system-style="winxp"] :is(panel, menupopup[placespopup]) {
+:root:not([echelon-style-6]):not([echelon-style-5])[echelon-system-style="winxp"] :is(panel, menupopup[placespopup]) {
     &[side="top"]::part(arrow) {
         margin-left: 6px;
         margin-right: 6px;

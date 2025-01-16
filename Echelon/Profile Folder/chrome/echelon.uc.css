@@ -1,7 +1,7 @@
 /* ::::: Firefox 4 ::::: */
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
-:root:not([echelon-style-4]) {
+:root:not([echelon-style-6]) {
   --arrowpanel-padding: 10px !important;
   --arrowpanel-color: -moz-DialogText !important;
   --arrowpanel-background: -moz-Dialog !important;
@@ -16,7 +16,7 @@
   --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-vertical.svg");
   --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-horizontal.svg");
 }
-:root:not([echelon-style-4]):not([echelon-style-3])[echelon-system-style=winxp] {
+:root:not([echelon-style-6]):not([echelon-style-3])[echelon-system-style=winxp] {
   --arrowpanel-padding: 16px !important;
   --arrowpanel-background: rgb(250,251,253) !important;
   --arrowpanel-border-radius: 6px !important;
@@ -28,7 +28,7 @@
   --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-4/xp/panelarrow/panelarrow-down.png");
 }
 
-:root[echelon-style-3]:not([echelon-style-4]) {
+:root[echelon-style-5]:not([echelon-style-6]) {
   --arrowpanel-border-radius: 4px !important;
   --arrowpanel-margin: 4px !important;
   --arrowpanel-arrow-margin: -20px !important;
@@ -38,7 +38,7 @@
   --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-14/panelarrow/panelarrow-horizontal.svg");
 }
 
-:root[echelon-appearance-blue]:not([echelon-system-style=winxp]):not([echelon-style-2]) {
+:root[echelon-appearance-blue]:not([echelon-system-style=winxp]):not([echelon-style-4]) {
   --arrowpanel-border-radius: 6px !important;
   --arrowpanel-background: -moz-linear-gradient(rgba(250,253,255,.9), rgba(250,253,255,.75) 20px, rgba(250,253,255,.70) 39px, rgba(250,253,255,0) 41px, rgba(250,253,255,0)), rgba(179,230,255,.35) !important;
   --arrowpanel-border: none !important;
@@ -55,7 +55,7 @@
   --arrowpanel-inner-shadow: 0 0 0 1px rgba(255,255,255,.6) !important;
 }
 
-:root[echelon-style-4] {
+:root[echelon-style-6] {
   --arrowpanel-padding: 10px !important;
   --arrowpanel-color: -moz-FieldText !important;
   --arrowpanel-background: -moz-field !important;
@@ -70,11 +70,11 @@
   --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-29/panelarrow/panelarrow-vertical.svg");
   --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-29/panelarrow/panelarrow-horizontal.svg");
 }
-:root[echelon-style-4][echelon-appearance-blue] {
+:root[echelon-style-6][echelon-appearance-blue] {
   --arrowpanel-border-color: hsla(210,4%,10%,.2) !important;
   --arrowpanel-echelon-shadow: 0 0 4px hsla(210,4%,10%,.2) !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] {
+:root[echelon-style-6][echelon-system-style=win8] {
   --arrowpanel-border-radius: 0 !important;
 }
 
@@ -176,25 +176,25 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
   margin-left: var(--arrowpanel-arrow-position);
 }
 
-:root:not([echelon-style-4]):not([echelon-style-3])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=top]::part(arrow) {
+:root:not([echelon-style-6]):not([echelon-style-5])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=top]::part(arrow) {
   margin-left: 6px;
   margin-right: 6px;
   margin-bottom: -13px;
   margin-top: -4px;
 }
-:root:not([echelon-style-4]):not([echelon-style-3])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=bottom]::part(arrow) {
+:root:not([echelon-style-6]):not([echelon-style-5])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=bottom]::part(arrow) {
   margin-left: 6px;
   margin-right: 6px;
   margin-top: -12px;
   margin-bottom: -4px;
 }
-:root:not([echelon-style-4]):not([echelon-style-3])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=left]::part(arrow) {
+:root:not([echelon-style-6]):not([echelon-style-5])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=left]::part(arrow) {
   margin-top: 6px;
   margin-bottom: 6px;
   margin-right: -12px;
   margin-left: -4px;
 }
-:root:not([echelon-style-4]):not([echelon-style-3])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=right]::part(arrow) {
+:root:not([echelon-style-6]):not([echelon-style-5])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=right]::part(arrow) {
   margin-top: 6px;
   margin-bottom: 6px;
   margin-left: -12px;
@@ -221,10 +221,10 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
 :root {
   --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/tab-arrow-left.png") !important;
 }
-:root[echelon-style-2] {
-  --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-10/tabs/tab-arrow-left-inverted.png") !important;
+:root[echelon-style-3] {
+  --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-8/tabs/tab-arrow-left-inverted.png") !important;
 }
-:root[echelon-style-4] {
+:root[echelon-style-6] {
   --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-arrow-left.png") !important;
   --tabbrowser-arrowbox-inline-padding: 15px !important;
 }

@@ -83,7 +83,7 @@
                 }
             }
 
-            :root:not([echelon-style-4]) & .tab-icon-image {
+            :root:not([echelon-style-6]) & .tab-icon-image {
                 &:not([src], [pinned], [crashed], [sharing], [pictureinpicture]) {
                     display: flex !important;
                 }
@@ -193,7 +193,7 @@
         }
     }
 
-    :root:not([echelon-style-4]) & {
+    :root:not([echelon-style-6]) & {
         .tab-background,
         #tabs-newtab-button
         {
@@ -239,7 +239,7 @@
             margin-bottom: -1px !important;
         }
 
-        :root:not([echelon-style-4]) &:hover:active {
+        :root:not([echelon-style-6]) &:hover:active {
             .toolbarbutton-icon {
                 background-position-x: -16px !important;
             }

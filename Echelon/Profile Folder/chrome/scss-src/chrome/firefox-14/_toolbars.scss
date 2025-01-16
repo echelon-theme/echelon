@@ -98,7 +98,7 @@
     }
 
     // Aero blue style
-    &:not([echelon-system-style="winxp"], [echelon-style-4][echelon-system-style="win8"], [echelon-style-4][echelon-system-style="win10"]) {
+    &:not([echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
         &[echelon-appearance-blue] {
             --toolbar-background-color: hsl(210,75%,92%) !important;
 

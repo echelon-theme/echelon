@@ -1,9 +1,9 @@
 :root {
     --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/tab-arrow-left.png") !important;
-    &[echelon-style-2] {
-        --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-10/tabs/tab-arrow-left-inverted.png") !important;
+    &[echelon-style-3] {
+        --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-8/tabs/tab-arrow-left-inverted.png") !important;
     }
-    &[echelon-style-4] {
+    &[echelon-style-6] {
         --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-arrow-left.png") !important;
         --tabbrowser-arrowbox-inline-padding: 15px !important;
     }

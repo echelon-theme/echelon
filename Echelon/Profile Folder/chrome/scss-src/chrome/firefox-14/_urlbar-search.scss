@@ -2,7 +2,7 @@
     --urlbar-border-color: hsla(210,54%,20%,.25) hsla(210,54%,20%,.27) hsla(210,54%,20%,.3) !important;
 }
 
-&:not([echelon-style-5]) {
+&:not([echelon-style-7]) {
     #urlbar {
         & #identity-box {
             order: -1 !important;
@@ -92,7 +92,7 @@
 }
 
 &[echelon-appearance-newlogo],
-&[echelon-style-4] {
+&[echelon-style-6] {
     #urlbar {
         & #identity-box {
             &.chromeUI {
@@ -119,8 +119,10 @@
             }
 
             &[pageproxystate="valid"]:not(.chromeUI, .verifiedIdentity, .notSecure, .localResource) {
-                #identity-icon {
-                    @include set-background("firefox-29/urlbar/identity-icons-https.png");
+                #identity-icon-box {
+                    #identity-icon {
+                        @include set-background("firefox-29/urlbar/identity-icons-https.png");
+                    }
                 }
             }
         }

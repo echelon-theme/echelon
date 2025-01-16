@@ -35,25 +35,25 @@
   -moz-window-dragging: drag !important;
 }
 
-:root:not([echelon-style-4]):not([tabsintitlebar=true]) #appmenu-button-container {
+:root:not([echelon-style-6]):not([tabsintitlebar=true]) #appmenu-button-container {
   visibility: collapse !important;
 }
-:root:not([echelon-style-4]) #toolbar-menubar[inactive=true] .titlebar-buttonbox-container, :root:not([echelon-style-4]):not([sizemode=maximized]) #TabsToolbar .titlebar-buttonbox-container, :root:not([echelon-style-4])[sizemode=maximized] #titlebar-content .titlebar-buttonbox-container, :root:not([echelon-style-4])[sizemode=maximized] #toolbar-menubar:not([inactive=true]) #TabsToolbar .titlebar-buttonbox-container {
+:root:not([echelon-style-6]) #toolbar-menubar[inactive=true] .titlebar-buttonbox-container, :root:not([echelon-style-6]):not([sizemode=maximized]) #TabsToolbar .titlebar-buttonbox-container, :root:not([echelon-style-6])[sizemode=maximized] #titlebar-content .titlebar-buttonbox-container, :root:not([echelon-style-6])[sizemode=maximized] #toolbar-menubar:not([inactive=true]) #TabsToolbar .titlebar-buttonbox-container {
   visibility: collapse !important;
 }
-:root:not([echelon-style-4])[sizemode=maximized] #titlebar {
+:root:not([echelon-style-6])[sizemode=maximized] #titlebar {
   display: grid !important;
   grid-template-areas: "firefox-button menu-bar" "firefox-button tabbar" !important;
   grid-auto-columns: min-content auto !important;
 }
-:root:not([echelon-style-4])[sizemode=maximized] #titlebar-content {
+:root:not([echelon-style-6])[sizemode=maximized] #titlebar-content {
   grid-area: firefox-button !important;
 }
-:root:not([echelon-style-4])[sizemode=maximized] #toolbar-menubar {
+:root:not([echelon-style-6])[sizemode=maximized] #toolbar-menubar {
   grid-area: menu-bar !important;
   margin-inline-start: 4px !important;
 }
-:root:not([echelon-style-4])[sizemode=maximized] #TabsToolbar {
+:root:not([echelon-style-6])[sizemode=maximized] #TabsToolbar {
   grid-area: tabbar !important;
 }
 
@@ -118,7 +118,7 @@
   width: var(--toolbarbutton-icon-width) !important;
   height: var(--toolbarbutton-icon-height) !important;
 }
-:root:not([echelon-style-3]) #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button, :root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar {
+:root:not([echelon-style-4]) #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button, :root[echelon-style-4] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar {
   width: 30px !important;
   height: 30px !important;
   position: relative !important;
@@ -131,19 +131,19 @@
   border: none !important;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3), 1px 2px 1px rgba(0, 0, 0, 0.2) !important;
 }
-:root:not([echelon-style-3]) #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button:not([disabled=true]):hover, :root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([disabled=true]):hover {
+:root:not([echelon-style-4]) #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button:not([disabled=true]):hover, :root[echelon-style-4] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([disabled=true]):hover {
   background-color: hsla(190, 60%, 70%, 0.5) !important;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px hsla(190, 50%, 40%, 0.3), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3), 1px 2px 1px rgba(0, 0, 0, 0.2), 0 0 5px 1px hsl(190, 90%, 80%) !important;
 }
-:root:not([echelon-style-3]) #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button:not([disabled=true]):hover:active, :root:not([echelon-style-3]) #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button:not([disabled=true])[open], :root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([disabled=true]):hover:active, :root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([disabled=true])[open] {
+:root:not([echelon-style-4]) #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button:not([disabled=true]):hover:active, :root:not([echelon-style-4]) #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button:not([disabled=true])[open], :root[echelon-style-4] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([disabled=true]):hover:active, :root[echelon-style-4] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([disabled=true])[open] {
   background-color: transparent !important;
   box-shadow: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset, 0 0 0 1px rgba(0, 0, 0, 0.65), 0 2px 0 rgba(255, 255, 255, 0.4) !important;
 }
-:root:not([echelon-style-3]) #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button .toolbarbutton-icon, :root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar .toolbarbutton-icon {
+:root:not([echelon-style-4]) #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button .toolbarbutton-icon, :root[echelon-style-4] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar .toolbarbutton-icon {
   --toolbarbutton-icon-width: var(--toolbarbutton-icon-large-width) !important;
   --toolbarbutton-icon-height: var(--toolbarbutton-icon-large-height) !important;
 }
-:root:not([echelon-style-3]) #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button, :root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button.unified-with-urlbar {
+:root:not([echelon-style-4]) #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button, :root[echelon-style-4] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button.unified-with-urlbar {
   clip-path: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CclipPath id='windows-keyhole-forward-clip-path' clipPathUnits='objectBoundingBox'%3E%3Cpath d='M 0,0 C 0.16,0.11 0.28,0.29 0.28,0.5 0.28,0.71 0.16,0.89 0,1 L 1,1 1,0 0,0 z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E#windows-keyhole-forward-clip-path") !important;
   width: 29px !important;
   height: var(--toolbarbutton-height) !important;
@@ -320,7 +320,7 @@
   height: 16px !important;
 }
 
-:root:not([echelon-style-4]) #bookmarked-notification-container {
+:root:not([echelon-style-6]) #bookmarked-notification-container {
   display: none !important;
 }
 
@@ -393,7 +393,7 @@
   background-color: ThreeDShadow !important;
 }
 
-:root:not([echelon-style-4])[disablechrome] #navigator-toolbox::after {
+:root:not([echelon-style-6])[disablechrome] #navigator-toolbox::after {
   display: none !important;
 }
 
@@ -421,7 +421,7 @@
   overflow: clip !important;
 }
 
-:root:not([echelon-system-style=winxp], [echelon-style-4][echelon-system-style=win8], [echelon-style-4][echelon-system-style=win10])[echelon-appearance-blue] {
+:root:not([echelon-system-style=winxp], [echelon-style-6][echelon-system-style=win8], [echelon-style-6][echelon-system-style=win10])[echelon-appearance-blue] {
   --toolbar-background-color: hsl(214, 44%, 87%) !important;
 }
 
@@ -429,13 +429,13 @@
   background-color: var(--toolbar-background-color) !important;
 }
 
-:root:not([echelon-style-4])[disablechrome] #navigator-toolbox toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
+:root:not([echelon-style-6])[disablechrome] #navigator-toolbox toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
   position: absolute !important;
   min-width: 100% !important;
   left: -999em !important;
 }
 
-:root:not([echelon-style-4]) #PanelUI-button {
+:root:not([echelon-style-6]) #PanelUI-button {
   max-width: 1px !important;
   margin-inline-end: -1px !important;
   opacity: 0 !important;
@@ -516,10 +516,10 @@
   margin-inline-end: var(--tab-icon-end-margin) !important;
   margin-inline-start: var(--tab-icon-start-margin) !important;
 }
-:root:not([echelon-style-4]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]) {
+:root:not([echelon-style-6]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]) {
   display: flex !important;
 }
-:root:not([echelon-style-4]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [busy], [progress]), :root:not([echelon-style-4]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:-moz-broken {
+:root:not([echelon-style-6]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [busy], [progress]), :root:not([echelon-style-6]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:-moz-broken {
   content: var(--default-favicon) !important;
 }
 #TabsToolbar .tabbrowser-tab .tab-content .tab-secondary-label {
@@ -593,8 +593,8 @@
 #TabsToolbar .tab-throbber[progress] {
   background-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/loading.png");
 }
-:root:not([echelon-style-4]) #TabsToolbar .tab-background,
-:root:not([echelon-style-4]) #TabsToolbar #tabs-newtab-button {
+:root:not([echelon-style-6]) #TabsToolbar .tab-background,
+:root:not([echelon-style-6]) #TabsToolbar #tabs-newtab-button {
   box-shadow: none !important;
   border-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/tab.png") 6 3 4/6px 3px 4px repeat stretch !important;
   background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px), var(--tab-background), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color));
@@ -607,15 +607,15 @@
   border-style: solid !important;
   margin-block: 0 !important;
 }
-:root:not([echelon-style-4]) #TabsToolbar .tabbrowser-tab:hover .tab-background,
-:root:not([echelon-style-4]) #TabsToolbar #tabs-newtab-button:hover,
-:root:not([echelon-style-4]) #TabsToolbar #tabs-newtab-button[open] {
+:root:not([echelon-style-6]) #TabsToolbar .tabbrowser-tab:hover .tab-background,
+:root:not([echelon-style-6]) #TabsToolbar #tabs-newtab-button:hover,
+:root:not([echelon-style-6]) #TabsToolbar #tabs-newtab-button[open] {
   background-image: linear-gradient(to top, rgba(25.5, 25.5, 25.5, 0.4) 1px, transparent 1px), var(--tab-background-hover), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
 }
-:root:not([echelon-style-4]) #TabsToolbar #tabs-newtab-button {
+:root:not([echelon-style-6]) #TabsToolbar #tabs-newtab-button {
   width: 30px !important;
 }
-:root:not([echelon-style-4]) #TabsToolbar .tabbrowser-tab:is([selected], [multiselected]) .tab-background {
+:root:not([echelon-style-6]) #TabsToolbar .tabbrowser-tab:is([selected], [multiselected]) .tab-background {
   background-image: linear-gradient(var(--tab-selected-highlight), var(--toolbar-highlight-top) 50%), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
   background-repeat: no-repeat !important;
 }
@@ -637,8 +637,8 @@
   margin-top: -1px !important;
   margin-bottom: -1px !important;
 }
-:root:not([echelon-style-4]) #TabsToolbar #tabs-newtab-button:hover:active .toolbarbutton-icon,
-:root:not([echelon-style-4]) #TabsToolbar #new-tab-button:hover:active .toolbarbutton-icon {
+:root:not([echelon-style-6]) #TabsToolbar #tabs-newtab-button:hover:active .toolbarbutton-icon,
+:root:not([echelon-style-6]) #TabsToolbar #new-tab-button:hover:active .toolbarbutton-icon {
   background-position-x: -16px !important;
 }
 #TabsToolbar #alltabs-button {
@@ -1048,7 +1048,8 @@
   margin-inline-end: -2px !important;
 }
 #urlbar #tracking-protection-icon-container,
-#urlbar #pageActionButton {
+#urlbar #pageActionButton,
+#urlbar #identity-permission-box {
   visibility: collapse !important;
 }
 #urlbar #urlbar-go-button {
@@ -1196,6 +1197,9 @@
   margin: 0 !important;
   opacity: 1 !important;
 }
+:root[echelon-style-3]:not([echelon-style-4]) #stop-reload-button.unified .toolbarbutton-1:not(#stop-button, #go-button, :hover, :hover:active) {
+  border-inline-start: 1px solid transparent !important;
+}
 #stop-reload-button.unified .toolbarbutton-1:hover {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset, -1px -1px 1px rgba(255, 255, 255, 0.25) inset !important;
 }
@@ -1211,22 +1215,22 @@
   background-color: transparent !important;
   opacity: 1 !important;
 }
-:root:not([echelon-style-2]) #stop-reload-button.unified #reload-button:hover {
+:root:not([echelon-style-4]) #stop-reload-button.unified #reload-button:hover {
   background-image: linear-gradient(rgb(162, 207, 241), rgb(111, 178, 225) 49%, rgb(91, 159, 217) 51%, rgb(62, 138, 200)) !important;
 }
-:root:not([echelon-style-2]) #stop-reload-button.unified #reload-button:hover .toolbarbutton-icon {
+:root:not([echelon-style-4]) #stop-reload-button.unified #reload-button:hover .toolbarbutton-icon {
   background-position-x: -14px !important;
 }
-:root:not([echelon-style-2]) #stop-reload-button.unified #go-button {
+:root:not([echelon-style-4]) #stop-reload-button.unified #go-button {
   background-image: linear-gradient(rgb(115, 213, 115), rgb(96, 190, 96) 49%, rgb(82, 174, 82) 51%, rgb(79, 155, 79)) !important;
 }
-:root:not([echelon-style-2]) #stop-reload-button.unified #go-button .toolbarbutton-icon {
+:root:not([echelon-style-4]) #stop-reload-button.unified #go-button .toolbarbutton-icon {
   background-position-x: -42px !important;
 }
-:root:not([echelon-style-2]) #stop-reload-button.unified #stop-button {
+:root:not([echelon-style-4]) #stop-reload-button.unified #stop-button {
   background-image: -moz-linear-gradient(rgb(231, 162, 140), rgb(209, 119, 100) 49%, rgb(193, 92, 78) 51%, rgb(173, 72, 58)) !important;
 }
-:root:not([echelon-style-2]) #stop-reload-button.unified #stop-button .toolbarbutton-icon {
+:root:not([echelon-style-4]) #stop-reload-button.unified #stop-button .toolbarbutton-icon {
   background-position-x: -28px !important;
 }
 #stop-reload-button #go-button,
@@ -3030,7 +3034,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 #customization-container #customization-titlebar-visibility-checkbox[checked] .checkbox-icon {
   background-position-x: -24px !important;
 }
-:root:not([echelon-style-4]) #customization-container #customization-titlebar-visibility-checkbox {
+:root:not([echelon-style-6]) #customization-container #customization-titlebar-visibility-checkbox {
   visibility: collapse !important;
 }
 #customization-container #customization-reset-button {
@@ -3045,91 +3049,87 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   --toolbarbutton-border-radius: 3.5px !important;
   --toolbarbutton-shadow-normal: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset !important;
 }
-:root[echelon-style-1]:not([echelon-style-3]) #navigator-toolbox > #nav-bar .toolbarbutton-1#back-button {
+:root[echelon-style-1]:not([echelon-style-5]) #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3) !important;
 }
 :root[echelon-style-1] {
   --urlbar-border-color: rgba(0, 0, 0, 0.37) !important;
 }
 
-/* ::::: Firefox 10 ::::: */
-:root[echelon-style-2] #TabsToolbar #alltabs-button .toolbarbutton-icon {
-  background-image: url("chrome://userchrome/content/assets/images/firefox-10/mainwindow-dropdown-arrow-inverted.png") !important;
-  list-style-image: none !important;
-}
-:root[echelon-style-2] #TabsToolbar #alltabs-button .toolbarbutton-icon,
-:root[echelon-style-2] #TabsToolbar #alltabs-button .toolbarbutton-badge-stack {
-  width: 13px !important;
-  height: 10px !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  outline: 0 !important;
-  box-shadow: none !important;
-  background-color: transparent !important;
-}
-:root[echelon-style-2] #TabsToolbar #new-tab-button .toolbarbutton-icon {
-  background-image: url("chrome://userchrome/content/assets/images/firefox-10/tabs/newtab-inverted.png") !important;
-  list-style-image: none !important;
-}
-:root[echelon-style-2] #page-action-buttons #star-button {
-  background-image: url("chrome://userchrome/content/assets/images/firefox-10/bookmark.png") !important;
-  list-style-image: none !important;
-  background-position-x: 0 !important;
-}
-:root[echelon-style-2] #page-action-buttons #star-button:hover {
-  background-position-x: -16px !important;
-}
-:root[echelon-style-2] #page-action-buttons #star-button:hover:active, :root[echelon-style-2] #page-action-buttons #star-button[open] {
-  background-position-x: -32px !important;
-}
-:root[echelon-style-2] #page-action-buttons #star-button[starred=true] {
-  background-image: url("chrome://userchrome/content/assets/images/firefox-10/editBookmark.png") !important;
-  list-style-image: none !important;
-}
-:root[echelon-style-2] {
-  --toolbarbutton-border-radius: 2.5px !important;
-}
-:root[echelon-style-2] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)[disabled=true] {
-  opacity: 0.4 !important;
-}
-:root[echelon-style-2] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)[disabled=true] .toolbarbutton-icon {
-  opacity: 1 !important;
-}
-:root[echelon-style-2] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button.unified-with-urlbar {
-  border-radius: 0 !important;
-  margin-inline-end: 0 !important;
-}
+/* ::::: Firefox 6 ::::: */
 :root[echelon-style-2] {
   --urlbar-container-padding: 0 !important;
-  --default-favicon: url("chrome://userchrome/content/assets/images/firefox-10/defaultFavicon.png") !important;
   --urlbar-shadow-normal: none !important;
   --urlbar-border-color: ThreeDShadow !important;
 }
 :root[echelon-style-2]:not([echelon-appearance-xp])[echelon-appearance-blue] {
   --urlbar-border-color: rgba(0,0,0,.32) !important;
 }
-:root[echelon-style-2] #urlbar-container {
-  pointer-events: none !important;
+:root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box {
+  order: -1 !important;
+  margin-inline-end: 0 !important;
 }
-:root[echelon-style-2] #urlbar-container.unified-forward-button {
-  margin-inline-start: 0 !important;
+:root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-box {
+  outline: 0 !important;
+  color: -moz-DialogText !important;
+  background-image: linear-gradient(hsl(0, 0%, 98%), hsl(0, 0%, 92%)) !important;
+  box-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.05) inset !important;
+  border-inline-end: 1px solid hsla(0, 0%, 0%, 0.1) !important;
+  padding: 2px !important;
+  border-radius: 0 !important;
+  order: -1 !important;
+  margin-inline-end: 0 !important;
 }
-:root[echelon-style-2] #urlbar {
-  pointer-events: all !important;
+:root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-box:hover {
+  background-image: linear-gradient(hsl(0, 0%, 95%), hsl(0, 0%, 87%)) !important;
+}
+:root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-box[open=true], :root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-box:hover:active {
+  background-image: linear-gradient(hsl(0, 0%, 92%), hsl(0, 0%, 82%)) !important;
+  box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.3) inset, 0 1px 3px hsla(0, 0%, 0%, 0.3) inset !important;
+}
+:root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box.verifiedDomain #identity-icon-box {
+  background-image: linear-gradient(hsl(215, 60%, 92%), hsl(215, 58%, 88%)) !important;
+  box-shadow: 0 1px 0 hsla(215, 54%, 33%, 0.05) inset !important;
+  border-inline-end-color: hsla(215, 54%, 33%, 0.2) !important;
+  color: hsl(215, 54%, 33%) !important;
+}
+:root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box.verifiedDomain #identity-icon-box:hover {
+  background-image: linear-gradient(hsl(215, 85%, 85%), hsl(215, 70%, 68%)) !important;
+}
+:root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box.verifiedDomain #identity-icon-box[open=true], :root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box.verifiedDomain #identity-icon-box:hover:active {
+  background-image: linear-gradient(hsl(215, 80%, 80%), hsl(215, 67%, 65%)) !important;
+  box-shadow: 0 1px 1px hsla(215, 54%, 33%, 0.7) inset, 0 1px 3px 1px hsla(215, 54%, 33%, 0.5) inset !important;
+}
+:root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box.verifiedIdentity #identity-icon-box {
+  background-image: linear-gradient(hsl(91, 70%, 90%), hsl(93, 60%, 81%)) !important;
+  box-shadow: 0 1px 0 hsla(92, 81%, 16%, 0.05) inset;
+  border-inline-end-color: hsla(92, 81%, 16%, 0.2);
+  color: hsl(92, 100%, 20%);
+}
+:root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box.verifiedIdentity #identity-icon-box:hover {
+  background-image: linear-gradient(hsl(92, 69%, 77%), hsl(92, 44%, 51%)) !important;
+}
+:root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box.verifiedIdentity #identity-icon-box[open=true], :root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box.verifiedIdentity #identity-icon-box:hover:active {
+  background-image: linear-gradient(hsl(92, 65%, 70%), hsl(92, 40%, 48%)) !important;
+  box-shadow: 0 1px 1px hsla(92, 81%, 16%, 0.6) inset, 0 1px 3px 1px hsla(92, 81%, 16%, 0.5) inset !important;
+}
+:root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box[pageproxystate=invalid] #identity-icon {
+  opacity: 0.5 !important;
+}
+:root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box.chromeUI #identity-icon-label {
+  visibility: collapse !important;
+}
+:root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box #identity-icon {
+  margin-block: 1px !important;
+  margin-inline: 4px !important;
+}
+:root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-label {
+  padding-inline: 0 !important;
+  margin-inline-start: 1px !important;
+  margin-inline-end: 3px !important;
 }
 :root[echelon-style-2] #urlbar .urlbar-input-box {
   padding-inline-start: 3px !important;
-}
-:root[echelon-style-2] #urlbar-background, :root[echelon-style-2] #searchbar {
-  border-radius: 2.5px !important;
-}
-:root[echelon-style-2] #urlbar .urlbar-input-container::after {
-  background-image: url("chrome://userchrome/content/assets/images/firefox-10/urlbar/urlbar-history-dropmarker.png") !important;
-  list-style-image: none !important;
-  width: 11px !important;
-  height: 14px !important;
-  margin-inline-start: 4px !important;
-  margin-inline-end: 2px !important;
 }
 :root[echelon-style-2] #urlbar #identity-box #notification-popup-box {
   z-index: 1 !important;
@@ -3147,152 +3147,162 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   padding: 0 !important;
   margin: 0 2px !important;
 }
-:root[echelon-style-2]:not([chromehidden~=toolbar]) #forward-button.unified-with-urlbar[disabled] + #urlbar-container #notification-popup-box {
+
+/* ::::: Firefox 8 ::::: */
+:root[echelon-style-3] {
+  --default-favicon: url("chrome://userchrome/content/assets/images/firefox-8/defaultFavicon.png") !important;
+}
+:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)[disabled=true] {
+  opacity: 0.4 !important;
+}
+:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)[disabled=true] .toolbarbutton-icon {
+  opacity: 1 !important;
+}
+:root[echelon-style-3] #TabsToolbar #alltabs-button .toolbarbutton-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-8/mainwindow-dropdown-arrow-inverted.png") !important;
+  list-style-image: none !important;
+}
+:root[echelon-style-3] #TabsToolbar #alltabs-button .toolbarbutton-icon,
+:root[echelon-style-3] #TabsToolbar #alltabs-button .toolbarbutton-badge-stack {
+  width: 13px !important;
+  height: 10px !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+:root[echelon-style-3] #TabsToolbar #new-tab-button .toolbarbutton-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-8/tabs/newtab-inverted.png") !important;
+  list-style-image: none !important;
+}
+
+/* ::::: Firefox 10 ::::: */
+:root[echelon-style-4] #page-action-buttons #star-button {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-10/bookmark.png") !important;
+  list-style-image: none !important;
+  background-position-x: 0 !important;
+}
+:root[echelon-style-4] #page-action-buttons #star-button:hover {
+  background-position-x: -16px !important;
+}
+:root[echelon-style-4] #page-action-buttons #star-button:hover:active, :root[echelon-style-4] #page-action-buttons #star-button[open] {
+  background-position-x: -32px !important;
+}
+:root[echelon-style-4] #page-action-buttons #star-button[starred=true] {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-10/editBookmark.png") !important;
+  list-style-image: none !important;
+}
+:root[echelon-style-4] {
+  --toolbarbutton-border-radius: 2.5px !important;
+}
+:root[echelon-style-4] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button.unified-with-urlbar {
+  border-radius: 0 !important;
+  margin-inline-end: 0 !important;
+}
+:root[echelon-style-4] #urlbar-container {
+  pointer-events: none !important;
+}
+:root[echelon-style-4] #urlbar-container.unified-forward-button {
+  margin-inline-start: 0 !important;
+}
+:root[echelon-style-4] #urlbar {
+  pointer-events: all !important;
+}
+:root[echelon-style-4] #urlbar-background, :root[echelon-style-4] #searchbar {
+  border-radius: 2.5px !important;
+}
+:root[echelon-style-4] #urlbar .urlbar-input-container::after {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-10/urlbar/urlbar-history-dropmarker.png") !important;
+  list-style-image: none !important;
+  width: 11px !important;
+  height: 14px !important;
+  margin-inline-start: 4px !important;
+  margin-inline-end: 2px !important;
+}
+:root[echelon-style-4]:not([chromehidden~=toolbar]) #forward-button.unified-with-urlbar[disabled] + #urlbar-container #notification-popup-box {
   padding-inline-start: 5px !important;
   margin-inline-end: -7px !important;
 }
-:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box {
-  order: -1 !important;
-  margin-inline-end: 0 !important;
-}
-:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box #identity-icon-box {
-  outline: 0 !important;
-  color: -moz-DialogText !important;
-  background-image: linear-gradient(hsl(0, 0%, 98%), hsl(0, 0%, 92%)) !important;
-  box-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.05) inset !important;
-  border-inline-end: 1px solid hsla(0, 0%, 0%, 0.1) !important;
-  padding: 2px !important;
-  border-radius: 0 !important;
-  order: -1 !important;
-  margin-inline-end: 0 !important;
-}
-:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box #identity-icon-box:hover {
-  background-image: linear-gradient(hsl(0, 0%, 95%), hsl(0, 0%, 87%)) !important;
-}
-:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box #identity-icon-box[open=true], :root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box #identity-icon-box:hover:active {
-  background-image: linear-gradient(hsl(0, 0%, 92%), hsl(0, 0%, 82%)) !important;
-  box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.3) inset, 0 1px 3px hsla(0, 0%, 0%, 0.3) inset !important;
-}
-:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedDomain #identity-icon-box {
-  background-image: linear-gradient(hsl(215, 60%, 92%), hsl(215, 58%, 88%)) !important;
-  box-shadow: 0 1px 0 hsla(215, 54%, 33%, 0.05) inset !important;
-  border-inline-end-color: hsla(215, 54%, 33%, 0.2) !important;
-  color: hsl(215, 54%, 33%) !important;
-}
-:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedDomain #identity-icon-box:hover {
-  background-image: linear-gradient(hsl(215, 85%, 85%), hsl(215, 70%, 68%)) !important;
-}
-:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedDomain #identity-icon-box[open=true], :root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedDomain #identity-icon-box:hover:active {
-  background-image: linear-gradient(hsl(215, 80%, 80%), hsl(215, 67%, 65%)) !important;
-  box-shadow: 0 1px 1px hsla(215, 54%, 33%, 0.7) inset, 0 1px 3px 1px hsla(215, 54%, 33%, 0.5) inset !important;
-}
-:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedIdentity #identity-icon-box {
-  background-image: linear-gradient(hsl(91, 70%, 90%), hsl(93, 60%, 81%)) !important;
-  box-shadow: 0 1px 0 hsla(92, 81%, 16%, 0.05) inset;
-  border-inline-end-color: hsla(92, 81%, 16%, 0.2);
-  color: hsl(92, 100%, 20%);
-}
-:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedIdentity #identity-icon-box:hover {
-  background-image: linear-gradient(hsl(92, 69%, 77%), hsl(92, 44%, 51%)) !important;
-}
-:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedIdentity #identity-icon-box[open=true], :root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.verifiedIdentity #identity-icon-box:hover:active {
-  background-image: linear-gradient(hsl(92, 65%, 70%), hsl(92, 40%, 48%)) !important;
-  box-shadow: 0 1px 1px hsla(92, 81%, 16%, 0.6) inset, 0 1px 3px 1px hsla(92, 81%, 16%, 0.5) inset !important;
-}
-:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box[pageproxystate=invalid] #identity-icon {
-  opacity: 0.5 !important;
-}
-:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box.chromeUI #identity-icon-label {
-  visibility: collapse !important;
-}
-:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box #identity-icon {
-  margin-block: 1px !important;
-  margin-inline: 4px !important;
-}
-:root[echelon-style-2]:not([echelon-style-3]) #urlbar #identity-box #identity-icon-label {
-  padding-inline: 0 !important;
-  margin-inline-start: 1px !important;
-  margin-inline-end: 3px !important;
-}
-:root[echelon-style-2] #stop-reload-button.unified {
+:root[echelon-style-4] #stop-reload-button.unified {
   padding-inline-end: 2px !important;
 }
-:root[echelon-style-2] #stop-reload-button.unified .toolbarbutton-1 {
+:root[echelon-style-4] #stop-reload-button.unified .toolbarbutton-1 {
   padding: 0 2px !important;
   border-inline-start: 0 !important;
   box-shadow: none !important;
 }
-:root[echelon-style-2] #stop-reload-button.unified .toolbarbutton-1 .toolbarbutton-icon {
+:root[echelon-style-4] #stop-reload-button.unified .toolbarbutton-1 .toolbarbutton-icon {
   background-image: url("chrome://userchrome/content/assets/images/firefox-10/reload-stop-go.png") !important;
   list-style-image: none !important;
 }
-:root[echelon-style-2] #stop-reload-button.unified .toolbarbutton-1:not([disabled]):hover .toolbarbutton-icon {
+:root[echelon-style-4] #stop-reload-button.unified .toolbarbutton-1:not([disabled]):hover .toolbarbutton-icon {
   background-position-y: -14px !important;
 }
-:root[echelon-style-2] #stop-reload-button.unified .toolbarbutton-1:not([disabled]):hover:active .toolbarbutton-icon {
+:root[echelon-style-4] #stop-reload-button.unified .toolbarbutton-1:not([disabled]):hover:active .toolbarbutton-icon {
   background-position-y: -28px !important;
 }
-:root[echelon-style-2] #stop-reload-button.unified #reload-button:not([disabled]):hover {
+:root[echelon-style-4] #stop-reload-button.unified #reload-button:not([disabled]):hover {
   background-image: -moz-radial-gradient(center, circle closest-side, hsla(200, 100%, 70%, 0.2), hsla(200, 100%, 70%, 0)) !important;
 }
-:root[echelon-style-2] #stop-reload-button.unified #reload-button:not([disabled]):hover:active {
+:root[echelon-style-4] #stop-reload-button.unified #reload-button:not([disabled]):hover:active {
   background-image: -moz-radial-gradient(center, circle closest-side, hsla(200, 100%, 60%, 0.1), hsla(200, 100%, 60%, 0)) !important;
 }
-:root[echelon-style-2] #stop-reload-button.unified #stop-button .toolbarbutton-icon {
+:root[echelon-style-4] #stop-reload-button.unified #stop-button .toolbarbutton-icon {
   background-position-x: -14px !important;
 }
-:root[echelon-style-2] #stop-reload-button.unified #stop-button:not([disabled]):hover {
+:root[echelon-style-4] #stop-reload-button.unified #stop-button:not([disabled]):hover {
   background-image: -moz-radial-gradient(center, circle closest-side, hsla(5, 100%, 75%, 0.3), hsla(5, 100%, 75%, 0)) !important;
 }
-:root[echelon-style-2] #stop-reload-button.unified #stop-button:not([disabled]):hover:active {
+:root[echelon-style-4] #stop-reload-button.unified #stop-button:not([disabled]):hover:active {
   background-image: -moz-radial-gradient(center, circle closest-side, hsla(5, 100%, 75%, 0.1), hsla(5, 100%, 75%, 0)) !important;
 }
-:root[echelon-style-2] #stop-reload-button.unified #go-button .toolbarbutton-icon {
+:root[echelon-style-4] #stop-reload-button.unified #go-button .toolbarbutton-icon {
   background-position-x: -28px !important;
 }
-:root[echelon-style-2] #stop-reload-button.unified #go-button:not([disabled]):hover {
+:root[echelon-style-4] #stop-reload-button.unified #go-button:not([disabled]):hover {
   background-image: -moz-radial-gradient(center, circle closest-side, hsla(110, 70%, 50%, 0.2), hsla(110, 70%, 50%, 0)) !important;
 }
-:root[echelon-style-2] #stop-reload-button.unified #go-button:not([disabled]):hover:active {
+:root[echelon-style-4] #stop-reload-button.unified #go-button:not([disabled]):hover:active {
   background-image: -moz-radial-gradient(center, circle closest-side, hsla(110, 70%, 50%, 0.1), hsla(110, 70%, 50%, 0)) !important;
 }
-:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] {
+:root[echelon-style-4]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] {
   opacity: 0 !important;
 }
-:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #urlbar {
+:root[echelon-style-4]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #urlbar {
   margin-left: -27px !important;
 }
-:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background,
-:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container {
+:root[echelon-style-4]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background,
+:root[echelon-style-4]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container {
   mask: url("chrome://userchrome/content/assets/images/firefox-10/urlbar/winstripe-urlbar-back-button-mask.svg") !important;
   mask-repeat: no-repeat !important;
   mask-position-x: -3px !important;
 }
-:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #identity-icon-box {
+:root[echelon-style-4]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #identity-icon-box {
   padding-inline-start: 5px !important;
 }
-:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container {
+:root[echelon-style-4]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container {
   padding-inline-start: 27px !important;
   margin-inline-start: -27px !important;
 }
-:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container #urlbar-background,
-:root[echelon-style-2]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container .urlbar-input-container {
+:root[echelon-style-4]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container #urlbar-background,
+:root[echelon-style-4]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container .urlbar-input-container {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
   border-inline-start: 0 !important;
 }
-:root[echelon-style-2]:not([chromehidden~=toolbar]):not([echelon-tabchanging=true]) #nav-bar #forward-button.unified-with-urlbar {
+:root[echelon-style-4]:not([chromehidden~=toolbar]):not([echelon-tabchanging=true]) #nav-bar #forward-button.unified-with-urlbar {
   transition: opacity 150ms ease-out !important;
 }
-:root[echelon-style-2]:not([chromehidden~=toolbar]):not([echelon-tabchanging=true]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] #identity-box {
+:root[echelon-style-4]:not([chromehidden~=toolbar]):not([echelon-tabchanging=true]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] #identity-box {
   transition: padding-inline-start !important;
 }
-:root[echelon-style-2]:not([chromehidden~=toolbar]):not([echelon-tabchanging=true]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container > #urlbar {
+:root[echelon-style-4]:not([chromehidden~=toolbar]):not([echelon-tabchanging=true]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container > #urlbar {
   transition: margin-inline-start 150ms ease-out !important;
 }
 
 /* ::::: Firefox 14 ::::: */
-:root[echelon-style-3] {
+:root[echelon-style-5] {
   --toolbarbutton-width: 32px !important;
   --toolbarbutton-background: hsla(210,32%,93%,0) !important;
   --toolbarbutton-background-active: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1)) !important;
@@ -3302,57 +3312,57 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   --toolbarbutton-shadow-hot: 0 1px hsla(0,0%,100%,.3) inset, 0 1px hsla(210,54%,20%,.03), 0 0 2px hsla(210,54%,20%,.1) !important;
   --toolbarbutton-shadow-active: 0 1px 1px hsla(210,54%,20%,.1) inset, 0 0 1px hsla(210,54%,20%,.2) inset, 0 1px 0 hsla(210,54%,20%,0), 0 0 2px hsla(210,54%,20%,0) !important;
 }
-:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
+:root[echelon-style-5] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
   padding: 2px 6px !important;
   transition-property: background-color, border-color, box-shadow !important;
   transition-duration: 150ms !important;
 }
-:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true]):hover, :root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button.unified-with-urlbar:not([open], :active) {
+:root[echelon-style-5] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true]):hover, :root[echelon-style-5] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button.unified-with-urlbar:not([open], :active) {
   background-image: -moz-linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
   background-color: var(--toolbarbutton-background) !important;
   --toolbarbutton-border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25) !important;
 }
-:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true]):hover:active, :root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true])[open] {
+:root[echelon-style-5] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true]):hover:active, :root[echelon-style-5] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true])[open] {
   background-image: var(--toolbarbutton-background-active) !important;
   background-color: hsla(210, 54%, 20%, 0.15) !important;
   --toolbarbutton-border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
   transition: none !important;
 }
-:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button.unified-with-urlbar:not([open], [disabled=true], :active):hover {
+:root[echelon-style-5] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button.unified-with-urlbar:not([open], [disabled=true], :active):hover {
   background-color: hsla(210, 48%, 96%, 0.75) !important;
   background-image: none !important;
   --toolbarbutton-border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
 }
-:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar {
+:root[echelon-style-5] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar {
   background-image: -moz-linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
   box-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.3) inset, 0 0 0 1px hsla(0, 0%, 100%, 0.3) inset, 0 0 0 1px hsla(210, 54%, 20%, 0.25), 0 1px 0 hsla(210, 54%, 20%, 0.35) !important;
   transition-property: background-color, box-shadow !important;
   transition-duration: 250ms !important;
 }
-:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([open], [disabled=true], :active):hover {
+:root[echelon-style-5] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([open], [disabled=true], :active):hover {
   background-color: hsla(210, 48%, 96%, 0.75) !important;
   box-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.3) inset, 0 0 0 1px hsla(0, 0%, 100%, 0.3) inset, 0 0 0 1px hsla(210, 54%, 20%, 0.3), 0 1px 0 hsla(210, 54%, 20%, 0.4), 0 0 4px hsla(210, 54%, 20%, 0.2) !important;
 }
-:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([disabled=true]):hover:active, :root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([disabled=true])[open] {
+:root[echelon-style-5] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([disabled=true]):hover:active, :root[echelon-style-5] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([disabled=true])[open] {
   background-image: var(--toolbarbutton-background-active) !important;
   background-color: hsla(210, 54%, 20%, 0.15) !important;
   box-shadow: 0 1px 1px hsla(210, 54%, 20%, 0.1) inset, 0 0 1px hsla(210, 54%, 20%, 0.2) inset, 0 0 0 1px hsla(210, 54%, 20%, 0.4), 0 1px 0 hsla(210, 54%, 20%, 0.2) !important;
   transition: none !important;
 }
-:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar[disabled=true] {
+:root[echelon-style-5] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar[disabled=true] {
   box-shadow: 0 0 0 1px hsla(210, 54%, 20%, 0.55), 0 1px 0 hsla(210, 54%, 20%, 0.65) !important;
   transition: none !important;
 }
-:root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button:not(.unified-with-urlbar), :root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button:not(.unified-with-urlbar) {
+:root[echelon-style-5] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button:not(.unified-with-urlbar), :root[echelon-style-5] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button:not(.unified-with-urlbar) {
   margin: var(--toolbarbutton-outer-padding) !important;
   min-width: var(--toolbarbutton-width) !important;
   max-width: var(--toolbarbutton-width) !important;
   height: var(--toolbarbutton-height) !important;
 }
-:root[echelon-style-3] #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker {
+:root[echelon-style-5] #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker {
   --toolbarbutton-width: 43px !important;
 }
-:root[echelon-style-3] #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker::after {
+:root[echelon-style-5] #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker::after {
   display: flex !important;
   width: 9px !important;
   height: 7px !important;
@@ -3360,33 +3370,33 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin-block-start: 1px !important;
   margin-inline-start: 3px !important;
 }
-:root[echelon-style-3]:not([echelon-system-style=winxp], [echelon-style-4][echelon-system-style=win8], [echelon-style-4][echelon-system-style=win10])[echelon-appearance-blue] {
+:root[echelon-style-5]:not([echelon-system-style=winxp], [echelon-style-6][echelon-system-style=win8], [echelon-style-6][echelon-system-style=win10])[echelon-appearance-blue] {
   --toolbar-background-color: hsl(210,75%,92%) !important;
 }
-:root[echelon-style-3]:not([echelon-system-style=winxp], [echelon-style-4][echelon-system-style=win8], [echelon-style-4][echelon-system-style=win10])[echelon-appearance-blue] #navigator-toolbox::after {
+:root[echelon-style-5]:not([echelon-system-style=winxp], [echelon-style-6][echelon-system-style=win8], [echelon-style-6][echelon-system-style=win10])[echelon-appearance-blue] #navigator-toolbox::after {
   background-color: #aabccf !important;
 }
-:root[echelon-style-3] #back-button:not(.unified-with-urlbar) {
+:root[echelon-style-5] #back-button:not(.unified-with-urlbar) {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/back.png") !important;
 }
-:root[echelon-style-3] #home-button {
+:root[echelon-style-5] #home-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-14/toolbar/home.png") !important;
 }
-:root[echelon-style-3] :root:not([echelon-style-2]) #TabsToolbar #home-button,
-:root[echelon-style-3] :root:not([echelon-style-2]) #toolbar-menubar #home-button {
+:root[echelon-style-5] :root:not([echelon-style-2]) #TabsToolbar #home-button,
+:root[echelon-style-5] :root:not([echelon-style-2]) #toolbar-menubar #home-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-14/toolbar/inverted/home.png") !important;
 }
-:root[echelon-style-3] #tabbrowser-tabs:not([overflow], [hashiddentabs]) ~ #alltabs-button {
+:root[echelon-style-5] #tabbrowser-tabs:not([overflow], [hashiddentabs]) ~ #alltabs-button {
   display: none !important;
 }
-:root[echelon-style-3] {
+:root[echelon-style-5] {
   --urlbar-border-color: hsla(210,54%,20%,.25) hsla(210,54%,20%,.27) hsla(210,54%,20%,.3) !important;
 }
-:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box {
+:root[echelon-style-5]:not([echelon-style-7]) #urlbar #identity-box {
   order: -1 !important;
   margin-inline-end: 0 !important;
 }
-:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-box {
+:root[echelon-style-5]:not([echelon-style-7]) #urlbar #identity-box #identity-icon-box {
   order: -1 !important;
   background-color: transparent !important;
   border-radius: 0 !important;
@@ -3395,23 +3405,23 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   font-size: 0.9em !important;
   margin-inline-end: 0 !important;
 }
-:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-box:hover #identity-icon {
+:root[echelon-style-5]:not([echelon-style-7]) #urlbar #identity-box #identity-icon-box:hover #identity-icon {
   background-position-x: -16px !important;
 }
-:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-box:hover:active #identity-icon, :root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-box[open=true] #identity-icon {
+:root[echelon-style-5]:not([echelon-style-7]) #urlbar #identity-box #identity-icon-box:hover:active #identity-icon, :root[echelon-style-5]:not([echelon-style-7]) #urlbar #identity-box #identity-icon-box[open=true] #identity-icon {
   background-position-x: -32px !important;
 }
-:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box #identity-icon {
+:root[echelon-style-5]:not([echelon-style-7]) #urlbar #identity-box #identity-icon {
   background-image: url("chrome://userchrome/content/assets/images/firefox-14/urlbar/identity-icons-generic.png") !important;
   list-style-image: none !important;
   margin-block: 1px !important;
   margin-inline-start: 3px !important;
 }
-:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box[pageproxystate=valid]:not(.chromeUI, .verifiedIdentity, .notSecure, .localResource) #identity-icon-box #identity-icon {
+:root[echelon-style-5]:not([echelon-style-7]) #urlbar #identity-box[pageproxystate=valid]:not(.chromeUI, .verifiedIdentity, .notSecure, .localResource) #identity-icon-box #identity-icon {
   background-image: url("chrome://userchrome/content/assets/images/firefox-14/urlbar/identity-icons-https.png") !important;
   list-style-image: none !important;
 }
-:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box.verifiedIdentity #identity-icon-box {
+:root[echelon-style-5]:not([echelon-style-7]) #urlbar #identity-box.verifiedIdentity #identity-icon-box {
   color: hsl(92, 100%, 30%) !important;
   background-image: -moz-linear-gradient(hsla(92, 81%, 16%, 0), hsla(92, 81%, 16%, 0.2) 25%, hsla(92, 81%, 16%, 0.2) 75%, hsla(92, 81%, 16%, 0)) !important;
   margin-inline-end: 3px !important;
@@ -3419,31 +3429,31 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-size: 1px !important;
   background-repeat: no-repeat !important;
 }
-:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box.verifiedIdentity #identity-icon-box #identity-icon {
+:root[echelon-style-5]:not([echelon-style-7]) #urlbar #identity-box.verifiedIdentity #identity-icon-box #identity-icon {
   margin-inline-end: 3px !important;
   background-image: url("chrome://userchrome/content/assets/images/firefox-14/urlbar/identity-icons-https-ev.png") !important;
   list-style-image: none !important;
   background-size: cover !important;
 }
-:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box.verifiedIdentity #identity-icon-box #identity-icon-label {
+:root[echelon-style-5]:not([echelon-style-7]) #urlbar #identity-box.verifiedIdentity #identity-icon-box #identity-icon-label {
   display: flex !important;
   visibility: visible !important;
 }
-:root[echelon-style-3]:not([echelon-style-5]) #urlbar #identity-box #identity-icon-label {
+:root[echelon-style-5]:not([echelon-style-7]) #urlbar #identity-box #identity-icon-label {
   padding-inline-start: 0 !important;
   padding-inline-end: 5px !important;
   padding-block-start: 1px !important;
   margin: 0 !important;
   visibility: collapse !important;
 }
-:root[echelon-style-3]:not([echelon-style-5]) #urlbar .urlbar-input-box {
+:root[echelon-style-5]:not([echelon-style-7]) #urlbar .urlbar-input-box {
   padding-inline-start: 2px !important;
 }
-:root[echelon-style-3]:not([echelon-style-5]):not([chromehidden~=toolbar]) #forward-button.unified-with-urlbar[disabled] + #urlbar-container #notification-popup-box {
+:root[echelon-style-5]:not([echelon-style-7]):not([chromehidden~=toolbar]) #forward-button.unified-with-urlbar[disabled] + #urlbar-container #notification-popup-box {
   padding-inline-start: 5px !important;
   margin-inline-end: -5px !important;
 }
-:root[echelon-style-3][echelon-appearance-newlogo] #urlbar #identity-box.chromeUI #identity-icon-box, :root[echelon-style-3][echelon-style-4] #urlbar #identity-box.chromeUI #identity-icon-box {
+:root[echelon-style-5][echelon-appearance-newlogo] #urlbar #identity-box.chromeUI #identity-icon-box, :root[echelon-style-5][echelon-style-6] #urlbar #identity-box.chromeUI #identity-icon-box {
   color: var(--identity-color-brand) !important;
   background-image: var(--identity-background-brand) !important;
   margin-inline-end: 3px !important;
@@ -3451,38 +3461,38 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-size: 1px !important;
   background-repeat: no-repeat !important;
 }
-:root[echelon-style-3][echelon-appearance-newlogo] #urlbar #identity-box.chromeUI #identity-icon-box #identity-icon, :root[echelon-style-3][echelon-style-4] #urlbar #identity-box.chromeUI #identity-icon-box #identity-icon {
+:root[echelon-style-5][echelon-appearance-newlogo] #urlbar #identity-box.chromeUI #identity-icon-box #identity-icon, :root[echelon-style-5][echelon-style-6] #urlbar #identity-box.chromeUI #identity-icon-box #identity-icon {
   margin-inline-end: 3px !important;
   background-image: var(--identity-icons-brand) !important;
   background-size: cover !important;
 }
-:root[echelon-style-3][echelon-appearance-newlogo] #urlbar #identity-box.chromeUI #identity-icon-box #identity-icon-label, :root[echelon-style-3][echelon-style-4] #urlbar #identity-box.chromeUI #identity-icon-box #identity-icon-label {
+:root[echelon-style-5][echelon-appearance-newlogo] #urlbar #identity-box.chromeUI #identity-icon-box #identity-icon-label, :root[echelon-style-5][echelon-style-6] #urlbar #identity-box.chromeUI #identity-icon-box #identity-icon-label {
   display: flex !important;
   visibility: visible !important;
 }
-:root[echelon-style-3][echelon-appearance-newlogo] #urlbar #identity-box[pageproxystate=valid]:not(.chromeUI, .verifiedIdentity, .notSecure, .localResource) #identity-icon, :root[echelon-style-3][echelon-style-4] #urlbar #identity-box[pageproxystate=valid]:not(.chromeUI, .verifiedIdentity, .notSecure, .localResource) #identity-icon {
+:root[echelon-style-5][echelon-appearance-newlogo] #urlbar #identity-box[pageproxystate=valid]:not(.chromeUI, .verifiedIdentity, .notSecure, .localResource) #identity-icon-box #identity-icon, :root[echelon-style-5][echelon-style-6] #urlbar #identity-box[pageproxystate=valid]:not(.chromeUI, .verifiedIdentity, .notSecure, .localResource) #identity-icon-box #identity-icon {
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/urlbar/identity-icons-https.png") !important;
   list-style-image: none !important;
 }
-:root[echelon-style-3] #urlbar-container:not(.unified-forward-button) {
+:root[echelon-style-5] #urlbar-container:not(.unified-forward-button) {
   margin-inline-start: 2px !important;
 }
 
 /* ::::: Firefox 29 ::::: */
-:root[echelon-style-4] {
+:root[echelon-style-6] {
   /* preload images involving australis tabs */
 }
-:root[echelon-style-4] {
+:root[echelon-style-6] {
   --toolbarbutton-outer-padding: 1px 2px !important;
   --toolbar-border-color: hsla(209,67%,12%,0.35) !important;
 }
-:root[echelon-style-4] #nav-bar {
+:root[echelon-style-6] #nav-bar {
   z-index: 1 !important;
   height: 41px !important;
   box-shadow: 0 1px 0 rgba(253, 253, 253, 0.45) inset !important;
   background-image: linear-gradient(rgba(253, 253, 253, 0.45), rgba(255, 255, 255, 0)) !important;
 }
-:root[echelon-style-4] #nav-bar #PanelUI-button {
+:root[echelon-style-6] #nav-bar #PanelUI-button {
   min-height: 100% !important;
   align-items: center !important;
   padding-inline-start: 4px !important;
@@ -3491,47 +3501,47 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-position: 0px 0px, 1px 0px, 2px 0px !important;
   background-repeat: no-repeat !important;
 }
-:root[echelon-style-4] #search-container {
+:root[echelon-style-6] #search-container {
   margin-inline-end: 3px !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button {
+:root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button {
   position: relative !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1, :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1 {
+:root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1, :root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1 {
   background-image: -moz-linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1)) !important;
   background-color: var(--toolbarbutton-background) !important;
   box-shadow: var(--toolbarbutton-shadow-hot) !important;
   --toolbarbutton-border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25) !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([open], [disabled=true], :active):hover, :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1:not([open], [disabled=true], :active):hover {
+:root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([open], [disabled=true], :active):hover, :root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1:not([open], [disabled=true], :active):hover {
   background-color: hsla(210, 48%, 96%, 0.75) !important;
   border-color: hsla(210, 54%, 20%, 0.3) hsla(210, 54%, 20%, 0.35) hsla(210, 54%, 20%, 0.4) !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([disabled=true]):hover:active, :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([disabled=true])[open], :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1:not([disabled=true]):hover:active, :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1:not([disabled=true])[open] {
+:root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([disabled=true]):hover:active, :root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([disabled=true])[open], :root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1:not([disabled=true]):hover:active, :root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1:not([disabled=true])[open] {
   background-image: var(--toolbarbutton-background-active) !important;
   background-color: hsla(210, 54%, 20%, 0.15) !important;
   box-shadow: var(--toolbarbutton-shadow-active) !important;
   --toolbarbutton-border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
   transition: none !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-menubutton-button, :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-menubutton-button {
+:root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-menubutton-button, :root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-menubutton-button {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-menubutton-dropmarker, :root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-menubutton-dropmarker {
+:root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-menubutton-dropmarker, :root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-menubutton-dropmarker {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-button {
+:root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-button {
   visibility: visible !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker {
+:root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker {
   --toolbarbutton-width: 30px !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker::after {
+:root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-dropmarker::after {
   display: none !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not(:hover, :active, [open]) .toolbarbutton-menubutton-dropmarker::before {
+:root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not(:hover, :active, [open]) .toolbarbutton-menubutton-dropmarker::before {
   content: "" !important;
   display: flex !important;
   min-width: 1px !important;
@@ -3545,7 +3555,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   position: absolute !important;
   left: 31px !important;
 }
-:root[echelon-style-4] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-button {
+:root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button .toolbarbutton-menubutton-button {
   --toolbarbutton-width: 31px !important;
   border-inline-end: 0 !important;
 }
@@ -3577,7 +3587,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
     transform: scale(1);
   }
 }
-:root[echelon-style-4] #bookmarked-notification-container {
+:root[echelon-style-6] #bookmarked-notification-container {
   min-height: 1px;
   min-width: 1px;
   height: 1px;
@@ -3586,10 +3596,10 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   position: relative;
   pointer-events: none;
 }
-:root[echelon-style-4] #bookmarked-notification-anchor {
+:root[echelon-style-6] #bookmarked-notification-anchor {
   min-height: 18px;
 }
-:root[echelon-style-4] #bookmarked-notification {
+:root[echelon-style-6] #bookmarked-notification {
   background-size: 16px;
   background-position: center;
   background-repeat: no-repeat;
@@ -3597,67 +3607,67 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   height: 16px;
   opacity: 0;
 }
-:root[echelon-style-4] #bookmarked-notification-dropmarker-anchor {
+:root[echelon-style-6] #bookmarked-notification-dropmarker-anchor {
   z-index: -1;
   position: relative;
   min-height: 18px;
 }
-:root[echelon-style-4] #bookmarked-notification-dropmarker-icon {
+:root[echelon-style-6] #bookmarked-notification-dropmarker-icon {
   width: 18px;
   height: 18px;
   visibility: hidden;
 }
-:root[echelon-style-4] #bookmarked-notification-anchor[notification=finish] > #bookmarked-notification {
+:root[echelon-style-6] #bookmarked-notification-anchor[notification=finish] > #bookmarked-notification {
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/places/bookmarks-notification-finish.png");
   animation: animation-bookmarkAdded 800ms;
   animation-timing-function: ease, ease, ease;
 }
-:root[echelon-style-4] #bookmarks-menu-button[notification=finish] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+:root[echelon-style-6] #bookmarks-menu-button[notification=finish] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   list-style-image: none !important;
 }
-:root[echelon-style-4] #bookmarked-notification-dropmarker-anchor[notification=finish] > #bookmarked-notification-dropmarker-icon {
+:root[echelon-style-6] #bookmarked-notification-dropmarker-anchor[notification=finish] > #bookmarked-notification-dropmarker-icon {
   visibility: visible;
   animation: animation-bookmarkPulse 300ms;
   animation-delay: 600ms;
   animation-timing-function: ease-out;
 }
-:root[echelon-style-4][sizemode=normal]:not([lwtheme-image]) #nav-bar {
+:root[echelon-style-6][sizemode=normal]:not([lwtheme-image]) #nav-bar {
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
 }
-:root[echelon-style-4][sizemode=normal]:not([lwtheme-image]) #browser[findbar-focused], :root[echelon-style-4][sizemode=normal]:not([lwtheme-image]) #customization-container[findbar-focused] {
+:root[echelon-style-6][sizemode=normal]:not([lwtheme-image]) #browser[findbar-focused], :root[echelon-style-6][sizemode=normal]:not([lwtheme-image]) #customization-container[findbar-focused] {
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
-:root[echelon-style-4] #bookmarks-menu-button {
+:root[echelon-style-6] #bookmarks-menu-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/bookmarksMenu.png") !important;
 }
-:root[echelon-style-4] #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button {
+:root[echelon-style-6] #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/bookmark.png") !important;
 }
-:root[echelon-style-4] #bookmarks-menu-button .toolbarbutton-menubutton-button {
+:root[echelon-style-6] #bookmarks-menu-button .toolbarbutton-menubutton-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/bookmark-hollow.png") !important;
 }
-:root[echelon-style-4] #fxa-toolbar-menu-button[status=active] {
+:root[echelon-style-6] #fxa-toolbar-menu-button[status=active] {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/syncProgress-toolbar.png") !important;
 }
-:root[echelon-style-4] :root:not([echelon-style-2]) #TabsToolbar #bookmarks-menu-button,
-:root[echelon-style-4] :root:not([echelon-style-2]) #toolbar-menubar #bookmarks-menu-button {
+:root[echelon-style-6] :root:not([echelon-style-2]) #TabsToolbar #bookmarks-menu-button,
+:root[echelon-style-6] :root:not([echelon-style-2]) #toolbar-menubar #bookmarks-menu-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/inverted/bookmarksMenu.png") !important;
 }
-:root[echelon-style-4] :root:not([echelon-style-2]) #TabsToolbar #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button,
-:root[echelon-style-4] :root:not([echelon-style-2]) #toolbar-menubar #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button {
+:root[echelon-style-6] :root:not([echelon-style-2]) #TabsToolbar #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button,
+:root[echelon-style-6] :root:not([echelon-style-2]) #toolbar-menubar #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/inverted/bookmark.png") !important;
 }
-:root[echelon-style-4] :root:not([echelon-style-2]) #TabsToolbar #bookmarks-menu-button .toolbarbutton-menubutton-button,
-:root[echelon-style-4] :root:not([echelon-style-2]) #toolbar-menubar #bookmarks-menu-button .toolbarbutton-menubutton-button {
+:root[echelon-style-6] :root:not([echelon-style-2]) #TabsToolbar #bookmarks-menu-button .toolbarbutton-menubutton-button,
+:root[echelon-style-6] :root:not([echelon-style-2]) #toolbar-menubar #bookmarks-menu-button .toolbarbutton-menubutton-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/inverted/bookmark-hollow.png") !important;
 }
-:root[echelon-style-4] :root:not([echelon-style-2]) #TabsToolbar #fxa-toolbar-menu-button[status=active],
-:root[echelon-style-4] :root:not([echelon-style-2]) #toolbar-menubar #fxa-toolbar-menu-button[status=active] {
+:root[echelon-style-6] :root:not([echelon-style-2]) #TabsToolbar #fxa-toolbar-menu-button[status=active],
+:root[echelon-style-6] :root:not([echelon-style-2]) #toolbar-menubar #fxa-toolbar-menu-button[status=active] {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/inverted/syncProgress-toolbar.png") !important;
 }
-:root[echelon-style-4] .close-icon {
+:root[echelon-style-6] .close-icon {
   width: 16px !important;
   height: 16px !important;
   padding: 0 !important;
@@ -3669,16 +3679,16 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   list-style-image: none !important;
   background-position-x: 0 !important;
 }
-:root[echelon-style-4] .close-icon:hover {
+:root[echelon-style-6] .close-icon:hover {
   background-position-x: -16px !important;
 }
-:root[echelon-style-4] .close-icon:hover:active, :root[echelon-style-4] .close-icon[open] {
+:root[echelon-style-6] .close-icon:hover:active, :root[echelon-style-6] .close-icon[open] {
   background-position-x: -32px !important;
 }
-:root[echelon-style-4] #urlbar #star-button-box {
+:root[echelon-style-6] #urlbar #star-button-box {
   visibility: collapse !important;
 }
-:root[echelon-style-4] {
+:root[echelon-style-6] {
   --tab-min-height: 31px !important;
   --tab-max-width: 210px !important;
   --tab-inline-padding: 9px !important;
@@ -3687,32 +3697,32 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   --tab-icon-start-margin: 0 !important;
   --tab-icon-end-margin: 6px !important;
 }
-:root[echelon-style-4] #tabbrowser-tabs::before {
+:root[echelon-style-6] #tabbrowser-tabs::before {
   order: -1 !important;
   content: "" !important;
   display: block;
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-start.png"), url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-middle.png"), url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-end.png");
 }
-:root[echelon-style-4] #TabsToolbar {
+:root[echelon-style-6] #TabsToolbar {
   z-index: 2 !important;
   padding: 0 !important;
   background-color: transparent !important;
   margin-block-end: -1px !important;
 }
-:root[echelon-style-4] #TabsToolbar .toolbar-items {
+:root[echelon-style-6] #TabsToolbar .toolbar-items {
   padding-top: 1px !important;
   padding-inline: 1px !important;
 }
-:root[echelon-style-4] #TabsToolbar #alltabs-button {
+:root[echelon-style-6] #TabsToolbar #alltabs-button {
   min-width: 19px !important;
 }
-:root[echelon-style-4] #TabsToolbar #alltabs-button .toolbarbutton-icon {
+:root[echelon-style-6] #TabsToolbar #alltabs-button .toolbarbutton-icon {
   background-image: url("chrome://userchrome/content/assets/images/firefox-14/toolbarbutton-dropdown-arrow.png") !important;
   list-style-image: none !important;
   background-position: 0 !important;
 }
-:root[echelon-style-4] #TabsToolbar #alltabs-button .toolbarbutton-icon,
-:root[echelon-style-4] #TabsToolbar #alltabs-button .toolbarbutton-badge-stack {
+:root[echelon-style-6] #TabsToolbar #alltabs-button .toolbarbutton-icon,
+:root[echelon-style-6] #TabsToolbar #alltabs-button .toolbarbutton-badge-stack {
   width: 9px !important;
   height: 7px !important;
   padding: 0 !important;
@@ -3721,21 +3731,21 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   box-shadow: none !important;
   background-color: transparent !important;
 }
-:root[echelon-style-4] #TabsToolbar #new-tab-button {
+:root[echelon-style-6] #TabsToolbar #new-tab-button {
   min-width: 26px !important;
 }
-:root[echelon-style-4] #TabsToolbar #new-tab-button .toolbarbutton-icon {
+:root[echelon-style-6] #TabsToolbar #new-tab-button .toolbarbutton-icon {
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/newtab.png") !important;
   list-style-image: none !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab {
   pointer-events: none !important;
   overflow: visible !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab[pinned] {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab[pinned] {
   margin-block-start: 1px !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background {
   flex-direction: row !important;
   border-radius: 0 !important;
   margin-block: 0 !important;
@@ -3743,38 +3753,38 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-color: transparent !important;
   box-shadow: none !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-context-line,
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-loading-burst,
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-group-line {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-context-line,
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-loading-burst,
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-group-line {
   visibility: collapse !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-middle {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-middle {
   flex: 1 !important;
   background-clip: padding-box !important;
   border-inline: 15px solid transparent !important;
   margin: 0 -15px !important;
   pointer-events: auto !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-middle[selected] {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-middle[selected] {
   background-clip: padding-box, padding-box, content-box !important;
   background-color: var(--toolbar-background-color) !important;
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-active-middle.png"), linear-gradient(transparent, transparent 2px, rgba(254, 254, 254, 0.72) 2px, rgba(254, 254, 254, 0.72) 2px, rgba(250, 250, 250, 0.88) 3px, rgba(250, 250, 250, 0.88) 3px, rgba(254, 254, 254, 0.72) 4px, rgba(254, 254, 254, 0.72) 4px, rgba(253, 253, 253, 0.45)), none !important;
   background-size: auto 100% !important;
   padding-top: 2px !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start,
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start,
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end {
   width: 30px !important;
   min-height: var(--tab-min-height) !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::before, :root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::after,
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::before,
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::after {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::before, :root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::after,
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::before,
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::after {
   width: 30px !important;
   min-height: var(--tab-min-height) !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::before,
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::before {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::before,
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::before {
   content: "" !important;
   display: flex !important;
   /* In Firefox 29, Mozilla used a SVG background image that had CSS to color the tab curves.
@@ -3784,48 +3794,48 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-image: linear-gradient(transparent, transparent 2px, rgba(254, 254, 254, 0.72) 2px, rgba(254, 254, 254, 0.72) 2px, rgba(250, 250, 250, 0.88) 3px, rgba(250, 250, 250, 0.88) 3px, rgba(254, 254, 254, 0.72) 4px, rgba(254, 254, 254, 0.72) 4px, rgba(253, 253, 253, 0.45)) !important;
   background-repeat: no-repeat !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::after,
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::after {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::after,
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::after {
   margin-inline-start: -30px !important;
   background-size: 100% 100% !important;
   content: "" !important;
   display: flex !important;
   position: relative !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::before {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::before {
   mask-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-selected-start.svg") !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::after {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::after {
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-stroke-start.png") !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::before {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::before {
   mask-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-selected-end.svg") !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::after {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::after {
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-stroke-end.png") !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-label-container {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-label-container {
   padding-block-end: 1px !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-close-button {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-close-button {
   pointer-events: auto !important;
   margin-inline-end: -2px !important;
   margin-inline-start: 4px !important;
 }
-:root[echelon-style-4] #TabsToolbar .tabbrowser-tab .tab-close-button:not(:hover, :hover:active, [selected]) {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-close-button:not(:hover, :hover:active, [selected]) {
   background-position-x: 0 !important;
 }
-:root[echelon-style-4] #TabsToolbar #tabs-newtab-button {
+:root[echelon-style-6] #TabsToolbar #tabs-newtab-button {
   width: 66px !important;
   pointer-events: auto !important;
 }
-:root[echelon-style-4] #TabsToolbar #tabs-newtab-button .toolbarbutton-icon {
+:root[echelon-style-6] #TabsToolbar #tabs-newtab-button .toolbarbutton-icon {
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/newtab.png") !important;
   list-style-image: none !important;
 }
-:root[echelon-style-4] #tabbrowser-tabs[movingtab] > .tabbrowser-tab:last-of-type::after,
-:root[echelon-style-4] .tabbrowser-tab:not([selected]):not(:hover + .tabbrowser-tab):not(:first-of-type):not(:hover)::before,
-:root[echelon-style-4] #tabbrowser-tabs:not([overflow]) .tabbrowser-tab:not([selected]):last-of-type:not([beforehovered]):not(:hover)::after {
+:root[echelon-style-6] #tabbrowser-tabs[movingtab] > .tabbrowser-tab:last-of-type::after,
+:root[echelon-style-6] .tabbrowser-tab:not([selected]):not(:hover + .tabbrowser-tab):not(:first-of-type):not(:hover)::before,
+:root[echelon-style-6] #tabbrowser-tabs:not([overflow]) .tabbrowser-tab:not([selected]):last-of-type:not([beforehovered]):not(:hover)::after {
   margin-inline-start: -1.5px;
   margin-inline-end: -1.5px;
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-separator.png");
@@ -3836,28 +3846,28 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   display: flex;
   width: 3px;
 }
-:root[echelon-style-4] #main-window[sizemode=normal] #TabsToolbar {
+:root[echelon-style-6] #main-window[sizemode=normal] #TabsToolbar {
   padding-inline: 1px !important;
 }
-:root[echelon-style-4]:not([sizemode=maximized]) #tabbrowser-tabs[haspinnedtabs][overflow] {
+:root[echelon-style-6]:not([sizemode=maximized]) #tabbrowser-tabs[haspinnedtabs][overflow] {
   padding-inline: calc(var(--tab-overflow-pinned-tabs-width) + 15px) 0 !important;
 }
-:root[echelon-style-4] .tab-background,
-:root[echelon-style-4] #tabs-newtab-button {
+:root[echelon-style-6] .tab-background,
+:root[echelon-style-6] #tabs-newtab-button {
   /* overlap the tab curves */
   margin-inline: -15px !important;
 }
-:root[echelon-style-4] .tabbrowser-tab:hover .tab-background:not([selected]),
-:root[echelon-style-4] #tabs-newtab-button:hover {
+:root[echelon-style-6] .tabbrowser-tab:hover .tab-background:not([selected]),
+:root[echelon-style-6] #tabs-newtab-button:hover {
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-start.png"), url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-middle.png"), url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-end.png") !important;
   background-position: left bottom, 30px bottom, right bottom !important;
   background-repeat: no-repeat !important;
   background-size: 30px 100%, calc(100% - 60px) 100%, 30px 100% !important;
 }
-:root[echelon-style-4] #editBookmarkPanel {
+:root[echelon-style-6] #editBookmarkPanel {
   font: message-box !important;
 }
-:root[echelon-style-4] #editBookmarkPanel .footer-button {
+:root[echelon-style-6] #editBookmarkPanel .footer-button {
   appearance: button !important;
   color: ButtonText !important;
   background-color: ButtonFace !important;
@@ -3865,23 +3875,23 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin: 1px 5px 2px !important;
   font-weight: normal !important;
 }
-:root[echelon-style-4] #editBookmarkPanel #editBookmarkPanel .expander-up,
-:root[echelon-style-4] #editBookmarkPanel #editBookmarkPanel .expander-down {
+:root[echelon-style-6] #editBookmarkPanel #editBookmarkPanel .expander-up,
+:root[echelon-style-6] #editBookmarkPanel #editBookmarkPanel .expander-down {
   appearance: button !important;
 }
-:root[echelon-style-4] #appmenu-button-container {
+:root[echelon-style-6] #appmenu-button-container {
   visibility: collapse !important;
 }
-:root[echelon-style-4] #titlebar-content {
+:root[echelon-style-6] #titlebar-content {
   visibility: collapse !important;
 }
-:root[echelon-style-4][tabsintitlebar][sizemode=normal] #titlebar {
+:root[echelon-style-6][tabsintitlebar][sizemode=normal] #titlebar {
   appearance: none !important;
 }
-:root[echelon-style-4][tabsintitlebar][sizemode=normal][chromehidden~=menubar] #toolbar-menubar ~ #TabsToolbar .toolbar-items, :root[echelon-style-4][tabsintitlebar][sizemode=normal] #toolbar-menubar[autohide=true][inactive] ~ #TabsToolbar .toolbar-items {
+:root[echelon-style-6][tabsintitlebar][sizemode=normal][chromehidden~=menubar] #toolbar-menubar ~ #TabsToolbar .toolbar-items, :root[echelon-style-6][tabsintitlebar][sizemode=normal] #toolbar-menubar[autohide=true][inactive] ~ #TabsToolbar .toolbar-items {
   margin-top: 15px !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] {
+:root[echelon-style-6][echelon-system-style=win8] {
   --toolbarbutton-icon-width: 16px;
   --toolbarbutton-icon-height: 16px;
   --toolbarbutton-icon-large-width: 16px;
@@ -3889,110 +3899,110 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   --toolbarbutton-icon-fill: light-dark(rgb(121, 124, 128), rgb(255, 255, 255)) !important;
   --toolbarbutton-icon-fill-attention: light-dark(rgb(23, 126, 229), rgb(23, 126, 229)) !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #back-button {
+:root[echelon-style-6][echelon-system-style=win8] #back-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/back-large.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #back-button:not(.unified-with-urlbar) {
+:root[echelon-style-6][echelon-system-style=win8] #back-button:not(.unified-with-urlbar) {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/back.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #forward-button {
+:root[echelon-style-6][echelon-system-style=win8] #forward-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/forward.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #stop-button {
+:root[echelon-style-6][echelon-system-style=win8] #stop-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/stop.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #reload-button {
+:root[echelon-style-6][echelon-system-style=win8] #reload-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/reload.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #home-button {
+:root[echelon-style-6][echelon-system-style=win8] #home-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/home.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #downloads-button {
+:root[echelon-style-6][echelon-system-style=win8] #downloads-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/download.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #downloads-indicator-anchor {
+:root[echelon-style-6][echelon-system-style=win8] #downloads-indicator-anchor {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/download.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #history-button {
+:root[echelon-style-6][echelon-system-style=win8] #history-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/history.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #bookmarks-button {
+:root[echelon-style-6][echelon-system-style=win8] #bookmarks-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/bookmarksMenu.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #bookmarks-menu-button {
+:root[echelon-style-6][echelon-system-style=win8] #bookmarks-menu-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/bookmarksMenu.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button {
+:root[echelon-style-6][echelon-system-style=win8] #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/bookmark.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #bookmarks-menu-button .toolbarbutton-menubutton-button {
+:root[echelon-style-6][echelon-system-style=win8] #bookmarks-menu-button .toolbarbutton-menubutton-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/bookmark-hollow.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #print-button {
+:root[echelon-style-6][echelon-system-style=win8] #print-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/print.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #new-tab-button {
+:root[echelon-style-6][echelon-system-style=win8] #new-tab-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/new-tab.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #new-window-button {
+:root[echelon-style-6][echelon-system-style=win8] #new-window-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/new-window.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #cut-button {
+:root[echelon-style-6][echelon-system-style=win8] #cut-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/edit-cut.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #copy-button {
+:root[echelon-style-6][echelon-system-style=win8] #copy-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/edit-copy.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #paste-button {
+:root[echelon-style-6][echelon-system-style=win8] #paste-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/edit-paste.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #fullscreen-button {
+:root[echelon-style-6][echelon-system-style=win8] #fullscreen-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/fullscreen.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #zoom-out-button {
+:root[echelon-style-6][echelon-system-style=win8] #zoom-out-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/zoom-out.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #zoom-in-button {
+:root[echelon-style-6][echelon-system-style=win8] #zoom-in-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/zoom-in.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #PanelUI-menu-button {
+:root[echelon-style-6][echelon-system-style=win8] #PanelUI-menu-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/menu.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #save-to-pocket-button {
+:root[echelon-style-6][echelon-system-style=win8] #save-to-pocket-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/pocket.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #save-to-pocket-button[open] {
+:root[echelon-style-6][echelon-system-style=win8] #save-to-pocket-button[open] {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/pocket_active.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #unified-extensions-button {
+:root[echelon-style-6][echelon-system-style=win8] #unified-extensions-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/addons.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #fxa-toolbar-menu-button {
+:root[echelon-style-6][echelon-system-style=win8] #fxa-toolbar-menu-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/sync.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #fxa-toolbar-menu-button[status=active] {
+:root[echelon-style-6][echelon-system-style=win8] #fxa-toolbar-menu-button[status=active] {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/syncProgress-toolbar.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #nav-bar-overflow-button {
+:root[echelon-style-6][echelon-system-style=win8] #nav-bar-overflow-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/chevron.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #characterencoding-button {
+:root[echelon-style-6][echelon-system-style=win8] #characterencoding-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/characterEncoding.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #history-panelmenu {
+:root[echelon-style-6][echelon-system-style=win8] #history-panelmenu {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/history.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #developer-button {
+:root[echelon-style-6][echelon-system-style=win8] #developer-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/developer.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #echelon-button {
+:root[echelon-style-6][echelon-system-style=win8] #echelon-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/win8/echelon.svg") !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button,
-:root[echelon-style-4][echelon-system-style=win8] #downloads-button[attention=success] {
+:root[echelon-style-6][echelon-system-style=win8] #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button,
+:root[echelon-style-6][echelon-system-style=win8] #downloads-button[attention=success] {
   fill: var(--toolbarbutton-icon-fill-attention) !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] {
+:root[echelon-style-6][echelon-system-style=win8] {
   --toolbarbutton-background: transparent !important;
   --toolbarbutton-background-hot: hsla(210,4%,10%,.08) !important;
   --toolbarbutton-background-active: hsla(210,4%,10%,.12) !important;
@@ -4002,22 +4012,22 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   --toolbarbutton-shadow-hot: none !important;
   --toolbarbutton-shadow-active: 0 1px 0 0 hsla(210,4%,10%,.1) inset !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
+:root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
   background-clip: border-box !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button.unified-with-urlbar:not([open], :active) {
+:root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button.unified-with-urlbar:not([open], :active) {
   background-clip: padding-box !important;
   background-image: none !important;
   background-color: transparent !important;
   --toolbarbutton-border-color: var(--toolbarbutton-background-hot) !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true]):hover, :root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button.unified-with-urlbar:not([open], [disabled=true], :active):hover {
+:root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true]):hover, :root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button.unified-with-urlbar:not([open], [disabled=true], :active):hover {
   background-image: none !important;
   background-color: var(--toolbarbutton-background-hot) !important;
   --toolbarbutton-border-color: hsla(200, 6%, 10%, 0.1) !important;
   box-shadow: var(--toolbarbutton-shadow-hot) !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true]):hover:active, :root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true])[open] {
+:root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true]):hover:active, :root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not([disabled=true])[open] {
   background-image: none !important;
   background-color: var(--toolbarbutton-background-active) !important;
   box-shadow: var(--toolbarbutton-shadow-active) !important;
@@ -4025,7 +4035,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   border-top-color: hsla(210, 4%, 10%, 0.2) !important;
   transition-duration: 10ms !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar {
+:root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar {
   width: 32px !important;
   height: 32px !important;
   background-clip: padding-box !important;
@@ -4035,34 +4045,34 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   border-color: hsla(200, 10%, 10%, 0.25) !important;
   box-shadow: none !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([open], [disabled=true], :active):hover {
+:root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([open], [disabled=true], :active):hover {
   background-image: none !important;
   background-color: hsla(210, 4%, 10%, 0.08) !important;
   box-shadow: none !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([disabled=true]):hover:active, :root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([disabled=true])[open] {
+:root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([disabled=true]):hover:active, :root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar:not([disabled=true])[open] {
   background-image: none !important;
   background-color: hsla(210, 4%, 10%, 0.12) !important;
   box-shadow: 0 1px 0 0 hsla(210, 80%, 20%, 0.1) inset !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1, :root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1 {
+:root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1, :root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1 {
   background-image: none !important;
   background-color: var(--toolbarbutton-background-hot) !important;
   box-shadow: var(--toolbarbutton-shadow-hot) !important;
   --toolbarbutton-border-color: hsla(200, 6%, 10%, 0.1) !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([open], [disabled=true], :active):hover, :root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1:not([open], [disabled=true], :active):hover {
+:root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([open], [disabled=true], :active):hover, :root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1:not([open], [disabled=true], :active):hover {
   background-color: var(--toolbarbutton-background-hot) !important;
   border-color: hsla(200, 6%, 10%, 0.1) !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([disabled=true]):hover:active, :root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([disabled=true])[open], :root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1:not([disabled=true]):hover:active, :root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1:not([disabled=true])[open] {
+:root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([disabled=true]):hover:active, :root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true]):hover .toolbarbutton-1:not([disabled=true])[open], :root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1:not([disabled=true]):hover:active, :root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not([disabled=true])[open=true] .toolbarbutton-1:not([disabled=true])[open] {
   background-image: none !important;
   background-color: var(--toolbarbutton-background-active) !important;
   box-shadow: var(--toolbarbutton-shadow-active) !important;
   --toolbarbutton-border-color: hsla(200, 6%, 10%, 0.1) !important;
   transition: none !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not(:hover, :active, [open]) .toolbarbutton-menubutton-dropmarker::before {
+:root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button:not(:hover, :active, [open]) .toolbarbutton-menubutton-dropmarker::before {
   content: "" !important;
   display: flex !important;
   min-width: 1px !important;
@@ -4076,18 +4086,18 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   position: absolute !important;
   left: 31px !important;
 }
-:root[echelon-style-4][echelon-system-style=win8] #urlbar-background,
-:root[echelon-style-4][echelon-system-style=win8] #searchbar {
+:root[echelon-style-6][echelon-system-style=win8] #urlbar-background,
+:root[echelon-style-6][echelon-system-style=win8] #searchbar {
   border-radius: 0 !important;
 }
 
 /* ::::: Firefox 56 ::::: */
-:root[echelon-style-5] #TabsToolbar .tab-throbber[progress] {
+:root[echelon-style-7] #TabsToolbar .tab-throbber[progress] {
   background-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/loading.png");
 }
-:root[echelon-style-5] #tabbrowser-tabs[movingtab] > .tabbrowser-tab:last-of-type::after,
-:root[echelon-style-5] .tabbrowser-tab:not([selected]):not(:hover + .tabbrowser-tab):not(:first-of-type):not(:hover)::before,
-:root[echelon-style-5] #tabbrowser-tabs:not([overflow]) .tabbrowser-tab:not([selected]):last-of-type:not([beforehovered]):not(:hover)::after {
+:root[echelon-style-7] #tabbrowser-tabs[movingtab] > .tabbrowser-tab:last-of-type::after,
+:root[echelon-style-7] .tabbrowser-tab:not([selected]):not(:hover + .tabbrowser-tab):not(:first-of-type):not(:hover)::before,
+:root[echelon-style-7] #tabbrowser-tabs:not([overflow]) .tabbrowser-tab:not([selected]):last-of-type:not([beforehovered]):not(:hover)::after {
   width: 1px;
   margin-inline-start: -1px;
   margin-inline-end: 0;
@@ -4096,10 +4106,10 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   content: "";
   display: flex;
 }
-:root[echelon-style-5] #downloads-notification-anchor[notification=finish] > #downloads-indicator-notification {
+:root[echelon-style-7] #downloads-notification-anchor[notification=finish] > #downloads-indicator-notification {
   background-image: url("chrome://userchrome/content/assets/images/firefox-56/downloads/download-notification-finish.png") !important;
 }
-:root[echelon-style-5] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button {
+:root[echelon-style-7] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button {
   width: 32px !important;
   padding-left: 9px !important;
   padding-right: 3px !important;

@@ -3,14 +3,6 @@
 }
 
 #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
-    &[disabled="true"] {
-        opacity: 0.4 !important;
-
-        .toolbarbutton-icon {
-            opacity: 1 !important;
-        }
-    }
-
     &#forward-button.unified-with-urlbar {
         border-radius: 0 !important;
         margin-inline-end: 0 !important;
