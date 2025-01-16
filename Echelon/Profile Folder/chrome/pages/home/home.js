@@ -1,4 +1,6 @@
 var { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+let { PrivateBrowsingUtils } = ChromeUtils.importESModule("resource://gre/modules/PrivateBrowsingUtils.sys.mjs");
+Components.utils.import("resource:///modules/sessionstore/SessionStore.jsm", this);
 
 let root = document.documentElement;
 let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Homepage.Style");
@@ -39,9 +41,9 @@ function createHomePage() {
             <div id="snippets"/>
         </div>
 
-        <div id="launcher">
+        <html:div id="launcher">
             <button id="restorePreviousSession" onclick="restoreLastSession()">${homeBundle.GetStringFromName("restoreLastSessionButton")}</button>
-        </div>
+        </html:div>
         </div>
 
         <div id="bottomSection">
@@ -139,6 +141,11 @@ function createHomePage() {
     focusInput();
     updateHomepageStyle();
     insertCustomSnippets();
+
+    if (SessionStore.canRestoreLastSession && !PrivateBrowsingUtils.isWindowPrivate(window))
+    {
+        document.getElementById("launcher").setAttribute("session", "true");
+    }
 
     fitToWidth();
     window.addEventListener("resize", fitToWidth);  
@@ -283,14 +290,6 @@ function restoreLastSession()
 		SessionStore.restoreLastSession();
 		document.getElementById("launcher").removeAttribute("session");
 	}
-}
-
-let { PrivateBrowsingUtils } = ChromeUtils.importESModule("resource://gre/modules/PrivateBrowsingUtils.sys.mjs");
-Components.utils.import("resource:///modules/sessionstore/SessionStore.jsm", this);
-
-if (SessionStore.canRestoreLastSession && !PrivateBrowsingUtils.isWindowPrivate(window))
-{
-	document.getElementById("launcher").setAttribute("session", "true");
 }
 
 function fitToWidth() {

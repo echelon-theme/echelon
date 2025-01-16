@@ -1,3 +1,14 @@
+const { EchelonThemeManager } = ChromeUtils.importESModule("chrome://modules/content/EchelonThemeManager.sys.mjs");
+
+let g_themeManager = new EchelonThemeManager;
+g_themeManager.init(
+    document.documentElement,
+    {
+        style: true,
+        bools: ["Echelon.Appearance.Blue"]
+    }
+);
+
 function switchCategory(event)
 {
     let section = document.getElementById(this.value);
