@@ -272,6 +272,15 @@ body {
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
 
+:root[echelon-system-style="win8"][echelon-style-6="true"] .card-wrapper .year {
+	box-shadow: none;
+	border-color: transparent;
+	border-radius: 0;
+	background-image: none;
+	background-color: #1F364C;
+	text-shadow: none;
+}
+
 .card-wrapper .content {
 	display: flex;
 	align-items: center;
@@ -314,6 +323,10 @@ body {
 
 	transition-property: opacity !important;
 	transition-duration: 250ms !important;
+}
+
+:root[echelon-system-style="win8"][echelon-style-6="true"] .card-wrapper .checked {
+	background-image: url("chrome://userchrome/content/windows/options/images/card-checked-metro.png");
 }
 
 .card:hover .checked,
