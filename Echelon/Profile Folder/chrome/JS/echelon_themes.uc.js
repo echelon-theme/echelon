@@ -115,3 +115,5 @@ const presetObserver = {
 document.addEventListener("DOMContentLoaded", ThemeUtils.applyPlatformStyle, false);
 Services.prefs.addObserver("Echelon.Appearance.systemStyle", themeUtilsObserver, false);
 Services.prefs.addObserver("Echelon.Appearance.Preset", presetObserver, false);
+
+let EXPORTED_SYMBOLS_THEMES = [ "ThemeUtils" ];

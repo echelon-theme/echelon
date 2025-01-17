@@ -95,6 +95,7 @@ body {
 }
 
 .category:hover {
+	background-image: radial-gradient(0.28% 50% at 99.76% 50%, rgba(75, 89, 100, 0.1) 0%, rgba(75, 89, 100, 0.1) 75%, rgba(75, 89, 100, 0) 100%), radial-gradient(1.32% 50% at 99.49% 50%, rgba(75, 89, 100, 0.05) 50.98%, rgba(75, 89, 100, 0) 100%);
 	color: rgba(75, 89, 100, 1);
 }
 
@@ -187,4 +188,141 @@ body {
 .header-text {
 	margin: 0;
 	margin-inline-start: 15px;
+}
+
+#preset-container {
+	display: grid;
+	max-width: 785px;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 225px));
+	gap: 10px;
+}
+
+.card {
+	appearance: none;
+	width: 100%;
+	height: 122px;
+	display: flex;
+	border: 1px solid;
+	border-block-start-color: rgba(23, 51, 78, 0.15);
+	border-block-end-color: rgba(23, 51, 78, 0.20);
+	border-inline-color: rgba(23, 51, 78, 0.17);
+	background-color: #269DEB;
+	background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
+	padding: 0;
+	border-radius: 3px;
+	cursor: pointer;
+	position: relative;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.40), inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 4px rgba(8, 22, 37, 0.1), 0 0 10px rgba(8, 22, 37, 0);
+
+	transition-property: background-image, border-color, box-shadow !important;
+  	transition-duration: 250ms !important;
+}
+
+.card:hover {
+	background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.35));
+	border-color: rgba(8, 22, 37, .25) rgba(8, 22, 37, .27) rgba(8, 22, 37, .3);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.40), inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 4px rgba(8, 22, 37, 0), 0 0 10px rgba(8, 22, 37, 0.3);
+}
+
+.card:hover .card-wrapper .content {
+	border-color: rgba(8, 22, 37, .25) rgba(8, 22, 37, .27) rgba(8, 22, 37, .3);
+}
+
+.card-wrapper {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: stretch;
+	margin-inline: -1px;
+  	margin-block: -1px;
+	border-radius: 2px;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.card-wrapper .year {
+	top: 6px;
+	right: 8px;
+	position: absolute;
+	padding: 1px 4px 2px;
+	box-sizing: border-box;
+	background-image: linear-gradient(180deg, #6A7580 0%, #4F5760 100%);
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25), 0px 1px 4px rgba(0, 0, 0, 0.5), 0px 0px 2px rgba(0, 0, 0, 0.25);
+	border-radius: 2px;
+	border: 1px solid #E7E7E7;
+	color: #E7E7E7;
+	line-height: 9px;
+	font-weight: bold;
+	font-size: 8pt;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.card-wrapper .content {
+	display: flex;
+	align-items: center;
+	padding: 4px 12px 5px;
+	height: 20px;
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #E0EBF6 100%);
+	border: 1px solid;
+	border-block-end-color: rgba(23, 51, 78, 0.20);
+	border-inline-color: rgba(23, 51, 78, 0.17);
+	border-top: 0;
+	color: #1F364C;
+	font-weight: bold;
+	font-size: 8pt;
+	text-transform: uppercase;
+	text-shadow: 0 1px 0 white;
+	transition-property: border-color !important;
+	transition-duration: 250ms !important;
+}
+
+.card-wrapper .content label {
+	margin: 0;
+	cursor: inherit;
+}
+
+.card-wrapper .checked {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 4px;
+	left: 5px;
+	background-image: url("chrome://userchrome/content/windows/options/images/card-checked.png");
+	opacity: 0;
+
+	transition-property: opacity !important;
+	transition-duration: 250ms !important;
+}
+
+.card:hover .checked,
+.card-wrapper[selected] .checked {
+	opacity: 1;
+}
+
+.card:hover .checked {
+	background-position-x: -60px;
+}
+
+.card:hover:active .checked {
+	background-position-x: -80px;
+}
+
+.card:hover .card-wrapper[selected] .checked {
+	background-position-x: -20px;
+}
+
+.card:hover:active .card-wrapper[selected] .checked {
+	background-position-x: -40px;
+}
+
+.card .radio-container {
+	position: absolute;
+	inset: 0;
+}
+
+.card .radio-container radio {
+	margin: 0;
+	padding: 0;
 }

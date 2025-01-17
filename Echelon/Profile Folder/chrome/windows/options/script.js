@@ -32,6 +32,12 @@ const gPrefHandler = {
                     false
                 );
                 break;
+            case "radiogroup":
+                element.value = Services.prefs.getIntPref(
+                    element.getAttribute("preference"),
+                    0
+                );
+                break;
             case "menulist":
 
 				if (element.getAttribute("type") == "string") {
@@ -126,7 +132,75 @@ const gPrefHandler = {
         document.addEventListener("CheckboxStateChange", this);
         document.addEventListener("input", this);
         document.addEventListener("command", this);
+        document.addEventListener("updateRadioGroup", this)
     }
 };
 
 gPrefHandler.init();
+
+// stolen from echelon_themes until i add import support on that script
+class ThemeUtils
+{
+    static stylePreset = {
+		0: { // Firefox 4
+			"version": "4",
+            "name": "Firefox 4",
+            "year": "2011",
+		},
+		1: { // Firefox 5
+			"version": "5",
+            "name": "Firefox 5",
+            "year": "2011",
+		},
+		2: { // Firefox 6
+			"version": "6",
+            "name": "Firefox 6",
+            "year": "2011",
+		},
+		3: { // Firefox 8
+			"version": "8",
+            "name": "Firefox 8",
+            "year": "2011",
+		},
+		4: { // Firefox 10
+			"version": "10",
+            "name": "Firefox 10",
+            "year": "2012",
+		},
+        5: { // Firefox 14
+			"version": "14",
+            "name": "Firefox 14",
+            "year": "2012",
+		},
+        6: { // Firefox 28
+			"version": "28",
+            "name": "Firefox 28",
+            "year": "2014",
+		},
+        7: { // Firefox 29
+			"version": "29",
+            "name": "Firefox 29",
+            "year": "2014",
+		}
+	};
+}
+
+let presetContainer = document.getElementById("preset-container");
+let presetCard = null;
+
+for (const i of Object.keys(ThemeUtils.stylePreset)) {
+    presetCard = `
+        <vbox class="card">
+            <radio value="${i}" class="card-wrapper">
+                <div class="checked" />
+                <div class="year">${ThemeUtils.stylePreset[i].year}</div>
+                <image style="background-position: center center; background-repeat: no-repeat; background-image: url('chrome://userchrome/content/windows/options/images/presets/placeholder.png');" flex="1" />
+                <div class="content">
+                    <label value="${ThemeUtils.stylePreset[i].name}" flex="1" />
+                </div>
+            </radio>
+        </vbox> 
+    `
+
+    presetContainer.appendChild(MozXULElement.parseXULToFragment(presetCard));
+}
