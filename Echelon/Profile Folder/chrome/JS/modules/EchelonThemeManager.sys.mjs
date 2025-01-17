@@ -20,6 +20,10 @@ export class EchelonThemeManager
 		if (config?.style)
 		{
 			this.refreshTheme();
+			Services.prefs.addObserver("Echelon.Appearance.systemStyle", (function() {
+				this.refreshTheme();
+				console.log("theme change");
+			}).bind(this));
 			Services.prefs.addObserver("Echelon.Appearance.Style", (function() {
 				this.refreshTheme();
 				console.log("theme change");
@@ -37,6 +41,7 @@ export class EchelonThemeManager
 	
 	refreshTheme()
 	{
+		let platform = PrefUtils.tryGetStringPref("Echelon.Appearance.systemStyle");
 		let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
 		
 		for (let attr of this.root.getAttributeNames())
@@ -57,6 +62,9 @@ export class EchelonThemeManager
 		{
 			PrefUtils.trySetBoolPref("Echelon.Appearance.TabsOnTop", true);
 		}
+
+		/* Set platform style */
+		this.root.setAttribute("echelon-system-style", platform);
 	}
 	
 	refreshPrefBoolAttribute(prefName, attrName)

@@ -195,6 +195,7 @@ body {
 	max-width: 785px;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 225px));
 	gap: 10px;
+	margin-block-end: 15px;
 }
 
 .card {
@@ -276,6 +277,8 @@ body {
 	text-shadow: 0 1px 0 white;
 	transition-property: border-color !important;
 	transition-duration: 250ms !important;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
 }
 
 .card-wrapper .content label {

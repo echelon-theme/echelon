@@ -7,12 +7,6 @@
 
 class ThemeUtils
 {
-    static systhemes = [
-        "winxp",
-        "win8",
-        "win10"
-    ]
-
     static stylePreset = {
 		0: { // Firefox 4
 			"style": "0",
@@ -77,33 +71,7 @@ class ThemeUtils
         PrefUtils.trySetIntPref("Echelon.Appearance.Homepage.Style", ThemeUtils.getPresetKey("pageStyle"));
         PrefUtils.trySetBoolPref("Echelon.Appearance.NewLogo", ThemeUtils.getPresetKey("newlogo"));
     }
-
-    static getPreferredTheme() {
-        return AppConstants.platform;
-	}
-
-    static getTheme() {
-        let prefChoice = PrefUtils.tryGetStringPref("Echelon.Appearance.systemStyle");
-        
-        if (ThemeUtils.systhemes.includes(prefChoice)) {
-            return prefChoice;
-        }
-
-        return ThemeUtils.getPreferredTheme();
-    }
-
-    static applyPlatformStyle() {
-        let theme = ThemeUtils.getTheme();
-        document.documentElement.setAttribute("echelon-system-style", theme);
-    }
 }
-
-const themeUtilsObserver = {
-    observe: function (subject, topic, data) {
-        if (topic == "nsPref:changed")
-            ThemeUtils.applyPlatformStyle();
-    },
-};
 
 const presetObserver = {
     observe: function (subject, topic, data) {
@@ -112,8 +80,6 @@ const presetObserver = {
     },
 };
 
-document.addEventListener("DOMContentLoaded", ThemeUtils.applyPlatformStyle, false);
-Services.prefs.addObserver("Echelon.Appearance.systemStyle", themeUtilsObserver, false);
 Services.prefs.addObserver("Echelon.Appearance.Preset", presetObserver, false);
 
 let EXPORTED_SYMBOLS_THEMES = [ "ThemeUtils" ];
