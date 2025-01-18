@@ -666,6 +666,10 @@
   background-position-x: -13px !important;
 }
 
+:root[browser-tabs-tabmanager-enabled=true] #tabbrowser-tabs:not([overflow], [hashiddentabs]) ~ #alltabs-button {
+  display: none !important;
+}
+
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
 :root {

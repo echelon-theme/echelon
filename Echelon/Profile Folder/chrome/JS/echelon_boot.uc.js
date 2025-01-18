@@ -16,6 +16,7 @@ let ECHELON_BOOT_CONFIG = {
 				"Echelon.Appearance.NewLogo",
 				"Echelon.Option.HideUnifiedExtensions",
 				"Echelon.Appearance.disableChrome",
+				"browser.tabs.tabmanager.enabled"
 			]
 		},
 		nativeControls: true

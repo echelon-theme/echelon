@@ -268,3 +268,7 @@
         }
     }
 }
+
+:root[browser-tabs-tabmanager-enabled="true"] #tabbrowser-tabs:not([overflow], [hashiddentabs]) ~ #alltabs-button {
+    display: none !important;
+}
