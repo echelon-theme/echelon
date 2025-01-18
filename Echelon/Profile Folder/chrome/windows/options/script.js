@@ -181,6 +181,11 @@ class ThemeUtils
 			"version": "29",
             "name": "Firefox 29",
             "year": "2014",
+		},
+        8: { // Firefox 56
+			"version": "56",
+            "name": "Firefox 56 (WIP)",
+            "year": "2017",
 		}
 	};
 

@@ -47,6 +47,11 @@ class ThemeUtils
 			"style": "6",
 			"pageStyle": "3",
 			"newlogo": true
+		},
+		8: { // Firefox 56
+			"style": "7",
+			"pageStyle": "4",
+			"newlogo": true
 		}
 	};
 
