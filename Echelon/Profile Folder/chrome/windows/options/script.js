@@ -183,6 +183,34 @@ class ThemeUtils
             "year": "2014",
 		}
 	};
+
+    static styleHomepage = {
+		0: { // Firefox 4-7
+            "version": "4",
+            "name": "Firefox 4",
+            "year": "2011",
+		},
+        1: { // Firefox 10-12
+            "version": "8",
+            "name": "Firefox 8",
+            "year": "2011",
+		},
+        2: { // Firefox 13-22
+            "version": "14",
+            "name": "Firefox 14",
+            "year": "2012",
+		},
+        3: { // Firefox 23-30
+            "version": "28",
+            "name": "Firefox 28",
+            "year": "2014",
+		},
+        4: { // Firefox 23-30
+            "version": "56",
+            "name": "Firefox 56",
+            "year": "2017",
+		},
+	};
 }
 
 let presetContainer = document.getElementById("preset-container");
@@ -203,4 +231,22 @@ for (const i of Object.keys(ThemeUtils.stylePreset)) {
     `
 
     presetContainer.appendChild(MozXULElement.parseXULToFragment(presetCard));
+}
+
+let homepageContainer = document.getElementById("homepage-container");
+
+for (const i of Object.keys(ThemeUtils.styleHomepage)) {
+    presetCard = `
+        <vbox class="card" style="background-image: url('chrome://userchrome/content/windows/options/images/homepage/firefox-${ThemeUtils.styleHomepage[i].version}.png');">
+            <radio value="${i}" class="card-wrapper">
+                <div class="checked" />
+                <div class="year">${ThemeUtils.styleHomepage[i].year}</div>
+                <div class="content">
+                    <label value="${ThemeUtils.styleHomepage[i].name}" flex="1" />
+                </div>
+            </radio>
+        </vbox> 
+    `
+
+    homepageContainer.appendChild(MozXULElement.parseXULToFragment(presetCard));
 }

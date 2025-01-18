@@ -27,10 +27,16 @@
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	display: flex;
-  	flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body > hbox {
+    max-height: 100vh;
 }
 
 .options-categories {
@@ -189,9 +195,9 @@ body {
 	margin-inline-start: 15px;
 }
 
-#preset-container {
+.card-container {
 	display: grid;
-	max-width: 785px;
+	max-width: 700px;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 225px));
 	gap: 10px;
 	margin-block-end: 15px;
@@ -360,7 +366,82 @@ body {
 	padding: 0;
 }
 
-.card-wrapper image {
+#preset-container image {
 	background-position: 10px 0;
 	background-repeat: no-repeat;
+}
+
+#homepage-container .card {
+	background-size: cover;
+	background-position: center center;
+}
+
+.section {
+	height: 100%;
+  	overflow-y: auto;
+}
+
+.content-section {
+	max-width: 700px;
+}
+
+.header {
+	margin: 0;
+	font-weight: normal;
+	font-size: 9pt;
+	padding-block-end: 10px;
+	padding-inline: 2px;
+	font-size: 15px;
+	color: rgba(75, 89, 100, .75);
+	background: radial-gradient(50.06% 3.26% at 49.94% 100%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
+}
+
+.section-content {
+	padding-block-start: 10px;
+	background: radial-gradient(50.06% 4px at 49.94% 0%, rgba(23, 45, 68, 0.2) 0%, rgba(23, 45, 68, 0) 100%), radial-gradient(50.06% 41.63% at 49.94% 0%, rgba(23, 45, 68, 0.11) 0%, rgba(23, 45, 68, 0) 100%);
+}
+
+checkbox ~ radiogroup {
+	opacity: 1;
+	max-height: 100%;
+
+	transition-property: opacity !important;
+	transition-duration: 250ms !important;
+}
+
+checkbox:not([checked]) ~ radiogroup {
+	max-height: 83px;
+ 	overflow: hidden;
+	opacity: 0.75;
+	pointer-events: none;
+	mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+checkbox {
+	margin: 0;
+	margin-block-end: 10px;
+	padding-inline: 2px;
+}
+
+checkbox .checkbox-check {
+	appearance: none;
+	background-color: #FFF;
+	border: 1px solid #CCC;
+	border-radius: 2px;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .5), inset 0 1px 0 rgba(204, 204, 204, 0.25);
+}
+
+checkbox:hover .checkbox-check {
+	border-color: #269DEB;
+}
+
+checkbox:hover:active .checkbox-check {
+	background-color: #E2E2E2;
+	border-color: #1e79b6;
+}
+
+.checkbox-check[checked="true"] {
+	background-image: url("chrome://userchrome/content/windows/options/images/checked.png");
+	background-repeat: no-repeat;
+	background-position: center center;
 }
