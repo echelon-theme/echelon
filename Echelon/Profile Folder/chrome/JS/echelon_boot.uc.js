@@ -15,6 +15,7 @@ let ECHELON_BOOT_CONFIG = {
 				"Echelon.Appearance.Blue",
 				"Echelon.Appearance.NewLogo",
 				"Echelon.Option.HideUnifiedExtensions",
+				"Echelon.Appearance.disableChrome",
 			]
 		},
 		nativeControls: true

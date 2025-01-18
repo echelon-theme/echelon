@@ -393,7 +393,7 @@
   background-color: ThreeDShadow !important;
 }
 
-:root:not([echelon-style-6])[disablechrome] #navigator-toolbox::after {
+:root:not([echelon-style-6])[echelon-appearance-disablechrome=true][disablechrome] #navigator-toolbox::after {
   display: none !important;
 }
 
@@ -429,7 +429,7 @@
   background-color: var(--toolbar-background-color) !important;
 }
 
-:root:not([echelon-style-6])[disablechrome] #navigator-toolbox toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
+:root:not([echelon-style-6])[echelon-appearance-disablechrome=true][disablechrome] #navigator-toolbox toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
   position: absolute !important;
   min-width: 100% !important;
   left: -999em !important;

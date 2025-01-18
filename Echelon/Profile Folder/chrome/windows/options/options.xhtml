@@ -21,9 +21,9 @@
 						<image class="category-image" />
 						<label class="category-text" value="Appearance" />
 					</richlistitem>
-					<richlistitem id="category-branding" value="section-branding" class="category">
+					<richlistitem id="category-behavior" value="section-behavior" class="category">
 						<image class="category-image" />
-						<label class="category-text" value="Branding" />
+						<label class="category-text" value="Behavior" />
 					</richlistitem>
 					<richlistitem id="category-native-controls" value="section-native-controls" class="category">
 						<image class="category-image" />
@@ -45,8 +45,6 @@
 								<label class="header" value="Appearance" />
 								<vbox class="section-content">
 									<checkbox label="Use Aero blue style" preference="Echelon.Appearance.Blue"/>
-									<checkbox label="Use new Firefox logo" preference="Echelon.Appearance.NewLogo"/>
-									<checkbox label="Disable Unified Extensions button" preference="Echelon.Option.HideUnifiedExtensions"/>
 								</vbox>
 							</vbox>
 							<vbox class="content-section">
@@ -80,11 +78,27 @@
 							</hbox> -->
 						</vbox>
 					</vbox>
-					<vbox id="section-branding" class="section" flex="1">
+					<vbox id="section-behavior" class="section" flex="1">
 						<hbox class="options-header">
 							<image class="header-image" />
-							<label class="header-text" value="Branding" />
+							<label class="header-text" value="Behavior" />
 						</hbox>
+						<vbox class="options-content">
+							<vbox class="content-section">
+								<label class="header" value="Branding" />
+								<vbox class="section-content">
+									<checkbox label="Use new Firefox logo" preference="Echelon.Appearance.NewLogo"/>
+								</vbox>
+							</vbox>
+							<vbox class="content-section">
+								<label class="header" value="Toolbar" />
+								<vbox class="section-content">
+									<checkbox label="Enable Tab Manager" preference="browser.tabs.tabmanager.enabled"/>
+									<checkbox label="Hide unified extensions button (not recommended)" preference="Echelon.Option.HideUnifiedExtensions"/>
+									<checkbox label="Hide Toolbars on Add-ons Manager" preference="Echelon.Appearance.disableChrome"/>
+								</vbox>
+							</vbox>
+						</vbox>
 					</vbox>
 					<vbox id="section-native-controls" class="section" flex="1">
 						<hbox class="options-header">

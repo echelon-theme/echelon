@@ -118,6 +118,10 @@ body > hbox {
 	background-image: url("chrome://userchrome/content/windows/options/images/categories-metro.png");
 }
 
+#category-general .category-image {
+	background-position-x: -72px;
+}
+
 #category-branding .category-image {
 	background-position-x: -36px;
 }
@@ -176,6 +180,10 @@ body > hbox {
 
 :root[echelon-system-style="win8"][echelon-style-6="true"] .header-image {
 	background-image: url("chrome://userchrome/content/windows/options/images/categories-header-metro.png");
+}
+
+#section-general .header-image {
+	background-position-x: -104px;
 }
 
 #section-branding .header-image {
@@ -389,6 +397,7 @@ body > hbox {
 
 .content-section {
 	max-width: 700px;
+	margin-block-end: 10px;
 }
 
 .header {
@@ -404,7 +413,7 @@ body > hbox {
 
 .section-content {
 	padding-block-start: 10px;
-	background: radial-gradient(50.06% 4px at 49.94% 0%, rgba(23, 45, 68, 0.2) 0%, rgba(23, 45, 68, 0) 100%), radial-gradient(50.06% 41.63% at 49.94% 0%, rgba(23, 45, 68, 0.11) 0%, rgba(23, 45, 68, 0) 100%);
+	background: radial-gradient(50.06% 4px at 49.94% 0%, rgba(23, 45, 68, 0.2) 0%, rgba(23, 45, 68, 0) 100%), radial-gradient(50.06% 25px at 49.94% 0%, rgba(23, 45, 68, 0.11) 0%, rgba(23, 45, 68, 0) 100%);
 }
 
 checkbox + radiogroup {
