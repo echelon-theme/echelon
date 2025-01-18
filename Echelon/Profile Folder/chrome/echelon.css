@@ -619,6 +619,10 @@
   background-image: linear-gradient(var(--tab-selected-highlight), var(--toolbar-highlight-top) 50%), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
   background-repeat: no-repeat !important;
 }
+:root:not([echelon-style-6]) #TabsToolbar .toolbar-items {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
 #TabsToolbar #tabs-newtab-button,
 #TabsToolbar #new-tab-button {
   min-height: var(--tab-min-height) !important;

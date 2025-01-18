@@ -194,7 +194,7 @@ for (const i of Object.keys(ThemeUtils.stylePreset)) {
             <radio value="${i}" class="card-wrapper">
                 <div class="checked" />
                 <div class="year">${ThemeUtils.stylePreset[i].year}</div>
-                <image style="background-position: center center; background-repeat: no-repeat; background-image: url('chrome://userchrome/content/windows/options/images/presets/placeholder.png');" flex="1" />
+                <image style="background-image: url('chrome://userchrome/content/windows/options/images/presets/firefox-${ThemeUtils.stylePreset[i].version}.png');" flex="1" />
                 <div class="content">
                     <label value="${ThemeUtils.stylePreset[i].name}" flex="1" />
                 </div>

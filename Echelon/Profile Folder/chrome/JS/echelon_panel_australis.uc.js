@@ -9,7 +9,7 @@ var g_echelonAustralisPanel;
 
 {
 
-var { BrandUtils, renderElement, waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+var { PrefUtils, BrandUtils, renderElement, waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 renderElement = renderElement.bind(window);
 waitForElement = waitForElement.bind(window);
 

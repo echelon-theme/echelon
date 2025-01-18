@@ -5,20 +5,26 @@
 // @include			main
 // ==/UserScript==
 
-function isAddons() {
-    let currentTabURL = gBrowser.currentURI.spec;
+var { waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+waitForElement = waitForElement.bind(this);
 
-    if (currentTabURL == "about:addons" || currentTabURL == "about:echelon") {
-        document.documentElement.setAttribute("disablechrome", "true");
+waitForElement("#browser").then(e => {
+    function isAddons() {
+        let currentTabURL = gBrowser.currentURI.spec;
+    
+        if (currentTabURL == "about:addons" || currentTabURL == "about:echelon") {
+            document.documentElement.setAttribute("disablechrome", "true");
+        }
+        else {
+            document.documentElement.removeAttribute("disablechrome");
+        }
     }
-    else {
-        document.documentElement.removeAttribute("disablechrome");
-    }
-}
+    
+    document.addEventListener("TabAttrModified", isAddons, false);
+    document.addEventListener("TabSelect", isAddons, false);
+    document.addEventListener("TabOpen", isAddons, false);
+    document.addEventListener("TabClose", isAddons, false);
+    
+    document.addEventListener("DOMContentLoaded", isAddons, false);    
+});
 
-document.addEventListener("TabAttrModified", isAddons, false);
-document.addEventListener("TabSelect", isAddons, false);
-document.addEventListener("TabOpen", isAddons, false);
-document.addEventListener("TabClose", isAddons, false);
-
-document.addEventListener("DOMContentLoaded", isAddons, false);

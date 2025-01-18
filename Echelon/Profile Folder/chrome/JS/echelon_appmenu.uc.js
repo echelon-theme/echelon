@@ -8,8 +8,9 @@
 let g_echelonFirefoxButton = null;
 
 {
-	var { BrandUtils, renderElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+	var { PrefUtils, waitForElement, BrandUtils, renderElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 	renderElement = renderElement.bind(window);
+	waitForElement = waitForElement.bind(window);
 
 	function setAttributes(element, attributes)
 	{
