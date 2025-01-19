@@ -1,4 +1,6 @@
 const { EchelonThemeManager } = ChromeUtils.importESModule("chrome://modules/content/EchelonThemeManager.sys.mjs");
+const { VersionUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+const gOptionsBundle = document.getElementById("optionsBundle");
 
 let g_themeManager = new EchelonThemeManager;
 g_themeManager.init(
@@ -255,3 +257,11 @@ for (const i of Object.keys(ThemeUtils.styleHomepage)) {
 
     homepageContainer.appendChild(MozXULElement.parseXULToFragment(presetCard));
 }
+
+function loadVersion() {
+	document.querySelectorAll("#version").forEach(async identifier => {
+        identifier.value = gOptionsBundle.getFormattedString("version_format", [await VersionUtils.getEchelonVer()]);
+	})
+    document.querySelector(".about-header-update").value = gOptionsBundle.getString("up_to_date");
+}
+document.addEventListener("DOMContentLoaded", loadVersion);

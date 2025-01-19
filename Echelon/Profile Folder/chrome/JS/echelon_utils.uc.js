@@ -197,4 +197,21 @@ class BrandUtils
 	}
 }
 
-let EXPORTED_SYMBOLS = [ "PrefUtils", "BrandUtils", "waitForElement", "renderElement" ];
+class VersionUtils {
+    static async getEchelonVer() {
+        try {
+            const response = await fetch("chrome://userchrome/content/version.json");
+			const data = await response.json();
+
+			const version = data.version;
+
+            return version;
+
+        } catch (error) {
+            console.error('Error fetching JSON:', error);
+            throw error;
+        }
+    }
+}
+
+let EXPORTED_SYMBOLS = [ "PrefUtils", "BrandUtils", "waitForElement", "renderElement", "VersionUtils" ];

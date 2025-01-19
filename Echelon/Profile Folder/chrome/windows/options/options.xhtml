@@ -9,6 +9,7 @@
 		id="echelonOptions" 
 		title="Echelon Options">
 
+	<stringbundle id="optionsBundle" src="chrome://echelon/locale/properties/echelon-options.properties"/>
 	<head>
 		<html:link rel="shortcut icon" href="chrome://userchrome/content/windows/options/images/icon.png"/>
 	</head>
@@ -58,7 +59,6 @@
 							<vbox class="content-section">
 								<label class="header" value="Homepage" />
 								<vbox class="section-content">
-									<checkbox label="Disable custom homepage snippets" preference="Echelon.Homepage.HideCustomSnippets"/>
 									<checkbox label="Override Echelon presets" preference="Echelon.Appearance.overrideHomepagePreset" />
 									<radiogroup preference="Echelon.Appearance.Homepage.Style" class="card-container" id="homepage-container" flex="1">
 
@@ -85,8 +85,19 @@
 						</hbox>
 						<vbox class="options-content">
 							<vbox class="content-section">
-								<label class="header" value="Branding" />
+								<label class="header" value="Browser" />
 								<vbox class="section-content">
+									<hbox class="menulist" align="center" flex="1">
+										<label value="Branding" flex="1"/>
+										<menulist type="string" preference="Echelon.Option.BrowserSpoof" flex="1">
+											<menupopup>
+												<menuitem label="Echelon" value="echelon"/>
+												<menuitem label="Firefox" value="firefox"/>
+												<menuitem label="Aurora" value="aurora"/>
+												<menuitem label="Nightly" value="nightly"/>
+											</menupopup>
+										</menulist>
+									</hbox> 
 									<checkbox label="Use new Firefox logo" preference="Echelon.Appearance.NewLogo"/>
 								</vbox>
 							</vbox>
@@ -98,6 +109,12 @@
 									<checkbox label="Hide Toolbars on Add-ons Manager" preference="Echelon.Appearance.disableChrome	"/>
 								</vbox>
 							</vbox>
+							<vbox class="content-section">
+								<label class="header" value="Homepage" />
+								<vbox class="section-content">
+									<checkbox label="Disable custom homepage snippets" preference="Echelon.Homepage.HideCustomSnippets"/>
+								</vbox>
+							</vbox>
 						</vbox>
 					</vbox>
 					<vbox id="section-native-controls" class="section" flex="1">
@@ -107,10 +124,16 @@
 						</hbox>
 					</vbox>
 					<vbox id="section-about" class="section" flex="1">
-						<hbox class="options-header">
-							<image class="header-image" />
-							<label class="header-text" value="About Echelon" />
-						</hbox>
+						<vbox class="about-header">
+							<image class="about-header-logo" />
+							<vbox class="about-header-info">
+								<label id="version" class="about-header-ver" />
+								<label class="about-header-update" />
+							</vbox>
+						</vbox>
+						<vbox class="about-content" flex="1">
+
+						</vbox>
 					</vbox>
 				</vbox>
 			</hbox>

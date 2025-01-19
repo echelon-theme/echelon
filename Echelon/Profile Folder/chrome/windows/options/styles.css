@@ -1,3 +1,31 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: italic;
+	font-weight: 300 800;
+	src: url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWuU6F.woff2) format('woff2');
+}
+
 :root {
 	--echelon-wizard-width: 558px;
 	--echelon-wizard-height: 492px;
@@ -459,4 +487,68 @@ checkbox:hover:active .checkbox-check {
 	background-image: url("chrome://userchrome/content/windows/options/images/checked.png");
 	background-repeat: no-repeat;
 	background-position: center center;
+}
+
+.menulist {
+	margin-block-end: 10px;
+}
+
+.menulist label {
+	margin: 0;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.about-header {
+	height: 147px;
+	border-block-end: 1px solid white;
+	background-image: url("chrome://userchrome/content/windows/options/images/echelon-logo.png"),
+					  url("chrome://userchrome/content/assets/images/firefox-29/customizableui/background-noise-toolbar.png"),
+					  url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-gridTexture.png"), 
+					  radial-gradient(50% 6.87% at 50% 100%, rgba(23, 45, 68, 0.25) 0%, rgba(232, 239, 245, 0) 100%),
+					  radial-gradient(100% 100% at 50.14% 0%, #FE7701 0%, #E04212 100%);
+	background-repeat: no-repeat, repeat, repeat, repeat, repeat;
+	background-position: center right -55px, center center, center center;
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+	padding-inline: 45px;
+	justify-content: center;
+}
+
+.about-header-logo {
+	width: 212px;
+	height: 58px;
+	list-style-image: url("chrome://userchrome/content/windows/options/images/echelon-header-logo.png");
+	margin-block-end: 10px;
+}
+
+.about-content {
+	background: radial-gradient(50.06% 4px at 49.94% 0%, rgba(23, 45, 68, 0.2) 0%, rgba(23, 45, 68, 0) 100%), radial-gradient(50.06% 25px at 49.94% 0%, rgba(23, 45, 68, 0.11) 0%, rgba(23, 45, 68, 0) 100%);
+}
+
+.about-header-info {
+	color: white;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+	font-family: "Open Sans", sans-serif;
+	background-image: url("chrome://userchrome/content/windows/options/images/uptodate.png");
+	background-repeat: no-repeat;
+	background-position: center left;
+	padding-inline-start: 40px;
+}
+
+.about-header-info label {
+	margin: 0;
+}
+
+.about-header-ver {
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.about-header-update {
+	font-size: 17px;
+	font-weight: lighter;
+	font-style: italic;
 }
