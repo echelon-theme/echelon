@@ -22,6 +22,15 @@
 }
 
 #TabsToolbar {
+    .private-browsing-indicator-with-label {
+        align-items: flex-start !important;
+        margin-inline: 0 !important;
+
+        .private-browsing-indicator-label {
+            display: none !important;
+        }
+    }
+    
     .toolbar-items {
         padding-top: 1px !important;
         padding-inline: 1px !important;

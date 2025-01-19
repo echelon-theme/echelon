@@ -10,7 +10,7 @@ function chromeMargin() {
     let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
     let platform = AppConstants.platform;
     
-    if (platform == "win" || hiddenTitlebar == "true") {
+    if (platform == "win" && hiddenTitlebar == "true") {
         if (style < ECHELON_LAYOUT_FF14)
         {
             window.windowUtils.setChromeMargin(0, 1, 1, 1);

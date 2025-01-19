@@ -322,4 +322,24 @@ let g_echelonLayoutManager;
 			e.appendChild(echelonTitlebarButtonBox);
 		});
 	});
+
+	waitForElement(".titlebar-buttonbox-container").then(e => {
+		for (const elem of document.querySelectorAll(".titlebar-buttonbox-container")) {
+			let echelonPrivateBrowsing = window.MozXULElement.parseXULToFragment(`
+				<hbox id="private-browsing-indicator-titlebar">
+					<hbox class="private-browsing-indicator"/>
+				</hbox>
+			`);
+			elem.insertBefore(echelonPrivateBrowsing, elem.querySelector(".titlebar-buttonbox"));
+		};
+	});
+
+	waitForElement(".private-browsing-indicator-with-label").then(e => {
+		for (const elem of document.querySelectorAll(".private-browsing-indicator-with-label")) {
+			let echelonPrivateBrowsing = window.MozXULElement.parseXULToFragment(`
+				<hbox class="private-browsing-indicator"/>
+			`);
+			elem.replaceWith(echelonPrivateBrowsing);
+		}
+	});
 }

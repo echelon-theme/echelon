@@ -194,6 +194,10 @@
     }
 
     :root:not([echelon-style-6]) & {
+        #private-browsing-indicator-with-label {
+            display: none !important;
+        }
+        
         .tab-background,
         #tabs-newtab-button
         {

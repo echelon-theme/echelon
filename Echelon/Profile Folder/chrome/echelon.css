@@ -593,6 +593,9 @@
 #TabsToolbar .tab-throbber[progress] {
   background-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/loading.png");
 }
+:root:not([echelon-style-6]) #TabsToolbar #private-browsing-indicator-with-label {
+  display: none !important;
+}
 :root:not([echelon-style-6]) #TabsToolbar .tab-background,
 :root:not([echelon-style-6]) #TabsToolbar #tabs-newtab-button {
   box-shadow: none !important;
@@ -3731,6 +3734,13 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-color: transparent !important;
   margin-block-end: -1px !important;
 }
+:root[echelon-style-6] #TabsToolbar .private-browsing-indicator-with-label {
+  align-items: flex-start !important;
+  margin-inline: 0 !important;
+}
+:root[echelon-style-6] #TabsToolbar .private-browsing-indicator-with-label .private-browsing-indicator-label {
+  display: none !important;
+}
 :root[echelon-style-6] #TabsToolbar .toolbar-items {
   padding-top: 1px !important;
   padding-inline: 1px !important;
@@ -3912,6 +3922,24 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 :root[echelon-style-6][tabsintitlebar][sizemode=normal][chromehidden~=menubar] #toolbar-menubar ~ #TabsToolbar .toolbar-items, :root[echelon-style-6][tabsintitlebar][sizemode=normal] #toolbar-menubar[autohide=true][inactive] ~ #TabsToolbar .toolbar-items {
   margin-top: 15px !important;
+}
+:root[echelon-style-6] .private-browsing-indicator {
+  pointer-events: none !important;
+  display: none !important;
+}
+:root[echelon-style-6][privatebrowsingmode=temporary][tabsintitlebar] #private-browsing-indicator-titlebar > .private-browsing-indicator {
+  display: block !important;
+  width: 40px;
+  height: 20px;
+  margin-inline-end: 4px;
+  background: url("chrome://userchrome/content/assets/images/firefox-29/privatebrowsing/privatebrowsing-mask-titlebar-XPVista7.png") no-repeat center 0px;
+}
+:root[echelon-style-6][privatebrowsingmode=temporary]:not([tabsintitlebar]) #TabsToolbar > .private-browsing-indicator {
+  display: flex !important;
+  width: 48px !important;
+  height: 32px !important;
+  margin-inline-end: 4px !important;
+  background: url("chrome://userchrome/content/assets/images/firefox-29/privatebrowsing/privatebrowsing-mask-tabstrip-XPVista7.png") no-repeat center 0;
 }
 :root[echelon-style-6][echelon-system-style=win8] {
   --toolbarbutton-icon-width: 16px;
@@ -4111,6 +4139,12 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-6][echelon-system-style=win8] #urlbar-background,
 :root[echelon-style-6][echelon-system-style=win8] #searchbar {
   border-radius: 0 !important;
+}
+:root[echelon-style-6][echelon-system-style=win8] #private-browsing-indicator-titlebar > .private-browsing-indicator {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/privatebrowsing/privatebrowsing-mask-titlebar.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=win8] #TabsToolbar > .private-browsing-indicator {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/privatebrowsing/privatebrowsing-mask-tabstrip.png") !important;
 }
 
 /* ::::: Firefox 56 ::::: */
