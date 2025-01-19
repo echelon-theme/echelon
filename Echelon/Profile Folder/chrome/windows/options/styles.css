@@ -489,11 +489,11 @@ checkbox:hover:active .checkbox-check {
 	background-position: center center;
 }
 
-.menulist {
+.menulist-container {
 	margin-block-end: 10px;
 }
 
-.menulist label {
+.menulist-container label {
 	margin: 0;
 }
 
@@ -551,4 +551,46 @@ checkbox:hover:active .checkbox-check {
 	font-size: 17px;
 	font-weight: lighter;
 	font-style: italic;
+}
+
+menulist {
+	height: 20px;
+	padding: 4px 8px 5px 5px;
+	background-image: linear-gradient(to bottom, #f7f7f7 0%, #E0EBF6 100%);
+	background-clip: padding-box;
+	border: 1px solid rgba(23, 51, 78, 0.17);
+	box-shadow: 0 0 2px rgba(30, 121, 182, 0), 0 1px 0 rgba(255, 255, 255, .5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+	font-size: 8pt;
+	font-weight: bold;
+	border-radius: 3px;
+	color: #1F364C;
+	text-transform: uppercase;
+	margin: 0;
+	cursor: pointer;
+
+	transition-property: box-shadow, border-color !important;
+	transition-duration: 150ms !important;
+}
+
+menulist:hover {
+	border-color: #269DEB;
+	box-shadow: 0 0 2px rgba(30, 121, 182, 0.5), 0 1px 0 rgba(255, 255, 255, 0), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+menulist:hover:active,
+menulist[open] {
+	box-shadow: 0 0 2px rgba(30, 121, 182, 0), 0 1px 0 rgba(255, 255, 255, .5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+	border-color: rgba(23, 51, 78, 0.5);
+	background-image: none;
+	background-color: white;
+
+	transition-property: none;
+}
+
+menulist::part(dropmarker) {
+	content: url("chrome://userchrome/content/assets/images/firefox-14/toolbarbutton-dropdown-arrow.png");
+}
+
+menulist::part(label-box) {
+	font-weight: inherit;
 }

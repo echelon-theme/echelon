@@ -1,11 +1,16 @@
 const { NewTabUtils } = ChromeUtils.importESModule("resource://gre/modules/NewTabUtils.sys.mjs");
 const { XPCOMUtils } = ChromeUtils.importESModule("resource://gre/modules/XPCOMUtils.sys.mjs");
+const { PageThumbs } = ChromeUtils.importESModule("resource://gre/modules/PageThumbs.sys.mjs");
+const { BackgroundPageThumbs } = ChromeUtils.importESModule("resource://gre/modules/BackgroundPageThumbs.sys.mjs");
+
+const { Geometry } = ChromeUtils.importESModule("resource://gre/modules/Geometry.sys.mjs");
+const { PrivateBrowsingUtils } = ChromeUtils.importESModule("resource://gre/modules/PrivateBrowsingUtils.sys.mjs");
 
 const PREF_NEWTAB_ENABLED = "browser.newtabpage.enabled";
 
-XPCOMUtils.defineLazyGetter(this, "gStringBundle", function() {
+ChromeUtils.defineLazyGetter(this, "gStringBundle", function() {
   return Services.strings.
-    createBundle("chrome://browser/locale/newTab.properties");
+    createBundle("chrome://echelon/locale/properties/newTab.properties");
 });
 
 function newTabString(name) {

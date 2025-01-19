@@ -111,7 +111,7 @@
   border-radius: 0 !important;
   background-color: transparent !important;
 }
-#navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) .toolbarbutton-icon {
+#navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified):not(.unified-extensions-item-action-button) .toolbarbutton-icon {
   --toolbarbutton-inner-padding: 0 !important;
   --toolbarbutton-border-radius: 0 !important;
   background-color: transparent !important;
@@ -120,6 +120,7 @@
 }
 :root:not([echelon-style-5]) #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button, :root[echelon-style-5] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar {
   width: 30px !important;
+  min-width: 30px;
   height: 30px !important;
   position: relative !important;
   z-index: 4 !important;
@@ -168,6 +169,9 @@
 }
 #nav-bar #nav-bar-customization-target {
   align-items: center !important;
+}
+#nav-bar .toolbaritem-combined-buttons {
+  margin: 0 !important;
 }
 #nav-bar .toolbarbutton-1:not(#back-button, #forward-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, .unified) {
   margin: var(--toolbarbutton-outer-padding) !important;
@@ -380,6 +384,17 @@
   background-image: url("chrome://userchrome/content/assets/images/firefox-4/downloads/download-notification-finish.png") !important;
   animation-name: downloadsIndicatorNotificationFinish !important;
   animation-duration: 1s !important;
+}
+
+.unified-extensions-item-action-button {
+  overflow: visible !important;
+}
+
+.toolbarbutton-badge {
+  margin: -6px 0 0 !important;
+  margin-inline-end: -8px !important;
+  max-width: 28px !important;
+  line-height: 13px !important;
 }
 
 #navigator-toolbox {
@@ -1342,7 +1357,7 @@
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/bookmarks/defaultFavicon.png") !important;
 }
 :root[echelon-style-2] .bookmark-item:not([container]) .default-favicon {
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-10/defaultFavicon.png") !important;
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-8/defaultFavicon.png") !important;
 }
 
 :root {
@@ -3526,8 +3541,30 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-position: 0px 0px, 1px 0px, 2px 0px !important;
   background-repeat: no-repeat !important;
 }
+:root[echelon-style-6] #nav-bar #PanelUI-button #PanelUI-menu-button[badge-status] .toolbarbutton-badge:-moz-window-inactive {
+  filter: none !important;
+}
+:root[echelon-style-6] #nav-bar #PanelUI-button #PanelUI-menu-button[badge-status=update-available] .toolbarbutton-badge, :root[echelon-style-6] #nav-bar #PanelUI-button #PanelUI-menu-button[badge-status=update-downloading] .toolbarbutton-badge, :root[echelon-style-6] #nav-bar #PanelUI-button #PanelUI-menu-button[badge-status=update-manual] .toolbarbutton-badge, :root[echelon-style-6] #nav-bar #PanelUI-button #PanelUI-menu-button[badge-status=update-other-instance] .toolbarbutton-badge, :root[echelon-style-6] #nav-bar #PanelUI-button #PanelUI-menu-button[badge-status=update-restart] .toolbarbutton-badge, :root[echelon-style-6] #nav-bar #PanelUI-button #PanelUI-menu-button[badge-status=update-unsupported] .toolbarbutton-badge {
+  background: #74BF43 url("chrome://userchrome/content/assets/images/firefox-56/toolbar/update-badge.svg") no-repeat center !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  border: 2px solid -moz-dialog !important;
+  margin: -9px 0 0 !important;
+  margin-inline-end: -6px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+}
+:root[echelon-style-6] #nav-bar #PanelUI-button #PanelUI-menu-button[open] .toolbarbutton-badge {
+  display: none !important;
+}
 :root[echelon-style-6] #search-container {
   margin-inline-end: 3px !important;
+}
+:root[echelon-style-6] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button.unified-with-urlbar {
+  width: 31px !important;
+  padding-left: 9px !important;
+  padding-right: 3px !important;
+  border-left: 0 !important;
 }
 :root[echelon-style-6] #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button {
   position: relative !important;
@@ -3712,6 +3749,13 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 :root[echelon-style-6] #urlbar #star-button-box {
   visibility: collapse !important;
+}
+:root[echelon-style-6]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #urlbar {
+  margin-left: -30px !important;
+}
+:root[echelon-style-6]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container {
+  padding-inline-start: 30px !important;
+  margin-inline-start: -30px !important;
 }
 :root[echelon-style-6] {
   --tab-min-height: 31px !important;
@@ -4087,6 +4131,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 :root[echelon-style-6][echelon-system-style=win8] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar {
   width: 32px !important;
+  min-width: 32px !important;
   height: 32px !important;
   background-clip: padding-box !important;
   background-image: none !important;

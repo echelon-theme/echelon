@@ -19,11 +19,54 @@
             background-size: 1px calc(100% - 1px), 1px calc(100% - 1px), 1px  calc(100% - 1px) !important;
             background-position: 0px 0px, 1px 0px, 2px 0px !important;
             background-repeat: no-repeat !important;
+
+            #PanelUI-menu-button {
+                &[badge-status] {
+                    .toolbarbutton-badge {
+                        &:-moz-window-inactive { // disable grayscale shit firefox 133 does
+                            filter: none !important
+                        }
+                    }
+                }
+
+                &[badge-status="update-available"],
+                &[badge-status="update-downloading"],
+                &[badge-status="update-manual"],
+                &[badge-status="update-other-instance"],
+                &[badge-status="update-restart"],
+                &[badge-status="update-unsupported"] {
+                    .toolbarbutton-badge {
+                        background: #74BF43 url("chrome://userchrome/content/assets/images/firefox-56/toolbar/update-badge.svg") no-repeat center !important;
+                        border-radius: 50% !important;
+                        box-shadow: none !important;
+                        border: 2px solid -moz-dialog !important;
+                        margin: -9px 0 0 !important;
+                        margin-inline-end: -6px !important;
+                        min-width: 16px !important;
+                        min-height: 16px !important;
+                    }
+                }
+
+                &[open] {
+                    .toolbarbutton-badge {
+                        display: none !important;
+                    }
+                }
+            }
         }
     }
 
     #search-container {
         margin-inline-end: 3px !important;
+    }
+
+    #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
+        &#forward-button.unified-with-urlbar {
+            width: 31px !important;
+            padding-left: 9px !important;
+            padding-right: 3px !important;
+            border-left: 0 !important;
+        }
     }
 
     // unified bookmark button styling

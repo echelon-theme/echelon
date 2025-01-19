@@ -65,7 +65,7 @@
         background-color: transparent !important;
     }
 
-    .toolbarbutton-icon {
+    &:not(.unified-extensions-item-action-button) .toolbarbutton-icon {
         --toolbarbutton-inner-padding: 0 !important;
         --toolbarbutton-border-radius: 0 !important;
         background-color: transparent !important;
@@ -77,6 +77,7 @@
     :root:not([echelon-style-5]) &#back-button,
     :root[echelon-style-5] &#back-button.unified-with-urlbar {
         width: 30px !important;
+        min-width: 30px;
         height: 30px !important;
         position: relative !important;
         z-index: 4 !important;
@@ -136,6 +137,10 @@
 
     #nav-bar-customization-target {
         align-items: center !important;
+    }
+
+    .toolbaritem-combined-buttons {
+        margin: 0 !important;
     }
 
     .toolbarbutton-1 {
@@ -372,6 +377,17 @@
     background-image: url("chrome://userchrome/content/assets/images/firefox-4/downloads/download-notification-finish.png") !important;
     animation-name: downloadsIndicatorNotificationFinish !important;
     animation-duration: 1s !important;
+}
+
+.unified-extensions-item-action-button {
+    overflow: visible !important;
+}
+
+.toolbarbutton-badge {
+    margin: -6px 0 0 !important;
+    margin-inline-end: -8px !important;
+    max-width: 28px !important;
+    line-height: 13px !important;
 }
 
 #navigator-toolbox {

@@ -45,6 +45,17 @@
 							<vbox class="content-section">
 								<label class="header" value="Appearance" />
 								<vbox class="section-content">
+									<hbox class="menulist-container" align="center" flex="1">
+										<label value="System Style" flex="1"/>
+										<menulist type="string" preference="Echelon.Appearance.systemStyle" flex="1">
+											<menupopup>
+												<menuitem label="Default" value="win"/>
+												<menuitem label="Windows XP" value="winxp"/>
+												<menuitem label="Windows 8" value="win8"/>
+												<menuitem label="Windows 10" value="win10"/>
+											</menupopup>
+										</menulist>
+									</hbox>
 									<checkbox label="Use Aero blue style" preference="Echelon.Appearance.Blue"/>
 								</vbox>
 							</vbox>
@@ -65,17 +76,6 @@
 									</radiogroup>
 								</vbox>
 							</vbox>
-							<!-- <hbox align="center" flex="1">
-								<label value="System Style" flex="1"/>
-								<menulist type="string" preference="Echelon.Appearance.systemStyle" flex="1">
-									<menupopup>
-										<menuitem label="Default" value="win"/>
-										<menuitem label="Windows XP" value="winxp"/>
-										<menuitem label="Windows 8" value="win8"/>
-										<menuitem label="Windows 10" value="win10"/>
-									</menupopup>
-								</menulist>
-							</hbox> -->
 						</vbox>
 					</vbox>
 					<vbox id="section-behavior" class="section" flex="1">
@@ -87,7 +87,7 @@
 							<vbox class="content-section">
 								<label class="header" value="Browser" />
 								<vbox class="section-content">
-									<hbox class="menulist" align="center" flex="1">
+									<hbox class="menulist-container" align="center" flex="1">
 										<label value="Branding" flex="1"/>
 										<menulist type="string" preference="Echelon.Option.BrowserSpoof" flex="1">
 											<menupopup>
