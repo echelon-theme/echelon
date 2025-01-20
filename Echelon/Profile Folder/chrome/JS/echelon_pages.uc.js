@@ -7,7 +7,7 @@
 
 {
     const ABOUT_PAGES = {
-        "newtab": "chrome://userchrome/content/pages/newtab/newtab.xhtml",
+        "newtab": "chrome://userchrome/content/pages/newtab/home.xhtml",
         "home": "chrome://userchrome/content/pages/home/home.xhtml",
         "echelon": "chrome://userchrome/content/windows/options/options.xhtml",
     };

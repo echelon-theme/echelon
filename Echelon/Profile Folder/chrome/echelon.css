@@ -1024,8 +1024,12 @@
 
 :root {
   --urlbar-border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.37) !important;
+  --urlbar-border-color-hover: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.37) !important;
+  --urlbar-border-color-focused: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.37) !important;
   --urlbar-shadow-normal: 0 1px 0 rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.4) !important;
   --urlbar-background-color: rgba(255, 255, 255, 0.725) !important;
+  --urlbar-background-color-hover: rgba(255,255,255,.898) !important;
+  --urlbar-background-color-focused: white !important;
   --urlbar-container-padding: 2px !important;
   --urlbar-height-echelon: var(--toolbarbutton-height) !important;
   --urlbar-min-height: var(--urlbar-height-echelon) !important;
@@ -1040,6 +1044,7 @@
 
 #urlbar-input::placeholder,
 .searchbar-textbox::placeholder {
+  opacity: 1 !important;
   color: #777 !important;
 }
 
@@ -1165,9 +1170,26 @@
 #urlbar-container {
   margin-inline-end: 0 !important;
 }
+#urlbar-container:hover #urlbar-background {
+  background-color: var(--urlbar-background-color-hover) !important;
+  border-color: var(--urlbar-border-color-hover) !important;
+}
+#urlbar-container[focused=true] #urlbar-background {
+  background-color: var(--urlbar-background-color-focused) !important;
+  border-color: var(--urlbar-border-color-focused) !important;
+}
 
 #urlbar, #searchbar {
   font: message-box !important;
+}
+
+#searchbar:hover {
+  background-color: var(--urlbar-background-color-hover) !important;
+  border-color: var(--urlbar-border-color-hover) !important;
+}
+#searchbar:focus-within {
+  background-color: var(--urlbar-background-color-focused) !important;
+  border-color: var(--urlbar-border-color-focused) !important;
 }
 
 #urlbar[breakout][breakout-extend], #urlbar[breakout][breakout-extend-disabled][open] {
@@ -1196,6 +1218,14 @@
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   border-inline-end: 0 !important;
+}
+:root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button:hover + #stop-reload-button {
+  border-color: var(--urlbar-border-color-hover) !important;
+  background-color: var(--urlbar-background-color-hover) !important;
+}
+:root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] + #stop-reload-button {
+  border-color: var(--urlbar-border-color-focused) !important;
+  background-color: var(--urlbar-background-color-focused) !important;
 }
 :root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] + #stop-reload-button > .toolbarbutton-1:not(#go-button) {
   visibility: collapse !important;
@@ -3100,10 +3130,17 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-2] {
   --urlbar-container-padding: 0 !important;
   --urlbar-shadow-normal: none !important;
+  --urlbar-background-color: white !important;
+  --urlbar-background-color-hover: white !important;
+  --urlbar-background-color-focused: white !important;
   --urlbar-border-color: ThreeDShadow !important;
+  --urlbar-border-color-hover: ThreeDShadow !important;
+  --urlbar-border-color-focused: ThreeDShadow !important;
 }
 :root[echelon-style-2]:not([echelon-appearance-xp])[echelon-appearance-blue] {
   --urlbar-border-color: rgba(0,0,0,.32) !important;
+  --urlbar-border-color-hover: rgba(0,0,0,.32) !important;
+  --urlbar-border-color-focused: rgba(0,0,0,.32) !important;
 }
 :root[echelon-style-2]:not([echelon-style-5]) #urlbar #identity-box {
   order: -1 !important;
@@ -3430,7 +3467,14 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   display: none !important;
 }
 :root[echelon-style-5] {
+  --urlbar-border-color: ThreeDShadow !important;
+  --urlbar-border-color-hover: ThreeDShadow !important;
+  --urlbar-border-color-focused: ThreeDShadow !important;
+}
+:root[echelon-style-5]:not([echelon-appearance-xp])[echelon-appearance-blue], :root[echelon-style-5]:not([echelon-appearance-xp])[echelon-system-style=win8] {
   --urlbar-border-color: hsla(210,54%,20%,.25) hsla(210,54%,20%,.27) hsla(210,54%,20%,.3) !important;
+  --urlbar-border-color-hover: hsla(210,54%,20%,.35) hsla(210,54%,20%,.37) hsla(210,54%,20%,.4) !important;
+  --urlbar-border-color-focused: hsla(206,100%,60%,.65) hsla(206,100%,55%,.65) hsla(206,100%,50%,.65) !important;
 }
 :root[echelon-style-5]:not([echelon-style-7]) #urlbar #identity-box {
   order: -1 !important;
@@ -3751,7 +3795,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   visibility: collapse !important;
 }
 :root[echelon-style-6]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #urlbar {
-  margin-left: -30px !important;
+  margin-left: -29px !important;
 }
 :root[echelon-style-6]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container {
   padding-inline-start: 30px !important;
@@ -4184,6 +4228,17 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-6][echelon-system-style=win8] #urlbar-background,
 :root[echelon-style-6][echelon-system-style=win8] #searchbar {
   border-radius: 0 !important;
+}
+:root[echelon-style-6][echelon-system-style=win8]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #urlbar {
+  margin-left: -30px !important;
+}
+:root[echelon-style-6][echelon-system-style=win8]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background,
+:root[echelon-style-6][echelon-system-style=win8]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container {
+  mask-position-x: -2px !important;
+}
+:root[echelon-style-6][echelon-system-style=win8]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container {
+  padding-inline-start: 31px !important;
+  margin-inline-start: -31px !important;
 }
 :root[echelon-style-6][echelon-system-style=win8] #private-browsing-indicator-titlebar > .private-browsing-indicator {
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/privatebrowsing/privatebrowsing-mask-titlebar.png") !important;

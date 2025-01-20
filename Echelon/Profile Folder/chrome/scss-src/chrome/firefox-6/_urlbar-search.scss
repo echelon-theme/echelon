@@ -2,11 +2,20 @@
     --urlbar-container-padding: 0 !important;
 
     --urlbar-shadow-normal: none !important;
+
+    --urlbar-background-color: white !important;
+    --urlbar-background-color-hover: white !important;
+    --urlbar-background-color-focused: white !important;
+    
     --urlbar-border-color: ThreeDShadow !important;
+    --urlbar-border-color-hover: ThreeDShadow !important;
+    --urlbar-border-color-focused: ThreeDShadow !important;
 
     &:not([echelon-appearance-xp]) {
         &[echelon-appearance-blue] {
             --urlbar-border-color: rgba(0,0,0,.32) !important;
+            --urlbar-border-color-hover: rgba(0,0,0,.32) !important;
+            --urlbar-border-color-focused: rgba(0,0,0,.32) !important;
         }
     }
 }

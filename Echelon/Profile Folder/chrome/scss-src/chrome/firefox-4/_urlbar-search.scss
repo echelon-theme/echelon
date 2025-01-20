@@ -1,7 +1,13 @@
 :root {
     --urlbar-border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.37) !important;
+    --urlbar-border-color-hover: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.37) !important;
+    --urlbar-border-color-focused: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.37) !important;
+
     --urlbar-shadow-normal: 0 1px 0 rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+
     --urlbar-background-color: rgba(255, 255, 255, 0.725) !important;
+    --urlbar-background-color-hover: rgba(255,255,255,.898) !important;
+    --urlbar-background-color-focused: white !important;
     
     --urlbar-container-padding: 2px !important;
     --urlbar-height-echelon: var(--toolbarbutton-height) !important;
@@ -23,6 +29,7 @@
 
 #urlbar-input::placeholder,
 .searchbar-textbox::placeholder {
+    opacity: 1 !important;
     color: #777 !important;
 }
 
@@ -186,10 +193,36 @@
 
 #urlbar-container {
     margin-inline-end: 0 !important;
+
+    &:hover {
+        #urlbar-background {
+            background-color: var(--urlbar-background-color-hover) !important;
+            border-color: var(--urlbar-border-color-hover) !important;
+        }
+    }
+    
+    &[focused="true"] {
+        #urlbar-background {                
+            background-color: var(--urlbar-background-color-focused) !important;
+            border-color: var(--urlbar-border-color-focused) !important;
+        }
+    }
 }
 
 #urlbar, #searchbar {
     font: message-box !important;
+}
+
+#searchbar {
+    &:hover {
+        background-color: var(--urlbar-background-color-hover) !important;
+        border-color: var(--urlbar-border-color-hover) !important;
+    }
+
+    &:focus-within {
+        background-color: var(--urlbar-background-color-focused) !important;
+        border-color: var(--urlbar-border-color-focused) !important;
+    }
 }
 
 #urlbar[breakout][breakout-extend], #urlbar[breakout][breakout-extend-disabled][open] {
@@ -222,9 +255,18 @@
             border-inline-end: 0 !important;
         }
 
-        
-        &[focused="true"] {
+        &:hover {
             + #stop-reload-button {
+                border-color: var(--urlbar-border-color-hover) !important;
+                background-color: var(--urlbar-background-color-hover) !important;
+            }
+        }
+
+        &[focused="true"] {
+            + #stop-reload-button {                
+                border-color: var(--urlbar-border-color-focused) !important;
+                background-color: var(--urlbar-background-color-focused) !important;
+
                 > .toolbarbutton-1:not(#go-button) { // hide errthang but go button
                     visibility: collapse !important;
                 }
