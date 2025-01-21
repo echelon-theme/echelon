@@ -74,7 +74,7 @@
   --arrowpanel-border-color: hsla(210,4%,10%,.2) !important;
   --arrowpanel-echelon-shadow: 0 0 4px hsla(210,4%,10%,.2) !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] {
+:root[echelon-style-6][echelon-system-style=win8], :root[echelon-style-6][echelon-system-style=win10] {
   --arrowpanel-border-radius: 0 !important;
 }
 

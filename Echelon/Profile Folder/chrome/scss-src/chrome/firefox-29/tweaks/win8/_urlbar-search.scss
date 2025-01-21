@@ -9,7 +9,7 @@
         #forward-button.unified-with-urlbar:not(:hover)[disabled] {
             & + #urlbar-container {            
                 & > #urlbar {
-                    margin-left: -30px !important;
+                    margin-left: -29px !important;
                 }
 
                 #urlbar-background,
@@ -21,8 +21,8 @@
 
         #forward-button.unified-with-urlbar {
             & + #urlbar-container {
-                padding-inline-start: 31px !important;
-                margin-inline-start: -31px !important;
+                padding-inline-start: 30px !important;
+                margin-inline-start: -30px !important;
             }
         }
     }

@@ -89,7 +89,8 @@
         --arrowpanel-echelon-shadow: 0 0 4px hsla(210,4%,10%,.2) !important;
     }
 
-    &[echelon-system-style="win8"] {
+    &[echelon-system-style="win8"],
+    &[echelon-system-style="win10"] {
         --arrowpanel-border-radius: 0 !important;
     }
 }

@@ -1,0 +1,29 @@
+// losely based on firefox 56's browser.css
+
+&[widget-windows-style-modern="true"] {
+    appearance: -moz-win-borderless-glass !important; // hack to show white border windows 10 does on dwm extended windows
+
+    #browser {
+        appearance: -moz-win-exclude-glass !important;
+    }
+
+    #navigator-toolbox {
+        margin-top: 1px !important; // show top white border
+        border: 0 !important; // remove fake borders
+
+        &::after {
+            background-color: #c2c2c2 !important;
+        }
+    }
+
+    &:not([lwtheme]) {
+        #navigator-toolbox {
+            background-color: hsl(0, 0%, 78%) !important;
+        }
+    }
+
+    #titlebar-buttonbox,
+    .titlebar-button {
+        appearance: none !important;
+    }
+}

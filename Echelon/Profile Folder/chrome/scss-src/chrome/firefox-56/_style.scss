@@ -1,3 +1,10 @@
-@import "tabs";
-@import "icons";
-@import "toolbars";
+&[echelon-style-6] {
+    @import "tabs";
+    @import "icons";
+    @import "toolbars";
+    @import "urlbar-search";
+
+    &[echelon-system-style="win10"] {
+        @import "tweaks/win10/style";
+    }
+}

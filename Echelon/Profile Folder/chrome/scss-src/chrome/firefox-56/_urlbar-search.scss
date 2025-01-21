@@ -1,0 +1,38 @@
+& {
+    --urlbar-separator-color: ThreeDLightShadow;
+
+    #urlbar {
+        .urlbar-input-container {
+            &:not(:hover) {
+                &::after {
+                    opacity: 0 !important;
+                }
+            }
+    
+            &::after {
+                transition: opacity 0.15s ease !important;
+                @include set-background("firefox-56/urlbar/urlbar-history-dropmarker.png");
+            }
+        }
+    }
+    
+    #stop-reload-button {
+        &.unified {
+            padding: 1px !important;
+            padding-inline-start: 0 !important;
+    
+            .toolbarbutton-1 {
+                padding: 0 9px !important;
+                margin-inline-start: 5px !important;
+                border-inline-start: 1px solid var(--urlbar-separator-color) !important;
+                border-image: linear-gradient(transparent 15%, var(--urlbar-separator-color) 15%, var(--urlbar-separator-color) 85%, transparent 85%) !important;
+                border-image-slice: 1 !important;
+                background-image: none !important;
+    
+                .toolbarbutton-icon {
+                    @include set-background("firefox-56/urlbar/reload-stop-go.png");
+                }
+            }
+        }
+    }
+}
