@@ -137,3 +137,228 @@
 		margin-bottom: 0 !important;
 	}
 }
+
+#downloadsPanel {
+	#downloadsPanel-mainView {
+		min-width: 0 !important;
+		padding: 0 !important;
+	}
+
+	#downloadsListBox {
+		padding: 4px !important;
+
+		richlistitem {
+			&[type="download"] {
+				min-height: 7em !important;
+				padding: 8px !important;
+				margin: 0 !important;
+				border-radius: 0 !important;
+				border-block-start: 1px solid hsla(0,0%,100%,.3) !important;
+				border-block-end: 1px solid hsla(220,18%,51%,.25) !important;
+
+				&:first-child {
+					border-block-start: 1px solid transparent !important;
+				}
+
+				&:last-child {
+					border-block-end: 1px solid transparent !important;
+				}
+
+				&[state="1"][exists]:hover {
+					border-radius: 3px !important;
+					border-block-start: 1px solid hsla(0,0%,100%,.2) !important;
+					border-block-end: 1px solid hsla(0,0%,0%,.2) !important;
+					background-color: Highlight !important;
+					color: HighlightText !important;
+					cursor: pointer !important;
+				}
+
+				.downloadMainArea {
+					padding-block: 0 !important;
+					padding-inline-start: 0 !important;
+
+					.downloadTypeIcon {
+						margin-inline-end: 8px !important;
+					}
+
+					.downloadContainer {
+						.downloadTarget {
+							margin-block-end: 6px !important;
+						}
+
+						description {
+							margin-block: 1px 2px !important;
+  							margin-inline: 6px 5px !important;
+							cursor: pointer !important;
+						}
+					}
+				}
+
+				&:hover {
+					.downloadButton {
+						.button-icon {
+							background-position-x: -16px !important;
+						}
+
+						&:hover {
+							.button-icon {
+								background-position-x: -32px !important;
+							}
+						}
+
+						&:active {
+							.button-icon {
+								background-position-x: -48px !important;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		.downloadButton {
+			min-width: 0 !important;
+			min-height: 0 !important;
+			margin: 3px !important;
+			padding: 5px !important;
+			border: none !important;
+			background-color: transparent !important;
+			border-radius: 0 !important;
+
+			.button-icon {
+				margin: 0 !important;
+				list-style-image: none !important;
+				background-image: url("chrome://userchrome/content/assets/images/firefox-4/downloads/buttons.png") !important;
+			}
+
+			&.downloadIconShow {
+				.button-icon {
+					background-position-y: -16px !important;
+				}
+			}
+
+			&.downloadIconRetry {
+				.button-icon {
+					background-position-y: -32px !important;
+				}
+			}
+		}
+	}
+
+	#downloadsHistory {
+		padding: 0 !important;
+		border-radius: 0 !important;
+		background: transparent !important;
+		cursor: pointer !important;
+		justify-content: center !important;
+
+		& > .button-box {
+			border: none !important;
+			margin: 1em !important;
+		}		  
+	}
+
+	&[hasdownloads] {
+		#downloadsHistory {
+			.button-text {
+				justify-content: center !important;
+				flex: 1 !important;
+			}
+		}
+	}
+
+	#downloadsFooterButtons {
+		toolbarseparator {
+			visibility: collapse !important;
+		}
+	}
+
+	&:not([hasdownloads]) {
+		#emptyDownloads {
+			visibility: collapse !important;
+		}
+	}
+}
+
+:root[echelon-style-6][echelon-system-style="win8"],
+:root[echelon-style-6][echelon-system-style="win10"] {
+	#downloadsPanel {
+		&[hasdownloads] {
+			#downloadsFooter {
+				background-color: hsla(210,4%,10%,.04) !important;
+				box-shadow: 0 1px 0 hsla(210,4%,10%,.08) inset !important;
+				transition-duration: 150ms !important;
+				transition-property: background-color !important;
+
+				&:hover {
+					background-color: hsla(210,4%,10%,.05) !important;
+
+					&:active {
+						background-color: hsla(210,4%,10%,.1) !important;
+						box-shadow: 0 2px 0 0 hsla(210,4%,10%,.1) inset !important;
+					}
+				}
+			}
+		}
+
+		#downloadsListBox {
+			richlistitem {
+				&[type="download"] {
+					&[state="1"][exists]:hover {
+						background-color: hsla(210,4%,10%,.08) !important;
+						border-radius: 0 !important;
+						outline: 1px solid hsla(210,4%,10%,.1) !important;
+						outline-offset: -1px !important;
+						color: black !important;
+
+						&:active {
+							background-color: hsla(210,4%,10%,.15) !important;
+							outline: 1px solid hsla(210,4%,10%,.15) !important;
+							box-shadow: 0 1px 0 0 hsla(210,4%,10%,.05) inset !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+:root:not([echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
+    &[echelon-appearance-blue] {
+        #downloadsPanel {
+			&[hasdownloads] {
+				#downloadsFooter {
+					background-color: #f1f5fb !important;
+					box-shadow: 0px 1px 2px rgb(204,214,234) inset !important;
+					border-bottom-left-radius: 3px !important;
+					border-bottom-right-radius: 3px !important;
+				}
+			}
+
+			#downloadsListBox {
+				richlistitem {
+					&[type="download"] {
+						border: 1px solid transparent !important;
+						border-block-end: 1px solid hsl(213,40%,90%) !important;
+
+						&:last-child {
+							border-block-end: 1px solid transparent !important;
+						}
+
+						&[state="1"][exists]:hover {
+							border: 1px solid hsl(213,45%,65%) !important;
+							box-shadow: 0 0 0 1px hsla(0,0%,100%,.5) inset,
+										0 1px 0 hsla(0,0%,100%,.3) inset !important;
+							background-image: linear-gradient(hsl(212,86%,92%), hsl(212,91%,86%)) !important;
+							color: black !important;
+						}
+					}
+				}
+			}
+
+			#downloadsHistory {
+				color: Highlight !important;
+			}
+		}
+    }
+}

@@ -1406,6 +1406,10 @@
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-8/defaultFavicon.png") !important;
 }
 
+#PlacesToolbarDropIndicator {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/places/toolbarDropMarker.png") !important;
+}
+
 :root {
   --appmenu-button-border-color: rgba(83, 42, 6, 0.9) !important;
   --appmenu-button-hover-border-color: rgba(83, 42, 6, 0.9) !important;
@@ -2954,6 +2958,155 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin-bottom: 0 !important;
 }
 
+#downloadsPanel #downloadsPanel-mainView {
+  min-width: 0 !important;
+  padding: 0 !important;
+}
+#downloadsPanel #downloadsListBox {
+  padding: 4px !important;
+}
+#downloadsPanel #downloadsListBox richlistitem[type=download] {
+  min-height: 7em !important;
+  padding: 8px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border-block-start: 1px solid hsla(0, 0%, 100%, 0.3) !important;
+  border-block-end: 1px solid hsla(220, 18%, 51%, 0.25) !important;
+}
+#downloadsPanel #downloadsListBox richlistitem[type=download]:first-child {
+  border-block-start: 1px solid transparent !important;
+}
+#downloadsPanel #downloadsListBox richlistitem[type=download]:last-child {
+  border-block-end: 1px solid transparent !important;
+}
+#downloadsPanel #downloadsListBox richlistitem[type=download][state="1"][exists]:hover {
+  border-radius: 3px !important;
+  border-block-start: 1px solid hsla(0, 0%, 100%, 0.2) !important;
+  border-block-end: 1px solid hsla(0, 0%, 0%, 0.2) !important;
+  background-color: Highlight !important;
+  color: HighlightText !important;
+  cursor: pointer !important;
+}
+#downloadsPanel #downloadsListBox richlistitem[type=download] .downloadMainArea {
+  padding-block: 0 !important;
+  padding-inline-start: 0 !important;
+}
+#downloadsPanel #downloadsListBox richlistitem[type=download] .downloadMainArea .downloadTypeIcon {
+  margin-inline-end: 8px !important;
+}
+#downloadsPanel #downloadsListBox richlistitem[type=download] .downloadMainArea .downloadContainer .downloadTarget {
+  margin-block-end: 6px !important;
+}
+#downloadsPanel #downloadsListBox richlistitem[type=download] .downloadMainArea .downloadContainer description {
+  margin-block: 1px 2px !important;
+  margin-inline: 6px 5px !important;
+  cursor: pointer !important;
+}
+#downloadsPanel #downloadsListBox richlistitem[type=download]:hover .downloadButton .button-icon {
+  background-position-x: -16px !important;
+}
+#downloadsPanel #downloadsListBox richlistitem[type=download]:hover .downloadButton:hover .button-icon {
+  background-position-x: -32px !important;
+}
+#downloadsPanel #downloadsListBox richlistitem[type=download]:hover .downloadButton:active .button-icon {
+  background-position-x: -48px !important;
+}
+#downloadsPanel #downloadsListBox .downloadButton {
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 3px !important;
+  padding: 5px !important;
+  border: none !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+#downloadsPanel #downloadsListBox .downloadButton .button-icon {
+  margin: 0 !important;
+  list-style-image: none !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/downloads/buttons.png") !important;
+}
+#downloadsPanel #downloadsListBox .downloadButton.downloadIconShow .button-icon {
+  background-position-y: -16px !important;
+}
+#downloadsPanel #downloadsListBox .downloadButton.downloadIconRetry .button-icon {
+  background-position-y: -32px !important;
+}
+#downloadsPanel #downloadsHistory {
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  justify-content: center !important;
+}
+#downloadsPanel #downloadsHistory > .button-box {
+  border: none !important;
+  margin: 1em !important;
+}
+#downloadsPanel[hasdownloads] #downloadsHistory .button-text {
+  justify-content: center !important;
+  flex: 1 !important;
+}
+#downloadsPanel #downloadsFooterButtons toolbarseparator {
+  visibility: collapse !important;
+}
+#downloadsPanel:not([hasdownloads]) #emptyDownloads {
+  visibility: collapse !important;
+}
+
+:root[echelon-style-6][echelon-system-style=win8] #downloadsPanel[hasdownloads] #downloadsFooter,
+:root[echelon-style-6][echelon-system-style=win10] #downloadsPanel[hasdownloads] #downloadsFooter {
+  background-color: hsla(210, 4%, 10%, 0.04) !important;
+  box-shadow: 0 1px 0 hsla(210, 4%, 10%, 0.08) inset !important;
+  transition-duration: 150ms !important;
+  transition-property: background-color !important;
+}
+:root[echelon-style-6][echelon-system-style=win8] #downloadsPanel[hasdownloads] #downloadsFooter:hover,
+:root[echelon-style-6][echelon-system-style=win10] #downloadsPanel[hasdownloads] #downloadsFooter:hover {
+  background-color: hsla(210, 4%, 10%, 0.05) !important;
+}
+:root[echelon-style-6][echelon-system-style=win8] #downloadsPanel[hasdownloads] #downloadsFooter:hover:active,
+:root[echelon-style-6][echelon-system-style=win10] #downloadsPanel[hasdownloads] #downloadsFooter:hover:active {
+  background-color: hsla(210, 4%, 10%, 0.1) !important;
+  box-shadow: 0 2px 0 0 hsla(210, 4%, 10%, 0.1) inset !important;
+}
+:root[echelon-style-6][echelon-system-style=win8] #downloadsPanel #downloadsListBox richlistitem[type=download][state="1"][exists]:hover,
+:root[echelon-style-6][echelon-system-style=win10] #downloadsPanel #downloadsListBox richlistitem[type=download][state="1"][exists]:hover {
+  background-color: hsla(210, 4%, 10%, 0.08) !important;
+  border-radius: 0 !important;
+  outline: 1px solid hsla(210, 4%, 10%, 0.1) !important;
+  outline-offset: -1px !important;
+  color: black !important;
+}
+:root[echelon-style-6][echelon-system-style=win8] #downloadsPanel #downloadsListBox richlistitem[type=download][state="1"][exists]:hover:active,
+:root[echelon-style-6][echelon-system-style=win10] #downloadsPanel #downloadsListBox richlistitem[type=download][state="1"][exists]:hover:active {
+  background-color: hsla(210, 4%, 10%, 0.15) !important;
+  outline: 1px solid hsla(210, 4%, 10%, 0.15) !important;
+  box-shadow: 0 1px 0 0 hsla(210, 4%, 10%, 0.05) inset !important;
+}
+
+:root:not([echelon-system-style=winxp], [echelon-style-6][echelon-system-style=win8], [echelon-style-6][echelon-system-style=win10])[echelon-appearance-blue] #downloadsPanel[hasdownloads] #downloadsFooter {
+  background-color: #f1f5fb !important;
+  box-shadow: 0px 1px 2px rgb(204, 214, 234) inset !important;
+  border-bottom-left-radius: 3px !important;
+  border-bottom-right-radius: 3px !important;
+}
+:root:not([echelon-system-style=winxp], [echelon-style-6][echelon-system-style=win8], [echelon-style-6][echelon-system-style=win10])[echelon-appearance-blue] #downloadsPanel #downloadsListBox richlistitem[type=download] {
+  border: 1px solid transparent !important;
+  border-block-end: 1px solid hsl(213, 40%, 90%) !important;
+}
+:root:not([echelon-system-style=winxp], [echelon-style-6][echelon-system-style=win8], [echelon-style-6][echelon-system-style=win10])[echelon-appearance-blue] #downloadsPanel #downloadsListBox richlistitem[type=download]:last-child {
+  border-block-end: 1px solid transparent !important;
+}
+:root:not([echelon-system-style=winxp], [echelon-style-6][echelon-system-style=win8], [echelon-style-6][echelon-system-style=win10])[echelon-appearance-blue] #downloadsPanel #downloadsListBox richlistitem[type=download][state="1"][exists]:hover {
+  border: 1px solid hsl(213, 45%, 65%) !important;
+  box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.5) inset, 0 1px 0 hsla(0, 0%, 100%, 0.3) inset !important;
+  background-image: linear-gradient(hsl(212, 86%, 92%), hsl(212, 91%, 86%)) !important;
+  color: black !important;
+}
+:root:not([echelon-system-style=winxp], [echelon-style-6][echelon-system-style=win8], [echelon-style-6][echelon-system-style=win10])[echelon-appearance-blue] #downloadsPanel #downloadsHistory {
+  color: Highlight !important;
+}
+
 #navigator-toolbox,
 #browser,
 #customization-container,
@@ -3833,6 +3986,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-start.png"), url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-middle.png"), url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-end.png");
 }
 :root[echelon-style-6] #TabsToolbar {
+  background-image: none !important;
   z-index: 2 !important;
   padding: 0 !important;
   background-color: transparent !important;

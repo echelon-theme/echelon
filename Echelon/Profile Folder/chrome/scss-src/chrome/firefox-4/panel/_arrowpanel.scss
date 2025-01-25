@@ -44,6 +44,15 @@
 
     --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-14/panelarrow/panelarrow-vertical.svg");
     --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-14/panelarrow/panelarrow-horizontal.svg");
+
+    &[echelon-appearance-newlogo] {
+        --arrowpanel-border-color: rgba(0,0,0,.3) !important;
+        --arrowpanel-echelon-shadow: 0 0 4px rgba(0,0,0,.3) !important;
+        --arrowpanel-background: linear-gradient(white 1px, rgba(255,255,255,0) 15px), -moz-Dialog !important;
+
+        --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-28/panelarrow/panelarrow-vertical-white.png");
+        --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-28/panelarrow/panelarrow-horizontal-white.png");
+    }
 }
 
 :root[echelon-appearance-blue]:not([echelon-system-style="winxp"]):not([echelon-style-4]) {
