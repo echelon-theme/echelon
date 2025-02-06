@@ -1,7 +1,9 @@
-#navigator-toolbox,
+#navigator-toolbox > toolbar:not(#titlebar, #TabsToolbar),
+#navigator-toolbox > #titlebar > toolbar:not(#TabsToolbar),
+#navigator-toolbox::after,
+#navigator-toolbox > #titlebar > #TabsToolbar > .toolbar-items,
 #browser,
-#customization-container,
-.titlebar-buttonbox-container {
+#customization-container {
     transition-property: margin-left, margin-right !important;
     transition-duration: 150ms !important;
     transition-timing-function: ease-out !important;
@@ -15,14 +17,17 @@
         background-image: url('chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-gridTexture.png'), var(--lwt-header-image) !important;
     }
 
-    #navigator-toolbox,
+    #navigator-toolbox > toolbar:not(#titlebar),
+    #navigator-toolbox > #titlebar > toolbar:not(#TabsToolbar),
+    #navigator-toolbox::after,
+    #navigator-toolbox > #titlebar > #TabsToolbar > .toolbar-items,
     #browser,
     #customization-container {
         margin-inline: 2em !important;
     }
 
-    .titlebar-buttonbox-container {
-        margin-inline-end: -2em !important;
+    #navigator-toolbox {
+        background-color: transparent !important;
     }
 
     #browser,

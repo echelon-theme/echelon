@@ -235,6 +235,9 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
   --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-arrow-left.png") !important;
   --tabbrowser-arrowbox-inline-padding: 15px !important;
 }
+:root[echelon-style-6][echelon-system-style=winxp] {
+  --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-8/tabs/tab-arrow-left-inverted.png") !important;
+}
 
 #TabsToolbar .toolbarbutton-1:not(#tabs-newtab-button),
 #tabbrowser-arrowscrollbox::part(scrollbutton-up),
