@@ -491,7 +491,6 @@
 }
 
 #TabsToolbar {
-  padding-inline: 2px !important;
   z-index: 2 !important;
 }
 :root:not([tabs-on-top=true]) #TabsToolbar {
@@ -669,6 +668,7 @@
 :root:not([echelon-style-6]) #TabsToolbar .toolbar-items {
   margin-top: 0 !important;
   padding-top: 0 !important;
+  padding-inline: 2px !important;
 }
 :root:not([echelon-style-6]):not([tabs-on-top=true], [echelon-appearance-disablechrome=true][disablechrome]) #TabsToolbar .tabbrowser-tab:is([selected], [multiselected]) .tab-background {
   background-image: -moz-linear-gradient(bottom, rgba(25.5, 25.5, 25.5, 0.4) 1px, transparent 1px), -moz-linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5) 50%), -moz-linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
@@ -720,7 +720,7 @@
   background-position-x: -13px !important;
 }
 
-:root:not([echelon-system-style=winxp], [tabsintitlebar=true]) #TabsToolbar {
+:root:not([echelon-system-style=winxp], [tabsintitlebar=true]) #TabsToolbar .toolbar-items {
   padding-inline: 4px !important;
 }
 
@@ -1567,7 +1567,6 @@
 }
 #appmenu-button-container #appmenu-button {
   -moz-user-focus: ignore !important;
-  min-width: 94px !important;
   min-height: 0 !important;
   appearance: none !important;
   background-image: var(--appmenu-button-normal-background) !important;
@@ -3362,7 +3361,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-system-style=winxp]:not([echelon-style-6])[tabs-on-top=true]:not([sizemode=maximized]) #nav-bar {
   border-top: 0 !important;
 }
-:root[echelon-system-style=winxp] :not([echelon-style-6]) .titlebar-buttonbox-container:not(.echelon-custom-buttonbox) {
+:root[echelon-system-style=winxp]:not([echelon-style-6])[tabsintitlebar=true]:not([sizemode=maximized]) #toolbar-menubar .titlebar-buttonbox-container {
   visibility: collapse !important;
 }
 
@@ -3487,12 +3486,12 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-3] #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)[disabled=true] .toolbarbutton-icon {
   opacity: 1 !important;
 }
-:root[echelon-style-3] #TabsToolbar #alltabs-button .toolbarbutton-icon {
+:root[echelon-style-3]:not([echelon-system-style=winxp]) #TabsToolbar #alltabs-button .toolbarbutton-icon {
   background-image: url("chrome://userchrome/content/assets/images/firefox-8/mainwindow-dropdown-arrow-inverted.png") !important;
   list-style-image: none !important;
 }
-:root[echelon-style-3] #TabsToolbar #alltabs-button .toolbarbutton-icon,
-:root[echelon-style-3] #TabsToolbar #alltabs-button .toolbarbutton-badge-stack {
+:root[echelon-style-3]:not([echelon-system-style=winxp]) #TabsToolbar #alltabs-button .toolbarbutton-icon,
+:root[echelon-style-3]:not([echelon-system-style=winxp]) #TabsToolbar #alltabs-button .toolbarbutton-badge-stack {
   width: 13px !important;
   height: 10px !important;
   padding: 0 !important;
@@ -3501,7 +3500,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   box-shadow: none !important;
   background-color: transparent !important;
 }
-:root[echelon-style-3] #TabsToolbar #new-tab-button .toolbarbutton-icon {
+:root[echelon-style-3]:not([echelon-system-style=winxp]) #TabsToolbar #new-tab-button .toolbarbutton-icon {
   background-image: url("chrome://userchrome/content/assets/images/firefox-8/tabs/newtab-inverted.png") !important;
   list-style-image: none !important;
 }

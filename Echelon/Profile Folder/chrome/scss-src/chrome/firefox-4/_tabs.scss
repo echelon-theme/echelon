@@ -22,7 +22,6 @@
 }
 
 #TabsToolbar {
-    padding-inline: 2px !important;
     z-index: 2 !important;
 
     :root:not([tabs-on-top="true"]) & {
@@ -253,6 +252,7 @@
         .toolbar-items {
             margin-top: 0 !important;
             padding-top: 0 !important;
+            padding-inline: 2px !important;
         }
     }
 
@@ -306,7 +306,7 @@
     }
 }
 
-:root:not([echelon-system-style="winxp"], [tabsintitlebar="true"]) #TabsToolbar {
+:root:not([echelon-system-style="winxp"], [tabsintitlebar="true"]) #TabsToolbar .toolbar-items {
     padding-inline: 4px !important;
 }
 

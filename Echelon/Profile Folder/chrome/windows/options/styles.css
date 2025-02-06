@@ -49,10 +49,6 @@
 	background-color: hsl(210, 75%, 92%);
 }
 
-#echelonOptions[echelon-system-style="winxp"] {
-	background-color: #FAFBFD !important;
-}
-
 #echelonOptions[echelon-system-style="win8"][echelon-style-6="true"] {
 	text-shadow: none;
 	background-image: none;

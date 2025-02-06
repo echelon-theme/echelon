@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name			Phroton :: Identity Box
+// @name			Echelon :: Identity Box
 // @description 	Restores the old identity box HTML
 // @author			aubymori
 // @include			main
@@ -139,7 +139,7 @@
 
             if (gIdentityHandler._uriHasHost) {
                 encryptionLabel = strings.GetStringFromName("identity.unencrypted");
-                displayHost = gIdentityHandler.getEffectiveHost();
+                displayHost = gIdentityHandler.getHostForDisplay();
                 mainView.querySelector("#identity-popup-content-host").setAttribute("value", displayHost);
                 mainView.querySelector("#identity-popup-connectedToLabel2").setAttribute("value", strings.GetStringFromName("identity.unverifiedsite2"));
             }

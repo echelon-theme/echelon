@@ -228,7 +228,7 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
 :root {
   --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/tab-arrow-left.png") !important;
 }
-:root[echelon-style-3] {
+:root:not([echelon-system-style=winxp])[echelon-style-3] {
   --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-8/tabs/tab-arrow-left-inverted.png") !important;
 }
 :root[echelon-style-6] {
