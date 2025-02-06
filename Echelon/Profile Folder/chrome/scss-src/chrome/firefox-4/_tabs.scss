@@ -25,6 +25,12 @@
     padding-inline: 2px !important;
     z-index: 2 !important;
 
+    :root:not([tabs-on-top="true"]) & {
+        background-color: var(--toolbar-background-color) !important;
+        background-image: linear-gradient(to top, rgba(10%,10%,10%,.4) 1px, rgba(0,0,0,.05) 1px, transparent 50%) !important;
+        border-bottom: 0 !important;
+    }
+
     .titlebar-spacer { // Hide spacers
         visibility: collapse !important;
     }
@@ -247,6 +253,16 @@
         .toolbar-items {
             margin-top: 0 !important;
             padding-top: 0 !important;
+        }
+    }
+
+    :root:not([echelon-style-6]):not([tabs-on-top="true"], [echelon-appearance-disablechrome="true"][disablechrome]) & {
+        .tabbrowser-tab:is([selected], [multiselected]) {
+            .tab-background {
+                background-image: -moz-linear-gradient(bottom, rgba(10%,10%,10%,.4) 1px, transparent 1px),
+                                  -moz-linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.5) 50%),
+                                  -moz-linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
+            }
         }
     }
 

@@ -130,7 +130,6 @@
                 strings = Services.strings.createBundle("chrome://echelon/locale/properties/urlbar.properties");
             }
 
-            let documentURIHost = null;
             let displayHost = null;
             let iData = null;
             let mainView = document.querySelector("#identity-popup-mainView");
@@ -140,8 +139,7 @@
 
             if (gIdentityHandler._uriHasHost) {
                 encryptionLabel = strings.GetStringFromName("identity.unencrypted");
-                documentURIHost = gBrowser.selectedBrowser.documentURI;
-                displayHost = documentURIHost.host.replace(/^www\./i, "");
+                displayHost = gIdentityHandler.getEffectiveHost();
                 mainView.querySelector("#identity-popup-content-host").setAttribute("value", displayHost);
                 mainView.querySelector("#identity-popup-connectedToLabel2").setAttribute("value", strings.GetStringFromName("identity.unverifiedsite2"));
             }

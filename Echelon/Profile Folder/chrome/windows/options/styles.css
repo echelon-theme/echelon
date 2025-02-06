@@ -49,6 +49,10 @@
 	background-color: hsl(210, 75%, 92%);
 }
 
+#echelonOptions[echelon-system-style="winxp"] {
+	background-color: #FAFBFD !important;
+}
+
 #echelonOptions[echelon-system-style="win8"][echelon-style-6="true"] {
 	text-shadow: none;
 	background-image: none;
@@ -194,6 +198,7 @@ body > hbox {
 	font-size: 18px;
 	padding: 28px 25px;
 	padding-block-end: 0;
+	font-family: 'Segoe UI', sans-serif;
 }
 
 .options-content {
@@ -334,7 +339,7 @@ body > hbox {
 	align-items: center;
 	padding: 4px 12px 5px;
 	height: 20px;
-	background-image: linear-gradient(to bottom, #FFFFFF 0%, #E0EBF6 100%);
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, -moz-Dialog 100%);
 	border: 1px solid;
 	border-block-end-color: rgba(23, 51, 78, 0.20);
 	border-inline-color: rgba(23, 51, 78, 0.17);
@@ -347,6 +352,10 @@ body > hbox {
 	transition-duration: 250ms !important;
 	border-bottom-left-radius: 2px;
 	border-bottom-right-radius: 2px;
+}
+
+:root:not([echelon-system-style="winxp"])[echelon-appearance-blue="true"] .card-wrapper .content {
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #E0EBF6 100%);
 }
 
 :root[echelon-system-style="win8"][echelon-style-6="true"] .content {
@@ -556,7 +565,7 @@ checkbox:hover:active .checkbox-check {
 menulist {
 	height: 20px;
 	padding: 4px 8px 5px 5px;
-	background-image: linear-gradient(to bottom, #f7f7f7 0%, #E0EBF6 100%);
+	background-image: linear-gradient(to bottom, #f7f7f7 0%, -moz-Dialog 100%);
 	background-clip: padding-box;
 	border: 1px solid rgba(23, 51, 78, 0.17);
 	box-shadow: 0 0 2px rgba(30, 121, 182, 0), 0 1px 0 rgba(255, 255, 255, .5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
@@ -570,6 +579,10 @@ menulist {
 
 	transition-property: box-shadow, border-color !important;
 	transition-duration: 150ms !important;
+}
+
+:root:not([echelon-system-style="winxp"])[echelon-appearance-blue] menulist {
+	background-image: linear-gradient(to bottom, #f7f7f7 0%, #E0EBF6 100%);
 }
 
 menulist:hover {

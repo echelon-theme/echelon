@@ -48,12 +48,11 @@ function updateIcon()
 	catch (e) {}
 
 	try {
-		let documentURIHost = gBrowser.selectedBrowser.documentURI;
 		let displayHost = null;
 		let iData = null;
 
 		if (gIdentityHandler._uriHasHost && gIdentityHandler._isSecureConnection) {
-			displayHost = documentURIHost.host.replace(/^www\./i, "");
+			displayHost = gIdentityHandler.getEffectiveHost();
 			gIdentityHandler._identityIconLabel.setAttribute("value", displayHost);
 			gIdentityHandler._identityIconLabel.removeAttribute("collapsed");
 		}
