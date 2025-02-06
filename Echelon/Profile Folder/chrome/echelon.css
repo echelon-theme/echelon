@@ -4307,6 +4307,105 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/privatebrowsing/privatebrowsing-mask-titlebar-XPVista7-tall.png") !important;
   height: 28px !important;
 }
+:root[echelon-style-6][echelon-system-style=winxp] #back-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/back-large.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #back-button:not(.unified-with-urlbar) {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/back.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #forward-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/forward.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #stop-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/stop.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #reload-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/reload.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #home-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/home.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #downloads-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/download.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #downloads-indicator-anchor {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/download.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #history-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/history.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #bookmarks-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/bookmarksMenu.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #bookmarks-menu-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/bookmarksMenu.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/bookmark.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #bookmarks-menu-button .toolbarbutton-menubutton-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/bookmark-hollow.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #print-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/print.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #new-tab-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/new-tab.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #new-window-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/new-window.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #cut-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/edit-cut.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #copy-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/edit-copy.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #paste-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/edit-paste.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #fullscreen-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/fullscreen.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #zoom-out-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/zoom-out.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #zoom-in-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/zoom-in.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #PanelUI-menu-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/menu.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #save-to-pocket-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/pocket.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #save-to-pocket-button[open] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/pocket_active.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #unified-extensions-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/addons.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #fxa-toolbar-menu-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/sync.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #fxa-toolbar-menu-button[status=active] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/syncProgress-toolbar.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #nav-bar-overflow-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/chevron.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #characterencoding-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/characterEncoding.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #history-panelmenu {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/history.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #developer-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/developer.png") !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp] #echelon-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/winxp/echelon.png") !important;
+}
 :root[echelon-style-6][echelon-system-style=winxp] #TabsToolbar {
   color: CaptionText !important;
 }
