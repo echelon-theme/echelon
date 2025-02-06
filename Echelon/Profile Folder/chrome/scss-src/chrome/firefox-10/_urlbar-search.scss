@@ -2,7 +2,7 @@
     pointer-events: none !important;
 }
 
-#urlbar-container.unified-forward-button {
+&:not([chromehidden~="toolbar"], [customizing]) #urlbar-container.unified-forward-button {
     margin-inline-start: 0 !important;
 }
 
@@ -15,19 +15,35 @@
 }
 
 #urlbar {
-    .urlbar-input-container {
-        &::after {
-            @include set-background("firefox-10/urlbar/urlbar-history-dropmarker.png");
+    .urlbar-history-dropmarker {
+        appearance: none !important;
+        padding: 0 1px !important;
+        background-color: transparent !important;
+        border: none !important;
+        width: 11px !important;
+        @include set-background("firefox-10/urlbar/urlbar-history-dropmarker.png");
+        background-repeat: no-repeat !important;
+        background-position-y: center !important;
+        margin-inline-start: 4px !important;
+        margin-inline-end: 2px !important;
 
-            width: 11px !important;
-            height: 14px !important;
-            margin-inline-start: 4px !important;
-            margin-inline-end: 2px !important;
+        &:hover {
+            background-position-x: -11px !important;
+
+            &:active {
+                background-position-x: -22px !important;
+            }
+        }
+    }
+
+    &[suppress-focus-border][breakout-extend] {
+        .urlbar-history-dropmarker {
+            background-position-x: -22px !important;
         }
     }
 }
 
-&:not([chromehidden~="toolbar"]) #forward-button.unified-with-urlbar[disabled] + #urlbar-container #notification-popup-box { 
+&:not([chromehidden~="toolbar"], [customizing]) #forward-button.unified-with-urlbar[disabled] + #urlbar-container #notification-popup-box { 
     padding-inline-start: 5px !important;
     margin-inline-end: -7px !important;
 }
@@ -101,7 +117,7 @@
 
 // unified urlbar behavior
 
-&:not([chromehidden~="toolbar"]) {
+&:not([chromehidden~="toolbar"], [customizing]) {
     #nav-bar {
         #forward-button.unified-with-urlbar:not(:hover)[disabled] {
             opacity: 0 !important;

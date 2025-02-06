@@ -16,7 +16,7 @@
   --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-vertical.svg");
   --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-horizontal.svg");
 }
-:root:not([echelon-style-6]):not([echelon-style-3])[echelon-system-style=winxp] {
+:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style=winxp] {
   --arrowpanel-padding: 16px !important;
   --arrowpanel-background: rgb(250,251,253) !important;
   --arrowpanel-border-radius: 6px !important;
@@ -183,25 +183,25 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
   margin-left: var(--arrowpanel-arrow-position);
 }
 
-:root:not([echelon-style-6]):not([echelon-style-5])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=top]::part(arrow) {
+:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=top]::part(arrow) {
   margin-left: 6px;
   margin-right: 6px;
   margin-bottom: -13px;
   margin-top: -4px;
 }
-:root:not([echelon-style-6]):not([echelon-style-5])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=bottom]::part(arrow) {
+:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=bottom]::part(arrow) {
   margin-left: 6px;
   margin-right: 6px;
   margin-top: -12px;
   margin-bottom: -4px;
 }
-:root:not([echelon-style-6]):not([echelon-style-5])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=left]::part(arrow) {
+:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=left]::part(arrow) {
   margin-top: 6px;
   margin-bottom: 6px;
   margin-right: -12px;
   margin-left: -4px;
 }
-:root:not([echelon-style-6]):not([echelon-style-5])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=right]::part(arrow) {
+:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=right]::part(arrow) {
   margin-top: 6px;
   margin-bottom: 6px;
   margin-left: -12px;

@@ -27,6 +27,23 @@
 		}
 	}
 
+	&[echelon-system-style="winxp"]:not([sizemode="maximized"]) {
+		#titlebar {
+			background-color: -moz-Dialog !important;
+		}
+		
+		&[tabsintitlebar="true"] {
+			#titlebar {
+				appearance: none !important;
+		
+				#titlebar-content {
+					appearance: auto !important;
+					-moz-default-appearance: -moz-window-titlebar !important;
+				}
+			}
+		}
+	}
+
 	// grid area for maximized layout
 	&[sizemode="maximized"] {
 		#titlebar {

@@ -4,12 +4,12 @@
     #urlbar {
         .urlbar-input-container {
             &:not(:hover) {
-                &::after {
+                .urlbar-history-dropmarker {
                     opacity: 0 !important;
                 }
             }
     
-            &::after {
+            .urlbar-history-dropmarker {
                 transition: opacity 0.15s ease !important;
                 @include set-background("firefox-56/urlbar/urlbar-history-dropmarker.png");
             }

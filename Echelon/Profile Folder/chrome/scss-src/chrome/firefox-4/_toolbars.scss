@@ -406,7 +406,7 @@
 
 // Toolbar borders
 :root[sizemode="normal"] {
-    &:not([lwtheme-image]) {
+    &:not([echelon-system-style="winxp"], [lwtheme-image]) {
         #navigator-toolbox::after {
             border-inline: 1px solid var(--toolbar-border-color) !important;
             background-clip: padding-box !important;

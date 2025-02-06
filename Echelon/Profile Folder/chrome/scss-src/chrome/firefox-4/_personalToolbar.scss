@@ -69,6 +69,18 @@
     }
 }
 
+:root[echelon-system-style="winxp"] {
+    .bookmark-item[container] .toolbarbutton-icon,
+    .menu-iconic[container] > .menu-iconic-left > .menu-iconic-icon {
+        background-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/bookmarks/folder-item.png") !important;
+    }
+    
+    .bookmark-item[container][query] .toolbarbutton-icon,
+    .menu-iconic[container][query] > .menu-iconic-left > .menu-iconic-icon {
+        background-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/bookmarks/query.png") !important;
+    }
+}
+
 #PlacesToolbarDropIndicator {
     list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/places/toolbarDropMarker.png") !important;
 }

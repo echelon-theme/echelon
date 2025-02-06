@@ -10,6 +10,21 @@ var { BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_ut
 let strings = Services.strings.createBundle("chrome://echelon/locale/properties/urlbar.properties");
 let lang = Services.locale.requestedLocale;
 
+waitForElement("#urlbar").then(e => {
+	let dropmarker = window.MozXULElement.parseXULToFragment(`
+		<dropmarker anonid="historydropmarker" class="autocomplete-history-dropmarker urlbar-history-dropmarker" enablehistory="true"/>
+	`);
+	e.querySelector(".urlbar-input-container").appendChild(dropmarker);
+
+	e.querySelector(".urlbar-history-dropmarker").addEventListener("mousedown", openURLView);
+	
+	function openURLView() {
+		// Related Firefox code involving opening the URLbar Dropdown seems to use
+		// Private Properties, so this will do for now.
+		gURLBar._inputContainer.click();
+	}
+});
+
 function updateIcon()
 {
 	try

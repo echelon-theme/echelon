@@ -11,3 +11,7 @@
 @import "panelui";
 @import "menupopup";
 @import "customizeUI";
+
+:root[echelon-system-style="winxp"] {
+    @import "tweaks/winxp/style";
+}

@@ -1,0 +1,11 @@
+&:not([echelon-style-6]) {
+    &[tabs-on-top="true"] {
+        #TabsToolbar {
+            background-image: linear-gradient(to top, rgba(10%,10%,10%,.4) 1px, rgba(0,0,0,.05) 1px, transparent 50%) !important;
+        }
+
+        #nav-bar {
+            border-top: 0 !important;
+        }
+    }
+}

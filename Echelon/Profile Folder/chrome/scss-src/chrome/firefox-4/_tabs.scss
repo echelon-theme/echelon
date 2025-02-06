@@ -3,6 +3,9 @@
 :root {
     --tab-max-width: 250px !important;
     --tab-min-height: 28px !important;
+    &[echelon-system-style="winxp"] {
+        --tab-min-height: 26px !important;
+    }
     --tabstrip-min-height: var(--tab-min-height) !important;
     --tab-background: linear-gradient(transparent, hsla(0, 0%, 45%, .1) 1px, hsla(0, 0%, 32%, .2) 80%, hsla(0, 0%, 0%, .2)) !important;
     --tab-background-hover: linear-gradient(hsla(0, 0%, 100%, .3) 1px, hsla(0, 0%, 75%, .2) 80%, hsla(0, 0%, 60%, .2)) !important;
@@ -19,7 +22,7 @@
 }
 
 #TabsToolbar {
-    padding-inline: 4px !important;
+    padding-inline: 2px !important;
     z-index: 2 !important;
 
     .titlebar-spacer { // Hide spacers
@@ -80,6 +83,9 @@
                     opacity: 1 !important;
                     margin-inline-end: var(--tab-icon-end-margin) !important;
                     margin-inline-start: var(--tab-icon-start-margin) !important;
+                    :root[echelon-system-style="winxp"] & {
+                        margin-block-start: 1px !important;
+                    }
                 }
             }
 
@@ -177,6 +183,13 @@
                 background-position-x: -48px !important;
             }
         }
+
+        // hide close button if theres only one tab
+        &:first-of-type:last-of-type {
+            .tab-close-button {
+                visibility: collapse !important;
+            }
+        }
     }
 
     .tab-throbber {
@@ -246,6 +259,10 @@
             @include set-size(16px, 16px);
             margin-top: -1px !important;
             margin-bottom: -1px !important;
+            
+            :root[echelon-system-style="winxp"] & {
+                margin-top: -2px !important;
+            }
         }
 
         :root:not([echelon-style-6]) &:hover:active {
@@ -271,6 +288,10 @@
             }
         }
     }
+}
+
+:root:not([echelon-system-style="winxp"], [tabsintitlebar="true"]) #TabsToolbar {
+    padding-inline: 4px !important;
 }
 
 :root[browser-tabs-tabmanager-enabled="true"] #tabbrowser-tabs:not([overflow], [hashiddentabs]) ~ #alltabs-button {

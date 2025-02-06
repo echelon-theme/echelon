@@ -6,6 +6,10 @@
 @import "appmenu";
 @import "titlebar";
 
+&[echelon-system-style="winxp"] {
+    @import "tweaks/winxp/style";
+}
+
 &[echelon-system-style="win8"],
 &[echelon-system-style="win10"] {
     @import "tweaks/win8/style";

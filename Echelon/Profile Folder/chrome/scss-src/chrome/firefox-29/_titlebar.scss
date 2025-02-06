@@ -3,7 +3,7 @@
         visibility: collapse !important;
     } 
 
-    &[tabsintitlebar][sizemode="normal"] {
+    &:not([echelon-system-style="winxp"])[tabsintitlebar][sizemode="normal"] {
         #titlebar {
             appearance: none !important;
         }
@@ -34,5 +34,12 @@
         height: 32px !important;
         margin-inline-end: 4px !important;
         background: url("chrome://userchrome/content/assets/images/firefox-29/privatebrowsing/privatebrowsing-mask-tabstrip-XPVista7.png") no-repeat center 0;
+    }
+
+    &[echelon-system-style="winxp"] {
+        &[privatebrowsingmode="temporary"][tabsintitlebar] #private-browsing-indicator-titlebar > .private-browsing-indicator {
+            background-image: url("chrome://userchrome/content/assets/images/firefox-29/privatebrowsing/privatebrowsing-mask-titlebar-XPVista7-tall.png") !important;
+            height: 28px !important;
+        }
     }
 }

@@ -84,25 +84,52 @@
 
 }
 
+:root:not([echelon-system-style="winxp"]) {
+    #appmenu-button-container {
+        height: min-content !important;
+        border-inline: 1px solid hsla(0, 0%, 100%, 0.5) !important;
+        border-block-end: 1px solid hsla(0, 0%, 100%, 0.5) !important;
 
+        #appmenu-button {
+            height: calc(var(--buttonbox-height) - 1px) !important;
+            border-bottom-left-radius: 3px !important;
+            border-bottom-right-radius: 3px !important;
+        }
+    }
+
+    &[sizemode="normal"] {
+        #appmenu-button-container {
+            margin-block-start: 1px !important;
+        }
+    }
+
+    &[sizemode="maximized"] {
+        #appmenu-button {
+            height: calc(var(--buttonbox-height) - 8px) !important;
+        }
+    }
+}
+
+:root[echelon-system-style="winxp"] {
+    #appmenu-button-container {
+        height: calc(100% - 6px) !important;
+        
+        #appmenu-button {
+            border-bottom-left-radius: 4px !important;
+            border-bottom-right-radius: 4px !important;
+        }
+    }
+}
 
 #appmenu-button-container {
-    height: min-content !important;
-    border-inline: 1px solid hsla(0, 0%, 100%, 0.5) !important;
-    border-block-end: 1px solid hsla(0, 0%, 100%, 0.5) !important;
     border-bottom-left-radius: 4px !important;
     border-bottom-right-radius: 4px !important;
     margin: 0 0 2px !important;
-
-    :root[sizemode="normal"] & {
-        margin-block-start: 1px !important;
-    }
 
     #appmenu-button {
         -moz-user-focus: ignore !important;
         min-width: 94px !important;
         min-height: 0 !important;
-        height: calc(var(--buttonbox-height) - 1px) !important;
         appearance: none !important;
         background-image: var(--appmenu-button-normal-background) !important;
         padding: 0 1.5em 0.15em !important;
@@ -111,16 +138,10 @@
         border: 1px solid var(--appmenu-button-border-color) !important;
         border-block-start: 0 !important;
         box-shadow: var(--appmenu-button-normal-shadow) !important;
-        border-bottom-left-radius: 3px !important;
-        border-bottom-right-radius: 3px !important;
         color: white !important;
         text-shadow: 0 0 1px rgba(0, 0, 0, 0.7), 0 1px 1.5px rgba(0, 0, 0, 0.5) !important;
         font-weight: bold !important;
         background-clip: padding-box !important;
-
-        :root[sizemode="maximized"] & {
-            height: calc(var(--buttonbox-height) - 8px) !important;
-        }
 
         &:hover {
             background-image: var(--appmenu-button-hover-background) !important;
@@ -214,6 +235,10 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 #echelon-appmenu-button-menu .menu-iconic-left {
 	appearance: auto !important;
 	-moz-default-appearance: menuimage !important;
+
+    :root[echelon-system-style="winxp"] & {
+        width: unset !important;
+    }
 }
 
 #echelon-appmenu-button-menu :is([type="checkbox"], [checked="true"]) .menu-iconic-left {
@@ -229,9 +254,9 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 
     #appmenuPrimaryPane {
         border-inline-end: 1px solid ThreeDShadow;
-      }
+    }
 
-    :root[echelon-appearance-blue] {
+    :root[echelon-appearance-blue]:not([echelon-system-style="winxp"]) {
         #appmenuPrimaryPane {
             background-color: rgba(255, 255, 255, 0.5);
             padding: 2px;
@@ -245,7 +270,6 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
             padding-bottom: 2px;
             border-inline-start: 3px;
             border-inline-end: 2px;
-            font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
         }
         
         #appmenuSecondaryPane:-moz-locale-dir(rtl) {

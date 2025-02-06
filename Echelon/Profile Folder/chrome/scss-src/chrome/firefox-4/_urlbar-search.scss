@@ -19,7 +19,7 @@
     --default-favicon: url("chrome://userchrome/content/assets/images/firefox-4/defaultFavicon.png") !important;
 
     // Make placeholder text on urlbar/search italic on aero style
-    &[echelon-appearance-blue] {
+    &:not([echelon-system-style="winxp"])[echelon-appearance-blue] {
         #urlbar-input::placeholder,
         .searchbar-textbox::placeholder {
             font-style: italic !important;
@@ -63,17 +63,24 @@
 
     .urlbar-input-container {
         padding: var(--urlbar-container-padding) !important;
+        padding-inline-end: 0 !important;
         height: var(--urlbar-min-height) !important;
+    }
 
-        &::after { // lazy hack for dropdown button
-            @include set-background("firefox-4/mainwindow-dropdown-arrow.png");
+    .urlbar-history-dropmarker {
+        appearance: none !important;
+        padding: 0 1px !important;
+        background-color: transparent !important;
+        border: none !important;
+        width: 13px !important;
+        @include set-background("firefox-4/mainwindow-dropdown-arrow.png");
+        background-repeat: no-repeat !important;
+        background-position-y: center !important;
+    }
 
-            content: "";
-            display: inline-block;
-            width: 13px;
-            height: 11px;
-            align-self: center !important;
-            margin-inline-end: -2px !important;
+    &[suppress-focus-border][breakout-extend] {
+        .urlbar-history-dropmarker {
+            background-position-x: -13px !important;
         }
     }
 
@@ -388,6 +395,9 @@
         display: flex !important;
         margin: 1px !important;
         background-image: url("chrome://userchrome/content/assets/images/firefox-4/Search-glass.png") !important;
+        :root[echelon-system-style="winxp"] & {
+            background-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/Search-glass.png") !important;
+        }
         list-style-image: none !important;
 
         @include set-horizontal-states(0, 16px, 32px);
