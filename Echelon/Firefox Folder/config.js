@@ -70,3 +70,6 @@ defaultPref("Echelon.FirefoxButton.CustomName", "");
 defaultPref("Echelon.FirefoxButton.CustomBGColor", "#000000");
 
 defaultPref("Echelon.parameter.isFirstRunFinished", false);
+
+// Disable fancy tab tooltips
+defaultPref("browser.tabs.hoverPreview.enabled", false);
