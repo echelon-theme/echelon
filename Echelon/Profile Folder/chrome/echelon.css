@@ -3518,6 +3518,9 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   transform: none !important;
   pointer-events: all !important;
 }
+#echelon-wizard-container[animate=false] #echelon-wizard-panel:-moz-window-inactive, #echelon-wizard-container[animate=open] #echelon-wizard-panel:-moz-window-inactive {
+  opacity: 0.5 !important;
+}
 #echelon-wizard-container[animate=closing] {
   opacity: 1 !important;
   pointer-events: none !important;

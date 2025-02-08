@@ -91,6 +91,10 @@
 
         #echelon-wizard-panel {
             opacity: 1 !important;
+            &:-moz-window-inactive {
+                opacity: 0.5 !important;
+            }
+            
             transform: none !important;
             pointer-events: all !important;
         }

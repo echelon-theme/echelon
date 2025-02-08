@@ -42,7 +42,7 @@ if (mainPopupSet)
         setTimeout(() => {
             echelonWizardEl.removeAttribute("animating")
             echelonWizardEl.setAttribute("animate", "false")
-        }, 1000);
+        }, 550);
     }
 
     function resetEchelonWizard() {
@@ -54,6 +54,6 @@ if (mainPopupSet)
         setTimeout(() => {
             echelonWizardEl.removeAttribute("animating")
             echelonWizardEl.removeAttribute("animate")
-        }, 1000);
+        }, 550);
     }
 }
