@@ -21,19 +21,51 @@
         let bookmarksMenuButton = MozXULElement.parseXULToFragment(
         `
             <toolbarbutton class="box-inherit toolbarbutton-1 toolbarbutton-menubutton-button" label="Bookmarks" flex="1" allowevents="1" tooltiptext="Bookmark this page"></toolbarbutton>
-            <dropmarker type="menu-button" class="toolbarbutton-1 toolbarbutton-menubutton-dropmarker" anonid="dropmarker" label="Bookmarks">
+            <dropmarker id="bookmarks-menu-button-dropmarker" type="menu-button" class="toolbarbutton-1 toolbarbutton-menubutton-dropmarker" anonid="dropmarker" label="Bookmarks">
                 <image class="dropmarker-icon" />
             </dropmarker>
         `);
         e.append(bookmarksMenuButton);
 
         e.querySelector(".toolbarbutton-menubutton-button").onclick = function(){bookmarkPage();};
-        e.querySelector("dropmarker").onclick = function(){e.openMenu(menupopup)};
+        e.querySelector("dropmarker").onclick = function(){e.openMenu(menupopup);};
+        
+        function dropmarkerAttr() {
+            e.querySelector("dropmarker").removeAttribute("open");
+
+            if (e.open == true) {
+                e.querySelector("dropmarker").setAttribute("open", "true");
+            }
+        }
+
+        let observer = new MutationObserver(dropmarkerAttr);
+        observer.observe(e, { attributes: true, attributeFilter: ["open"] });
 
         function bookmarkPage() {
             PlacesCommandHook.bookmarkPage();
             BookmarkingUI._showBookmarkedNotification();
         }
+
+        waitForElement("#bookmarks-menu-button-dropmarker").then(e => {
+            function menupopupPosition() {
+                // for some reason i cant fix the positioning of the panel, so were doing it the hacky way
+                let button = document.querySelector("#bookmarks-menu-button");
+                menupopup.setAttribute("position", "bottomleft topright");
+                menupopup.style.marginRight = `-${button.clientWidth + 4}px`;
+
+                let arrowbox = menupopup.shadowRoot.querySelector(".panel-arrowbox");
+                arrowbox.setAttribute("pack", "end");
+            }
+
+            const menupopupAttr = {
+                observe: function (subject, topic, data) {
+                    if (topic == "nsPref:changed")
+                        menupopupPosition();
+                },
+            };
+            Services.prefs.addObserver("Echelon.Appearance.Style", menupopupAttr, false);
+            setTimeout(() => menupopupPosition(), 1000); //bum ass hack
+        });
     });
 
     Object.defineProperty(BookmarkingUI, "anchor", {
@@ -43,7 +75,7 @@
             let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
             let action = PageActions.actionForID(PageActions.ACTION_ID_BOOKMARK);
 
-            if (anchor || style == 4) {
+            if (anchor || style == ECHELON_LAYOUT_AUSTRALIS) {
                 anchor = document.querySelector("#nav-bar #bookmarks-menu-button");
             } else {
                 anchor = BrowserPageActions.panelAnchorNodeForAction(action);
@@ -62,7 +94,7 @@
             delete this.button;
             let widgetGroup = CustomizableUI.getWidget(this.BOOKMARK_BUTTON_ID);
 
-            if (star || style == 4) {
+            if (star || style == ECHELON_LAYOUT_AUSTRALIS) {
                 star = (this.button = widgetGroup.forWindow(window).node);
             } else {
                 star = (this.star = document.getElementById(this.STAR_ID));

@@ -3,6 +3,24 @@
         background-color: -moz-Field !important;
         border: 1px solid ThreeDDarkShadow !important;
         margin-inline: 0 !important;
+        position: relative !important;
+        overflow: visible !important;
+
+        &::before {
+            content: "";
+            display: flex;
+            width: calc(100% - 15px);
+            height: calc(100% - 15px);
+            position: absolute;
+            background-color: transparent;
+            z-index: 2 !important;
+            border: 15px solid;
+            border-image: url("chrome://userchrome/content/assets/images/firefox-4/menupopupshadowfake.png");
+            left: -9px;
+            top: -9px;
+            pointer-events: none;
+            border-image-slice: 15;
+        }
 
         .urlbarView-body-inner {
             border: 0 !important;

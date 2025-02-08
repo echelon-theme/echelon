@@ -362,3 +362,43 @@
 		}
     }
 }
+
+// shoutout marble for making me do this bullshit
+#BMB_bookmarksPopup {
+	--arrowpanel-padding: 4px !important;
+	appearance: none !important;
+	border: 0 !important;
+	background-color: transparent !important;
+
+	menuseparator {
+		appearance: none !important;
+		min-height: 0 !important;
+		border-top: 1px solid hsla(210,4%,10%,.15) !important;
+		margin: 6px 0 !important;
+		padding: 0 !important;
+
+		&:last-of-type {
+			appearance: none !important;
+			visibility: hidden !important;
+			min-height: 1px !important;
+			margin: -1px 0 0 !important;
+			border: none !important;
+		}
+	}
+
+	#BMB_bookmarksShowAll {
+		appearance: none !important;
+		margin: 4px -4px -4px !important;
+		background-color: hsla(210,4%,10%,.07) !important;
+		border-top: 1px solid hsla(210,4%,10%,.12) !important;
+		border-radius: 0 !important;
+		color: hsl(0,0%,25%) !important;
+		padding: 12px !important;
+
+		.menu-text {
+			appearance: none !important;
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+	}
+}

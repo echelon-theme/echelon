@@ -33,6 +33,9 @@
     #browser,
     #customization-container {
         margin-block-end: 2em !important;
+        border-inline: 1px solid hsla(209,67%,12%,0.35) !important;
+        border-block-end: 1px solid hsla(209,67%,12%,0.35) !important;
+        background-clip: padding-box !important;
     }
 
     #nav-bar-customization-target,
@@ -44,6 +47,10 @@
 
     #nav-bar-overflow-button {
         visibility: collapse !important;
+    }
+
+    #stop-reload-button.unified {
+        opacity: 0.5 !important;
     }
 }
 

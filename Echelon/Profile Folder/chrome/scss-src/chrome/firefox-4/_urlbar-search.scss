@@ -61,6 +61,13 @@
         inset: unset !important;
     }
 
+    &::after {
+        order: -1 !important;
+        content: '' !important;
+        display: block;
+        background-image: url("chrome://userchrome/content/assets/images/firefox-4/menupopupshadowfake.png");
+    }
+
     .urlbar-input-container {
         padding: var(--urlbar-container-padding) !important;
         padding-inline-end: 0 !important;
