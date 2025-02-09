@@ -205,4 +205,18 @@
             width: calc(100% + 22px) !important;
         }
     }
+
+    &[echelon-system-style="winxp"] {
+        .urlbarView {
+            .urlbarView-body-inner {
+                .urlbarView-results {
+                    .urlbarView-row {
+                        .urlbarView-url {
+                            color:#006600 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

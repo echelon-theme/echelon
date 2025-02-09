@@ -1551,6 +1551,9 @@
 :root:not([echelon-style-7]) .unified-refresh-button .urlbarView {
   width: calc(100% + 22px) !important;
 }
+:root:not([echelon-style-7])[echelon-system-style=winxp] .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-url {
+  color: #006600 !important;
+}
 
 #PersonalToolbar {
   padding-inline: 0 !important;
