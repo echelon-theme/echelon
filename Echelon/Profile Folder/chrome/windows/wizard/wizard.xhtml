@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://global/content/xul.css" type="text/css"?>
+<?xml-stylesheet href="chrome://userchrome/content/windows/wizard/wizard.css" type="text/css"?>
+
+<html xmlns:html="http://www.w3.org/1999/xhtml" 
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+		id="echlonWizard" 
+		title="Echelon Wizard">
+
+	<head>
+		<html:link rel="shortcut icon" href="chrome://userchrome/content/windows/options/images/icon.png"/>
+	</head>
+
+	<html:body flex="1">
+		<hbox flex="1">
+            <vbox id="echelon-wizard-close-container">
+                <hbox class="echelon-wizard-titlebar-buttons-container">
+                    <hbox class="echelon-wizard-titlebar-buttons">
+                        <toolbarbutton class="echelon-wizard-titlebar-close">
+                        </toolbarbutton>
+                    </hbox>
+                </hbox>
+            </vbox>
+            <vbox id="echelon-wizard-header">
+                <image id="echelon-logo" />
+                <vbox class="wizard-progress" align="center">
+                    <html:div class="wizard-progress-text"><html:b>0</html:b>/<html:div>0</html:div></html:div>
+                    <hbox class="wizard-progress-bar-container">
+                        <spacer class="wizard-progress-bar" />
+                        <spacer class="wizard-remaining-bar" />
+                    </hbox>
+                </vbox>
+            </vbox>
+            <vbox id="echelon-wizard-page" flex="1">
+                <vbox id="page1" class="page" flex="1">
+                    <vbox class="page-header">
+                        <h1>make echelon yours</h1>
+                        <html:div class="header-description">Echelon has several styles spanning across multiple versions of Firefox. Choose your preferred appearance.</html:div>
+                    </vbox>
+                    <vbox class="page-content" flex="1">
+                        <radiogroup preference="Echelon.Appearance.Preset" class="card-container" id="preset-container">
+
+                        </radiogroup>
+                    </vbox>
+                </vbox>
+                <vbox id="page2" class="page" flex="1">
+                    <vbox class="page-header">
+                        <h1>choose a system style</h1>
+                        <html:div class="header-description">Firefox had different appearances depending on the operating system. Select a preferred system style.</html:div>
+                    </vbox>
+                    <vbox class="page-content" flex="1">
+                        <radiogroup preference="Echelon.Appearance.systemStyle" type="string" class="card-container" id="system-style-container">
+
+                        </radiogroup>
+                    </vbox>
+                </vbox>
+                <vbox id="page3" class="page finish" flex="1">
+                    <vbox class="page-header">
+                        <h1>thank you for choosing echelon!</h1>
+                        <html:div class="header-description">You can access Echelon Options by clicking the application menu or by right clicking the toolbar. Click the finish button to begin using Echelon.</html:div>
+                    </vbox>
+                    <vbox class="page-content" flex="1">
+
+                    </vbox>
+                </vbox>
+            </vbox>
+		</hbox>
+	</html:body>
+
+	<script src="chrome://userchrome/content/windows/wizard/wizard.js" type="text/javascript"></script>
+
+</html>

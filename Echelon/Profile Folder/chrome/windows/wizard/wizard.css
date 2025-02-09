@@ -1,0 +1,301 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: italic;
+	font-weight: 300 800;
+	src: url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWuU6F.woff2) format('woff2');
+}
+
+body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+#echelon-wizard-close-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.echelon-wizard-titlebar-close {
+    appearance: none !important;
+    width: 20px;
+    height: 20px;
+    background-image: url("chrome://userchrome/content/windows/wizard/assets/close.png") !important;
+}
+
+:root[finished="true"] .echelon-wizard-titlebar-close:not(:hover, :active) {
+	background-position-x: -60px !important;
+}
+
+.echelon-wizard-titlebar-close:hover {
+    background-position-x: -20px !important;
+}
+
+.echelon-wizard-titlebar-close:active {
+    background-position-x: -40px !important;
+}
+
+#echelon-wizard-header {
+    background-image: url("chrome://userchrome/content/windows/wizard/assets/bgnoise.png"), url("chrome://userchrome/content/windows/wizard/assets/bggrid.png"), radial-gradient(9.18% 50% at 100% 50%, rgba(23, 45, 68, 0.5) 0%, rgba(51, 100, 143, 0) 100%), radial-gradient(402% 100% at 50% 0%, #4792C9 0%, #285783 100%);
+    padding: 25px;
+}
+
+#echelon-logo {
+    margin-block-end: 25px;
+    list-style-image: url("chrome://userchrome/content/windows/wizard/assets/header-logo.png");
+}
+
+#echelon-wizard-page {
+    background-color: #EFF6FD;
+    background-image: linear-gradient(180deg, #F4F4F4 0%, rgba(244, 244, 244, 0) 10%), linear-gradient(to bottom, rgba(180, 193, 205, 0), rgba(180, 193, 205, .25));
+}
+
+.card-container {
+	display: grid;
+	max-width: 415px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 202px));
+    gap: 10px;
+}
+
+.card {
+	appearance: none;
+	width: 100%;
+	height: 122px;
+	display: flex;
+	border: 1px solid;
+	border-block-start-color: rgba(23, 51, 78, 0.15);
+	border-block-end-color: rgba(23, 51, 78, 0.20);
+	border-inline-color: rgba(23, 51, 78, 0.17);
+	background-color: #269DEB;
+	background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
+	padding: 0;
+	border-radius: 3px;
+	cursor: pointer;
+	position: relative;
+	box-shadow: inset 0 0 1px 0 rgba(8, 22, 37, 0), inset 0 1px 0 rgba(255, 255, 255, 0.40), inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 4px rgba(8, 22, 37, 0.1), 0 0 10px rgba(8, 22, 37, 0);
+
+	transition-property: background-image, border-color, box-shadow !important;
+  	transition-duration: 250ms !important;
+}
+
+.card:hover {
+	background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.35));
+	border-color: rgba(8, 22, 37, .25) rgba(8, 22, 37, .27) rgba(8, 22, 37, .3);
+	box-shadow: inset 0 0 1px 0 rgba(8, 22, 37, 0), inset 0 1px 0 rgba(255, 255, 255, 0.40), inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 4px rgba(8, 22, 37, 0), 0 0 10px rgba(8, 22, 37, 0.3);
+}
+
+.card:hover .card-wrapper .content {
+	border-color: rgba(8, 22, 37, .25) rgba(8, 22, 37, .27) rgba(8, 22, 37, .3);
+}
+
+.card:hover:active {
+	transition-duration: 0ms;
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	box-shadow: inset 0 0 1px 0 rgba(8, 22, 37, .5), 0 1px 0 white;
+}
+
+.card-wrapper {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: stretch;
+	margin-inline: -1px;
+  	margin-block: -1px;
+	border-radius: 2px;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.card-wrapper .year {
+	top: 6px;
+	right: 8px;
+	position: absolute;
+	padding: 1px 4px 2px;
+	box-sizing: border-box;
+	background-image: linear-gradient(180deg, #6A7580 0%, #4F5760 100%);
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25), 0px 1px 4px rgba(0, 0, 0, 0.5), 0px 0px 2px rgba(0, 0, 0, 0.25);
+	border-radius: 2px;
+	border: 1px solid #E7E7E7;
+	color: #E7E7E7;
+	line-height: 9px;
+	font-weight: bold;
+	font-size: 8pt;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.card-wrapper .content {
+	display: flex;
+	align-items: center;
+	padding: 4px 12px 5px;
+	height: 20px;
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #E0EBF6 100%);
+	border: 1px solid;
+	border-block-end-color: rgba(23, 51, 78, 0.20);
+	border-inline-color: rgba(23, 51, 78, 0.17);
+	border-top: 0;
+	color: #1F364C;
+	font-weight: bold;
+	font-size: 8pt;
+	text-transform: uppercase;
+	transition-property: border-color !important;
+	transition-duration: 250ms !important;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+
+.card-wrapper .content label {
+	margin: 0;
+	cursor: inherit;
+}
+
+.card .radio-container {
+	position: absolute;
+	inset: 0;
+}
+
+.card .radio-container radio {
+	margin: 0;
+	padding: 0;
+}
+
+#preset-container image {
+	background-position: 10px 0;
+	background-repeat: no-repeat;
+}
+
+.page-content {
+    padding-inline: 20px;
+    padding-block-end: 30px;
+}
+
+.page-header {
+    padding: 20px;
+    padding-block-start: 25px;
+}
+
+.page-header h1 {
+    font-family: 'Open Sans';
+    font-weight: lighter;
+    font-size: 30px;
+    text-shadow: 0 2px 0 white;
+    letter-spacing: -0.02em;
+    color: #5B758B;
+}
+
+.page-header .header-description {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12.5px;
+    font-weight: 400;
+    text-shadow: 0px 1px 0px #FFF;
+	line-height: 1.5;
+    margin-block-start: 6px;
+    color: #404041;
+}
+
+.wizard-progress-text {
+    display: flex;
+}
+
+.wizard-progress-bar-container {
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    margin-block-start: 5px;
+}
+
+.wizard-progress-bar {
+    background-clip: padding-box, border-box !important;
+    background-color: rgb(90, 201, 66) !important;
+    background-image: linear-gradient(transparent 1px, rgba(255, 255, 255, 0.4) 1px, rgba(255, 255, 255, 0.4) 2px, transparent 2px), none !important;
+    border: 1px solid !important;
+    border-color: rgba(0,43,86,.6) rgba(0,43,86,.4) rgba(0,43,86,.4) !important;
+    border-radius: 2px 0 0 2px !important;
+	transition-property: width !important;
+	transition-duration: 250ms !important;
+}
+
+.wizard-remaining-bar {
+    flex: 1;
+    background-color: #515151;
+    background-image: linear-gradient(transparent 1px, rgba(255, 255, 255, 0.25) 1px, rgba(255, 255, 255, 0.25) 2px, transparent 2px), none;
+    border: 1px solid;
+    border-color: hsla(0,0%,0%,.6) hsla(0,0%,0%,.4) hsla(0,0%,0%,.4);
+    border-inline-start: none;
+    border-radius: 0 2px 2px 0;
+	transition-property: width !important;
+	transition-duration: 250ms !important;
+}
+
+.wizard-progress-bar[style="width: 100%;"] + .wizard-remaining-bar {
+    border: none;
+}
+
+.wizard-progress {
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 1px 0 rgba(8, 22, 37, .25);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+}
+
+.wizard-progress-text b {
+    color: white;
+}
+
+:root:not([echelon-style-6]) .card[australisonly="true"] {
+	display: none;
+}
+
+/* preload hack */
+
+#echelon-wizard-page::before {
+    order: -1 !important;
+    content: '' !important;
+    display: block;
+    background-image: url("chrome://userchrome/content/windows/wizard/assets/finishbg.png");
+}
+
+.page.finish {
+	color: white;
+    background-image: url("chrome://userchrome/content/windows/wizard/assets/finishbg.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+}
+
+.page.finish .page-header .header-description {
+	color: inherit;
+	text-shadow: 0 1px 0 black;
+}
+
+.page.finish .page-header h1 {
+	color: #A2E2FF;
+	text-shadow: 0px -1px 17px #1384C4, 0px -1px 3.8px #1384C4;
+}

@@ -15,19 +15,7 @@ if (mainPopupSet)
             <hbox id="echelon-wizard-arrowcontent" hidden="true">
                 <image id="echelon-wizard-arrow" />
             </hbox>
-            <hbox id="echelon-wizard-content">
-                <vbox id="echelon-wizard-close-container">
-                    <hbox class="echelon-wizard-titlebar-buttons-container">
-                        <hbox class="echelon-wizard-titlebar-buttons">
-                            <toolbarbutton class="echelon-wizard-titlebar-close" oncommand="window.resetEchelonWizard();">
-                            </toolbarbutton>
-                        </hbox>
-                    </hbox>
-                </vbox>
-                <vbox id="echelon-wizard-header">
-                    <image id="echelon-logo" />
-                </vbox>
-            </hbox>
+            <browser id="echelon-wizard-content" autoscroll="false" disablehistory="true" disablefullscreen="true" src="about:wizard"/>
         </vbox>
     </hbox>
     `);
