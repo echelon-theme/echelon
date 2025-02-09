@@ -38,6 +38,7 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
+	z-index: 100;
 }
 
 .echelon-wizard-titlebar-close {
@@ -62,6 +63,8 @@ body {
 #echelon-wizard-header {
     background-image: url("chrome://userchrome/content/windows/wizard/assets/bgnoise.png"), url("chrome://userchrome/content/windows/wizard/assets/bggrid.png"), radial-gradient(9.18% 50% at 100% 50%, rgba(23, 45, 68, 0.5) 0%, rgba(51, 100, 143, 0) 100%), radial-gradient(402% 100% at 50% 0%, #4792C9 0%, #285783 100%);
     padding: 25px;
+	z-index: 1;
+	box-shadow: inset -1px 0 rgba(0, 0, 0, 0.25);
 }
 
 #echelon-logo {
@@ -70,8 +73,70 @@ body {
 }
 
 #echelon-wizard-page {
-    background-color: #EFF6FD;
+	width: 100%;
+	position: relative;
+	background-color: #EFF6FD;
     background-image: linear-gradient(180deg, #F4F4F4 0%, rgba(244, 244, 244, 0) 10%), linear-gradient(to bottom, rgba(180, 193, 205, 0), rgba(180, 193, 205, .25));
+}
+
+.page {
+	height: 100%;
+	transform: none;
+}
+
+.page-container {
+	background-color: #EFF6FD;
+    background-image: linear-gradient(180deg, #F4F4F4 0%, rgba(244, 244, 244, 0) 10%), linear-gradient(to bottom, rgba(180, 193, 205, 0), rgba(180, 193, 205, .25));
+}
+
+.page[animating],
+.page[animating] > .page-container {
+	pointer-events: none;
+	transition-property: opacity, transform;
+	transition-duration: 250ms;
+}
+
+.page[animating]::before {
+	content: '';
+	display: flex;
+	width: 12px;
+	height: 100%;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+	border-right: 1px solid rgba(0, 0, 0, 0.25);
+	box-sizing: border-box;
+	position: absolute;
+	left: -12px;
+	pointer-events: none;
+}
+
+.page::after {
+	content: '';
+	display: flex;
+	width: 7px;
+	height: 13px;
+	background-image: url("chrome://userchrome/content/windows/wizard/assets/page-arrow.svg");
+	-moz-context-properties: fill, stroke;
+	fill: #EEF4FB;
+	stroke: rgba(0, 0, 0, 0.25);
+	z-index: 2;
+	position: absolute;
+	left: -7px;
+	top: 40px;
+	pointer-events: none;
+}
+
+.page.hidden {
+	position: absolute;
+	width: 100%;
+	transform: translateX(calc(100% + 7px));
+}
+
+.page.last-page {
+	transform: none;
+}
+
+.page.last-page .page-container {
+	opacity: 0;
 }
 
 .card-container {
@@ -282,12 +347,16 @@ body {
     background-image: url("chrome://userchrome/content/windows/wizard/assets/finishbg.png");
 }
 
-.page.finish {
+.page.finish > .page-container {
 	color: white;
     background-image: url("chrome://userchrome/content/windows/wizard/assets/finishbg.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: top center;
+}
+
+.page.finish::after {
+	fill: #1C173F;
 }
 
 .page.finish .page-header .header-description {

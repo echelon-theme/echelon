@@ -144,11 +144,23 @@ function showPage(pageNumber, pushToStack = true) {
         // Hide all pages
         var pages = document.querySelectorAll('.page');
         for (var i = 0; i < pages.length; i++) {
-            pages[i].style.display = 'none';
+            pages[i].classList.add("hidden");
         }
 
         // Show the selected page
-        selectedPage.style.display = 'flex';
+        if (pageNumber >= "2") {
+            selectedPage.previousElementSibling.classList.add("last-page");
+            selectedPage.setAttribute("animating", "true");
+            selectedPage.previousElementSibling.setAttribute("animating", "true");
+        }
+        selectedPage.classList.remove("hidden");
+        
+        setTimeout(() => {
+            selectedPage.removeAttribute("animating");
+            selectedPage.previousElementSibling.removeAttribute("animating");
+            selectedPage.previousElementSibling.classList.remove("last-page");
+        }, 250);
+
         currentPage = pageNumber; // Update the currentPage variable
 
         document.querySelector(".wizard-progress-text b").textContent = currentPage;

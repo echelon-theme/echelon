@@ -33,39 +33,45 @@
                     </hbox>
                 </vbox>
             </vbox>
-            <vbox id="echelon-wizard-page" flex="1">
+            <hbox id="echelon-wizard-page" flex="1">
                 <vbox id="page1" class="page" flex="1">
-                    <vbox class="page-header">
-                        <h1>make echelon yours</h1>
-                        <html:div class="header-description">Echelon has several styles spanning across multiple versions of Firefox. Choose your preferred appearance.</html:div>
-                    </vbox>
-                    <vbox class="page-content" flex="1">
-                        <radiogroup preference="Echelon.Appearance.Preset" class="card-container" id="preset-container">
+                    <vbox class="page-container" flex="1">
+                        <vbox class="page-header">
+                            <h1>make echelon yours</h1>
+                            <html:div class="header-description">Echelon has several styles spanning across multiple versions of Firefox. Choose your preferred appearance.</html:div>
+                        </vbox>
+                        <vbox class="page-content" flex="1">
+                            <radiogroup preference="Echelon.Appearance.Preset" class="card-container" id="preset-container">
 
-                        </radiogroup>
+                            </radiogroup>
+                        </vbox>
                     </vbox>
                 </vbox>
                 <vbox id="page2" class="page" flex="1">
-                    <vbox class="page-header">
-                        <h1>choose a system style</h1>
-                        <html:div class="header-description">Firefox had different appearances depending on the operating system. Select a preferred system style.</html:div>
-                    </vbox>
-                    <vbox class="page-content" flex="1">
-                        <radiogroup preference="Echelon.Appearance.systemStyle" type="string" class="card-container" id="system-style-container">
+                    <vbox class="page-container" flex="1">
+                        <vbox class="page-header">
+                            <h1>choose a system style</h1>
+                            <html:div class="header-description">Firefox had different appearances depending on the operating system. Select a preferred system style.</html:div>
+                        </vbox>
+                        <vbox class="page-content" flex="1">
+                            <radiogroup preference="Echelon.Appearance.systemStyle" type="string" class="card-container" id="system-style-container">
 
-                        </radiogroup>
+                            </radiogroup>
+                        </vbox>
                     </vbox>
                 </vbox>
                 <vbox id="page3" class="page finish" flex="1">
-                    <vbox class="page-header">
-                        <h1>thank you for choosing echelon!</h1>
-                        <html:div class="header-description">You can access Echelon Options by clicking the application menu or by right clicking the toolbar. Click the finish button to begin using Echelon.</html:div>
-                    </vbox>
-                    <vbox class="page-content" flex="1">
+                    <vbox class="page-container" flex="1">
+                        <vbox class="page-header">
+                            <h1>thank you for choosing echelon!</h1>
+                            <html:div class="header-description">You can access Echelon Options by clicking the application menu or by right clicking the toolbar. Click the finish button to begin using Echelon.</html:div>
+                        </vbox>
+                        <vbox class="page-content" flex="1">
 
+                        </vbox>
                     </vbox>
                 </vbox>
-            </vbox>
+            </hbox>
 		</hbox>
 	</html:body>
 
