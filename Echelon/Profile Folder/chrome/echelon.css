@@ -522,8 +522,10 @@
   z-index: 0 !important;
 }
 #TabsToolbar .tabbrowser-tab:not([pinned]) {
+  min-width: 100px !important;
   max-width: var(--tab-max-width) !important;
   margin-inline: 0 !important;
+  transition: min-width 200ms ease-out, max-width 250ms ease-out, opacity 50ms ease-out 20ms !important;
 }
 #TabsToolbar .tabbrowser-tab:not([pinned])[visuallyselected] {
   position: relative !important;
@@ -531,7 +533,9 @@
 #TabsToolbar .tabbrowser-tab:not([pinned], [fadein]) {
   max-width: 0.1px !important;
   min-width: 0.1px !important;
-  visibility: hidden !important;
+  opacity: 0 !important;
+  visibility: visible;
+  transition: min-width 200ms ease-out, max-width 250ms ease-out, opacity 50ms ease-out 100ms !important;
 }
 #TabsToolbar .tabbrowser-tab[visuallyselected] {
   z-index: 2 !important;

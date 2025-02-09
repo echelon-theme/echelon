@@ -47,8 +47,12 @@
         z-index: 0 !important;
         
         &:not([pinned]) {
+            min-width: 100px !important;
             max-width: var(--tab-max-width) !important;
             margin-inline: 0 !important; // remove fucking pinned tab margin
+            transition: min-width 200ms ease-out,
+                        max-width 250ms ease-out,
+                        opacity 50ms ease-out 20ms !important;
 
             &[visuallyselected] {
                 position: relative !important;
@@ -58,7 +62,11 @@
         &:not([pinned], [fadein]) {
             max-width: 0.1px !important;
             min-width: 0.1px !important;
-            visibility: hidden !important;
+            opacity: 0 !important;
+            visibility: visible !important;
+            transition: min-width 200ms ease-out,
+                        max-width 250ms ease-out,
+                        opacity 50ms ease-out 100ms !important;
         }
 
         &[visuallyselected] { // make tab above outer border from navbar
