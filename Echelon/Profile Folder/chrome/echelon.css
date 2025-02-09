@@ -248,6 +248,10 @@
   border-left: 0 !important;
 }
 
+#navigator-toolbox > toolbar {
+  -moz-window-dragging: no-drag !important;
+}
+
 #downloads-indicator-anchor-echelon {
   min-width: var(--toolbarbutton-icon-width) !important;
   min-height: var(--toolbarbutton-icon-height) !important;
@@ -1405,20 +1409,18 @@
   position: relative !important;
   overflow: visible !important;
 }
-:root:not([echelon-style-7]) .urlbarView::before {
-  content: "";
-  display: flex;
-  width: calc(100% - 15px);
-  height: calc(100% - 15px);
-  position: absolute;
-  background-color: transparent;
-  z-index: 2 !important;
-  border: 15px solid;
-  border-image: url("chrome://userchrome/content/assets/images/firefox-4/menupopupshadowfake.png");
-  left: -9px;
-  top: -9px;
-  pointer-events: none;
-  border-image-slice: 15;
+:root:not([echelon-style-7]) .urlbarView::after {
+  content: "" !important;
+  display: inline-block !important;
+  width: calc(100% - 6px) !important;
+  height: calc(100% - 5px) !important;
+  position: absolute !important;
+  left: 8px !important;
+  top: 7px !important;
+  z-index: -1 !important;
+  background: rgba(0, 0, 0, 0.502) !important;
+  filter: blur(1.5px) !important;
+  pointer-events: none !important;
 }
 :root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner {
   border: 0 !important;

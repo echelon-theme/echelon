@@ -223,6 +223,10 @@
     }
 }
 
+#navigator-toolbox > toolbar {
+    -moz-window-dragging: no-drag !important;
+}
+
 #downloads-indicator-anchor-echelon {
     min-width: var(--toolbarbutton-icon-width) !important;
     min-height: var(--toolbarbutton-icon-height) !important;

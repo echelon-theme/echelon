@@ -2,7 +2,6 @@
 // @name			Echelon :: Wizard
 // @description 	Opens the Echelon Wizard on first-time installs
 // @author			Travis
-// @loadOrder       10
 // ==/UserScript==
 
 let mainPopupSet = document.getElementById("mainPopupSet");

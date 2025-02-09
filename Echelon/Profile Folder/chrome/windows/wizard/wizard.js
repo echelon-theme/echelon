@@ -157,8 +157,10 @@ function showPage(pageNumber, pushToStack = true) {
         
         setTimeout(() => {
             selectedPage.removeAttribute("animating");
-            selectedPage.previousElementSibling.removeAttribute("animating");
-            selectedPage.previousElementSibling.classList.remove("last-page");
+            if (pageNumber >= "2") {
+                selectedPage.previousElementSibling.removeAttribute("animating");
+                selectedPage.previousElementSibling.classList.remove("last-page");
+            }
         }, 250);
 
         currentPage = pageNumber; // Update the currentPage variable
@@ -272,9 +274,9 @@ let homepageContainer = document.getElementById("system-style-container");
 
 for (const i of Object.keys(ThemeUtils.sysStylePreset)) {
     presetCard = `
-        <vbox class="card">
+        <vbox class="card ${ThemeUtils.sysStylePreset[i].value}">
             <radio value="${ThemeUtils.sysStylePreset[i].value}" class="card-wrapper">
-                <div class="checked" />
+                <image flex="1" />
                 <div class="content">
                     <label value="${ThemeUtils.sysStylePreset[i].name}" flex="1" />
                 </div>
