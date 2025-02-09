@@ -3,7 +3,7 @@
     --urlbar-border-color-hover: ThreeDShadow !important;
     --urlbar-border-color-focused: ThreeDShadow !important;
 
-    &:not([echelon-appearance-xp], [echelon-system-style="win10"]) {
+    &:not([echelon-appearance-xp], [echelon-style-7][echelon-system-style="win10"]) {
         &[echelon-appearance-blue],
         &[echelon-system-style="win8"] {
             --urlbar-border-color: hsla(210,54%,20%,.25) hsla(210,54%,20%,.27) hsla(210,54%,20%,.3) !important;
