@@ -1387,7 +1387,18 @@
   background-position-x: -32px !important;
 }
 
+:root:not([echelon-style-7]) {
+  --urlbarView-highlight-color: HighlightText !important;
+  --urlbarView-highlight-background: Highlight !important;
+  --urlbarView-hover-background: var(--urlbarView-highlight-background) !important;
+  --history-icon: url("chrome://userchrome/content/assets/images/firefox-4/places/history.png") !important;
+}
+:root:not([echelon-style-7]) #urlbar:not([open]) > .urlbarView, :root:not([echelon-style-7]) #urlbar:not([breakout]) > .urlbarView {
+  display: none !important;
+}
 :root:not([echelon-style-7]) .urlbarView {
+  width: 100% !important;
+  display: flex !important;
   background-color: -moz-Field !important;
   border: 1px solid ThreeDDarkShadow !important;
   margin-inline: 0 !important;
@@ -1411,12 +1422,132 @@
 }
 :root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner {
   border: 0 !important;
+  width: 100% !important;
+  margin-inline: 0 !important;
 }
 :root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results {
   padding: 0 !important;
 }
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row {
+  display: flex !important;
+  align-items: flex-start !important;
+  min-height: 35px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row[rich-suggestion] .urlbarView-row-inner {
+  flex-direction: row !important;
+  align-items: flex-start !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row[rich-suggestion] .urlbarView-url {
+  visibility: collapse !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row:not(:first-of-type) {
+  border-top: 1px solid ThreeDLightShadow !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row[row-selectable]:not([selected]):hover, :root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row[selected] {
+  background-color: var(--urlbarView-hover-background) !important;
+  color: var(--urlbarView-highlight-color) !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row[row-selectable]:not([selected]):hover .urlbarView-url, :root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row[selected] .urlbarView-url {
+  color: inherit !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row[type=bookmark] .urlbarView-type-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-4/editBookmark.png") !important;
+  list-style-image: none !important;
+  background-size: unset !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row[label] {
+  margin-block-start: 0 !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row[label]::before {
+  display: none !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-row-inner {
+  flex-wrap: wrap !important;
+  height: 100% !important;
+  padding: 1px 2px !important;
+  position: relative !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-favicon {
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0 5px -3px 3px !important;
+  flex-basis: 0 !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-favicon[src="chrome://global/skin/icons/search-glass.svg"], :root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-favicon.default-favicon {
+  content: var(--default-favicon) !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-favicon[src="chrome://browser/skin/history.svg"] {
+  content: var(--history-icon) !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-no-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  position: relative !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-title {
+  padding: 0 !important;
+  margin-block-start: 2px !important;
+  font-size: 1.15em !important;
+  line-height: unset !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-url {
+  color: LinkText !important;
+  font-size: unset !important;
+  margin: 2px 0 1px 24px !important;
+  line-height: unset !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-overflowable[overflow],
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-url[overflow] {
+  mask-image: none !important;
+  text-overflow: ellipsis !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row strong {
+  text-decoration: underline !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-type-icon {
+  position: relative !important;
+  margin: 0 !important;
+  min-width: 16px !important;
+  height: 16px !important;
+  object-fit: cover !important;
+  order: 1 !important;
+  margin-left: auto !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-row-body-description {
+  font-size: unset !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-action {
+  color: inherit !important;
+  font-size: unset !important;
+  margin: 0 !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row[has-url] .urlbarView-url {
+  visibility: visible !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row[has-action]:is([type=switchtab], [type=remotetab], [type=clipboard]) .urlbarView-action {
+  margin-inline-start: 8px !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row[has-action]:is([type=switchtab], [type=remotetab], [type=clipboard]) .urlbarView-title-separator {
+  visibility: collapse !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-button {
+  visibility: collapse !important;
+}
+:root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row:not([has-action])[has-url] .urlbarView-title-separator {
+  visibility: collapse !important;
+}
 :root:not([echelon-style-7]) .urlbarView .search-one-offs {
   visibility: collapse !important;
+}
+:root:not([echelon-style-7]) .unified-refresh-button .urlbarView {
+  width: calc(100% + 22px) !important;
 }
 
 #PersonalToolbar {
