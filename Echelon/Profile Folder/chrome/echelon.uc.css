@@ -120,11 +120,11 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
 }
 
 /* even more weird positioning shit */
-:is(panel),
+:is(panel):not([type=autocomplete-richlistbox]),
 :is([echelon-style-6]) :is(menupopup[placespopup]) {
   --panel-shadow: var(--arrowpanel-echelon-shadow) !important;
 }
-:is(panel)::part(arrowcontent),
+:is(panel):not([type=autocomplete-richlistbox])::part(arrowcontent),
 :is([echelon-style-6]) :is(menupopup[placespopup])::part(arrowcontent) {
   padding: var(--arrowpanel-padding);
   color: var(--arrowpanel-color);
@@ -135,12 +135,12 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
   box-shadow: var(--arrowpanel-echelon-shadow);
   margin: var(--arrowpanel-margin);
 }
-:is(panel)::part(arrowcontent) > slot,
+:is(panel):not([type=autocomplete-richlistbox])::part(arrowcontent) > slot,
 :is([echelon-style-6]) :is(menupopup[placespopup])::part(arrowcontent) > slot {
   /* propagate border-radius from arrowcontent to slotted children */
   border-radius: inherit;
 }
-:is(panel)::part(innerarrowcontent),
+:is(panel):not([type=autocomplete-richlistbox])::part(innerarrowcontent),
 :is([echelon-style-6]) :is(menupopup[placespopup])::part(innerarrowcontent) {
   background: var(--arrowpanel-inner-background);
   margin: var(--arrowpanel-inner-margin);
@@ -150,74 +150,74 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
   box-shadow: var(--arrowpanel-inner-shadow);
   background-clip: padding-box;
 }
-:is(panel)[orient=vertical]::part(arrowcontent),
+:is(panel):not([type=autocomplete-richlistbox])[orient=vertical]::part(arrowcontent),
 :is([echelon-style-6]) :is(menupopup[placespopup])[orient=vertical]::part(arrowcontent) {
   flex-direction: column;
 }
-:is(panel).panel-no-padding::part(arrowcontent), :is(panel).panel-no-padding::part(innerarrowcontent),
+:is(panel):not([type=autocomplete-richlistbox]).panel-no-padding::part(arrowcontent), :is(panel):not([type=autocomplete-richlistbox]).panel-no-padding::part(innerarrowcontent),
 :is([echelon-style-6]) :is(menupopup[placespopup]).panel-no-padding::part(arrowcontent),
 :is([echelon-style-6]) :is(menupopup[placespopup]).panel-no-padding::part(innerarrowcontent) {
   padding: 0;
   overflow: hidden; /* Don't let panel content overflow the border-radius */
 }
-:is(panel)::part(arrow),
+:is(panel):not([type=autocomplete-richlistbox])::part(arrow),
 :is([echelon-style-6]) :is(menupopup[placespopup])::part(arrow) {
   -moz-context-properties: fill, stroke;
   fill: var(--arrowpanel-background);
   stroke: var(--arrowpanel-border-color);
 }
-:is(panel)[side=top]::part(arrow), :is(panel)[side=bottom]::part(arrow),
+:is(panel):not([type=autocomplete-richlistbox])[side=top]::part(arrow), :is(panel):not([type=autocomplete-richlistbox])[side=bottom]::part(arrow),
 :is([echelon-style-6]) :is(menupopup[placespopup])[side=top]::part(arrow),
 :is([echelon-style-6]) :is(menupopup[placespopup])[side=bottom]::part(arrow) {
   list-style-image: var(--arrowpanel-vertical);
   position: relative;
   margin-inline: var(--arrowpanel-arrow-offset);
 }
-:is(panel)[side=top]::part(arrow),
+:is(panel):not([type=autocomplete-richlistbox])[side=top]::part(arrow),
 :is([echelon-style-6]) :is(menupopup[placespopup])[side=top]::part(arrow) {
   margin-bottom: var(--arrowpanel-arrow-position);
 }
-:is(panel)[side=bottom]::part(arrow),
+:is(panel):not([type=autocomplete-richlistbox])[side=bottom]::part(arrow),
 :is([echelon-style-6]) :is(menupopup[placespopup])[side=bottom]::part(arrow) {
   transform: scaleY(-1);
   margin-top: var(--arrowpanel-arrow-position);
 }
-:is(panel)[side=left]::part(arrow), :is(panel)[side=right]::part(arrow),
+:is(panel):not([type=autocomplete-richlistbox])[side=left]::part(arrow), :is(panel):not([type=autocomplete-richlistbox])[side=right]::part(arrow),
 :is([echelon-style-6]) :is(menupopup[placespopup])[side=left]::part(arrow),
 :is([echelon-style-6]) :is(menupopup[placespopup])[side=right]::part(arrow) {
   list-style-image: var(--arrowpanel-hortizontal);
   position: relative;
   margin-block: var(--arrowpanel-arrow-offset);
 }
-:is(panel)[side=left]::part(arrow),
+:is(panel):not([type=autocomplete-richlistbox])[side=left]::part(arrow),
 :is([echelon-style-6]) :is(menupopup[placespopup])[side=left]::part(arrow) {
   margin-right: var(--arrowpanel-arrow-position);
 }
-:is(panel)[side=right]::part(arrow),
+:is(panel):not([type=autocomplete-richlistbox])[side=right]::part(arrow),
 :is([echelon-style-6]) :is(menupopup[placespopup])[side=right]::part(arrow) {
   transform: scaleX(-1);
   margin-left: var(--arrowpanel-arrow-position);
 }
 
-:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=top]::part(arrow) {
+:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style=winxp] :is(panel, menupopup[placespopup]):not([type=autocomplete-richlistbox])[side=top]::part(arrow) {
   margin-left: 6px;
   margin-right: 6px;
   margin-bottom: -13px;
   margin-top: -4px;
 }
-:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=bottom]::part(arrow) {
+:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style=winxp] :is(panel, menupopup[placespopup]):not([type=autocomplete-richlistbox])[side=bottom]::part(arrow) {
   margin-left: 6px;
   margin-right: 6px;
   margin-top: -12px;
   margin-bottom: -4px;
 }
-:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=left]::part(arrow) {
+:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style=winxp] :is(panel, menupopup[placespopup]):not([type=autocomplete-richlistbox])[side=left]::part(arrow) {
   margin-top: 6px;
   margin-bottom: 6px;
   margin-right: -12px;
   margin-left: -4px;
 }
-:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style=winxp] :is(panel, menupopup[placespopup])[side=right]::part(arrow) {
+:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style=winxp] :is(panel, menupopup[placespopup]):not([type=autocomplete-richlistbox])[side=right]::part(arrow) {
   margin-top: 6px;
   margin-bottom: 6px;
   margin-left: -12px;
@@ -241,10 +241,10 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
   list-style-image: url("chrome://userchrome/content/assets/images/arrow-dropdown-16") !important;
 }
 
-:not([echelon-style-6]) :is(menupopup[placespopup])::part(arrow) {
+:root:not([echelon-style-6]) :is(menupopup[placespopup])::part(arrow) {
   display: none !important;
 }
-:not([echelon-style-6]) #BMB_bookmarksPopup {
+:root:not([echelon-style-6]) #BMB_bookmarksPopup {
   transition: none !important;
 }
 

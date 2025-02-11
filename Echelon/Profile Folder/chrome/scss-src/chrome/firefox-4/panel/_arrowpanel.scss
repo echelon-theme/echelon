@@ -149,7 +149,7 @@ menupopup[type="arrow"] {
 
 /* even more weird positioning shit */
 
-:is(panel),
+:is(panel):not([type="autocomplete-richlistbox"]),
 :is([echelon-style-6]) :is(menupopup[placespopup]) {
     --panel-shadow: var(--arrowpanel-echelon-shadow) !important;
 
@@ -232,7 +232,7 @@ menupopup[type="arrow"] {
     }
 }
 
-:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style="winxp"] :is(panel, menupopup[placespopup]) {
+:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style="winxp"] :is(panel, menupopup[placespopup]):not([type="autocomplete-richlistbox"]) {
     &[side="top"]::part(arrow) {
         margin-left: 6px;
         margin-right: 6px;
@@ -280,7 +280,7 @@ menupopup[type="arrow"] {
     @include set-icon("arrow-dropdown-16");
 }
 
-:not([echelon-style-6]) {
+:root:not([echelon-style-6]) {
     :is(menupopup[placespopup]) {
         &::part(arrow) {
             display: none !important;
