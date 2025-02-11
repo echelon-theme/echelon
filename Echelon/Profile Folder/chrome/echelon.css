@@ -3267,6 +3267,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-position-y: -32px !important;
 }
 #downloadsPanel #downloadsHistory {
+  color: LinkText !important;
   padding: 0 !important;
   border-radius: 0 !important;
   background: transparent !important;
@@ -3342,39 +3343,125 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   color: Highlight !important;
 }
 
-#BMB_bookmarksPopup {
+:root[echelon-style-6] #BMB_bookmarksPopup {
   --arrowpanel-padding: 4px !important;
   appearance: none !important;
   border: 0 !important;
   background-color: transparent !important;
 }
-#BMB_bookmarksPopup menuseparator {
+:root[echelon-style-6] #BMB_bookmarksPopup scrollbox {
+  overflow: visible !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup menuseparator {
   appearance: none !important;
   min-height: 0 !important;
   border-top: 1px solid hsla(210, 4%, 10%, 0.15) !important;
   margin: 6px 0 !important;
   padding: 0 !important;
 }
-#BMB_bookmarksPopup menuseparator:last-of-type {
+:root[echelon-style-6] #BMB_bookmarksPopup menuseparator:last-of-type {
   appearance: none !important;
   visibility: hidden !important;
   min-height: 1px !important;
   margin: -1px 0 0 !important;
   border: none !important;
 }
-#BMB_bookmarksPopup #BMB_bookmarksShowAll {
+:root[echelon-style-6] #BMB_bookmarksPopup menu,
+:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem) {
+  margin-inline: 4px !important;
   appearance: none !important;
-  margin: 4px -4px -4px !important;
+  padding-inline: 6px !important;
+  border: 1px solid transparent !important;
+  border-radius: 2px !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup menu:last-of-type,
+:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem):last-of-type {
+  margin-block-end: 4px !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup menu:not([disabled]),
+:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem):not([disabled]) {
+  color: inherit !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup menu:not([disabled], :active)[_moz-menuactive],
+:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem):not([disabled], :active)[_moz-menuactive] {
+  background-color: hsla(210, 4%, 10%, 0.08) !important;
+  border-color: hsla(210, 4%, 10%, 0.11) !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup menu:not([disabled])[_moz-menuactive]:active,
+:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem):not([disabled])[_moz-menuactive]:active {
+  background-color: hsla(210, 4%, 10%, 0.12) !important;
+  border-color: hsla(210, 4%, 10%, 0.14) !important;
+  box-shadow: 0 1px 0 hsla(210, 4%, 10%, 0.03) inset !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup menu .menu-iconic-left,
+:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem) .menu-iconic-left {
+  appearance: none !important;
+  padding-top: 1px !important;
+  margin-block-start: 1px !important;
+  margin-block-end: 2px !important;
+  margin-inline-end: 3px !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup menu .menu-iconic-text,
+:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem) .menu-iconic-text {
+  margin-inline-start: 2px !important;
+  padding-block-start: 1px !important;
+  padding-block-end: 1px !important;
+  padding-inline-end: 2px !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup .menu-accel-container {
+  margin-inline-start: 10px !important;
+  margin-inline-end: auto !important;
+  color: hsl(0, 0%, 50%) !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(.menuitem-iconic) {
+  min-height: 22px !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(.menuitem-iconic) .menu-text {
+  margin-inline-start: 5px !important;
+  appearance: none !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup #BMB_bookmarksShowAll,
+:root[echelon-style-6] #BMB_bookmarksPopup .openintabs-menuitem {
+  appearance: none !important;
+  margin: 4px 0 0 !important;
   background-color: hsla(210, 4%, 10%, 0.07) !important;
   border-top: 1px solid hsla(210, 4%, 10%, 0.12) !important;
   border-radius: 0 !important;
   color: hsl(0, 0%, 25%) !important;
   padding: 12px !important;
 }
-#BMB_bookmarksPopup #BMB_bookmarksShowAll .menu-text {
+:root[echelon-style-6] #BMB_bookmarksPopup #BMB_bookmarksShowAll:not([disabled], [open], :active):hover,
+:root[echelon-style-6] #BMB_bookmarksPopup .openintabs-menuitem:not([disabled], [open], :active):hover {
+  background-color: hsla(210, 4%, 10%, 0.15) !important;
+  border-top: 1px solid hsla(210, 4%, 10%, 0.14) !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup #BMB_bookmarksShowAll:not([disabled]):hover:active,
+:root[echelon-style-6] #BMB_bookmarksPopup .openintabs-menuitem:not([disabled]):hover:active {
+  background-color: hsla(210, 4%, 10%, 0.19) !important;
+  border-top: 1px solid hsla(210, 4%, 10%, 0.14) !important;
+  box-shadow: 0 1px 0 hsla(210, 4%, 10%, 0.05) inset !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup #BMB_bookmarksShowAll .menu-text,
+:root[echelon-style-6] #BMB_bookmarksPopup .openintabs-menuitem .menu-text {
   appearance: none !important;
-  padding: 0 !important;
+  padding-inline: 6px !important;
+  padding-inline-start: 16px !important;
   margin: 0 !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup .menu-right {
+  appearance: none !important;
+  margin-inline-end: -2px !important;
+  margin-block-start: 1px !important;
+  margin-block-end: 2px !important;
+  padding-block-start: 1px !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup .menu-right image {
+  width: 16px !important;
+  height: 16px !important;
+  background-image: url("chrome://userchrome/content/assets/images/firefox-29/places/bookmarks-menu-arrow.png") !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup #BMB_bookmarksShowAll {
+  margin-block-start: 0 !important;
 }
 
 #navigator-toolbox > toolbar:not(#titlebar, #TabsToolbar),
@@ -4140,6 +4227,10 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-6] {
   --toolbarbutton-outer-padding: 1px 2px !important;
   --toolbar-border-color: hsla(209,67%,12%,0.35) !important;
+}
+:root[echelon-style-6] #toolbar-context-echelonTabsOnTop,
+:root[echelon-style-6] #tabsOnTopMenuSeparator {
+  visibility: collapse !important;
 }
 :root[echelon-style-6] #nav-bar {
   z-index: 1 !important;
