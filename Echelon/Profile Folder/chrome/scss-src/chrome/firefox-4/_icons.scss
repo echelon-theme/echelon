@@ -126,8 +126,9 @@
     }
 
     @include replace-favicon("chrome://mozapps/skin/extensions/extension.svg", "chrome://userchrome/content/assets/images/firefox-4/extensions/extensionGeneric-16.png");
-    &[echelon-appearance-xp] {
+    &[echelon-system-style="winxp"] {
         @include replace-favicon("chrome://mozapps/skin/extensions/extension.svg", "chrome://userchrome/content/assets/images/firefox-4/xp/extensions/extensionGeneric-16.png");
+        @include replace-favicon("chrome://userchrome/content/windows/options/images/icon.png", "chrome://userchrome/content/assets/images/firefox-4/branding/echelon/icon16.png");
     }
 
     #page-action-buttons {

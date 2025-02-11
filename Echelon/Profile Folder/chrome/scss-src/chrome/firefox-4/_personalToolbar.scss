@@ -61,11 +61,7 @@
 
 .bookmark-item:not([container]) {
     .default-favicon {
-        list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/bookmarks/defaultFavicon.png") !important;
-        
-        :root[echelon-style-2] & {
-            list-style-image: url("chrome://userchrome/content/assets/images/firefox-8/defaultFavicon.png") !important;
-        }
+        list-style-image: var(--default-favicon) !important;
     }
 }
 
@@ -83,4 +79,36 @@
 
 #PlacesToolbarDropIndicator {
     list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/places/toolbarDropMarker.png") !important;
+}
+
+#bookmarksToolbarFolderMenu, 
+#BMB_bookmarksToolbar, 
+#panelMenu_bookmarksToolbar,
+#bookmarks-toolbar-button, 
+#bookmarks-toolbar-placeholder {
+    list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/places/bookmarksToolbar.png") !important;
+
+    :root[echelon-system-style="winxp"] & {
+        list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/places/bookmarksToolbar.png") !important;
+    }
+
+    & > .menu-iconic-left > .menu-iconic-icon {
+        background-image: none !important;
+        list-style-image: inherit !important;
+    }
+}
+
+#BMB_unsortedBookmarks,
+#panelMenu_unsortedBookmarks,
+#menu_unsortedBookmarks {
+    list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/places/unsortedBookmarks.png") !important;
+
+    :root[echelon-system-style="winxp"] & {
+        list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/places/unsortedBookmarks.png") !important;
+    }
+
+    & > .menu-iconic-left > .menu-iconic-icon {
+        background-image: none !important;
+        list-style-image: inherit !important;
+    }
 }

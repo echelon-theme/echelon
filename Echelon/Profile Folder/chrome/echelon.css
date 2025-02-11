@@ -1023,11 +1023,17 @@
 :root #identity-icon[style="list-style-image: url('chrome://mozapps/skin/extensions/extension.svg');"] {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/extensions/extensionGeneric-16.png") !important;
 }
-:root[echelon-appearance-xp] .tab-icon-image[src="chrome://mozapps/skin/extensions/extension.svg"] {
+:root[echelon-system-style=winxp] .tab-icon-image[src="chrome://mozapps/skin/extensions/extension.svg"] {
   content: url("chrome://userchrome/content/assets/images/firefox-4/xp/extensions/extensionGeneric-16.png") !important;
 }
-:root[echelon-appearance-xp] #identity-icon[style="list-style-image: url('chrome://mozapps/skin/extensions/extension.svg');"] {
+:root[echelon-system-style=winxp] #identity-icon[style="list-style-image: url('chrome://mozapps/skin/extensions/extension.svg');"] {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/extensions/extensionGeneric-16.png") !important;
+}
+:root[echelon-system-style=winxp] .tab-icon-image[src="chrome://userchrome/content/windows/options/images/icon.png"] {
+  content: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/icon16.png") !important;
+}
+:root[echelon-system-style=winxp] #identity-icon[style="list-style-image: url('chrome://userchrome/content/windows/options/images/icon.png');"] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/icon16.png") !important;
 }
 :root #page-action-buttons .urlbar-page-action {
   all: revert !important;
@@ -1612,10 +1618,7 @@
 }
 
 .bookmark-item:not([container]) .default-favicon {
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/bookmarks/defaultFavicon.png") !important;
-}
-:root[echelon-style-2] .bookmark-item:not([container]) .default-favicon {
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-8/defaultFavicon.png") !important;
+  list-style-image: var(--default-favicon) !important;
 }
 
 :root[echelon-system-style=winxp] .bookmark-item[container] .toolbarbutton-icon,
@@ -1629,6 +1632,46 @@
 
 #PlacesToolbarDropIndicator {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/places/toolbarDropMarker.png") !important;
+}
+
+#bookmarksToolbarFolderMenu,
+#BMB_bookmarksToolbar,
+#panelMenu_bookmarksToolbar,
+#bookmarks-toolbar-button,
+#bookmarks-toolbar-placeholder {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/places/bookmarksToolbar.png") !important;
+}
+:root[echelon-system-style=winxp] #bookmarksToolbarFolderMenu,
+:root[echelon-system-style=winxp] #BMB_bookmarksToolbar,
+:root[echelon-system-style=winxp] #panelMenu_bookmarksToolbar,
+:root[echelon-system-style=winxp] #bookmarks-toolbar-button,
+:root[echelon-system-style=winxp] #bookmarks-toolbar-placeholder {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/places/bookmarksToolbar.png") !important;
+}
+#bookmarksToolbarFolderMenu > .menu-iconic-left > .menu-iconic-icon,
+#BMB_bookmarksToolbar > .menu-iconic-left > .menu-iconic-icon,
+#panelMenu_bookmarksToolbar > .menu-iconic-left > .menu-iconic-icon,
+#bookmarks-toolbar-button > .menu-iconic-left > .menu-iconic-icon,
+#bookmarks-toolbar-placeholder > .menu-iconic-left > .menu-iconic-icon {
+  background-image: none !important;
+  list-style-image: inherit !important;
+}
+
+#BMB_unsortedBookmarks,
+#panelMenu_unsortedBookmarks,
+#menu_unsortedBookmarks {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/places/unsortedBookmarks.png") !important;
+}
+:root[echelon-system-style=winxp] #BMB_unsortedBookmarks,
+:root[echelon-system-style=winxp] #panelMenu_unsortedBookmarks,
+:root[echelon-system-style=winxp] #menu_unsortedBookmarks {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/places/unsortedBookmarks.png") !important;
+}
+#BMB_unsortedBookmarks > .menu-iconic-left > .menu-iconic-icon,
+#panelMenu_unsortedBookmarks > .menu-iconic-left > .menu-iconic-icon,
+#menu_unsortedBookmarks > .menu-iconic-left > .menu-iconic-icon {
+  background-image: none !important;
+  list-style-image: inherit !important;
 }
 
 :root {
@@ -3343,85 +3386,85 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   color: Highlight !important;
 }
 
-:root[echelon-style-6] #BMB_bookmarksPopup {
+#BMB_bookmarksPopup {
   --arrowpanel-padding: 4px !important;
   appearance: none !important;
   border: 0 !important;
   background-color: transparent !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup scrollbox {
+#BMB_bookmarksPopup scrollbox {
   overflow: visible !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup menuseparator {
+#BMB_bookmarksPopup menuseparator {
   appearance: none !important;
   min-height: 0 !important;
   border-top: 1px solid hsla(210, 4%, 10%, 0.15) !important;
   margin: 6px 0 !important;
   padding: 0 !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup menuseparator:last-of-type {
+#BMB_bookmarksPopup menuseparator:last-of-type {
   appearance: none !important;
   visibility: hidden !important;
   min-height: 1px !important;
   margin: -1px 0 0 !important;
   border: none !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup menu,
-:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem) {
+#BMB_bookmarksPopup menu,
+#BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem) {
   margin-inline: 4px !important;
   appearance: none !important;
   padding-inline: 6px !important;
   border: 1px solid transparent !important;
   border-radius: 2px !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup menu:last-of-type,
-:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem):last-of-type {
+#BMB_bookmarksPopup menu:not(#BMB_viewBookmarksToolbar):last-of-type,
+#BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem):not(#BMB_viewBookmarksToolbar):last-of-type {
   margin-block-end: 4px !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup menu:not([disabled]),
-:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem):not([disabled]) {
+#BMB_bookmarksPopup menu:not([disabled]),
+#BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem):not([disabled]) {
   color: inherit !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup menu:not([disabled], :active)[_moz-menuactive],
-:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem):not([disabled], :active)[_moz-menuactive] {
+#BMB_bookmarksPopup menu:not([disabled], :active)[_moz-menuactive],
+#BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem):not([disabled], :active)[_moz-menuactive] {
   background-color: hsla(210, 4%, 10%, 0.08) !important;
   border-color: hsla(210, 4%, 10%, 0.11) !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup menu:not([disabled])[_moz-menuactive]:active,
-:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem):not([disabled])[_moz-menuactive]:active {
+#BMB_bookmarksPopup menu:not([disabled])[_moz-menuactive]:active,
+#BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem):not([disabled])[_moz-menuactive]:active {
   background-color: hsla(210, 4%, 10%, 0.12) !important;
   border-color: hsla(210, 4%, 10%, 0.14) !important;
   box-shadow: 0 1px 0 hsla(210, 4%, 10%, 0.03) inset !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup menu .menu-iconic-left,
-:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem) .menu-iconic-left {
+#BMB_bookmarksPopup menu .menu-iconic-left,
+#BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem) .menu-iconic-left {
   appearance: none !important;
   padding-top: 1px !important;
   margin-block-start: 1px !important;
   margin-block-end: 2px !important;
   margin-inline-end: 3px !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup menu .menu-iconic-text,
-:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem) .menu-iconic-text {
+#BMB_bookmarksPopup menu .menu-iconic-text,
+#BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem) .menu-iconic-text {
   margin-inline-start: 2px !important;
   padding-block-start: 1px !important;
   padding-block-end: 1px !important;
   padding-inline-end: 2px !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup .menu-accel-container {
+#BMB_bookmarksPopup .menu-accel-container {
   margin-inline-start: 10px !important;
   margin-inline-end: auto !important;
   color: hsl(0, 0%, 50%) !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(.menuitem-iconic) {
+#BMB_bookmarksPopup menuitem:not(.menuitem-iconic) {
   min-height: 22px !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(.menuitem-iconic) .menu-text {
+#BMB_bookmarksPopup menuitem:not(.menuitem-iconic) .menu-text {
   margin-inline-start: 5px !important;
   appearance: none !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup #BMB_bookmarksShowAll,
-:root[echelon-style-6] #BMB_bookmarksPopup .openintabs-menuitem {
+#BMB_bookmarksPopup #BMB_bookmarksShowAll,
+#BMB_bookmarksPopup .openintabs-menuitem {
   appearance: none !important;
   margin: 4px 0 0 !important;
   background-color: hsla(210, 4%, 10%, 0.07) !important;
@@ -3430,37 +3473,37 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   color: hsl(0, 0%, 25%) !important;
   padding: 12px !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup #BMB_bookmarksShowAll:not([disabled], [open], :active):hover,
-:root[echelon-style-6] #BMB_bookmarksPopup .openintabs-menuitem:not([disabled], [open], :active):hover {
+#BMB_bookmarksPopup #BMB_bookmarksShowAll:not([disabled], [open], :active):hover,
+#BMB_bookmarksPopup .openintabs-menuitem:not([disabled], [open], :active):hover {
   background-color: hsla(210, 4%, 10%, 0.15) !important;
   border-top: 1px solid hsla(210, 4%, 10%, 0.14) !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup #BMB_bookmarksShowAll:not([disabled]):hover:active,
-:root[echelon-style-6] #BMB_bookmarksPopup .openintabs-menuitem:not([disabled]):hover:active {
+#BMB_bookmarksPopup #BMB_bookmarksShowAll:not([disabled]):hover:active,
+#BMB_bookmarksPopup .openintabs-menuitem:not([disabled]):hover:active {
   background-color: hsla(210, 4%, 10%, 0.19) !important;
   border-top: 1px solid hsla(210, 4%, 10%, 0.14) !important;
   box-shadow: 0 1px 0 hsla(210, 4%, 10%, 0.05) inset !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup #BMB_bookmarksShowAll .menu-text,
-:root[echelon-style-6] #BMB_bookmarksPopup .openintabs-menuitem .menu-text {
+#BMB_bookmarksPopup #BMB_bookmarksShowAll .menu-text,
+#BMB_bookmarksPopup .openintabs-menuitem .menu-text {
   appearance: none !important;
   padding-inline: 6px !important;
   padding-inline-start: 16px !important;
   margin: 0 !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup .menu-right {
+#BMB_bookmarksPopup .menu-right {
   appearance: none !important;
   margin-inline-end: -2px !important;
   margin-block-start: 1px !important;
   margin-block-end: 2px !important;
   padding-block-start: 1px !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup .menu-right image {
+#BMB_bookmarksPopup .menu-right image {
   width: 16px !important;
   height: 16px !important;
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/places/bookmarks-menu-arrow.png") !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup #BMB_bookmarksShowAll {
+#BMB_bookmarksPopup #BMB_bookmarksShowAll {
   margin-block-start: 0 !important;
 }
 
@@ -3663,6 +3706,9 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-system-style=winxp]:not([echelon-style-6])[tabsintitlebar=true]:not([sizemode=maximized]) #toolbar-menubar .titlebar-buttonbox-container {
   visibility: collapse !important;
 }
+:root[echelon-system-style=winxp]:not([echelon-style-3]) {
+  --default-favicon: url("chrome://userchrome/content/assets/images/firefox-4/xp/bookmarks/defaultFavicon.png") !important;
+}
 
 #echelon-wizard-container {
   opacity: 0 !important;
@@ -3754,7 +3800,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   --urlbar-border-color-hover: ThreeDShadow !important;
   --urlbar-border-color-focused: ThreeDShadow !important;
 }
-:root[echelon-style-2]:not([echelon-appearance-xp], [echelon-style-7][echelon-system-style=win10])[echelon-appearance-blue] {
+:root[echelon-style-2]:not([echelon-system-style=winxp], [echelon-style-7][echelon-system-style=win10])[echelon-appearance-blue] {
   --urlbar-border-color: rgba(0,0,0,.32) !important;
   --urlbar-border-color-hover: rgba(0,0,0,.32) !important;
   --urlbar-border-color-focused: rgba(0,0,0,.32) !important;
@@ -4106,7 +4152,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   --urlbar-border-color-hover: ThreeDShadow !important;
   --urlbar-border-color-focused: ThreeDShadow !important;
 }
-:root[echelon-style-5]:not([echelon-appearance-xp], [echelon-style-7][echelon-system-style=win10])[echelon-appearance-blue], :root[echelon-style-5]:not([echelon-appearance-xp], [echelon-style-7][echelon-system-style=win10])[echelon-system-style=win8] {
+:root[echelon-style-5]:not([echelon-system-style=winxp], [echelon-style-7][echelon-system-style=win10])[echelon-appearance-blue], :root[echelon-style-5]:not([echelon-system-style=winxp], [echelon-style-7][echelon-system-style=win10])[echelon-system-style=win8] {
   --urlbar-border-color: hsla(210,54%,20%,.25) hsla(210,54%,20%,.27) hsla(210,54%,20%,.3) !important;
   --urlbar-border-color-hover: hsla(210,54%,20%,.35) hsla(210,54%,20%,.37) hsla(210,54%,20%,.4) !important;
   --urlbar-border-color-focused: hsla(206,100%,60%,.65) hsla(206,100%,55%,.65) hsla(206,100%,50%,.65) !important;

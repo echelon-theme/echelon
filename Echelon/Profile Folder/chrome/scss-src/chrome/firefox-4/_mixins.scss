@@ -127,7 +127,7 @@
 @mixin default-favicon($url, $maxStyle: 5) {
     @include replace-favicon($url, "images/defaultFavicon.png");
 
-    &[echelon-appearance-xp] {
+    &[echelon-system-style="winxp"] {
         @include replace-favicon($url, "images/xp/defaultFavicon.png");
     }
 

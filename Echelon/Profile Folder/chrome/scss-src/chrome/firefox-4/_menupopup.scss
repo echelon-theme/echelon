@@ -365,13 +365,7 @@
 }
 
 // shoutout marble for making me do this bullshit
-:root:not([echelon-style-6]) {
-	#BMB_bookmarksPopup {
 
-	}
-}
-
-:root[echelon-style-6] {
 #BMB_bookmarksPopup {
 	--arrowpanel-padding: 4px !important;
 	appearance: none !important;
@@ -406,7 +400,7 @@
 		border: 1px solid transparent !important;
 		border-radius: 2px !important;
 
-		&:last-of-type {
+		&:not(#BMB_viewBookmarksToolbar):last-of-type {
 			margin-block-end: 4px !important;
 		}
 
@@ -473,6 +467,7 @@
 
 		&:not([disabled]):hover:active {
 			background-color: hsla(210, 4%, 10%, .19) !important;
+			;
 			border-top: 1px solid hsla(210, 4%, 10%, .14) !important;
 			box-shadow: 0 1px 0 hsla(210, 4%, 10%, .05) inset !important;
 		}
@@ -495,12 +490,11 @@
 		image {
 			width: 16px !important;
 			height: 16px !important;
-      		background-image: url("chrome://userchrome/content/assets/images/firefox-29/places/bookmarks-menu-arrow.png") !important;
+      background-image: url("chrome://userchrome/content/assets/images/firefox-29/places/bookmarks-menu-arrow.png") !important;
 		}
 	}
 	
 	#BMB_bookmarksShowAll {
 		margin-block-start: 0 !important;
 	}
-}
 }
