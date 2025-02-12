@@ -1563,6 +1563,21 @@ class AustralisPanelController
             let footer = customizationContainer.querySelector("#customization-footer");
             let contentContainer = document.querySelector("#customization-content-container");
             let panelContainer = document.querySelector("#customization-panel-container");
+            
+            let customizationDensityPanel = await waitForElement("#customization-uidensity-menu");
+            customizationDensityPanel.setAttribute("position", "topcenter bottomleft");
+
+            let customizationDensityPanelHeader = MozXULElement.parseXULToFragment(
+            `
+                <label id="customization-uidensity-menu-header" />
+            `);
+            customizationDensityPanel.insertBefore(customizationDensityPanelHeader, customizationDensityPanel.firstChild); 
+            
+            const [density] = await document.l10n.formatMessages([
+                { id: "customize-mode-uidensity" }
+            ]); 
+            const densityValue = density.attributes[0].value;
+            customizationDensityPanel.querySelector("#customization-uidensity-menu-header").value = densityValue;
 
             customizationContainer.appendChild(panelContainer);
 
@@ -1620,6 +1635,10 @@ class AustralisPanelController
         {
             this.shadowManager.setOriginalView();
             this.parent.subViewManager.ignoreMutations = true;
+
+            // Hide the PanelUI popup when entering customize mode.
+            let panelUIPoup = document.querySelector("#PanelUI-popup");
+            panelUIPoup.hidePopup();
 
             // Move the main view over to the customisation container.
             let newContainer = document.querySelector("#customization-panelWrapper .panel-arrowcontent");

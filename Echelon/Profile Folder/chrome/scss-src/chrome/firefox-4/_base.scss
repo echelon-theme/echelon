@@ -2,6 +2,10 @@
     --browser-area-z-index-toolbox: 1 !important;
     --browser-area-z-index-tabbox: 0 !important;
     --browser-area-z-index-sidebar-splitter: 1 !important;
+
+    --arrowpanel-dimmed: hsla(210,4%,10%,.05) !important;
+    --arrowpanel-dimmed-further: hsla(210,4%,10%,.15) !important;
+    --panel-separator-color: hsla(210,4%,10%,.11) !important;
 }
 // hide unified extensions
 :root[echelon-option-hideunifiedextensions] {

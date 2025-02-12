@@ -19,6 +19,14 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
     @return #{if($important, '!important', '')};
 }
 
+:root {
+    --menuPanel-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+
+    &[echelon-system-style="winxp"] {
+        --menuPanel-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-xp8.png") !important;
+    }
+}
+
 .echelon-customization-hack-container {
     display: flex;
     flex-direction: row;
@@ -282,7 +290,6 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
             }
             &:hover > separator {
                 margin: 0 !important;
-                height: 100% !important;
             }
 
             &:hover {
@@ -940,7 +947,7 @@ $iconSmallRegionMap: (
         @each $icon, $offset in $iconRegionMap {
             &##{$icon} .toolbarbutton-icon {
                 list-style-image: none !important;
-                background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+                background-image: var(--menuPanel-image) !important;
                 background-position: (-$offset) 0 !important;
             }
 
@@ -951,11 +958,14 @@ $iconSmallRegionMap: (
     }
 }
 
-.australis-appmenu-panel .panelUI-grid {
+.australis-appmenu-panel .panelUI-grid,
+#customization-palette {
     @each $icon, $offset in $iconSmallRegionMap {
         & ##{$icon} .toolbarbutton-icon {
             width: 16px !important;
             height: 16px !important;
+            min-width: 16px !important;
+            min-height: 16px !important;
             list-style-image: none !important;
             background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-small.png") !important;
             background-position: (-$offset) 0 !important;

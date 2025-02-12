@@ -179,7 +179,8 @@ menupopup[type="arrow"] {
         background-clip: padding-box;
     }
 
-    &[orient="vertical"]::part(arrowcontent) {
+    &[orient="vertical"]::part(arrowcontent),
+    &[orient="vertical"]::part(innerarrowcontent) {
         flex-direction: column;
     }
 
@@ -290,6 +291,10 @@ menupopup[type="arrow"] {
     #BMB_bookmarksPopup {
         transition: none !important;
     }
+}
+
+#customization-uidensity-menu::part(arrowcontent) {
+    padding: 10px !important;
 }
 
 :is([echelon-style-6]) {

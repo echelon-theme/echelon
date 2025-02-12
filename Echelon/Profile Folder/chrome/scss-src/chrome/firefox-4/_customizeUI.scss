@@ -138,8 +138,8 @@
     }
 
     #customization-header {
-        font-size: 18px !important;
-        line-height: 18px !important;
+        font-size: 1.5em !important;
+        line-height: 1.5em !important;
         color: rgb(64,100,128) !important;
         font-weight: lighter !important;
         margin: 0 !important;
@@ -250,5 +250,81 @@
 
     #customization-done-button {
         visibility: collapse !important;
+    }
+
+    #customization-uidensity-menu-header {
+        margin-top: -10px !important;
+        padding: 10px !important;
+        margin-bottom: 5px !important;
+        border-bottom: 1px solid var(--arrowpanel-dimmed) !important;
+        background-color: var(--arrowpanel-dimmed) !important;
+        margin-right: -10px !important;
+        margin-left: -10px !important;
+        color: hsl(0,0%,50%) !important;
+    }
+
+    .customization-uidensity-menuitem {
+        margin: 0 -5px 5px !important;
+        padding: 0 !important;
+        padding-inline-end: 5px !important;
+        border-radius: 0 !important;
+
+        &:is(:hover, [active="true"]) {
+            background-color: var(--arrowpanel-dimmed) !important;
+            border-color: var(--panel-separator-color) !important;
+        } 
+
+        &:is(:hover:active, [active="true"]) {
+            background-color: var(--arrowpanel-dimmed-further) !important;
+        }
+
+        .menu-iconic-left {
+            appearance: none !important;
+            width: unset !important;
+            padding-top: 0 !important;
+        }
+    }
+
+    #customization-uidensity-menuitem-compact {
+        list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/customizableui/density-compact.svg") !important;
+    }
+
+    #customization-uidensity-menuitem-normal {
+        list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/customizableui/density-normal.svg") !important;
+    }
+
+    #customization-uidensity-menuitem-touch {
+        list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/customizableui/density-touch.svg") !important;
+    }
+
+    #customization-palette-container {
+        #wrapper-edit-controls:is([place="palette"], [place="panel"]) > #edit-controls, 
+        #wrapper-zoom-controls:is([place="palette"], [place="panel"]) > #zoom-controls, 
+        :is(panelview, #widget-overflow-fixed-list) .toolbaritem-combined-buttons {
+            background-color: hsla(210,4%,10%,0) !important;
+            border-radius: 2px !important;
+            border: 1px solid !important;
+            border-color: hsla(210,4%,10%,0) !important;
+            border-bottom-color: hsla(210,4%,10%,.1) !important;
+            padding: 0 !important;
+            align-items: normal !important;
+            width: fit-content !important;
+            align-self: center !important;
+
+            toolbarbutton {
+                min-width: 24px !important;
+                min-height: 24px !important;
+                width: 24px !important;
+                height: 24px !important;
+                margin-block-start: 20px !important;
+                flex: none !important;
+                padding: 0 !important;
+                align-items: center !important;
+            }
+
+            separator {
+                margin-block-start: 20px !important;
+            }
+        }
     }
 }

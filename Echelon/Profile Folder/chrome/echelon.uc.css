@@ -150,8 +150,9 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
   box-shadow: var(--arrowpanel-inner-shadow);
   background-clip: padding-box;
 }
-:is(panel):not([type=autocomplete-richlistbox])[orient=vertical]::part(arrowcontent),
-:is([echelon-style-6]) :is(menupopup[placespopup])[orient=vertical]::part(arrowcontent) {
+:is(panel):not([type=autocomplete-richlistbox])[orient=vertical]::part(arrowcontent), :is(panel):not([type=autocomplete-richlistbox])[orient=vertical]::part(innerarrowcontent),
+:is([echelon-style-6]) :is(menupopup[placespopup])[orient=vertical]::part(arrowcontent),
+:is([echelon-style-6]) :is(menupopup[placespopup])[orient=vertical]::part(innerarrowcontent) {
   flex-direction: column;
 }
 :is(panel):not([type=autocomplete-richlistbox]).panel-no-padding::part(arrowcontent), :is(panel):not([type=autocomplete-richlistbox]).panel-no-padding::part(innerarrowcontent),
@@ -246,6 +247,10 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
 }
 :root:not([echelon-style-6]) #BMB_bookmarksPopup {
   transition: none !important;
+}
+
+#customization-uidensity-menu::part(arrowcontent) {
+  padding: 10px !important;
 }
 
 :is([echelon-style-6]) #BMB_bookmarksPopup::part(arrowcontent) {
