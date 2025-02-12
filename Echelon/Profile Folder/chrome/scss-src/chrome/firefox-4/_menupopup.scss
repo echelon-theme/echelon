@@ -366,135 +366,137 @@
 
 // shoutout marble for making me do this bullshit
 
-#BMB_bookmarksPopup {
-	--arrowpanel-padding: 4px !important;
-	appearance: none !important;
-	border: 0 !important;
-	background-color: transparent !important;
-
-	scrollbox {
-		overflow: visible !important;
-	}
-
-	menuseparator {
+:root[echelon-style-6] {
+	#BMB_bookmarksPopup {
+		--arrowpanel-padding: 4px !important;
 		appearance: none !important;
-		min-height: 0 !important;
-		border-top: 1px solid hsla(210, 4%, 10%, .15) !important;
-		margin: 6px 0 !important;
-		padding: 0 !important;
+		border: 0 !important;
+		background-color: transparent !important;
 
-		&:last-of-type {
+		scrollbox {
+			overflow: visible !important;
+		}
+
+		menuseparator {
 			appearance: none !important;
-			visibility: hidden !important;
-			min-height: 1px !important;
-			margin: -1px 0 0 !important;
-			border: none !important;
-		}
-	}
+			min-height: 0 !important;
+			border-top: 1px solid hsla(210, 4%, 10%, .15) !important;
+			margin: 6px 0 !important;
+			padding: 0 !important;
 
-	menu,
-	menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem) {
-		margin-inline: 4px !important;
-		appearance: none !important;
-		padding-inline: 6px !important;
-		border: 1px solid transparent !important;
-		border-radius: 2px !important;
-
-		&:not(#BMB_viewBookmarksToolbar):last-of-type {
-			margin-block-end: 4px !important;
+			&:last-of-type {
+				appearance: none !important;
+				visibility: hidden !important;
+				min-height: 1px !important;
+				margin: -1px 0 0 !important;
+				border: none !important;
+			}
 		}
 
-		&:not([disabled]) {
-			color: inherit !important;
-		}
-
-		&:not([disabled], :active)[_moz-menuactive] {
-			background-color: hsla(210, 4%, 10%, .08) !important;
-			border-color: hsla(210, 4%, 10%, .11) !important;
-		}
-
-		&:not([disabled])[_moz-menuactive]:active {
-			background-color: hsla(210, 4%, 10%, .12) !important;
-			border-color: hsla(210, 4%, 10%, .14) !important;
-			box-shadow: 0 1px 0 hsla(210, 4%, 10%, .03) inset !important;
-		}
-
-		.menu-iconic-left {
-			appearance: none !important;
-			padding-top: 1px !important;
-			margin-block-start: 1px !important;
-			margin-block-end: 2px !important;
-			margin-inline-end: 3px !important;
-		}
-
-		.menu-iconic-text {
-			margin-inline-start: 2px !important;
-			padding-block-start: 1px !important;
-			padding-block-end: 1px !important;
-			padding-inline-end: 2px !important;
-		}
-	}
-
-	.menu-accel-container {
-		margin-inline-start: 10px !important;
-		margin-inline-end: auto !important;
-		color: hsl(0, 0%, 50%) !important;
-	}
-
-	menuitem:not(.menuitem-iconic) {
-		min-height: 22px !important;
-
-		.menu-text {
-			margin-inline-start: 5px !important;
-			appearance: none !important;
-		}
-	}
-
-	#BMB_bookmarksShowAll,
-	.openintabs-menuitem {
-		appearance: none !important;
-		margin: 4px 0 0 !important;
-		background-color: hsla(210, 4%, 10%, .07) !important;
-		border-top: 1px solid hsla(210, 4%, 10%, .12) !important;
-		border-radius: 0 !important;
-		color: hsl(0, 0%, 25%) !important;
-		padding: 12px !important;
-
-		&:not([disabled], [open], :active):hover {
-			background-color: hsla(210, 4%, 10%, .15) !important;
-			border-top: 1px solid hsla(210, 4%, 10%, .14) !important;
-		}
-
-		&:not([disabled]):hover:active {
-			background-color: hsla(210, 4%, 10%, .19) !important;
-			;
-			border-top: 1px solid hsla(210, 4%, 10%, .14) !important;
-			box-shadow: 0 1px 0 hsla(210, 4%, 10%, .05) inset !important;
-		}
-
-		.menu-text {
+		menu,
+		menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem) {
+			margin-inline: 4px !important;
 			appearance: none !important;
 			padding-inline: 6px !important;
-			padding-inline-start: 16px !important;
-			margin: 0 !important;
+			border: 1px solid transparent !important;
+			border-radius: 2px !important;
+
+			&:not(#BMB_viewBookmarksToolbar):last-of-type {
+				margin-block-end: 4px !important;
+			}
+
+			&:not([disabled]) {
+				color: inherit !important;
+			}
+
+			&:not([disabled], :active)[_moz-menuactive] {
+				background-color: hsla(210, 4%, 10%, .08) !important;
+				border-color: hsla(210, 4%, 10%, .11) !important;
+			}
+
+			&:not([disabled])[_moz-menuactive]:active {
+				background-color: hsla(210, 4%, 10%, .12) !important;
+				border-color: hsla(210, 4%, 10%, .14) !important;
+				box-shadow: 0 1px 0 hsla(210, 4%, 10%, .03) inset !important;
+			}
+
+			.menu-iconic-left {
+				appearance: none !important;
+				padding-top: 1px !important;
+				margin-block-start: 1px !important;
+				margin-block-end: 2px !important;
+				margin-inline-end: 3px !important;
+			}
+
+			.menu-iconic-text {
+				margin-inline-start: 2px !important;
+				padding-block-start: 1px !important;
+				padding-block-end: 1px !important;
+				padding-inline-end: 2px !important;
+			}
 		}
-	}
-	
-	.menu-right {
-		appearance: none !important;
-		margin-inline-end: -2px !important;
-		margin-block-start: 1px !important;
-		margin-block-end: 2px !important;
-		padding-block-start: 1px !important;
+
+		.menu-accel-container {
+			margin-inline-start: 10px !important;
+			margin-inline-end: auto !important;
+			color: hsl(0, 0%, 50%) !important;
+		}
+
+		menuitem:not(.menuitem-iconic) {
+			min-height: 22px !important;
+
+			.menu-text {
+				margin-inline-start: 5px !important;
+				appearance: none !important;
+			}
+		}
+
+		#BMB_bookmarksShowAll,
+		.openintabs-menuitem {
+			appearance: none !important;
+			margin: 4px 0 0 !important;
+			background-color: hsla(210, 4%, 10%, .07) !important;
+			border-top: 1px solid hsla(210, 4%, 10%, .12) !important;
+			border-radius: 0 !important;
+			color: hsl(0, 0%, 25%) !important;
+			padding: 12px !important;
+
+			&:not([disabled], [open], :active):hover {
+				background-color: hsla(210, 4%, 10%, .15) !important;
+				border-top: 1px solid hsla(210, 4%, 10%, .14) !important;
+			}
+
+			&:not([disabled]):hover:active {
+				background-color: hsla(210, 4%, 10%, .19) !important;
+				;
+				border-top: 1px solid hsla(210, 4%, 10%, .14) !important;
+				box-shadow: 0 1px 0 hsla(210, 4%, 10%, .05) inset !important;
+			}
+
+			.menu-text {
+				appearance: none !important;
+				padding-inline: 6px !important;
+				padding-inline-start: 16px !important;
+				margin: 0 !important;
+			}
+		}
 		
-		image {
-			width: 16px !important;
-			height: 16px !important;
-      background-image: url("chrome://userchrome/content/assets/images/firefox-29/places/bookmarks-menu-arrow.png") !important;
+		.menu-right {
+			appearance: none !important;
+			margin-inline-end: -2px !important;
+			margin-block-start: 1px !important;
+			margin-block-end: 2px !important;
+			padding-block-start: 1px !important;
+			
+			image {
+				width: 16px !important;
+				height: 16px !important;
+				background-image: url("chrome://userchrome/content/assets/images/firefox-29/places/bookmarks-menu-arrow.png") !important;
+			}
 		}
-	}
-	
-	#BMB_bookmarksShowAll {
-		margin-block-start: 0 !important;
+		
+		#BMB_bookmarksShowAll {
+			margin-block-start: 0 !important;
+		}
 	}
 }
