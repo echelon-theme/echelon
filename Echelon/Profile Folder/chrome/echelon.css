@@ -3572,8 +3572,30 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-size: auto 12px, 12px 100%, auto, auto, auto !important;
   background-attachment: scroll, scroll, fixed, fixed, scroll !important;
 }
+#customization-panel-container .panel-arrow[side=top] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/panelarrow/panelarrow-vertical.svg") !important;
+  fill: -moz-Field !important;
+  stroke: ThreeDShadow !important;
+  margin-inline-end: 6px !important;
+}
+:root[echelon-appearance-blue] #customization-panel-container .panel-arrow[side=top] {
+  stroke: hsla(210, 4%, 10%, 0.2) !important;
+}
 #customization-panel-container .panel-arrowcontent {
+  border: 1px solid ThreeDShadow !important;
+  box-shadow: none !important;
+  color: -moz-FieldText !important;
+  background-color: -moz-field !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
   flex: 1 !important;
+}
+:root[echelon-appearance-blue] #customization-panel-container .panel-arrowcontent {
+  border-color: hsla(210, 4%, 10%, 0.2) !important;
+  box-shadow: 0 0 4px hsla(210, 4%, 10%, 0.2) !important;
+}
+:root:is([echelon-system-style=win8], [echelon-system-style=win10]) #customization-panel-container .panel-arrowcontent {
+  border-radius: 0 !important;
 }
 #customization-panel-container .panel-arrowcontent #PanelUI-mainView {
   height: 100% !important;

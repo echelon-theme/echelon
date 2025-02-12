@@ -74,13 +74,46 @@
     background-size: auto 12px, 12px 100%, auto, auto, auto !important;
     background-attachment: scroll, scroll, fixed, fixed, scroll !important;
 
+    
+    .panel-arrow[side="top"] {
+        list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/panelarrow/panelarrow-vertical.svg") !important;
+        fill: -moz-Field !important;
+        stroke: ThreeDShadow !important;
+        margin-inline-end: 6px !important;
+
+        :root[echelon-appearance-blue] & {
+            stroke: hsla(210,4%,10%,.2) !important;
+        }
+    }
+
     .panel-arrowcontent {
+        // We will have to hardcode the styling of
+        // this panel, as it causes to look messed up
+        // on any other that isn't Australis.
+        // Honestly don't even matter
+        border: 1px solid ThreeDShadow !important;
+        box-shadow: none !important;
+        color: -moz-FieldText !important;
+        background-color: -moz-field !important;
+        border-radius: 4px !important;
+        
+        :root[echelon-appearance-blue] & {
+            border-color: hsla(210,4%,10%,.2) !important;
+            box-shadow: 0 0 4px hsla(210,4%,10%,.2) !important;
+        }
+
+        :root:is([echelon-system-style="win8"], [echelon-system-style="win10"]) & {
+            border-radius: 0 !important;
+        }
+
+        overflow: hidden !important;
         flex: 1 !important;
 
         #PanelUI-mainView {
             height: 100% !important;
         }
     }
+    
 }
 
 #customization-container {
