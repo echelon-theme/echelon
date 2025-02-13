@@ -47,12 +47,12 @@
         z-index: 0 !important;
         
         &:not([pinned]) {
-            min-width: 100px !important;
+            // min-width: 100px !important;
             max-width: var(--tab-max-width) !important;
             margin-inline: 0 !important; // remove fucking pinned tab margin
-            transition: min-width 200ms ease-out,
-                        max-width 250ms ease-out,
-                        opacity 50ms ease-out 20ms !important;
+            // transition: min-width 200ms ease-out,
+            //             max-width 250ms ease-out,
+            //             opacity 50ms ease-out 20ms !important;
 
             &[visuallyselected] {
                 position: relative !important;
@@ -62,11 +62,12 @@
         &:not([pinned], [fadein]) {
             max-width: 0.1px !important;
             min-width: 0.1px !important;
-            opacity: 0 !important;
-            visibility: visible !important;
-            transition: min-width 200ms ease-out,
-                        max-width 250ms ease-out,
-                        opacity 50ms ease-out 100ms !important;
+            visibility: hidden !important;
+            // opacity: 0 !important;
+            // visibility: visible !important;
+            // transition: min-width 200ms ease-out,
+            //             max-width 250ms ease-out,
+            //             opacity 50ms ease-out 100ms !important;
         }
 
         &[visuallyselected] { // make tab above outer border from navbar
@@ -237,7 +238,8 @@
             border-radius: var(--tab-border-radius) !important;
             border-width: 4px 3px 0 !important;
             border-style: solid !important;
-            margin-block: 0 !important;     
+            margin-block: 0 !important;  
+            outline: none !important;   
         }
 
         .tabbrowser-tab:hover .tab-background,
@@ -286,6 +288,10 @@
             
             :root[echelon-system-style="winxp"] & {
                 margin-top: -2px !important;
+            }
+
+            :root[lwtheme-brighttext] & {
+                @include set-background("firefox-8/tabs/newtab-inverted.png");
             }
         }
 

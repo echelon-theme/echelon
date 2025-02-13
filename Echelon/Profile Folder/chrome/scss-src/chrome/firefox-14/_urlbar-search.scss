@@ -11,6 +11,12 @@
             --urlbar-border-color-focused: hsla(206,100%,60%,.65) hsla(206,100%,55%,.65) hsla(206,100%,50%,.65) !important;
         }
     }
+
+    &[lwtheme] {
+        --urlbar-border-color: rgba(0,0,0,.32) !important;
+        --urlbar-border-color-hover: rgba(0,0,0,.32) !important;
+        --urlbar-border-color-focused: rgba(0,0,0,.32) !important;
+    }
 }
 
 &:not([echelon-style-7]) {

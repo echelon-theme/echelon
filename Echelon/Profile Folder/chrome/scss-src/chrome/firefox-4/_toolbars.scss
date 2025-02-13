@@ -133,8 +133,11 @@
     :root[tabs-on-top="true"] & {
         z-index: 1 !important;
         background-image: linear-gradient(var(--toolbar-highlight-top) 15%, var(--toolbar-highlight-bottom)) !important;
-        border-top: 1px solid var(--toolbar-border-color) !important;
         margin-top: calc(-1 * var(--navbar-tab-toolbar-highlight-overlap)) !important;
+    }
+
+    :root[tabs-on-top="true"]:not([lwtheme]) & {
+        border-top: 1px solid var(--toolbar-border-color) !important;
     }
 
     #nav-bar-customization-target {
@@ -446,7 +449,7 @@
 }
 
 // Aero blue style
-:root:not([echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
+:root:not([lwtheme], [echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
     &[echelon-appearance-blue] {
         --toolbar-background-color: hsl(214, 44%, 87%) !important;
     }

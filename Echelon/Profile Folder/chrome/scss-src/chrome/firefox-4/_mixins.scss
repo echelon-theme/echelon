@@ -42,11 +42,8 @@
 
 @mixin toolbar-icons-inverted($map) {
     @each $id, $icon in $map {
-        :root:not([echelon-style-2]) {
-            #TabsToolbar,
-            #toolbar-menubar {
-                @include toolbar-icon("#{$id}", $icon);
-            }
+        &[lwtheme-brighttext] {
+            @include toolbar-icon("#{$id}", $icon);
         }
     }
 }

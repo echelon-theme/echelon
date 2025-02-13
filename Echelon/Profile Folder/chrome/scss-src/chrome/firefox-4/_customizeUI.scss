@@ -125,6 +125,7 @@
     }
 
     #customization-content-container {
+        background-color: white !important; //lwtheme causes ts to be transparent
         grid-area: 1 / 1 / 2 / 2 !important;
     }
     
@@ -252,7 +253,8 @@
         visibility: collapse !important;
     }
 
-    #customization-uidensity-menu-header {
+    #customization-uidensity-menu-header,
+    #customization-lwtheme-menu-header {
         margin-top: -10px !important;
         padding: 10px !important;
         margin-bottom: 5px !important;
@@ -263,7 +265,10 @@
         color: hsl(0,0%,50%) !important;
     }
 
-    .customization-uidensity-menuitem {
+    .customization-uidensity-menuitem,
+    .customization-lwtheme-menuitem {
+        appearance: none !important;
+        border: 1px solid transparent !important;
         margin: 0 -5px 5px !important;
         padding: 0 !important;
         padding-inline-end: 5px !important;
@@ -282,6 +287,26 @@
             appearance: none !important;
             width: unset !important;
             padding-top: 0 !important;
+
+            .menu-iconic-icon {
+                width: 32px !important;
+                height: 32px !important;
+                margin: 5px !important;
+            }
+        }
+    }
+
+    .customization-lwtheme-menuitem {
+        &[data-builtin="true"] {
+            list-style-image: var(--theme-background) !important;
+        }
+
+        &:not([data-builtin="true"]) {
+            .menu-iconic-icon {
+                background-image: var(--theme-background) !important;
+                background-position: center center !important;
+                background-size: cover !important;
+            }
         }
     }
 

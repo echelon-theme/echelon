@@ -11,12 +11,21 @@
     --urlbar-border-color-hover: ThreeDShadow !important;
     --urlbar-border-color-focused: ThreeDShadow !important;
 
-    &:not([echelon-system-style="winxp"], [echelon-style-7][echelon-system-style="win10"]) {
+    &:not([lwtheme], [echelon-system-style="winxp"], [echelon-style-7][echelon-system-style="win10"]) {
         &[echelon-appearance-blue] {
             --urlbar-border-color: rgba(0,0,0,.32) !important;
             --urlbar-border-color-hover: rgba(0,0,0,.32) !important;
             --urlbar-border-color-focused: rgba(0,0,0,.32) !important;
         }
+    }
+
+    &[lwtheme] {
+        --urlbar-background-color: rgba(255,255,255,.8) !important;
+        --urlbar-background-color-hover: var(var(--urlbar-background-color)) !important;
+        
+        --urlbar-border-color: rgba(0,0,0,.32) !important;
+        --urlbar-border-color-hover: rgba(0,0,0,.32) !important;
+        --urlbar-border-color-focused: rgba(0,0,0,.32) !important;
     }
 }
 

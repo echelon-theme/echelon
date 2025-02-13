@@ -11,6 +11,10 @@
     --toolbarbutton-shadow-hot: 0 1px hsla(0,0%,100%,.3) inset, 0 1px hsla(210,54%,20%,.03), 0 0 2px hsla(210,54%,20%,.1) !important;
     --toolbarbutton-shadow-active: 0 1px 1px hsla(210,54%,20%,.1) inset, 0 0 1px hsla(210,54%,20%,.2) inset, 0 1px 0 hsla(210,54%,20%,0), 0 0 2px hsla(210,54%,20%,0) !important;
 
+    --toolbarbutton-menubutton-dropmarker-image: url("chrome://userchrome/content/assets/images/firefox-14/toolbarbutton-dropdown-arrow.png") !important;
+    &[lwtheme-brighttext] {
+        --toolbarbutton-menubutton-dropmarker-image: url("chrome://userchrome/content/assets/images/firefox-14/toolbarbutton-dropdown-arrow-inverted.png") !important;
+    }
     
     #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
         padding: 2px 6px !important;
@@ -90,7 +94,7 @@
                 display: flex !important;
                 width: 9px !important;
                 height: 7px !important;
-                content: url("chrome://userchrome/content/assets/images/firefox-14/toolbarbutton-dropdown-arrow.png") !important;
+                content: var(--toolbarbutton-menubutton-dropmarker-image) !important;
                 margin-block-start: 1px !important;
                 margin-inline-start: 3px !important;
             }
@@ -98,7 +102,7 @@
     }
 
     // Aero blue style
-    &:not([echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
+    &:not([lwtheme], [echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
         &[echelon-appearance-blue] {
             --toolbar-background-color: hsl(210,75%,92%) !important;
 

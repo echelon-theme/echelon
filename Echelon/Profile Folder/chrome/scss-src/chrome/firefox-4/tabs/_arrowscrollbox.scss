@@ -1,6 +1,7 @@
 :root {
     --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/tab-arrow-left.png") !important;
-    &:not([echelon-system-style="winxp"])[echelon-style-3] {
+    &:not([echelon-system-style="winxp"])[echelon-style-3],
+    &[lwtheme-brighttext] {
         --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-8/tabs/tab-arrow-left-inverted.png") !important;
     }
     &[echelon-style-6] {

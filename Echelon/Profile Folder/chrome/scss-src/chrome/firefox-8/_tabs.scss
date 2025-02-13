@@ -1,4 +1,5 @@
-&:not([echelon-system-style="winxp"]) {
+&:not([echelon-system-style="winxp"]),
+&[lwtheme-brighttext] {
     #TabsToolbar {
         #alltabs-button {
             .toolbarbutton-icon {

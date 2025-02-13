@@ -28,7 +28,7 @@
 	}
 
 	&[echelon-system-style="winxp"]:not([sizemode="maximized"]) {
-		#titlebar {
+		&:not([lwtheme="true"]) #titlebar {
 			background-color: -moz-Dialog !important;
 		}
 		
