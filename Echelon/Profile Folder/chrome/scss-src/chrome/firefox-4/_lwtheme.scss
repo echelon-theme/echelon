@@ -10,7 +10,7 @@
         background-color: var(--toolbar-background-color) !important;
     }
     
-    &[tabsintitlebar="true"] #titlebar {
+    &[tabsintitlebar="true"][sizemode="maximized"] #titlebar {
         visibility: hidden !important;
 
         > * {

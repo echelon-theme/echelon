@@ -18,6 +18,7 @@ let g_echelonLayoutManager;
 			let toolboxRoot = await waitForElement("#navigator-toolbox");
 			toolboxRoot.addEventListener("customizationchange", this);
 			toolboxRoot.addEventListener("aftercustomization", this);
+			this.initURLBarWidth();
 			this.refreshToolboxLayout();
 			this.hookTabArrowScrollbox();
 
@@ -268,6 +269,49 @@ let g_echelonLayoutManager;
 				element.scrollIntoView = scrollIntoView_hook;
 				ensureElementIsVisible_orig.apply(arrowScrollbox, arguments);
 			};
+		}
+
+		/**
+		 * Appends a XUL element inside of the URLBar Container.
+		 * 
+		 * Starting from I believe 133, the URLBar got changed from an
+		 * XUL element to an HTML element:
+		 * https://github.com/mozilla/gecko-dev/commit/22d599d1607cf798100f87e1b25e3e4f7e247f87
+		 * 
+		 * This causes the width of it to be fucked. The fucker knew about
+		 * this too and added extra code to manually add in the width. This
+		 * wouldn't be a problem until it was time in adding the Firefox 10
+		 * style and the unified URLBar.
+		 * 
+		 * The idea is to add a XUL element inside of the URLBar container
+		 * With similar unified styling as the actual URLBar and get the width
+		 * of the element and set it to the real URLBar element.
+		 */
+		initURLBarWidth()
+		{
+			let toolbar = gURLBar.textbox.closest("toolbar");
+
+			if (toolbar) {
+				let urlbarContainer = gURLBar.textbox.parentElement;
+
+				if (urlbarContainer) {
+					this.echelonURLBarElem = document.createXULElement("hbox");
+					this.echelonURLBarElem.id = "echelon-urlbar-positioning";
+					this.echelonURLBarElem.setAttribute("flex", "1");
+
+					urlbarContainer.insertBefore(this.echelonURLBarElem, urlbarContainer.lastChild);
+
+					let echelonURLBarObserver = new ResizeObserver(([entry]) => {
+							gURLBar.textbox.style.setProperty(
+								"--urlbar-echelon-width",
+								(entry.borderBoxSize[0].inlineSize) + "px"
+							);
+					})					
+
+					// Observer the sizing of the custom element.
+					echelonURLBarObserver.observe(this.echelonURLBarElem);
+				}
+			}
 		}
 	}
 	

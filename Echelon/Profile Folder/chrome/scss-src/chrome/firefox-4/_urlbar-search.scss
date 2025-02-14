@@ -50,11 +50,19 @@
     }
 }
 
+#echelon-urlbar-positioning {
+    pointer-events: none !important;
+
+    :root[customizing] & { // hide the element to fix the urlbar width on customizeui
+        visibility: collapse !important;
+    }
+}
+
 #urlbar {
     &[breakout],
     &[breakout][breakout-extend] {
         height: var(--urlbar-min-height) !important;
-        width: -moz-available !important;
+        width: var(--urlbar-echelon-width) !important;
         margin: 0 !important;
         top: calc((var(--urlbar-min-height) - 2) / 2) !important;
         left: 0 !important;

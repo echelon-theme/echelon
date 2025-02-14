@@ -1101,9 +1101,16 @@ window {
   visibility: collapse !important;
 }
 
+#echelon-urlbar-positioning {
+  pointer-events: none !important;
+}
+:root[customizing] #echelon-urlbar-positioning {
+  visibility: collapse !important;
+}
+
 #urlbar[breakout], #urlbar[breakout][breakout-extend] {
   height: var(--urlbar-min-height) !important;
-  width: -moz-available !important;
+  width: var(--urlbar-echelon-width) !important;
   margin: 0 !important;
   top: calc((var(--urlbar-min-height) - 2) / 2) !important;
   left: 0 !important;
@@ -3911,10 +3918,10 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[lwtheme=true] #PersonalToolbar {
   background-color: var(--toolbar-background-color) !important;
 }
-:root[lwtheme=true][tabsintitlebar=true] #titlebar {
+:root[lwtheme=true][tabsintitlebar=true][sizemode=maximized] #titlebar {
   visibility: hidden !important;
 }
-:root[lwtheme=true][tabsintitlebar=true] #titlebar > * {
+:root[lwtheme=true][tabsintitlebar=true][sizemode=maximized] #titlebar > * {
   visibility: visible !important;
 }
 :root[lwtheme=true] #TabsToolbar {
@@ -4196,14 +4203,14 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] {
   opacity: 0 !important;
 }
-:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #urlbar {
+:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #urlbar, :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #echelon-urlbar-positioning {
   margin-left: -27px !important;
 }
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background,
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container {
   mask: url("chrome://userchrome/content/assets/images/firefox-10/urlbar/winstripe-urlbar-back-button-mask.svg") !important;
   mask-repeat: no-repeat !important;
-  mask-position-x: -3px !important;
+  mask-position-x: -1px !important;
 }
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #identity-icon-box {
   padding-inline-start: 5px !important;
@@ -4224,7 +4231,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]):not([echelon-tabchanging=true]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] #identity-box {
   transition: padding-inline-start !important;
 }
-:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]):not([echelon-tabchanging=true]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container > #urlbar {
+:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]):not([echelon-tabchanging=true]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container > #urlbar, :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]):not([echelon-tabchanging=true]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container > #echelon-urlbar-positioning {
   transition: margin-inline-start 150ms ease-out !important;
 }
 :root[echelon-style-4]:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row[type=bookmark] .urlbarView-type-icon {
@@ -4679,7 +4686,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-6] #urlbar #star-button-box {
   visibility: collapse !important;
 }
-:root[echelon-style-6]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #urlbar {
+:root[echelon-style-6]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #urlbar, :root[echelon-style-6]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #echelon-urlbar-positioning {
   margin-left: -29px !important;
 }
 :root[echelon-style-6]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container {
@@ -5264,7 +5271,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-6][echelon-system-style=win10] #searchbar {
   border-radius: 0 !important;
 }
-:root[echelon-style-6][echelon-system-style=win8]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #urlbar, :root[echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #urlbar {
+:root[echelon-style-6][echelon-system-style=win8]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #urlbar, :root[echelon-style-6][echelon-system-style=win8]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #echelon-urlbar-positioning, :root[echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #urlbar, :root[echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #echelon-urlbar-positioning {
   margin-left: -29px !important;
 }
 :root[echelon-style-6][echelon-system-style=win8]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background,

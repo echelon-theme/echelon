@@ -123,7 +123,8 @@
             opacity: 0 !important;
 
             & + #urlbar-container {            
-                & > #urlbar {
+                & > #urlbar,
+                & > #echelon-urlbar-positioning {
                     margin-left: -27px !important;
                 }
     
@@ -131,7 +132,7 @@
                 .urlbar-input-container {
                     mask: url("chrome://userchrome/content/assets/images/firefox-10/urlbar/winstripe-urlbar-back-button-mask.svg") !important;
                     mask-repeat: no-repeat !important;
-                    mask-position-x: -3px !important;
+                    mask-position-x: -1px !important;
                 }
 
                 #identity-icon-box {
@@ -166,7 +167,8 @@
                     }
                 }
 
-                & + #urlbar-container > #urlbar {
+                & + #urlbar-container > #urlbar,
+                & + #urlbar-container > #echelon-urlbar-positioning {
                     transition: margin-inline-start 150ms ease-out !important;
                 }
             }
