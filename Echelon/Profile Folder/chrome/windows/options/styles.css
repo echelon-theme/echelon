@@ -29,6 +29,7 @@
 :root {
 	--echelon-wizard-width: 558px;
 	--echelon-wizard-height: 492px;
+	color-scheme: light !important;
 }
 
 #echelonOptions {

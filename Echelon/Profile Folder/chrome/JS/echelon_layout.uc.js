@@ -302,11 +302,11 @@ let g_echelonLayoutManager;
 					urlbarContainer.insertBefore(this.echelonURLBarElem, urlbarContainer.lastChild);
 
 					let echelonURLBarObserver = new ResizeObserver(([entry]) => {
-							gURLBar.textbox.style.setProperty(
-								"--urlbar-echelon-width",
-								(entry.borderBoxSize[0].inlineSize) + "px"
-							);
-					})					
+						gURLBar.textbox.style.setProperty(
+							"--urlbar-echelon-width",
+							(entry.borderBoxSize[0].inlineSize) + "px"
+						);
+					});
 
 					// Observer the sizing of the custom element.
 					echelonURLBarObserver.observe(this.echelonURLBarElem);

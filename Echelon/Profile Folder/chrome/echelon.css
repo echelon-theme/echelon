@@ -3948,6 +3948,9 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[lwtheme=true]:not([echelon-style-6]) #TabsToolbar .tabbrowser-tab:is([selected], [multiselected]) .tab-background {
   background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5) 50%) !important;
 }
+:root[lwtheme=true] #urlbar, :root[lwtheme=true] #searchbar {
+  color: black !important;
+}
 
 /* ::::: Firefox 5 ::::: */
 :root[echelon-style-1] {

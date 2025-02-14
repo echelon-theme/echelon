@@ -30,6 +30,10 @@
     --about-logo: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/new/about-logo.png");
 }
 
+:root {
+    color-scheme: light !important;
+}
+
 body {
     display: none;
 }

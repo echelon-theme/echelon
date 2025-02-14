@@ -26,6 +26,10 @@
 	src: url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWuU6F.woff2) format('woff2');
 }
 
+:root {
+	color-scheme: light !important;
+}
+
 body {
     display: flex;
     width: 100%;
