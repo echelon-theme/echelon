@@ -1,34 +1,56 @@
 // ==UserScript==
-// @name			Echelon :: Title Text
-// @description 	Changes the window title formats.
+// @name			Echelon :: Branding
+// @description 	Register brand FTLs.
 // @author			aubymori
 // @include			main
+// @onlyonce
 // ==/UserScript===
 
 {
-    function setTitleText() {
-        let root = document.documentElement;
-        let titles = BrandUtils.getDefaultTitles();
-        let browserName = BrandUtils.getBrandingKey("productName");
-    
-        root.dataset.titleDefault = titles.default;
-        root.dataset.titlePrivate = titles.private;
-        root.dataset.contentTitleDefault = titles.contentDefault;
-        root.dataset.contentTitlePrivate = titles.contentPrivate;
-        root.setAttribute("titleShortName", titles.appmenuName);
-
-        waitForElement("#appmenu-button").then(e => {
-            e.setAttribute("label", browserName);
-        });
+    function fsPathToFileUri(path, isDir = false)
+    {
+        let out = "file://";
+        if (Services.appinfo.OS == "WINNT")
+        {
+            // file:// URIs have a leading slash that Windows file path doesn't
+            // have normally
+            out += "/";
+        }
+        // Add and de-Windowsify the path
+        out += path.replaceAll("\\", "/");
+        // Add leading slash if it isn't there
+        if (isDir && out.slice(-1) != "/")
+            out += "/";
+        return out;
     }
 
-    const echelonBranding = {
-        observe: function (subject, topic, data) {
-            if (topic == "nsPref:changed")
-                setTitleText();
-        },
-    };
-
-    Services.prefs.addObserver("Echelon.Option.BrowserSpoof", echelonBranding, false);
-    setTitleText();
+    let brand = Services.prefs.getStringPref("Echelon.Option.Branding", "");
+    if (brand != "")
+    {
+        let brandFtl = Services.dirsvc.get("UChrm", Ci.nsIFile);
+        brandFtl.append("branding");
+        brandFtl.append(brand);
+        brandFtl.append("ftls");
+        let root = fsPathToFileUri(brandFtl.path, true);
+        brandFtl.append("branding");
+        brandFtl.append("brand.ftl");
+        if (brandFtl.exists())
+        {
+            let path = fsPathToFileUri(brandFtl.path);
+            let locale = Services.locale.appLocalesAsBCP47;
+            let source = new L10nFileSource(
+                "echelon",
+                "app",
+                locale,
+                root,
+                {
+                    addResourceOptions: {
+                        allowOverrides: true
+                    }
+                },
+                [path]
+            );
+            L10nRegistry.getInstance().registerSources([source]);
+        }
+    }
 }
