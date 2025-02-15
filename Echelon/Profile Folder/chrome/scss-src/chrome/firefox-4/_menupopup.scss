@@ -46,7 +46,7 @@
 	}
 
 	&[connection=chrome] #identity-popup-icon {
-		background-image: var(--icon64) !important;
+		background-image: url("chrome://branding/content/icon64.png") !important;
 	}
 
 	.identity-popup-description {

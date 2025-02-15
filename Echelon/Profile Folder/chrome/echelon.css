@@ -1,4 +1,5 @@
 /* ::::: Firefox 4 ::::: */
+@import "chrome://branding/content/branding.css";
 :root {
   --browser-area-z-index-toolbox: 1 !important;
   --browser-area-z-index-tabbox: 0 !important;
@@ -754,14 +755,15 @@ window {
   --toolbarbutton-icon-height: 18px;
   --toolbarbutton-icon-large-width: 20px;
   --toolbatbutton-icon-large-height: 20px;
-  --icon16: url("chrome://branding/content/icon32.png") !important;
-  --icon64: url("chrome://branding/content/icon64.png") !important;
   --identity-icons-brand: url("chrome://branding/content/icon32.png") !important;
-  --identity-color-brand: rgb(229,115,0) !important;
+  --identity-color-brand: rgb(229,115,0);
   --identity-background-brand: linear-gradient(rgba(229,114,0,0),
                                rgba(229,114,0,.5) 35%,
                                rgba(229,114,0,.5) 65%,
-                               rgba(229,114,0,0)) !important;
+                               rgba(229,114,0,0));
+}
+:root[echelon-custom-branding=true] {
+  --identity-icons-brand: url("chrome://branding/content/identity-icons-brand.png") !important;
 }
 :root #back-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/back-large.png") !important;
@@ -969,74 +971,6 @@ window {
 }
 :root[lwtheme-brighttext] #echelon-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/echelon.png") !important;
-}
-:root[titleShortName=firefox] {
-  --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/identity-icons-brand.png") !important;
-  --icon64: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon64.png") !important;
-}
-:root[titleShortName=firefox] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-  content: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon16.png") !important;
-}
-:root[titleShortName=firefox] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon16.png") !important;
-}
-:root[titleShortName=firefox][echelon-appearance-newlogo] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-  content: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/icon16.png") !important;
-}
-:root[titleShortName=firefox][echelon-appearance-newlogo] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/icon16.png") !important;
-}
-:root[titleShortName=firefox][echelon-appearance-newlogo] {
-  --icon64: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/icon64.png") !important;
-}
-:root[titleShortName=nightly] {
-  --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/new/identity-icons-brand.png") !important;
-  --identity-color-brand: rgb(0,33,71) !important;
-  --identity-background-brand: linear-gradient(rgba(0,33,71,0),
-                             rgba(0,33,71,.5) 35%,
-                             rgba(0,33,71,.5) 65%,
-                             rgba(0,33,71,0)) !important;
-}
-:root[titleShortName=nightly] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-  content: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/icon16.png") !important;
-}
-:root[titleShortName=nightly] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/icon16.png") !important;
-}
-:root[titleShortName=nightly][echelon-appearance-newlogo] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-  content: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/new/icon16.png") !important;
-}
-:root[titleShortName=nightly][echelon-appearance-newlogo] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/new/icon16.png") !important;
-}
-:root[titleShortName=aurora] {
-  --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/new/identity-icons-brand.png") !important;
-  --identity-color-brand: rgb(51,30,84) !important;
-  --identity-background-brand: linear-gradient(rgba(51,30,84,0),
-                             rgba(51,30,84,.5) 35%,
-                             rgba(51,30,84,.5) 65%,
-                             rgba(51,30,84,0)) !important;
-}
-:root[titleShortName=aurora] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-  content: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/icon16.png") !important;
-}
-:root[titleShortName=aurora] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/icon16.png") !important;
-}
-:root[titleShortName=aurora][echelon-appearance-newlogo] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-  content: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/new/icon16.png") !important;
-}
-:root[titleShortName=aurora][echelon-appearance-newlogo] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/new/icon16.png") !important;
-}
-:root[titleShortName=echelon] {
-  --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/identity-icons-brand.png") !important;
-}
-:root[titleShortName=echelon] .tab-icon-image[src="chrome://branding/content/icon32.png"] {
-  content: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/icon16.png") !important;
-}
-:root[titleShortName=echelon] #identity-icon[style="list-style-image: url('chrome://branding/content/icon32.png');"] {
-  list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/icon16.png") !important;
 }
 :root .tab-icon-image[src="chrome://mozapps/skin/extensions/extension.svg"] {
   content: url("chrome://userchrome/content/assets/images/firefox-4/extensions/extensionGeneric-16.png") !important;
@@ -1732,39 +1666,6 @@ window {
   --appmenu-button-hover-shadow: 0 1px 0 rgba(255, 255, 255, .1) inset,
                                  0 0 2px 1px rgba(240, 193, 255, .7) inset,
                                  0 -1px 0 rgba(240, 193, 255, .5) inset !important;
-  --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
-                                  0 1px 1px rgba(0, 0, 0, .2) inset !important;
-}
-
-:root:not([privatebrowsingmode=temporary])[titleShortName=aurora] {
-  --appmenu-button-border-color: hsla(214, 89%, 21%, .9) !important;
-  --appmenu-button-hover-border-color: hsla(214, 89%, 21%, .9) !important;
-  --appmenu-button-active-border-color: hsla(214, 89%, 21%, .9) !important;
-  --appmenu-button-normal-background: linear-gradient(hsl(208, 99%, 37%), hsl(214, 90%, 23%) 95%) !important;
-  --appmenu-button-hover-background: radial-gradient(farthest-side at bottom, hsla(202, 100%, 85%, .5) 10%, hsla(202, 100%, 85%, 0) 70%),
-                                     radial-gradient(farthest-side at bottom, hsla(205, 100%, 72%, .7), hsla(205, 100%, 72%, 0)),
-                                     linear-gradient(hsl(208, 98%, 34%), hsl(213, 87%, 20%) 95%) !important;
-  --appmenu-button-active-background: linear-gradient(hsl(208, 95%, 30%), hsl(214, 85%, 17%) 95%) !important;
-  --appmenu-button-normal-shadow: 0 1px 0 hsla(205,100%,72%,.2) inset, 0 0 2px 1px hsla(205,100%,72%,.25) inset !important;
-  --appmenu-button-hover-shadow: 0 1px 0 hsla(205, 100%, 72%, .15) inset,
-                                 0 0 2px 1px hsla(205, 100%, 72%, .5) inset,
-                                 0 -1px 0 hsla(205, 100%, 72%, .2) inset !important;
-  --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
-                                  0 1px 1px rgba(0, 0, 0, .2) inset !important;
-}
-:root:not([privatebrowsingmode=temporary])[titleShortName=nightly] {
-  --appmenu-button-border-color: hsla(210, 59%, 13%, .9) !important;
-  --appmenu-button-hover-border-color: hsla(210, 59%, 13%, .9) !important;
-  --appmenu-button-active-border-color: hsla(210, 59%, 13%, .9) !important;
-  --appmenu-button-normal-background: linear-gradient(hsl(211, 33%, 32%), hsl(209, 53%, 10%) 95%) !important;
-  --appmenu-button-hover-background: -moz-radial-gradient(center bottom, farthest-side, hsla(210, 48%, 90%, .5) 10%, hsla(210, 48%, 90%, 0) 70%),
-                                     -moz-radial-gradient(center bottom, farthest-side, hsla(211, 70%, 83%, .5), hsla(211, 70%, 83%, 0)),
-                                     linear-gradient(hsl(211, 33%, 32%), hsl(209, 53%, 10%) 95%) !important;
-  --appmenu-button-active-background: linear-gradient(hsl(211, 33%, 26%), hsl(209, 53%, 6%) 95%) !important;
-  --appmenu-button-normal-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset, 0 0 2px 1px hsla(211, 65%, 85%, .15) inset !important;
-  --appmenu-button-hover-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset,
-                                 0 0 2px 1px hsla(210, 48%, 90%, .4) inset,
-                                 0 -1px 0 hsla(210, 48%, 90%, .2) inset !important;
   --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
                                   0 1px 1px rgba(0, 0, 0, .2) inset !important;
 }
@@ -3210,7 +3111,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-position-y: -128px !important;
 }
 #identity-popup[connection=chrome] #identity-popup-icon {
-  background-image: var(--icon64) !important;
+  background-image: url("chrome://branding/content/icon64.png") !important;
 }
 #identity-popup .identity-popup-description {
   white-space: pre-wrap !important;
@@ -5551,5 +5452,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-7][echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] #urlbar-background {
   box-shadow: inset 0 1px 0 var(--urlbar-border-color-focused), inset 0 1px 0 var(--urlbar-border-color-focused), inset 0 -1px 0 var(--urlbar-border-color-focused) !important;
 }
+
+/* ::::: Echelon Branding ::::: */
 
 /*# sourceMappingURL=echelon.css.map */

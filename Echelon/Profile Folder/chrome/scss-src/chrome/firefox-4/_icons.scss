@@ -5,14 +5,16 @@
     --toolbarbutton-icon-height: 18px;
     --toolbarbutton-icon-large-width: 20px;
     --toolbatbutton-icon-large-height: 20px;
-    --icon16: url("chrome://branding/content/icon32.png") !important;
-    --icon64: url("chrome://branding/content/icon64.png") !important;
     --identity-icons-brand: url("chrome://branding/content/icon32.png") !important;
-    --identity-color-brand: rgb(229,115,0) !important;
+    --identity-color-brand: rgb(229,115,0);
     --identity-background-brand: linear-gradient(rgba(229,114,0,0),
                                  rgba(229,114,0,.5) 35%,
                                  rgba(229,114,0,.5) 65%,
-                                 rgba(229,114,0,0)) !important;
+                                 rgba(229,114,0,0));
+
+    &[echelon-custom-branding="true"] {
+        --identity-icons-brand: url("chrome://branding/content/identity-icons-brand.png") !important;
+    }
 
     @include toolbar-icons((    
         "back-button": "firefox-4/toolbar/back-large.png",
@@ -88,54 +90,6 @@
         "developer-button": "firefox-29/toolbar/inverted/developer.png",
         "echelon-button": "firefox-4/toolbar/inverted/echelon.png"
     ));
-
-    &[titleShortName="firefox"] {
-        --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/identity-icons-brand.png") !important;
-        
-        @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon16.png");
-        &[echelon-appearance-newlogo] {
-            @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/icon16.png");
-        }
-
-        --icon64: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/icon64.png") !important;
-        &[echelon-appearance-newlogo] {
-            --icon64: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/icon64.png") !important;
-        }
-    }
-
-    &[titleShortName="nightly"] {
-        --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/new/identity-icons-brand.png") !important;
-        --identity-color-brand: rgb(0,33,71) !important;
-        --identity-background-brand: linear-gradient(rgba(0,33,71,0),
-                                   rgba(0,33,71,.5) 35%,
-                                   rgba(0,33,71,.5) 65%,
-                                   rgba(0,33,71,0)) !important;
-
-        @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/nightly/icon16.png");
-        &[echelon-appearance-newlogo] {
-            @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/nightly/new/icon16.png");
-        }
-    }
-
-    &[titleShortName="aurora"] {
-        --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/new/identity-icons-brand.png") !important;
-        --identity-color-brand: rgb(51,30,84) !important;
-        --identity-background-brand: linear-gradient(rgba(51,30,84,0),
-                                   rgba(51,30,84,.5) 35%,
-                                   rgba(51,30,84,.5) 65%,
-                                   rgba(51,30,84,0)) !important;
-
-        @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/aurora/icon16.png");
-        &[echelon-appearance-newlogo] {
-            @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/aurora/new/icon16.png");
-        }
-    }
-
-    &[titleShortName="echelon"] {
-        --identity-icons-brand: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/identity-icons-brand.png") !important;
-
-        @include replace-favicon("chrome://branding/content/icon32.png", "chrome://userchrome/content/assets/images/firefox-4/branding/echelon/icon16.png");
-    }
 
     @include replace-favicon("chrome://mozapps/skin/extensions/extension.svg", "chrome://userchrome/content/assets/images/firefox-4/extensions/extensionGeneric-16.png");
     &[echelon-system-style="winxp"] {
