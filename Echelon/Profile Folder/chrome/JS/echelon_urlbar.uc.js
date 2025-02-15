@@ -22,7 +22,15 @@ waitForElement("#urlbar").then(e => {
 		// Related Firefox code involving opening the URLbar Dropdown seems to use
 		// Private Properties, so this will do for now.
 		gURLBar._inputContainer.click();
+		gURLBar.searchMode = {
+			source: UrlbarUtils.RESULT_SOURCE.BOOKMARKS,
+			entry: "shortcut",
+		};
+		gURLBar.search(gURLBar.value);
+		gURLBar.select();
 	}
+
+	
 });
 
 function updateIcon()

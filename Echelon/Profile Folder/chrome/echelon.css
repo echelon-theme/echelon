@@ -856,6 +856,36 @@ window {
 :root #echelon-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/echelon.png") !important;
 }
+:root #panic-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/forget.png") !important;
+}
+:root #panic-button[open] {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/forget_active.png") !important;
+}
+:root #open-file-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/open.png") !important;
+}
+:root #save-page-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/save.png") !important;
+}
+:root #email-link-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/mail.png") !important;
+}
+:root #sync-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/synced-tabs.png") !important;
+}
+:root #sidebar-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/sidebars.png") !important;
+}
+:root #screenshot-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/screenshot.png") !important;
+}
+:root #logins-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/login.png") !important;
+}
+:root #import-button {
+  list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/toolbar/import.png") !important;
+}
 :root[lwtheme-brighttext] #back-button {
   list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/toolbar/inverted/back-large.png") !important;
 }
@@ -4711,6 +4741,25 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   display: block;
   background-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-start.png"), url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-middle.png"), url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-background-end.png");
 }
+:root[echelon-style-6] #TabsToolbar #alltabs-button, :root[echelon-style-6][lwtheme-brighttext] #TabsToolbar #alltabs-button {
+  min-width: 19px !important;
+}
+:root[echelon-style-6] #TabsToolbar #alltabs-button .toolbarbutton-icon, :root[echelon-style-6][lwtheme-brighttext] #TabsToolbar #alltabs-button .toolbarbutton-icon {
+  background-image: url("chrome://userchrome/content/assets/images/firefox-14/toolbarbutton-dropdown-arrow.png") !important;
+  list-style-image: none !important;
+  background-position: 0 !important;
+}
+:root[echelon-style-6] #TabsToolbar #alltabs-button .toolbarbutton-icon,
+:root[echelon-style-6] #TabsToolbar #alltabs-button .toolbarbutton-badge-stack, :root[echelon-style-6][lwtheme-brighttext] #TabsToolbar #alltabs-button .toolbarbutton-icon,
+:root[echelon-style-6][lwtheme-brighttext] #TabsToolbar #alltabs-button .toolbarbutton-badge-stack {
+  width: 9px !important;
+  height: 7px !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
 :root[echelon-style-6] #TabsToolbar {
   background-image: none !important;
   z-index: 2 !important;
@@ -4728,24 +4777,6 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-6] #TabsToolbar .toolbar-items {
   padding-top: 1px !important;
   padding-inline: 1px !important;
-}
-:root[echelon-style-6] #TabsToolbar #alltabs-button {
-  min-width: 19px !important;
-}
-:root[echelon-style-6] #TabsToolbar #alltabs-button .toolbarbutton-icon {
-  background-image: url("chrome://userchrome/content/assets/images/firefox-14/toolbarbutton-dropdown-arrow.png") !important;
-  list-style-image: none !important;
-  background-position: 0 !important;
-}
-:root[echelon-style-6] #TabsToolbar #alltabs-button .toolbarbutton-icon,
-:root[echelon-style-6] #TabsToolbar #alltabs-button .toolbarbutton-badge-stack {
-  width: 9px !important;
-  height: 7px !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  outline: 0 !important;
-  box-shadow: none !important;
-  background-color: transparent !important;
 }
 :root[echelon-style-6] #TabsToolbar #new-tab-button {
   min-width: 26px !important;
@@ -4876,7 +4907,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   list-style-image: none !important;
 }
 :root[echelon-style-6] #tabbrowser-tabs[movingtab] > .tabbrowser-tab:last-of-type::after,
-:root[echelon-style-6] .tabbrowser-tab:not([selected]):not(:hover + .tabbrowser-tab):not(:first-of-type + .tabbrowser-tab):not(:hover)::before,
+:root[echelon-style-6] .tabbrowser-tab:not([selected]):not(:hover + .tabbrowser-tab):not(:first-of-type):not(:first-of-type[selected] + .tabbrowser-tab):not(:hover)::before,
 :root[echelon-style-6] #tabbrowser-tabs:not([overflow]) .tabbrowser-tab:not([selected]):last-of-type:not([beforehovered]):not(:hover)::after {
   margin-inline-start: -1.5px;
   margin-inline-end: -1.5px;
