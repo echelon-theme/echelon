@@ -238,7 +238,7 @@ let g_echelonFirefoxButton = null;
 				// Button creation and insertion
 				//
 				waitForElement("#titlebar-content").then(e => {
-					let browserName = BrandUtils.getBrandingKey("productName");
+					let browserName = BrandUtils.getBrandingKey("brandShortName");
 
 					this.appMenuButtonContainerEl = document.createXULElement("hbox");
 					const appMenuButtonContainerAttrs = {

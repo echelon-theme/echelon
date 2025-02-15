@@ -6,8 +6,7 @@ let root = document.documentElement;
 let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Homepage.Style");
 let newLogo = PrefUtils.tryGetBoolPref("Echelon.Appearance.NewLogo");
 let snippets = PrefUtils.tryGetBoolPref("Echelon.Homepage.HideCustomSnippets");
-let product = BrandUtils.getBrandingKey("productName");
-let titles = BrandUtils.getDefaultTitles();
+let product = BrandUtils.getBrandingKey("brandShortName");
 
 function createHomePage() {
     let container = document.body;
@@ -240,8 +239,6 @@ function showSnippets()
 
 
 function updateHomepageStyle() {
-    root.setAttribute("titleShortName", titles.appmenuName);
-    
     if (newLogo) {
         root.setAttribute("echelon-appearance-newlogo", "true");
     }
@@ -251,7 +248,7 @@ function updateHomepageStyle() {
         root.setAttribute(`echelon-style-${i}`, "true");
     }
 
-    document.title = homeBundle.formatStringFromName("title_format", [BrandUtils.getBrandingKey("fullName")]);
+    document.title = homeBundle.formatStringFromName("title_format", [BrandUtils.getBrandingKey("brandFullName")]);
 }
 
 function onSearchSubmit(e)

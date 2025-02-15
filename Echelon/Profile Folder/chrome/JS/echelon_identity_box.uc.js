@@ -172,8 +172,8 @@
             }
 
             if (gIdentityHandler._isSecureInternalUI) {
-                let fullName = BrandUtils.getBrandingKey("fullName");
-                let productName = BrandUtils.getBrandingKey("productName");
+                let fullName = BrandUtils.getBrandingKey("brandShortName");
+                let productName = BrandUtils.getBrandingKey("brandFullName");
 
                 mainView.querySelector("#identity-popup-brandName").setAttribute("value", fullName);
 
