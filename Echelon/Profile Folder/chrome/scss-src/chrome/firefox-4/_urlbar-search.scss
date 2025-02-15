@@ -51,11 +51,10 @@
 }
 
 #echelon-urlbar-positioning {
+    position: absolute !important;
+    width: -moz-available !important;
+    height: var(--urlbar-container-height) !important;
     pointer-events: none !important;
-
-    :root[customizing] & { // hide the element to fix the urlbar width on customizeui
-        visibility: collapse !important;
-    }
 }
 
 #urlbar {

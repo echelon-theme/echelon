@@ -647,6 +647,8 @@ menulist::part(label-box) {
 	color: #1F364C;
 	text-transform: uppercase;
 	text-shadow: 0 1px 0 white;
+	text-align: left;
+	cursor: inherit;
 }
 
 .menulist .dropdown-marker {
@@ -706,16 +708,48 @@ menulist::part(label-box) {
 .menulist .list-container .item {
 	min-width: 200px;
 	min-height: 44px;
-	border-radius: 2px;
-	border: 1px solid transparent;
 	padding: 6px;
 	font-size: 15px;
 	align-items: center;
 	color: #4B5964;
+	border: 1px solid;
+	border-color: hsla(210,54%,20%,0) hsla(210,54%,20%,0) hsla(210,54%,20%,.0);
+	border-radius: 2px;
+	background-color: hsla(210,48%,96%,0);
+	background-image: linear-gradient(to bottom, hsla(0,0%,100%,0), hsla(0,0%,100%,0));
+	background-clip: padding-box;
+	text-shadow: 0 1px 0 white;
+	box-shadow: 0 1px hsla(0,0%,100%,0) inset, 0 1px hsla(210,54%,20%,0), 0 0 2px hsla(210,54%,20%,0);
+	transition-property: background-color, border-color, box-shadow;
+	transition-duration: 150ms;
+}
+
+.menulist .list-container .item:not(:last-of-type) {
+	margin-block-end: 4px;
+}
+
+.menulist .list-container .item:hover {
+	border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25);
+	background-color: hsla(210,48%,96%,0);
+	background-image: linear-gradient(to bottom, hsla(0,0%,100%,.6), hsla(0,0%,100%,.1));
+	box-shadow: 0 1px hsla(0,0%,100%,.3) inset, 0 1px hsla(210,54%,20%,.03), 0 0 2px hsla(210,54%,20%,.1);
+}
+
+.menulist .list-container .item:hover:active,
+.menulist .list-container .item[selected] {
+	transition: none;
+	background-image: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1));
+	background-color: hsla(216, 2%, 45%, 0.15);
+	box-shadow: 0 1px 1px hsla(210,54%,20%,.1) inset, 0 0 1px hsla(210,54%,20%,.2) inset, 0 1px 0 hsla(210,54%,20%,0), 0 0 2px hsla(210,54%,20%,0);
+	border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4);
 }
 
 .menulist .item-iconic .item-iconic-image {
 	margin-inline-end: 10px;
+}
+
+.menulist .item-iconic .item-iconic-text {
+	cursor: inherit;
 }
 
 #system-style-default {
@@ -724,4 +758,12 @@ menulist::part(label-box) {
 
 #system-style-winxp {
 	list-style-image: url("chrome://userchrome/content/windows/options/images/system-styles/winxp.png");
+}
+
+#system-style-win8 {
+	list-style-image: url("chrome://userchrome/content/windows/options/images/system-styles/win8.png");
+}
+
+#system-style-win10 {
+	list-style-image: url("chrome://userchrome/content/windows/options/images/system-styles/win10.png");
 }

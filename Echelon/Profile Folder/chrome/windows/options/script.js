@@ -1,4 +1,4 @@
-const { EchelonThemeManager } = ChromeUtils.importESModule("chrome://modules/content/EchelonThemeManager.sys.mjs");
+    const { EchelonThemeManager } = ChromeUtils.importESModule("chrome://modules/content/EchelonThemeManager.sys.mjs");
 const { VersionUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 const gOptionsBundle = document.getElementById("optionsBundle");
 
@@ -25,6 +25,20 @@ document.getElementById("categories").addEventListener("select", switchCategory)
 
 document.querySelectorAll(".menulist").forEach(menulist => {
     let dropdown = menulist.querySelector(".list");
+    let firstItem = menulist.querySelector(".item");
+    let defaultItem = menulist.querySelector(".item[selected]");
+    let items = menulist.querySelectorAll(".item");
+    let dropdownText = menulist.querySelector(".selected");
+
+    if (!defaultItem) {
+        dropdownText.textContent = firstItem.textContent;
+        menulist.setAttribute("value", firstItem.getAttribute("value"));
+        firstItem.setAttribute("selected", true);
+    } else {
+        dropdownText.textContent = defaultItem.textContent;
+        menulist.setAttribute("value", defaultItem.getAttribute("value"));
+        defaultItem.setAttribute("selected", true);
+    }
 
     menulist.addEventListener("click", (e) => {
         let menuListBoundingRect = menulist.getBoundingClientRect();
@@ -53,6 +67,31 @@ document.querySelectorAll(".menulist").forEach(menulist => {
 
         e.stopPropagation();
     });
+
+    items.forEach(item => {
+        item.addEventListener("click", () => {
+            items.forEach(item => {
+                item.removeAttribute("selected");
+            });
+
+            menulist.setAttribute("value", item.getAttribute("value"));
+            dropdownText.textContent = item.textContent;
+            item.setAttribute("selected", true);
+            document.dispatchEvent(new CustomEvent("echelon-menulist-command"));
+        })
+    });
+
+    menulist.setValue = function(value) {
+        let selectedItem = menulist.querySelector(`.item[value="${value}"]`);
+        if (selectedItem) {
+            items.forEach(item => {
+                item.removeAttribute("selected");
+            });
+            selectedItem.setAttribute("selected", true);
+            menulist.setAttribute("value", value);
+            dropdownText.textContent = selectedItem.textContent;
+        }
+    };
 });
 
 const gPrefHandler = {
@@ -73,7 +112,6 @@ const gPrefHandler = {
                 );
                 break;
             case "menulist":
-
 				if (element.getAttribute("type") == "string") {
 					element.value = Services.prefs.getStringPref(
 						element.getAttribute("preference")
@@ -85,6 +123,19 @@ const gPrefHandler = {
 						0
 					);
 				}
+                break;
+            case "echelon-menulist":
+                if (element.getAttribute("type") == "string") {
+                    element.value = Services.prefs.getStringPref(
+                        element.getAttribute("preference")
+                    );
+                } 
+                else {
+                    element.value = Services.prefs.getIntPref(
+                        element.getAttribute("preference"),
+                        0
+                    );
+                }
                 break;
             case "input":
                 switch (element.type)
@@ -144,6 +195,12 @@ const gPrefHandler = {
 					);
 				};
                 break;
+            case "echelon-menulist-command":
+                Services.prefs.setStringPref(
+                    event.target.getAttribute("preference"),
+                    event.target.value
+                );
+                break;
         }
     },
 
@@ -166,7 +223,8 @@ const gPrefHandler = {
         document.addEventListener("CheckboxStateChange", this);
         document.addEventListener("input", this);
         document.addEventListener("command", this);
-        document.addEventListener("updateRadioGroup", this)
+        document.addEventListener("updateRadioGroup", this);
+        document.addEventListener("echelon-menulist-command", this);
     }
 };
 

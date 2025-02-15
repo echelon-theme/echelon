@@ -124,8 +124,8 @@
 							<label class="header-text" value="Native Controls" />
 						</hbox>
 						<vbox class="section-content">
-							<html:button class="menulist" flex="1">
-								<label class="selected" value="PLACEHOLDER" />
+							<echelon-menulist class="menulist" type="string" preference="Echelon.Appearance.systemStyle" flex="1">
+								<label class="selected"></label>
 								<image class="dropdown-marker" />
 								<vbox class="list">
 									<hbox class="list-arrow">
@@ -140,9 +140,17 @@
 											<image class="item-iconic-image" />
 											<label class="item-iconic-text">Windows XP</label>
 										</hbox>
+										<hbox class="item item-iconic" id="system-style-win8" value="win8">
+											<image class="item-iconic-image" />
+											<label class="item-iconic-text">Windows 8</label>
+										</hbox>
+										<hbox class="item item-iconic" id="system-style-win10" value="win10">
+											<image class="item-iconic-image" />
+											<label class="item-iconic-text">Windows 10</label>
+										</hbox>
 									</vbox>
 								</vbox>
-							</html:button>
+							</echelon-menulist>
 						</vbox>
 					</vbox>
 					<vbox id="section-about" class="section" flex="1">

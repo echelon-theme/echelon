@@ -1066,10 +1066,10 @@ window {
 }
 
 #echelon-urlbar-positioning {
+  position: absolute !important;
+  width: -moz-available !important;
+  height: var(--urlbar-container-height) !important;
   pointer-events: none !important;
-}
-:root[customizing] #echelon-urlbar-positioning {
-  visibility: collapse !important;
 }
 
 #urlbar[breakout], #urlbar[breakout][breakout-extend] {
