@@ -23,6 +23,38 @@ function switchCategory(event)
 }
 document.getElementById("categories").addEventListener("select", switchCategory);
 
+document.querySelectorAll(".menulist").forEach(menulist => {
+    let dropdown = menulist.querySelector(".list");
+
+    menulist.addEventListener("click", (e) => {
+        let menuListBoundingRect = menulist.getBoundingClientRect();
+        let dropdownBoundingRect = dropdown.getBoundingClientRect();
+
+        dropdown.style.left = menuListBoundingRect.right - dropdownBoundingRect.width + "px";
+
+        dropdown.style.top = menuListBoundingRect.height + menuListBoundingRect.y + "px";
+
+        if (!menulist.hasAttribute("open")) 
+        {
+            document.querySelectorAll('.menulist[open="true"]').forEach(openMenu => {
+                openMenu.removeAttribute("open");
+            })
+
+            menulist.setAttribute("open", true);
+        } 
+        else 
+        {
+            menulist.removeAttribute("open");
+        }
+
+        document.addEventListener("click", function() {
+			menulist.removeAttribute("open");
+		});
+
+        e.stopPropagation();
+    });
+});
+
 const gPrefHandler = {
     updatePref: function PrefHandler_updatePref(element)
     {
