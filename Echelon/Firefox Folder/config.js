@@ -1,22 +1,37 @@
 // skip 1st line
-try {
-  
-  let {
-  classes: Cc,
-  interfaces: Ci,
-  manager: Cm,
-  utils: Cu
-  } = Components;
-  
-  let cmanifest = Cc['@mozilla.org/file/directory_service;1'].getService(Ci.nsIProperties).get('UChrm', Ci.nsIFile);
-  cmanifest.append('utils');
-  cmanifest.append('chrome.manifest');
-  
-  if(cmanifest.exists()){
-    Cm.QueryInterface(Ci.nsIComponentRegistrar).autoRegister(cmanifest);
-    Cu.import('chrome://userchromejs/content/boot.jsm');
-  }
+try
+{  
+    let {
+        classes: Cc,
+        interfaces: Ci,
+        manager: Cm,
+        utils: Cu
+    } = Components;
+    
+    let cmanifest = Cc["@mozilla.org/file/directory_service;1"].getService(Ci.nsIProperties).get("UChrm", Ci.nsIFile);
+    cmanifest.append("utils");
+    cmanifest.append("chrome.manifest");
+    
+    if (cmanifest.exists())
+    {
+        Cm.QueryInterface(Ci.nsIComponentRegistrar).autoRegister(cmanifest);
+        Cu.import("chrome://userchromejs/content/boot.jsm");
+    }
 
+    // Branding part 1: Registration of content
+    let prefs = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefBranch);
+    let branding = prefs.getStringPref("Echelon.Option.Branding", "");
+    if (branding != "")
+    {
+        let brandingManifest = Cc["@mozilla.org/file/directory_service;1"].getService(Ci.nsIProperties).get("UChrm", Ci.nsIFile);
+        brandingManifest.append("branding");
+        brandingManifest.append(branding);
+        brandingManifest.append("chrome.manifest");
+        if (brandingManifest.exists())
+        {
+            Cm.QueryInterface(Ci.nsIComponentRegistrar).autoRegister(brandingManifest);
+        }
+    }
 } catch(ex) {};
 
 // FUCK DARK MODE
@@ -62,6 +77,7 @@ defaultPref("Echelon.Appearance.Australis.Windows10", false);
 defaultPref("Echelon.Appearance.DevTools", true);
 
 defaultPref("Echelon.Option.HideUnifiedExtensions", false);
+defaultPref("Echelon.Option.Branding", "");
 
 defaultPref("Echelon.Behavior.ViewImage", true);
 
@@ -70,6 +86,7 @@ defaultPref("Echelon.FirefoxButton.CustomName", "");
 defaultPref("Echelon.FirefoxButton.CustomBGColor", "#000000");
 
 defaultPref("Echelon.parameter.isFirstRunFinished", false);
+
 
 // Disable fancy tab tooltips
 defaultPref("browser.tabs.hoverPreview.enabled", false);

@@ -66,7 +66,7 @@ function updateIcon()
 		}
 
 		if (gIdentityHandler._isSecureInternalUI) {
-			let browserName = BrandUtils.getBrandingKey("productName");
+			let browserName = BrandUtils.getBrandingKey("brandShortName");
 
 			gIdentityHandler._identityIconLabel.setAttribute("value", browserName);
 		}

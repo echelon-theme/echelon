@@ -120,80 +120,11 @@ class PrefUtils
 
 class BrandUtils
 {	
-	static branding = {
-		"firefox": {
-			"fullName": "Mozilla Firefox",
-			"productName": "Firefox",
-			"vendorName": "Mozilla"
-		},
-		"aurora": {
-			"fullName": "Aurora",
-			"productName": "Aurora",
-			"vendorName": "Mozilla"
-		},
-		"nightly": {
-			"fullName": "Nightly",
-			"productName": "Nightly",
-			"vendorName": "Mozilla"
-		},
-		"echelon": {
-			"fullName": "Echelon",
-			"productName": "Echelon",
-			"vendorName": "The Echelon Team"
-		},
-		"fallback": {
-			"fullName": brandBundle.GetStringFromName("brandShortName"),
-			"productName": brandBundle.GetStringFromName("brandShorterName"),
-			"vendorName": Services.appinfo.vendor
-		}
-	};
-
-	static getUpdateChannel()
-	{
-		return Services.appinfo.defaultUpdateChannel;
-	}
-
-	static getBrowserName()
-	{
-		let prefChoice = PrefUtils.tryGetStringPref("Echelon.Option.BrowserSpoof");
-
-		switch (this.getUpdateChannel())
-		{
-			case "nightly":
-				return "nightly";
-			case "aurora":
-				return "aurora";
-			default: 
-				if (Object.keys(this.branding).includes(prefChoice)) {
-					return prefChoice;
-				}
-				return "fallback";
-		}
-	}
+	static bundle = Services.strings.createBundle("chrome://branding/locale/brand.properties");
 
 	static getBrandingKey(key)
 	{
-		let prefChoice = this.getBrowserName();
-
-		return this.branding[prefChoice][key];
-	}
-
-	static getDefaultTitles()
-	{
-		let prefChoice = this.getBrowserName();
-		let fullName = this.branding[prefChoice]["fullName"];
-
-		if (prefChoice == "fallback") {
-			prefChoice = Services.appinfo.name;
-		}
-
-		return {
-			"default": fullName,
-			"private": `${fullName} (Private Browsing)`,
-			"contentDefault": `CONTENTTITLE - ${fullName}`,
-			"contentPrivate": `CONTENTTITLE - ${fullName} (Private Browsing)`,
-			"appmenuName": prefChoice
-		};
+		return this.bundle.GetStringFromName(key);
 	}
 }
 

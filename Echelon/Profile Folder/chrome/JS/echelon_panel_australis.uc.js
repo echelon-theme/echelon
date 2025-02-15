@@ -290,7 +290,7 @@ class AustralisPanelController
                             elm("xul:toolbarbutton", {
                                 "id": "PanelUI-quit",
                                 "label": "&quitApplicationCmdWin2.label;",
-                                "tooltiptext": str("appmenu_quit.tooltip", BrandUtils.getBrowserName()),
+                                "tooltiptext": str("appmenu_quit.tooltip", BrandUtils.getBrandingKey("brandShortName")),
                                 "command": "cmd_quitApplication"
                             })
                         ])
