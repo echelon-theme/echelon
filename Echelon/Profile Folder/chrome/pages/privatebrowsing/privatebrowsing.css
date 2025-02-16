@@ -100,9 +100,9 @@ body.normal .showPrivate {
 #moreInfo {
     font-size: 110%;
     padding-inline-start: 25px;
-    background: url('chrome://userchrome/content/assets/images/firefox-4/icons/information-16.png') no-repeat scroll left top transparent;
+    background: url('chrome://echelon/content/firefox-4/icons/information-16.png') no-repeat scroll left top transparent;
 }
 
 :root[echelon-system-style="winxp"] #moreInfo {
-	background-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/icons/information-16.png");
+	background-image: url("chrome://echelon/content/firefox-4/xp/icons/information-16.png");
 }

@@ -3,31 +3,31 @@
 }
 
 :root[titleShortName="firefox"] {
-    --about-logo: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/about-logo.png");
+    --about-logo: url("chrome://echelon/content/firefox-4/branding/firefox/about-logo.png");
 }
 
 :root[titleShortName="nightly"] {
-    --about-logo: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/about-logo.png");
+    --about-logo: url("chrome://echelon/content/firefox-4/branding/nightly/about-logo.png");
 }
 
 :root[titleShortName="aurora"] {
-    --about-logo: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/about-logo.png");
+    --about-logo: url("chrome://echelon/content/firefox-4/branding/aurora/about-logo.png");
 }
 
 :root[titleShortName="echelon"] {
-    --about-logo: url("chrome://userchrome/content/assets/images/firefox-4/branding/echelon/about-logo.png");
+    --about-logo: url("chrome://echelon/content/firefox-4/branding/echelon/about-logo.png");
 }
 
 :root[echelon-appearance-newlogo][titleShortName="firefox"] {
-    --about-logo: url("chrome://userchrome/content/assets/images/firefox-4/branding/firefox/new/about-logo.png");
+    --about-logo: url("chrome://echelon/content/firefox-4/branding/firefox/new/about-logo.png");
 }
 
 :root[echelon-appearance-newlogo][titleShortName="nightly"] {
-    --about-logo: url("chrome://userchrome/content/assets/images/firefox-4/branding/nightly/new/about-logo.png");
+    --about-logo: url("chrome://echelon/content/firefox-4/branding/nightly/new/about-logo.png");
 }
 
 :root[echelon-appearance-newlogo][titleShortName="aurora"] {
-    --about-logo: url("chrome://userchrome/content/assets/images/firefox-4/branding/aurora/new/about-logo.png");
+    --about-logo: url("chrome://echelon/content/firefox-4/branding/aurora/new/about-logo.png");
 }
 
 :root {

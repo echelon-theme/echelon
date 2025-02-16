@@ -11,9 +11,9 @@
     --toolbarbutton-shadow-hot: 0 1px hsla(0,0%,100%,.3) inset, 0 1px hsla(210,54%,20%,.03), 0 0 2px hsla(210,54%,20%,.1) !important;
     --toolbarbutton-shadow-active: 0 1px 1px hsla(210,54%,20%,.1) inset, 0 0 1px hsla(210,54%,20%,.2) inset, 0 1px 0 hsla(210,54%,20%,0), 0 0 2px hsla(210,54%,20%,0) !important;
 
-    --toolbarbutton-menubutton-dropmarker-image: url("chrome://userchrome/content/assets/images/firefox-14/toolbarbutton-dropdown-arrow.png") !important;
+    --toolbarbutton-menubutton-dropmarker-image: url("chrome://echelon/content/firefox-14/toolbarbutton-dropdown-arrow.png") !important;
     &[lwtheme-brighttext] {
-        --toolbarbutton-menubutton-dropmarker-image: url("chrome://userchrome/content/assets/images/firefox-14/toolbarbutton-dropdown-arrow-inverted.png") !important;
+        --toolbarbutton-menubutton-dropmarker-image: url("chrome://echelon/content/firefox-14/toolbarbutton-dropdown-arrow-inverted.png") !important;
     }
     
     #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {

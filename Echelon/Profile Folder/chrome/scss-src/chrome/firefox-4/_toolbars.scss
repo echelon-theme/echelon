@@ -177,7 +177,7 @@
                     display: flex !important;
                     width: 5px !important;
                     height: 3px !important;
-                    content: url("chrome://userchrome/content/assets/images/firefox-4/arrow-dn.gif") !important;
+                    content: url("chrome://echelon/content/firefox-4/arrow-dn.gif") !important;
                     margin-block-start: 1px !important;
                 }
 
@@ -356,7 +356,7 @@
 }
 
 #downloads-notification-anchor[notification="start"] > #downloads-indicator-notification {
-    background-image: url("chrome://userchrome/content/assets/images/firefox-4/downloads/download-notification-start.png") !important;
+    background-image: url("chrome://echelon/content/firefox-4/downloads/download-notification-start.png") !important;
     animation-name: downloadsIndicatorNotificationStartRight !important;
     animation-duration: 1s !important;
 }
@@ -383,7 +383,7 @@
 }
 
 #downloads-notification-anchor[notification="finish"] > #downloads-indicator-notification {
-    background-image: url("chrome://userchrome/content/assets/images/firefox-4/downloads/download-notification-finish.png") !important;
+    background-image: url("chrome://echelon/content/firefox-4/downloads/download-notification-finish.png") !important;
     animation-name: downloadsIndicatorNotificationFinish !important;
     animation-duration: 1s !important;
 }

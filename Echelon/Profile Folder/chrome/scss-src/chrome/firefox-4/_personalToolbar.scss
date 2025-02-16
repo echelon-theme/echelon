@@ -49,14 +49,14 @@
 
 .bookmark-item[container] .toolbarbutton-icon,
 .menu-iconic[container] > .menu-iconic-left > .menu-iconic-icon {
-    background-image: url("chrome://userchrome/content/assets/images/firefox-4/bookmarks/folder-item.png") !important;
+    background-image: url("chrome://echelon/content/firefox-4/bookmarks/folder-item.png") !important;
     background-position-x: -16px !important;
     list-style-image: none !important;
 }
 
 .bookmark-item[container][query] .toolbarbutton-icon,
 .menu-iconic[container][query] > .menu-iconic-left > .menu-iconic-icon {
-    background-image: url("chrome://userchrome/content/assets/images/firefox-4/bookmarks/query.png") !important;
+    background-image: url("chrome://echelon/content/firefox-4/bookmarks/query.png") !important;
 }
 
 .bookmark-item:not([container]) {
@@ -68,17 +68,17 @@
 :root[echelon-system-style="winxp"] {
     .bookmark-item[container] .toolbarbutton-icon,
     .menu-iconic[container] > .menu-iconic-left > .menu-iconic-icon {
-        background-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/bookmarks/folder-item.png") !important;
+        background-image: url("chrome://echelon/content/firefox-4/xp/bookmarks/folder-item.png") !important;
     }
     
     .bookmark-item[container][query] .toolbarbutton-icon,
     .menu-iconic[container][query] > .menu-iconic-left > .menu-iconic-icon {
-        background-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/bookmarks/query.png") !important;
+        background-image: url("chrome://echelon/content/firefox-4/xp/bookmarks/query.png") !important;
     }
 }
 
 #PlacesToolbarDropIndicator {
-    list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/places/toolbarDropMarker.png") !important;
+    list-style-image: url("chrome://echelon/content/firefox-4/places/toolbarDropMarker.png") !important;
 }
 
 #bookmarksToolbarFolderMenu, 
@@ -86,10 +86,10 @@
 #panelMenu_bookmarksToolbar,
 #bookmarks-toolbar-button, 
 #bookmarks-toolbar-placeholder {
-    list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/places/bookmarksToolbar.png") !important;
+    list-style-image: url("chrome://echelon/content/firefox-4/places/bookmarksToolbar.png") !important;
 
     :root[echelon-system-style="winxp"] & {
-        list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/places/bookmarksToolbar.png") !important;
+        list-style-image: url("chrome://echelon/content/firefox-4/xp/places/bookmarksToolbar.png") !important;
     }
 
     & > .menu-iconic-left > .menu-iconic-icon {
@@ -101,10 +101,10 @@
 #BMB_unsortedBookmarks,
 #panelMenu_unsortedBookmarks,
 #menu_unsortedBookmarks {
-    list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/places/unsortedBookmarks.png") !important;
+    list-style-image: url("chrome://echelon/content/firefox-4/places/unsortedBookmarks.png") !important;
 
     :root[echelon-system-style="winxp"] & {
-        list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/places/unsortedBookmarks.png") !important;
+        list-style-image: url("chrome://echelon/content/firefox-4/xp/places/unsortedBookmarks.png") !important;
     }
 
     & > .menu-iconic-left > .menu-iconic-icon {

@@ -1,14 +1,14 @@
 :root {
-    --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/tab-arrow-left.png") !important;
+    --arrowscrollbox-image: url("chrome://echelon/content/firefox-4/tabs/tab-arrow-left.png") !important;
     &:not([echelon-system-style="winxp"])[echelon-style-3],
     &[lwtheme-brighttext] {
-        --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-8/tabs/tab-arrow-left-inverted.png") !important;
+        --arrowscrollbox-image: url("chrome://echelon/content/firefox-8/tabs/tab-arrow-left-inverted.png") !important;
     }
     &[echelon-style-6] {
-        --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-arrow-left.png") !important;
+        --arrowscrollbox-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-arrow-left.png") !important;
 
         &[echelon-system-style="winxp"] {
-            --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-8/tabs/tab-arrow-left-inverted.png") !important;
+            --arrowscrollbox-image: url("chrome://echelon/content/firefox-8/tabs/tab-arrow-left-inverted.png") !important;
         }
         --tabbrowser-arrowbox-inline-padding: 15px !important;
     }
@@ -50,7 +50,7 @@
 
 #tabbrowser-arrowscrollbox:not([scrolledtostart])::part(scrollbutton-up),
 #tabbrowser-arrowscrollbox:not([scrolledtoend])::part(scrollbutton-down) {
-    border-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/tab-overflow-border.png") 0 2 0 2 / 0 2px 0 0 !important;
+    border-image: url("chrome://echelon/content/firefox-4/tabs/tab-overflow-border.png") 0 2 0 2 / 0 2px 0 0 !important;
 }
 
 #tabbrowser-arrowscrollbox[scrolledtostart]::part(scrollbutton-up),

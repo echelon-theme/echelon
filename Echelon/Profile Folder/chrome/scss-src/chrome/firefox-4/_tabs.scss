@@ -131,50 +131,50 @@
                     }
 
                     &[soundplaying] {
-                        list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab") !important;
+                        list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab") !important;
 
                         &:hover {
-                            list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-hover") !important;
+                            list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-hover") !important;
 
                             &:active {
-                                list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-pressed") !important;
+                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-pressed") !important;
                             }
                         }
                     }
 
                     &[muted] {
-                        list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted") !important;
+                        list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted") !important;
 
                         &:hover {
-                            list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-hover") !important;
+                            list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-hover") !important;
 
                             &:active {
-                                list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-pressed") !important;
+                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-pressed") !important;
                             }
                         }
                     }
 
                     &[selected] {
                         &[soundplaying] {
-                            list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio") !important;
+                            list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio") !important;
     
                             &:hover {
-                                list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-hover") !important;
+                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-hover") !important;
     
                                 &:active {
-                                    list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-pressed") !important;
+                                    list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-pressed") !important;
                                 }
                             }
                         }
     
                         &[muted] {
-                            list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted") !important;
+                            list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted") !important;
     
                             &:hover {
-                                list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted-hover") !important;
+                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted-hover") !important;
     
                                 &:active {
-                                    list-style-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted-pressed") !important;
+                                    list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted-pressed") !important;
                                 }
                             }
                         }
@@ -212,11 +212,11 @@
         }
 
         &[busy] {
-            background-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/connecting.png");
+            background-image: url("chrome://echelon/content/firefox-4/tabs/connecting.png");
         }
         
         &[progress] {
-            background-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/loading.png");
+            background-image: url("chrome://echelon/content/firefox-4/tabs/loading.png");
         }
     }
 
@@ -229,7 +229,7 @@
         #tabs-newtab-button
         {
             box-shadow: none !important;
-            border-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/tab.png") 6 3 4/6px 3px 4px repeat stretch !important;
+            border-image: url("chrome://echelon/content/firefox-4/tabs/tab.png") 6 3 4/6px 3px 4px repeat stretch !important;
             background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px), var(--tab-background), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color));
             background-color: transparent !important;
             background-position: -2px -2px !important;

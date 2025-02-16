@@ -110,7 +110,7 @@
         }
 
         .button-menu-dropmarker {
-            content: url("chrome://userchrome/content/assets/images/firefox-4/appmenu/appmenu-dropmarker.png") !important;
+            content: url("chrome://echelon/content/firefox-4/appmenu/appmenu-dropmarker.png") !important;
             margin-inline-start: .5em !important;
         }
     }
@@ -245,7 +245,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 #appmenuPrimaryPane toolbarbutton .toolbarbutton-icon {
 	width: 16px !important;
 	height: 16px !important;
-	background-image: url("chrome://userchrome/content/assets/images/firefox-4/appmenu/appmenu-icons.png") !important;
+	background-image: url("chrome://echelon/content/firefox-4/appmenu/appmenu-icons.png") !important;
 }
 
 /* Disable hover effect on "Edit" menu. */
@@ -264,7 +264,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 #appmenu-editmenu-copy,
 #appmenu-editmenu-paste {
 	.menu-iconic-icon {
-		background-image: url("chrome://userchrome/content/assets/images/firefox-4/appmenu/appmenu-icons.png") !important;
+		background-image: url("chrome://echelon/content/firefox-4/appmenu/appmenu-icons.png") !important;
 	}
 }
 

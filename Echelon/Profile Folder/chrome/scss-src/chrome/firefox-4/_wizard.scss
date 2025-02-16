@@ -16,7 +16,7 @@
         image {
             width: 13px;
             height: 8px;
-            list-style-image: url("chrome://userchrome/content/assets/images/wizard/wizard-arrow.png") !important;
+            list-style-image: url("chrome://echelon/content/wizard/wizard-arrow.png") !important;
         }
     }
 
@@ -26,7 +26,7 @@
             flex-direction: row-reverse !important;
 
             image {
-                list-style-image: url("chrome://userchrome/content/assets/images/wizard/wizard-arrow-right.png") !important;
+                list-style-image: url("chrome://echelon/content/wizard/wizard-arrow-right.png") !important;
             }
         }
     }

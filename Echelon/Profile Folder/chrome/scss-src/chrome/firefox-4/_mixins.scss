@@ -8,7 +8,7 @@
     @if ($hash) {
         @return url("chrome://userchrome/content/icons/#{$name}.svg##{$hash}");
     }
-    @return url("chrome://userchrome/content/assets/images/#{$name}");
+    @return url("chrome://echelon/content/#{$name}");
 }
 
 @mixin set-icon($icon-id, $icon-hash: false) {

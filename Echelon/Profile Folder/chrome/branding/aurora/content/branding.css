@@ -1,6 +1,7 @@
 :root {
     --identity-color-brand: rgb(51, 30, 84) !important;
     --identity-background-brand: linear-gradient(rgba(51, 30, 84, 0), rgba(51, 30, 84, .5) 35%, rgba(51, 30, 84, .5) 65%, rgba(51, 30, 84, 0)) !important;
+    --identity-icons-brand: url("chrome://branding/content/identity-icons-brand.png") !important;
 }
 
 :root:not([privatebrowsingmode="temporary"]) {

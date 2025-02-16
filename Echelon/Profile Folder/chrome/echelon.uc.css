@@ -261,13 +261,13 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
   width: 12px !important;
 }
 .ac-dropmarker::part(icon) {
-  list-style-image: url("chrome://userchrome/content/assets/images/arrow-dropdown-12") !important;
+  list-style-image: url("chrome://echelon/content/arrow-dropdown-12") !important;
   width: 12px !important;
   height: 16px !important;
 }
 
 .popup-notification-dropmarker > .button-box > .button-menu-dropmarker::part(icon) {
-  list-style-image: url("chrome://userchrome/content/assets/images/arrow-dropdown-16") !important;
+  list-style-image: url("chrome://echelon/content/arrow-dropdown-16") !important;
 }
 
 :root:not([echelon-style-6]) :is(menupopup[placespopup])::part(arrow) {

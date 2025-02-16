@@ -20,10 +20,10 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
 }
 
 :root {
-    --menuPanel-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel.png") !important;
+    --menuPanel-image: url("chrome://echelon/content/firefox-29/panelui/menuPanel.png") !important;
 
     &[echelon-system-style="winxp"] {
-        --menuPanel-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-xp8.png") !important;
+        --menuPanel-image: url("chrome://echelon/content/firefox-29/panelui/menuPanel-xp8.png") !important;
     }
 }
 
@@ -711,7 +711,7 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
             left: 32px; // evil hack
             height: 100%;
             width: var(--panel-ui-exit-subview-gutter-width);
-            background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/subView-arrow-back-inverted.png"),
+            background-image: url("chrome://echelon/content/firefox-29/panelui/subView-arrow-back-inverted.png"),
                               linear-gradient(rgba(255,255,255,0.3), transparent);
             background-repeat: no-repeat;
             background-color: Highlight;
@@ -727,7 +727,7 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
     }
 
     toolbarbutton[panel-multiview-anchor="true"] {
-        background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/subView-arrow-back-inverted.png"),
+        background-image: url("chrome://echelon/content/firefox-29/panelui/subView-arrow-back-inverted.png"),
                           linear-gradient(rgba(255,255,255,0.3), transparent);
         background-position: right calc($menu-panel-button-width / 2 - var(--panel-ui-exit-subview-gutter-width) + 2px) center;
         background-repeat: no-repeat, repeat;
@@ -967,7 +967,7 @@ $iconSmallRegionMap: (
             min-width: 16px !important;
             min-height: 16px !important;
             list-style-image: none !important;
-            background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-small.png") !important;
+            background-image: url("chrome://echelon/content/firefox-29/panelui/menuPanel-small.png") !important;
             background-position: (-$offset) 0 !important;
         }
     }
@@ -984,30 +984,30 @@ $iconSmallRegionMap: (
     #PanelUI-fxa-icon .toolbarbutton-icon {
         width: 16px;
         height: 16px;
-        background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/sync-horizontalbar.png");
+        background-image: url("chrome://echelon/content/firefox-29/panelui/sync-horizontalbar.png");
     }
 
     #PanelUI-customize .toolbarbutton-icon {
         width: 16px;
         height: 16px;
-        background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-customize.png");
+        background-image: url("chrome://echelon/content/firefox-29/panelui/menuPanel-customize.png");
 
         @at-root #customization-panelWrapper & {
-            background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-customizeFinish.png");
+            background-image: url("chrome://echelon/content/firefox-29/panelui/menuPanel-customizeFinish.png");
         }
     }
 
     #PanelUI-help .toolbarbutton-icon {
         width: 16px;
         height: 16px;
-        background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-help.png");
+        background-image: url("chrome://echelon/content/firefox-29/panelui/menuPanel-help.png");
     }
 
     #PanelUI-quit .toolbarbutton-icon {
         border-inline-end-style: none;
         width: 16px;
         height: 16px;
-        background-image: url("chrome://userchrome/content/assets/images/firefox-29/panelui/menuPanel-exit.png");
+        background-image: url("chrome://echelon/content/firefox-29/panelui/menuPanel-exit.png");
     }
 
     #PanelUI-customize:hover .toolbarbutton-icon,

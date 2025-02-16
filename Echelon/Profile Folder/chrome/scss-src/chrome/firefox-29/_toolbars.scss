@@ -42,7 +42,7 @@
                 &[badge-status="update-restart"],
                 &[badge-status="update-unsupported"] {
                     .toolbarbutton-badge {
-                        background: #74BF43 url("chrome://userchrome/content/assets/images/firefox-56/toolbar/update-badge.svg") no-repeat center !important;
+                        background: #74BF43 url("chrome://echelon/content/firefox-56/toolbar/update-badge.svg") no-repeat center !important;
                         border-radius: 50% !important;
                         box-shadow: none !important;
                         border: 2px solid -moz-dialog !important;
@@ -219,7 +219,7 @@
     }
 
     #bookmarked-notification-anchor[notification="finish"]>#bookmarked-notification {
-        background-image: url("chrome://userchrome/content/assets/images/firefox-29/places/bookmarks-notification-finish.png");
+        background-image: url("chrome://echelon/content/firefox-29/places/bookmarks-notification-finish.png");
         animation: animation-bookmarkAdded 800ms;
         animation-timing-function: ease, ease, ease;
     }

@@ -10,11 +10,11 @@
 }
 
 :root[customizing] {
-    background-image: url('chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-gridTexture.png') !important;
+    background-image: url('chrome://echelon/content/firefox-29/customizableui/customizeMode-gridTexture.png') !important;
     background-attachment: fixed !important;
   
     &:-moz-lwtheme {
-        background-image: url('chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-gridTexture.png'), var(--lwt-header-image) !important;
+        background-image: url('chrome://echelon/content/firefox-29/customizableui/customizeMode-gridTexture.png'), var(--lwt-header-image) !important;
     }
 
     #navigator-toolbox > toolbar:not(#titlebar),
@@ -64,10 +64,10 @@
     grid-area: 1 / 2 / 3 / 3;
     overflow-y: hidden !important;
     padding: 15px 25px 25px !important;
-    background-image: url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-separatorHorizontal.png"),
-                      url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-separatorVertical.png"),
-                      url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customizeMode-gridTexture.png"),
-                      url("chrome://userchrome/content/assets/images/firefox-29/customizableui/background-noise-toolbar.png"),
+    background-image: url("chrome://echelon/content/firefox-29/customizableui/customizeMode-separatorHorizontal.png"),
+                      url("chrome://echelon/content/firefox-29/customizableui/customizeMode-separatorVertical.png"),
+                      url("chrome://echelon/content/firefox-29/customizableui/customizeMode-gridTexture.png"),
+                      url("chrome://echelon/content/firefox-29/customizableui/background-noise-toolbar.png"),
                       linear-gradient(to bottom, #3e86ce, #3878ba) !important;
     background-position: center top, left center, left top, left top, left top !important;
     background-repeat: no-repeat, no-repeat, repeat, repeat, no-repeat !important;
@@ -76,7 +76,7 @@
 
     
     .panel-arrow[side="top"] {
-        list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/panelarrow/panelarrow-vertical.svg") !important;
+        list-style-image: url("chrome://echelon/content/firefox-29/panelarrow/panelarrow-vertical.svg") !important;
         fill: -moz-Field !important;
         stroke: ThreeDShadow !important;
         margin-inline-end: 6px !important;
@@ -195,7 +195,7 @@
                 width: 11px !important;
                 height: 11px !important;
                 content: none !important;
-                background-image: url("chrome://userchrome/content/assets/images/firefox-4/arrow-dn.gif") !important;
+                background-image: url("chrome://echelon/content/firefox-4/arrow-dn.gif") !important;
                 background-repeat: no-repeat !important;
                 background-position: center center !important;
             }
@@ -221,7 +221,7 @@
             display: flex !important;
             width: 24px !important;
             height: 24px !important;
-            background-image: url("chrome://userchrome/content/assets/images/firefox-29/customizableui/customize-titleBar-toggle.png") !important;
+            background-image: url("chrome://echelon/content/firefox-29/customizableui/customize-titleBar-toggle.png") !important;
         }
 
         .checkbox-label {
@@ -311,15 +311,15 @@
     }
 
     #customization-uidensity-menuitem-compact {
-        list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/customizableui/density-compact.svg") !important;
+        list-style-image: url("chrome://echelon/content/firefox-29/customizableui/density-compact.svg") !important;
     }
 
     #customization-uidensity-menuitem-normal {
-        list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/customizableui/density-normal.svg") !important;
+        list-style-image: url("chrome://echelon/content/firefox-29/customizableui/density-normal.svg") !important;
     }
 
     #customization-uidensity-menuitem-touch {
-        list-style-image: url("chrome://userchrome/content/assets/images/firefox-29/customizableui/density-touch.svg") !important;
+        list-style-image: url("chrome://echelon/content/firefox-29/customizableui/density-touch.svg") !important;
     }
 
     #customization-palette-container {

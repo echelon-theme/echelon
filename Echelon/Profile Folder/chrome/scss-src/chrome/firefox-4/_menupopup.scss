@@ -4,12 +4,12 @@
 
 .unified-nav-back[_moz-menuactive]:-moz-locale-dir(ltr),
 .unified-nav-forward[_moz-menuactive]:-moz-locale-dir(rtl) {
-	list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/menupopup/menu-back.png") !important;
+	list-style-image: url("chrome://echelon/content/firefox-4/menupopup/menu-back.png") !important;
 }
 
 .unified-nav-forward[_moz-menuactive]:-moz-locale-dir(ltr),
 .unified-nav-back[_moz-menuactive]:-moz-locale-dir(rtl) {
-	list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/menupopup/menu-forward.png") !important;
+	list-style-image: url("chrome://echelon/content/firefox-4/menupopup/menu-forward.png") !important;
 }
 
 #identity-popup {
@@ -30,10 +30,10 @@
 		height: 64px;
 		width: 64px;
 		padding: 0;
-		background-image: url("chrome://userchrome/content/assets/images/firefox-4/urlbar/identity.png");
+		background-image: url("chrome://echelon/content/firefox-4/urlbar/identity.png");
 
 		:root[echelon-system-style="winxp"] & {
-			background-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/urlbar/identity.png");
+			background-image: url("chrome://echelon/content/firefox-4/xp/urlbar/identity.png");
 		}
 	}
 
@@ -101,10 +101,10 @@
 		margin-inline-start: -24px !important;
 
 		#identity-popup-encryption-icon {
-			list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/urlbar/Secure24.png");
+			list-style-image: url("chrome://echelon/content/firefox-4/urlbar/Secure24.png");
 
 			:root[echelon-system-style="winxp"] & {
-				background-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/urlbar/Secure24.png");
+				background-image: url("chrome://echelon/content/firefox-4/xp/urlbar/Secure24.png");
 			}
 		}
 	}
@@ -115,11 +115,11 @@
 		margin: 7px 0 0 -3px !important;
 		background: none !important;
 		min-width: 0 !important;
-		list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/icons/question-16.png") !important;
+		list-style-image: url("chrome://echelon/content/firefox-4/icons/question-16.png") !important;
 		cursor: pointer !important;
 
 		:root[echelon-system-style="winxp"] & {
-			list-style-image: url("chrome://userchrome/content/assets/images/firefox-4/xp/icons/question-16.png") !important;
+			list-style-image: url("chrome://echelon/content/firefox-4/xp/icons/question-16.png") !important;
 		}
 	}
 
@@ -228,7 +228,7 @@
 			.button-icon {
 				margin: 0 !important;
 				list-style-image: none !important;
-				background-image: url("chrome://userchrome/content/assets/images/firefox-4/downloads/buttons.png") !important;
+				background-image: url("chrome://echelon/content/firefox-4/downloads/buttons.png") !important;
 			}
 
 			&.downloadIconShow {
@@ -491,7 +491,7 @@
 			image {
 				width: 16px !important;
 				height: 16px !important;
-				background-image: url("chrome://userchrome/content/assets/images/firefox-29/places/bookmarks-menu-arrow.png") !important;
+				background-image: url("chrome://echelon/content/firefox-29/places/bookmarks-menu-arrow.png") !important;
 			}
 		}
 		

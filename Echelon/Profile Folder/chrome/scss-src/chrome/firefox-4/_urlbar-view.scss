@@ -4,7 +4,7 @@
     
     --urlbarView-hover-background: var(--urlbarView-highlight-background) !important;
     
-    --history-icon: url("chrome://userchrome/content/assets/images/firefox-4/places/history.png") !important;
+    --history-icon: url("chrome://echelon/content/firefox-4/places/history.png") !important;
     
     #urlbar:not([open]) > .urlbarView, #urlbar:not([breakout]) > .urlbarView {
         display: none !important;

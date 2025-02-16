@@ -51,8 +51,6 @@
                 [path]
             );
             L10nRegistry.getInstance().registerSources([source]);
-            // set document attribute for custom branding
-            document.documentElement.setAttribute("echelon-custom-branding", "true");
         }
     }
 }

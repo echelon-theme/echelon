@@ -309,7 +309,7 @@ function onClose() {
 		"echelon-setup-closed",
 		{
 			label: "You can restart the Echelon Wizard by restarting Firefox or clicking here.",
-			image: "chrome://userchrome/content/assets/images/firefox-4/branding/echelon/icon16.png",
+			image: "chrome://echelon/content/firefox-4/branding/echelon/icon16.png",
 			priority: "warning",
 			eventCallback: function() {
 				alert("hi");

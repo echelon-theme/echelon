@@ -5,16 +5,13 @@
     --toolbarbutton-icon-height: 18px;
     --toolbarbutton-icon-large-width: 20px;
     --toolbatbutton-icon-large-height: 20px;
-    --identity-icons-brand: url("chrome://branding/content/icon32.png") !important;
+    
+    --identity-icons-brand: url("chrome://branding/content/icon32.png");
     --identity-color-brand: rgb(229,115,0);
     --identity-background-brand: linear-gradient(rgba(229,114,0,0),
                                  rgba(229,114,0,.5) 35%,
                                  rgba(229,114,0,.5) 65%,
                                  rgba(229,114,0,0));
-
-    &[echelon-custom-branding="true"] {
-        --identity-icons-brand: url("chrome://branding/content/identity-icons-brand.png") !important;
-    }
 
     @include toolbar-icons((    
         "back-button": "firefox-4/toolbar/back-large.png",
@@ -91,10 +88,10 @@
         "echelon-button": "firefox-4/toolbar/inverted/echelon.png"
     ));
 
-    @include replace-favicon("chrome://mozapps/skin/extensions/extension.svg", "chrome://userchrome/content/assets/images/firefox-4/extensions/extensionGeneric-16.png");
+    @include replace-favicon("chrome://mozapps/skin/extensions/extension.svg", "chrome://echelon/content/firefox-4/extensions/extensionGeneric-16.png");
     &[echelon-system-style="winxp"] {
-        @include replace-favicon("chrome://mozapps/skin/extensions/extension.svg", "chrome://userchrome/content/assets/images/firefox-4/xp/extensions/extensionGeneric-16.png");
-        @include replace-favicon("chrome://userchrome/content/windows/options/images/icon.png", "chrome://userchrome/content/assets/images/firefox-4/branding/echelon/icon16.png");
+        @include replace-favicon("chrome://mozapps/skin/extensions/extension.svg", "chrome://echelon/content/firefox-4/xp/extensions/extensionGeneric-16.png");
+        @include replace-favicon("chrome://userchrome/content/windows/options/images/icon.png", "chrome://echelon/content/firefox-4/branding/echelon/icon16.png");
     }
 
     #page-action-buttons {

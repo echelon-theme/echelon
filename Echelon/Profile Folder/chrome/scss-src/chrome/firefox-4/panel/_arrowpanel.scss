@@ -15,8 +15,8 @@
 
     --arrowpanel-arrow-position: -1px !important;
 
-    --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-vertical.svg");
-    --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-horizontal.svg");
+    --arrowpanel-vertical: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-vertical.svg");
+    --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-horizontal.svg");
 
     &:not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style="winxp"] {
         --arrowpanel-padding: 16px !important;
@@ -28,8 +28,8 @@
     
         --arrowpanel-arrow-margin: -25px !important;
 
-        --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-4/xp/panelarrow/panelarrow-up.png");
-        --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-4/xp/panelarrow/panelarrow-down.png");
+        --arrowpanel-vertical: url("chrome://echelon/content/firefox-4/xp/panelarrow/panelarrow-up.png");
+        --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-4/xp/panelarrow/panelarrow-down.png");
     }
 }
 
@@ -42,16 +42,16 @@
 
     --arrowpanel-arrow-position: -5px !important;
 
-    --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-14/panelarrow/panelarrow-vertical.svg");
-    --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-14/panelarrow/panelarrow-horizontal.svg");
+    --arrowpanel-vertical: url("chrome://echelon/content/firefox-14/panelarrow/panelarrow-vertical.svg");
+    --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-14/panelarrow/panelarrow-horizontal.svg");
 
     &[echelon-appearance-newlogo] {
         --arrowpanel-border-color: rgba(0,0,0,.3) !important;
         --arrowpanel-echelon-shadow: 0 0 4px rgba(0,0,0,.3) !important;
         --arrowpanel-background: linear-gradient(white 1px, rgba(255,255,255,0) 15px), -moz-Dialog !important;
 
-        --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-28/panelarrow/panelarrow-vertical-white.png");
-        --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-28/panelarrow/panelarrow-horizontal-white.png");
+        --arrowpanel-vertical: url("chrome://echelon/content/firefox-28/panelarrow/panelarrow-vertical-white.png");
+        --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-28/panelarrow/panelarrow-horizontal-white.png");
     }
 }
 
@@ -64,8 +64,8 @@
 
     --arrowpanel-arrow-position: -5px !important;
 
-    --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-up.png");
-    --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-horiz.png");
+    --arrowpanel-vertical: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-up.png");
+    --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-horiz.png");
 
     --arrowpanel-inner-background: rgb(250,250,250) !important;
     --arrowpanel-inner-margin: 5px !important;
@@ -90,8 +90,8 @@
 
     --arrowpanel-arrow-position: -5px !important;
 
-    --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-29/panelarrow/panelarrow-vertical.svg");
-    --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-29/panelarrow/panelarrow-horizontal.svg");
+    --arrowpanel-vertical: url("chrome://echelon/content/firefox-29/panelarrow/panelarrow-vertical.svg");
+    --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-29/panelarrow/panelarrow-horizontal.svg");
 
     &[echelon-appearance-blue] {
         --arrowpanel-border-color: hsla(210,4%,10%,.2) !important;

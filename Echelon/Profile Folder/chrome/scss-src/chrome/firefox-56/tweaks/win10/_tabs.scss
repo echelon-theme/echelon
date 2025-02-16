@@ -30,7 +30,7 @@
 
 .tabbrowser-tab:hover .tab-background:not([selected]),
 #tabs-newtab-button:hover {
-    background-image: url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-background-start.png"),
-                      url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-background-middle.png"),
-                      url("chrome://userchrome/content/assets/images/firefox-56/tabbrowser/tab-background-end.png") !important;
+    background-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-background-start.png"),
+                      url("chrome://echelon/content/firefox-56/tabbrowser/tab-background-middle.png"),
+                      url("chrome://echelon/content/firefox-56/tabbrowser/tab-background-end.png") !important;
 }
