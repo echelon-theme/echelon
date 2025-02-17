@@ -14,4 +14,8 @@
     &[scrolldir="EW"] {
         background-position: right bottom !important;
     }
+
+    &::part(arrowcontent) {
+        display: none !important;
+    }
 }

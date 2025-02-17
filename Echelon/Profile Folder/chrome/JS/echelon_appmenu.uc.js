@@ -511,6 +511,14 @@ let g_echelonFirefoxButton = null;
 						"class": "menuitem-iconic",
 						"data-l10n-id": "quit",
 						"oncommand": "Services.startup.quit(Ci.nsIAppStartup.eAttemptQuit)"
+					}),
+					elm("xul:menuseparator", {"class": "appmenu-menuseparator", "hidden": "true"}),
+					elm("xul:menuitem", {
+						"id": "appmenu-echelon-update",
+						"class": "menuitem-iconic",
+						"data-l10n-id": "echelon_update_available",
+						"oncommand": "Services.startup.quit(Ci.nsIAppStartup.eAttemptQuit)",
+						"hidden": "true"
 					})
 				]),
 				elm("xul:vbox", {id: "appmenuSecondaryPane"}, [

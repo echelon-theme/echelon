@@ -41,8 +41,8 @@ tooltip {
   --arrowpanel-arrow-margin: -23px !important;
   --arrowpanel-arrow-offset: 6px !important;
   --arrowpanel-arrow-position: -1px !important;
-  --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-vertical.svg");
-  --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-horizontal.svg");
+  --arrowpanel-vertical: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-vertical.svg");
+  --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-horizontal.svg");
 }
 :root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style=winxp] {
   --arrowpanel-padding: 16px !important;
@@ -52,8 +52,8 @@ tooltip {
   --arrowpanel-margin: 3px !important;
   --arrowpanel-echelon-shadow: 0 0 5px 1px rgba(184,205,232,1) inset, 0 0 0 1px rgba(0,0,0,.25), 0 1px 5px rgba(0,0,0,.5) !important;
   --arrowpanel-arrow-margin: -25px !important;
-  --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-4/xp/panelarrow/panelarrow-up.png");
-  --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-4/xp/panelarrow/panelarrow-down.png");
+  --arrowpanel-vertical: url("chrome://echelon/content/firefox-4/xp/panelarrow/panelarrow-up.png");
+  --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-4/xp/panelarrow/panelarrow-down.png");
 }
 
 :root[echelon-style-5]:not([echelon-style-6]) {
@@ -62,15 +62,15 @@ tooltip {
   --arrowpanel-arrow-margin: -20px !important;
   --arrowpanel-arrow-offset: 10px !important;
   --arrowpanel-arrow-position: -5px !important;
-  --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-14/panelarrow/panelarrow-vertical.svg");
-  --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-14/panelarrow/panelarrow-horizontal.svg");
+  --arrowpanel-vertical: url("chrome://echelon/content/firefox-14/panelarrow/panelarrow-vertical.svg");
+  --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-14/panelarrow/panelarrow-horizontal.svg");
 }
 :root[echelon-style-5]:not([echelon-style-6])[echelon-appearance-newlogo] {
   --arrowpanel-border-color: rgba(0,0,0,.3) !important;
   --arrowpanel-echelon-shadow: 0 0 4px rgba(0,0,0,.3) !important;
   --arrowpanel-background: linear-gradient(white 1px, rgba(255,255,255,0) 15px), -moz-Dialog !important;
-  --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-28/panelarrow/panelarrow-vertical-white.png");
-  --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-28/panelarrow/panelarrow-horizontal-white.png");
+  --arrowpanel-vertical: url("chrome://echelon/content/firefox-28/panelarrow/panelarrow-vertical-white.png");
+  --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-28/panelarrow/panelarrow-horizontal-white.png");
 }
 
 :root[echelon-appearance-blue]:not([echelon-system-style=winxp]):not([echelon-style-4]) {
@@ -80,8 +80,8 @@ tooltip {
   --arrowpanel-margin: 5px !important;
   --arrowpanel-echelon-shadow: 0 0 0 1px rgba(255,255,255,.65) inset, 0 1px 0 rgba(255,255,255,.3) inset, 0 0 0 1px rgba(0,0,0,.75), 0 1px 3px 2px rgba(0,0,0,.65) !important;
   --arrowpanel-arrow-position: -5px !important;
-  --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-up.png");
-  --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-4/panelarrow/panelarrow-horiz.png");
+  --arrowpanel-vertical: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-up.png");
+  --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-horiz.png");
   --arrowpanel-inner-background: rgb(250,250,250) !important;
   --arrowpanel-inner-margin: 5px !important;
   --arrowpanel-inner-border-radius: 2px !important;
@@ -102,8 +102,8 @@ tooltip {
   --arrowpanel-arrow-margin: -20px !important;
   --arrowpanel-arrow-offset: 10px !important;
   --arrowpanel-arrow-position: -5px !important;
-  --arrowpanel-vertical: url("chrome://userchrome/content/assets/images/firefox-29/panelarrow/panelarrow-vertical.svg");
-  --arrowpanel-hortizontal: url("chrome://userchrome/content/assets/images/firefox-29/panelarrow/panelarrow-horizontal.svg");
+  --arrowpanel-vertical: url("chrome://echelon/content/firefox-29/panelarrow/panelarrow-vertical.svg");
+  --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-29/panelarrow/panelarrow-horizontal.svg");
 }
 :root[echelon-style-6][echelon-appearance-blue] {
   --arrowpanel-border-color: hsla(210,4%,10%,.2) !important;
@@ -300,18 +300,37 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
   margin-top: -4px !important;
 }
 
+.autoscroller {
+  height: 28px !important;
+  width: 28px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  background-image: url("chrome://echelon/content/firefox-4/autoscroll.png") !important;
+  background-position: right top !important;
+}
+.autoscroller[scrolldir=NS] {
+  background-position: right center !important;
+}
+.autoscroller[scrolldir=EW] {
+  background-position: right bottom !important;
+}
+.autoscroller::part(arrowcontent) {
+  display: none !important;
+}
+
 :root {
-  --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/tab-arrow-left.png") !important;
+  --arrowscrollbox-image: url("chrome://echelon/content/firefox-4/tabs/tab-arrow-left.png") !important;
 }
 :root:not([echelon-system-style=winxp])[echelon-style-3], :root[lwtheme-brighttext] {
-  --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-8/tabs/tab-arrow-left-inverted.png") !important;
+  --arrowscrollbox-image: url("chrome://echelon/content/firefox-8/tabs/tab-arrow-left-inverted.png") !important;
 }
 :root[echelon-style-6] {
-  --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-29/tabbrowser/tab-arrow-left.png") !important;
+  --arrowscrollbox-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-arrow-left.png") !important;
   --tabbrowser-arrowbox-inline-padding: 15px !important;
 }
 :root[echelon-style-6][echelon-system-style=winxp] {
-  --arrowscrollbox-image: url("chrome://userchrome/content/assets/images/firefox-8/tabs/tab-arrow-left-inverted.png") !important;
+  --arrowscrollbox-image: url("chrome://echelon/content/firefox-8/tabs/tab-arrow-left-inverted.png") !important;
 }
 
 #TabsToolbar .toolbarbutton-1:not(#tabs-newtab-button),
@@ -346,7 +365,7 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
 
 #tabbrowser-arrowscrollbox:not([scrolledtostart])::part(scrollbutton-up),
 #tabbrowser-arrowscrollbox:not([scrolledtoend])::part(scrollbutton-down) {
-  border-image: url("chrome://userchrome/content/assets/images/firefox-4/tabs/tab-overflow-border.png") 0 2 0 2/0 2px 0 0 !important;
+  border-image: url("chrome://echelon/content/firefox-4/tabs/tab-overflow-border.png") 0 2 0 2/0 2px 0 0 !important;
 }
 
 #tabbrowser-arrowscrollbox[scrolledtostart]::part(scrollbutton-up),

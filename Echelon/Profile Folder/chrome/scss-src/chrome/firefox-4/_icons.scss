@@ -91,7 +91,6 @@
     @include replace-favicon("chrome://mozapps/skin/extensions/extension.svg", "chrome://echelon/content/firefox-4/extensions/extensionGeneric-16.png");
     &[echelon-system-style="winxp"] {
         @include replace-favicon("chrome://mozapps/skin/extensions/extension.svg", "chrome://echelon/content/firefox-4/xp/extensions/extensionGeneric-16.png");
-        @include replace-favicon("chrome://userchrome/content/windows/options/images/icon.png", "chrome://echelon/content/firefox-4/branding/echelon/icon16.png");
     }
 
     #page-action-buttons {

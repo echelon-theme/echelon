@@ -17,22 +17,6 @@ window {
   display: none !important;
 }
 
-.autoscroller {
-  height: 28px !important;
-  width: 28px !important;
-  border: 0 !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-  background-image: url("chrome://echelon/content/firefox-4/autoscroll.png") !important;
-  background-position: right top !important;
-}
-.autoscroller[scrolldir=NS] {
-  background-position: right center !important;
-}
-.autoscroller[scrolldir=EW] {
-  background-position: right bottom !important;
-}
-
 :root {
   --inactive-titlebar-opacity: 1 !important;
 }
@@ -981,12 +965,6 @@ window {
 :root[echelon-system-style=winxp] #identity-icon[style="list-style-image: url('chrome://mozapps/skin/extensions/extension.svg');"] {
   list-style-image: url("chrome://echelon/content/firefox-4/xp/extensions/extensionGeneric-16.png") !important;
 }
-:root[echelon-system-style=winxp] .tab-icon-image[src="chrome://userchrome/content/windows/options/images/icon.png"] {
-  content: url("chrome://echelon/content/firefox-4/branding/echelon/icon16.png") !important;
-}
-:root[echelon-system-style=winxp] #identity-icon[style="list-style-image: url('chrome://userchrome/content/windows/options/images/icon.png');"] {
-  list-style-image: url("chrome://echelon/content/firefox-4/branding/echelon/icon16.png") !important;
-}
 :root #page-action-buttons .urlbar-page-action {
   all: revert !important;
   padding: 0 2px !important;
@@ -1530,21 +1508,21 @@ window {
 #PersonalToolbar #personal-bookmarks {
   min-height: 24px !important;
 }
-#PersonalToolbar .bookmark-item:not(.subviewbutton),
+#PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton),
 #PersonalToolbar .toolbarbutton-1 {
   margin: 0 !important;
   appearance: toolbarbutton !important;
   -moz-default-appearance: toolbarbutton !important;
   align-items: center !important;
 }
-#PersonalToolbar .bookmark-item:not(.subviewbutton) .toolbarbutton-icon,
+#PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton) .toolbarbutton-icon,
 #PersonalToolbar .toolbarbutton-1 .toolbarbutton-icon {
   padding: 0 !important;
   border-radius: 0 !important;
   outline: 0 !important;
   background-color: transparent !important;
 }
-#PersonalToolbar .bookmark-item:not(.subviewbutton) .toolbarbutton-icon[label]:not([label=""]),
+#PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton) .toolbarbutton-icon[label]:not([label=""]),
 #PersonalToolbar .toolbarbutton-1 .toolbarbutton-icon[label]:not([label=""]) {
   margin-inline-end: 5px !important;
 }
