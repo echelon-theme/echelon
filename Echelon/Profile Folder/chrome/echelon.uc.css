@@ -309,6 +309,9 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
   background-image: url("chrome://echelon/content/firefox-4/autoscroll.png") !important;
   background-position: right top !important;
 }
+:root[echelon-system-style=winxp] .autoscroller {
+  background-image: url("chrome://echelon/content/firefox-4/xp/autoscroll.png") !important;
+}
 .autoscroller[scrolldir=NS] {
   background-position: right center !important;
 }
