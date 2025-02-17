@@ -207,5 +207,43 @@
         </hbox>
         `);
         mainPopupSet.append(bookmarkedAnimationContainer);
+
+        waitForElement("#editBookmarkPanel").then(e => {
+            let editBookmarkPanelHeader = e.querySelector(".panel-header");
+            let editBookmarkPanelContent = e.querySelector("#editBookmarkPanelContent")
+            let oldPanelHeader = MozXULElement.parseXULToFragment(
+            `
+                <box id="editBookmarkPanelHeader" align="center">
+                    <vbox align="center">
+                        <image id="editBookmarkPanelStarIcon"/>
+                    </vbox>
+                    <vbox>
+                        <label id="editBookmarkPanelTitle" value=""/>
+                        <description id="editBookmarkPanelDescription"/>
+                        <hbox>
+                            <button id="editBookmarkPanelRemoveButton" class="editBookmarkPanelHeaderButton" oncommand="StarUI.removeBookmarkButtonCommand();" accesskey="R" label=""/>
+                        </hbox>
+                    </vbox>
+                </box>
+            `);
+
+            if (editBookmarkPanelHeader) {
+                editBookmarkPanelHeader.remove();
+                e.querySelector("#editBookmarkHeaderSeparator").remove();
+                editBookmarkPanelContent.insertBefore(oldPanelHeader, editBookmarkPanelContent.firstChild);
+            }
+
+            let menulists = e.querySelectorAll("menulist");
+            for (const elem of menulists) {
+                elem.setAttribute("native", "true");
+            }
+
+            waitForElement(".panel-footer #editBookmarkPanelRemoveButton").then(e => {
+                let cancelButton = window.MozXULElement.parseXULToFragment(`
+                    <button id="editBookmarkPanelDoneButton" class="footer-button" data-l10n-id="bookmark-panel-cancel-button" slot="primary" label="Cancel"></button>
+                `);
+                e.replaceWith(cancelButton);
+            });
+        });
     }
 }

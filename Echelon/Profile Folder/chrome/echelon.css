@@ -3432,6 +3432,71 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin-block-start: 0 !important;
 }
 
+#editBookmarkPanel {
+  font: inherit !important;
+}
+#editBookmarkPanel #editBookmarkPanelHeader {
+  margin-block-end: 0.5em !important;
+}
+#editBookmarkPanel #editBookmarkPanelHeader #editBookmarkPanelStarIcon {
+  width: 48px !important;
+  height: 48px !important;
+  list-style-image: url("chrome://echelon/content/firefox-4/places/starred48.png") !important;
+}
+#editBookmarkPanel #editBookmarkPanelHeader #editBookmarkPanelTitle {
+  font-size: 130% !important;
+}
+#editBookmarkPanel #editBookmarkPanelHeader .editBookmarkPanelHeaderButton {
+  padding: 0 !important;
+}
+#editBookmarkPanel #editBookmarkPanelHeader .editBookmarkPanelHeaderButton .button-box {
+  border: 1px solid transparent !important;
+  padding-block-start: 1px !important;
+  padding-block-end: 2px !important;
+}
+#editBookmarkPanel menulist dropmarker {
+  height: 100% !important;
+}
+#editBookmarkPanel .expander-down,
+#editBookmarkPanel .expander-up {
+  appearance: auto !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+  justify-content: center !important;
+}
+#editBookmarkPanel .expander-down .button-box,
+#editBookmarkPanel .expander-up .button-box {
+  padding: 0 !important;
+}
+#editBookmarkPanel .expander-up {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/collapse.png") !important;
+}
+#editBookmarkPanel .expander-down {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/expand.png") !important;
+}
+#editBookmarkPanel #editBMPanel_newFolderButton,
+#editBookmarkPanel .footer-button {
+  appearance: auto !important;
+  font-size: unset !important;
+  margin: 1px 5px 2px !important;
+  padding: 2px 3px !important;
+  font-weight: normal !important;
+  color: ButtonText !important;
+  min-height: unset !important;
+  min-width: 6.3em !important;
+}
+#editBookmarkPanel #editBMPanel_folderTree {
+  appearance: auto !important;
+  min-width: 27em !important;
+  margin-block: 2px !important;
+}
+#editBookmarkPanel .checkbox-label {
+  opacity: 1 !important;
+}
+
 #navigator-toolbox > toolbar:not(#titlebar, #TabsToolbar),
 #navigator-toolbox > #titlebar > toolbar:not(#TabsToolbar),
 #navigator-toolbox::after,

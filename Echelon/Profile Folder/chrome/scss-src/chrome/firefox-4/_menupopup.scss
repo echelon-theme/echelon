@@ -500,3 +500,82 @@
 		}
 	}
 }
+
+#editBookmarkPanel {
+	font: inherit !important;
+	
+	#editBookmarkPanelHeader {
+		margin-block-end: 0.5em !important;
+		
+		#editBookmarkPanelStarIcon {
+			width: 48px !important;
+			height: 48px !important;
+			list-style-image: url("chrome://echelon/content/firefox-4/places/starred48.png") !important;
+		}
+		
+		#editBookmarkPanelTitle {
+			font-size: 130% !important;
+		}
+		
+		.editBookmarkPanelHeaderButton {
+			padding: 0 !important;
+			
+			.button-box {
+				border: 1px solid transparent !important;
+				padding-block-start: 1px !important;
+				padding-block-end: 2px !important;
+			}
+		}
+	}
+	
+	menulist {
+		dropmarker {
+      height: 100% !important;
+		}
+	}
+	
+	.expander-down,
+	.expander-up {
+    appearance: auto !important;
+		padding: 0 !important;
+		min-width: 0 !important;
+		min-height: 0 !important;
+		max-width: 24px !important;
+		max-height: 24px !important;
+		justify-content: center !important;
+		
+		.button-box {
+      padding: 0 !important;
+		}
+	}
+	
+	.expander-up {
+		list-style-image: url("chrome://echelon/content/firefox-4/places/collapse.png") !important;
+	}
+	
+	.expander-down {
+		list-style-image: url("chrome://echelon/content/firefox-4/places/expand.png") !important;
+	}
+	
+	#editBMPanel_newFolderButton,
+	.footer-button {
+		appearance: auto !important;
+		font-size: unset !important;
+		margin: 1px 5px 2px !important;
+		padding: 2px 3px !important;
+		font-weight: normal !important;
+		color: ButtonText !important;
+		min-height: unset !important;
+		min-width: 6.3em !important;
+	}
+	
+	#editBMPanel_folderTree {
+		appearance: auto !important;
+		min-width: 27em !important;
+		margin-block: 2px !important;
+	}
+	
+	.checkbox-label {
+		opacity: 1 !important;
+	}
+}
