@@ -53,4 +53,33 @@
             L10nRegistry.getInstance().registerSources([source]);
         }
     }
+
+    if (brand != "")
+    {
+        let dialogFtl = Services.dirsvc.get("UChrm", Ci.nsIFile);
+        dialogFtl.append("branding");
+        dialogFtl.append(brand);
+        dialogFtl.append("ftls");
+        let root = fsPathToFileUri(dialogFtl.path, true);
+        dialogFtl.append("browser");
+        dialogFtl.append("aboutDialog.ftl");
+        if (dialogFtl.exists())
+        {
+            let path = fsPathToFileUri(dialogFtl.path);
+            let locale = Services.locale.appLocalesAsBCP47;
+            let source = new L10nFileSource(
+                "echelon",
+                "app",
+                locale,
+                root,
+                {
+                    addResourceOptions: {
+                        allowOverrides: true
+                    }
+                },
+                [path]
+            );
+            L10nRegistry.getInstance().registerSources([source]);
+        }
+    }
 }

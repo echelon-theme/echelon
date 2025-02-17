@@ -27,6 +27,7 @@ const echelonStyle = {
 			chromeMargin();
 	},
 };
+document.addEventListener("echelon-refresh-appearance", console.log("fag"));
 Services.prefs.addObserver("Echelon.Appearance.Style", echelonStyle, false);
 Services.prefs.addObserver("browser.tabs.inTitlebar", echelonStyle, false);
 setTimeout(() => chromeMargin(), 1000); //bum ass hack

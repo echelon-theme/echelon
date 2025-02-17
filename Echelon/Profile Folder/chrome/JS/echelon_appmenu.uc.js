@@ -805,6 +805,12 @@ let g_echelonFirefoxButton = null;
 						}
 					}
 				}
+
+				let aboutDialog = this.menuEl.querySelector("#appmenu_about");
+				if (aboutDialog)
+				{
+					aboutDialog.label = this.strings.formatStringFromName("about", [BrandUtils.getBrandingKey("brandShortName")]);
+				}
 			}
 		}
 		
