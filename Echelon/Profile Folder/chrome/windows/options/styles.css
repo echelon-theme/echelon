@@ -699,6 +699,8 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
 }
 
 .menulist .item-iconic .item-iconic-image {
+	width: 32px;
+	height: 32px;
 	margin-inline-end: 10px;
 }
 
@@ -720,4 +722,32 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
 
 #system-style-win10 {
 	list-style-image: url("chrome://userchrome/content/windows/options/images/system-styles/win10.png");
+}
+
+#branding-echelon {
+	list-style-image: url("chrome://userchrome/content/branding/echelon/content/icon32.png");
+}
+
+#branding-firefox {
+	list-style-image: url("chrome://userchrome/content/branding/firefox/content/icon32.png");
+}
+
+#branding-aurora {
+	list-style-image: url("chrome://userchrome/content/branding/aurora/content/icon32.png");
+}
+
+#branding-nightly {
+	list-style-image: url("chrome://userchrome/content/branding/nightly/content/icon32.png");
+}
+
+:root[echelon-appearance-newlogo="true"] #branding-firefox {
+	list-style-image: url("chrome://userchrome/content/branding/firefox/new/content/icon32.png");
+}
+
+:root[echelon-appearance-newlogo="true"] #branding-aurora {
+	list-style-image: url("chrome://userchrome/content/branding/aurora/new/content/icon32.png");
+}
+
+:root[echelon-appearance-newlogo="true"] #branding-nightly {
+	list-style-image: url("chrome://userchrome/content/branding/nightly/new/content/icon32.png");
 }

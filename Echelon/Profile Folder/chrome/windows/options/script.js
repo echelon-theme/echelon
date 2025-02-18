@@ -7,7 +7,10 @@ g_themeManager.init(
     document.documentElement,
     {
         style: true,
-        bools: ["Echelon.Appearance.Blue"]
+        bools: [
+            "Echelon.Appearance.Blue",
+            "Echelon.Appearance.NewLogo"
+        ]
     }
 );
 
@@ -78,7 +81,7 @@ document.querySelectorAll(".menulist").forEach(menulist => {
             dropdownText.textContent = item.textContent;
             item.setAttribute("selected", true);
             item.dispatchEvent(new CustomEvent("echelon-menulist-command"));
-            document.dispatchEvent(new CustomEvent("echelon-menulist-global-command"));
+            document.dispatchEvent(new CustomEvent("echelon-menulist-command"));
         })
     });
 
@@ -370,7 +373,8 @@ function disableAeroBlue() {
     }
 }
 
-document.addEventListener("echelon-menulist-global-command", disableAeroBlue);
+document.addEventListener("echelon-menulist-command", disableAeroBlue);
+document.addEventListener("DOMContentLoaded", disableAeroBlue);
 
 function loadVersion() {
 	document.querySelectorAll("#version").forEach(async identifier => {
