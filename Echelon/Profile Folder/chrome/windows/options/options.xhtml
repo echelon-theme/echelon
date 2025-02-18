@@ -47,14 +47,33 @@
 								<vbox class="section-content">
 									<hbox class="menulist-container" align="center" flex="1">
 										<label value="System Style" flex="1"/>
-										<menulist type="string" preference="Echelon.Appearance.systemStyle" flex="1">
-											<menupopup>
-												<menuitem label="Default" value="win"/>
-												<menuitem label="Windows XP" value="winxp"/>
-												<menuitem label="Windows 8" value="win8"/>
-												<menuitem label="Windows 10" value="win10"/>
-											</menupopup>
-										</menulist>
+										<echelon-menulist class="menulist" type="string" preference="Echelon.Appearance.systemStyle" flex="1">
+											<label class="selected"></label>
+											<image class="dropdown-marker" />
+											<vbox class="list">
+												<hbox class="list-arrow">
+													<image class="list-arrow-image" />
+												</hbox>
+												<vbox class="list-container">
+													<hbox class="item item-iconic" id="system-style-default" value="win">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">Default</label>
+													</hbox>
+													<hbox class="item item-iconic" id="system-style-winxp" value="winxp">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">Windows XP</label>
+													</hbox>
+													<hbox class="item item-iconic" id="system-style-win8" value="win8">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">Windows 8</label>
+													</hbox>
+													<hbox class="item item-iconic" id="system-style-win10" value="win10">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">Windows 10</label>
+													</hbox>
+												</vbox>
+											</vbox>
+										</echelon-menulist>
 									</hbox>
 									<checkbox label="Use Aero blue style" preference="Echelon.Appearance.Blue"/>
 								</vbox>
@@ -89,14 +108,33 @@
 								<vbox class="section-content">
 									<hbox class="menulist-container" align="center" flex="1">
 										<label value="Branding" flex="1"/>
-										<menulist type="string" preference="Echelon.Option.Branding" flex="1">
-											<menupopup>
-												<!-- <menuitem label="Echelon" value="echelon"/> -->
-												<menuitem label="Firefox" value="firefox"/>
-												<menuitem label="Aurora" value="aurora"/>
-												<menuitem label="Nightly" value="nightly"/>
-											</menupopup>
-										</menulist>
+										<echelon-menulist class="menulist" type="string" preference="Echelon.Option.Branding" flex="1">
+											<label class="selected"></label>
+											<image class="dropdown-marker" />
+											<vbox class="list">
+												<hbox class="list-arrow">
+													<image class="list-arrow-image" />
+												</hbox>
+												<vbox class="list-container">
+													<hbox class="item item-iconic" id="system-style-default" value="echelon">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">Echelon</label>
+													</hbox>
+													<hbox class="item item-iconic" id="system-style-winxp" value="firefox">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">Firefox</label>
+													</hbox>
+													<hbox class="item item-iconic" id="system-style-win8" value="aurora">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">Aurora</label>
+													</hbox>
+													<hbox class="item item-iconic" id="system-style-win10" value="nightly">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">Nightly</label>
+													</hbox>
+												</vbox>
+											</vbox>
+										</echelon-menulist>
 									</hbox> 
 									<checkbox label="Use new Firefox logo" preference="Echelon.Appearance.NewLogo"/>
 								</vbox>
@@ -107,7 +145,7 @@
 									<checkbox label="Tabs on Top" preference="Echelon.Appearance.TabsOnTop"/>
 									<checkbox label="Hide Tab Manager" preference="browser.tabs.tabmanager.enabled"/>
 									<checkbox label="Hide unified extensions button (not recommended)" preference="Echelon.Option.HideUnifiedExtensions"/>
-									<checkbox label="Hide Toolbars on Add-ons Manager" preference="Echelon.Appearance.disableChrome"/>
+									<checkbox label="Hide Toolbars on Browser Pages" preference="Echelon.Appearance.disableChrome"/>
 								</vbox>
 							</vbox>
 							<vbox class="content-section">
@@ -123,35 +161,6 @@
 							<image class="header-image" />
 							<label class="header-text" value="Native Controls" />
 						</hbox>
-						<vbox class="section-content">
-							<echelon-menulist class="menulist" type="string" preference="Echelon.Appearance.systemStyle" flex="1">
-								<label class="selected"></label>
-								<image class="dropdown-marker" />
-								<vbox class="list">
-									<hbox class="list-arrow">
-										<image class="list-arrow-image" />
-									</hbox>
-									<vbox class="list-container">
-										<hbox class="item item-iconic" id="system-style-default" value="default">
-											<image class="item-iconic-image" />
-											<label class="item-iconic-text">Default</label>
-										</hbox>
-										<hbox class="item item-iconic" id="system-style-winxp" value="winxp">
-											<image class="item-iconic-image" />
-											<label class="item-iconic-text">Windows XP</label>
-										</hbox>
-										<hbox class="item item-iconic" id="system-style-win8" value="win8">
-											<image class="item-iconic-image" />
-											<label class="item-iconic-text">Windows 8</label>
-										</hbox>
-										<hbox class="item item-iconic" id="system-style-win10" value="win10">
-											<image class="item-iconic-image" />
-											<label class="item-iconic-text">Windows 10</label>
-										</hbox>
-									</vbox>
-								</vbox>
-							</echelon-menulist>
-						</vbox>
 					</vbox>
 					<vbox id="section-about" class="section" flex="1">
 						<vbox class="about-header">

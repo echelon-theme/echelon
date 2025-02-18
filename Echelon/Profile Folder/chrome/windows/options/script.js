@@ -77,7 +77,8 @@ document.querySelectorAll(".menulist").forEach(menulist => {
             menulist.setAttribute("value", item.getAttribute("value"));
             dropdownText.textContent = item.textContent;
             item.setAttribute("selected", true);
-            document.dispatchEvent(new CustomEvent("echelon-menulist-command"));
+            item.dispatchEvent(new CustomEvent("echelon-menulist-command"));
+            document.dispatchEvent(new CustomEvent("echelon-menulist-global-command"));
         })
     });
 
@@ -126,9 +127,8 @@ const gPrefHandler = {
                 break;
             case "echelon-menulist":
                 if (element.getAttribute("type") == "string") {
-                    element.value = Services.prefs.getStringPref(
-                        element.getAttribute("preference")
-                    );
+                    element.setAttribute("value", Services.prefs.getStringPref(element.getAttribute("preference")));
+                    element.setValue(element.getAttribute("value"));
                 } 
                 else {
                     element.value = Services.prefs.getIntPref(
@@ -197,8 +197,8 @@ const gPrefHandler = {
                 break;
             case "echelon-menulist-command":
                 Services.prefs.setStringPref(
-                    event.target.getAttribute("preference"),
-                    event.target.value
+                    event.target.parentElement.parentElement.parentElement.getAttribute("preference"),
+                    event.target.parentElement.parentElement.parentElement.getAttribute("value")
                 );
                 break;
         }
@@ -224,7 +224,14 @@ const gPrefHandler = {
         document.addEventListener("input", this);
         document.addEventListener("command", this);
         document.addEventListener("updateRadioGroup", this);
-        document.addEventListener("echelon-menulist-command", this);
+
+        document.querySelectorAll(".menulist").forEach(menulist => {
+            let items = menulist.querySelectorAll(".item");
+            
+            items.forEach(item => {
+                item.addEventListener("echelon-menulist-command", this);
+            });
+        });
     }
 };
 
@@ -348,10 +355,9 @@ for (const i of Object.keys(ThemeUtils.styleHomepage)) {
     homepageContainer.appendChild(MozXULElement.parseXULToFragment(presetCard));
 }
 
-let systemStyleList = document.querySelector("[preference='Echelon.Appearance.systemStyle']");
-
 function disableAeroBlue() {
-    let currentSystemStyle = systemStyleList.value;
+    let systemStyleList = document.querySelector("[preference='Echelon.Appearance.systemStyle']");
+    let currentSystemStyle = systemStyleList.getAttribute("value");
 
     document.querySelector("[preference='Echelon.Appearance.Blue']").removeAttribute("disabled");
 
@@ -364,8 +370,7 @@ function disableAeroBlue() {
     }
 }
 
-let observer = new MutationObserver(disableAeroBlue);
-observer.observe(systemStyleList, { attributes: true, attributeFilter: ["value"] });
+document.addEventListener("echelon-menulist-global-command", disableAeroBlue);
 
 function loadVersion() {
 	document.querySelectorAll("#version").forEach(async identifier => {
