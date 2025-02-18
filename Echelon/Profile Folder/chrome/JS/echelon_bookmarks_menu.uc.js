@@ -208,9 +208,9 @@
         `);
         mainPopupSet.append(bookmarkedAnimationContainer);
 
-        waitForElement("#editBookmarkPanel").then(e => {
-            let editBookmarkPanelHeader = e.querySelector(".panel-header");
-            let editBookmarkPanelContent = e.querySelector("#editBookmarkPanelContent")
+        waitForElement("#editBookmarkPanel").then(panel => {
+            let editBookmarkPanelHeader = panel.querySelector(".panel-header");
+            let editBookmarkPanelContent = panel.querySelector("#editBookmarkPanelContent")
             let oldPanelHeader = MozXULElement.parseXULToFragment(
             `
                 <box id="editBookmarkPanelHeader" align="center">
@@ -229,20 +229,24 @@
 
             if (editBookmarkPanelHeader) {
                 editBookmarkPanelHeader.remove();
-                e.querySelector("#editBookmarkHeaderSeparator").remove();
+                panel.querySelector("#editBookmarkHeaderSeparator").remove();
                 editBookmarkPanelContent.insertBefore(oldPanelHeader, editBookmarkPanelContent.firstChild);
             }
 
-            let menulists = e.querySelectorAll("menulist");
+            let menulists = panel.querySelectorAll("menulist");
             for (const elem of menulists) {
                 elem.setAttribute("native", "true");
             }
 
             waitForElement(".panel-footer #editBookmarkPanelRemoveButton").then(e => {
                 let cancelButton = window.MozXULElement.parseXULToFragment(`
-                    <button id="editBookmarkPanelDoneButton" class="footer-button" data-l10n-id="bookmark-panel-cancel-button" slot="primary" label="Cancel"></button>
+                    <button id="editBookmarkPanelCancelButton" class="footer-button" data-l10n-id="bookmark-panel-cancel-button" slot="primary" label="Cancel"></button>
                 `);
                 e.replaceWith(cancelButton);
+
+                waitForElement(".panel-footer #editBookmarkPanelCancelButton").then(el => {
+                    el.onclick = function(){panel.hidePopup()};
+                });
             });
         });
     }
