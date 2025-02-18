@@ -348,6 +348,25 @@ for (const i of Object.keys(ThemeUtils.styleHomepage)) {
     homepageContainer.appendChild(MozXULElement.parseXULToFragment(presetCard));
 }
 
+let systemStyleList = document.querySelector("[preference='Echelon.Appearance.systemStyle']");
+
+function disableAeroBlue() {
+    let currentSystemStyle = systemStyleList.value;
+
+    document.querySelector("[preference='Echelon.Appearance.Blue']").removeAttribute("disabled");
+
+    if (currentSystemStyle == "winxp" || currentSystemStyle == "win8" || currentSystemStyle == "win10") {
+        document.querySelector("[preference='Echelon.Appearance.Blue']").setAttribute("disabled", "true");
+        Services.prefs.setBoolPref(
+            document.querySelector("[preference='Echelon.Appearance.Blue']").getAttribute("preference"),
+            true
+        );
+    }
+}
+
+let observer = new MutationObserver(disableAeroBlue);
+observer.observe(systemStyleList, { attributes: true, attributeFilter: ["value"] });
+
 function loadVersion() {
 	document.querySelectorAll("#version").forEach(async identifier => {
         identifier.value = gOptionsBundle.getFormattedString("version_format", [await VersionUtils.getEchelonVer()]);

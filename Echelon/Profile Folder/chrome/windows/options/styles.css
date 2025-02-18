@@ -480,11 +480,15 @@ checkbox .checkbox-check {
 	box-shadow: 0 1px 0 rgba(255, 255, 255, .5), inset 0 1px 0 rgba(204, 204, 204, 0.25);
 }
 
-checkbox:hover .checkbox-check {
+checkbox .checkbox-check[disabled] {
+	opacity: 0.4;
+}
+
+checkbox:hover .checkbox-check:not([disabled]) {
 	border-color: #269DEB;
 }
 
-checkbox:hover:active .checkbox-check {
+checkbox:hover:active .checkbox-check:not([disabled]) {
 	background-color: #E2E2E2;
 	border-color: #1e79b6;
 }
