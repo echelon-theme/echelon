@@ -23,3 +23,23 @@
         );
     }
 }
+
+// reload pages on echelon style change
+function reloadStyledPages() {
+    let visibleTabs = gBrowser.visibleTabs;
+
+    for (const tab of visibleTabs) {
+        if (gBrowser.getBrowserForTab(tab).currentURI.spec == "about:newtab") {
+            gBrowser.getBrowserForTab(tab).reload();
+        }
+    }
+}
+
+const reloadPages = {
+	observe: function (subject, topic, data) {
+		if (topic == "nsPref:changed")
+			reloadStyledPages();
+	},
+};
+Services.prefs.addObserver("Echelon.Appearance.Style", reloadPages, false);
+Services.prefs.addObserver("Echelon.Appearance.Homepage.Style", reloadPages, false);
