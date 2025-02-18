@@ -19,17 +19,13 @@ export class EchelonThemeManager
 		
 		if (config?.style)
 		{
-			let evt = new CustomEvent("echelon-refresh-appearance");
-
 			this.refreshTheme();
 			Services.prefs.addObserver("Echelon.Appearance.systemStyle", (function() {
 				this.refreshTheme();
-				this.root.dispatchEvent(evt);
 				console.log("theme change");
 			}).bind(this));
 			Services.prefs.addObserver("Echelon.Appearance.Style", (function() {
 				this.refreshTheme();
-				this.root.dispatchEvent(evt);
 				console.log("theme change");
 			}).bind(this));
 		}
