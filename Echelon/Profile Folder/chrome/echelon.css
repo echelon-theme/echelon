@@ -58,6 +58,11 @@ window {
 :root:not([echelon-style-6])[sizemode=maximized] #TabsToolbar {
   grid-area: tabbar !important;
 }
+@media all and (-moz-windows-classic) {
+  :root:not([echelon-style-6]):not([sizemode=maximized]) .titlebar-buttonbox {
+    appearance: auto !important;
+  }
+}
 
 :root {
   --toolbarbutton-width: 30px !important;
@@ -1674,6 +1679,11 @@ window {
   border-bottom-left-radius: 4px !important;
   border-bottom-right-radius: 4px !important;
   margin: 0 0 2px !important;
+}
+@media all and (-moz-windows-classic) {
+  #appmenu-button-container {
+    margin-block-start: 4px !important;
+  }
 }
 #appmenu-button-container #appmenu-button {
   -moz-user-focus: ignore !important;
@@ -3797,6 +3807,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 
 :root[echelon-system-style=winxp]:not([echelon-style-6])[tabs-on-top=true]:not([lwtheme=true]) #TabsToolbar {
   background-image: linear-gradient(to top, rgba(25.5, 25.5, 25.5, 0.4) 1px, rgba(0, 0, 0, 0.05) 1px, transparent 50%) !important;
+  background-size: unset !important;
 }
 :root[echelon-system-style=winxp]:not([echelon-style-6])[tabs-on-top=true]:not([sizemode=maximized]) #nav-bar {
   border-top: 0 !important;

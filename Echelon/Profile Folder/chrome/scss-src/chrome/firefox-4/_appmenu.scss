@@ -80,6 +80,10 @@
     border-bottom-right-radius: 4px !important;
     margin: 0 0 2px !important;
 
+    @media all and (-moz-windows-classic) { 
+        margin-block-start: 4px !important;
+    }
+
     #appmenu-button {
         -moz-user-focus: ignore !important;
         min-height: 0 !important;
