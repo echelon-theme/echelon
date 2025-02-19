@@ -62,8 +62,134 @@ if (mainPopupSet)
     }
 }
 
+// set default echelon settings
+function setDefaultSettings() {
+    let defaultEchelonConfig = {
+        0: {
+            "name": "Echelon.Appearance.Blue",
+            "type": "bool",
+            "value": true
+        },
+        1: {
+            "name": "Echelon.Appearance.Preset",
+            "type": "int",
+            "value": "0"
+        },
+        2: {
+            "name": "Echelon.Appearance.Style",
+            "type": "int",
+            "value": "0"
+        },
+        3: {
+            "name": "Echelon.Appearance.systemStyle",
+            "type": "string",
+            "value": ""
+        },
+        4: {
+            "name": "Echelon.Appearance.Homepage.Style",
+            "type": "int",
+            "value": "0"
+        },
+        5: {
+            "name": "Echelon.Appearance.overrideHomepagePreset",
+            "type": "bool",
+            "value": false
+        },
+        6: {
+            "name": "Echelon.Homepage.HideCustomSnippets",
+            "type": "bool",
+            "value": false
+        },
+        7: {
+            "name": "Echelon.Option.HideUnifiedExtensions",
+            "type": "bool",
+            "value": false
+        },
+        8: {
+            "name": "Echelon.Option.Branding",
+            "type": "string",
+            "value": "firefox"
+        },
+        9: {
+            "name": "Echelon.Appearance.TabsOnTop",
+            "type": "bool",
+            "value": true
+        },
+        10: {
+            "name": "Echelon.Appearance.disableChrome",
+            "type": "bool",
+            "value": true
+        },
+        11: {
+            "name": "ui.systemUsesDarkMode",
+            "type": "int",
+            "value": "0"
+        },
+        12: {
+            "name": "browser.theme.dark-private-windows",
+            "type": "bool",
+            "value": false
+        },
+        13: {
+            "name": "toolkit.legacyUserProfileCustomizations.stylesheets",
+            "type": "bool",
+            "value": true
+        },
+        14: {
+            "name": "browser.theme.dark-private-windows",
+            "type": "bool",
+            "value": false
+        },
+        15: {
+            "name": "browser.privateWindowSeparation.enabled",
+            "type": "bool",
+            "value": false
+        },
+        16: {
+            "name": "browser.display.windows.non_native_menus",
+            "type": "int",
+            "value": "0"
+        },
+        17: {
+            "name": "widget.non-native-theme.enabled",
+            "type": "bool",
+            "value": false
+        },
+        18: {
+            "name": "browser.tabs.hoverPreview.enabled",
+            "type": "bool",
+            "value": false
+        },
+        19: {
+            "name": "browser.tabs.tabmanager.enabled",
+            "type": "bool",
+            "value": false
+        },
+        20: {
+            "name": "browser.menu.showViewImageInfo",
+            "type": "bool",
+            "value": true
+        }
+    }
+
+    for (const config of Object.keys(defaultEchelonConfig)) {
+        if (defaultEchelonConfig[config].name) {
+            if (defaultEchelonConfig[config].type == "bool") {
+                PrefUtils.trySetBoolPref(defaultEchelonConfig[config].name, defaultEchelonConfig[config].value);
+            } else
+            if (defaultEchelonConfig[config].type == "int") {
+                PrefUtils.trySetIntPref(defaultEchelonConfig[config].name, defaultEchelonConfig[config].value);
+            } else
+            if (defaultEchelonConfig[config].type == "string") {
+                PrefUtils.trySetStringPref(defaultEchelonConfig[config].name, defaultEchelonConfig[config].value);
+            }
+        }
+    }
+}
+
 window.addEventListener("load", () => {
     if (!PrefUtils.tryGetBoolPref("Echelon.parameter.isFirstRunFinished")) {
+        setDefaultSettings();
         showEchelonWizard();
     }
 });
