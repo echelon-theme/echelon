@@ -26,6 +26,14 @@
 	src: url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWuU6F.woff2) format('woff2');
 }
 
+[hidden="true"] {
+	visibility: collapse !important;
+}
+
+* {
+	-moz-user-focus: ignore;
+}
+
 :root {
 	color-scheme: light !important;
 }
@@ -273,13 +281,19 @@ body {
     padding-block-start: 25px;
 }
 
-.page-header h1 {
+.page-header h1,
+.page-header h2 {
     font-family: 'Open Sans';
     font-weight: lighter;
     font-size: 30px;
     text-shadow: 0 2px 0 white;
     letter-spacing: -0.02em;
     color: #5B758B;
+}
+
+.page-header h2 {
+	font-weight: normal;
+	font-size: 20px;
 }
 
 .page-header .header-description {
@@ -412,4 +426,134 @@ body {
 
 #system-style-container .win8 image {
 	background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/win8/firefox-29.png");
+}
+
+#echelon-wizard-finish-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+	z-index: 10;
+}
+
+.echelon-wizard-finish-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 40px;
+	min-height: 30px;
+	appearance: none;
+	border: 1px solid #315B16;
+	border-radius: 3px;
+	background-color: #74BF43;
+	background-clip: padding-box;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), transparent 75%);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+	color: white;
+	list-style-image: url("chrome://userchrome/content/windows/wizard/assets/finish.png");
+	cursor: pointer;
+	opacity: 0;
+	transform: translateY(100%);
+}
+
+:root[finished="true"] .echelon-wizard-finish-button {
+	opacity: 1;
+	transform: none;
+	transition-property: opacity, transform;
+	transition-duration: 250ms;
+}
+
+.echelon-wizard-restart-modal-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	z-index: 99;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.echelon-wizard-restart-modal-container[hidden="true"] {
+	visibility: visible !important;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.echelon-wizard-restart-modal-container:not([hidden="true"]) {
+	opacity: 1;
+	pointer-events: all;
+	transition-property: opacity;
+	transition-duration: 250ms;
+}
+
+.echelon-wizard-restart-modal {
+	max-width: 350px;
+	border-radius: 3.5px;
+	background-clip: padding-box;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 15px rgb(0, 0, 0, .5);
+	background-color: white;
+	transform: none;
+	opacity: 1;
+
+	transition-property: opacity, transform;
+	transition-duration: 250ms, 450ms;
+}
+
+.echelon-wizard-restart-modal-container[hidden="true"] .echelon-wizard-restart-modal {
+	transform: translateY(-40px);
+	opacity: 0;
+}
+
+.page-footer {
+	padding: 20px;
+	background: radial-gradient(50% 11.9% at 50% 0%, rgba(23, 45, 68, 0.11) 0%, rgba(232, 239, 245, 0) 100%), rgba(187, 197, 209, 0.1);
+	border-top: 1px solid rgba(0, 0, 0, 0.25);
+	box-shadow: 0px -1px 0px rgba(255, 255, 255, 0.25), inset 0px 2px 1px rgba(0, 0, 0, 0.05);
+	background-clip: padding-box;
+	margin-block-start: 5px;
+	justify-content: space-between;
+}
+
+.page-footer-button {
+	appearance: none;
+	min-height: 35px;
+	padding-inline: 15px;
+	min-width: 120px;
+
+	font-family: "Open Sans", sans-serif;
+	font-size: 12.5px;
+  	font-weight: 400;
+	border: 1px solid rgba(0, 0, 0, 0.40);
+	border-radius: 3px;
+	background-clip: padding-box;
+	background-color: transparent;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), transparent 75%);
+	box-shadow: 0 1px 0 white, inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+	
+	cursor: pointer;
+}
+
+.page-footer-button:hover {
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.50), transparent 75%);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.page-footer-button:hover:active {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15) 75%);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.restart-later-button {
+	background-color: #27A0EF;
+	border-color: #0C6693;
+	color: white;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.restart-now-button {
+	background-color: #BB2200;
+	border-color: #8a1c04;
+	color: white;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 }

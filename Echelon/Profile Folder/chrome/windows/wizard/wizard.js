@@ -1,5 +1,5 @@
 const { EchelonThemeManager } = ChromeUtils.importESModule("chrome://modules/content/EchelonThemeManager.sys.mjs");
-const { VersionUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+const { PrefUtils, VersionUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 
 let currentPage = 1; // Default to the first page
 let pageStack = [];
@@ -223,6 +223,10 @@ class ThemeUtils
 		}
 	};
     static sysStylePreset = {
+        // value       - system style value that will be set
+        // name        - display name on the wizard
+        // platform    - platforms that the card will be shown in
+        // defaultTheme - enable the blue style theme
         // visibleOnly - "both" to show on both Strata & Australis
         //               "strata" to show on only on Strata
         //               "australis" to show only on Australis
@@ -230,18 +234,28 @@ class ThemeUtils
             "value": "winxp",
             "name": "Windows XP",
             "platform": ["win"],
+            "defaultTheme": "true",
             "visibleOnly": "both"
         },
         1: { // Windows 7
             "value": "win",
             "name": "Windows 7",
             "platform": ["win"],
+            "defaultTheme": "true",
             "visibleOnly": "both"
         },
-        2: { // Windows Vista
+        2: { // Windows 8
             "value": "win8",
             "name": "Windows 8",
             "platform": ["win"],
+            "defaultTheme": "true",
+            "visibleOnly": "australis"
+        },
+        3: { // Windows 10
+            "value": "win10",
+            "name": "Windows 10",
+            "platform": ["win"],
+            "defaultTheme": "true",
             "visibleOnly": "australis"
         },
     };
@@ -287,6 +301,7 @@ for (const i of Object.keys(ThemeUtils.sysStylePreset)) {
     homepageContainer.appendChild(MozXULElement.parseXULToFragment(presetCard));
 
     homepageContainer.querySelectorAll(".card")[i].addEventListener("click",  function () {
+        PrefUtils.trySetBoolPref("Echelon.Appearance.Blue", ThemeUtils.sysStylePreset[i].defaultTheme);
         showPage(3);
     });
 
@@ -343,4 +358,22 @@ document.querySelector(".echelon-wizard-titlebar-close").addEventListener("click
     setTimeout(() => {
         showPage(1);
     }, 550);
+});
+
+document.querySelector(".restart-later-button").addEventListener("click",  function () {
+    windowRoot.ownerGlobal.hideEchelonWizard();
+    document.querySelector(".echelon-wizard-restart-modal-container").setAttribute("hidden", "true");
+
+    setTimeout(() => {
+        showPage(1);
+    }, 550);
+});
+
+document.querySelector(".restart-now-button").addEventListener("click",  function () {
+    PrefUtils.trySetBoolPref("Echelon.parameter.isFirstRunFinished", "true");
+    windowRoot.ownerGlobal.UC_API.Runtime.restart(true);
+});
+
+document.querySelector(".echelon-wizard-finish-button").addEventListener("click",  function () {
+    document.querySelector(".echelon-wizard-restart-modal-container").removeAttribute("hidden");
 });

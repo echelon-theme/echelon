@@ -33,6 +33,23 @@ if (mainPopupSet)
     }
 
     function resetEchelonWizard() {
+        // reset selected choices
+        PrefUtils.trySetIntPref("Echelon.Appearance.Preset", "0");
+        PrefUtils.trySetStringPref("Echelon.Appearance.systemStyle", "");
+        PrefUtils.trySetBoolPref("Echelon.Appearance.Blue", false);
+
+        let echelonWizardEl = document.querySelector("#echelon-wizard-container");
+
+        echelonWizardEl.setAttribute("animating", "true");
+        echelonWizardEl.setAttribute("animate", "closing");
+
+        setTimeout(() => {
+            echelonWizardEl.removeAttribute("animating")
+            echelonWizardEl.removeAttribute("animate")
+        }, 550);
+    }
+
+    function hideEchelonWizard() {
         let echelonWizardEl = document.querySelector("#echelon-wizard-container");
 
         echelonWizardEl.setAttribute("animating", "true");
@@ -44,3 +61,9 @@ if (mainPopupSet)
         }, 550);
     }
 }
+
+window.addEventListener("load", () => {
+    if (!PrefUtils.tryGetBoolPref("Echelon.parameter.isFirstRunFinished")) {
+        showEchelonWizard();
+    }
+});
