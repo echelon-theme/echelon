@@ -471,6 +471,22 @@ window {
   opacity: 0 !important;
 }
 
+:root:not([tabsintitlebar][echelon-style-6][echelon-system-style=winxp]) #main-menubar > menu {
+  appearance: auto !important;
+}
+
+:root[tabsintitlebar][echelon-style-6][echelon-system-style=winxp] #main-menubar > menu {
+  border: 2px solid transparent;
+  color: white !important;
+}
+:root[tabsintitlebar][echelon-style-6][echelon-system-style=winxp] #main-menubar > menu:-moz-window-inactive {
+  color: #D8E4F8 !important;
+}
+:root[tabsintitlebar][echelon-style-6][echelon-system-style=winxp] #main-menubar > menu[_moz-menuactive] {
+  background-color: -moz-menuhover !important;
+  color: -moz-menuhovertext !important;
+}
+
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
 :root {
@@ -5096,6 +5112,9 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-6][echelon-system-style=winxp][tabsintitlebar=true] #TabsToolbar #alltabs-button .toolbarbutton-icon {
   background-image: url("chrome://echelon/content/firefox-14/toolbarbutton-dropdown-arrow-inverted.png") !important;
   list-style-image: none !important;
+}
+:root[echelon-style-6][echelon-system-style=winxp][tabsintitlebar][sizemode=normal] #toolbar-menubar #menubar-items {
+  margin-block-start: 4px !important;
 }
 :root[echelon-style-6][echelon-system-style=win8], :root[echelon-style-6][echelon-system-style=win10] {
   --toolbarbutton-icon-width: 16px;
