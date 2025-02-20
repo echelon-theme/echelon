@@ -1,5 +1,5 @@
 #navigator-toolbox > toolbar:not(#titlebar, #TabsToolbar),
-#navigator-toolbox > #titlebar > toolbar:not(#TabsToolbar),
+#toolbar-menubar #menubar-items,
 #navigator-toolbox::after,
 #navigator-toolbox > #titlebar > #TabsToolbar > .toolbar-items,
 #browser,
@@ -18,11 +18,11 @@
     }
 
     #navigator-toolbox > toolbar:not(#titlebar),
-    #navigator-toolbox > #titlebar > toolbar:not(#TabsToolbar),
     #navigator-toolbox::after,
     #navigator-toolbox > #titlebar > #TabsToolbar > .toolbar-items,
     #browser,
-    #customization-container {
+    #customization-container,
+    #toolbar-menubar #menubar-items {
         margin-inline: 2em !important;
     }
 
@@ -40,7 +40,7 @@
 
     #nav-bar-customization-target,
     #TabsToolbar,
-    #toolbar-menubar,
+    #toolbar-menubar #menubar-items,
     #PersonalToolbar {
         padding-inline: 10px !important;
     }

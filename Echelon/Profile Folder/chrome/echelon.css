@@ -3524,7 +3524,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 
 #navigator-toolbox > toolbar:not(#titlebar, #TabsToolbar),
-#navigator-toolbox > #titlebar > toolbar:not(#TabsToolbar),
+#toolbar-menubar #menubar-items,
 #navigator-toolbox::after,
 #navigator-toolbox > #titlebar > #TabsToolbar > .toolbar-items,
 #browser,
@@ -3542,11 +3542,11 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-image: url("chrome://echelon/content/firefox-29/customizableui/customizeMode-gridTexture.png"), var(--lwt-header-image) !important;
 }
 :root[customizing] #navigator-toolbox > toolbar:not(#titlebar),
-:root[customizing] #navigator-toolbox > #titlebar > toolbar:not(#TabsToolbar),
 :root[customizing] #navigator-toolbox::after,
 :root[customizing] #navigator-toolbox > #titlebar > #TabsToolbar > .toolbar-items,
 :root[customizing] #browser,
-:root[customizing] #customization-container {
+:root[customizing] #customization-container,
+:root[customizing] #toolbar-menubar #menubar-items {
   margin-inline: 2em !important;
 }
 :root[customizing] #navigator-toolbox {
@@ -3561,7 +3561,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 :root[customizing] #nav-bar-customization-target,
 :root[customizing] #TabsToolbar,
-:root[customizing] #toolbar-menubar,
+:root[customizing] #toolbar-menubar #menubar-items,
 :root[customizing] #PersonalToolbar {
   padding-inline: 10px !important;
 }
