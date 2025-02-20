@@ -254,19 +254,70 @@
     }
 
     #customization-uidensity-menu-header,
-    #customization-lwtheme-menu-header {
-        margin-top: -10px !important;
-        padding: 10px !important;
-        margin-bottom: 5px !important;
-        border-bottom: 1px solid var(--arrowpanel-dimmed) !important;
+    #customization-lwtheme-menu-header,
+    #customization-lwtheme-menu-recommended,
+    #customization-lwtheme-menu-footer {
         background-color: var(--arrowpanel-dimmed) !important;
         margin-right: -10px !important;
         margin-left: -10px !important;
         color: hsl(0,0%,50%) !important;
     }
 
+    #customization-uidensity-menu-header,
+    #customization-lwtheme-menu-header,
+    #customization-lwtheme-menu-recommended {
+        padding: 10px !important;
+        margin-top: -10px !important;
+        margin-bottom: 5px !important;
+        border-bottom: 1px solid var(--arrowpanel-dimmed) !important;
+    }
+
+    #customization-lwtheme-menu-recommended {
+        margin-top: 0 !important;
+        border-top: 1px solid var(--arrowpanel-dimmed) !important;
+    }
+    
+    #customization-lwtheme-menu-footer {
+        background: linear-gradient(hsla(210,4%,10%,.05) 60%, transparent) border-box !important;
+        border-top: 1px solid hsla(210,4%,10%,.05) !important;
+        margin-bottom: -10px !important;
+        
+        .customization-lwtheme-menu-footeritem {
+          appearance: none !important;
+          flex: 1 !important;
+          color: hsl(0,0%,50%) !important;
+          border-style: none !important;
+          padding: 10px !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+            
+            &:hover {
+                background: linear-gradient(hsla(210,4%,10%,.08) 40%, transparent) padding-box !important;
+            }
+            
+            &:first-child {
+              border-inline-end: 1px solid hsla(210,4%,10%,.15) !important;
+            }
+        }
+    }
+    
+    #customization-lwtheme-button {
+        padding: 2px 7px !important;
+        
+        .button-icon {
+          width: 20px !important;
+          height: 20px !important;
+          border-radius: 2px !important;
+          background-size: contain !important;
+        }
+        
+        .button-text {
+            margin-inline-start: 6px !important;
+        }
+    }
+
     .customization-uidensity-menuitem,
-    .customization-lwtheme-menuitem {
+    .customization-lwtheme-menu-theme {
         appearance: none !important;
         border: 1px solid transparent !important;
         margin: 0 -5px 5px !important;
@@ -296,17 +347,15 @@
         }
     }
 
-    .customization-lwtheme-menuitem {
-        &[data-builtin="true"] {
-            list-style-image: var(--theme-background) !important;
+    .customization-lwtheme-menu-theme {
+        .toolbarbutton-icon {
+            margin: 5px !important;
+            width: 32px !important;
+            height: 32px !important;
         }
-
-        &:not([data-builtin="true"]) {
-            .menu-iconic-icon {
-                background-image: var(--theme-background) !important;
-                background-position: center center !important;
-                background-size: cover !important;
-            }
+        
+        .toolbarbutton-text {
+            text-align: start !important;
         }
     }
 

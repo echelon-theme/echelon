@@ -3717,18 +3717,60 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   visibility: collapse !important;
 }
 #customization-container #customization-uidensity-menu-header,
-#customization-container #customization-lwtheme-menu-header {
-  margin-top: -10px !important;
-  padding: 10px !important;
-  margin-bottom: 5px !important;
-  border-bottom: 1px solid var(--arrowpanel-dimmed) !important;
+#customization-container #customization-lwtheme-menu-header,
+#customization-container #customization-lwtheme-menu-recommended,
+#customization-container #customization-lwtheme-menu-footer {
   background-color: var(--arrowpanel-dimmed) !important;
   margin-right: -10px !important;
   margin-left: -10px !important;
   color: hsl(0, 0%, 50%) !important;
 }
+#customization-container #customization-uidensity-menu-header,
+#customization-container #customization-lwtheme-menu-header,
+#customization-container #customization-lwtheme-menu-recommended {
+  padding: 10px !important;
+  margin-top: -10px !important;
+  margin-bottom: 5px !important;
+  border-bottom: 1px solid var(--arrowpanel-dimmed) !important;
+}
+#customization-container #customization-lwtheme-menu-recommended {
+  margin-top: 0 !important;
+  border-top: 1px solid var(--arrowpanel-dimmed) !important;
+}
+#customization-container #customization-lwtheme-menu-footer {
+  background: linear-gradient(hsla(210, 4%, 10%, 0.05) 60%, transparent) border-box !important;
+  border-top: 1px solid hsla(210, 4%, 10%, 0.05) !important;
+  margin-bottom: -10px !important;
+}
+#customization-container #customization-lwtheme-menu-footer .customization-lwtheme-menu-footeritem {
+  appearance: none !important;
+  flex: 1 !important;
+  color: hsl(0, 0%, 50%) !important;
+  border-style: none !important;
+  padding: 10px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+#customization-container #customization-lwtheme-menu-footer .customization-lwtheme-menu-footeritem:hover {
+  background: linear-gradient(hsla(210, 4%, 10%, 0.08) 40%, transparent) padding-box !important;
+}
+#customization-container #customization-lwtheme-menu-footer .customization-lwtheme-menu-footeritem:first-child {
+  border-inline-end: 1px solid hsla(210, 4%, 10%, 0.15) !important;
+}
+#customization-container #customization-lwtheme-button {
+  padding: 2px 7px !important;
+}
+#customization-container #customization-lwtheme-button .button-icon {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 2px !important;
+  background-size: contain !important;
+}
+#customization-container #customization-lwtheme-button .button-text {
+  margin-inline-start: 6px !important;
+}
 #customization-container .customization-uidensity-menuitem,
-#customization-container .customization-lwtheme-menuitem {
+#customization-container .customization-lwtheme-menu-theme {
   appearance: none !important;
   border: 1px solid transparent !important;
   margin: 0 -5px 5px !important;
@@ -3737,33 +3779,33 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   border-radius: 0 !important;
 }
 #customization-container .customization-uidensity-menuitem:is(:hover, [active=true]),
-#customization-container .customization-lwtheme-menuitem:is(:hover, [active=true]) {
+#customization-container .customization-lwtheme-menu-theme:is(:hover, [active=true]) {
   background-color: var(--arrowpanel-dimmed) !important;
   border-color: var(--panel-separator-color) !important;
 }
 #customization-container .customization-uidensity-menuitem:is(:hover:active, [active=true]),
-#customization-container .customization-lwtheme-menuitem:is(:hover:active, [active=true]) {
+#customization-container .customization-lwtheme-menu-theme:is(:hover:active, [active=true]) {
   background-color: var(--arrowpanel-dimmed-further) !important;
 }
 #customization-container .customization-uidensity-menuitem .menu-iconic-left,
-#customization-container .customization-lwtheme-menuitem .menu-iconic-left {
+#customization-container .customization-lwtheme-menu-theme .menu-iconic-left {
   appearance: none !important;
   width: unset !important;
   padding-top: 0 !important;
 }
 #customization-container .customization-uidensity-menuitem .menu-iconic-left .menu-iconic-icon,
-#customization-container .customization-lwtheme-menuitem .menu-iconic-left .menu-iconic-icon {
+#customization-container .customization-lwtheme-menu-theme .menu-iconic-left .menu-iconic-icon {
   width: 32px !important;
   height: 32px !important;
   margin: 5px !important;
 }
-#customization-container .customization-lwtheme-menuitem[data-builtin=true] {
-  list-style-image: var(--theme-background) !important;
+#customization-container .customization-lwtheme-menu-theme .toolbarbutton-icon {
+  margin: 5px !important;
+  width: 32px !important;
+  height: 32px !important;
 }
-#customization-container .customization-lwtheme-menuitem:not([data-builtin=true]) .menu-iconic-icon {
-  background-image: var(--theme-background) !important;
-  background-position: center center !important;
-  background-size: cover !important;
+#customization-container .customization-lwtheme-menu-theme .toolbarbutton-text {
+  text-align: start !important;
 }
 #customization-container #customization-uidensity-menuitem-compact {
   list-style-image: url("chrome://echelon/content/firefox-29/customizableui/density-compact.svg") !important;
