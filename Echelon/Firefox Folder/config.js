@@ -24,8 +24,13 @@ try
     if (branding != "")
     {
         let brandingManifest = Cc["@mozilla.org/file/directory_service;1"].getService(Ci.nsIProperties).get("UChrm", Ci.nsIFile);
+		let newBranding = prefs.getBoolPref("Echelon.Appearance.NewLogo");
         brandingManifest.append("branding");
         brandingManifest.append(branding);
+		if (newBranding)
+		{
+			brandingManifest.append("new");
+		}
         brandingManifest.append("chrome.manifest");
         if (brandingManifest.exists())
         {
