@@ -688,7 +688,9 @@ window {
 :root:not([echelon-style-6]) #TabsToolbar .toolbar-items {
   margin-top: 0 !important;
   padding-top: 0 !important;
-  padding-inline: 2px !important;
+}
+:root:not([echelon-style-6])[sizemode=normal] #TabsToolbar .toolbar-items {
+  padding-inline: 4px !important;
 }
 :root:not([echelon-style-6]):not([tabs-on-top=true], [echelon-appearance-disablechrome=true][disablechrome]) #TabsToolbar .tabbrowser-tab:is([selected], [multiselected]) .tab-background {
   background-image: -moz-linear-gradient(bottom, rgba(25.5, 25.5, 25.5, 0.4) 1px, transparent 1px), -moz-linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5) 50%), -moz-linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
@@ -3869,6 +3871,9 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 :root[echelon-system-style=winxp]:not([echelon-style-6])[tabs-on-top=true]:not([sizemode=maximized]) #nav-bar {
   border-top: 0 !important;
+}
+:root[echelon-system-style=winxp]:not([echelon-style-6])[sizemode=normal] .toolbar-items {
+  padding-inline: 2px !important;
 }
 :root[echelon-system-style=winxp] {
   background-color: -moz-Dialog !important;

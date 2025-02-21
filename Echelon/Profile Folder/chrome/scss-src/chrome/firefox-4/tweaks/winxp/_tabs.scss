@@ -11,4 +11,10 @@
             }
         }
     }
+
+    &[sizemode="normal"] {
+        .toolbar-items {
+            padding-inline: 2px !important;
+        }
+    }
 }

@@ -262,7 +262,12 @@
         .toolbar-items {
             margin-top: 0 !important;
             padding-top: 0 !important;
-            padding-inline: 2px !important;
+        }
+    }
+
+    :root:not([echelon-style-6])[sizemode="normal"] & {
+        .toolbar-items {
+            padding-inline: 4px !important;
         }
     }
 
