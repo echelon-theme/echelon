@@ -37,6 +37,7 @@ const restartPrompt = {
 	},
 };
 
+Services.prefs.addObserver("Echelon.Option.Branding", restartPrompt, false);
 Services.prefs.addObserver("Echelon.Appearance.NewLogo", restartPrompt, false);
 
 function switchCategory(event)
