@@ -17,6 +17,18 @@
 	</head>
 
 	<html:body>
+		<vbox class="echelon-wizard-restart-modal-container" hidden="true">
+            <vbox class="echelon-wizard-restart-modal">
+                <vbox class="page-header">
+                    <h2 class="restart-browser-label">do you want to restart your browser?</h2>
+                    <html:div class="header-description">In order for Echelon to work properly, you must restart your browser. This simple step ensures a seamless experience with Echelon features.</html:div>
+                </vbox>
+                <hbox class="page-footer" flex="1">
+                    <button class="page-footer-button restart-later-button" label="Restart Later"></button>
+                    <button class="page-footer-button restart-now-button" default="true" label="Restart Now"></button>
+                </hbox>
+            </vbox>
+        </vbox>
 		<hbox flex="1">
 			<hbox class="options-container" flex="1">
 				<richlistbox id="categories" class="options-categories">

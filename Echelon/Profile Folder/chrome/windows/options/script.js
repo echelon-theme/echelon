@@ -14,6 +14,31 @@ g_themeManager.init(
     }
 );
 
+function showRestartPrompt() {
+    document.querySelector(".echelon-wizard-restart-modal-container").removeAttribute("hidden");
+}
+
+function hideRestartPrompt() {
+    document.querySelector(".echelon-wizard-restart-modal-container").setAttribute("hidden", "true");
+}
+
+document.querySelector(".restart-later-button").addEventListener("click",  function () {
+    hideRestartPrompt();
+});
+
+document.querySelector(".restart-now-button").addEventListener("click",  function () {
+    windowRoot.ownerGlobal.UC_API.Runtime.restart(true);
+});
+
+const restartPrompt = {
+	observe: function (subject, topic, data) {
+		if (topic == "nsPref:changed")
+			showRestartPrompt();
+	},
+};
+
+Services.prefs.addObserver("Echelon.Appearance.NewLogo", restartPrompt, false);
+
 function switchCategory(event)
 {
     let section = document.getElementById(this.value);
