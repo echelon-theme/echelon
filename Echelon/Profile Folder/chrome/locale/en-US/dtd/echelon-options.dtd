@@ -12,6 +12,8 @@
 <!ENTITY tabs.about "About Echelon">
 <!ENTITY tabs.debug "Debug">
 
+<!ENTITY requires.restart "Requires Restart">
+
 <!ENTITY appearance.header "Customize your Echelon">
 
 <!ENTITY appearance.text "Appearance">

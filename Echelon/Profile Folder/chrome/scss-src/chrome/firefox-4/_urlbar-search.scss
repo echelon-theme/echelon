@@ -55,6 +55,7 @@
     width: -moz-available !important;
     height: var(--urlbar-container-height) !important;
     pointer-events: none !important;
+    z-index: -1 !important;
 }
 
 #urlbar {
@@ -218,14 +219,16 @@
     margin-inline-end: 0 !important;
 
     &:hover {
-        #urlbar-background {
+        #urlbar-background:not([echelon-modified="true"]),
+        &[echelon-modified="true"] #echelon-urlbar-positioning {
             background-color: var(--urlbar-background-color-hover) !important;
             border-color: var(--urlbar-border-color-hover) !important;
         }
     }
     
     &[focused="true"] {
-        #urlbar-background {                
+        #urlbar-background:not([echelon-modified="true"]),
+        &[echelon-modified="true"] #echelon-urlbar-positioning {                
             background-color: var(--urlbar-background-color-focused) !important;
             border-color: var(--urlbar-border-color-focused) !important;
         }
@@ -253,7 +256,17 @@
     height: auto !important;
 }
 
-#urlbar-background, #searchbar {
+#urlbar-background[echelon-modified="true"] {
+    background-color: transparent !important;
+    border: 0 !important;
+    outline: 0 !important;
+    animation: none !important;
+    box-shadow: none !important;
+}
+
+#urlbar-background:not([echelon-modified="true"]),
+#urlbar-container[echelon-modified="true"] #echelon-urlbar-positioning,
+#searchbar {
     height: var(--urlbar-min-height) !important;
     padding: 2px !important;
     border: 1px solid;
@@ -272,7 +285,8 @@
     #urlbar-container.unified-refresh-button {
         margin-inline-end: 0 !important;
 
-        #urlbar-background {
+        #urlbar-background:not([echelon-modified="true"]),
+        &[echelon-modified="true"] #echelon-urlbar-positioning {
             border-top-right-radius: 0 !important;
             border-bottom-right-radius: 0 !important;
             border-inline-end: 0 !important;

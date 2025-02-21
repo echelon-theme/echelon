@@ -575,7 +575,7 @@ window {
 :root[echelon-system-style=winxp] #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-stack .tab-sharing-icon-overlay {
   margin-block-start: 1px !important;
 }
-:root:not([echelon-style-6]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]) {
+:root:not([echelon-style-6]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [busy], [progress], [pinned], [crashed], [sharing], [pictureinpicture]) {
   display: flex !important;
 }
 :root:not([echelon-style-6]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [busy], [progress]), :root:not([echelon-style-6]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:-moz-broken {
@@ -1068,6 +1068,7 @@ window {
   width: -moz-available !important;
   height: var(--urlbar-container-height) !important;
   pointer-events: none !important;
+  z-index: -1 !important;
 }
 
 #urlbar[breakout], #urlbar[breakout][breakout-extend] {
@@ -1197,11 +1198,11 @@ window {
   padding-block: 0 !important;
   margin-inline-end: 0 !important;
 }
-#urlbar-container:hover #urlbar-background {
+#urlbar-container:hover #urlbar-background:not([echelon-modified=true]), #urlbar-container:hover[echelon-modified=true] #echelon-urlbar-positioning {
   background-color: var(--urlbar-background-color-hover) !important;
   border-color: var(--urlbar-border-color-hover) !important;
 }
-#urlbar-container[focused=true] #urlbar-background {
+#urlbar-container[focused=true] #urlbar-background:not([echelon-modified=true]), #urlbar-container[focused=true][echelon-modified=true] #echelon-urlbar-positioning {
   background-color: var(--urlbar-background-color-focused) !important;
   border-color: var(--urlbar-border-color-focused) !important;
 }
@@ -1224,7 +1225,17 @@ window {
   height: auto !important;
 }
 
-#urlbar-background, #searchbar {
+#urlbar-background[echelon-modified=true] {
+  background-color: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  animation: none !important;
+  box-shadow: none !important;
+}
+
+#urlbar-background:not([echelon-modified=true]),
+#urlbar-container[echelon-modified=true] #echelon-urlbar-positioning,
+#searchbar {
   height: var(--urlbar-min-height) !important;
   padding: 2px !important;
   border: 1px solid;
@@ -1241,7 +1252,7 @@ window {
 :root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button {
   margin-inline-end: 0 !important;
 }
-:root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button #urlbar-background {
+:root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button #urlbar-background:not([echelon-modified=true]), :root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[echelon-modified=true] #echelon-urlbar-positioning {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   border-inline-end: 0 !important;
@@ -3872,7 +3883,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-system-style=winxp]:not([echelon-style-6])[tabs-on-top=true]:not([sizemode=maximized]) #nav-bar {
   border-top: 0 !important;
 }
-:root[echelon-system-style=winxp]:not([echelon-style-6])[sizemode=normal] .toolbar-items {
+:root[echelon-system-style=winxp]:not([echelon-style-6])[sizemode=normal] #TabsToolbar .toolbar-items {
   padding-inline: 2px !important;
 }
 :root[echelon-system-style=winxp] {
@@ -4254,7 +4265,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #urlbar, :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container > #echelon-urlbar-positioning {
   margin-left: -27px !important;
 }
-:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background,
+:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background:not([echelon-modified=true]), :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container[echelon-modified=true] #echelon-urlbar-positioning,
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container {
   mask: url("chrome://echelon/content/firefox-10/urlbar/winstripe-urlbar-back-button-mask.svg") !important;
   mask-repeat: no-repeat !important;
@@ -4267,7 +4278,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   padding-inline-start: 27px !important;
   margin-inline-start: -27px !important;
 }
-:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container #urlbar-background,
+:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container #urlbar-background:not([echelon-modified=true]), :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container[echelon-modified=true] #echelon-urlbar-positioning,
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container .urlbar-input-container {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;

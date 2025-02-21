@@ -310,6 +310,12 @@ let g_echelonLayoutManager;
 
 					// Observer the sizing of the custom element.
 					echelonURLBarObserver.observe(this.echelonURLBarElem);
+
+					// add attribute for styling purposes
+					if (this.echelonURLBarElem) {
+						urlbarContainer.setAttribute("echelon-modified", "true");
+						urlbarContainer.querySelector("#urlbar-background").setAttribute("echelon-modified", "true");
+					}
 				}
 			}
 		}

@@ -441,6 +441,8 @@ body > hbox {
 	padding-block-end: 10px;
 	padding-inline: 2px;
 	font-size: 15px;
+	align-items: center;
+	justify-content: space-between;
 	color: rgba(75, 89, 100, .75);
 	background: radial-gradient(50.06% 3.26% at 49.94% 100%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0) 100%);
 }
@@ -880,4 +882,21 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
 	line-height: 1.5;
     margin-block-start: 6px;
     color: #404041;
+}
+
+label[needs-restart-label]::after {
+	content: attr(needs-restart-label);
+	font-size: 8pt;
+  	font-weight: bold;
+	text-transform: uppercase;
+	text-shadow: inherit;
+	color: #8a1c04;
+}
+
+label:not(.header)[needs-restart-label] {
+	flex-direction: column;
+}
+
+label:not(.header)[needs-restart-label]::after {
+	margin-block-start: 2px;
 }
