@@ -11,7 +11,7 @@ ___
 </h3>
 
 <p align="center">
-  Echelon is a Mozilla Firefox theme that restores the look and feel of older versions.
+  Echelon is a Mozilla Firefox (115-latest) theme that restores the look and feel of older versions.
 
   <img src="images/preview.png" alt="Echelon logo">
 </p>
