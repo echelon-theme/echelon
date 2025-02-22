@@ -15,12 +15,17 @@ class EchelonSearchManager
 
 	static defaultIcons = {};
 	static obtainedIcons = false;
-
+	
 	/* A list of engines to obtain default icons for. */
 	static ENGINES = [
 		"google",
 		"bing",
-		"ebay"
+		"ebay",
+
+		/* For older versions of Firefox */
+		"google@search.mozilla.orgdefault",
+		"bing@search.mozilla.orgdefault",
+		"ebay@search.mozilla.orgdefault"
 	];
 
 	/* Replacement icons for FF14 with old logo and earlier */

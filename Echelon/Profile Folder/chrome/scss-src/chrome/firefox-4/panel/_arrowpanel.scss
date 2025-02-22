@@ -283,8 +283,58 @@ menupopup[type="arrow"] {
 
 :root:not([echelon-style-6]) {
     :is(menupopup[placespopup]) {
+        appearance: auto !important;
+        --panel-background: Menu !important;
+        --panel-color: MenuText !important;
+        --panel-padding: 0 !important;
+        --panel-border-radius: 0 !important;
+        --panel-shadow-margin: 0 !important;
+        --panel-border-color: ThreeDShadow !important;
+        --panel-shadow: none !important;
+
         &::part(arrow) {
             display: none !important;
+        }
+
+        &::part(content) {
+            border: 0 !important;
+        }
+
+        & > :is(menu, menuitem) {
+            margin: 0 !important;
+            min-height: 0 !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            appearance: auto !important;
+
+            :is(.menu-text, .menu-iconic-text, .menu-iconic-icon, .menu-iconic-left, .menu-iconic-accel, .menu-accel-container, .menu-accel, .menu-right) {
+                appearance: auto !important;
+            }
+
+            & > .menu-accel-container > :is(.menu-accel, .menu-iconic-accel) {
+                margin-inline: 0.74em 1.35em !important;
+                color: inherit !important;
+            }
+        }
+
+        & :is(.menu-iconic, .menuitem-iconic) > .menu-iconic-left {
+            margin-inline-end: 0 !important;
+        }
+
+        menuseparator {
+            appearance: auto !important;
+            margin: 0 !important;
+            padding: 3px 1px 4px !important;
+            border-top: 1px solid ThreeDShadow !important;
+            border-bottom: 1px solid ThreeDHighlight !important;
+
+            &::before {
+                display: none !important;
+            }
+        }
+
+        .menu-right {
+            list-style-image: none !important;
         }
     }
 
