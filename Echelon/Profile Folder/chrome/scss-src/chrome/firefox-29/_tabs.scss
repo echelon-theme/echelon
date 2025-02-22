@@ -123,8 +123,16 @@
                 border-inline: 15px solid transparent !important;
                 margin: 0 -15px !important;
                 pointer-events: auto !important;
-    
-                &[selected] {
+            }
+
+            .tab-background-start,
+            .tab-background-end {
+                width: 30px !important;
+                min-height: var(--tab-min-height) !important;
+            }
+
+            &[selected] {
+                .tab-background-middle {
                     background-clip: padding-box, padding-box, content-box !important; 
                     background-color: var(--toolbar-background-color) !important;
                     background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-active-middle.png"),
@@ -133,14 +141,9 @@
                     background-size: auto 100% !important;
                     padding-top: 2px !important;
                 }
-            }
-    
-            .tab-background-start,
-            .tab-background-end {
-                width: 30px !important;
-                min-height: var(--tab-min-height) !important;
-    
-                &[selected] {
+
+                .tab-background-start,
+                .tab-background-end {
                     &::before,
                     &::after {
                         width: 30px !important;
@@ -152,7 +155,7 @@
                         display: flex !important;
     
                         /* In Firefox 29, Mozilla used a SVG background image that had CSS to color the tab curves.
-                           instead, we are going to use a CSS mask and CSS gradients to recreate the same effect. */
+                            instead, we are going to use a CSS mask and CSS gradients to recreate the same effect. */
                         mask-size: 100% 100% !important;
                         background-color: var(--toolbar-background-color) !important;
                         background-image: linear-gradient(transparent, transparent 2px, rgba(254,254,254,0.72) 2px, rgba(254,254,254,0.72) 2px, rgba(250,250,250,0.88) 3px, rgba(250,250,250,0.88) 3px, rgba(254,254,254,0.72) 4px, rgba(254,254,254,0.72) 4px, rgba(253,253,253,0.45)) !important;
@@ -167,12 +170,9 @@
                         position: relative !important;
                     }
                 }
-            }
-    
-            .tab-background-start {
-                &[selected] {
-                              clip-path: url("chrome://echelon/content/firefox-29/tabbrowser/tab-selected-start.svg") !important;
-              &::before {
+
+                .tab-background-start {
+                    &::before {
                         mask-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-selected-start.svg") !important;
                     }
     
@@ -180,10 +180,8 @@
                         background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-stroke-start.png") !important;
                     }
                 }
-            }
-    
-            .tab-background-end {
-                &[selected] {
+        
+                .tab-background-end {
                     &::before {
                         mask-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-selected-end.svg") !important;
                     }

@@ -4857,56 +4857,53 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin: 0 -15px !important;
   pointer-events: auto !important;
 }
-:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-middle[selected] {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start,
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end {
+  width: 30px !important;
+  min-height: var(--tab-min-height) !important;
+}
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-middle {
   background-clip: padding-box, padding-box, content-box !important;
   background-color: var(--toolbar-background-color) !important;
   background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-active-middle.png"), linear-gradient(transparent, transparent 2px, rgba(254, 254, 254, 0.72) 2px, rgba(254, 254, 254, 0.72) 2px, rgba(250, 250, 250, 0.88) 3px, rgba(250, 250, 250, 0.88) 3px, rgba(254, 254, 254, 0.72) 4px, rgba(254, 254, 254, 0.72) 4px, rgba(253, 253, 253, 0.45)), none !important;
   background-size: auto 100% !important;
   padding-top: 2px !important;
 }
-:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start,
-:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-start::before, :root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-start::after,
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-end::before,
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-end::after {
   width: 30px !important;
   min-height: var(--tab-min-height) !important;
 }
-:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::before, :root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::after,
-:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::before,
-:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::after {
-  width: 30px !important;
-  min-height: var(--tab-min-height) !important;
-}
-:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::before,
-:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::before {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-start::before,
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-end::before {
   content: "" !important;
   display: flex !important;
   /* In Firefox 29, Mozilla used a SVG background image that had CSS to color the tab curves.
-     instead, we are going to use a CSS mask and CSS gradients to recreate the same effect. */
+      instead, we are going to use a CSS mask and CSS gradients to recreate the same effect. */
   mask-size: 100% 100% !important;
   background-color: var(--toolbar-background-color) !important;
   background-image: linear-gradient(transparent, transparent 2px, rgba(254, 254, 254, 0.72) 2px, rgba(254, 254, 254, 0.72) 2px, rgba(250, 250, 250, 0.88) 3px, rgba(250, 250, 250, 0.88) 3px, rgba(254, 254, 254, 0.72) 4px, rgba(254, 254, 254, 0.72) 4px, rgba(253, 253, 253, 0.45)) !important;
   background-repeat: no-repeat !important;
 }
-:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::after,
-:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::after {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-start::after,
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-end::after {
   margin-inline-start: -30px !important;
   background-size: 100% 100% !important;
   content: "" !important;
   display: flex !important;
   position: relative !important;
 }
-:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected] {
-  clip-path: url("chrome://echelon/content/firefox-29/tabbrowser/tab-selected-start.svg") !important;
-}
-:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::before {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-start::before {
   mask-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-selected-start.svg") !important;
 }
-:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::after {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-start::after {
   background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-stroke-start.png") !important;
 }
-:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::before {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-end::before {
   mask-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-selected-end.svg") !important;
 }
-:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::after {
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-end::after {
   background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-stroke-end.png") !important;
 }
 :root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-label-container {
@@ -5527,11 +5524,11 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-7][echelon-style-6][echelon-system-style=win10] #TabsToolbar {
   margin-block-end: 0 !important;
 }
-:root[echelon-style-7][echelon-style-6][echelon-system-style=win10] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-middle[selected] {
+:root[echelon-style-7][echelon-style-6][echelon-system-style=win10] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-middle {
   background-size: 0, auto 100% !important;
 }
-:root[echelon-style-7][echelon-style-6][echelon-system-style=win10] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-start[selected]::after,
-:root[echelon-style-7][echelon-style-6][echelon-system-style=win10] #TabsToolbar .tabbrowser-tab .tab-background .tab-background-end[selected]::after {
+:root[echelon-style-7][echelon-style-6][echelon-system-style=win10] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-start::after,
+:root[echelon-style-7][echelon-style-6][echelon-system-style=win10] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-end::after {
   display: none !important;
 }
 :root[echelon-style-7][echelon-style-6][echelon-system-style=win10] #TabsToolbar #tabs-newtab-button .toolbarbutton-icon {

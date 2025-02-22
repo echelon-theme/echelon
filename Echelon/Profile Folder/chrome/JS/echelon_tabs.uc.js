@@ -6,7 +6,6 @@
 // ==/UserScript==
 
 waitForElement("#tabbrowser-arrowscrollbox").then(e => {
-
     function updateTabs()
     {
         for (tab of e.children)
@@ -17,6 +16,19 @@ waitForElement("#tabbrowser-arrowscrollbox").then(e => {
             if (overlay && labelContainer)
             {
                 labelContainer.insertAdjacentElement("afterend", overlay);
+            }
+
+            let background = tab.querySelector(".tab-background");
+            if (background) {
+                if (!background.querySelector(".tab-background-start")) {
+                    let backgroundXUL = MozXULElement.parseXULToFragment(
+                    `
+                        <hbox class="tab-background-start" />
+                        <hbox class="tab-background-middle" />
+                        <hbox class="tab-background-end" />
+                    `);
+                    background.append(backgroundXUL);
+                }
             }
         }
     }

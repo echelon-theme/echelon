@@ -2,19 +2,15 @@
     margin-block-end: 0 !important;
 
     .tabbrowser-tab {
-        .tab-background {
+        .tab-background[selected] {
             .tab-background-middle {
-                &[selected] {
-                    background-size: 0, auto 100% !important;
-                }
+                background-size: 0, auto 100% !important;
             }
 
             .tab-background-start,
             .tab-background-end {
-                &[selected] {
-                    &::after {
-                        display: none !important;
-                    }
+                &::after {
+                    display: none !important;
                 }
             }
         }
