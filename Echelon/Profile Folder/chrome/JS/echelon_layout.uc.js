@@ -22,16 +22,22 @@ let g_echelonLayoutManager;
 			this.refreshToolboxLayout();
 			this.hookTabArrowScrollbox();
 
-			this.titlebarElem = document.createXULElement("vbox");
-			this.titlebarElem.id = "titlebar";
+			this.titlebarElem = document.getElementById("titlebar");
 
+			// add back titlebar element if removed
+			if (!this.titlebarElem)
+			{
+				this.titlebarElem = document.createXULElement("vbox");
+				this.titlebarElem.id = "titlebar";
+	
+				toolboxRoot.insertBefore(this.titlebarElem, toolboxRoot.firstChild);
+				this.titlebarElem.appendChild(document.querySelector("#toolbar-menubar"));
+				this.titlebarElem.appendChild(document.querySelector("#TabsToolbar"));
+			}
+			
 			this.titlebarContent = document.createXULElement("hbox");
 			this.titlebarContent.id = "titlebar-content";
 			this.titlebarElem.insertBefore(this.titlebarContent, this.titlebarElem.firstChild);
-
-			toolboxRoot.insertBefore(this.titlebarElem, toolboxRoot.firstChild);
-			this.titlebarElem.appendChild(document.querySelector("#toolbar-menubar"));
-			this.titlebarElem.appendChild(document.querySelector("#TabsToolbar"));
 
 			let tabsBox = await waitForElement("#tabbrowser-tabs");
 			tabsBox.addEventListener("TabSelect", this.onTabSwitch.bind(this));
