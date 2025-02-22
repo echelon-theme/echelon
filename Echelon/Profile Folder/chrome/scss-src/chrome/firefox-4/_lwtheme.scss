@@ -3,11 +3,27 @@
     &:not([echelon-style-6]) {
         --navbar-tab-toolbar-highlight-overlap: 0 !important;
     }
+
+    #navigator-toolbox {
+        background-image: var(--lwt-additional-images) !important;
+        background-repeat: no-repeat, var(--lwt-background-tiling) !important;
+        background-position: right top, var(--lwt-background-alignment) !important;
+    }
+
+    &[lwtheme-image] #navigator-toolbox {
+        background-image: var(--lwt-header-image), var(--lwt-additional-images) !important;
+        background-repeat: no-repeat, var(--lwt-background-tiling) !important;
+        background-position: right top, var(--lwt-background-alignment) !important;
+    }
     
     #titlebar,
     #nav-bar, 
     #PersonalToolbar {
         background-color: var(--toolbar-background-color) !important;
+    }
+
+    #titlebar {
+        visibility: visible !important;
     }
     
     &[tabsintitlebar="true"][sizemode="maximized"] #titlebar {

@@ -4002,10 +4002,23 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[lwtheme=true]:not([echelon-style-6]) {
   --navbar-tab-toolbar-highlight-overlap: 0 !important;
 }
+:root[lwtheme=true] #navigator-toolbox {
+  background-image: var(--lwt-additional-images) !important;
+  background-repeat: no-repeat, var(--lwt-background-tiling) !important;
+  background-position: right top, var(--lwt-background-alignment) !important;
+}
+:root[lwtheme=true][lwtheme-image] #navigator-toolbox {
+  background-image: var(--lwt-header-image), var(--lwt-additional-images) !important;
+  background-repeat: no-repeat, var(--lwt-background-tiling) !important;
+  background-position: right top, var(--lwt-background-alignment) !important;
+}
 :root[lwtheme=true] #titlebar,
 :root[lwtheme=true] #nav-bar,
 :root[lwtheme=true] #PersonalToolbar {
   background-color: var(--toolbar-background-color) !important;
+}
+:root[lwtheme=true] #titlebar {
+  visibility: visible !important;
 }
 :root[lwtheme=true][tabsintitlebar=true][sizemode=maximized] #titlebar {
   visibility: hidden !important;
