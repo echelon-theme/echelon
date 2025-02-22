@@ -3582,9 +3582,6 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-image: url("chrome://echelon/content/firefox-29/customizableui/customizeMode-gridTexture.png") !important;
   background-attachment: fixed !important;
 }
-:root[customizing]:-moz-lwtheme {
-  background-image: url("chrome://echelon/content/firefox-29/customizableui/customizeMode-gridTexture.png"), var(--lwt-header-image) !important;
-}
 :root[customizing] #navigator-toolbox > toolbar:not(#titlebar),
 :root[customizing] #navigator-toolbox::after,
 :root[customizing] #navigator-toolbox > #titlebar > #TabsToolbar > .toolbar-items,

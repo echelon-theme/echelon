@@ -12,10 +12,6 @@
 :root[customizing] {
     background-image: url('chrome://echelon/content/firefox-29/customizableui/customizeMode-gridTexture.png') !important;
     background-attachment: fixed !important;
-  
-    &:-moz-lwtheme {
-        background-image: url('chrome://echelon/content/firefox-29/customizableui/customizeMode-gridTexture.png'), var(--lwt-header-image) !important;
-    }
 
     #navigator-toolbox > toolbar:not(#titlebar),
     #navigator-toolbox::after,
