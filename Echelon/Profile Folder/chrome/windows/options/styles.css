@@ -855,7 +855,7 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
 }
 
 .page-header {
-    padding: 20px;
+ 	   padding: 20px;
     padding-block-start: 25px;
 }
 
@@ -899,4 +899,8 @@ label:not(.header)[needs-restart-label] {
 
 label:not(.header)[needs-restart-label]::after {
 	margin-block-start: 2px;
+}
+
+#preset-container[echelon-system-style="winxp"] image {
+	background-position: 23px 10px;
 }

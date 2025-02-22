@@ -1,5 +1,5 @@
-    const { EchelonThemeManager } = ChromeUtils.importESModule("chrome://modules/content/EchelonThemeManager.sys.mjs");
-const { VersionUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+const { EchelonThemeManager } = ChromeUtils.importESModule("chrome://modules/content/EchelonThemeManager.sys.mjs");
+const { PrefUtils, VersionUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 const gOptionsBundle = document.getElementById("optionsBundle");
 
 let g_themeManager = new EchelonThemeManager;
@@ -349,22 +349,39 @@ class ThemeUtils
 let presetContainer = document.getElementById("preset-container");
 let presetCard = null;
 
-for (const i of Object.keys(ThemeUtils.stylePreset)) {
-    presetCard = `
-        <vbox class="card">
-            <radio value="${i}" class="card-wrapper">
-                <div class="checked" />
-                <div class="year">${ThemeUtils.stylePreset[i].year}</div>
-                <image style="background-image: url('chrome://userchrome/content/windows/options/images/presets/firefox-${ThemeUtils.stylePreset[i].version}.png');" flex="1" />
-                <div class="content">
-                    <label value="${ThemeUtils.stylePreset[i].name}" flex="1" />
-                </div>
-            </radio>
-        </vbox> 
-    `
+function buildPresetCards() {
+    // clear pre-build cards
+    presetContainer.innerHTML = "";
 
-    presetContainer.appendChild(MozXULElement.parseXULToFragment(presetCard));
+    for (const i of Object.keys(ThemeUtils.stylePreset)) {
+        let platform = PrefUtils.tryGetStringPref("Echelon.Appearance.systemStyle") || "win";
+
+        presetCard = `
+            <vbox class="card">
+                <radio value="${i}" class="card-wrapper">
+                    <div class="checked" />
+                    <div class="year">${ThemeUtils.stylePreset[i].year}</div>
+                    <image style="background-image: url('chrome://userchrome/content/windows/options/images/presets/${platform}/firefox-${ThemeUtils.stylePreset[i].version}.png');" flex="1" />
+                    <div class="content">
+                        <label value="${ThemeUtils.stylePreset[i].name}" flex="1" />
+                    </div>
+                </radio>
+            </vbox> 
+        `
+
+        presetContainer.setAttribute("echelon-system-style", platform);
+        presetContainer.appendChild(MozXULElement.parseXULToFragment(presetCard));
+    }
 }
+
+const rebuildCards = {
+	observe: function (subject, topic, data) {
+		if (topic == "nsPref:changed")
+			buildPresetCards();
+	},
+};
+Services.prefs.addObserver("Echelon.Appearance.systemStyle", rebuildCards, false);
+document.addEventListener("DOMContentLoaded", buildPresetCards);
 
 let homepageContainer = document.getElementById("homepage-container");
 
@@ -399,8 +416,27 @@ function disableAeroBlue() {
     }
 }
 
+function disableStyleExclusiveOptions() {
+    for (const i of document.querySelectorAll("[echelon-style-disabled]")) {
+        if (PrefUtils.tryGetIntPref("Echelon.Appearance.Style") >= i.getAttribute("echelon-style-disabled")) {
+            i.setAttribute("disabled", "true");
+        } else {
+            i.removeAttribute("disabled");
+        }
+    }    
+}
+
 document.addEventListener("echelon-menulist-command", disableAeroBlue);
 document.addEventListener("DOMContentLoaded", disableAeroBlue);
+
+const echelonStyle = {
+	observe: function (subject, topic, data) {
+		if (topic == "nsPref:changed")
+			disableStyleExclusiveOptions();
+	},
+};
+Services.prefs.addObserver("Echelon.Appearance.Style", echelonStyle, false);
+document.addEventListener("DOMContentLoaded", disableStyleExclusiveOptions);
 
 function loadVersion() {
 	document.querySelectorAll("#version").forEach(async identifier => {
