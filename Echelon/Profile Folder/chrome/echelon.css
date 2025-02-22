@@ -535,7 +535,7 @@ window {
   background-image: linear-gradient(to top, rgba(25.5, 25.5, 25.5, 0.4) 1px, rgba(0, 0, 0, 0.05) 1px, transparent 50%) !important;
   border-bottom: 0 !important;
 }
-:root[tabs-on-top=true]:not([lwtheme]):not(:-moz-lwtheme) #TabsToolbar {
+:root[tabs-on-top=true]:not([lwtheme]) #TabsToolbar {
   color: black !important;
 }
 #TabsToolbar .titlebar-spacer {
