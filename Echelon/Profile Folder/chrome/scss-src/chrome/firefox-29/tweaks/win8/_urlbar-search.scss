@@ -8,8 +8,7 @@
     #nav-bar {
         #forward-button.unified-with-urlbar:not(:hover)[disabled] {
             & + #urlbar-container {            
-                & > #urlbar,
-                & > #echelon-urlbar-positioning {
+                & > #urlbar {
                     margin-left: -29px !important;
                 }
 

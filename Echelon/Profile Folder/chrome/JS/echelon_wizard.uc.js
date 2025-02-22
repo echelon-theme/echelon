@@ -120,6 +120,8 @@ function setDefaultSettings() {
             "type": "bool",
             "value": true
         },
+
+        // general browser tweaks
         11: {
             "name": "ui.systemUsesDarkMode",
             "type": "int",
@@ -169,6 +171,55 @@ function setDefaultSettings() {
             "name": "browser.menu.showViewImageInfo",
             "type": "bool",
             "value": true
+        },
+        21: {
+            "name": "browser.newtab.preload",
+            "type": "bool",
+            "value": false
+        },
+
+        // r3dfox exclusives
+        22: {
+            "name": "r3dfox.caption.text.color",
+            "type": "bool",
+            "value": false,
+            "exclusive": ["r3dfox", "r3dfox_esr", "plasmafox"]
+        },
+        23: {
+            "name": "r3dfox.colors.enabled",
+            "type": "bool",
+            "value": false,
+            "exclusive": ["r3dfox", "r3dfox_esr", "plasmafox"]
+        },
+        24: {
+            "name": "r3dfox.customizations.enabled",
+            "type": "bool",
+            "value": false,
+            "exclusive": ["r3dfox", "r3dfox_esr", "plasmafox"]
+        },
+        25: {
+            "name": "r3dfox.force.transparency",
+            "type": "bool",
+            "value": false,
+            "exclusive": ["r3dfox", "r3dfox_esr", "plasmafox"]
+        },
+        26: {
+            "name": "r3dfox.transparent.menubar",
+            "type": "bool",
+            "value": false,
+            "exclusive": ["r3dfox", "r3dfox_esr", "plasmafox"]
+        },
+        27: {
+            "name": "r3dfox.translucent.navbar",
+            "type": "bool",
+            "value": false,
+            "exclusive": ["r3dfox", "r3dfox_esr", "plasmafox"]
+        },
+        28: {
+            "name": "r3dfox.aero.fog",
+            "type": "bool",
+            "value": false,
+            "exclusive": ["r3dfox", "r3dfox_esr", "plasmafox"]
         }
     }
 
@@ -182,6 +233,14 @@ function setDefaultSettings() {
             } else
             if (defaultEchelonConfig[config].type == "string") {
                 PrefUtils.trySetStringPref(defaultEchelonConfig[config].name, defaultEchelonConfig[config].value);
+            }
+        }
+
+        if (Array.isArray(defaultEchelonConfig[config].exclusive)) {
+            for (const browser of defaultEchelonConfig[config].exclusive) {
+                if (AppConstants.MOZ_APP_NAME == browser) {
+                    PrefUtils.trySetBoolPref(defaultEchelonConfig[config].name, defaultEchelonConfig[config].value);
+                }
             }
         }
     }

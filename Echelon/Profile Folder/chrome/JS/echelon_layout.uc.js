@@ -298,9 +298,11 @@ let g_echelonLayoutManager;
 			let toolbar = gURLBar.textbox.closest("toolbar");
 
 			if (toolbar) {
-				let urlbarContainer = gURLBar.textbox.parentElement;
+				let urlbar = gURLBar.textbox;
+				let urlbarContainer = urlbar.parentElement;
 
-				if (urlbarContainer) {
+				// Check if URLBar isn't a XUL element
+				if (urlbar.nodeName != "hbox") {
 					this.echelonURLBarElem = document.createXULElement("hbox");
 					this.echelonURLBarElem.id = "echelon-urlbar-positioning";
 					this.echelonURLBarElem.setAttribute("flex", "1");
@@ -319,8 +321,8 @@ let g_echelonLayoutManager;
 
 					// add attribute for styling purposes
 					if (this.echelonURLBarElem) {
-						urlbarContainer.setAttribute("echelon-modified", "true");
-						urlbarContainer.querySelector("#urlbar-background").setAttribute("echelon-modified", "true");
+						urlbar.setAttribute("echelon-modified", "true");
+						urlbar.querySelector("#urlbar-background").setAttribute("echelon-modified", "true");
 					}
 				}
 			}

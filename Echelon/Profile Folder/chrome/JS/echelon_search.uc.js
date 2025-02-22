@@ -27,14 +27,24 @@ class EchelonSearchManager
 	static REPLACEMENTS = {
 		"google": "chrome://echelon/content/firefox-4/search/google.png",
 		"bing": "chrome://echelon/content/firefox-4/search/bing.png",
-		"ebay": "chrome://echelon/content/firefox-4/search/ebay.png"
+		"ebay": "chrome://echelon/content/firefox-4/search/ebay.png",
+
+		/* For older versions of Firefox */
+		"google@search.mozilla.orgdefault": "chrome://echelon/content/firefox-4/search/google.png",
+		"bing@search.mozilla.orgdefault": "chrome://echelon/content/firefox-4/search/bing.png",
+		"ebay@search.mozilla.orgdefault": "chrome://echelon/content/firefox-4/search/ebay.png",
 	};
 
 	/* Replacement icons for FF14 with new logo and later */
 	static REPLACEMENTS_NEW = {
 		"google": "chrome://echelon/content/firefox-28/search/google.ico",
 		"bing": "chrome://echelon/content/firefox-28/search/bing.ico",
-		"ebay": "chrome://echelon/content/firefox-28/search/ebay.ico"
+		"ebay": "chrome://echelon/content/firefox-28/search/ebay.ico",
+
+		/* For older versions of Firefox */
+		"google@search.mozilla.orgdefault": "chrome://echelon/content/firefox-28/search/google.png",
+		"bing@search.mozilla.orgdefault": "chrome://echelon/content/firefox-28/search/bing.png",
+		"ebay@search.mozilla.orgdefault": "chrome://echelon/content/firefox-28/search/ebay.png",
 	};
 
 	static async obtainIcons()

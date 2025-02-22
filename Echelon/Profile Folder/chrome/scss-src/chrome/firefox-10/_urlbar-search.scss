@@ -128,8 +128,7 @@
                     margin-left: -27px !important;
                 }
     
-                #urlbar-background:not([echelon-modified="true"]),
-                &[echelon-modified="true"] #echelon-urlbar-positioning,
+                #urlbar-background,
                 .urlbar-input-container {
                     mask: url("chrome://echelon/content/firefox-10/urlbar/winstripe-urlbar-back-button-mask.svg") !important;
                     mask-repeat: no-repeat !important;
@@ -147,8 +146,7 @@
                 padding-inline-start: 27px !important;
                 margin-inline-start: -27px !important;
 
-                #urlbar-background:not([echelon-modified="true"]),
-                &[echelon-modified="true"] #echelon-urlbar-positioning,
+                #urlbar-background,
                 .urlbar-input-container {
                     border-top-left-radius: 0 !important;
                     border-bottom-left-radius: 0 !important;

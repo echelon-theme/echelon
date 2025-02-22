@@ -187,7 +187,7 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
                         Total width of button's icon + button padding should therefore be 46px,
                         which means each horizontal margin should be the half the button's width - (46/2) px.
                 */
-                margin: 4px calc($menu-panel-button-width / 2 - 23px);
+                margin: 4px calc($menu-panel-button-width / 2 - 23px) !important;
             }
 
             & > .toolbarbutton-icon,

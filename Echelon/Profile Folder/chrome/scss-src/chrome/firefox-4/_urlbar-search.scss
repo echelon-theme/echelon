@@ -35,7 +35,8 @@
 
 #urlbar-container.unified-refresh-button {
     // hide original go button on urlbar
-    #urlbar-go-button {
+    #urlbar-go-button,
+    .urlbar-go-button {
         visibility: collapse !important;
     }
 }
@@ -55,14 +56,16 @@
     width: -moz-available !important;
     height: var(--urlbar-container-height) !important;
     pointer-events: none !important;
-    z-index: -1 !important;
 }
 
 #urlbar {
     &[breakout],
     &[breakout][breakout-extend] {
         height: var(--urlbar-min-height) !important;
-        width: var(--urlbar-echelon-width) !important;
+        width: -moz-available !important;
+        &[echelon-modified="true"] { // for non XUL element version
+            width: var(--urlbar-echelon-width) !important;
+        }
         margin: 0 !important;
         top: calc((var(--urlbar-min-height) - 2) / 2) !important;
         left: 0 !important;
@@ -105,7 +108,8 @@
         visibility: collapse !important;
     }
 
-    #urlbar-go-button {
+    #urlbar-go-button,
+    .urlbar-go-button {
         @include set-background("firefox-4/urlbar/Go-arrow.png");
 
         width: 20px !important;
@@ -219,16 +223,14 @@
     margin-inline-end: 0 !important;
 
     &:hover {
-        #urlbar-background:not([echelon-modified="true"]),
-        &[echelon-modified="true"] #echelon-urlbar-positioning {
+        #urlbar-background {
             background-color: var(--urlbar-background-color-hover) !important;
             border-color: var(--urlbar-border-color-hover) !important;
         }
     }
     
     &[focused="true"] {
-        #urlbar-background:not([echelon-modified="true"]),
-        &[echelon-modified="true"] #echelon-urlbar-positioning {                
+        #urlbar-background {                
             background-color: var(--urlbar-background-color-focused) !important;
             border-color: var(--urlbar-border-color-focused) !important;
         }
@@ -256,16 +258,7 @@
     height: auto !important;
 }
 
-#urlbar-background[echelon-modified="true"] {
-    background-color: transparent !important;
-    border: 0 !important;
-    outline: 0 !important;
-    animation: none !important;
-    box-shadow: none !important;
-}
-
-#urlbar-background:not([echelon-modified="true"]),
-#urlbar-container[echelon-modified="true"] #echelon-urlbar-positioning,
+#urlbar-background,
 #searchbar {
     height: var(--urlbar-min-height) !important;
     padding: 2px !important;
@@ -285,8 +278,7 @@
     #urlbar-container.unified-refresh-button {
         margin-inline-end: 0 !important;
 
-        #urlbar-background:not([echelon-modified="true"]),
-        &[echelon-modified="true"] #echelon-urlbar-positioning {
+        #urlbar-background {
             border-top-right-radius: 0 !important;
             border-bottom-right-radius: 0 !important;
             border-inline-end: 0 !important;

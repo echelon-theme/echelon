@@ -1,9 +1,3 @@
 & {
     background-color: -moz-Dialog !important;
 }
-
-&:not([echelon-style-6]) {
-    &[tabsintitlebar="true"]:not([sizemode="maximized"]) #toolbar-menubar .titlebar-buttonbox-container {
-        visibility: collapse !important;
-    }
-}

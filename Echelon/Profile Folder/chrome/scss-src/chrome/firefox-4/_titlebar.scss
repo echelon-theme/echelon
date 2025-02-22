@@ -8,6 +8,7 @@
 
 	#titlebar {
 		-moz-window-dragging: drag !important;
+		z-index: 2 !important;
 	}
 }
 
@@ -18,10 +19,10 @@
 	}
 
 	// maximized behavior
-	#toolbar-menubar[inactive="true"],
+	&[tabsintitlebar="true"]:not([sizemode="maximized"]) #toolbar-menubar,
 	&:not([sizemode="maximized"]) #TabsToolbar,
 	&[sizemode="maximized"] #titlebar-content,
-	&[sizemode="maximized"] #toolbar-menubar:not([inactive="true"]) #TabsToolbar {
+	&[sizemode="maximized"] #toolbar-menubar:not([inactive="true"]) + #TabsToolbar {
 		.titlebar-buttonbox-container {
 			visibility: collapse !important;
 		}

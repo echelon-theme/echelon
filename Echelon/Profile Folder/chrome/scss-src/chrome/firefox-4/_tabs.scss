@@ -44,6 +44,7 @@
     }
 
     .tabbrowser-tab {
+        padding: 0 !important;
         z-index: 0 !important;
         
         &:not([pinned]) {
@@ -240,6 +241,7 @@
             border-style: solid !important;
             margin-block: 0 !important;  
             outline: none !important;   
+            background-origin: padding-box !important;
         }
 
         .tabbrowser-tab:hover .tab-background,
