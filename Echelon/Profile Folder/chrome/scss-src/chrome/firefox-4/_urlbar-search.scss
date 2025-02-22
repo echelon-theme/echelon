@@ -79,7 +79,8 @@
         background-image: url("chrome://echelon/content/firefox-4/menupopupshadowfake.png");
     }
 
-    .urlbar-input-container {
+    .urlbar-input-container,
+    #urlbar-input-container {
         padding: var(--urlbar-container-padding) !important;
         padding-inline-end: 0 !important;
         height: var(--urlbar-min-height) !important;

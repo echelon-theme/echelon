@@ -164,6 +164,7 @@
     }
 
     .footer-button,
+    .customizationmode-button,
     #customization-titlebar-visibility-checkbox {
         appearance: none !important;
         border: 1px solid rgb(192,192,192) !important;
@@ -195,6 +196,7 @@
                 width: 11px !important;
                 height: 11px !important;
                 content: none !important;
+                list-style-image: none !important;
                 background-image: url("chrome://echelon/content/firefox-4/arrow-dn.gif") !important;
                 background-repeat: no-repeat !important;
                 background-position: center center !important;

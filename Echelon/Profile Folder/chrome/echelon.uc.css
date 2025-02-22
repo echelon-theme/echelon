@@ -149,11 +149,11 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
 
 /* even more weird positioning shit */
 :is(panel):not([type=autocomplete-richlistbox]),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup) {
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow]) {
   --panel-shadow: var(--arrowpanel-echelon-shadow) !important;
 }
 :is(panel):not([type=autocomplete-richlistbox])::part(arrowcontent),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup)::part(arrowcontent) {
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow])::part(arrowcontent) {
   padding: var(--arrowpanel-padding);
   color: var(--arrowpanel-color);
   background: var(--arrowpanel-background);
@@ -164,12 +164,12 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
   margin: var(--arrowpanel-margin);
 }
 :is(panel):not([type=autocomplete-richlistbox])::part(arrowcontent) > slot,
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup)::part(arrowcontent) > slot {
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow])::part(arrowcontent) > slot {
   /* propagate border-radius from arrowcontent to slotted children */
   border-radius: inherit;
 }
 :is(panel):not([type=autocomplete-richlistbox])::part(innerarrowcontent),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup)::part(innerarrowcontent) {
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow])::part(innerarrowcontent) {
   background: var(--arrowpanel-inner-background);
   margin: var(--arrowpanel-inner-margin);
   border-radius: var(--arrowpanel-inner-border-radius);
@@ -179,51 +179,51 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
   background-clip: padding-box;
 }
 :is(panel):not([type=autocomplete-richlistbox])[orient=vertical]::part(arrowcontent), :is(panel):not([type=autocomplete-richlistbox])[orient=vertical]::part(innerarrowcontent),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup)[orient=vertical]::part(arrowcontent),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup)[orient=vertical]::part(innerarrowcontent) {
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow])[orient=vertical]::part(arrowcontent),
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow])[orient=vertical]::part(innerarrowcontent) {
   flex-direction: column;
 }
 :is(panel):not([type=autocomplete-richlistbox]).panel-no-padding::part(arrowcontent), :is(panel):not([type=autocomplete-richlistbox]).panel-no-padding::part(innerarrowcontent),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup).panel-no-padding::part(arrowcontent),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup).panel-no-padding::part(innerarrowcontent) {
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow]).panel-no-padding::part(arrowcontent),
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow]).panel-no-padding::part(innerarrowcontent) {
   padding: 0;
   overflow: hidden; /* Don't let panel content overflow the border-radius */
 }
 :is(panel):not([type=autocomplete-richlistbox])::part(arrow),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup)::part(arrow) {
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow])::part(arrow) {
   -moz-context-properties: fill, stroke;
   fill: var(--arrowpanel-background);
   stroke: var(--arrowpanel-border-color);
 }
 :is(panel):not([type=autocomplete-richlistbox])[side=top]::part(arrow), :is(panel):not([type=autocomplete-richlistbox])[side=bottom]::part(arrow),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup)[side=top]::part(arrow),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup)[side=bottom]::part(arrow) {
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow])[side=top]::part(arrow),
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow])[side=bottom]::part(arrow) {
   list-style-image: var(--arrowpanel-vertical);
   position: relative;
   margin-inline: var(--arrowpanel-arrow-offset);
 }
 :is(panel):not([type=autocomplete-richlistbox])[side=top]::part(arrow),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup)[side=top]::part(arrow) {
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow])[side=top]::part(arrow) {
   margin-bottom: var(--arrowpanel-arrow-position);
 }
 :is(panel):not([type=autocomplete-richlistbox])[side=bottom]::part(arrow),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup)[side=bottom]::part(arrow) {
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow])[side=bottom]::part(arrow) {
   transform: scaleY(-1);
   margin-top: var(--arrowpanel-arrow-position);
 }
 :is(panel):not([type=autocomplete-richlistbox])[side=left]::part(arrow), :is(panel):not([type=autocomplete-richlistbox])[side=right]::part(arrow),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup)[side=left]::part(arrow),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup)[side=right]::part(arrow) {
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow])[side=left]::part(arrow),
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow])[side=right]::part(arrow) {
   list-style-image: var(--arrowpanel-hortizontal);
   position: relative;
   margin-block: var(--arrowpanel-arrow-offset);
 }
 :is(panel):not([type=autocomplete-richlistbox])[side=left]::part(arrow),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup)[side=left]::part(arrow) {
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow])[side=left]::part(arrow) {
   margin-right: var(--arrowpanel-arrow-position);
 }
 :is(panel):not([type=autocomplete-richlistbox])[side=right]::part(arrow),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup)[side=right]::part(arrow) {
+:is([echelon-style-6]) :is(menupopup[placespopup][is=places-popup-arrow])[side=right]::part(arrow) {
   transform: scaleX(-1);
   margin-left: var(--arrowpanel-arrow-position);
 }
@@ -293,6 +293,7 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
 }
 :is([echelon-style-6]) #BMB_bookmarksPopup menupopup[placespopup=true]::part(content) {
   padding-block-start: 4px !important;
+  padding-block-end: 0 !important;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2) !important;
   background: #FFF !important;
   border: 1px solid rgba(0, 0, 0, 0.25) !important;

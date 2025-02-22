@@ -476,8 +476,8 @@ checkbox {
 
 checkbox .checkbox-check {
 	appearance: none;
-	background-color: #FFF;
-	border: 1px solid #CCC;
+	background-color: #FFF !important;
+	border: 1px solid #CCC !important;
 	border-radius: 2px;
 	box-shadow: 0 1px 0 rgba(255, 255, 255, .5), inset 0 1px 0 rgba(204, 204, 204, 0.25);
 }
@@ -487,12 +487,12 @@ checkbox .checkbox-check[disabled] {
 }
 
 checkbox:hover .checkbox-check:not([disabled]) {
-	border-color: #269DEB;
+	border-color: #269DEB !important;
 }
 
 checkbox:hover:active .checkbox-check:not([disabled]) {
-	background-color: #E2E2E2;
-	border-color: #1e79b6;
+	background-color: #E2E2E2 !important;
+	border-color: #1e79b6 !important;
 }
 
 .checkbox-check[checked="true"] {

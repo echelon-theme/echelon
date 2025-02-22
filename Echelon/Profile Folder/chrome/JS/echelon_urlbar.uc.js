@@ -14,7 +14,13 @@ waitForElement("#urlbar").then(e => {
 	let dropmarker = window.MozXULElement.parseXULToFragment(`
 		<dropmarker anonid="historydropmarker" class="autocomplete-history-dropmarker urlbar-history-dropmarker" enablehistory="true"/>
 	`);
-	e.querySelector(".urlbar-input-container").appendChild(dropmarker);
+
+	let urlbarInputContainer = e.querySelector(".urlbar-input-container");
+	if (!urlbarInputContainer) { // fallback for older versions of firefox
+		urlbarInputContainer = e .querySelector("#urlbar-input-container");
+	}
+
+	urlbarInputContainer.appendChild(dropmarker);
 
 	e.querySelector(".urlbar-history-dropmarker").addEventListener("mousedown", openURLView);
 	

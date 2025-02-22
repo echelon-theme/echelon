@@ -2,7 +2,8 @@
     --urlbar-separator-color: ThreeDLightShadow;
 
     #urlbar {
-        .urlbar-input-container {
+        .urlbar-input-container,
+        #urlbar-input-container {
             &:not(:hover) {
                 .urlbar-history-dropmarker {
                     opacity: 0 !important;

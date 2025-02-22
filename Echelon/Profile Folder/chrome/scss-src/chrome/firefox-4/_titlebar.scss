@@ -75,3 +75,24 @@
 		}
 	}
 }
+
+// taken from browser-aero.css (for backporting to 115)
+@media (-moz-platform: windows) {
+	.titlebar-buttonbox-container {
+		align-items: flex-start !important;
+	}
+	
+    @media not (-moz-windows-classic) {
+      :root[sizemode="normal"] .titlebar-buttonbox {
+        appearance: auto !important;
+        -moz-default-appearance: -moz-window-button-box !important;
+      }
+  
+      @media (-moz-windows-compositor) {
+        :root[sizemode="maximized"] .titlebar-buttonbox {
+          appearance: auto !important;
+          -moz-default-appearance: -moz-window-button-box-maximized !important;
+        }
+      }
+    }
+  }

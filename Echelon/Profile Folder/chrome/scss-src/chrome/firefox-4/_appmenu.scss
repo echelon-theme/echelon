@@ -114,6 +114,9 @@
         }
 
         .button-menu-dropmarker {
+            width: 9px !important;
+            height: 7px !important;
+            list-style-image: none !important;
             content: url("chrome://echelon/content/firefox-4/appmenu/appmenu-dropmarker.png") !important;
             margin-inline-start: .5em !important;
         }

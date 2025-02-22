@@ -391,15 +391,21 @@
 				margin: -1px 0 0 !important;
 				border: none !important;
 			}
+
+			&::before { // 115 shit
+				display: none !important;
+			}
 		}
 
 		menu,
 		menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem) {
 			margin-inline: 4px !important;
 			appearance: none !important;
+			padding-block: 0 !important;
 			padding-inline: 6px !important;
 			border: 1px solid transparent !important;
 			border-radius: 2px !important;
+			min-height: 22px !important;
 
 			&:not(#BMB_viewBookmarksToolbar):last-of-type {
 				margin-block-end: 4px !important;
@@ -443,11 +449,14 @@
 		}
 
 		menuitem:not(.menuitem-iconic) {
-			min-height: 22px !important;
-
 			.menu-text {
 				margin-inline-start: 5px !important;
 				appearance: none !important;
+				padding-inline-start: 1.45em !important;
+			}
+
+			.menu-accel, .menu-iconic-accel {
+				margin-inline: 0.74em 1.35em !important;
 			}
 		}
 
@@ -491,6 +500,7 @@
 			image {
 				width: 16px !important;
 				height: 16px !important;
+				list-style-image: none !important;
 				background-image: url("chrome://echelon/content/firefox-29/places/bookmarks-menu-arrow.png") !important;
 			}
 		}
@@ -545,7 +555,7 @@
 		justify-content: center !important;
 		
 		.button-box {
-      padding: 0 !important;
+      		padding: 0 !important;
 		}
 	}
 	

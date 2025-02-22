@@ -150,7 +150,7 @@ menupopup[type="arrow"] {
 /* even more weird positioning shit */
 
 :is(panel):not([type="autocomplete-richlistbox"]),
-:is([echelon-style-6]) :is(menupopup[placespopup].animatable-menupopup) {
+:is([echelon-style-6]) :is(menupopup[placespopup][is="places-popup-arrow"]) {
     --panel-shadow: var(--arrowpanel-echelon-shadow) !important;
 
     &::part(arrowcontent) {
@@ -312,6 +312,7 @@ menupopup[type="arrow"] {
 
             &::part(content) {
                 padding-block-start: 4px !important;
+                padding-block-end: 0 !important;
                 box-shadow: 0 0 4px rgba(0,0,0,0.2) !important;
                 background: #FFF !important;
                 border: 1px solid rgba(0,0,0,0.25) !important;

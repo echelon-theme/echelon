@@ -65,6 +65,23 @@ window {
   }
 }
 
+@media (-moz-platform: windows) {
+  .titlebar-buttonbox-container {
+    align-items: flex-start !important;
+  }
+}
+@media (-moz-platform: windows) and (not (-moz-windows-classic)) {
+  :root[sizemode=normal] .titlebar-buttonbox {
+    appearance: auto !important;
+    -moz-default-appearance: -moz-window-button-box !important;
+  }
+}
+@media (-moz-platform: windows) and (not (-moz-windows-classic)) and (-moz-windows-compositor) {
+  :root[sizemode=maximized] .titlebar-buttonbox {
+    appearance: auto !important;
+    -moz-default-appearance: -moz-window-button-box-maximized !important;
+  }
+}
 :root {
   --toolbarbutton-width: 30px !important;
   --toolbarbutton-height: 24px !important;
@@ -517,6 +534,9 @@ window {
   background-color: var(--toolbar-background-color) !important;
   background-image: linear-gradient(to top, rgba(25.5, 25.5, 25.5, 0.4) 1px, rgba(0, 0, 0, 0.05) 1px, transparent 50%) !important;
   border-bottom: 0 !important;
+}
+:root[tabs-on-top=true]:not([lwtheme]):not(:-moz-lwtheme) #TabsToolbar {
+  color: black !important;
 }
 #TabsToolbar .titlebar-spacer {
   visibility: collapse !important;
@@ -1091,7 +1111,8 @@ window {
   display: block;
   background-image: url("chrome://echelon/content/firefox-4/menupopupshadowfake.png");
 }
-#urlbar .urlbar-input-container {
+#urlbar .urlbar-input-container,
+#urlbar #urlbar-input-container {
   padding: var(--urlbar-container-padding) !important;
   padding-inline-end: 0 !important;
   height: var(--urlbar-min-height) !important;
@@ -1480,6 +1501,7 @@ window {
   color: LinkText !important;
   font-size: unset !important;
   margin: 2px 0 1px 24px !important;
+  padding: 0 !important;
   line-height: unset !important;
 }
 :root:not([echelon-style-7]) .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-overflowable[overflow],
@@ -1740,6 +1762,9 @@ window {
   border-color: var(--appmenu-button-active-border-color) !important;
 }
 #appmenu-button-container #appmenu-button .button-menu-dropmarker {
+  width: 9px !important;
+  height: 7px !important;
+  list-style-image: none !important;
   content: url("chrome://echelon/content/firefox-4/appmenu/appmenu-dropmarker.png") !important;
   margin-inline-start: 0.5em !important;
 }
@@ -3372,13 +3397,18 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin: -1px 0 0 !important;
   border: none !important;
 }
+:root[echelon-style-6] #BMB_bookmarksPopup menuseparator::before {
+  display: none !important;
+}
 :root[echelon-style-6] #BMB_bookmarksPopup menu,
 :root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem) {
   margin-inline: 4px !important;
   appearance: none !important;
+  padding-block: 0 !important;
   padding-inline: 6px !important;
   border: 1px solid transparent !important;
   border-radius: 2px !important;
+  min-height: 22px !important;
 }
 :root[echelon-style-6] #BMB_bookmarksPopup menu:not(#BMB_viewBookmarksToolbar):last-of-type,
 :root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem):not(#BMB_viewBookmarksToolbar):last-of-type {
@@ -3419,12 +3449,13 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin-inline-end: auto !important;
   color: hsl(0, 0%, 50%) !important;
 }
-:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(.menuitem-iconic) {
-  min-height: 22px !important;
-}
 :root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(.menuitem-iconic) .menu-text {
   margin-inline-start: 5px !important;
   appearance: none !important;
+  padding-inline-start: 1.45em !important;
+}
+:root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(.menuitem-iconic) .menu-accel, :root[echelon-style-6] #BMB_bookmarksPopup menuitem:not(.menuitem-iconic) .menu-iconic-accel {
+  margin-inline: 0.74em 1.35em !important;
 }
 :root[echelon-style-6] #BMB_bookmarksPopup #BMB_bookmarksShowAll,
 :root[echelon-style-6] #BMB_bookmarksPopup .openintabs-menuitem {
@@ -3464,6 +3495,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-6] #BMB_bookmarksPopup .menu-right image {
   width: 16px !important;
   height: 16px !important;
+  list-style-image: none !important;
   background-image: url("chrome://echelon/content/firefox-29/places/bookmarks-menu-arrow.png") !important;
 }
 :root[echelon-style-6] #BMB_bookmarksPopup #BMB_bookmarksShowAll {
@@ -3670,6 +3702,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   padding: 15px !important;
 }
 #customization-container .footer-button,
+#customization-container .customizationmode-button,
 #customization-container #customization-titlebar-visibility-checkbox {
   appearance: none !important;
   border: 1px solid rgb(192, 192, 192) !important;
@@ -3684,10 +3717,12 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin-inline-end: 10px !important;
 }
 #customization-container .footer-button[disabled=true],
+#customization-container .customizationmode-button[disabled=true],
 #customization-container #customization-titlebar-visibility-checkbox[disabled=true] {
   opacity: 0.5 !important;
 }
 #customization-container .footer-button .button-box,
+#customization-container .customizationmode-button .button-box,
 #customization-container #customization-titlebar-visibility-checkbox .button-box {
   margin-inline-start: 3px !important;
   margin-inline-end: 4px !important;
@@ -3695,11 +3730,13 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   padding-block-end: 2px !important;
 }
 #customization-container .footer-button[type=menu] .button-menu-dropmarker,
+#customization-container .customizationmode-button[type=menu] .button-menu-dropmarker,
 #customization-container #customization-titlebar-visibility-checkbox[type=menu] .button-menu-dropmarker {
   margin: 1px !important;
   width: 11px !important;
   height: 11px !important;
   content: none !important;
+  list-style-image: none !important;
   background-image: url("chrome://echelon/content/firefox-4/arrow-dn.gif") !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
@@ -4199,6 +4236,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-position-y: center !important;
   margin-inline-start: 4px !important;
   margin-inline-end: 2px !important;
+  height: auto !important;
 }
 :root[echelon-style-4] #urlbar .urlbar-history-dropmarker:hover {
   background-position-x: -11px !important;
@@ -4262,7 +4300,8 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin-left: -27px !important;
 }
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background,
-:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container {
+:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container,
+:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-input-container {
   mask: url("chrome://echelon/content/firefox-10/urlbar/winstripe-urlbar-back-button-mask.svg") !important;
   mask-repeat: no-repeat !important;
   mask-position-x: -1px !important;
@@ -4275,7 +4314,8 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin-inline-start: -27px !important;
 }
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container #urlbar-background,
-:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container .urlbar-input-container {
+:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container .urlbar-input-container,
+:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container #urlbar-input-container {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
   border-inline-start: 0 !important;
@@ -5331,8 +5371,10 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin-left: -29px !important;
 }
 :root[echelon-style-6][echelon-system-style=win8]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background,
-:root[echelon-style-6][echelon-system-style=win8]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container, :root[echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background,
-:root[echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container {
+:root[echelon-style-6][echelon-system-style=win8]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container,
+:root[echelon-style-6][echelon-system-style=win8]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-input-container, :root[echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background,
+:root[echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container,
+:root[echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-input-container {
   mask-position-x: -2px !important;
 }
 :root[echelon-style-6][echelon-system-style=win8]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container, :root[echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container {
@@ -5440,10 +5482,12 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-7][echelon-style-6] {
   --urlbar-separator-color: ThreeDLightShadow;
 }
-:root[echelon-style-7][echelon-style-6] #urlbar .urlbar-input-container:not(:hover) .urlbar-history-dropmarker {
+:root[echelon-style-7][echelon-style-6] #urlbar .urlbar-input-container:not(:hover) .urlbar-history-dropmarker,
+:root[echelon-style-7][echelon-style-6] #urlbar #urlbar-input-container:not(:hover) .urlbar-history-dropmarker {
   opacity: 0 !important;
 }
-:root[echelon-style-7][echelon-style-6] #urlbar .urlbar-input-container .urlbar-history-dropmarker {
+:root[echelon-style-7][echelon-style-6] #urlbar .urlbar-input-container .urlbar-history-dropmarker,
+:root[echelon-style-7][echelon-style-6] #urlbar #urlbar-input-container .urlbar-history-dropmarker {
   transition: opacity 0.15s ease !important;
   background-image: url("chrome://echelon/content/firefox-56/urlbar/urlbar-history-dropmarker.png") !important;
   list-style-image: none !important;
@@ -5558,7 +5602,8 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   font-size: 1.15em !important;
 }
 :root[echelon-style-7][echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background,
-:root[echelon-style-7][echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container {
+:root[echelon-style-7][echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container,
+:root[echelon-style-7][echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-input-container {
   mask: url("chrome://echelon/content/firefox-56/urlbar/urlbar-back-button-clip-path-win10.svg") !important;
 }
 :root[echelon-style-7][echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container {
