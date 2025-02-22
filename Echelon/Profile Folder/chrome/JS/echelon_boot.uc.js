@@ -23,6 +23,15 @@ let ECHELON_BOOT_CONFIG = {
 		},
 		nativeControls: true
 	},
+	"chrome://browser/content/places/places.xhtml": {
+		themes: {
+			style: true,
+			bools: [
+				"Echelon.Appearance.Blue"
+			]
+		},
+		nativeControls: true
+	}
 };
 
 {
