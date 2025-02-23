@@ -5,6 +5,8 @@
 // @include			main
 // ==/UserScript===
 
+let { EchelonUpdateChecker } = ChromeUtils.importESModule("chrome://modules/content/EchelonUpdateChecker.sys.mjs");
+
 function chromeMargin() {
     let hiddenTitlebar = Services.appinfo.drawInTitlebar;
     let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");

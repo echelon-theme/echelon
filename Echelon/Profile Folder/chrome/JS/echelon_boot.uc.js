@@ -9,6 +9,7 @@
 let ECHELON_BOOT_CONFIG = {
 	/* Main browser window */
 	"chrome://browser/content/browser.xhtml": {
+		updates: true,
 		wizard: true,
 		themes: {
 			style: true,
@@ -37,6 +38,12 @@ let ECHELON_BOOT_CONFIG = {
 {
 	function bootEchelon(context, config)
 	{
+		if (config?.updates)
+		{
+			let { EchelonUpdateChecker } = ChromeUtils.importESModule("chrome://modules/content/EchelonUpdateChecker.sys.mjs");
+			EchelonUpdateChecker.setWindow(context);
+			EchelonUpdateChecker.checkForUpdate();
+		}
 		if (config?.themes)
 		{
 			let { EchelonThemeManager } = ChromeUtils.importESModule("chrome://modules/content/EchelonThemeManager.sys.mjs");

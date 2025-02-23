@@ -1,4 +1,6 @@
 {
 	"version": "1.0",
-	"branch": "upper"
+	"build": "602",
+	"channel": "nightly",
+	"branch": "upper-echelon"
 }
