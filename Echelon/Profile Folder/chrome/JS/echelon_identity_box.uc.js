@@ -5,6 +5,7 @@
 // @include			main
 // ==/UserScript==
 
+let strings = Services.strings.createBundle("chrome://echelon/locale/properties/urlbar.properties");
 let lang = Services.locale.requestedLocale;
 
 {
