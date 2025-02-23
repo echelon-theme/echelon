@@ -12,7 +12,7 @@ waitForElement("#urlbar").then(e => {
 
 	let urlbarInputContainer = e.querySelector(".urlbar-input-container");
 	if (!urlbarInputContainer) { // fallback for older versions of firefox
-		urlbarInputContainer = e .querySelector("#urlbar-input-container");
+		urlbarInputContainer = e.querySelector("#urlbar-input-container");
 	}
 
 	urlbarInputContainer.appendChild(dropmarker);
