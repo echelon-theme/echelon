@@ -23,7 +23,6 @@ let ECHELON_BOOT_CONFIG = {
 			]
 		},
 		nativeControls: true,
-		versionCheck: true,
 	},
 	"chrome://browser/content/places/places.xhtml": {
 		themes: {
