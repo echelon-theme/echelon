@@ -5,8 +5,6 @@
 // @include			main
 // ==/UserScript==
 
-var { BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
-
 let strings = Services.strings.createBundle("chrome://echelon/locale/properties/urlbar.properties");
 let lang = Services.locale.requestedLocale;
 
@@ -39,6 +37,30 @@ waitForElement("#urlbar").then(e => {
 	
 });
 
+gIdentityHandler.getEffectiveHost = function _getEffectiveHost() {
+	if (!this._eTLDService) {
+		this._eTLDService = Cc["@mozilla.org/network/effective-tld-service;1"].getService(
+			Ci.nsIEffectiveTLDService
+		);
+	}
+
+	if (!this._IDNService) {
+		this._IDNService = Cc["@mozilla.org/network/idn-service;1"].getService(
+			Ci.nsIIDNService
+		);
+	}
+
+	try {
+		let baseDomain =
+        	this._eTLDService.getBaseDomainFromHost(this._uri.host);
+		return this._IDNService.convertToDisplayIDN(baseDomain, {});
+	} catch (e) {
+		// If something goes wrong (e.g. host is an IP address) just fail back
+		// to the full domain.
+		return this._uri.host;
+	}
+}
+
 function updateIcon()
 {
 	try
@@ -50,12 +72,15 @@ function updateIcon()
 			let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
 			if (style < ECHELON_LAYOUT_FF14)
 			{
-				gIdentityHandler._identityIcon.setAttribute("style", `list-style-image: url('${favicon}');`);
+				gIdentityHandler._identityIcon.setAttribute("src", favicon);
 
-				if (!gBrowser.selectedTab.image || gBrowser.selectedTab.image == null)
+				if (!favicon || favicon == null)
 				{
-					gIdentityHandler._identityIcon.setAttribute("style", `list-style-image: var(--default-favicon);`);
+					gIdentityHandler._identityIcon.removeAttribute("src");
 				}
+			}
+			else {
+				gIdentityHandler._identityIcon.removeAttribute("src");
 			}
 		}, 1);
 	}
@@ -70,13 +95,6 @@ function updateIcon()
 			gIdentityHandler._identityIconLabel.setAttribute("value", displayHost);
 			gIdentityHandler._identityIconLabel.removeAttribute("collapsed");
 		}
-
-		if (gIdentityHandler._isSecureInternalUI) {
-			let browserName = BrandUtils.getBrandingKey("brandShortName");
-
-			gIdentityHandler._identityIconLabel.setAttribute("value", browserName);
-		}
-
 		
 		if (gIdentityHandler._uriHasHost && gIdentityHandler._isEV) {
 			iData = gIdentityHandler.getIdentityData();
@@ -87,11 +105,8 @@ function updateIcon()
 					lang = Services.locale.requestedLocale;
 					strings = Services.strings.createBundle("chrome://echelon/locale/properties/urlbar.properties");
 				}
-
 				let evString = strings.formatStringFromName("identity.identified.org_and_country", [iData.subjectOrg, iData.country]);
-
 				gIdentityHandler._identityIconLabel.setAttribute("value", evString);
-
 				gIdentityHandler._identityBox.classList.replace("verifiedDomain", "verifiedIdentity");
 			}
 		}
@@ -99,18 +114,14 @@ function updateIcon()
 	catch (e) {}
 }
 
-let FaviconInUrlbar = {
-	init: function()
-	{
-		document.addEventListener("TabAttrModified", updateIcon, false);
-		document.addEventListener("TabSelect", updateIcon, false);
-		document.addEventListener("TabOpen", updateIcon, false);
-		document.addEventListener("TabClose", updateIcon, false);
-		document.addEventListener("load", updateIcon, false);
-		updateIcon();
-	}
-};
+function initIdentityHandlerFavicon() {
+	document.addEventListener("TabAttrModified", updateIcon, false);
+	document.addEventListener("TabSelect", updateIcon, false);
+	document.addEventListener("TabOpen", updateIcon, false);
+	document.addEventListener("TabClose", updateIcon, false);
+	document.addEventListener("load", updateIcon, false);
+	updateIcon();
+}
 
 // initiate script after DOM/browser content is loaded
-document.addEventListener("DOMContentLoaded", FaviconInUrlbar.init, false);
-Services.prefs.addObserver("Echelon.Option.BrowserSpoof", FaviconInUrlbar.init, false);
+document.addEventListener("DOMContentLoaded", initIdentityHandlerFavicon, false);

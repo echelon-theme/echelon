@@ -1191,14 +1191,21 @@ window {
 :root:not([echelon-style-2]) #urlbar #identity-box #identity-icon-box #identity-icon {
   z-index: 1 !important;
 }
+:root:not([echelon-style-2]) #urlbar #identity-box #identity-icon-box #identity-icon:not([src]) {
+  list-style-image: var(--default-favicon) !important;
+}
 :root:not([echelon-style-2]) #urlbar #identity-box #identity-icon-box #identity-icon-label {
   padding-inline-start: 6px !important;
   margin-block-end: 1px !important;
 }
-:root:not([echelon-style-2]) #urlbar #identity-box:not(.chromeUI)[pageproxystate=valid] #identity-icon-box {
+:root:not([echelon-style-2]) #urlbar #identity-box.verifiedDomain #identity-icon-box, :root:not([echelon-style-2]) #urlbar #identity-box.verifiedIdentity #identity-icon-box {
   color: white !important;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25) !important;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset !important;
+}
+:root:not([echelon-style-2]) #urlbar #identity-box.verifiedDomain #identity-icon-label:not([value=""]), :root:not([echelon-style-2]) #urlbar #identity-box.verifiedIdentity #identity-icon-label:not([value=""]) {
+  display: flex !important;
+  visibility: visible !important;
 }
 :root:not([echelon-style-2]) #urlbar #identity-box.verifiedDomain #identity-icon-box {
   background-color: hsl(219, 45%, 60%) !important;
@@ -3909,6 +3916,16 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   margin-block-start: 20px !important;
 }
 
+:root {
+  --organizer-pane-background: -moz-Field !important;
+  --organizer-content-background: var(--organizer-pane-background) !important;
+  --organizer-pane-border-color: ThreeDLightShadow !important;
+}
+:root[echelon-appearance-blue] {
+  --organizer-pane-background: #EEF3FA !important;
+  --organizer-pane-border-color: #A9B7C9 !important;
+}
+
 #placesMenu {
   margin-inline-start: 8px !important;
   appearance: none !important;
@@ -3920,7 +3937,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   padding-top: 2px !important;
   padding-bottom: 2px !important;
   appearance: toolbarbutton !important;
-  color: -moz-DialogText;
+  color: inherit !important;
   border: 1px solid transparent !important;
 }
 #placesMenu menu[_moz-menuactive=true] {
@@ -3972,12 +3989,12 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 #placesToolbar #forward-button[disabled] {
   background-position-y: -48px !important;
 }
-#placesToolbar #back-button:hover,
-#placesToolbar #forward-button:hover {
+#placesToolbar #back-button:not([disabled]):hover,
+#placesToolbar #forward-button:not([disabled]):hover {
   background-position-y: -24px !important;
 }
-#placesToolbar #back-button:hover:active,
-#placesToolbar #forward-button:hover:active {
+#placesToolbar #back-button:not([disabled]):hover:active,
+#placesToolbar #forward-button:not([disabled]):hover:active {
   background-position-y: -72px !important;
 }
 #placesToolbar #forward-button {
@@ -4025,6 +4042,11 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-image: url("chrome://echelon/content/firefox-4/Search-glass.png") !important;
   list-style-image: none !important;
   margin: 0 !important;
+}
+
+#detailsPane,
+:root[echelon-appearance-blue] #placesView > splitter {
+  border-color: var(--organizer-pane-border-color) !important;
 }
 
 :root[echelon-system-style=winxp]:not([echelon-style-6])[tabs-on-top=true]:not([lwtheme=true]) #TabsToolbar {

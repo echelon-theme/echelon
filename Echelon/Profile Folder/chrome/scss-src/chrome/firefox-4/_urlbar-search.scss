@@ -171,6 +171,10 @@
 
             #identity-icon {
                 z-index: 1 !important;
+
+                &:not([src]) {
+                    list-style-image: var(--default-favicon) !important;
+                }
             }
 
             #identity-icon-label {
@@ -179,11 +183,17 @@
             }
         }
 
-        &:not(.chromeUI)[pageproxystate="valid"] {
+        &.verifiedDomain,
+        &.verifiedIdentity {
             #identity-icon-box {
                 color: white !important;
                 text-shadow: 0 1px 0 rgba(0,0,0,.25) !important;
                 box-shadow: 0 0 0 1px rgba(0,0,0,.2) inset !important;
+            }
+
+            #identity-icon-label:not([value=""]) {
+                display: flex !important;
+                visibility: visible !important;
             }
         }
 

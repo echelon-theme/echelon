@@ -1,3 +1,13 @@
+:root {
+    --organizer-pane-background: -moz-Field !important;
+    --organizer-content-background: var(--organizer-pane-background) !important;
+    --organizer-pane-border-color: ThreeDLightShadow !important;
+    &[echelon-appearance-blue] {
+        --organizer-pane-background: #EEF3FA !important;
+        --organizer-pane-border-color: #A9B7C9 !important;
+    }
+}
+
 #placesMenu {
     margin-inline-start: 8px !important;
     appearance: none !important;
@@ -9,7 +19,7 @@
         padding-top: 2px !important;
         padding-bottom: 2px !important;
         appearance: toolbarbutton !important;
-        color: -moz-DialogText;
+        color: inherit !important;
         border: 1px solid transparent !important;
 
         &[_moz-menuactive="true"] {
@@ -70,7 +80,7 @@
             background-position-y: -48px !important;
         }
 
-        &:hover {
+        &:not([disabled]):hover {
             background-position-y: -24px !important;
             
             &:active {
@@ -130,4 +140,9 @@
     background-image: url("chrome://echelon/content/firefox-4/Search-glass.png") !important;
     list-style-image: none !important;
     margin: 0 !important;
+}
+
+#detailsPane,
+:root[echelon-appearance-blue] #placesView > splitter {
+    border-color: var(--organizer-pane-border-color) !important;
 }
