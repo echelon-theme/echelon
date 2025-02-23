@@ -5,6 +5,8 @@
 // @include			main
 // ==/UserScript==
 
+let lang = Services.locale.requestedLocale;
+
 {
     const IDENTITY_BOX_HTML = `
     <!-- Security Section -->
