@@ -51,22 +51,43 @@
             return `rgb(${r}, ${g}, ${b})`;
         }
         else {
-            return "rgb(0, 0, 0)"; // fallback
+            // fallbacks
+            switch (aValue) {
+                case "9":
+                    return "CaptionText"
+                case "19":
+                    return "InactiveCaptionText"
+                default:
+                    return "rgb(0, 0, 0)"
+            }
         }
     }
 
-    window.addEventListener("load", function() {
+    function SetSystemColors() {
         if (Services.appinfo.OS == "WINNT")
         {
-            
-            let style = document.createElement("style");
-            style.innerHTML = `
-                :root {
-                    --captiontext: ${GetSystemColor(9)};
-                    --inactivecaptiontext: ${GetSystemColor(19)};
-                }
-            `;
-            document.head.appendChild(style);
+            document.documentElement.style.removeProperty(`--captiontext`);
+            document.documentElement.style.removeProperty(`--inactivecaptiontext`);
+
+            document.documentElement.style.setProperty(
+                `--captiontext`,
+                GetSystemColor(9)
+            );
+            document.documentElement.style.setProperty(
+                `--inactivecaptiontext`,
+                GetSystemColor(19)
+            );
         }
-    });
+    }
+
+    window.addEventListener("load", SetSystemColors);
+
+    let WM_THEMECHANGED = {
+        observe(aSubject, aTopic, aData)
+        {
+            SetSystemColors();
+        }
+    };
+    
+    Services.obs.addObserver(WM_THEMECHANGED, "internal-look-and-feel-changed");
 }
