@@ -22,7 +22,8 @@ let ECHELON_BOOT_CONFIG = {
 				"widget.windows-style.modern"
 			]
 		},
-		nativeControls: true
+		nativeControls: true,
+		versionCheck: true,
 	},
 	"chrome://browser/content/places/places.xhtml": {
 		themes: {

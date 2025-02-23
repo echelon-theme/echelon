@@ -5300,10 +5300,10 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/echelon.png") !important;
 }
 :root[echelon-style-6][echelon-system-style=winxp][tabsintitlebar=true] #TabsToolbar {
-  color: white !important;
+  color: var(--captiontext, CaptionText) !important;
 }
 :root[echelon-style-6][echelon-system-style=winxp][tabsintitlebar=true] #TabsToolbar:-moz-window-inactive {
-  color: #D8E4F8 !important;
+  color: var(--inactivecaptiontext, InactiveCaptionText) !important;
 }
 :root[echelon-style-6][echelon-system-style=winxp][tabsintitlebar=true] #TabsToolbar .tab-close-button:not(:hover, :hover:active, [selected]) {
   background-position-x: -48px !important;

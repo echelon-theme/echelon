@@ -1,10 +1,8 @@
 &[tabsintitlebar="true"] {
     #TabsToolbar {
-        // Firefox 133 removed some colors relating to the
-        // system color scheme, so we gotta hardcode dis for now
-        color: white !important;
+        color: var(--captiontext, CaptionText) !important;
         &:-moz-window-inactive {
-            color: #D8E4F8 !important;
+            color: var(--inactivecaptiontext, InactiveCaptionText) !important;
         }
 
         .tab-close-button {
