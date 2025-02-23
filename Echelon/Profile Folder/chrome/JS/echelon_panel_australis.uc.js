@@ -16,6 +16,7 @@ waitForElement = waitForElement.bind(window);
 ChromeUtils.defineESModuleGetters(window, {
     EchelonDragPositionManager: "chrome://userscripts/content/modules/EchelonDragPositionManager.sys.mjs",
     EchelonDebugTools: "chrome://userscripts/content/modules/EchelonDebugTools.sys.mjs",
+    EchelonUpdateChecker: "chrome://userscripts/content/modules/EchelonUpdateChecker.sys.mjs",
     DragPositionManager: "resource:///modules/DragPositionManager.sys.mjs"
 });
 const Debug = EchelonDebugTools.getDebugController("AustralisPanel");
@@ -184,6 +185,8 @@ class AustralisPanelController
             let syncContainer = this.mainView.querySelector("#PanelUI-fxa-container");
             syncContainer.style.display = "none";
         }
+
+        this.echelonUpdates();
     }
 
     renderPanel()
@@ -224,12 +227,11 @@ class AustralisPanelController
 
                     elm("xul:footer", { "id": "PanelUI-footer" }, [
                         elm("xul:vbox", { "id": "PanelUI-footer-addons" }),
-                        // elm("xul:toolbarbutton", {
-                        // 	"class": "panel-banner-item",
-                        // 	"label-update-available": "&updateAvailable.panelUI.label",
-                        // 	"label-update-manual": "&updateManual.panelUI.label",
-                        // 	"label-update-restart": "&updateRestart.panelUI.label2"
-                        // }),
+                        elm("xul:toolbarbutton", {
+                            "class": "panel-banner-item echelon-updates",
+                            "label": str("echelon_update_available_label"),
+                            "hidden": "true"
+                        }),
                         elm("xul:hbox", { "id": "PanelUI-fxa-container" }, [
                             elm("xul:hbox", {
                                 "id": "PanelUI-fxa-status",
@@ -397,6 +399,13 @@ class AustralisPanelController
                 ])
             ])
         ]);
+    }
+
+    async echelonUpdates() 
+    {
+        if (await EchelonUpdateChecker.checkForUpdate()) {
+            this.mainView.querySelector(".echelon-updates").removeAttribute("hidden")
+        }
     }
 
     /**

@@ -543,7 +543,14 @@ $panelGridItem: "& > toolbarbutton, *:not(" + $wideItems + ", .panel-customizati
     
     .panel-banner-item {
         color: black;
+        padding-inline-start: 15px !important;
         background-color: hsla(96, 65%, 75%, 0.5) !important;
+
+        list-style-image: url("chrome://userchrome/content/branding/echelon/content/icon16.png") !important;
+
+        .toolbarbutton-icon {
+            order: unset !important;
+        }
     }
     
     .panel-banner-item:not([disabled]):hover {

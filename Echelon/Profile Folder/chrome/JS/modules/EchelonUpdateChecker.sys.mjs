@@ -19,10 +19,6 @@ export class EchelonUpdateChecker
     {
         this.#window = window;
     }
-
-    static async checkForUpdate()
-    {
-    }
     
     static async #fetchRemoteBuildData()
     {
@@ -58,9 +54,40 @@ export class EchelonUpdateChecker
         if (distrib == "local") {
             dataResponse = await this.#fetchLocalBuildData();
         } else if (distrib == "remote") {
-            dataResponse = await this.#fetchLocalBuildData();
+            dataResponse = await this.#fetchRemoteBuildData();
         }
 
         return dataResponse;
+    }
+    
+    static async checkForUpdate()
+    {
+        try {
+            let localEchelonChannel = (await EchelonUpdateChecker.getBuildData("local"))?.channel;
+
+            let localEchelonBuild = (await EchelonUpdateChecker.getBuildData("local"))?.build;
+            let remoteEchelonBuild = (await EchelonUpdateChecker.getBuildData("remote"))?.build;
+
+            let localEchelonVersion = (await EchelonUpdateChecker.getBuildData("local"))?.version;
+            let remoteEchelonVersion = (await EchelonUpdateChecker.getBuildData("remote"))?.version;
+
+            let isUpdateAvailable = false;
+
+            switch (localEchelonChannel) {
+                case "nightly":
+                    if (localEchelonBuild != remoteEchelonBuild) {
+                        isUpdateAvailable = true;
+                    }
+                    break;
+                case "release":
+                    if (localEchelonVersion != remoteEchelonVersion) {
+                        isUpdateAvailable = true;
+                    }
+                    break;
+            }
+
+            return isUpdateAvailable;
+        }
+        catch {e} {}
     }
 }
