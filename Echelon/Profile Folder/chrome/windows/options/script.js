@@ -1,4 +1,7 @@
-const { EchelonThemeManager } = ChromeUtils.importESModule("chrome://modules/content/EchelonThemeManager.sys.mjs");
+ChromeUtils.defineESModuleGetters(window, {
+    EchelonThemeManager: "chrome://modules/content/EchelonThemeManager.sys.mjs",
+    EchelonUpdateChecker: "chrome://userscripts/content/modules/EchelonUpdateChecker.sys.mjs",
+});
 const { PrefUtils, VersionUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 const gOptionsBundle = document.getElementById("optionsBundle");
 
@@ -438,10 +441,26 @@ const echelonStyle = {
 Services.prefs.addObserver("Echelon.Appearance.Style", echelonStyle, false);
 document.addEventListener("DOMContentLoaded", disableStyleExclusiveOptions);
 
-function loadVersion() {
+async function loadVersion() {
+    let localEchelonJSON = await EchelonUpdateChecker.getBuildData("local");
+    let updateAvailable = await EchelonUpdateChecker.checkForUpdate();
+    let updateString = gOptionsBundle.getString("up_to_date");
+    let updateStatus = "up_to_date";
+
 	document.querySelectorAll("#version").forEach(async identifier => {
-        identifier.value = gOptionsBundle.getFormattedString("version_format", [await VersionUtils.getEchelonVer()]);
+        identifier.value = gOptionsBundle.getFormattedString("version_format", [localEchelonJSON.version]);
 	})
-    document.querySelector(".about-header-update").value = gOptionsBundle.getString("up_to_date");
+
+    document.querySelectorAll("#build").forEach(async identifier => {
+        identifier.value = gOptionsBundle.getFormattedString("build_format", [localEchelonJSON.build]);
+	})
+
+    if (updateAvailable) {
+        updateString = gOptionsBundle.getString("update_available");
+        updateStatus = "available";
+    }
+
+    document.querySelector(".about-header-update").innerHTML = updateString;
+    document.querySelector(".about-header-info").setAttribute("status", updateStatus);
 }
 document.addEventListener("DOMContentLoaded", loadVersion);

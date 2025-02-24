@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="images/echelon.png" alt="Echelon logo">
+    <img src="images/echelon.svg" alt="Echelon logo">
     <h6 align="center"><i>Bring back the "better Internet".</i></h6>
     
 </p>
