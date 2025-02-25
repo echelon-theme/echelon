@@ -10,7 +10,7 @@
         "newtab": "chrome://userchrome/content/pages/home/home.xhtml",
         "home": "chrome://userchrome/content/pages/home/home.xhtml",
         "privatebrowsing": "chrome://userchrome/content/pages/privatebrowsing/privatebrowsing.xhtml",
-        "echelon": "chrome://userchrome/content/windows/options/options.xhtml",
+        "echelon": "chrome://userchrome/content/pages/options/options.xhtml",
         "wizard": "chrome://userchrome/content/windows/wizard/wizard.xhtml",
     };
     const { AboutPageManager } = ChromeUtils.importESModule("chrome://modules/content/AboutPageManager.sys.mjs");

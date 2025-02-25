@@ -17,16 +17,8 @@ g_themeManager.init(
     }
 );
 
-function showRestartPrompt() {
-    document.querySelector(".echelon-wizard-restart-modal-container").removeAttribute("hidden");
-}
-
-function hideRestartPrompt() {
-    document.querySelector(".echelon-wizard-restart-modal-container").setAttribute("hidden", "true");
-}
-
 document.querySelector(".restart-later-button").addEventListener("click",  function () {
-    hideRestartPrompt();
+    document.querySelector("[data-modal='restart-needed']").visibility("hide");
 });
 
 document.querySelector(".restart-now-button").addEventListener("click",  function () {
@@ -36,7 +28,7 @@ document.querySelector(".restart-now-button").addEventListener("click",  functio
 const restartPrompt = {
 	observe: function (subject, topic, data) {
 		if (topic == "nsPref:changed")
-			showRestartPrompt();
+			document.querySelector("[data-modal='restart-needed']").visibility("show");
 	},
 };
 
@@ -54,78 +46,6 @@ function switchCategory(event)
     }
 }
 document.getElementById("categories").addEventListener("select", switchCategory);
-
-document.querySelectorAll(".menulist").forEach(menulist => {
-    let dropdown = menulist.querySelector(".list");
-    let firstItem = menulist.querySelector(".item");
-    let defaultItem = menulist.querySelector(".item[selected]");
-    let items = menulist.querySelectorAll(".item");
-    let dropdownText = menulist.querySelector(".selected");
-
-    if (!defaultItem) {
-        dropdownText.textContent = firstItem.textContent;
-        menulist.setAttribute("value", firstItem.getAttribute("value"));
-        firstItem.setAttribute("selected", true);
-    } else {
-        dropdownText.textContent = defaultItem.textContent;
-        menulist.setAttribute("value", defaultItem.getAttribute("value"));
-        defaultItem.setAttribute("selected", true);
-    }
-
-    menulist.addEventListener("click", (e) => {
-        let menuListBoundingRect = menulist.getBoundingClientRect();
-        let dropdownBoundingRect = dropdown.getBoundingClientRect();
-
-        dropdown.style.left = menuListBoundingRect.right - dropdownBoundingRect.width + "px";
-
-        dropdown.style.top = menuListBoundingRect.height + menuListBoundingRect.y + "px";
-
-        if (!menulist.hasAttribute("open")) 
-        {
-            document.querySelectorAll('.menulist[open="true"]').forEach(openMenu => {
-                openMenu.removeAttribute("open");
-            })
-
-            menulist.setAttribute("open", true);
-        } 
-        else 
-        {
-            menulist.removeAttribute("open");
-        }
-
-        document.addEventListener("click", function() {
-			menulist.removeAttribute("open");
-		});
-
-        e.stopPropagation();
-    });
-
-    items.forEach(item => {
-        item.addEventListener("click", () => {
-            items.forEach(item => {
-                item.removeAttribute("selected");
-            });
-
-            menulist.setAttribute("value", item.getAttribute("value"));
-            dropdownText.textContent = item.textContent;
-            item.setAttribute("selected", true);
-            item.dispatchEvent(new CustomEvent("echelon-menulist-command"));
-            document.dispatchEvent(new CustomEvent("echelon-menulist-command"));
-        })
-    });
-
-    menulist.setValue = function(value) {
-        let selectedItem = menulist.querySelector(`.item[value="${value}"]`);
-        if (selectedItem) {
-            items.forEach(item => {
-                item.removeAttribute("selected");
-            });
-            selectedItem.setAttribute("selected", true);
-            menulist.setAttribute("value", value);
-            dropdownText.textContent = selectedItem.textContent;
-        }
-    };
-});
 
 const gPrefHandler = {
     updatePref: function PrefHandler_updatePref(element)
@@ -364,7 +284,7 @@ function buildPresetCards() {
                 <radio value="${i}" class="card-wrapper">
                     <div class="checked" />
                     <div class="year">${ThemeUtils.stylePreset[i].year}</div>
-                    <image style="background-image: url('chrome://userchrome/content/windows/options/images/presets/${platform}/firefox-${ThemeUtils.stylePreset[i].version}.png');" flex="1" />
+                    <image style="background-image: url('chrome://userchrome/content/pages/options/images/presets/${platform}/firefox-${ThemeUtils.stylePreset[i].version}.png');" flex="1" />
                     <div class="content">
                         <label value="${ThemeUtils.stylePreset[i].name}" flex="1" />
                     </div>
@@ -390,7 +310,7 @@ let homepageContainer = document.getElementById("homepage-container");
 
 for (const i of Object.keys(ThemeUtils.styleHomepage)) {
     presetCard = `
-        <vbox class="card" style="background-image: url('chrome://userchrome/content/windows/options/images/homepage/firefox-${ThemeUtils.styleHomepage[i].version}.png');">
+        <vbox class="card" style="background-image: url('chrome://userchrome/content/pages/options/images/homepage/firefox-${ThemeUtils.styleHomepage[i].version}.png');">
             <radio value="${i}" class="card-wrapper">
                 <div class="checked" />
                 <div class="year">${ThemeUtils.styleHomepage[i].year}</div>

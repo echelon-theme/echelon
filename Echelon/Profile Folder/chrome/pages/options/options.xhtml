@@ -2,7 +2,8 @@
 
 <?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
 <?xml-stylesheet href="chrome://global/content/xul.css" type="text/css"?>
-<?xml-stylesheet href="chrome://userchrome/content/windows/options/styles.css" type="text/css"?>
+<?xml-stylesheet href="chrome://userchrome/content/framework/apathum/styles/style.css" type="text/css"?>
+<?xml-stylesheet href="chrome://userchrome/content/pages/options/styles.css" type="text/css"?>
 
 <!DOCTYPE window SYSTEM "chrome://echelon/locale/dtd/echelon-options.dtd">
 
@@ -13,12 +14,12 @@
 
 	<stringbundle id="optionsBundle" src="chrome://echelon/locale/properties/echelon-options.properties"/>
 	<head>
-		<html:link rel="shortcut icon" href="chrome://userchrome/content/windows/options/images/icon.png"/>
+		<html:link rel="shortcut icon" href="chrome://userchrome/content/pages/options/images/icon.png"/>
 	</head>
 
 	<html:body>
-		<vbox class="echelon-wizard-restart-modal-container" hidden="true">
-            <vbox class="echelon-wizard-restart-modal">
+		<vbox class="modal-container" hidden="true">
+            <vbox class="modal" data-modal="restart-needed">
                 <vbox class="page-header">
                     <h2 class="restart-browser-label">do you want to restart your browser?</h2>
                     <html:div class="header-description">In order for Echelon to work properly, you must restart your browser. This simple step ensures a seamless experience with Echelon features.</html:div>
@@ -219,6 +220,9 @@
 		</hbox>
 	</html:body>
 
-	<script src="chrome://userchrome/content/windows/options/script.js" type="text/javascript"></script>
+	<script src="chrome://userchrome/content/framework/apathum/scripts/modal.js" type="text/javascript"></script>
+	<script src="chrome://userchrome/content/framework/apathum/scripts/menulist.js" type="text/javascript"></script>
+	
+	<script src="chrome://userchrome/content/pages/options/script.js" type="text/javascript"></script>
 
 </html>

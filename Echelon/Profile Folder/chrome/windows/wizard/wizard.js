@@ -269,7 +269,7 @@ for (const i of Object.keys(ThemeUtils.stylePreset)) {
         <vbox class="card">
             <radio value="${ThemeUtils.stylePreset[i].preset}" class="card-wrapper">
                 <div class="year">${ThemeUtils.stylePreset[i].year}</div>
-                <image style="background-image: url('chrome://userchrome/content/windows/options/images/presets/firefox-${ThemeUtils.stylePreset[i].version}.png');" flex="1" />
+                <image style="background-image: url('chrome://userchrome/content/windows/options/images/presets/win/firefox-${ThemeUtils.stylePreset[i].version}.png');" flex="1" />
                 <div class="content">
                     <label value="${ThemeUtils.stylePreset[i].name}" flex="1" />
                 </div>
@@ -362,7 +362,7 @@ document.querySelector(".echelon-wizard-titlebar-close").addEventListener("click
 
 document.querySelector(".restart-later-button").addEventListener("click",  function () {
     windowRoot.ownerGlobal.hideEchelonWizard();
-    document.querySelector(".echelon-wizard-restart-modal-container").setAttribute("hidden", "true");
+    document.querySelector("[data-modal='restart-needed']").visibility("hide");
 
     setTimeout(() => {
         showPage(1);
@@ -375,5 +375,5 @@ document.querySelector(".restart-now-button").addEventListener("click",  functio
 });
 
 document.querySelector(".echelon-wizard-finish-button").addEventListener("click",  function () {
-    document.querySelector(".echelon-wizard-restart-modal-container").removeAttribute("hidden");
+    document.querySelector("[data-modal='restart-needed']").visibility("show");
 });

@@ -2,20 +2,22 @@
 
 <?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
 <?xml-stylesheet href="chrome://global/content/xul.css" type="text/css"?>
+<?xml-stylesheet href="chrome://userchrome/content/framework/apathum/styles/style.css" type="text/css"?>
 <?xml-stylesheet href="chrome://userchrome/content/windows/wizard/wizard.css" type="text/css"?>
 
 <html xmlns:html="http://www.w3.org/1999/xhtml" 
 		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
 		id="echlonWizard" 
-		title="Echelon Wizard">
+		title="Echelon Wizard"
+        echelon-appearance-blue="true">
 
 	<head>
 		<html:link rel="shortcut icon" href="chrome://userchrome/content/windows/options/images/icon.png"/>
 	</head>
 
 	<html:body flex="1">
-        <vbox class="echelon-wizard-restart-modal-container" hidden="true">
-            <vbox class="echelon-wizard-restart-modal">
+        <vbox class="modal-container" hidden="true">
+            <vbox class="modal" data-modal="restart-needed">
                 <vbox class="page-header">
                     <h2 class="restart-browser-label">do you want to restart your browser?</h2>
                     <html:div class="header-description">In order for Echelon to work properly, you must restart your browser. This simple step ensures a seamless experience with Echelon features.</html:div>
@@ -93,6 +95,6 @@
 		</hbox>
 	</html:body>
 
+    <script src="chrome://userchrome/content/framework/apathum/scripts/modal.js" type="text/javascript"></script>
 	<script src="chrome://userchrome/content/windows/wizard/wizard.js" type="text/javascript"></script>
-
 </html>
