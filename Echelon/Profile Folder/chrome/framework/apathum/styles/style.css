@@ -26,6 +26,10 @@
   color-scheme: light !important;
 }
 
+[hidden=true] {
+  visibility: collapse !important;
+}
+
 * {
   -moz-user-focus: ignore;
 }
