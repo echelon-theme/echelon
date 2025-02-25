@@ -1,0 +1,36 @@
+#!/bin/sh
+while IFS= read -r -d $'\0' ARG; do
+    if test "$ARG" == '--no-verify'; then
+        exit 0
+    fi
+done < /proc/$PPID/cmdline
+
+if git config --get custom.ignorePostCommitHook > /dev/null; then
+    exit 0
+fi
+
+build_number=$(git rev-list --count HEAD)
+branch=$(git rev-parse --abbrev-ref HEAD)
+
+# Ideally, this file would be named .build, but for some reason
+# dotfiles within chrome URLs are weird, and won't even return
+# the "file not found" page when they don't exist. They just
+# don't return anything.
+cat <<EOL > "Echelon/Profile Folder/chrome/version.json"
+{
+	"version": "1.0",
+	"build": "$build_number",
+	"channel": "nightly",
+	"branch": "$branch"
+}
+EOL
+
+git add "Echelon/Profile Folder/chrome/version.json"
+
+# Ignore next run
+git config custom.ignorePostCommitHook "true"
+
+git commit --no-verify --amend --no-edit
+
+# Stop ignoring
+git config --unset custom.ignorePostCommitHook
