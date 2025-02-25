@@ -55,13 +55,14 @@
         width: 9px;
         height: 7px;
         list-style-image: url("chrome://userchrome/content/framework/apathum/images/menulist/menulist-dropdown-arrow.png");
+        margin-inline: 6px;
     }     
 
     .list {
         position: fixed;
         left: 0;
         top: 0;
-        margin-block-start: 1px;
+        margin-block-start: 3px;
         z-index: 100;	
     
         transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275), ease-out !important;
@@ -71,7 +72,7 @@
         .list-arrow {
             width: 100%;
             height: 8px;
-            padding-inline: 4px;
+            padding-inline: 10px;
             margin-block-end: -1px;
             z-index: 1;
             justify-content: flex-end;

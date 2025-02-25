@@ -179,6 +179,7 @@ body > hbox {
 }
 
 #options-sections {
+	position: relative;
 	background-image: radial-gradient(0.06% 50% at 0.06% 50%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 75%, rgba(255, 255, 255, 0) 100%);
 }
 
@@ -186,8 +187,20 @@ body > hbox {
 	background-image: none;
 }
 
+.section {
+	transition-property: transform, opacity !important;
+	transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275), ease-out !important;
+	transition-duration: 330ms, 100ms !important;
+	pointer-events: all;
+}
+
 .section:not([selected="true"]) {
-	visibility: collapse;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: 0;
+	transform: translateY(20px);
+	pointer-events: none;
 }
 
 .options-header {
