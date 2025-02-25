@@ -3579,6 +3579,27 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   opacity: 1 !important;
 }
 
+#context-navigation {
+  background: transparent !important;
+  flex-direction: column !important;
+}
+#context-navigation > .menuitem-iconic {
+  width: unset !important;
+}
+#context-navigation > .menuitem-iconic > .menu-iconic-left {
+  appearance: auto !important;
+}
+#context-navigation > .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {
+  display: none !important;
+}
+#context-navigation > .menuitem-iconic .menu-iconic-text {
+  display: block !important;
+}
+
+#context-sep-navigation {
+  margin-inline-start: 0 !important;
+}
+
 #navigator-toolbox > toolbar:not(#titlebar, #TabsToolbar),
 #toolbar-menubar #menubar-items,
 #navigator-toolbox::after,

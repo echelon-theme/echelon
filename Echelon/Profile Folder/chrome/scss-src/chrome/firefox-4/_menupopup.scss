@@ -589,3 +589,28 @@
 		opacity: 1 !important;
 	}
 }
+
+#context-navigation {
+	background: transparent !important;
+	flex-direction: column !important;;
+
+	& > .menuitem-iconic {
+		width: unset !important;
+
+		& > .menu-iconic-left {
+			appearance: auto !important;
+
+			& > .menu-iconic-icon {
+				display: none !important;
+			}
+		}
+		
+		.menu-iconic-text {
+			display: block !important;
+		}
+	}
+}
+
+#context-sep-navigation {
+	margin-inline-start: 0 !important;
+}

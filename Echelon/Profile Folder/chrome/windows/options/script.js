@@ -445,6 +445,9 @@ async function loadVersion() {
     let localEchelonJSON = await EchelonUpdateChecker.getBuildData("local");
     let updateAvailable = await EchelonUpdateChecker.checkForUpdate();
     let updateString = gOptionsBundle.getString("up_to_date");
+    if (localEchelonJSON.channel == "nightly") {
+        updateString = gOptionsBundle.getString("up_to_date_nightly");
+    }
     let updateStatus = "up_to_date";
 
 	document.querySelectorAll("#version").forEach(async identifier => {
