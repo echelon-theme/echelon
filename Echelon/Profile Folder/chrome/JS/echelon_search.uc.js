@@ -47,9 +47,9 @@ class EchelonSearchManager
 		"ebay": "chrome://echelon/content/firefox-28/search/ebay.ico",
 
 		/* For older versions of Firefox */
-		"google@search.mozilla.orgdefault": "chrome://echelon/content/firefox-28/search/google.png",
-		"bing@search.mozilla.orgdefault": "chrome://echelon/content/firefox-28/search/bing.png",
-		"ebay@search.mozilla.orgdefault": "chrome://echelon/content/firefox-28/search/ebay.png",
+		"google@search.mozilla.orgdefault": "chrome://echelon/content/firefox-28/search/google.ico",
+		"bing@search.mozilla.orgdefault": "chrome://echelon/content/firefox-28/search/bing.ico",
+		"ebay@search.mozilla.orgdefault": "chrome://echelon/content/firefox-28/search/ebay.ico",
 	};
 
 	static async obtainIcons()
