@@ -267,9 +267,9 @@ let presetCard = null;
 for (const i of Object.keys(ThemeUtils.stylePreset)) {
     presetCard = `
         <vbox class="card">
-            <radio value="${ThemeUtils.stylePreset[i].preset}" class="card-wrapper">
+            <radio value="${ThemeUtils.stylePreset[i].preset}" class="card-content">
                 <div class="year">${ThemeUtils.stylePreset[i].year}</div>
-                <image style="background-image: url('chrome://userchrome/content/windows/options/images/presets/win/firefox-${ThemeUtils.stylePreset[i].version}.png');" flex="1" />
+                <image class="card-image" style="background-image: url('chrome://userchrome/content/pages/options/images/presets/win/firefox-${ThemeUtils.stylePreset[i].version}.png');" flex="1" />
                 <div class="content">
                     <label value="${ThemeUtils.stylePreset[i].name}" flex="1" />
                 </div>
@@ -289,8 +289,8 @@ let homepageContainer = document.getElementById("system-style-container");
 for (const i of Object.keys(ThemeUtils.sysStylePreset)) {
     presetCard = `
         <vbox class="card ${ThemeUtils.sysStylePreset[i].value}">
-            <radio value="${ThemeUtils.sysStylePreset[i].value}" class="card-wrapper">
-                <image flex="1" />
+            <radio value="${ThemeUtils.sysStylePreset[i].value}" class="card-content">
+                <image class="card-image" flex="1" />
                 <div class="content">
                     <label value="${ThemeUtils.sysStylePreset[i].name}" flex="1" />
                 </div>

@@ -1,3 +1,13 @@
+:root {
+    --card-background-color: hsl(204, 83%, 54%);
+    --card-name-background-color: -moz-Dialog;
+
+    &:not([echelon-system-style="winxp"])[echelon-appearance-blue],
+    & .card-container[hardcode-blue] .content {
+        --card-name-background-color: hsl(210, 55%, 92%);
+    }
+}
+
 .card-container {
 	display: grid;
 
@@ -6,49 +16,55 @@
         width: 100%;
         height: 122px;
         display: flex;
-        border: 1px solid;
-        border-block-start-color: rgba(23, 51, 78, 0.15);
-        border-block-end-color: rgba(23, 51, 78, 0.20);
-        border-inline-color: rgba(23, 51, 78, 0.17);
-        background-color: #269DEB;
-        background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
         padding: 0;
         border-radius: 3px;
         cursor: pointer;
         position: relative;
-        box-shadow: inset 0 0 1px 0 rgba(8, 22, 37, 0), inset 0 1px 0 rgba(255, 255, 255, 0.40), inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 4px rgba(8, 22, 37, 0.1), 0 0 10px rgba(8, 22, 37, 0);
-    
+        box-shadow: 0 0 4px rgba(8, 22, 37, 0.1), 0 0 10px rgba(8, 22, 37, 0);
         transition-property: background-image, border-color, box-shadow !important;
         transition-duration: 250ms !important;
     
-        &:hover {
-            background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.35));
-            border-color: rgba(8, 22, 37, .25) rgba(8, 22, 37, .27) rgba(8, 22, 37, .3);
-            box-shadow: inset 0 0 1px 0 rgba(8, 22, 37, 0), inset 0 1px 0 rgba(255, 255, 255, 0.40), inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 4px rgba(8, 22, 37, 0), 0 0 10px rgba(8, 22, 37, 0.3);
-    
-            .card-wrapper .content {
-                border-color: rgba(8, 22, 37, .25) rgba(8, 22, 37, .27) rgba(8, 22, 37, .3);
-            }
-    
-            &:active {
-                transition-duration: 0ms;
-                background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-                box-shadow: inset 0 0 1px 0 rgba(8, 22, 37, .5), 0 1px 0 white;
-            }
+        &::before {
+            content: '';
+            inset: 0;
+            position: absolute;
+            border: 1px solid;
+            border-block-start-color: rgba(23, 51, 78, 0.15);
+            border-block-end-color: rgba(23, 51, 78, 0.20);
+            border-inline-color: rgba(23, 51, 78, 0.17);
+            border-radius: inherit;
+            box-shadow: inset 0 0 1px 0 rgba(8, 22, 37, 0), inset 0 1px 0 rgba(255, 255, 255, 0.40), inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+            pointer-events: none;
+            z-index: 1;
+            transition-property: background-image, border-color, box-shadow !important;
+            transition-duration: 250ms !important;
         }
     
-        .card-wrapper {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: stretch;
-            margin-inline: -1px;
-            margin-block: -1px;
-            border-radius: 2px;
+        .card-content {
+            width: 100%;
+            height: 100%;
+            appearance: none;
             padding: 0;
+            margin: 0;
+            background-color: var(--card-background-color);
+            background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
+            border-radius: inherit;
+            flex-direction: column;
+            align-items: stretch;
             overflow: hidden;
-            position: relative;
+    
+            .checked {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 4px;
+                left: 5px;
+                background-image: url("chrome://userchrome/content/framework/apathum/images/card/card-checked.png");
+                opacity: 0;
+            
+                transition-property: opacity !important;
+                transition-duration: 250ms !important;
+            }
     
             .year {
                 top: 6px;
@@ -70,68 +86,90 @@
             .content {
                 display: flex;
                 align-items: center;
-                padding: 4px 12px 5px;
+                padding: 4px 10px 5px;
                 height: 20px;
-                background-color: -moz-Dialog;
-                :root:is([echelon-appearance-blue]) & {
-                    background-color: #E0EBF6;
-                }
+                background-color: var(--card-name-background-color);
                 background-image: linear-gradient(to bottom, hsla(0,0%,100%,.6), hsla(0,0%,100%,.1));
-                border: 1px solid;
-                border-block-end-color: rgba(23, 51, 78, 0.20);
-                border-inline-color: rgba(23, 51, 78, 0.17);
-                border-top: 0;
                 color: #1F364C;
                 font-weight: bold;
                 font-size: 8pt;
                 text-transform: uppercase;
                 transition-property: border-color !important;
                 transition-duration: 250ms !important;
-                border-bottom-left-radius: 2px;
-                border-bottom-right-radius: 2px;
     
                 label {
                     margin: 0;
                     cursor: inherit;                 
                 }
             }
-
-            .checked {
-                width: 20px;
-                height: 20px;
-                position: absolute;
-                top: 4px;
-                left: 5px;
-                background-image: url("chrome://userchrome/content/framework/apathum/images/card/card-checked.png");
-                opacity: 0;
-            
-                transition-property: opacity !important;
-                transition-duration: 250ms !important;
+        }
+    
+        &:hover {
+            box-shadow: 0 0 4px rgba(8, 22, 37, 0), 0 0 10px rgba(8, 22, 37, 0.3);
+    
+            .card-content {
+                background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.35));
+                border-color: rgba(8, 22, 37, .25) rgba(8, 22, 37, .27) rgba(8, 22, 37, .3);
+            }
+    
+            &::before {
+                box-shadow: inset 0 0 1px 0 rgba(8, 22, 37, 0), inset 0 1px 0 rgba(255, 255, 255, 0.40), inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+            }
+    
+            &:active {
+                box-shadow: 0 1px 0 white;
+                transition-duration: 0ms;
+    
+                &::before {
+                    box-shadow: inset 0 0 1px 0 rgba(8, 22, 37, .5), inset 0 1px 0 rgba(255, 255, 255, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
+                    transition-duration: 0ms;
+                }
+    
+                .card-content {
+                    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+                }
             }
         }
-
-        &:hover .card-wrapper .checked,
-        .card-wrapper[selected] .checked {
+    
+        &:hover .card-content .checked,
+        .card-content[selected] .checked {
             opacity: 1;
         }
-
+    
         &:hover .card-wrapper {
             &[selected] .checked {
                 background-position-x: -20px;
             }
-
+    
             .checked {
                 background-position-x: -60px;
             }
         }
-
-        &:hover:active .card-wrapper {
-            &[selected] .checked {
-                background-position-x: -40px;
+    
+        &:hover {
+            .card-content {
+                .checked {
+                    background-position-x: -60px;
+    
+                }
+    
+                &[selected] {
+                    .checked {
+                        background-position-x: -20px;
+                    }
+                }
             }
-
-            .checked {
-                background-position-x: -80px;
+    
+            &:active .card-content {
+                .checked {
+                    background-position-x: -80px;
+                }
+        
+                &[selected] {
+                    .checked {
+                        background-position-x: -40px;
+                    }
+                }
             }
         }
     

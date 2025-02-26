@@ -140,6 +140,14 @@
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 }
 
+:root {
+  --card-background-color: hsl(204, 83%, 54%);
+  --card-name-background-color: -moz-Dialog;
+}
+:root:not([echelon-system-style=winxp])[echelon-appearance-blue], :root .card-container[hardcode-blue] .content {
+  --card-name-background-color: hsl(210, 55%, 92%);
+}
+
 .card-container {
   display: grid;
 }
@@ -148,47 +156,54 @@
   width: 100%;
   height: 122px;
   display: flex;
-  border: 1px solid;
-  border-block-start-color: rgba(23, 51, 78, 0.15);
-  border-block-end-color: rgba(23, 51, 78, 0.2);
-  border-inline-color: rgba(23, 51, 78, 0.17);
-  background-color: #269DEB;
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
   padding: 0;
   border-radius: 3px;
   cursor: pointer;
   position: relative;
-  box-shadow: inset 0 0 1px 0 rgba(8, 22, 37, 0), inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 4px rgba(8, 22, 37, 0.1), 0 0 10px rgba(8, 22, 37, 0);
+  box-shadow: 0 0 4px rgba(8, 22, 37, 0.1), 0 0 10px rgba(8, 22, 37, 0);
   transition-property: background-image, border-color, box-shadow !important;
   transition-duration: 250ms !important;
 }
-.card-container .card:hover {
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.35));
-  border-color: rgba(8, 22, 37, 0.25) rgba(8, 22, 37, 0.27) rgba(8, 22, 37, 0.3);
-  box-shadow: inset 0 0 1px 0 rgba(8, 22, 37, 0), inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 4px rgba(8, 22, 37, 0), 0 0 10px rgba(8, 22, 37, 0.3);
+.card-container .card::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  border: 1px solid;
+  border-block-start-color: rgba(23, 51, 78, 0.15);
+  border-block-end-color: rgba(23, 51, 78, 0.2);
+  border-inline-color: rgba(23, 51, 78, 0.17);
+  border-radius: inherit;
+  box-shadow: inset 0 0 1px 0 rgba(8, 22, 37, 0), inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+  z-index: 1;
+  transition-property: background-image, border-color, box-shadow !important;
+  transition-duration: 250ms !important;
 }
-.card-container .card:hover .card-wrapper .content {
-  border-color: rgba(8, 22, 37, 0.25) rgba(8, 22, 37, 0.27) rgba(8, 22, 37, 0.3);
-}
-.card-container .card:hover:active {
-  transition-duration: 0ms;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-  box-shadow: inset 0 0 1px 0 rgba(8, 22, 37, 0.5), 0 1px 0 white;
-}
-.card-container .card .card-wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: stretch;
-  margin-inline: -1px;
-  margin-block: -1px;
-  border-radius: 2px;
+.card-container .card .card-content {
+  width: 100%;
+  height: 100%;
+  appearance: none;
   padding: 0;
+  margin: 0;
+  background-color: var(--card-background-color);
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
+  border-radius: inherit;
+  flex-direction: column;
+  align-items: stretch;
   overflow: hidden;
-  position: relative;
 }
-.card-container .card .card-wrapper .year {
+.card-container .card .card-content .checked {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  background-image: url("chrome://userchrome/content/framework/apathum/images/card/card-checked.png");
+  opacity: 0;
+  transition-property: opacity !important;
+  transition-duration: 250ms !important;
+}
+.card-container .card .card-content .year {
   top: 6px;
   right: 8px;
   position: absolute;
@@ -204,46 +219,47 @@
   font-size: 8pt;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
-.card-container .card .card-wrapper .content {
+.card-container .card .card-content .content {
   display: flex;
   align-items: center;
-  padding: 4px 12px 5px;
+  padding: 4px 10px 5px;
   height: 20px;
-  background-color: -moz-Dialog;
+  background-color: var(--card-name-background-color);
   background-image: linear-gradient(to bottom, hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1));
-  border: 1px solid;
-  border-block-end-color: rgba(23, 51, 78, 0.2);
-  border-inline-color: rgba(23, 51, 78, 0.17);
-  border-top: 0;
   color: #1F364C;
   font-weight: bold;
   font-size: 8pt;
   text-transform: uppercase;
   transition-property: border-color !important;
   transition-duration: 250ms !important;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
 }
-:root:is([echelon-appearance-blue]) .card-container .card .card-wrapper .content {
-  background-color: #E0EBF6;
-}
-.card-container .card .card-wrapper .content label {
+.card-container .card .card-content .content label {
   margin: 0;
   cursor: inherit;
 }
-.card-container .card .card-wrapper .checked {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 4px;
-  left: 5px;
-  background-image: url("chrome://userchrome/content/framework/apathum/images/card/card-checked.png");
-  opacity: 0;
-  transition-property: opacity !important;
-  transition-duration: 250ms !important;
+.card-container .card:hover {
+  box-shadow: 0 0 4px rgba(8, 22, 37, 0), 0 0 10px rgba(8, 22, 37, 0.3);
 }
-.card-container .card:hover .card-wrapper .checked,
-.card-container .card .card-wrapper[selected] .checked {
+.card-container .card:hover .card-content {
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.35));
+  border-color: rgba(8, 22, 37, 0.25) rgba(8, 22, 37, 0.27) rgba(8, 22, 37, 0.3);
+}
+.card-container .card:hover::before {
+  box-shadow: inset 0 0 1px 0 rgba(8, 22, 37, 0), inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+.card-container .card:hover:active {
+  box-shadow: 0 1px 0 white;
+  transition-duration: 0ms;
+}
+.card-container .card:hover:active::before {
+  box-shadow: inset 0 0 1px 0 rgba(8, 22, 37, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
+  transition-duration: 0ms;
+}
+.card-container .card:hover:active .card-content {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+}
+.card-container .card:hover .card-content .checked,
+.card-container .card .card-content[selected] .checked {
   opacity: 1;
 }
 .card-container .card:hover .card-wrapper[selected] .checked {
@@ -252,11 +268,17 @@
 .card-container .card:hover .card-wrapper .checked {
   background-position-x: -60px;
 }
-.card-container .card:hover:active .card-wrapper[selected] .checked {
-  background-position-x: -40px;
+.card-container .card:hover .card-content .checked {
+  background-position-x: -60px;
 }
-.card-container .card:hover:active .card-wrapper .checked {
+.card-container .card:hover .card-content[selected] .checked {
+  background-position-x: -20px;
+}
+.card-container .card:hover:active .card-content .checked {
   background-position-x: -80px;
+}
+.card-container .card:hover:active .card-content[selected] .checked {
+  background-position-x: -40px;
 }
 .card-container .card .radio-container {
   position: absolute;

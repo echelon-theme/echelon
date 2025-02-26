@@ -260,11 +260,6 @@ body > hbox {
 	background-repeat: no-repeat;
 }
 
-#homepage-container .card {
-	background-size: cover;
-	background-position: center center;
-}
-
 .section {
 	height: 100%;
   	overflow-y: auto;
@@ -371,6 +366,7 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
 }
 
 .about-content {
+	padding: 25px;
 	background: radial-gradient(50.06% 4px at 49.94% 0%, rgba(23, 45, 68, 0.2) 0%, rgba(23, 45, 68, 0) 100%), radial-gradient(50.06% 25px at 49.94% 0%, rgba(23, 45, 68, 0.11) 0%, rgba(23, 45, 68, 0) 100%);
 }
 
@@ -469,8 +465,15 @@ label:not(.header)[needs-restart-label]::after {
 	background-position: 23px 10px;
 }
 
-.about-content {
-	padding: 25px;
+.view-credits-button {
+	padding-inline: 14px;
+	padding-block: 0;
+	cursor: pointer;
+}
+
+.view-credits-container {
+	padding-inline: 14px;
+	padding-block: 28px;
 }
 
 .about-table {

@@ -281,10 +281,10 @@ function buildPresetCards() {
 
         presetCard = `
             <vbox class="card">
-                <radio value="${i}" class="card-wrapper">
+                <radio value="${i}" class="card-content">
                     <div class="checked" />
                     <div class="year">${ThemeUtils.stylePreset[i].year}</div>
-                    <image style="background-image: url('chrome://userchrome/content/pages/options/images/presets/${platform}/firefox-${ThemeUtils.stylePreset[i].version}.png');" flex="1" />
+                    <image class="card-image" style="background-image: url('chrome://userchrome/content/pages/options/images/presets/${platform}/firefox-${ThemeUtils.stylePreset[i].version}.png');" flex="1" />
                     <div class="content">
                         <label value="${ThemeUtils.stylePreset[i].name}" flex="1" />
                     </div>
@@ -310,10 +310,11 @@ let homepageContainer = document.getElementById("homepage-container");
 
 for (const i of Object.keys(ThemeUtils.styleHomepage)) {
     presetCard = `
-        <vbox class="card" style="background-image: url('chrome://userchrome/content/pages/options/images/homepage/firefox-${ThemeUtils.styleHomepage[i].version}.png');">
-            <radio value="${i}" class="card-wrapper">
+        <vbox class="card">
+            <radio value="${i}" class="card-content">
                 <div class="checked" />
                 <div class="year">${ThemeUtils.styleHomepage[i].year}</div>
+                <image class="card-image" style="background-size: cover; background-position: center -10px; background-image: url('chrome://userchrome/content/pages/options/images/homepage/firefox-${ThemeUtils.styleHomepage[i].version}.png');" flex="1" />
                 <div class="content">
                     <label value="${ThemeUtils.styleHomepage[i].name}" flex="1" />
                 </div>
