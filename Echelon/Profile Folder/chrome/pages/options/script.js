@@ -4,6 +4,7 @@ ChromeUtils.defineESModuleGetters(window, {
 });
 const { PrefUtils, VersionUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 const gOptionsBundle = document.getElementById("optionsBundle");
+const { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");
 
 let g_themeManager = new EchelonThemeManager;
 g_themeManager.init(
@@ -16,6 +17,74 @@ g_themeManager.init(
         ]
     }
 );
+
+function getWinVer()
+{
+    if (Services.appinfo.OS != "WINNT")
+    {
+        return "Not applicable";
+    }
+
+    let kernel32 = ctypes.open("kernel32.dll");
+
+    let OSVERSIONINFOW = new ctypes.StructType("OSVERSIONINFOW", [
+        {"dwOSVersionInfoSize": ctypes.uint32_t},
+        {"dwMajorVersion": ctypes.uint32_t},
+        {"dwMinorVersion": ctypes.uint32_t},
+        {"dwBuildNumber": ctypes.uint32_t},
+        {"dwPlatformId": ctypes.uint32_t},
+        {"szCDSVersion": new ctypes.ArrayType(ctypes.char16_t, 128)}
+    ]);
+
+    let GetVersionExW = kernel32.declare(
+        "GetVersionExW",
+        ctypes.winapi_abi,
+        ctypes.int32_t,
+        OSVERSIONINFOW.ptr
+    );
+
+    let osv = new OSVERSIONINFOW();
+    osv.dwOSVersionInfoSize = OSVERSIONINFOW.size;
+    if (GetVersionExW(osv.address()))
+    {
+        return `${osv.dwMajorVersion}.${osv.dwMinorVersion}.${osv.dwBuildNumber}`;
+    }
+    return "Failed";
+}
+
+function getTrueWinVer()
+{
+    if (Services.appinfo.OS != "WINNT")
+    {
+        return "Not applicable";
+    }
+
+    let ntdll = ctypes.open("ntdll.dll");
+
+    let RTL_OSVERSIONINFOW = new ctypes.StructType("RTL_OSVERSIONINFOW", [
+        {"dwOSVersionInfoSize": ctypes.uint32_t},
+        {"dwMajorVersion": ctypes.uint32_t},
+        {"dwMinorVersion": ctypes.uint32_t},
+        {"dwBuildNumber": ctypes.uint32_t},
+        {"dwPlatformId": ctypes.uint32_t},
+        {"szCDSVersion": new ctypes.ArrayType(ctypes.char16_t, 128)}
+    ]);
+
+    let RtlGetVersion = ntdll.declare(
+        "RtlGetVersion",
+        ctypes.winapi_abi,
+        ctypes.int32_t,
+        RTL_OSVERSIONINFOW.ptr
+    );
+
+    let osv = new RTL_OSVERSIONINFOW();
+    osv.dwOSVersionInfoSize = RTL_OSVERSIONINFOW.size;
+    if (RtlGetVersion(osv.address()) == 0)
+    {
+        return `${osv.dwMajorVersion}.${osv.dwMinorVersion}.${osv.dwBuildNumber}`;
+    }
+    return "Failed";
+}
 
 document.querySelector(".restart-later-button").addEventListener("click",  function () {
     document.querySelector("[data-modal='restart-needed']").visibility("hide");
@@ -375,9 +444,22 @@ async function loadVersion() {
         identifier.value = gOptionsBundle.getFormattedString("version_format", [localEchelonJSON.version]);
 	})
 
-    document.querySelectorAll("#build").forEach(async identifier => {
-        identifier.value = gOptionsBundle.getFormattedString("build_format", [localEchelonJSON.build]);
+    document.querySelectorAll("#version-short").forEach(async identifier => {
+        identifier.value = localEchelonJSON.version;
 	})
+
+    document.querySelectorAll("#build").forEach(async identifier => {
+        identifier.value = localEchelonJSON.build;
+	})
+
+    document.querySelectorAll("#channel").forEach(async identifier => {
+        identifier.value = localEchelonJSON.channel;
+	})
+
+    for (const aboutSection of document.querySelectorAll(".about-section-text[data-content]"))
+    {
+        aboutSection.value = eval(aboutSection.dataset.content);
+    }
 
     if (updateAvailable) {
         updateString = gOptionsBundle.getString("update_available");

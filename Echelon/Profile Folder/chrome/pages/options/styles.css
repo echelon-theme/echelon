@@ -192,6 +192,7 @@ body > hbox {
 	transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275), ease-out !important;
 	transition-duration: 330ms, 100ms !important;
 	pointer-events: all;
+	align-items: center;
 }
 
 .section:not([selected="true"]) {
@@ -204,16 +205,18 @@ body > hbox {
 }
 
 .options-header {
+	width: 700px;
 	color: #5B758B;
 	font-weight: lighter;
 	font-size: 18px;
-	padding: 28px 25px;
+	padding: 28px 0;
 	padding-block-end: 0;
 	font-family: 'Segoe UI', sans-serif;
 }
 
 .options-content {
-	padding: 25px;
+	width: 700px;
+	padding: 25px 0;
 }
 
 .header-image {
@@ -237,10 +240,6 @@ body > hbox {
 
 #section-native-controls .header-image {
 	background-position-x: -26px;
-}
-
-#section-about .header-image {
-	background-position-x: -78px;
 }
 
 .header-text {
@@ -343,7 +342,8 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
 }
 
 .about-header {
-	height: 160px;
+	width: 100%;
+	min-height: 160px;
 	border-block-end: 1px solid white;
 	background-image: url("chrome://userchrome/content/branding/echelon/content/about-logo.png"),
 					  url("chrome://echelon/content/firefox-29/customizableui/background-noise-toolbar.png"),
@@ -366,8 +366,9 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
 }
 
 .about-content {
+	width: 700px;
 	padding: 25px;
-	background: radial-gradient(50.06% 4px at 49.94% 0%, rgba(23, 45, 68, 0.2) 0%, rgba(23, 45, 68, 0) 100%), radial-gradient(50.06% 25px at 49.94% 0%, rgba(23, 45, 68, 0.11) 0%, rgba(23, 45, 68, 0) 100%);
+	background: radial-gradient(50.06% 4px at 49.94% 0%, rgba(23, 45, 68, 0.2) 0%, rgba(23, 45, 68, 0) 100%);
 }
 
 .about-header-info {
@@ -389,9 +390,13 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
 }
 
 .about-header-ver {
-	font-size: 11px;
-	font-weight: bold;
-	text-transform: uppercase;
+	font-size: 14px;
+	text-transform: lowercase;
+}
+
+.about-header-build {
+	font-size: 13px;
+	text-transform: lowercase;
 }
 
 .about-header-update {
@@ -504,4 +509,112 @@ label:not(.header)[needs-restart-label]::after {
 	background-color: #ECECEC;
 	box-shadow: inset -2px 0 2px -2px rgba(0, 0, 0, .15);
 	border: 0;
+}
+
+.view-credits-container .header-image {
+	background-position-x: -130px;
+}
+
+.about-content-section {
+	margin-block-end: 20px;
+}
+
+.about-content-header {
+	min-height: 23px;
+	padding-inline: 20px;
+	margin-inline: 2px;
+	margin-block-end: -1px;
+	max-width: 130px;
+}
+
+.about-content-header-background {
+	margin-inline: -20px;
+}
+
+.about-content-header-background-left,
+.about-content-header-background-right {
+	width: 22px;
+	height: 23px;
+	position: relative;
+}
+
+.about-content-header-background-middle {
+	background-image: url("chrome://userchrome/content/pages/options/images/about-header-middle.png"), linear-gradient(to bottom, hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1));
+	background-repeat: repeat-x, repeat;
+	background-size: auto 23px, auto auto;
+	background-color: hsl(210, 50%, 95.3%);
+}
+
+.about-content-header-background-left::after,
+.about-content-header-background-left::before,
+.about-content-header-background-right::after,
+.about-content-header-background-right::before {
+	content: '';
+	display: flex;
+	width: 22px;
+	height: 23px;
+	position: absolute;
+}
+
+.about-content-header-background-left::before {
+	mask-image: url("chrome://userchrome/content/pages/options/images/about-header-left-mask.svg");
+	background-color: hsl(210, 50%, 95.3%);
+	background-image: linear-gradient(to bottom, hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1));
+}
+
+.about-content-header-background-right::before {
+	mask-image: url("chrome://userchrome/content/pages/options/images/about-header-right-mask.svg");
+	background-color: hsl(210, 50%, 95.3%);
+	background-image: linear-gradient(to bottom, hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1));
+}
+
+.about-content-header-background-left::after {
+	background-image: url("chrome://userchrome/content/pages/options/images/about-header-left.png");
+}
+
+.about-content-header-background-right::after {
+	background-image: url("chrome://userchrome/content/pages/options/images/about-header-right.png");
+}
+
+.about-content-header-text {
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #1F364C;
+	text-transform: uppercase;
+	text-shadow: 0 1px 0 white;
+	text-align: center;
+	cursor: inherit;
+}
+
+.about-section-content {
+	border: 1px solid #B7C6D4;
+	background-color: hsl(210, 50%, 95.3%);
+	border-radius: 3px;
+	box-shadow: 0 0 4px rgba(8, 22, 37, 0.1), 0 0 10px rgba(8, 22, 37, 0);
+}
+
+.about-section {
+	padding: 10px 25px;
+}
+
+.about-section:not(:first-of-type) {
+	border-block-start: 1px solid hsl(210, 100%, 99%);
+}
+
+.about-section:not(:last-of-type) {
+	border-block-end: 1px solid #B7C6D4;
+}
+
+.about-section-header {
+	font-weight: bold;
+	font-size: 8pt;
+	text-transform: uppercase; 
+	color: #000;
+}
+
+.about-section-text {
+	margin: 0;
 }
