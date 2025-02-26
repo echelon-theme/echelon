@@ -38,6 +38,10 @@
 	-moz-user-focus: ignore;
 }
 
+label {
+    cursor: inherit;
+}
+
 @import "components/_modal";
 @import "components/_card";
 @import "components/_menulist";

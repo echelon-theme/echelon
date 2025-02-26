@@ -34,6 +34,10 @@
   -moz-user-focus: ignore;
 }
 
+label {
+  cursor: inherit;
+}
+
 .modal-container {
   display: flex;
   align-items: center;
@@ -186,7 +190,7 @@
   padding: 0;
   margin: 0;
   background-color: var(--card-background-color);
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
+  background-image: url("chrome://userchrome/content/windows/wizard/assets/bgnoise.png"), url("chrome://userchrome/content/windows/wizard/assets/bggrid.png"), radial-gradient(402% 100% at 50% 0%, #4792C9 0%, #285783 100%);
   border-radius: inherit;
   flex-direction: column;
   align-items: stretch;
@@ -241,7 +245,7 @@
   box-shadow: 0 0 4px rgba(8, 22, 37, 0), 0 0 10px rgba(8, 22, 37, 0.3);
 }
 .card-container .card:hover .card-content {
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.35));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0)), url("chrome://userchrome/content/windows/wizard/assets/bgnoise.png"), url("chrome://userchrome/content/windows/wizard/assets/bggrid.png"), radial-gradient(402% 100% at 50% 0%, #4792C9 0%, #285783 100%);
   border-color: rgba(8, 22, 37, 0.25) rgba(8, 22, 37, 0.27) rgba(8, 22, 37, 0.3);
 }
 .card-container .card:hover::before {
@@ -256,7 +260,7 @@
   transition-duration: 0ms;
 }
 .card-container .card:hover:active .card-content {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url("chrome://userchrome/content/windows/wizard/assets/bgnoise.png"), url("chrome://userchrome/content/windows/wizard/assets/bggrid.png"), radial-gradient(402% 100% at 50% 0%, #4792C9 0%, #285783 100%);
 }
 .card-container .card:hover .card-content .checked,
 .card-container .card .card-content[selected] .checked {
