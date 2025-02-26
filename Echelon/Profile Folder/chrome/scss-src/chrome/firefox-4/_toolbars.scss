@@ -482,13 +482,13 @@
     }
 }
 
-:root[tabsintitlebar][echelon-style-6][echelon-system-style="winxp"] {
+:root:not([lwtheme="true"])[tabsintitlebar][echelon-style-6][echelon-system-style="winxp"] {
     #main-menubar > menu {
         border: 2px solid transparent;
-        color: white !important;
+        color: var(--captiontext, CaptionText) !important;
 
         &:-moz-window-inactive {
-            color: #D8E4F8 !important;
+            color: var(--inactivecaptiontext, InactiveCaptionText) !important;
         }
 
         &[_moz-menuactive] {

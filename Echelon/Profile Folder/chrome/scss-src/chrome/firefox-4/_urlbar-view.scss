@@ -215,6 +215,13 @@
                         .urlbarView-url {
                             color:#006600 !important;
                         }
+
+                        &[row-selectable]:not([selected]):hover,
+                        &[selected] {
+                            .urlbarView-url {
+                                color: inherit !important;
+                            }
+                        }
                     }
                 }
             }

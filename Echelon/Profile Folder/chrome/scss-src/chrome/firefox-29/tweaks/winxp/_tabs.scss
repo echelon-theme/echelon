@@ -1,4 +1,4 @@
-&[tabsintitlebar="true"] {
+&:not([lwtheme="true"])[tabsintitlebar="true"] {
     #TabsToolbar {
         color: var(--captiontext, CaptionText) !important;
         &:-moz-window-inactive {

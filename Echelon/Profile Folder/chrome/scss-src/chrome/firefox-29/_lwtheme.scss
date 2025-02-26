@@ -1,0 +1,66 @@
+&[lwtheme="true"] {
+    #titlebar {
+        appearance: none !important;
+
+        #titlebar-content {
+            visibility: collapse !important;
+        }
+    }
+
+    &[lwtheme-brighttext] {
+        #TabsToolbar {
+            .tab-close-button {
+                &:not(:hover, :hover:active, [selected]) {
+                    background-position-x: -48px !important;
+                }
+            }
+
+            #tabs-newtab-button,
+            #new-tab-button {
+                .toolbarbutton-icon {
+                    @include set-background("firefox-29/tabbrowser/newtab-inverted.png");
+                }
+            }
+
+            #alltabs-button {
+                .toolbarbutton-icon {
+                    @include set-background("firefox-14/toolbarbutton-dropdown-arrow-inverted.png");
+                }
+            }
+        }
+    }
+
+    &[lwtheme-image] {
+        #tabbrowser-tabs {
+            &:not([movingtab]) {
+                .tab-background {
+                    &[selected] {
+                        .tab-background-middle {
+                            background-color: transparent !important;
+                            background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-active-middle.png"),
+                                              linear-gradient(transparent, transparent 2px, rgba(254,254,254,0.72) 2px, rgba(254,254,254,0.72) 2px, rgba(250,250,250,0.88) 3px, rgba(250,250,250,0.88) 3px, rgba(254,254,254,0.72) 4px, rgba(254,254,254,0.72) 4px, rgba(253,253,253,0.45)),
+                                              var(--lwt-header-image) !important;
+                            background-position: 0 0, 0 0, right top !important;
+                            background-repeat: repeat-x, repeat-x, no-repeat !important;
+                            background-size: auto 100%, auto 100%, auto auto !important;
+                            background-attachment: scroll, scroll, fixed !important;
+                        }
+                        
+                        .tab-background-start,
+                        .tab-background-end {
+                            &::before {
+                                background-color: transparent !important;
+                                background-image: linear-gradient(transparent, transparent 2px, rgba(254,254,254,0.72) 2px, rgba(254,254,254,0.72) 2px, rgba(250,250,250,0.88) 3px, rgba(250,250,250,0.88) 3px, rgba(254,254,254,0.72) 4px, rgba(254,254,254,0.72) 4px, rgba(253,253,253,0.45)), var(--lwt-header-image) !important;
+                                background-position: 0 0, right top !important;;
+                                background-repeat: repeat-x, no-repeat !important;
+                                background-size: auto 100%, auto auto !important;
+                                background-attachment: scroll, fixed !important;
+                                mask-size: unset !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

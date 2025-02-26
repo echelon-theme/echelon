@@ -36,7 +36,9 @@
 
 @mixin toolbar-icons($map) {
     @each $id, $icon in $map {
-        @include toolbar-icon("#{$id}", $icon);
+        &:not([lwtheme-brighttext]) {
+            @include toolbar-icon("#{$id}", $icon);
+        }
     }
 }
 

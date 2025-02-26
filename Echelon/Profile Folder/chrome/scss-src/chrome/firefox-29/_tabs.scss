@@ -80,15 +80,10 @@
             min-width: 100px !important;
             max-width: var(--tab-max-width) !important;
             width: 0 !important;
-            transition: min-width 200ms ease-out,
-                        max-width 230ms ease-out !important;
 
             &:not([fadein]) {
                 max-width: 0.1px !important;
                 min-width: 0.1px !important;
-                visibility: hidden !important;
-                transition: none !important;
-                opacity: 1 !important;
             }
         }
 
@@ -140,6 +135,10 @@
                                       none !important;
                     background-size: auto 100% !important;
                     padding-top: 2px !important;
+
+                    :root[lwtheme="true"] & {
+                        background-color: var(--toolbar-bgcolor) !important;
+                    }
                 }
 
                 .tab-background-start,

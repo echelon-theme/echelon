@@ -34,8 +34,15 @@
         }
     }
 
+    #main-menubar > menu:not([_moz-menuactive="true"], [disabled="true"]),
     #TabsToolbar {
         color: inherit !important;
+    }
+
+    #main-menubar > menu[_moz-menuactive] {
+        background-color: -moz-menuhover !important;
+        color: -moz-menuhovertext !important;
+        text-shadow: none !important;
     }
 
     &:not([lwtheme-brighttext], [echelon-style-6]) #TabsToolbar {

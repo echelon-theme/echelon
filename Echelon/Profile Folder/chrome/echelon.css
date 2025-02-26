@@ -493,14 +493,14 @@ window {
   appearance: auto !important;
 }
 
-:root[tabsintitlebar][echelon-style-6][echelon-system-style=winxp] #main-menubar > menu {
+:root:not([lwtheme=true])[tabsintitlebar][echelon-style-6][echelon-system-style=winxp] #main-menubar > menu {
   border: 2px solid transparent;
-  color: white !important;
+  color: var(--captiontext, CaptionText) !important;
 }
-:root[tabsintitlebar][echelon-style-6][echelon-system-style=winxp] #main-menubar > menu:-moz-window-inactive {
-  color: #D8E4F8 !important;
+:root:not([lwtheme=true])[tabsintitlebar][echelon-style-6][echelon-system-style=winxp] #main-menubar > menu:-moz-window-inactive {
+  color: var(--inactivecaptiontext, InactiveCaptionText) !important;
 }
-:root[tabsintitlebar][echelon-style-6][echelon-system-style=winxp] #main-menubar > menu[_moz-menuactive] {
+:root:not([lwtheme=true])[tabsintitlebar][echelon-style-6][echelon-system-style=winxp] #main-menubar > menu[_moz-menuactive] {
   background-color: -moz-menuhover !important;
   color: -moz-menuhovertext !important;
 }
@@ -792,127 +792,127 @@ window {
                                rgba(229,114,0,.5) 65%,
                                rgba(229,114,0,0));
 }
-:root #back-button {
+:root:not([lwtheme-brighttext]) #back-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/back-large.png") !important;
 }
-:root #forward-button {
+:root:not([lwtheme-brighttext]) #forward-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/forward.png") !important;
 }
-:root #stop-button {
+:root:not([lwtheme-brighttext]) #stop-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/stop.png") !important;
 }
-:root #reload-button {
+:root:not([lwtheme-brighttext]) #reload-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/reload.png") !important;
 }
-:root #home-button {
+:root:not([lwtheme-brighttext]) #home-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/home.png") !important;
 }
-:root #downloads-button {
+:root:not([lwtheme-brighttext]) #downloads-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/download.png") !important;
 }
-:root #downloads-indicator-anchor {
+:root:not([lwtheme-brighttext]) #downloads-indicator-anchor {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/download.png") !important;
 }
-:root #downloads-button[attention=success] {
+:root:not([lwtheme-brighttext]) #downloads-button[attention=success] {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/download-glow.png") !important;
 }
-:root #history-button {
+:root:not([lwtheme-brighttext]) #history-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/history.png") !important;
 }
-:root #bookmarks-button {
+:root:not([lwtheme-brighttext]) #bookmarks-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/bookmarksMenu.png") !important;
 }
-:root #bookmarks-menu-button {
+:root:not([lwtheme-brighttext]) #bookmarks-menu-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/bookmarksMenu.png") !important;
 }
-:root #print-button {
+:root:not([lwtheme-brighttext]) #print-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/print.png") !important;
 }
-:root #new-tab-button {
+:root:not([lwtheme-brighttext]) #new-tab-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/new-tab.png") !important;
 }
-:root #new-window-button {
+:root:not([lwtheme-brighttext]) #new-window-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/new-window.png") !important;
 }
-:root #cut-button {
+:root:not([lwtheme-brighttext]) #cut-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/edit-cut.png") !important;
 }
-:root #copy-button {
+:root:not([lwtheme-brighttext]) #copy-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/edit-copy.png") !important;
 }
-:root #paste-button {
+:root:not([lwtheme-brighttext]) #paste-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/edit-paste.png") !important;
 }
-:root #fullscreen-button {
+:root:not([lwtheme-brighttext]) #fullscreen-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/fullscreen.png") !important;
 }
-:root #zoom-out-button {
+:root:not([lwtheme-brighttext]) #zoom-out-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/zoom-out.png") !important;
 }
-:root #zoom-in-button {
+:root:not([lwtheme-brighttext]) #zoom-in-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/zoom-in.png") !important;
 }
-:root #PanelUI-menu-button {
+:root:not([lwtheme-brighttext]) #PanelUI-menu-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/menu.png") !important;
 }
-:root #save-to-pocket-button {
+:root:not([lwtheme-brighttext]) #save-to-pocket-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/pocket.png") !important;
 }
-:root #save-to-pocket-button[open] {
+:root:not([lwtheme-brighttext]) #save-to-pocket-button[open] {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/pocket_active.png") !important;
 }
-:root #unified-extensions-button {
+:root:not([lwtheme-brighttext]) #unified-extensions-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/addons.png") !important;
 }
-:root #fxa-toolbar-menu-button {
+:root:not([lwtheme-brighttext]) #fxa-toolbar-menu-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/sync.png") !important;
 }
-:root #fxa-toolbar-menu-button[status=active] {
+:root:not([lwtheme-brighttext]) #fxa-toolbar-menu-button[status=active] {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/sync-throbber.png") !important;
 }
-:root #nav-bar-overflow-button {
+:root:not([lwtheme-brighttext]) #nav-bar-overflow-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/chevron.png") !important;
 }
-:root #characterencoding-button {
+:root:not([lwtheme-brighttext]) #characterencoding-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/characterEncoding.png") !important;
 }
-:root #history-panelmenu {
+:root:not([lwtheme-brighttext]) #history-panelmenu {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/history.png") !important;
 }
-:root #developer-button {
+:root:not([lwtheme-brighttext]) #developer-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/developer.png") !important;
 }
-:root #echelon-button {
+:root:not([lwtheme-brighttext]) #echelon-button {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/echelon.png") !important;
 }
-:root #panic-button {
+:root:not([lwtheme-brighttext]) #panic-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/forget.png") !important;
 }
-:root #panic-button[open] {
+:root:not([lwtheme-brighttext]) #panic-button[open] {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/forget_active.png") !important;
 }
-:root #open-file-button {
+:root:not([lwtheme-brighttext]) #open-file-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/open.png") !important;
 }
-:root #save-page-button {
+:root:not([lwtheme-brighttext]) #save-page-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/save.png") !important;
 }
-:root #email-link-button {
+:root:not([lwtheme-brighttext]) #email-link-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/mail.png") !important;
 }
-:root #sync-button {
+:root:not([lwtheme-brighttext]) #sync-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/synced-tabs.png") !important;
 }
-:root #sidebar-button {
+:root:not([lwtheme-brighttext]) #sidebar-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/sidebars.png") !important;
 }
-:root #screenshot-button {
+:root:not([lwtheme-brighttext]) #screenshot-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/screenshot.png") !important;
 }
-:root #logins-button {
+:root:not([lwtheme-brighttext]) #logins-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/login.png") !important;
 }
-:root #import-button {
+:root:not([lwtheme-brighttext]) #import-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/import.png") !important;
 }
 :root[lwtheme-brighttext] #back-button {
@@ -1562,6 +1562,9 @@ window {
 }
 :root:not([echelon-style-7])[echelon-system-style=winxp] .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-url {
   color: #006600 !important;
+}
+:root:not([echelon-style-7])[echelon-system-style=winxp] .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row[row-selectable]:not([selected]):hover .urlbarView-url, :root:not([echelon-style-7])[echelon-system-style=winxp] .urlbarView .urlbarView-body-inner .urlbarView-results .urlbarView-row[selected] .urlbarView-url {
+  color: inherit !important;
 }
 
 #PersonalToolbar {
@@ -4189,8 +4192,14 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[lwtheme=true][tabsintitlebar=true][sizemode=maximized] #titlebar > * {
   visibility: visible !important;
 }
+:root[lwtheme=true] #main-menubar > menu:not([_moz-menuactive=true], [disabled=true]),
 :root[lwtheme=true] #TabsToolbar {
   color: inherit !important;
+}
+:root[lwtheme=true] #main-menubar > menu[_moz-menuactive] {
+  background-color: -moz-menuhover !important;
+  color: -moz-menuhovertext !important;
+  text-shadow: none !important;
 }
 :root[lwtheme=true]:not([lwtheme-brighttext], [echelon-style-6]) #TabsToolbar .tab-background,
 :root[lwtheme=true]:not([lwtheme-brighttext], [echelon-style-6]) #TabsToolbar #tabs-newtab-button {
@@ -4589,10 +4598,10 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-5]:not([lwtheme], [echelon-system-style=winxp], [echelon-style-6][echelon-system-style=win8], [echelon-style-6][echelon-system-style=win10])[echelon-appearance-blue] #navigator-toolbox::after {
   background-color: #aabccf !important;
 }
-:root[echelon-style-5] #back-button:not(.unified-with-urlbar) {
+:root[echelon-style-5]:not([lwtheme-brighttext]) #back-button:not(.unified-with-urlbar) {
   list-style-image: url("chrome://echelon/content/firefox-4/toolbar/back.png") !important;
 }
-:root[echelon-style-5] #home-button {
+:root[echelon-style-5]:not([lwtheme-brighttext]) #home-button {
   list-style-image: url("chrome://echelon/content/firefox-14/toolbar/home.png") !important;
 }
 :root[echelon-style-5][lwtheme-brighttext] #home-button {
@@ -4912,16 +4921,16 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
-:root[echelon-style-6] #bookmarks-menu-button {
+:root[echelon-style-6]:not([lwtheme-brighttext]) #bookmarks-menu-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/bookmarksMenu.png") !important;
 }
-:root[echelon-style-6] #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button {
+:root[echelon-style-6]:not([lwtheme-brighttext]) #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/bookmark.png") !important;
 }
-:root[echelon-style-6] #bookmarks-menu-button .toolbarbutton-menubutton-button {
+:root[echelon-style-6]:not([lwtheme-brighttext]) #bookmarks-menu-button .toolbarbutton-menubutton-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/bookmark-hollow.png") !important;
 }
-:root[echelon-style-6] #fxa-toolbar-menu-button[status=active] {
+:root[echelon-style-6]:not([lwtheme-brighttext]) #fxa-toolbar-menu-button[status=active] {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/syncProgress-toolbar.png") !important;
 }
 :root[echelon-style-6][lwtheme-brighttext] #bookmarks-menu-button {
@@ -5034,14 +5043,10 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   min-width: 100px !important;
   max-width: var(--tab-max-width) !important;
   width: 0 !important;
-  transition: min-width 200ms ease-out, max-width 230ms ease-out !important;
 }
 :root[echelon-style-6] #TabsToolbar .tabbrowser-tab:not([pinned]):not([fadein]) {
   max-width: 0.1px !important;
   min-width: 0.1px !important;
-  visibility: hidden !important;
-  transition: none !important;
-  opacity: 1 !important;
 }
 :root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-close-button,
 :root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background {
@@ -5084,6 +5089,9 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-active-middle.png"), linear-gradient(transparent, transparent 2px, rgba(254, 254, 254, 0.72) 2px, rgba(254, 254, 254, 0.72) 2px, rgba(250, 250, 250, 0.88) 3px, rgba(250, 250, 250, 0.88) 3px, rgba(254, 254, 254, 0.72) 4px, rgba(254, 254, 254, 0.72) 4px, rgba(253, 253, 253, 0.45)), none !important;
   background-size: auto 100% !important;
   padding-top: 2px !important;
+}
+:root[lwtheme=true] :root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-middle {
+  background-color: var(--toolbar-bgcolor) !important;
 }
 :root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-start::before, :root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-start::after,
 :root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-background[selected] .tab-background-end::before,
@@ -5221,120 +5229,120 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-image: url("chrome://echelon/content/firefox-29/privatebrowsing/privatebrowsing-mask-titlebar-XPVista7-tall.png") !important;
   height: 28px !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #back-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #back-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/back-large.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #back-button:not(.unified-with-urlbar) {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #back-button:not(.unified-with-urlbar) {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/back.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #forward-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #forward-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/forward.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #stop-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #stop-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/stop.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #reload-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #reload-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/reload.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #home-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #home-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/home.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #downloads-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #downloads-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/download.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #downloads-indicator-anchor {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #downloads-indicator-anchor {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/download.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #history-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #history-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/history.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #bookmarks-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #bookmarks-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/bookmarksMenu.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #bookmarks-menu-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #bookmarks-menu-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/bookmarksMenu.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/bookmark.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #bookmarks-menu-button .toolbarbutton-menubutton-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #bookmarks-menu-button .toolbarbutton-menubutton-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/bookmark-hollow.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #print-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #print-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/print.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #new-tab-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #new-tab-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/new-tab.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #new-window-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #new-window-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/new-window.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #cut-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #cut-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/edit-cut.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #copy-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #copy-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/edit-copy.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #paste-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #paste-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/edit-paste.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #fullscreen-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #fullscreen-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/fullscreen.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #zoom-out-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #zoom-out-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/zoom-out.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #zoom-in-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #zoom-in-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/zoom-in.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #PanelUI-menu-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #PanelUI-menu-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/menu.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #save-to-pocket-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #save-to-pocket-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/pocket.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #save-to-pocket-button[open] {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #save-to-pocket-button[open] {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/pocket_active.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #unified-extensions-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #unified-extensions-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/addons.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #fxa-toolbar-menu-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #fxa-toolbar-menu-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/sync.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #fxa-toolbar-menu-button[status=active] {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #fxa-toolbar-menu-button[status=active] {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/syncProgress-toolbar.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #nav-bar-overflow-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #nav-bar-overflow-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/chevron.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #characterencoding-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #characterencoding-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/characterEncoding.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #history-panelmenu {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #history-panelmenu {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/history.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #developer-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #developer-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/developer.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp] #echelon-button {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme-brighttext]) #echelon-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/winxp/echelon.png") !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp][tabsintitlebar=true] #TabsToolbar {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme=true])[tabsintitlebar=true] #TabsToolbar {
   color: var(--captiontext, CaptionText) !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp][tabsintitlebar=true] #TabsToolbar:-moz-window-inactive {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme=true])[tabsintitlebar=true] #TabsToolbar:-moz-window-inactive {
   color: var(--inactivecaptiontext, InactiveCaptionText) !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp][tabsintitlebar=true] #TabsToolbar .tab-close-button:not(:hover, :hover:active, [selected]) {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme=true])[tabsintitlebar=true] #TabsToolbar .tab-close-button:not(:hover, :hover:active, [selected]) {
   background-position-x: -48px !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp][tabsintitlebar=true] #TabsToolbar #tabs-newtab-button .toolbarbutton-icon,
-:root[echelon-style-6][echelon-system-style=winxp][tabsintitlebar=true] #TabsToolbar #new-tab-button .toolbarbutton-icon {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme=true])[tabsintitlebar=true] #TabsToolbar #tabs-newtab-button .toolbarbutton-icon,
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme=true])[tabsintitlebar=true] #TabsToolbar #new-tab-button .toolbarbutton-icon {
   background-image: url("chrome://echelon/content/firefox-29/tabbrowser/newtab-inverted.png") !important;
   list-style-image: none !important;
 }
-:root[echelon-style-6][echelon-system-style=winxp][tabsintitlebar=true] #TabsToolbar #alltabs-button .toolbarbutton-icon {
+:root[echelon-style-6][echelon-system-style=winxp]:not([lwtheme=true])[tabsintitlebar=true] #TabsToolbar #alltabs-button .toolbarbutton-icon {
   background-image: url("chrome://echelon/content/firefox-14/toolbarbutton-dropdown-arrow-inverted.png") !important;
   list-style-image: none !important;
 }
@@ -5349,103 +5357,103 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   --toolbarbutton-icon-fill: light-dark(rgb(121, 124, 128), rgb(255, 255, 255)) !important;
   --toolbarbutton-icon-fill-attention: light-dark(rgb(23, 126, 229), rgb(23, 126, 229)) !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #back-button, :root[echelon-style-6][echelon-system-style=win10] #back-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #back-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #back-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/back-large.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #back-button:not(.unified-with-urlbar), :root[echelon-style-6][echelon-system-style=win10] #back-button:not(.unified-with-urlbar) {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #back-button:not(.unified-with-urlbar), :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #back-button:not(.unified-with-urlbar) {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/back.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #forward-button, :root[echelon-style-6][echelon-system-style=win10] #forward-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #forward-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #forward-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/forward.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #stop-button, :root[echelon-style-6][echelon-system-style=win10] #stop-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #stop-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #stop-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/stop.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #reload-button, :root[echelon-style-6][echelon-system-style=win10] #reload-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #reload-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #reload-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/reload.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #home-button, :root[echelon-style-6][echelon-system-style=win10] #home-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #home-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #home-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/home.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #downloads-button, :root[echelon-style-6][echelon-system-style=win10] #downloads-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #downloads-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #downloads-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/download.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #downloads-indicator-anchor, :root[echelon-style-6][echelon-system-style=win10] #downloads-indicator-anchor {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #downloads-indicator-anchor, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #downloads-indicator-anchor {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/download.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #history-button, :root[echelon-style-6][echelon-system-style=win10] #history-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #history-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #history-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/history.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #bookmarks-button, :root[echelon-style-6][echelon-system-style=win10] #bookmarks-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #bookmarks-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #bookmarks-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/bookmarksMenu.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #bookmarks-menu-button, :root[echelon-style-6][echelon-system-style=win10] #bookmarks-menu-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #bookmarks-menu-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #bookmarks-menu-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/bookmarksMenu.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button, :root[echelon-style-6][echelon-system-style=win10] #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/bookmark.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #bookmarks-menu-button .toolbarbutton-menubutton-button, :root[echelon-style-6][echelon-system-style=win10] #bookmarks-menu-button .toolbarbutton-menubutton-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #bookmarks-menu-button .toolbarbutton-menubutton-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #bookmarks-menu-button .toolbarbutton-menubutton-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/bookmark-hollow.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #print-button, :root[echelon-style-6][echelon-system-style=win10] #print-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #print-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #print-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/print.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #new-tab-button, :root[echelon-style-6][echelon-system-style=win10] #new-tab-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #new-tab-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #new-tab-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/new-tab.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #new-window-button, :root[echelon-style-6][echelon-system-style=win10] #new-window-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #new-window-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #new-window-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/new-window.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #cut-button, :root[echelon-style-6][echelon-system-style=win10] #cut-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #cut-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #cut-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/edit-cut.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #copy-button, :root[echelon-style-6][echelon-system-style=win10] #copy-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #copy-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #copy-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/edit-copy.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #paste-button, :root[echelon-style-6][echelon-system-style=win10] #paste-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #paste-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #paste-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/edit-paste.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #fullscreen-button, :root[echelon-style-6][echelon-system-style=win10] #fullscreen-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #fullscreen-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #fullscreen-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/fullscreen.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #zoom-out-button, :root[echelon-style-6][echelon-system-style=win10] #zoom-out-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #zoom-out-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #zoom-out-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/zoom-out.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #zoom-in-button, :root[echelon-style-6][echelon-system-style=win10] #zoom-in-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #zoom-in-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #zoom-in-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/zoom-in.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #PanelUI-menu-button, :root[echelon-style-6][echelon-system-style=win10] #PanelUI-menu-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #PanelUI-menu-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #PanelUI-menu-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/menu.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #save-to-pocket-button, :root[echelon-style-6][echelon-system-style=win10] #save-to-pocket-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #save-to-pocket-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #save-to-pocket-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/pocket.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #save-to-pocket-button[open], :root[echelon-style-6][echelon-system-style=win10] #save-to-pocket-button[open] {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #save-to-pocket-button[open], :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #save-to-pocket-button[open] {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/pocket_active.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #unified-extensions-button, :root[echelon-style-6][echelon-system-style=win10] #unified-extensions-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #unified-extensions-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #unified-extensions-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/addons.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #fxa-toolbar-menu-button, :root[echelon-style-6][echelon-system-style=win10] #fxa-toolbar-menu-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #fxa-toolbar-menu-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #fxa-toolbar-menu-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/sync.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #fxa-toolbar-menu-button[status=active], :root[echelon-style-6][echelon-system-style=win10] #fxa-toolbar-menu-button[status=active] {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #fxa-toolbar-menu-button[status=active], :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #fxa-toolbar-menu-button[status=active] {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/syncProgress-toolbar.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #nav-bar-overflow-button, :root[echelon-style-6][echelon-system-style=win10] #nav-bar-overflow-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #nav-bar-overflow-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #nav-bar-overflow-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/chevron.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #characterencoding-button, :root[echelon-style-6][echelon-system-style=win10] #characterencoding-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #characterencoding-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #characterencoding-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/characterEncoding.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #history-panelmenu, :root[echelon-style-6][echelon-system-style=win10] #history-panelmenu {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #history-panelmenu, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #history-panelmenu {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/history.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #developer-button, :root[echelon-style-6][echelon-system-style=win10] #developer-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #developer-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #developer-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/developer.svg") !important;
 }
-:root[echelon-style-6][echelon-system-style=win8] #echelon-button, :root[echelon-style-6][echelon-system-style=win10] #echelon-button {
+:root[echelon-style-6][echelon-system-style=win8]:not([lwtheme-brighttext]) #echelon-button, :root[echelon-style-6][echelon-system-style=win10]:not([lwtheme-brighttext]) #echelon-button {
   list-style-image: url("chrome://echelon/content/firefox-29/toolbar/win8/echelon.svg") !important;
 }
 :root[echelon-style-6][echelon-system-style=win8] #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button,
@@ -5562,6 +5570,42 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 :root[echelon-style-6][echelon-system-style=win8] #TabsToolbar > .private-browsing-indicator, :root[echelon-style-6][echelon-system-style=win10] #TabsToolbar > .private-browsing-indicator {
   background-image: url("chrome://echelon/content/firefox-29/privatebrowsing/privatebrowsing-mask-tabstrip.png") !important;
+}
+:root[echelon-style-6][lwtheme=true] #titlebar {
+  appearance: none !important;
+}
+:root[echelon-style-6][lwtheme=true] #titlebar #titlebar-content {
+  visibility: collapse !important;
+}
+:root[echelon-style-6][lwtheme=true][lwtheme-brighttext] #TabsToolbar .tab-close-button:not(:hover, :hover:active, [selected]) {
+  background-position-x: -48px !important;
+}
+:root[echelon-style-6][lwtheme=true][lwtheme-brighttext] #TabsToolbar #tabs-newtab-button .toolbarbutton-icon,
+:root[echelon-style-6][lwtheme=true][lwtheme-brighttext] #TabsToolbar #new-tab-button .toolbarbutton-icon {
+  background-image: url("chrome://echelon/content/firefox-29/tabbrowser/newtab-inverted.png") !important;
+  list-style-image: none !important;
+}
+:root[echelon-style-6][lwtheme=true][lwtheme-brighttext] #TabsToolbar #alltabs-button .toolbarbutton-icon {
+  background-image: url("chrome://echelon/content/firefox-14/toolbarbutton-dropdown-arrow-inverted.png") !important;
+  list-style-image: none !important;
+}
+:root[echelon-style-6][lwtheme=true][lwtheme-image] #tabbrowser-tabs:not([movingtab]) .tab-background[selected] .tab-background-middle {
+  background-color: transparent !important;
+  background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-active-middle.png"), linear-gradient(transparent, transparent 2px, rgba(254, 254, 254, 0.72) 2px, rgba(254, 254, 254, 0.72) 2px, rgba(250, 250, 250, 0.88) 3px, rgba(250, 250, 250, 0.88) 3px, rgba(254, 254, 254, 0.72) 4px, rgba(254, 254, 254, 0.72) 4px, rgba(253, 253, 253, 0.45)), var(--lwt-header-image) !important;
+  background-position: 0 0, 0 0, right top !important;
+  background-repeat: repeat-x, repeat-x, no-repeat !important;
+  background-size: auto 100%, auto 100%, auto auto !important;
+  background-attachment: scroll, scroll, fixed !important;
+}
+:root[echelon-style-6][lwtheme=true][lwtheme-image] #tabbrowser-tabs:not([movingtab]) .tab-background[selected] .tab-background-start::before,
+:root[echelon-style-6][lwtheme=true][lwtheme-image] #tabbrowser-tabs:not([movingtab]) .tab-background[selected] .tab-background-end::before {
+  background-color: transparent !important;
+  background-image: linear-gradient(transparent, transparent 2px, rgba(254, 254, 254, 0.72) 2px, rgba(254, 254, 254, 0.72) 2px, rgba(250, 250, 250, 0.88) 3px, rgba(250, 250, 250, 0.88) 3px, rgba(254, 254, 254, 0.72) 4px, rgba(254, 254, 254, 0.72) 4px, rgba(253, 253, 253, 0.45)), var(--lwt-header-image) !important;
+  background-position: 0 0, right top !important;
+  background-repeat: repeat-x, no-repeat !important;
+  background-size: auto 100%, auto auto !important;
+  background-attachment: scroll, fixed !important;
+  mask-size: unset !important;
 }
 
 /* ::::: Firefox 56 ::::: */
