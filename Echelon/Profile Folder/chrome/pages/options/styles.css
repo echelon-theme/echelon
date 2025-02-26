@@ -262,6 +262,7 @@ body > hbox {
 .section {
 	height: 100%;
   	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .content-section {
