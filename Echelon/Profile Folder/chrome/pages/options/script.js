@@ -470,3 +470,68 @@ async function loadVersion() {
     document.querySelector(".about-header-info").setAttribute("status", updateStatus);
 }
 document.addEventListener("DOMContentLoaded", loadVersion);
+
+
+let windowRootDocument = windowRoot.ownerGlobal.document.documentElement;
+
+function setLWTbg() {
+    let isLwt = windowRootDocument.hasAttribute("lwtheme");
+    let isLwtImage = windowRootDocument.hasAttribute("lwtheme-image");
+
+    document.documentElement.removeAttribute("lwtheme");
+    document.documentElement.removeAttribute("lwtheme-image");
+    document.documentElement.style.removeProperty("--lwt-accent-color");
+    document.documentElement.style.removeProperty("--lwt-header-image");
+    
+    if (isLwt) {
+        document.documentElement.setAttribute("lwtheme", "true");
+        document.documentElement.style.setProperty(
+            `--lwt-accent-color`,
+            windowRootDocument.style.getPropertyValue("--lwt-accent-color")
+        )
+        document.documentElement.style.setProperty(
+            `--lwt-text-color`,
+            windowRootDocument.style.getPropertyValue("--lwt-text-color")
+        )
+        document.documentElement.style.setProperty(
+            `--toolbar-field-focus-background-color`,
+            windowRootDocument.style.getPropertyValue("--toolbar-field-focus-background-color")
+        )
+
+        if (isLwt && isLwtImage) {
+            document.documentElement.setAttribute("lwtheme-image", "true");
+            if (windowRootDocument.getAttribute("lwtheme-brighttext")) {
+                document.documentElement.setAttribute("lwtheme-brighttext", "true");
+            }
+
+            let lwtImage = windowRootDocument.style.getPropertyValue("--lwt-header-image");
+            let lwtImageUrl = lwtImage.replaceAll("\\", "");
+            document.documentElement.style.setProperty(
+                `--lwt-header-image`,
+                lwtImageUrl
+            );
+        }
+    }
+}
+
+function lwtOffsetObserver() {
+    let browserElementObserver = new ResizeObserver(([entry]) => {
+        document.documentElement.style.setProperty(
+            "--lwt-header-image-offset",
+            (entry.contentRect.height) + "px"
+        );
+    });
+
+    browserElementObserver.observe(windowRootDocument.querySelector("#navigator-toolbox"));
+}
+
+const lwtOffsetObserverPrefs = {
+	observe: function (subject, topic, data) {
+		if (topic == "nsPref:changed") {
+			setLWTbg();
+		}
+	},
+};
+document.addEventListener("DOMContentLoaded", setLWTbg);
+Services.prefs.addObserver("extensions.activeThemeID", lwtOffsetObserverPrefs, false);
+document.addEventListener("DOMContentLoaded", lwtOffsetObserver);

@@ -42,6 +42,27 @@
 	text-shadow: 0 1px 0 white;
 }
 
+#echelonOptions[lwtheme] {
+	--card-name-background-color: var(--lwt-accent-color);
+	
+	color: var(--lwt-text-color);
+	background-color: var(--lwt-accent-color);
+}
+
+#echelonOptions[lwtheme][lwtheme-brighttext] .options-header {
+	color: var(--toolbar-field-focus-background-color);
+}
+
+#echelonOptions[lwtheme][lwtheme-image] {
+	background-image: linear-gradient(to bottom, rgba(180, 193, 205, 0), rgba(180, 193, 205, 0.25)), linear-gradient(to bottom, rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), linear-gradient(to bottom, transparent, var(--lwt-accent-color) 75px), var(--lwt-header-image);
+	background-repeat: repeat, repeat, repeat, no-repeat;
+	background-position: left top, left top, left top, right top calc(-1 * var(--lwt-header-image-offset));
+}
+
+#echelonOptions[lwtheme][lwtheme-image][lwtheme-brighttext] {
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .25);
+}
+
 #echelonOptions:not([echelon-system-style="winxp"], [echelon-system-style="win8"][echelon-style-6="true"])[echelon-appearance-blue="true"] {
 	background-color: hsl(214, 44%, 87%);
 }
@@ -205,7 +226,9 @@ body > hbox {
 }
 
 .options-header {
-	width: 700px;
+	width: 100%;
+	min-width: 100px;
+	max-width: 700px;
 	color: #5B758B;
 	font-weight: lighter;
 	font-size: 18px;
@@ -215,7 +238,9 @@ body > hbox {
 }
 
 .options-content {
-	width: 700px;
+	width: 100%;
+	min-width: 100px;
+	max-width: 700px;
 	padding: 25px 0;
 }
 
@@ -249,7 +274,7 @@ body > hbox {
 
 .card-container {
 	max-width: 700px;
-	grid-template-columns: repeat(auto-fit, minmax(150px, 225px));
+	grid-template-columns: repeat(3, minmax(150px, 225px));
 	gap: 10px;
 	margin-block-end: 15px;
 }
@@ -263,6 +288,10 @@ body > hbox {
 	height: 100%;
   	overflow-y: auto;
 	overflow-x: hidden;
+}
+
+.section:not(#section-about) {
+	padding-inline: 25px;
 }
 
 .content-section {
@@ -367,7 +396,9 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
 }
 
 .about-content {
-	width: 700px;
+	width: 100%;
+	min-width: 100px;
+	max-width: 700px;
 	padding: 25px;
 	background: radial-gradient(50.06% 4px at 49.94% 0%, rgba(23, 45, 68, 0.2) 0%, rgba(23, 45, 68, 0) 100%);
 }
