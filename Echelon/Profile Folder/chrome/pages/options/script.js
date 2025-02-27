@@ -96,7 +96,7 @@ document.querySelector(".restart-now-button").addEventListener("click",  functio
 
 const restartPrompt = {
 	observe: function (subject, topic, data) {
-		if (topic == "nsPref:changed")
+		if (topic == "nsPref:changed" && PrefUtils.tryGetStringPref("Echelon.Option.Branding") != "echelon")
 			document.querySelector("[data-modal='restart-needed']").visibility("show");
 	},
 };
