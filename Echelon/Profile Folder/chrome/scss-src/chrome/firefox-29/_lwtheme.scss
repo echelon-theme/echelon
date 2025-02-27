@@ -1,9 +1,13 @@
 &[lwtheme="true"] {
     #titlebar {
-        appearance: none !important;
+        visibility: hidden !important;
 
         #titlebar-content {
             visibility: collapse !important;
+        }
+
+        > * {
+            visibility: visible !important;
         }
     }
 

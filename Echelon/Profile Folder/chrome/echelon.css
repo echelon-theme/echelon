@@ -5572,10 +5572,13 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   background-image: url("chrome://echelon/content/firefox-29/privatebrowsing/privatebrowsing-mask-tabstrip.png") !important;
 }
 :root[echelon-style-6][lwtheme=true] #titlebar {
-  appearance: none !important;
+  visibility: hidden !important;
 }
 :root[echelon-style-6][lwtheme=true] #titlebar #titlebar-content {
   visibility: collapse !important;
+}
+:root[echelon-style-6][lwtheme=true] #titlebar > * {
+  visibility: visible !important;
 }
 :root[echelon-style-6][lwtheme=true][lwtheme-brighttext] #TabsToolbar .tab-close-button:not(:hover, :hover:active, [selected]) {
   background-position-x: -48px !important;
