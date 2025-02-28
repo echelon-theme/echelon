@@ -22,7 +22,7 @@
         background-color: var(--toolbar-background-color) !important;
     }
 
-    #titlebar {
+    &:not([sizemode="fullscreen"]) #titlebar {
         visibility: visible !important;
     }
     

@@ -129,6 +129,7 @@
     align-items: center !important;
     background-clip: padding-box !important;
     position: relative !important;
+    border-top: 0 !important;
 
     :root[tabs-on-top="true"] & {
         z-index: 1 !important;
