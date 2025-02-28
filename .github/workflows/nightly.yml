@@ -1,0 +1,72 @@
+# shout out preloading https://github.com/angelbruni/Geckium/commit/b3b4ab523be954471dc7b14d0bca85f2c0d6a21b for the original
+name: Echelon Nightly
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  check_date:
+    runs-on: ubuntu-latest
+    name: Check latest commit
+    outputs:
+      should_run: ${{ steps.should_run.outputs.should_run }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Print latest_commit
+        run: echo ${{ github.sha }}
+
+      - id: should_run
+        name: Check if latest commit is less than a day (only on schedule)
+        if: ${{ github.event_name == 'schedule' }}
+        run: |
+          if [ -z "$(git rev-list --after="24 hours ago" ${{ github.sha }})" ]; then
+            echo "should_run=false" >> $GITHUB_OUTPUT
+          else
+            echo "should_run=true" >> $GITHUB_OUTPUT
+          fi
+  build:
+    needs: check_date
+    if: ${{ needs.check_date.outputs.should_run != 'false' || github.event_name != 'schedule' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Extract commit short sha
+        id: vars
+        run: |
+          calculatedSha=$(git rev-parse --short ${{ github.sha }})
+          echo "COMMIT_SHORT_SHA=$calculatedSha" >> $GITHUB_ENV
+
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+        
+      - name: Create Version File
+        run: |
+          rm -f Echelon/Profile\ Folder/chrome/version.json
+          echo '{
+            "version": "1.0",
+            "build": "${{ env.COMMIT_SHORT_SHA }}",
+            "channel": "nightly",
+            "branch": "${{ steps.extract_branch.outputs.branch }}"
+          }' > Echelon/Profile\ Folder/chrome/version.json
+          
+      - name: Setup SASS
+        run: npm install -g sass
+        
+      - name: Compile CSS from SCSS files
+        run: sass --update Echelon/Profile\ Folder/chrome:Echelon/Profile\ Folder/chrome
+        
+      - name: Cleanup the build output
+        run: rm -rf .github .git-hooks .gitignore 
+        
+      - name: Archive the build
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.extract_branch.outputs.branch }}_build_${{ env.COMMIT_SHORT_SHA }}
+          path: .
