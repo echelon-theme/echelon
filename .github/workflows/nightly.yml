@@ -48,19 +48,19 @@ jobs:
         
       - name: Create Version File
         run: |
-          rm -f Profile\ Folder/chrome/version.json
+          rm -f Echelon/Profile\ Folder/chrome/version.json
           echo '{
             "version": "1.0",
             "build": "${{ env.COMMIT_SHORT_SHA }}",
             "channel": "nightly",
             "branch": "${{ steps.extract_branch.outputs.branch }}"
-          }' > Profile\ Folder/chrome/version.json
+          }' > Echelon/Profile\ Folder/chrome/version.json
           
       - name: Setup SASS
         run: npm install -g sass
         
       - name: Compile CSS from SCSS files
-        run: sass --update Profile\ Folder/chrome:Profile\ Folder/chrome
+        run: sass --update Echelon/Profile\ Folder/chrome:Echelon/Profile\ Folder/chrome
         
       - name: Cleanup the build output
         run: rm -rf .github .git-hooks .gitignore 
