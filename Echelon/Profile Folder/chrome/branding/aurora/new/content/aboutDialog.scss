@@ -1,7 +1,11 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 #aboutDialogContainer {
   background-image: url("chrome://branding/content/about-background.png");
   background-repeat: no-repeat;
-  background-color: #000;
+  background-color: rgb(19,8,36);
   color: #fff;
 }
 
@@ -9,20 +13,20 @@
   color: #fff !important;
 }
 
+.text-link:-moz-focusring {
+  border-color: #fff;
+}
+
 #leftBox {
   visibility: collapse !important;
 }
 
 #rightBox {
-  background-image: url("chrome://branding/content/about-wordmark.png");
-  background-size: unset;
   /* this margin prevents text from overlapping the planet image */
   margin-left: 280px;
   margin-right: 20px;
 }
 
 #bottomBox {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0,0,0,.7);
 }
-
-/*# sourceMappingURL=aboutDialog.css.map */

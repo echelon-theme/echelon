@@ -1,7 +1,7 @@
 #aboutDialogContainer {
   background-image: url("chrome://branding/content/about-background.png");
   background-repeat: no-repeat;
-  background-color: rgb(10,17,37);
+  background-color: rgb(10, 17, 37);
   color: #fff;
 }
 
@@ -20,5 +20,7 @@
 }
 
 #bottomBox {
-  background-color: rgba(0,0,0,.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
+
+/*# sourceMappingURL=aboutDialog.css.map */

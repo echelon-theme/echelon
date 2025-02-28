@@ -1,7 +1,7 @@
 #aboutDialogContainer {
   background-image: url("chrome://branding/content/about-background.png");
   background-repeat: no-repeat;
-  background-color: #000;
+  background-color: rgb(10,17,37);
   color: #fff;
 }
 
@@ -14,15 +14,11 @@
 }
 
 #rightBox {
-  background-image: url("chrome://branding/content/about-wordmark.png");
-  background-size: unset;
   /* this margin prevents text from overlapping the planet image */
   margin-left: 280px;
   margin-right: 20px;
 }
 
 #bottomBox {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0,0,0,.7);
 }
-
-/*# sourceMappingURL=aboutDialog.css.map */
