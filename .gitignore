@@ -6,3 +6,9 @@
 /**/chrome/src/
 .DS_Store
 
+*.css
+*.css.map
+
+!userChrome.css
+!userChrome.au.css
+!userContent.css

@@ -12,48 +12,48 @@ function createHomePage() {
     let container = document.body;
 
     homeFragment = `
-        <div id="brandStartSpacer" />
+        <html:div id="brandStartSpacer" />
 
-        <div id="brandStart">
+        <html:div id="brandStart">
             <img id="brandStartLogo" alt="" />
-        </div>
+        </html:div>
 
-        <div id="searchContainer">
+        <html:div id="searchContainer">
         <html:form method="get" name="searchForm" id="searchForm" onsubmit="onSearchSubmit(event)">
-            <div id="searchLogoContainer"><img id="searchEngineLogo" /></div>
-            <div id="searchInputContainer">
+            <html:div id="searchLogoContainer"><img id="searchEngineLogo" /></html:div>
+            <html:div id="searchInputContainer">
             <html:input type="text" name="q" value="" id="searchText" maxlength="256" placeholder="" />
 
-            </div>
-            <div id="searchButtons">
+            </html:div>
+            <html:div id="searchButtons">
             <html:input id="searchSubmit" type="submit" value="${homeBundle.GetStringFromName("searchEngineButton")}" />
-            </div>
+            </html:div>
         </html:form>
-        </div>
+        </html:div>
 
-        <div id="contentContainer">
-        <div id="snippetContainer">
-            <div id="defaultSnippets" hidden="true">
-                <span id="defaultSnippet1">${homeBundle.formatStringFromName("snippet_1", [product])}</span>
-                <span id="defaultSnippet2">${homeBundle.formatStringFromName("snippet_2", [product])}</span>
-            </div>
-            <div id="snippets"/>
-        </div>
+        <html:div id="contentContainer">
+        <html:div id="snippetContainer">
+            <html:div id="defaultSnippets" hidden="true">
+                <html:span id="defaultSnippet1">${homeBundle.formatStringFromName("snippet_1", [product])}</html:span>
+                <html:span id="defaultSnippet2">${homeBundle.formatStringFromName("snippet_2", [product])}</html:span>
+            </html:div>
+            <html:div id="snippets"/>
+        </html:div>
 
         <html:div id="launcher">
-            <button id="restorePreviousSession" onclick="restoreLastSession()">${homeBundle.GetStringFromName("restoreLastSessionButton")}</button>
+            <html:button id="restorePreviousSession" onclick="restoreLastSession()">${homeBundle.GetStringFromName("restoreLastSessionButton")}</html:button>
         </html:div>
-        </div>
+        </html:div>
 
-        <div id="bottomSection">
-            <div id="aboutMozilla">
+        <html:div id="bottomSection">
+            <html:div id="aboutMozilla">
                 <html:a href="http://www.mozilla.com/about/">${homeBundle.GetStringFromName("aboutMozilla")}</html:a>
-            </div>
-            <div id="syncLinksContainer">
+            </html:div>
+            <html:div id="syncLinksContainer">
                 <html:a onclick="windowRoot.ownerGlobal.openPreferences('sync');" class="sync-link" id="setupSyncLink">${homeBundle.GetStringFromName("syncSetup")}</html:a>
                 <html:a onclick="windowRoot.ownerGlobal.gSync.openConnectAnotherDevice();" class="sync-link" id="pairDeviceLink">${homeBundle.GetStringFromName("pairDevice")}</html:a>
-            </div>
-        </div>
+            </html:div>
+        </html:div>
     `
 
     stylesheet = `
@@ -62,41 +62,41 @@ function createHomePage() {
     
     if (style >= 2) {
         homeFragment = `
-            <div class="spacer"/>
-            <div id="topSection">
+            <html:div class="spacer"/>
+            <html:div id="topSection">
             <html:img id="brandLogo"/>
 
-            <div id="searchContainer">
+            <html:div id="searchContainer">
                 <html:form name="searchForm" id="searchForm" onsubmit="onSearchSubmit(event)">
-                <div id="searchLogoContainer"><img id="searchEngineLogo"/></div>
+                <html:div id="searchLogoContainer"><img id="searchEngineLogo"/></html:div>
                 <html:input type="text" name="q" value="" id="searchText" maxlength="256"
                         autofocus="autofocus" />
                 <html:input id="searchSubmit" type="submit" value="${homeBundle.GetStringFromName("searchEngineButton")}"/>
                 </html:form>
-            </div>
+            </html:div>
 
-            <div id="snippetContainer">
-                <div id="defaultSnippets" hidden="true">
-                    <span id="defaultSnippet1">${homeBundle.formatStringFromName("snippet_1", [product])}</span>
-                    <span id="defaultSnippet2">${homeBundle.formatStringFromName("snippet_2", [product])}</span>
-                </div>
-                <div id="snippets"/>
-            </div>
-            </div>
-            <div class="spacer"/>
+            <html:div id="snippetContainer">
+                <html:div id="defaultSnippets" hidden="true">
+                    <html:span id="defaultSnippet1">${homeBundle.formatStringFromName("snippet_1", [product])}</html:span>
+                    <html:span id="defaultSnippet2">${homeBundle.formatStringFromName("snippet_2", [product])}</html:span>
+                </html:div>
+                <html:div id="snippets"/>
+            </html:div>
+            </html:div>
+            <html:div class="spacer"/>
 
-            <div id="launcher">
-            <button class="launchButton" id="downloads" onclick="windowRoot.ownerGlobal.DownloadsPanel.showDownloadsHistory();">${homeBundle.GetStringFromName("downloadsButton")}</button>
-            <button class="launchButton" id="bookmarks" onclick="windowRoot.ownerGlobal.PlacesCommandHook.showPlacesOrganizer('UnfiledBookmarks');">${homeBundle.GetStringFromName("bookmarksButton")}</button>
-            <button class="launchButton" id="history" onclick="windowRoot.ownerGlobal.PlacesCommandHook.showPlacesOrganizer('History');">${homeBundle.GetStringFromName("historyButton")}</button>
-            <button class="launchButton" id="addons" onclick="windowRoot.ownerGlobal.BrowserAddonUI.openAddonsMgr('addons://list/extension');">${homeBundle.GetStringFromName("addonsButton")}</button>
-            <button class="launchButton" id="sync" onclick="windowRoot.ownerGlobal.openPreferences('sync');">${homeBundle.GetStringFromName("syncButton")}</button>
-            <button class="launchButton" id="settings" onclick="windowRoot.ownerGlobal.openPreferences();">${homeBundle.GetStringFromName("settingsButton")}</button>
-            <div id="restorePreviousSessionSeparator"/>
-            <button class="launchButton" id="restorePreviousSession" onclick="restoreLastSession()">${homeBundle.GetStringFromName("restoreLastSessionButton")}</button>
-            </div>
+            <html:div id="launcher">
+            <html:button class="launchButton" id="downloads" onclick="windowRoot.ownerGlobal.DownloadsPanel.showDownloadsHistory();">${homeBundle.GetStringFromName("downloadsButton")}</html:button>
+            <html:button class="launchButton" id="bookmarks" onclick="windowRoot.ownerGlobal.PlacesCommandHook.showPlacesOrganizer('UnfiledBookmarks');">${homeBundle.GetStringFromName("bookmarksButton")}</html:button>
+            <html:button class="launchButton" id="history" onclick="windowRoot.ownerGlobal.PlacesCommandHook.showPlacesOrganizer('History');">${homeBundle.GetStringFromName("historyButton")}</html:button>
+            <html:button class="launchButton" id="addons" onclick="windowRoot.ownerGlobal.BrowserAddonUI.openAddonsMgr('addons://list/extension');">${homeBundle.GetStringFromName("addonsButton")}</html:button>
+            <html:button class="launchButton" id="sync" onclick="windowRoot.ownerGlobal.openPreferences('sync');">${homeBundle.GetStringFromName("syncButton")}</html:button>
+            <html:button class="launchButton" id="settings" onclick="windowRoot.ownerGlobal.openPreferences();">${homeBundle.GetStringFromName("settingsButton")}</html:button>
+            <html:div id="restorePreviousSessionSeparator"/>
+            <html:button class="launchButton" id="restorePreviousSession" onclick="restoreLastSession()">${homeBundle.GetStringFromName("restoreLastSessionButton")}</html:button>
+            </html:div>
 
-            <html:a id="aboutMozilla" href="${homeBundle.GetStringFromName("aboutMozilla")}"/>
+            <html:a id="aboutMozilla" href="http://www.mozilla.com/about/"/>
         `
 
         stylesheet = `
