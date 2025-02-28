@@ -11,6 +11,10 @@
         appearance: toolbarbutton !important;
         -moz-default-appearance: toolbarbutton !important;
         align-items: center !important;
+        border: 1px solid transparent !important;
+        padding: 3px !important;
+        border-radius: 0 !important;
+        background-color: transparent !important;
 
         .toolbarbutton-icon {
             padding: 0 !important;
@@ -20,6 +24,29 @@
 
             &[label]:not([label=""]) {
                 margin-inline-end: 5px !important;
+            }
+        }
+
+        &:not([disabled="true"]) {
+            &:hover {
+                border-color: ThreeDHighlight ThreeDShadow ThreeDShadow ThreeDHighlight !important;
+            }
+
+            &:hover,
+            &:hover:active,
+            &[open="true"] {
+                text-shadow: none !important;
+                color: -moz-DialogText !important;
+            }
+
+            &:hover:active,
+            &[open="true"]:hover,
+            &[open="true"] {
+                border-color: ThreeDShadow ThreeDHighlight ThreeDHighlight ThreeDShadow !important;
+                padding-top: 4px !important;
+                padding-bottom: 2px !important;
+                padding-inline-start: 4px !important;
+                padding-inline-end: 2px !important;
             }
         }
     }

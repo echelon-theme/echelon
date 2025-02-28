@@ -1579,6 +1579,10 @@ window {
   appearance: toolbarbutton !important;
   -moz-default-appearance: toolbarbutton !important;
   align-items: center !important;
+  border: 1px solid transparent !important;
+  padding: 3px !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
 }
 #PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton) .toolbarbutton-icon,
 #PersonalToolbar .toolbarbutton-1 .toolbarbutton-icon {
@@ -1590,6 +1594,27 @@ window {
 #PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton) .toolbarbutton-icon[label]:not([label=""]),
 #PersonalToolbar .toolbarbutton-1 .toolbarbutton-icon[label]:not([label=""]) {
   margin-inline-end: 5px !important;
+}
+#PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton):not([disabled=true]):hover,
+#PersonalToolbar .toolbarbutton-1:not([disabled=true]):hover {
+  border-color: ThreeDHighlight ThreeDShadow ThreeDShadow ThreeDHighlight !important;
+}
+#PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton):not([disabled=true]):hover, #PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton):not([disabled=true]):hover:active, #PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton):not([disabled=true])[open=true],
+#PersonalToolbar .toolbarbutton-1:not([disabled=true]):hover,
+#PersonalToolbar .toolbarbutton-1:not([disabled=true]):hover:active,
+#PersonalToolbar .toolbarbutton-1:not([disabled=true])[open=true] {
+  text-shadow: none !important;
+  color: -moz-DialogText !important;
+}
+#PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton):not([disabled=true]):hover:active, #PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton):not([disabled=true])[open=true]:hover, #PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton):not([disabled=true])[open=true],
+#PersonalToolbar .toolbarbutton-1:not([disabled=true]):hover:active,
+#PersonalToolbar .toolbarbutton-1:not([disabled=true])[open=true]:hover,
+#PersonalToolbar .toolbarbutton-1:not([disabled=true])[open=true] {
+  border-color: ThreeDShadow ThreeDHighlight ThreeDHighlight ThreeDShadow !important;
+  padding-top: 4px !important;
+  padding-bottom: 2px !important;
+  padding-inline-start: 4px !important;
+  padding-inline-end: 2px !important;
 }
 #PersonalToolbar .toolbarbutton-1:not(#bookmarks-menu-button) .toolbarbutton-icon {
   width: 18px !important;
@@ -5574,11 +5599,21 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 :root[echelon-style-6][lwtheme=true] #titlebar {
   visibility: hidden !important;
 }
-:root[echelon-style-6][lwtheme=true] #titlebar #titlebar-content {
+:root[echelon-style-6][lwtheme=true] #titlebar #titlebar-content #appmenu-button-container,
+:root[echelon-style-6][lwtheme=true] #titlebar #titlebar-content #titlebar-spacer,
+:root[echelon-style-6][lwtheme=true] #titlebar #titlebar-content .titlebar-buttonbox-container {
   visibility: collapse !important;
 }
 :root[echelon-style-6][lwtheme=true] #titlebar > * {
   visibility: visible !important;
+}
+:root[echelon-style-6][lwtheme=true][tabsintitlebar][sizemode=normal][echelon-system-style=winxp] #titlebar-content {
+  height: 4px !important;
+  margin-block-end: -4px !important;
+  background-image: linear-gradient(to bottom, rgb(8, 49, 216) 0, rgb(8, 49, 216) 1px, rgb(15, 77, 227) 1px, rgb(15, 77, 227) 2px, rgb(22, 106, 238) 2px, rgb(22, 106, 238) 3px, rgb(8, 85, 221) 3px, rgb(8, 85, 221) 4px, transparent 4px);
+}
+:root[echelon-style-6][lwtheme=true][tabsintitlebar][sizemode=normal][echelon-system-style=winxp] #titlebar-content:-moz-window-inactive {
+  background-image: linear-gradient(to bottom, rgb(91, 104, 205) 0, rgb(91, 104, 205) 1px, rgb(116, 128, 220) 1px, rgb(116, 128, 220) 2px, rgb(117, 140, 221) 2px, rgb(117, 140, 221) 4px, transparent 4px) !important;
 }
 :root[echelon-style-6][lwtheme=true][lwtheme-brighttext] #TabsToolbar .tab-close-button:not(:hover, :hover:active, [selected]) {
   background-position-x: -48px !important;

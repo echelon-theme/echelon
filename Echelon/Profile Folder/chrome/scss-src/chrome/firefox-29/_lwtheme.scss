@@ -3,11 +3,31 @@
         visibility: hidden !important;
 
         #titlebar-content {
-            visibility: collapse !important;
+            #appmenu-button-container,
+            #titlebar-spacer,
+            .titlebar-buttonbox-container {
+                visibility: collapse !important;
+            }
         }
 
         > * {
             visibility: visible !important;
+        }
+    }
+
+    &[tabsintitlebar][sizemode="normal"][echelon-system-style="winxp"] {
+        #titlebar-content {
+            height: 4px !important;
+            margin-block-end: -4px !important;
+            background-image: linear-gradient(to bottom, rgb(8, 49, 216) 0, rgb(8, 49, 216) 1px, rgb(15, 77, 227) 1px, rgb(15, 77, 227) 2px, rgb(22, 106, 238) 2px, rgb(22, 106, 238) 3px, rgb(8, 85, 221) 3px, rgb(8, 85, 221) 4px, transparent 4px);
+
+            &:-moz-window-inactive {
+                background-image: linear-gradient(to bottom,
+                    rgb(91, 104, 205) 0, rgb(91, 104, 205) 1px,
+                    rgb(116, 128, 220) 1px, rgb(116, 128, 220) 2px,
+                    rgb(117, 140, 221) 2px, rgb(117, 140, 221) 4px,
+                    transparent 4px) !important;
+            }
         }
     }
 
