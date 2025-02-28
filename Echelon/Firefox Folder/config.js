@@ -53,6 +53,11 @@ defaultPref("general.smoothScroll.stopDecelerationWeighting", ".4");
 // Restore "View Image Info" menuitem
 defaultPref("browser.menu.showViewImageInfo", true);
 
+// Disable fading scrollbars, enable scrollbar rocker buttons and make thumb square on Linux
+defaultPref("widget.gtk.overlay-scrollbars.enabled", false);
+defaultPref("widget.non-native-theme.gtk.scrollbar.allow-buttons", true);
+defaultPref("widget.non-native-theme.gtk.scrollbar.round-thumb", false);
+
 // Echelon defaults
 defaultPref("Echelon.Appearance.Blue", false);
 defaultPref("Echelon.Appearance.Style", 0);
