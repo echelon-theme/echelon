@@ -54,7 +54,7 @@ jobs:
             "build": "${{ env.COMMIT_SHORT_SHA }}",
             "channel": "nightly",
             "branch": "${{ steps.extract_branch.outputs.branch }}"
-          }' > Profile\ Folder/chrome/version.json
+          }' > Echelon/Profile\ Folder/chrome/version.json
           
       - name: Setup SASS
         run: npm install -g sass
