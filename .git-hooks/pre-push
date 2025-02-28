@@ -9,7 +9,7 @@ if git config --get custom.ignorePostCommitHook > /dev/null; then
     exit 0
 fi
 
-build_number=$(git rev-list --count HEAD)
+build_number=$(git rev-parse --short HEAD)
 branch=$(git rev-parse --abbrev-ref HEAD)
 
 # Ideally, this file would be named .build, but for some reason
