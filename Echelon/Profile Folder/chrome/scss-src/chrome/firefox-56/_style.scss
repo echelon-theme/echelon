@@ -4,6 +4,7 @@
     @import "personalToolbar";
     @import "toolbars";
     @import "urlbar-search";
+    @import "urlbar-view";
 
     &[echelon-system-style="win10"] {
         @import "tweaks/win10/style";
