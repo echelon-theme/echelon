@@ -105,7 +105,8 @@
 
     #tracking-protection-icon-container,
     #pageActionButton,
-    #identity-permission-box {
+    #identity-permission-box,
+    #connection-icon {
         visibility: collapse !important;
     }
 
@@ -394,7 +395,7 @@
     }
 }
 
-#searchbar {
+:root:not([echelon-style-7]) #searchbar {
     .searchbar-search-button {
         margin-inline-end: 4px !important;
 

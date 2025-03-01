@@ -30,8 +30,15 @@ waitForElement("#urlbar").then(e => {
 		gURLBar.search(gURLBar.value);
 		gURLBar.select();
 	}
+});
 
-	
+waitForElement("#identity-box").then(e => {
+	let identityIconBox = gIdentityHandler._identityIconBox;
+
+	let connectionIcon = document.createXULElement("image");
+	connectionIcon.id = "connection-icon";
+
+	identityIconBox.insertBefore(connectionIcon, gIdentityHandler._identityIconLabel);
 });
 
 gIdentityHandler.getEffectiveHost = function _getEffectiveHost() {

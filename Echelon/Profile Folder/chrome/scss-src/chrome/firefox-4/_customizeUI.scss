@@ -41,7 +41,8 @@
         padding-inline: 10px !important;
     }
 
-    #nav-bar-overflow-button {
+    #nav-bar-overflow-button,
+    toolbarpaletteitem[place="palette"] #bookmarks-menu-button-dropmarker {
         visibility: collapse !important;
     }
 

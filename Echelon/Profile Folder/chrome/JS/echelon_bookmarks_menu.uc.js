@@ -75,7 +75,7 @@
             let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
             let action = PageActions.actionForID(PageActions.ACTION_ID_BOOKMARK);
 
-            if (anchor || style == ECHELON_LAYOUT_AUSTRALIS) {
+            if (anchor || style >= ECHELON_LAYOUT_AUSTRALIS) {
                 anchor = document.querySelector("#nav-bar #bookmarks-menu-button");
             } else {
                 anchor = BrowserPageActions.panelAnchorNodeForAction(action);
@@ -94,7 +94,7 @@
             delete this.button;
             let widgetGroup = CustomizableUI.getWidget(this.BOOKMARK_BUTTON_ID);
 
-            if (star || style == ECHELON_LAYOUT_AUSTRALIS) {
+            if (star || style >= ECHELON_LAYOUT_AUSTRALIS) {
                 star = (this.button = widgetGroup.forWindow(window).node);
             } else {
                 star = (this.star = document.getElementById(this.STAR_ID));

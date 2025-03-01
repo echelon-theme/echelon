@@ -108,8 +108,8 @@
     }
 }
 
-&[echelon-appearance-newlogo],
-&[echelon-style-6] {
+&:not([echelon-style-7])[echelon-appearance-newlogo],
+&:not([echelon-style-7])[echelon-style-6] {
     #urlbar {
         & #identity-box {
             &.chromeUI {

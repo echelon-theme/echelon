@@ -1,7 +1,4 @@
 & {
-    --toolbarbutton-icon-fill: light-dark(rgb(76, 76, 76), rgb(255, 255, 255)) !important;
-    --toolbarbutton-icon-fill-attention: light-dark(rgb(22, 125, 227), rgb(23, 126, 229)) !important;
-
     .close-icon {
         @include set-size(20px, 20px);
         @include set-background("firefox-56/close.png");

@@ -13,16 +13,23 @@
     --backbutton-border-color: var(--urlbar-border-color-hover) !important;
     --backbutton-background: rgba(255,255,255,.15) !important;
 
+    #searchbar {
+        border-radius: var(--toolbarbutton-border-radius) !important;
+    }
+    
     #nav-bar {
         #PanelUI-button {
             background-image: none !important;
             border-inline-start: 1px solid !important;
             border-image: linear-gradient(transparent, rgba(0,0,0,.1) 20%, rgba(0,0,0,.1) 80%, transparent) !important;
             border-image-slice: 1 !important;
+            margin-inline-start: 2px !important;
         }
     }
 
-    #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
+    #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified),
+    #PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton),
+    #PersonalToolbar .toolbarbutton-1 {
         background-clip: padding-box !important;
 
         &:not([disabled="true"]):hover,
@@ -42,7 +49,9 @@
             border-top-color: var(--toolbarbutton-border-color) !important;
             transition-duration: 10ms !important;
         }
-
+    }
+    
+    #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
         &#back-button.unified-with-urlbar {
             width: 32px !important;
             min-width: 32px !important;
@@ -82,6 +91,67 @@
             &:not([disabled="true"]):hover:active,
             &:not([disabled="true"])[open] {
                 background-color: var(--toolbarbutton-background-active) !important;
+            }
+        }
+    }
+
+    #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button {
+        position: relative !important;
+
+        .toolbarbutton-menubutton-button {
+            --toolbarbutton-width: 31px !important;
+            border-top-right-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+            visibility: visible !important;
+            border-inline-end-style: none !important;
+        }
+
+        &:is(:hover, [open]):not([disabled="true"]) {
+            .toolbarbutton-menubutton-button,
+            .toolbarbutton-menubutton-dropmarker {
+                background-image: none !important;
+                background-color: var(--toolbarbutton-background-hot) !important;
+                --toolbarbutton-border-color: rgba(0,0,0,.2) !important;
+                box-shadow: var(--toolbarbutton-shadow-hot) !important;
+
+                &:active,
+                &[open] {
+                    background-image: none !important;
+                    background-color: var(--toolbarbutton-background-active) !important;
+                    --toolbarbutton-border-color: rgba(0,0,0,.3) !important;
+                    box-shadow: var(--toolbarbutton-shadow-active) !important;
+                }
+            }
+        }
+
+        #bookmarks-menu-button-dropmarker {
+            --toolbarbutton-width: 32px !important;
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+
+            &::before {
+                content: "";
+                display: flex !important;
+                width: 1px !important;
+                height: 16px !important;
+                margin-inline-end: -1px !important;
+                background-image: linear-gradient(currentColor 0, currentColor 100%) !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+                background-size: 1px 16px !important;
+                opacity: .2 !important;
+                position: absolute !important;
+                left: 31px !important;
+            }
+
+            &::after {
+                visibility: collapse !important;
+            }
+        }
+
+        &:is(:hover, :active, [open]) {
+            #bookmarks-menu-button-dropmarker::before {
+                opacity: 0 !important;
             }
         }
     }

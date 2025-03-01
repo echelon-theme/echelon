@@ -15,13 +15,6 @@
             }
         }
     }
-
-    #tabs-newtab-button {
-        .toolbarbutton-icon {
-            @include set-background("firefox-56/tabbrowser/newtab.svg");
-            fill: currentColor !important;
-        }
-    }
 }
 
 .tabbrowser-tab:hover .tab-background:not([selected]),

@@ -79,6 +79,12 @@
                             background-size: unset !important;
                         }
                     }
+
+                    &[pinned] {
+                        .urlbarView-type-icon {
+                            background-image: none !important;
+                        }
+                    }
                     
                     &[label] {
                         margin-block-start: 0 !important;

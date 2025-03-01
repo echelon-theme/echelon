@@ -124,11 +124,15 @@
     }
 }
 
-#urlbar {
-    .urlbar-input-box {
-        padding-inline-start: 3px !important;
+&:not([echelon-style-7]) {
+    #urlbar {
+        .urlbar-input-box {
+            padding-inline-start: 3px !important;
+        }
     }
+}
 
+#urlbar {
     #identity-box {
         #notification-popup-box {
             z-index: 1 !important;

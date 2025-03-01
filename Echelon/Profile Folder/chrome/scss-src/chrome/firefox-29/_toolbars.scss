@@ -77,7 +77,7 @@
     }
 
     // unified bookmark button styling
-    #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button {
+    &:not([echelon-style-7]) #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button {
         position: relative !important;
 
         &:not([disabled="true"]):hover,
