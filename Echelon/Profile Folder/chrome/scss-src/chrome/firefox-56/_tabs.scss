@@ -6,7 +6,8 @@
             }
         }
 
-        #tabs-newtab-button {
+        #tabs-newtab-button,
+        #new-tab-button {
             .toolbarbutton-icon {
                 @include set-background("firefox-56/tabbrowser/newtab.svg");
                 fill: currentColor !important;

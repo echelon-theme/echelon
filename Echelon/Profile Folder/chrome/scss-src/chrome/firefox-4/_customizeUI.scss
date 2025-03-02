@@ -135,14 +135,16 @@
         margin-block-end: 5px !important;
     }
 
-    #customization-header {
-        font-size: 1.5em !important;
-        line-height: 1.5em !important;
-        color: rgb(64,100,128) !important;
-        font-weight: lighter !important;
-        margin: 0 !important;
-        margin-bottom: 1em !important;
-        padding: 25px 25px 0 !important;
+    :root:not([echelon-style-7]) & {
+        #customization-header {
+            font-size: 1.5em !important;
+            line-height: 1.5em !important;
+            color: rgb(64,100,128) !important;
+            font-weight: lighter !important;
+            margin: 0 !important;
+            margin-bottom: 1em !important;
+            padding: 25px 25px 0 !important;
+        }
     }
 
     #customization-palette {
@@ -155,97 +157,102 @@
 
     #customization-footer {
         grid-area: 2 / 1 / 3 / 2 !important;
-        background-color: rgb(236,236,236) !important;
-        border-top: 1px solid rgb(221,221,221) !important;
-        padding: 15px !important;
     }
 
-    .footer-button,
-    .customizationmode-button,
-    #customization-titlebar-visibility-checkbox {
-        appearance: none !important;
-        border: 1px solid rgb(192,192,192) !important;
-        border-radius: 3px !important;
-        margin: 0 !important;
-        padding: 2px 12px !important;
-        background-color: rgb(251,251,251) !important;
-        color: rgb(71,71,71) !important;
-        box-shadow: 0 1px rgba(255, 255, 255, 0.5),
-                    inset 0 1px rgba(255, 255, 255, 0.5) !important;
-        font-weight: normal !important;
-        min-height: 35px !important;
-        margin-inline-end: 10px !important;
-
-        &[disabled="true"] {
-            opacity: .5 !important;
+    :root:not([echelon-style-7]) & {
+        #customization-footer {
+            background-color: rgb(236,236,236) !important;
+            border-top: 1px solid rgb(221,221,221) !important;
+            padding: 15px !important;
         }
 
-        .button-box {
-            margin-inline-start: 3px !important;
-            margin-inline-end: 4px !important;
-            padding-block-start: 1px !important;
-            padding-block-end: 2px !important;
-        }
+        .footer-button,
+        .customizationmode-button,
+        #customization-titlebar-visibility-checkbox {
+            appearance: none !important;
+            border: 1px solid rgb(192,192,192) !important;
+            border-radius: 3px !important;
+            margin: 0 !important;
+            padding: 2px 12px !important;
+            background-color: rgb(251,251,251) !important;
+            color: rgb(71,71,71) !important;
+            box-shadow: 0 1px rgba(255, 255, 255, 0.5),
+                        inset 0 1px rgba(255, 255, 255, 0.5) !important;
+            font-weight: normal !important;
+            min-height: 35px !important;
+            margin-inline-end: 10px !important;
 
-        &[type="menu"] {
-            .button-menu-dropmarker {
-                margin: 1px !important;
-                width: 11px !important;
-                height: 11px !important;
-                content: none !important;
-                list-style-image: none !important;
-                background-image: url("chrome://echelon/content/firefox-4/arrow-dn.gif") !important;
-                background-repeat: no-repeat !important;
-                background-position: center center !important;
+            &[disabled="true"] {
+                opacity: .5 !important;
+            }
+
+            .button-box {
+                margin-inline-start: 3px !important;
+                margin-inline-end: 4px !important;
+                padding-block-start: 1px !important;
+                padding-block-end: 2px !important;
+            }
+
+            &[type="menu"] {
+                .button-menu-dropmarker {
+                    margin: 1px !important;
+                    width: 11px !important;
+                    height: 11px !important;
+                    content: none !important;
+                    list-style-image: none !important;
+                    background-image: url("chrome://echelon/content/firefox-4/arrow-dn.gif") !important;
+                    background-repeat: no-repeat !important;
+                    background-position: center center !important;
+                }
             }
         }
-    }
 
-    #customization-titlebar-visibility-checkbox {
-        padding: 2px 7px !important;
-        
-        .checkbox-check {
-            visibility: collapse !important;
-        }
+        #customization-titlebar-visibility-checkbox {
+            padding: 2px 7px !important;
+            
+            .checkbox-check {
+                visibility: collapse !important;
+            }
 
-        .checkbox-label-box {
-            margin-inline-start: 3px !important;
-            margin-inline-end: 4px !important;
-            padding-block-start: 1px !important;
-            padding-block-end: 2px !important;
-            align-items: center !important;
-        }
-
-        .checkbox-icon {
-            display: flex !important;
-            width: 24px !important;
-            height: 24px !important;
-            background-image: url("chrome://echelon/content/firefox-29/customizableui/customize-titleBar-toggle.png") !important;
-        }
-
-        .checkbox-label {
-            margin-inline-start: 6px !important;
-        }
-
-        &[checked] {
-            background-color: rgb(218, 218, 218) !important;
-            border-color: rgb(168, 168, 168) !important;
-            text-shadow: 0 1px rgb(236, 236, 236) !important;
-            box-shadow: 0 1px rgba(255, 255, 255, 0.5),
-                        inset 0 1px rgb(196, 196, 196) !important;
+            .checkbox-label-box {
+                margin-inline-start: 3px !important;
+                margin-inline-end: 4px !important;
+                padding-block-start: 1px !important;
+                padding-block-end: 2px !important;
+                align-items: center !important;
+            }
 
             .checkbox-icon {
-                background-position-x: -24px !important;
+                display: flex !important;
+                width: 24px !important;
+                height: 24px !important;
+                background-image: url("chrome://echelon/content/firefox-29/customizableui/customize-titleBar-toggle.png") !important;
+            }
+
+            .checkbox-label {
+                margin-inline-start: 6px !important;
+            }
+
+            &[checked] {
+                background-color: rgb(218, 218, 218) !important;
+                border-color: rgb(168, 168, 168) !important;
+                text-shadow: 0 1px rgb(236, 236, 236) !important;
+                box-shadow: 0 1px rgba(255, 255, 255, 0.5),
+                            inset 0 1px rgb(196, 196, 196) !important;
+
+                .checkbox-icon {
+                    background-position-x: -24px !important;
+                }
+            }
+            
+            :root:not([echelon-style-6]) & {
+                visibility: collapse !important;
             }
         }
-        
-        :root:not([echelon-style-6]) & {
-            visibility: collapse !important;
-        }
-    }
 
-    #customization-reset-button {
-        margin-inline-end: 0 !important;
+        #customization-reset-button {
+            margin-inline-end: 0 !important;
+        }
     }
 
     #customization-done-button {

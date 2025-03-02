@@ -1,0 +1,98 @@
+& {
+    #customization-header {
+        padding: 0 !important;
+        border-bottom: 1px solid ThreeDLightShadow !important;
+        font-size: 1.75em !important;
+        line-height: 1.75em !important;
+        color: GrayText !important;
+        font-weight: 200 !important;
+        padding-bottom: 12px !important;
+        margin: 20px 20px 15px !important;
+    }
+
+    #customization-footer {
+        border-top: 2px solid ThreeDLightShadow !important;
+        padding: 10px !important;
+        background-color: -moz-dialog !important;
+    }
+
+    .footer-button,
+    .customizationmode-button {
+        border: 1px solid #b1b1b1 !important;
+        margin: 6px 10px !important;
+        padding: 2px 5px !important;
+        background-color: #fcfcfd !important;
+        color: rgb(71,71,71) !important;
+        appearance: none !important;
+        font-weight: normal !important;
+        border-radius: 0 !important;
+        min-height: 28px !important;
+    }
+      
+    #customization-titlebar-visibility-checkbox {
+        margin: 6px 10px !important;
+        padding: 2px 5px !important;
+    }
+
+    #customization-reset-button,
+    #customization-undo-reset-button,
+    #customization-done-button {
+        min-width: 10em !important;
+    }
+
+    #customization-done-button {
+        color: #fff !important;
+        font-weight: 700 !important;
+        border-color: #0060df !important;
+        background-color: #0a84ff !important;
+    }
+
+    .footer-button > .box-inherit,
+    .customizationmode-button > .box-inherit {
+        border-width: 0 !important;
+        padding: 3px 0 !important;
+        padding-inline-start: 0 !important;
+        padding-inline-end: 0 !important;
+    }
+
+    #customization-toolbar-visibility-button,
+    #customization-uidensity-button {
+        padding-inline-start: 8px !important;
+    }
+
+    .footer-button[type="menu"] > .box-inherit > .box-inherit > .button-text,
+    .customizationmode-button[type="menu"] > .box-inherit > .box-inherit > .button-text {
+        padding-inline-end: 10px !important;
+    }
+
+    .footer-button > .button-icon,
+    .customizationmode-button > .button-icon {
+        margin-inline-start: 0 !important;
+    }
+
+    .footer-button:not([type="menu"]) > .button-text,
+    .customizationmode-button:not([type="menu"]) > .button-text {
+        margin-inline-end: 0 !important;
+    }
+
+    .footer-button > .box-inherit > .button-menu-dropmarker,
+    .customizationmode-button > .box-inherit > .button-menu-dropmarker {
+        margin-inline-end: 0 !important;
+        padding-inline-end: 0 !important;
+        list-style-image: url("chrome://echelon/content/firefox-56/skin/arrow-dropdown.svg") !important;
+    }
+
+    .footer-button:is(:focus, :active, :hover):not([disabled]),
+    .customizationmode-button[open] {
+        background-color: #e1e1e5 !important;
+    }
+
+    #customization-done-button:is(:focus, :active, :hover):not([disabled]) {
+        background-color: #0060df !important;
+    }
+
+    .footer-button[disabled="true"],
+    .customizationmode-button[disabled="true"] {
+        opacity: .5 !important;
+    }
+}
