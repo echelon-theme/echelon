@@ -62,6 +62,11 @@
 
     &[echelon-system-style="win8"],
     &[echelon-system-style="win10"] {
+        #navigator-toolbox > toolbar {
+            background-clip: padding-box !important;
+            background-image: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.4)) !important;
+        }
+
         #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified),
         #PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton),
         #PersonalToolbar .toolbarbutton-1 {
