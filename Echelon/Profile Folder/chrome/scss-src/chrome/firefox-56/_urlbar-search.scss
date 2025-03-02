@@ -101,6 +101,33 @@
                 }
             }
         }
+
+        #page-action-buttons {
+            order: 1 !important;
+
+            #reader-mode-button {
+                padding: 0 3px !important;
+                width: 22px !important;
+
+                #reader-mode-button-icon {
+                    list-style-image: none !important;
+                    background-image: url("chrome://echelon/content/firefox-56/skin/readerMode.svg") !important;
+                }
+
+                &:hover {
+                    #reader-mode-button-icon {
+                        background-position-x: -16px;
+                    }
+                }
+
+                &:active,
+                &[readeractive="true"] {
+                    #reader-mode-button-icon {
+                        background-position-x: -32px;
+                    }
+                }
+            }
+        }
     }
 
     &:not([chromehidden~="toolbar"]) #forward-button.unified-with-urlbar[disabled] + #urlbar-container #identity-box { 
