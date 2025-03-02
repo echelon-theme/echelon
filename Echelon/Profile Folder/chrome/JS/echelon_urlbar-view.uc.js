@@ -15,6 +15,7 @@ function setURLbarViewAttr() {
     }
 
     e.style.removeProperty(`--urlbarView-width`);
+    e.style.removeProperty(`margin-left`);
 
     let documentRect = ownerGlobal.document.documentElement.getBoundingClientRect();
     let width = documentRect.right - documentRect.left;
@@ -24,14 +25,12 @@ function setURLbarViewAttr() {
     );
     
     let elementRect = e.getBoundingClientRect();
-    if (elementRect.left != "0") {
-        if (popupDirection == "rtl") {
-            let offset = elementRect.right - documentRect.right;
-            e.style.marginRight = offset + "px";
-        } else {
-            let offset =  documentRect.left - elementRect.left;
-            e.style.marginLeft = offset + "px";
-        }
+    if (popupDirection == "rtl") {
+        let offset = elementRect.right - documentRect.right;
+        e.style.marginRight = offset + "px";
+    } else {
+        let offset =  documentRect.left - elementRect.left;
+        e.style.marginLeft = offset + "px";
     }
 
     let needsHandleOverUnderflow = false;
