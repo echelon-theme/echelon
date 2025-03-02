@@ -5,7 +5,7 @@
         min-height: 24px !important;
     }
 
-    :root:not([echelon-style-7]) {
+    :root:not([echelon-style-7]) & {
         .bookmark-item:not(menuitem, .subviewbutton),
         .toolbarbutton-1 {
             margin: 0 !important;

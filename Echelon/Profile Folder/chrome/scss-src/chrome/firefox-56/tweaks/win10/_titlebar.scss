@@ -7,8 +7,13 @@
         appearance: -moz-win-exclude-glass !important;
     }
 
+    &:not([sizemode=maximized]) {
+        #navigator-toolbox {
+            margin-top: 1px !important; // show top white border
+        }
+    }
+
     #navigator-toolbox {
-        margin-top: 1px !important; // show top white border
         border: 0 !important; // remove fake borders
 
         &::after {
@@ -20,6 +25,14 @@
         #navigator-toolbox {
             background-color: hsl(0, 0%, 78%) !important;
         }
+    }
+
+    #titlebar {
+        appearance: none !important;
+    }
+
+    #TabsToolbar .toolbar-items {
+        padding-top: 0 !important;
     }
 
     #titlebar-buttonbox,
