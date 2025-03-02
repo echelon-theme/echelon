@@ -77,6 +77,16 @@ class EchelonSearchManager
 	
 			let textbox = await waitForElement(".searchbar-textbox");
 			textbox.placeholder = engine._name;
+		} else {
+			const [searchbarInputl10n] = await document.l10n.formatMessages([
+				{ id: "searchbar-input" }
+			]);
+
+			let textbox = await waitForElement(".searchbar-textbox");
+			textbox.placeholder = searchbarInputl10n.attributes[0].value;
+		
+			let icon = await waitForElement(".searchbar-search-icon");
+			icon.removeAttribute("src");
 		}
 	}
 
