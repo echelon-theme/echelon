@@ -72,6 +72,9 @@ a {
 #searchForm {
     display: flex;
     margin: 0 auto;
+    :root[echelon-style-4] & {
+        height: 36px;
+    }
 }
 
 #searchLogoContainer {
