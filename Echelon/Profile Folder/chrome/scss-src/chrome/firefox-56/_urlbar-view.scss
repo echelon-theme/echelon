@@ -16,6 +16,7 @@
     .urlbarView {
         width: var(--urlbarView-width) !important;
         display: flex !important;
+        color: -moz-FieldText !important;
         background-color: -moz-Field !important;
         border: 1px solid ThreeDDarkShadow !important;
         position: relative !important;

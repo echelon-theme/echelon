@@ -1,0 +1,111 @@
+& {
+    --navbar-tab-toolbar-highlight-overlap: 0 !important;
+
+    color: var(--chrome-color) !important;
+
+    #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified),
+    #PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton),
+    #PersonalToolbar .toolbarbutton-1 {
+        background-clip: padding-box !important;
+
+        &:not([disabled="true"]):hover {
+            background: var(--toolbarbutton-hover-background) !important;
+            border-color: var(--toolbarbutton-hover-bordercolor) !important;
+            --toolbarbutton-border-color: var(--toolbarbutton-hover-bordercolor) !important;
+            box-shadow: var(--toolbarbutton-hover-boxshadow) !important;
+            color: inherit !important;
+        }
+
+        &:not([disabled="true"]):hover:active,
+        &:not([disabled="true"])[open] {
+            background: var(--toolbarbutton-active-background) !important;
+            border-color: var(--toolbarbutton-active-bordercolor);
+            --toolbarbutton-border-color: var(--toolbarbutton-active-bordercolor) !important;
+            border-top-color: var(--toolbarbutton-active-bordercolor) !important;
+            box-shadow: var(--toolbarbutton-active-boxshadow) !important;
+            transition-duration: 10ms !important;
+            color: inherit !important;
+        }
+    }
+
+    #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button {
+        &:is(:hover, [open]):not([disabled="true"]) {
+            .toolbarbutton-menubutton-button,
+            .toolbarbutton-menubutton-dropmarker {
+                background: var(--toolbarbutton-hover-background) !important;
+                border-color: var(--toolbarbutton-hover-bordercolor) !important;
+                --toolbarbutton-border-color: var(--toolbarbutton-hover-bordercolor) !important;
+                box-shadow: var(--toolbarbutton-hover-boxshadow) !important;
+                color: inherit !important;
+
+                &:active,
+                &[open] {
+                    background: var(--toolbarbutton-active-background) !important;
+                    border-color: var(--toolbarbutton-active-bordercolor);
+                    --toolbarbutton-border-color: var(--toolbarbutton-active-bordercolor) !important;
+                    border-top-color: var(--toolbarbutton-active-bordercolor) !important;
+                    box-shadow: var(--toolbarbutton-active-boxshadow) !important;
+                    transition-duration: 10ms !important;
+                    color: inherit !important;
+                }
+            }
+        }
+    }
+
+    #navigator-toolbox {
+        background-color: var(--chrome-background-color) !important;
+
+        & > toolbar {
+            background-color: var(--chrome-secondary-background-color) !important;
+            background-image: none !important;
+            color: var(--chrome-color) !important;
+        }
+
+        #nav-bar {
+            border-radius: 0 !important;
+            border: 0 !important;
+            box-shadow: 0 -1px var(--chrome-nav-bar-separator-color) !important;
+
+            .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar {
+                width: 28px !important;
+                min-width: 28px !important;
+                height: var(--toolbarbutton-height) !important;
+                border-radius: 2px 0 0 2px !important;
+            }
+
+            .toolbarbutton-1:not(.unified)#back-button.unified-with-urlbar,
+            .toolbarbutton-1:not(.unified)#forward-button.unified-with-urlbar {
+                background: var(--chrome-nav-buttons-background) !important;
+                --toolbarbutton-background: var(--chrome-nav-buttons-background) !important;
+                border-color: var(--chrome-nav-bar-controls-border-color) !important;
+                --toolbarbutton-border-color: var(--chrome-nav-bar-controls-border-color) !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                transition-duration: 10ms !important;
+
+                &:not([disabled="true"])[open]
+                &:not([disabled="true"]):hover,
+                &:not([disabled="true"]):hover:active {
+                    --toolbarbutton-border-color: var(--chrome-nav-bar-controls-border-color) !important;
+                    background: var(--chrome-nav-buttons-background) !important;
+                    --toolbarbutton-background-hot: var(--toolbarbutton-background) !important;
+                    box-shadow: none !important;
+                    transition-duration: 10ms !important;
+                }
+            }
+
+            .toolbarbutton-1:not(.unified)#forward-button.unified-with-urlbar {
+                width: 27px !important;
+                min-width: 27px !important;
+                margin-inline-start: 0 !important;
+                clip-path: none !important;
+                border-inline-start: none !important;
+                padding: 0 !important;
+            }
+        }
+
+        &::after {
+            background-color: var(--chrome-navigator-toolbox-separator-color) !important;
+        }
+    }
+}

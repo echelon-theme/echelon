@@ -11,4 +11,8 @@
     &[echelon-system-style="win10"] {
         @import "tweaks/win10/style";
     }
+
+    &[compact-theme] {
+        @import "tweaks/compacttheme/style"
+    }
 }

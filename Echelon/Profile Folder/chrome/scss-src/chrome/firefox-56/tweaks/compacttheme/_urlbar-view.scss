@@ -1,0 +1,99 @@
+& {    
+    #searchbar:focus-within {
+        box-shadow: none !important;
+    }
+
+    #urlbar,
+    #searchbar {
+        color: inherit !important;
+    }
+
+    &:not([chromehidden~="toolbar"], [customizing]) {
+        #nav-bar {
+            #forward-button.unified-with-urlbar:not(:hover)[disabled] {
+                & + #urlbar-container {           
+                    & > #urlbar,
+                    & > #echelon-urlbar-positioning {
+                        margin-left: -27px !important;
+                    }
+
+                    #urlbar-background,
+                    .urlbar-input-container,
+                    #urlbar-input-container {
+                        mask: unset !important;
+                    }
+
+                    #identity-box { 
+                        padding-inline-start: 0 !important;
+                    }
+                }
+            }
+    
+            #forward-button.unified-with-urlbar {
+                & + #urlbar-container {
+                    padding-inline-start: 27px !important;
+                    margin-inline-start: -27px !important;
+                }
+            }
+        }
+    }
+
+    #searchbar,
+    #urlbar-background,
+    #stop-reload-button {
+        color: inherit !important;
+        background-color: var(--url-and-searchbar-background-color) !important;
+        background-image: none !important;
+        border-color: var(--chrome-nav-bar-controls-border-color) !important;        
+        box-shadow: none !important;
+    }
+
+    #urlbar-container {
+        #urlbar-background {
+            border-inline-start-style: none !important;
+        }
+
+        &:hover {
+            #urlbar-background {
+                background-color: var(--url-and-searchbar-background-color) !important;
+                border-color: var(--chrome-nav-bar-controls-border-color) !important;        
+            }
+        }
+        
+        &[focused="true"] {
+            #urlbar-background {               
+                box-shadow: none !important; 
+                background-color: var(--url-and-searchbar-background-color) !important;
+                border-color: var(--chrome-nav-bar-controls-border-color) !important;   
+            }
+        }
+
+        &.unified-refresh-button {
+            &:hover {
+                + #stop-reload-button {
+                    background-color: var(--url-and-searchbar-background-color) !important;
+                    border-color: var(--chrome-nav-bar-controls-border-color) !important;        
+                }
+            }
+    
+            &[focused="true"] {
+                + #stop-reload-button {                
+                    box-shadow: none !important; 
+                    background-color: var(--url-and-searchbar-background-color) !important;
+                    border-color: var(--chrome-nav-bar-controls-border-color) !important;   
+                }
+            }
+        }
+    }
+
+    &:not([chromehidden~="toolbar"]) {
+        #urlbar-container.unified-refresh-button {    
+            &[focused="true"] {
+                #urlbar-background,
+                & + #stop-reload-button {                
+                    box-shadow: none !important;
+                }
+            }
+        }
+    }
+}
