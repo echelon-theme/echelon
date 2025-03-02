@@ -34,7 +34,7 @@
     "zoom-in-button": "firefox-29/toolbar/win8/zoom-in.svg",
     "PanelUI-menu-button": "firefox-29/toolbar/win8/menu.svg",
     "save-to-pocket-button": "firefox-29/toolbar/win8/pocket.svg",
-    "save-to-pocket-button[open]": "firefox-29/toolbar/win8/pocket_active.svg",
+    "save-to-pocket-button[open]": "firefox-29/toolbar/win8/pocket.svg",
     "unified-extensions-button": "firefox-29/toolbar/win8/addons.svg",
     "fxa-toolbar-menu-button": "firefox-29/toolbar/win8/sync.svg",
     "fxa-toolbar-menu-button[status="active"]": "firefox-29/toolbar/syncProgress-toolbar.svg",
@@ -44,6 +44,16 @@
     "developer-button": "firefox-29/toolbar/win8/developer.svg",
     "echelon-button": "firefox-29/toolbar/win8/echelon.svg"
 ));
+
+// fuck pocket {
+#save-to-pocket-button {
+    --toolbarbutton-icon-width: 18px !important;
+    --toolbarbutton-icon-height: 18px !important;
+
+    &[open] {
+        fill: rgb(213,32,20) !important;
+    }
+}
 
 #bookmarks-menu-button[starred] .toolbarbutton-menubutton-button,
 #downloads-button[attention="success"] {

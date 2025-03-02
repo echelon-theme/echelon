@@ -22,6 +22,11 @@
         #nav-bar {
             #forward-button.unified-with-urlbar:not(:hover)[disabled] {
                 & + #urlbar-container {
+                    & > #urlbar,
+                    & > #echelon-urlbar-positioning {
+                        margin-left: -32px !important;
+                    }
+
                     #urlbar-background,
                     .urlbar-input-container,
                     #urlbar-input-container {
