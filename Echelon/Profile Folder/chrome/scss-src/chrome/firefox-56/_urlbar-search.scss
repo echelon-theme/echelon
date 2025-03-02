@@ -5,6 +5,15 @@
     --urlbar-border-color-hover: hsla(210,54%,20%,.35) hsla(210,54%,20%,.37) hsla(210,54%,20%,.4) !important;
     --urlbar-border-color-focused: Highlight !important;
 
+    &:is([echelon-system-style="win8"], [echelon-system-style="win10"]) {
+        .urlbar-input-container,
+        #urlbar-input-container {
+            .urlbar-history-dropmarker {
+                @include set-background("firefox-56/urlbar/urlbar-history-dropmarker.png");
+            }
+        }
+    }
+
     #urlbar {
         .urlbar-input-container,
         #urlbar-input-container {
@@ -16,7 +25,6 @@
     
             .urlbar-history-dropmarker {
                 transition: opacity 0.15s ease !important;
-                @include set-background("firefox-56/urlbar/urlbar-history-dropmarker.png");
             }
         }
 

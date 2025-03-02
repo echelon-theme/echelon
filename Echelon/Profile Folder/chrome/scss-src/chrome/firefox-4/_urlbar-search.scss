@@ -221,6 +221,23 @@
             }
         }
     }
+
+    #urlbar-zoom-button {
+        margin: 0 3px !important;
+        font-size: .8em !important;
+        padding: 0 8px !important;
+        border-radius: 1em !important;
+        background-color: hsla(0,0%,0%,.05) !important;
+        border: 1px solid ThreeDLightShadow !important;
+
+        &:hover {
+            background-color: hsla(0,0%,0%,.1) !important;
+
+            &:active {
+                background-color: hsla(0,0%,0%,.15) !important;
+            }
+        }
+    }
 }
 
 #urlbar-container, #search-container {
