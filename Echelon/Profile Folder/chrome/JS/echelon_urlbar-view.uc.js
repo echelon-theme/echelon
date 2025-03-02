@@ -5,7 +5,6 @@
 // @include			main
 // ==/UserScript==
 
-
 function setURLbarViewAttr() {
     let e = gURLBar.view.panel;
 
@@ -89,6 +88,90 @@ function setURLbarViewAttr() {
         e.style.removeProperty("--item-padding-end");
     }
 }
+
+waitForElement("#urlbar-input").then(e => {
+    let inputField = e;
+    let strings = Services.strings.createBundle("chrome://echelon/locale/properties/urlbar.properties");
+    let lang = Services.locale.requestedLocale;
+
+    function setOneOffText() {
+        if (lang != Services.locale.requestedLocale)
+        {
+            lang = Services.locale.requestedLocale;
+            strings = Services.strings.createBundle("chrome://echelon/locale/properties/urlbar.properties");
+        }
+
+        let userTypedValue = gBrowser.userTypedValue;
+        let searchOneOffs = document.querySelector("#urlbar .search-one-offs");
+
+        let oldOneOffsHeaderXUL = MozXULElement.parseXULToFragment(
+        `
+            <hbox class="search-panel-header search-panel-current-input search-panel-custom-echelon">
+                <label id="searchbar-oneoffheader-search" value="${strings.GetStringFromName("oneoffheader.search")}"/>
+                <hbox id="search-panel-searchforwith" class="search-panel-current-input">
+                    <label id="searchbar-oneoffheader-before" value="${strings.GetStringFromName("oneoffheader.before")} "/>
+                    <label id="searchbar-oneoffheader-searchtext" class="search-panel-input-value" flex="1" />
+                    <label id="searchbar-oneoffheader-after" flex="10000" value=" ${strings.GetStringFromName("oneoffheader.after")}"/>
+                </hbox>
+                <hbox id="search-panel-searchonengine" class="search-panel-current-input">
+                    <label id="searchbar-oneoffheader-beforeengine" value="${strings.GetStringFromName("oneoffheader.beforeengine")}"/>
+                    <label id="searchbar-oneoffheader-engine" class="search-panel-input-value" flex="1"/>
+                    <label id="searchbar-oneoffheader-afterengine" flex="10000" value=""/>
+                </hbox>
+            </hbox>
+        `);
+
+        if (!document.querySelector(".search-panel-custom-echelon")) {
+            searchOneOffs.insertBefore(oldOneOffsHeaderXUL, searchOneOffs.querySelector(".search-panel-one-offs-container"));
+            searchOneOffs.querySelector(".search-panel-one-offs-header").setAttribute("hidden", "true");
+        }
+
+        let customSearchPanel = document.querySelector(".search-panel-custom-echelon");
+
+        // Set label values
+        customSearchPanel.querySelector("#searchbar-oneoffheader-searchtext").setAttribute("value", userTypedValue);
+
+        // Hide all labels by default
+        let labels = document.querySelectorAll(".search-panel-custom-echelon > *");
+        labels.forEach(label => {
+            label.setAttribute("hidden", "true");
+        });
+
+        let oneOffsEngines = document.querySelectorAll(".search-panel-one-offs .searchbar-engine-one-off-item");
+        oneOffsEngines.forEach(oneOffsEngine => {
+            oneOffsEngine.addEventListener("mouseover", function (evt) {
+                let oneOffEngineName = JSON.parse(oneOffsEngine.getAttribute("data-l10n-args")).engineName;
+                if (!oneOffEngineName) { // fallback
+                    oneOffEngineName = oneOffsEngine.getAttribute("tooltiptext");
+                }
+
+                document.querySelector("#searchbar-oneoffheader-engine").setAttribute("value", oneOffEngineName);
+
+
+                customSearchPanel.setAttribute("engine-visible", "true");
+            });
+
+            oneOffsEngine.addEventListener("mouseout", function (evt) {
+                customSearchPanel.removeAttribute("engine-visible");
+            });
+        });
+
+        // Show labels depending on mode
+        if (userTypedValue != "" && userTypedValue) {
+            customSearchPanel.querySelector("#search-panel-searchforwith").removeAttribute("hidden");
+        } else {
+            customSearchPanel.querySelector("#searchbar-oneoffheader-search").removeAttribute("hidden");
+        }
+    }
+
+    inputField.addEventListener('input', function (evt) {
+        setOneOffText();
+    });
+
+    waitForElement(".search-panel-one-offs-header").then(header => {
+        setOneOffText();
+    })
+});
 
 waitForElement("#urlbar").then(e => {
     urlbar = e;

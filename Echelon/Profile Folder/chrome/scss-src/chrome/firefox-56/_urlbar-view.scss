@@ -262,6 +262,8 @@
                     font: message-box !important;   
                     opacity: 1 !important;
                     padding-inline: 0 !important;
+                    margin-top: 2px !important;
+                    margin-bottom: 1px !important;
                 }
             }
 
@@ -291,6 +293,28 @@
             }
         }
 
+        .search-panel-custom-echelon {
+            .search-panel-input-value {
+                color: -moz-fieldtext !important;
+            }
+
+            &[engine-visible] {
+                #searchbar-oneoffheader-search,
+                #search-panel-searchforwith {
+                    display: none !important;
+                }
+                
+                #search-panel-searchonengine {
+                    display: inline-block !important;
+                }
+            }
+        }
+
+        .search-panel-current-input > label {
+            white-space: pre !important;
+            margin: 2px 0 1px !important;
+        }
+
         #urlbar-engine-one-off-item-bookmarks {
             list-style-image: url("chrome://echelon/content/firefox-56/skin/bookmark.svg") !important;
         }
@@ -305,6 +329,10 @@
 
         .search-setting-button .button-icon {
             list-style-image: url("chrome://echelon/content/firefox-56/skin/gear.svg") !important;
+        }
+
+        .search-panel-one-offs-header[hidden="true"] {
+            display: none !important;
         }
     }
 }
