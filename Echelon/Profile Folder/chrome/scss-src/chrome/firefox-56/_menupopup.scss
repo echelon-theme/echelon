@@ -1,0 +1,242 @@
+& {
+    --downloads-item-height: 5.5em !important;
+}
+
+#downloadsPanel-blockedSubview, #downloadsPanel-mainView {
+    min-width: unset !important;
+    padding: 0 !important;
+}
+
+#emptyDownloads {
+    padding: 16px 16px !important;
+}
+
+#downloadsFooterButtons {
+    background-color: var(--arrowpanel-dimmed);
+
+    & > toolbarseparator {
+        display: none !important;
+    }
+}
+
+#downloadsHistory {
+    padding-inline: 14px !important;
+}
+
+.downloadsPanelFooterButton {
+    border-radius: 0 !important;
+    min-height: 40px !important;
+    padding-inline-start: 10px !important;
+    padding-inline-end: 10px !important;    
+    border-top: 1px solid var(--panel-separator-color) !important;
+
+    &:hover {
+        background-color: var(--arrowpanel-dimmed) !important;
+
+        &:active {
+            background-color: var(--arrowpanel-dimmed-further) !important;
+            box-shadow: 0 1px 0 hsla(210, 4%, 10%, .05) inset !important;
+        }
+    }
+
+    &::before {
+        content: unset !important;
+    }
+    
+    .button-text {
+        justify-content: center !important;
+        flex: 1 !important;
+    }
+}
+
+#downloadsSummary {
+    height: var(--downloads-item-height) !important;
+}
+
+&#main-window {
+    #downloadsListBox > richlistitem {
+        min-height: 0 !important;
+        height: var(--downloads-item-height) !important;
+        border-bottom: 1px solid var(--panel-separator-color) !important;
+        margin: 0 !important;
+        padding-inline-end: 0 !important;
+        border-radius: 0 !important;
+
+        &:not([verdict]) {
+            background-color: transparent !important;
+        }
+
+        &:last-child {
+            border-bottom: 0 !important;
+        }
+
+        &[verdict="Malware"] {
+            &:not(:hover) {
+                color: #aa1b08 !important;
+            }
+
+            &:hover {
+                background-color: #aa1b08 !important;
+                color: white !important;
+            }
+        }
+
+        .downloadBlockedBadge {
+            background: icon("downloads/download-blocked") top right / 16px no-repeat !important;
+            -moz-context-properties: unset !important;
+        }
+
+        .downloadDetails {
+            color: inherit !important;
+        }
+    }
+
+    &[lwt-popup-brighttext] #downloadsListBox > richlistitem[verdict="Malware"]:not(:hover) {
+        color: #ff0039 !important;
+    }
+
+    .downloadMainArea {
+        align-self: stretch !important;
+        border-radius: 0 !important;
+        padding-inline-start: 0 !important;
+    }
+
+    #downloadsListBox > richlistitem[state="1"][exists] .downloadMainArea {
+        &:hover {
+            background-color: var(--arrowpanel-dimmed) !important;
+
+            &:active {
+                background-color: var(--arrowpanel-dimmed-further) !important;
+            }
+        }
+    }
+
+    .downloadTypeIcon {
+        margin: 8px 13px !important;
+    }
+
+    .downloadButton {
+        margin-inline-start: 1px !important;
+        border: 0 !important;
+        min-width: 58px !important;
+        border-radius: 0 !important;
+        align-self: stretch !important;
+        height: unset !important;
+        position: relative !important;
+
+        &::before {
+            content: "";
+            display: flex;
+            width: 0;
+            height: calc(100% - 20px);
+            position: absolute;
+            top: 0;
+            left: -1px;
+            border-inline-start: 1px solid var(--panel-separator-color);
+            margin: 10px 0;
+        }
+
+        &:-moz-locale-dir(rtl)::before {
+            left: unset !important;
+            right: -1px !important;
+        }
+    }
+
+    #downloadsListBox > richlistitem:not([verdict]) > .downloadButton:hover {
+        background-color: var(--arrowpanel-dimmed) !important;
+
+        &:active {
+            background-color: var(--arrowpanel-dimmed-further) !important;
+        }
+    }
+
+    #downloadsListBox > richlistitem:hover > .downloadButton::before {
+        margin: 0;
+        height: 100%;
+    }
+}
+
+@mixin dl-btn-icon($class, $icon) {
+    #{".downloadIcon#{$class}"} > .button-box > .button-icon {
+        @include set-icon($icon);
+    }
+}
+
+@mixin dl-btn-icons($map) {
+    @each $class, $icon in $map {
+        @include dl-btn-icon($class, $icon);
+    }
+}
+
+/* Downloads button icons */
+@include dl-btn-icons((
+    "Cancel": "firefox-56/skin/panel-icon-cancel.svg",
+    "Show": "firefox-56/skin/panel-icon-folder.svg",
+    "Retry": "firefox-56/skin/panel-icon-retry.svg",
+    "SubviewArrow": "firefox-56/skin/arrow-left.svg"
+));
+
+@media (-moz-platform: macos) {
+    @include dl-btn-icon("Show", "search-glass.svg");
+}
+
+.downloadIconSubviewArrow > .button-box > .button-icon:-moz-locale-dir(ltr) {
+    @include set-icon("arrow-right.svg");
+}
+
+.downloadProgress {
+    height: 8px !important;
+    border-radius: 0 !important;
+    background-color: ButtonFace !important;
+    margin: 4px 0 0 !important;
+    margin-inline-end: 12px !important;
+    box-shadow: inset 1px 1px 0 ButtonShadow,
+    inset -1px -1px 0 ButtonShadow !important;
+
+    &::-moz-progress-bar {
+        background-color: Highlight !important;
+        border-radius: 0 !important;
+    }
+
+    &[paused]::-moz-progress-bar {
+        background-color: GrayText !important;
+    }
+
+    @media (-moz-platform: windows) and (-moz-windows-classic: 0) {
+        &::-moz-progress-bar {
+            background-color: #3c9af8 !important;
+        }
+
+        &[paused]::-moz-progress-bar {
+            background-color: #a6a6a6 !important;
+        }
+    }
+}
+
+/* Downloads blocked subview */
+.downloadsPanel-blockedSubview-image {
+    display: none !important;
+}
+
+#downloadsPanel-blockedSubview > .panel-view-body-unscrollable {
+    background-image: icon("warning");
+    background-size: 32px 32px;
+    background-position: 16px 16px;
+    background-repeat: no-repeat;
+}
+
+#downloadsPanel-blockedSubview-title,
+#downloadsPanel-blockedSubview-details1,
+#downloadsPanel-blockedSubview-details2 {
+	margin-inline: 64px 16px !important;
+}
+
+#downloadsPanel-blockedSubview-title {
+    margin-block: 16px !important;
+    font-size: calc(100% / var(--downloads-item-font-size-factor)) !important;
+}
+
+#downloadsPanel-blockedSubview-details1,
+#downloadsPanel-blockedSubview-details2 {
+    margin-bottom: 16px !important;
+}

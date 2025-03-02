@@ -138,6 +138,7 @@
 	}
 }
 
+:root:not([echelon-style-7]) {
 #downloadsPanel {
 	#downloadsPanel-mainView {
 		min-width: 0 !important;
@@ -281,8 +282,8 @@
 	}
 }
 
-:root[echelon-style-6][echelon-system-style="win8"],
-:root[echelon-style-6][echelon-system-style="win10"] {
+&[echelon-style-6][echelon-system-style="win8"],
+&[echelon-style-6][echelon-system-style="win10"] {
 	#downloadsPanel {
 		&[hasdownloads] {
 			#downloadsFooter {
@@ -324,7 +325,7 @@
 	}
 }
 
-:root:not([echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
+&:not([echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
 	&[echelon-appearance-blue] {
 		#downloadsPanel {
 			&[hasdownloads] {
@@ -362,6 +363,7 @@
 			}
 		}
 	}
+}
 }
 
 // shoutout marble for making me do this bullshit
