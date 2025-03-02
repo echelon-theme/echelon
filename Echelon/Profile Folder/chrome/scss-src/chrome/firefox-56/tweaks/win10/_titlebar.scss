@@ -1,7 +1,9 @@
 // losely based on firefox 56's browser.css
 
-&[widget-windows-style-modern="true"] {
-    appearance: -moz-win-borderless-glass !important; // hack to show white border windows 10 does on dwm extended windows
+@media (-moz-platform: windows) and (not (-moz-windows-classic)) and (-moz-windows-compositor) {
+    & {
+        appearance: -moz-win-borderless-glass !important; // hack to show white border windows 10 does on dwm extended windows
+    }
 
     #browser {
         appearance: -moz-win-exclude-glass !important;

@@ -5,8 +5,10 @@
     --toolbarbutton-icon-large-width: 16px;
     --toolbatbutton-icon-large-height: 16px;
 
-    --toolbarbutton-icon-fill: light-dark(rgb(121, 124, 128), rgb(255, 255, 255)) !important;
-    --toolbarbutton-icon-fill-attention: light-dark(rgb(23, 126, 229), rgb(23, 126, 229)) !important;
+    //--toolbarbutton-icon-fill: light-dark(rgb(121, 124, 128), rgb(255, 255, 255)) !important;
+    //--toolbarbutton-icon-fill-attention: light-dark(rgb(23, 126, 229), rgb(23, 126, 229)) !important;
+    --toolbarbutton-icon-fill: rgb(121, 124, 128) !important;
+    --toolbarbutton-icon-fill-attention: rgb(23, 126, 229) !important;
 }
 
 @include toolbar-icons((    

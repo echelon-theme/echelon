@@ -110,12 +110,12 @@ waitForElement("#urlbar-input").then(e => {
                 <label id="searchbar-oneoffheader-search" value="${strings.GetStringFromName("oneoffheader.search")}"/>
                 <hbox id="search-panel-searchforwith" class="search-panel-current-input">
                     <label id="searchbar-oneoffheader-before" value="${strings.GetStringFromName("oneoffheader.before")} "/>
-                    <label id="searchbar-oneoffheader-searchtext" class="search-panel-input-value" flex="1" />
+                    <label id="searchbar-oneoffheader-searchtext" class="search-panel-input-value" />
                     <label id="searchbar-oneoffheader-after" flex="10000" value=" ${strings.GetStringFromName("oneoffheader.after")}"/>
                 </hbox>
                 <hbox id="search-panel-searchonengine" class="search-panel-current-input">
-                    <label id="searchbar-oneoffheader-beforeengine" value="${strings.GetStringFromName("oneoffheader.beforeengine")}"/>
-                    <label id="searchbar-oneoffheader-engine" class="search-panel-input-value" flex="1"/>
+                    <label id="searchbar-oneoffheader-beforeengine" value="${strings.GetStringFromName("oneoffheader.beforeengine")} "/>
+                    <label id="searchbar-oneoffheader-engine" class="search-panel-input-value" />
                     <label id="searchbar-oneoffheader-afterengine" flex="10000" value=""/>
                 </hbox>
             </hbox>
