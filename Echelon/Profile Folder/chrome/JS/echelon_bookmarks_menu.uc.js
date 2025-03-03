@@ -47,6 +47,8 @@
                 let getOffset = getComputedStyle(menupopup.shadowRoot.querySelector(".panel-arrowcontent")).margin;
                 let offset = parseInt(getOffset.slice(0, -2)); 
 
+                menupopup.style.removeProperty(`margin-right`);
+
                 menupopup.setAttribute("position", "bottomleft topright");
                 menupopup.style.marginRight = `-${button.clientWidth + offset}px`;
 
@@ -69,7 +71,7 @@
             let action = PageActions.actionForID(PageActions.ACTION_ID_BOOKMARK);
 
             if (anchor || style >= ECHELON_LAYOUT_AUSTRALIS) {
-                anchor = document.querySelector("#nav-bar #bookmarks-menu-button");
+                anchor = this.button;
             } else {
                 anchor = BrowserPageActions.panelAnchorNodeForAction(action);
             }
