@@ -12,7 +12,8 @@
         @import "tweaks/win10/style";
     }
 
-    &[compact-theme] {
+    &[compact-theme],
+    &[lwt-default-theme-in-dark-mode] {
         @import "tweaks/compacttheme/style"
     }
 }

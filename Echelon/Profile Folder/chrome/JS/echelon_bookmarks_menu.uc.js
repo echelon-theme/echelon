@@ -27,13 +27,12 @@
         `);
         e.append(bookmarksMenuButton);
 
-        e.querySelector(".toolbarbutton-menubutton-button").onclick = function(){bookmarkPage();};
-        e.querySelector("dropmarker").onclick = function(){e.openMenu(menupopup);};
-        
+        e.querySelector(".toolbarbutton-menubutton-button").onclick = function(){BookmarkingUI._echelonBookmarkButton();};
+
         function dropmarkerAttr() {
             e.querySelector("dropmarker").removeAttribute("open");
 
-            if (e.open == true) {
+            if (e.open == true && StarUI.panel.state == "closed") { 
                 e.querySelector("dropmarker").setAttribute("open", "true");
             }
         }
@@ -41,30 +40,24 @@
         let observer = new MutationObserver(dropmarkerAttr);
         observer.observe(e, { attributes: true, attributeFilter: ["open"] });
 
-        function bookmarkPage() {
-            PlacesCommandHook.bookmarkPage();
-            BookmarkingUI._showBookmarkedNotification();
-        }
-
-        waitForElement("#bookmarks-menu-button-dropmarker").then(e => {
+        waitForElement("#bookmarks-menu-button-dropmarker").then(dropmarker => {
             function menupopupPosition() {
                 // for some reason i cant fix the positioning of the panel, so were doing it the hacky way
                 let button = document.querySelector("#bookmarks-menu-button");
+                let getOffset = getComputedStyle(menupopup.shadowRoot.querySelector(".panel-arrowcontent")).margin;
+                let offset = parseInt(getOffset.slice(0, -2)); 
+
                 menupopup.setAttribute("position", "bottomleft topright");
-                menupopup.style.marginRight = `-${button.clientWidth + 4}px`;
+                menupopup.style.marginRight = `-${button.clientWidth + offset}px`;
 
                 let arrowbox = menupopup.shadowRoot.querySelector(".panel-arrowbox");
                 arrowbox.setAttribute("pack", "end");
             }
 
-            const menupopupAttr = {
-                observe: function (subject, topic, data) {
-                    if (topic == "nsPref:changed")
-                        menupopupPosition();
-                },
+            dropmarker.onclick = function() {
+                menupopupPosition();
+                e.openMenu(menupopup);
             };
-            Services.prefs.addObserver("Echelon.Appearance.Style", menupopupAttr, false);
-            setTimeout(() => menupopupPosition(), 1000); //bum ass hack
         });
     });
 
@@ -127,6 +120,18 @@
             );
         }
     });
+
+    BookmarkingUI._echelonBookmarkButton = function BUI_echelonBookmarkButton()
+    {
+        let isBookmarked = this._itemGuids.size > 0;
+            
+        if (!this._pendingUpdate) {
+            if (!isBookmarked) {
+                this._showBookmarkedNotification();
+            }
+        }
+        PlacesCommandHook.bookmarkPage();
+    }
 
     BookmarkingUI._showBookmarkedNotification = function BUI_showBookmarkedNotification()
     {

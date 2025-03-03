@@ -26,7 +26,8 @@
     --toolbarbutton-checkedhover-backgroundcolor: #d7d7d8 !important;
 }
 
-&[default-dark-theme] {
+&[default-dark-theme],
+&[lwt-default-theme-in-dark-mode] {
     --chrome-background-color: #272b35 !important;
     --chrome-color: #F5F7FA !important;
     --chrome-secondary-background-color: #393F4C !important;
