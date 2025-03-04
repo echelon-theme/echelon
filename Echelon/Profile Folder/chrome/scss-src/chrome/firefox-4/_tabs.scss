@@ -139,51 +139,78 @@
                         opacity: 1 !important;
                     }
 
+                    &:is([pinned], [sharing]) {
+                        margin-top: -8px !important;
+                        margin-inline-start: -15px !important;
+                        margin-inline-end: -1px !important;
+                        top: unset !important;
+
+                        &:is([soundplaying], [muted]) {
+                            border-radius: 10px !important;
+
+                            &:hover {
+                                background-color: white !important;
+                            }
+                        }
+                    }
+
                     &[soundplaying] {
                         list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab") !important;
+                        &:is([pinned], [sharing]) {
+                            list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio-small.svg#tab-audio") !important;
+                        }
 
-                        &:hover {
-                            list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-hover") !important;
+                        &:not([pinned], [sharing]) {
+                            &:hover {
+                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-hover") !important;
 
-                            &:active {
-                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-pressed") !important;
+                                &:active {
+                                    list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-pressed") !important;
+                                }
                             }
                         }
                     }
 
                     &[muted] {
                         list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted") !important;
+                        &:is([pinned], [sharing]) {
+                            list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio-small.svg#tab-audio-muted") !important;
+                        }
 
-                        &:hover {
-                            list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-hover") !important;
+                        &:not([pinned], [sharing]) {
+                            &:hover {
+                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-hover") !important;
 
-                            &:active {
-                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-pressed") !important;
+                                &:active {
+                                    list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-pressed") !important;
+                                }
                             }
                         }
                     }
 
-                    &[selected] {
-                        &[soundplaying] {
-                            list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio") !important;
-    
-                            &:hover {
-                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-hover") !important;
-    
-                                &:active {
-                                    list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-pressed") !important;
+                    &:not([pinned], [sharing]) {
+                        &[selected] {
+                            &[soundplaying] {
+                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio") !important;
+        
+                                &:hover {
+                                    list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-hover") !important;
+        
+                                    &:active {
+                                        list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-pressed") !important;
+                                    }
                                 }
                             }
-                        }
-    
-                        &[muted] {
-                            list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted") !important;
-    
-                            &:hover {
-                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted-hover") !important;
-    
-                                &:active {
-                                    list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted-pressed") !important;
+        
+                            &[muted] {
+                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted") !important;
+        
+                                &:hover {
+                                    list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted-hover") !important;
+        
+                                    &:active {
+                                        list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted-pressed") !important;
+                                    }
                                 }
                             }
                         }
