@@ -13,7 +13,7 @@ window {
 }
 
 // hide unified extensions
-:root[echelon-option-hideunifiedextensions] {
+:root:not([customizing])[echelon-option-hideunifiedextensions] {
     #unified-extensions-button {
         display: none !important;
     }
