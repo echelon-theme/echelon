@@ -133,8 +133,17 @@
 
     :root[tabs-on-top="true"] & {
         z-index: 1 !important;
+        background-color: var(--toolbar-background-color) !important;
         background-image: linear-gradient(var(--toolbar-highlight-top) 15%, var(--toolbar-highlight-bottom)) !important;
         margin-top: calc(-1 * var(--navbar-tab-toolbar-highlight-overlap)) !important;
+    }
+
+    :root:not([tabs-on-top="true"]) & {
+        height: 34px !important;
+        padding-block-start: 2px !important;
+        padding-block-end: 6px !important;
+        background-color: transparent !important;
+        overflow-y: visible !important;
     }
 
     :root[tabs-on-top="true"]:not([lwtheme]) & {
@@ -424,10 +433,19 @@
             background-clip: padding-box !important;
         }
 
-        #nav-bar {
-            border-inline: 1px solid var(--toolbar-border-color) !important;
-            border-top-left-radius: 3.5px !important;
-            border-top-right-radius: 3.5px !important;
+        &[tabs-on-top="true"] {
+            #nav-bar {
+                border-inline: 1px solid var(--toolbar-border-color) !important;
+                border-top-left-radius: 3.5px !important;
+                border-top-right-radius: 3.5px !important;
+            }
+        }
+
+        &:not([tabs-on-top="true"]) {
+            #PersonalToolbar:not([collapsed="true"]) + #TabsToolbar {
+                border-inline: 1px solid var(--toolbar-border-color) !important;
+                background-clip: padding-box !important;
+            }
         }
 
         #PersonalToolbar {
@@ -456,7 +474,7 @@
     }
 }
 
-#nav-bar, #PersonalToolbar {
+#PersonalToolbar {
     background-color: var(--toolbar-background-color) !important;
 }
 
@@ -475,6 +493,10 @@
         margin-inline-end: -1px !important;
         opacity: 0 !important;
     }
+}
+
+:root[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"]:not([inactive="true"]) {
+    height: unset !important;
 }
 
 :root:not([tabsintitlebar][echelon-style-6][echelon-system-style="winxp"]) {

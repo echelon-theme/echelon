@@ -58,7 +58,7 @@ export class EchelonThemeManager
 		}
 
 		/* Enable Tabs on Top for Australis */
-		if (style >= 4)
+		if (style >= 6)
 		{
 			PrefUtils.trySetBoolPref("Echelon.Appearance.TabsOnTop", true);
 		}

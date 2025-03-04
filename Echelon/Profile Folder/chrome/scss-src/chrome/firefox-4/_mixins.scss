@@ -44,7 +44,8 @@
 
 @mixin toolbar-icons-inverted($map) {
     @each $id, $icon in $map {
-        &[lwtheme-brighttext] {
+        &[lwtheme-brighttext],
+        &[echelon-style-5]:not([tabs-on-top="true"]) {
             @include toolbar-icon("#{$id}", $icon);
         }
     }

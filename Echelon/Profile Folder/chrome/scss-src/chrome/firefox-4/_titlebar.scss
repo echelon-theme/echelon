@@ -83,16 +83,41 @@
 	}
 	
     @media not (-moz-windows-classic) {
-      :root[sizemode="normal"] .titlebar-buttonbox {
-        appearance: auto !important;
-        -moz-default-appearance: -moz-window-button-box !important;
-      }
+		:root[sizemode="normal"] .titlebar-buttonbox {
+			appearance: auto !important;
+			-moz-default-appearance: -moz-window-button-box !important;
+		}
   
-      @media (-moz-windows-compositor) {
-        :root[sizemode="maximized"] .titlebar-buttonbox {
-          appearance: auto !important;
-          -moz-default-appearance: -moz-window-button-box-maximized !important;
-        }
-      }
+		@media (-moz-windows-compositor) {
+			:root[sizemode="maximized"] .titlebar-buttonbox {
+				appearance: auto !important;
+				-moz-default-appearance: -moz-window-button-box-maximized !important;
+			}
+
+			:root[chromemargin^="0,"][sizemode="normal"]:not([inFullscreen="true"], [echelon-style-6]) {
+				#titlebar-content {
+					margin-block-end: -7px !important;
+				}
+
+				&:not([tabs-on-top="true"]) {
+					#titlebar {
+						margin-block-end: -7px !important;
+
+						#titlebar-content {
+							margin-block-end: 0 !important;
+						}
+
+						#toolbar-menubar:not([inactive="true"]) {
+							margin-block-start: -7px !important;
+							margin-block-end: 7px !important;
+						}
+					}
+				}
+			}
+
+			:root[tabsintitlebar][sizemode="normal"]:not([echelon-style-6]) #toolbar-menubar[inactive="true"] + #TabsToolbar .toolbar-items {
+				padding-top: 2px !important;
+			}
+		}
     }
   }

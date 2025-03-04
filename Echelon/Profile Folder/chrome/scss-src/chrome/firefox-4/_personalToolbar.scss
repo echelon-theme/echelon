@@ -1,6 +1,16 @@
 #PersonalToolbar {
     padding-inline: 0 !important;
 
+    :root:not([tabs-on-top="true"], [echelon-system-style="winxp"]) & {
+        border-block-start: 1px solid var(--toolbar-border-color) !important;
+        border-top-left-radius: 3.5px !important;
+        border-top-right-radius: 3.5px !important;
+    }
+
+    :root:not([tabs-on-top="true"], [echelon-system-style="winxp"], [lwtheme]) & {
+        background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0)) !important;
+    }
+
     #personal-bookmarks {
         min-height: 24px !important;
     }
