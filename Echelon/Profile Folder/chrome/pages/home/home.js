@@ -137,7 +137,7 @@ function createHomePage() {
         brandLogoImg.replaceWith(brandLogo);
     }
 
-    focusInput();
+    // focusInput();
     updateHomepageStyle();
     insertCustomSnippets();
 
