@@ -2,4 +2,6 @@
 @import "firefox-4/style.uc";
 
 /* ::::: Firefox 56 ::::: */
-@import "firefox-56/style.uc"
+:root[echelon-style-7] {
+    @import "firefox-56/style.uc"
+}
