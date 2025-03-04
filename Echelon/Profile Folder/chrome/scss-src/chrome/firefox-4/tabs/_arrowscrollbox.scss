@@ -4,14 +4,6 @@
     &[lwtheme-brighttext] {
         --arrowscrollbox-image: url("chrome://echelon/content/firefox-8/tabs/tab-arrow-left-inverted.png") !important;
     }
-    &[echelon-style-6] {
-        --arrowscrollbox-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-arrow-left.png") !important;
-
-        &[echelon-system-style="winxp"] {
-            --arrowscrollbox-image: url("chrome://echelon/content/firefox-8/tabs/tab-arrow-left-inverted.png") !important;
-        }
-        --tabbrowser-arrowbox-inline-padding: 15px !important;
-    }
 }
 
 #TabsToolbar .toolbarbutton-1:not(#tabs-newtab-button),
