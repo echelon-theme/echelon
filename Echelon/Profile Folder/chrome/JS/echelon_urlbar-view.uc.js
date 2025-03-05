@@ -88,6 +88,39 @@ function setURLbarViewAttr() {
     }
 }
 
+// function adjustHeight() {
+//     // Figure out how many rows to show
+//     let urlbarResults = document.querySelector("#urlbar-results");
+//     let rows = urlbarResults.childNodes;
+//     let numRows = rows.length;
+// 
+//     urlbarResults.style.removeProperty("height");
+// 
+//     // Default the height to 0 if we have no rows to show
+//     let height = 0;
+//     if (numRows) {
+//         let firstRowRect = rows[0].getBoundingClientRect();
+//         let urlbarViewResultsPadding;
+// 
+//         if (urlbarViewResultsPadding == undefined) {
+//             // Get the combined padding top/bottom values of the urlbar results
+//             let style = window.getComputedStyle(urlbarResults);
+// 
+//             let paddingTop = parseInt(style.paddingTop) || 0;
+//             let paddingBottom = parseInt(style.paddingBottom) || 0;
+//             urlbarViewResultsPadding = paddingTop + paddingBottom;
+// 
+//             // Calculate the height
+//             let lastRowRect = rows[numRows - 1].getBoundingClientRect();
+//             height = lastRowRect.bottom - firstRowRect.top + urlbarViewResultsPadding
+// 
+//             let currentHeight = urlbarResults.getBoundingClientRect().height;
+// 
+//             urlbarResults.style.height = height + "px";
+//         }
+//     }
+// }
+
 waitForElement("#urlbar-input").then(e => {
     let inputField = e;
     let strings = Services.strings.createBundle("chrome://echelon/locale/properties/urlbar.properties");
@@ -165,6 +198,7 @@ waitForElement("#urlbar-input").then(e => {
 
     inputField.addEventListener('input', function (evt) {
         setOneOffText();
+        // adjustHeight();
     });
 
     waitForElement(".search-panel-one-offs-header").then(header => {

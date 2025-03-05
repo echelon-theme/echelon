@@ -15,15 +15,13 @@
         }
     }
 
+    #navigator-toolbox:not(:hover) #nav-bar:not([customizing="true"]) #urlbar:not([focused]) .urlbar-history-dropmarker {
+        opacity: 0 !important;
+    }
+
     #urlbar {
         .urlbar-input-container,
         #urlbar-input-container {
-            &:not(:hover) {
-                .urlbar-history-dropmarker {
-                    opacity: 0 !important;
-                }
-            }
-    
             .urlbar-history-dropmarker {
                 transition: opacity 0.15s ease !important;
             }
