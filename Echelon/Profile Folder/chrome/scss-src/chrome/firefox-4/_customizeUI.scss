@@ -93,6 +93,11 @@
         color: -moz-FieldText !important;
         background-color: -moz-field !important;
         border-radius: 4px !important;
+
+        // For 115
+        panelview {
+            background: inherit !important;
+        }
         
         :root[echelon-appearance-blue] & {
             border-color: hsla(210,4%,10%,.2) !important;
