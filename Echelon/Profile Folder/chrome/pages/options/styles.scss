@@ -467,6 +467,10 @@ label:not(.header)[needs-restart-label]::after {
 	background-position: 23px 10px;
 }
 
+#preset-container[echelon-system-style="win10"] image {
+	background-position: 10px -8px;
+}
+
 .view-credits-button {
 	padding-inline: 14px;
 	padding-block: 0;
