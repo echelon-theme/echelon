@@ -10,6 +10,10 @@
         @include set-horizontal-states(0, 20px, 40px);
     }
 
+    &:not([customizing], [lwtheme], [is128newer]) #TabsToolbar {
+        background-image: none !important;
+    }
+
     #TabsToolbar {
         margin-block-end: 0 !important;
 

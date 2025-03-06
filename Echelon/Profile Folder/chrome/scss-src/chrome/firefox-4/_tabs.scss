@@ -35,6 +35,7 @@
     }
 
     :root[tabs-on-top="true"]:not([lwtheme]) & {
+        background-image: none !important;
         color: black !important;
     }
 

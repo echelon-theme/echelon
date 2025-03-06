@@ -17,6 +17,10 @@
     }
 }
 
+&:not([customizing], [lwtheme], [is128newer]) #TabsToolbar {
+    background-image: none !important;
+}
+
 .tabbrowser-tab:hover .tab-background:not([selected]),
 #tabs-newtab-button:hover {
     background-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-background-start.png"),

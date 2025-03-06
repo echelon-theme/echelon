@@ -64,7 +64,7 @@
         }
     }
 
-    z-index: 2 !important;
+    z-index: initial !important;
     padding: 0 !important;
     background-color: transparent !important;
     margin-block-end: -1px !important;
@@ -236,9 +236,9 @@
     padding-inline: 1px !important;
 }
 
-// &:not([customizing]) #TabsToolbar {
-//     background-image: linear-gradient(to top, hsla(209,67%,12%,0.35) 2px, rgba(0,0,0,.05) 2px, transparent 50%) !important;
-// }
+&:not([customizing], [lwtheme], [is128newer]) #TabsToolbar {
+    background-image: linear-gradient(to top, hsla(209,67%,12%,0.35) 2px, rgba(0,0,0,.05) 2px, transparent 50%) !important;
+}
 
 &:not([sizemode="maximized"]) #tabbrowser-tabs[haspinnedtabs][overflow] {
     padding-inline: calc(var(--tab-overflow-pinned-tabs-width) + 15px) 0 !important;
@@ -258,4 +258,38 @@
     background-position: left bottom, 30px bottom, right bottom !important;
     background-repeat: no-repeat !important;
     background-size: 30px 100%, calc(100% - (2 * 30px)) 100%, 30px 100% !important;
+}
+
+@media (-moz-platform: windows) {
+    @media not (-moz-windows-classic) {
+		@media (-moz-windows-compositor) {
+            @media (-moz-windows-glass) {
+                &[echelon-appearance-blue]:not([lwtheme], [echelon-system-style="winxp"], [echelon-system-style="win8"], [echelon-system-style="win10"]) {
+                    #navigator-toolbox {
+                        position: relative !important;
+                        overflow: clip !important;
+
+                        &::before {
+                            /* Because we use placeholders for window controls etc. in the tabstrip,
+                             * and position those with ordinal attributes, and because our layout code
+                             * expects :before/:after nodes to come first/last in the frame list,
+                             * we have to reorder this element to come last, hence the
+                             * ordinal group value (see bug 853415). */
+                            order: 1001 !important;
+                            box-shadow: 0 0 30px 30px rgba(174,189,204,0.85) !important;
+                            content: "" !important;
+                            display: flex !important;
+                            height: 0 !important;
+                            margin: 0 60px !important; /* (30px + 30px) from box-shadow */
+                            position: absolute !important;
+                            pointer-events: none !important;
+                            top: var(--fog-position) !important;
+                            width: -moz-available !important;
+                            z-index: -1 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

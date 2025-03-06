@@ -18,6 +18,7 @@ let g_echelonLayoutManager;
 			let toolboxRoot = await waitForElement("#navigator-toolbox");
 			toolboxRoot.addEventListener("customizationchange", this);
 			toolboxRoot.addEventListener("aftercustomization", this);
+			this.getFogPositionalValues();
 			this.initURLBarWidth();
 			this.refreshToolboxLayout();
 			this.hookTabArrowScrollbox();
@@ -326,6 +327,29 @@ let g_echelonLayoutManager;
 					}
 				}
 			}
+		}
+
+		/**
+		 * For some whatever reason on a version of Firefox after 115, z-index is bugged and
+		 * cannot fix the overlaying of the Tabs Toolbar and Navigation Toolbar how it originally did
+		 * in Firefox 29, causing the Tabs to have a 2px bottom border, and having the fog effect
+		 * show above the Navigation Toolbar, too hard to explain honestly
+		 */
+		async getFogPositionalValues()
+		{
+			let titlebarElem = await waitForElement("#titlebar");
+			let tabsToolbar = await waitForElement("#TabsToolbar");
+			let navigatorToolbox = await waitForElement("#navigator-toolbox");
+
+			let fogObserver = new ResizeObserver(([entry]) => {
+				console.log(entry);
+				navigatorToolbox.style.setProperty(
+					"--fog-position",
+					Math.round(entry.contentRect.bottom - (tabsToolbar.getBoundingClientRect().height / 2)) + "px"
+				);
+			});
+
+			fogObserver.observe(titlebarElem);
 		}
 	}
 	

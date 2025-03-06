@@ -20,7 +20,7 @@ let ECHELON_BOOT_CONFIG = {
 				"Echelon.Appearance.disableChrome",
 				"browser.tabs.tabmanager.enabled",
 				"widget.windows-style.modern"
-			]
+			],
 		},
 		nativeControls: true,
 	},

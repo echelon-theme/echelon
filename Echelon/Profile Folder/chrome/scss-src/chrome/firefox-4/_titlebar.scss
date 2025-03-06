@@ -8,11 +8,21 @@
 
 	#titlebar {
 		-moz-window-dragging: drag !important;
+	}
+}
+
+// FUUUUUUUUUUUCK MOZILLA
+:root[echelon-style-6][is128newer] {
+	#titlebar {
 		z-index: 2 !important;
 	}
 }
 
 :root:not([echelon-style-6]) {
+	#titlebar {
+		z-index: 2 !important;
+	}
+	
 	// hide app menu when titlebar enabled
 	&:not([tabsintitlebar="true"]) #appmenu-button-container {
 		visibility: collapse !important;
@@ -96,20 +106,19 @@
 
 			:root[chromemargin^="0,"][sizemode="normal"]:not([inFullscreen="true"], [echelon-style-6]) {
 				#titlebar-content {
-					margin-block-end: -7px !important;
+					margin-block-end: -2px !important;
 				}
 
 				&:not([tabs-on-top="true"]) {
 					#titlebar {
-						margin-block-end: -7px !important;
+						margin-block-end: -2px !important;
 
 						#titlebar-content {
 							margin-block-end: 0 !important;
 						}
 
 						#toolbar-menubar:not([inactive="true"]) {
-							margin-block-start: -7px !important;
-							margin-block-end: 7px !important;
+							margin-block-end: 2px !important;
 						}
 					}
 				}
@@ -120,4 +129,4 @@
 			}
 		}
     }
-  }
+}
