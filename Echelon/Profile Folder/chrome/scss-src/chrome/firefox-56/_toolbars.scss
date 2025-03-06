@@ -21,6 +21,11 @@
         border-radius: var(--toolbarbutton-border-radius) !important;
     }
     
+    &[sizemode="normal"]:not([echelon-system-style="winxp"], [echelon-system-style="win8"], [echelon-system-style="win10"]) #nav-bar {
+        border-top-left-radius: 2.5px !important;
+        border-top-right-radius: 2.5px !important;
+    }
+    
     #nav-bar {
         #PanelUI-button {
             background-image: none !important;

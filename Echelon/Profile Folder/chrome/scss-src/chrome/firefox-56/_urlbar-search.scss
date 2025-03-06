@@ -153,10 +153,6 @@
                 border-image: linear-gradient(transparent 15%, var(--urlbar-separator-color) 15%, var(--urlbar-separator-color) 85%, transparent 85%) !important;
                 border-image-slice: 1 !important;
                 background-image: none !important;
-    
-                .toolbarbutton-icon {
-                    @include set-background("firefox-56/urlbar/reload-stop-go.png");
-                }
             }
         }
     }

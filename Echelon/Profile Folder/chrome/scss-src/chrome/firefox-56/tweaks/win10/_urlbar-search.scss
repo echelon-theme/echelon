@@ -18,6 +18,16 @@
         font-size: 1.15em !important;
     }
 
+    #stop-reload-button {
+        &.unified {
+            .toolbarbutton-1 {
+                .toolbarbutton-icon {
+                    @include set-background("firefox-56/urlbar/reload-stop-go.png");
+                }
+            }
+        }
+    }
+
     &:not([chromehidden~="toolbar"]) {
         #nav-bar {
             #forward-button.unified-with-urlbar:not(:hover)[disabled] {
