@@ -1,6 +1,7 @@
 {
-	"version": "1.0",
-	"build": "04ffe13",
+	"version": "2.0b1",
+	"build": "679",
+	"hash": "cbf3109",
 	"channel": "nightly",
 	"branch": "upper-echelon"
 }

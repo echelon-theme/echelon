@@ -9,7 +9,8 @@ if git config --get custom.ignorePostCommitHook > /dev/null; then
     exit 0
 fi
 
-build_number=$(git rev-parse --short HEAD)
+build_number=$(git rev-list --count HEAD)
+hash=$(git rev-parse --short HEAD)
 branch=$(git rev-parse --abbrev-ref HEAD)
 
 # Ideally, this file would be named .build, but for some reason
@@ -18,8 +19,9 @@ branch=$(git rev-parse --abbrev-ref HEAD)
 # don't return anything.
 cat <<EOL > "Echelon/Profile Folder/chrome/version.json"
 {
-	"version": "1.0",
+	"version": "2.0b1",
 	"build": "$build_number",
+	"hash": "$hash",
 	"channel": "nightly",
 	"branch": "$branch"
 }

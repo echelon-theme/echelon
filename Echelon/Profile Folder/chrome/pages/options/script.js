@@ -449,11 +449,15 @@ async function loadVersion() {
 	})
 
     document.querySelectorAll("#build").forEach(async identifier => {
-        identifier.value = localEchelonJSON.build;
+        identifier.value = `${localEchelonJSON.build} (${localEchelonJSON.hash})`;
 	})
 
     document.querySelectorAll("#channel").forEach(async identifier => {
         identifier.value = localEchelonJSON.channel;
+	})
+
+    document.querySelectorAll("#branch").forEach(async identifier => {
+        identifier.value = localEchelonJSON.branch;
 	})
 
     for (const aboutSection of document.querySelectorAll(".about-section-text[data-content]"))
