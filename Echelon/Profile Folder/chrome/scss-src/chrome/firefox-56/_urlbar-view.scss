@@ -1,0 +1,346 @@
+& {
+    --urlbarView-highlight-color: HighlightText !important;
+    --urlbarView-highlight-background: Highlight !important;
+
+    --urlbarView-hover-background: var(--arrowpanel-dimmed) !important;
+    --urlbarView-hover-border-color: hsla(0, 0%, 0%, 0.1) !important;
+
+    // hack to still be able to get the bounding rects
+    #urlbar:not([open]) > .urlbarView, #urlbar:not([breakout]) > .urlbarView {
+        display: flex !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        height: 0 !important;
+    }
+    
+    .urlbarView {
+        width: var(--urlbarView-width) !important;
+        display: flex !important;
+        color: -moz-FieldText !important;
+        background-color: -moz-Field !important;
+        border: 1px solid ThreeDDarkShadow !important;
+        position: relative !important;
+        overflow: visible !important;
+        margin-block-start: 8px !important;
+
+        &::after {
+            content: "" !important;
+            display: inline-block !important;
+            width: calc(100% - 6px) !important;
+            height: calc(100% - 5px) !important;
+            position: absolute !important;
+            left: 8px !important;
+            top: 7px !important;
+            z-index: -1 !important;
+            background: rgba(0, 0, 0, 0.502) !important;
+            filter: blur(1.5px) !important;
+            pointer-events: none !important;
+        }
+
+        .urlbarView-body-inner {
+            border: 0 !important;
+            width: 100% !important;
+            margin-inline: 0 !important;
+
+            .urlbarView-results {
+                padding: 4px 3px !important;
+
+                .urlbarView-row {
+                    display: flex !important;
+                    align-items: flex-start !important;
+                    min-height: 30px !important;
+                    border: 0 !important;
+                    border-radius: 0 !important;
+                    background-color: transparent !important;
+
+                    &[rich-suggestion] {
+                        .urlbarView-url,
+                        .urlbarView-row-body-description {
+                            visibility: collapse !important;
+                        }
+
+                        .urlbarView-favicon {
+                            margin-inline-start: 28px !important;
+                        }
+                    }
+
+                    .urlbarView-row-inner {
+                        display: flex !important;
+                        flex-wrap: nowrap !important;
+                        min-height: 30px !important;
+                        position: relative !important;
+                        font: message-box !important;
+                        border-radius: 2px !important;
+                        border: 1px solid transparent !important;
+                        padding-block: 0 !important;
+                        padding-inline-start: var(--item-padding-start) !important;
+                        padding-inline-end: var(--item-padding-end) solid transparent !important;
+                        align-items: center !important;
+                        flex-direction: row !important;
+                        box-sizing: border-box !important;
+                    }
+
+                    .urlbarView-no-wrap {
+                        max-width: 100% !important;
+                        flex-basis: unset !important;
+                    }
+
+                    .urlbarView-type-icon {
+                        position: relative !important;
+                        margin: 0 !important;
+                        margin-inline: 6px !important;
+                        min-width: 16px !important;
+                        height: 16px !important;
+                        object-fit: cover !important;
+                        order: -1 !important;
+                    }
+
+                    .urlbarView-favicon {
+                        width: 16px !important;
+                        height: 16px !important;
+                        margin-inline-start: 0 !important;
+                        margin-inline-end: 9px !important;
+                        flex-basis: 0 !important;
+
+                        &.default-favicon {
+                            content: url("chrome://echelon/content/firefox-56/skin/defaultFavicon.svg") !important;
+                        }
+
+                        &[src="chrome://global/skin/icons/search-glass.svg"] {
+                            content: url("chrome://echelon/content/firefox-56/skin/autocomplete-search.svg") !important;
+                            -moz-context-properties: fill !important;
+                            fill: GrayText !important;
+                        }
+
+                        &[src="chrome://browser/skin/history.svg"] {
+                            content: url("chrome://echelon/content/firefox-56/skin/history.svg") !important;
+                            -moz-context-properties: fill !important;
+                            fill: GrayText !important;
+                        }
+                    }
+
+                    &[selected] {
+                        .urlbarView-favicon {
+                            &[src="chrome://browser/skin/history.svg"],
+                            &[src="chrome://global/skin/icons/search-glass.svg"] {
+                                fill: HighlightText !important;
+                            }
+                        }
+                    }
+
+                    .urlbarView-title-separator {
+                        display: flex !important;
+                        color: hsl(0, 0%, 50%) !important;
+
+                        &::before {
+                            margin-inline-start: 0 !important;
+                            margin-inline-end: 6px !important;
+                        }
+                    }
+
+                    &:is([type="search"], [restyled-search]):not([selected], [show-action-text], :hover) {
+                        .urlbarView-title-separator {
+                            display: none !important;
+                        }
+                    }
+
+                    .urlbarView-action {
+                        padding: 0 !important;
+                        margin: 0 !important;
+                        border-radius: 0 !important;
+                        background-color: transparent !important;
+                        color: hsl(178, 100%, 28%) !important;
+                    }
+
+                    &[type="switchtab"], &[type="remotetab"]:not([selected], :hover), &[type="clipboard"] {
+                        .urlbarView-title-separator::before {
+                            opacity: 1 !important;
+                            margin-inline-start: 0 !important;
+                            margin-inline-end: 6px !important;
+                        }
+                    }
+
+                    .urlbarView-url {
+                        color: hsl(210, 77%, 47%) !important;
+                        margin: 0 !important;
+                        padding-left: 0 !important;
+                        font-size: inherit !important;
+                    }
+
+                    .urlbarView-title {
+                        margin-inline-end: 6px !important;
+                    }
+
+                    .urlbarView-title,
+                    .urlbarView-title-separator,
+                    .urlbarView-action,
+                    .urlbarView-url {
+                        font-size: 14px !important;
+                    }
+
+                    &[selected] {
+                        .urlbarView-row-inner {
+                            background-color: var(--urlbarView-highlight-background) !important;
+                            color: var(--urlbarView-highlight-color) !important;
+                        }
+                        
+                        .urlbarView-title,
+                        .urlbarView-title-separator,
+                        .urlbarView-action,
+                        .urlbarView-url {
+                            color: inherit !important;
+                        }
+                    }
+
+                    &[row-selectable]:not([selected]):hover {
+                        .urlbarView-row-inner {
+                            background-color: var(--urlbarView-hover-background) !important;
+                            border-color: var(--urlbarView-hover-border-color) !important;
+                        }
+                    }
+
+                    &[type="bookmark"] {
+                        .urlbarView-row-inner {
+                            .urlbarView-type-icon {
+                                background-image: url("chrome://echelon/content/firefox-56/skin/bookmark.svg") !important;
+                                fill: #b2b2b2 !important;
+                            }
+                        }
+
+                        &[selected] {
+                            .urlbarView-row-inner {
+                                .urlbarView-type-icon {
+                                    fill: white !important;
+                                }
+                            }
+                        }
+                    }
+
+                    &[pinned] {
+                        .urlbarView-type-icon {
+                            background-image: none !important;
+                        }
+                    }
+
+                    &[type="switchtab"], &[type="remotetab"] {
+                        .urlbarView-row-inner {
+                            .urlbarView-type-icon {
+                                background-image: url("chrome://echelon/content/firefox-56/skin/urlbar-tab.svg") !important;
+                                fill: #b2b2b2 !important;
+                            }
+                        }
+
+                        &[selected] {
+                            .urlbarView-row-inner {
+                                .urlbarView-type-icon {
+                                    fill: white !important;
+                                }
+                            }
+                        }
+                    }
+
+                    &[label] {
+                        margin-block-start: 0 !important;
+                        
+                        &::before {
+                            display: none !important;
+                        }
+                    }
+
+                    .urlbarView-button-menu {
+                        visibility: collapse !important;
+                    }
+                }
+            }
+        }
+
+        .search-one-offs {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            border-top: 0 !important;
+            padding-block: 0 !important;
+
+            .search-panel-header {
+                padding: 3px 6px !important;
+                background-color: var(--arrowpanel-dimmed) !important;
+                border-top: 1px solid var(--panel-separator-color) !important; 
+                color: GrayText !important;
+
+                label {
+                    font: message-box !important;   
+                    opacity: 1 !important;
+                    padding-inline: 0 !important;
+                    margin-top: 2px !important;
+                    margin-bottom: 1px !important;
+                }
+            }
+
+            .search-panel-one-offs-container {
+                border-top: 1px solid var(--panel-separator-color) !important;
+                background-color: var(--arrowpanel-dimmed) !important;
+                
+                .searchbar-engine-one-off-item {
+                    min-width: 48px !important;
+                    height: 32px !important;
+                    margin-inline: 0 !important;
+                    background: linear-gradient(transparent 15%, var(--panel-separator-color) 15%, var(--panel-separator-color) 85%, transparent 85%) !important;
+                    background-size: 1px auto !important;
+                    background-repeat: no-repeat !important;
+                    background-position: right center !important;
+                    color: GrayText !important;
+
+                    &:hover {
+                        background-color: var(--arrowpanel-dimmed-further) !important;
+                        color: inherit !important;
+                    }
+                }
+                
+                .search-setting-button {
+                    background-position: left center !important;
+                }
+            }
+        }
+
+        .search-panel-custom-echelon {
+            .search-panel-input-value {
+                color: -moz-fieldtext !important;
+            }
+
+            &[engine-visible] {
+                #searchbar-oneoffheader-search,
+                #search-panel-searchforwith {
+                    display: none !important;
+                }
+                
+                #search-panel-searchonengine {
+                    display: inline-block !important;
+                }
+            }
+        }
+
+        .search-panel-current-input > label {
+            white-space: pre !important;
+            margin: 2px 0 1px !important;
+        }
+
+        #urlbar-engine-one-off-item-bookmarks {
+            list-style-image: url("chrome://echelon/content/firefox-56/skin/bookmark.svg") !important;
+        }
+
+        #urlbar-engine-one-off-item-tabs {
+            list-style-image: url("chrome://echelon/content/firefox-56/skin/urlbar-tab.svg") !important;
+        }
+
+        #urlbar-engine-one-off-item-history {
+            list-style-image: url("chrome://echelon/content/firefox-56/skin/history.svg") !important;
+        }
+
+        .search-setting-button .button-icon {
+            list-style-image: url("chrome://echelon/content/firefox-56/skin/gear.svg") !important;
+        }
+
+        .search-panel-one-offs-header[hidden="true"] {
+            display: none !important;
+        }
+    }
+}

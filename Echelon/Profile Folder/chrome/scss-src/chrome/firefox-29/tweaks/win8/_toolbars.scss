@@ -1,0 +1,111 @@
+& {
+    --toolbarbutton-background: transparent !important;
+    --toolbarbutton-background-hot: hsla(210,4%,10%,.08) !important;
+    --toolbarbutton-background-active: hsla(210,4%,10%,.12) !important;
+
+    --toolbarbutton-border-radius: 0 !important;
+    --toolbarbutton-border-color: transparent !important;
+    
+    --toolbarbutton-shadow-normal: none !important;
+    --toolbarbutton-shadow-hot: none !important;
+    --toolbarbutton-shadow-active: 0 1px 0 0 hsla(210,4%,10%,.1) inset !important;
+
+    #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
+        background-clip: border-box !important;
+
+        &#forward-button.unified-with-urlbar:not([open], :active) {
+            background-clip: padding-box !important;
+            background-image: none !important;
+            background-color: transparent !important;
+            --toolbarbutton-border-color: var(--toolbarbutton-background-hot) !important;
+        }
+
+        &:not([disabled="true"]):hover,
+        &#forward-button.unified-with-urlbar:not([open], [disabled="true"], :active):hover {
+            background-image: none !important;
+            background-color: var(--toolbarbutton-background-hot) !important;
+            --toolbarbutton-border-color: hsla(200, 6%, 10%, 0.1) !important;
+            box-shadow: var(--toolbarbutton-shadow-hot) !important;
+        }
+
+        &:not([disabled="true"]):hover:active,
+        &:not([disabled="true"])[open] {
+            background-image: none !important;
+            background-color: var(--toolbarbutton-background-active) !important;
+            box-shadow: var(--toolbarbutton-shadow-active) !important;
+            --toolbarbutton-border-color: transparent !important;
+            border-top-color: hsla(210,4%,10%,.2) !important;
+            transition-duration: 10ms !important;
+        }
+
+        &#back-button.unified-with-urlbar {
+            width: 32px !important;
+            min-width: 32px !important;
+            height: 32px !important;
+            background-clip: padding-box !important;
+            background-image: none !important;
+            background-color: hsla(210,25%,98%,.08) !important;
+            border: 1px solid !important;
+            border-color: hwb(200 9% 89% / 0.25) !important;
+            box-shadow: none !important;
+
+            &:not([open], [disabled="true"], :active):hover {
+                background-image: none !important;
+                background-color: hsla(210,4%,10%,.08) !important;
+                box-shadow: none !important;
+            }
+
+            &:not([disabled="true"]):hover:active,
+            &:not([disabled="true"])[open] {
+                background-image: none !important;
+                background-color: hsla(210,4%,10%,.12) !important;
+                box-shadow: 0 1px 0 0 hsla(210,80%,20%,.1) inset !important;
+            }
+        }
+    }
+
+    &:not([echelon-style-7]) {
+        #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button {
+            &:not([disabled="true"]):hover,
+            &:not([disabled="true"])[open="true"] {
+                .toolbarbutton-1 {
+                    background-image: none !important;
+                    background-color: var(--toolbarbutton-background-hot) !important;
+                    box-shadow: var(--toolbarbutton-shadow-hot) !important;
+                    --toolbarbutton-border-color: hsla(200, 6%, 10%, 0.1) !important;
+
+                    &:not([open], [disabled="true"], :active):hover {
+                        background-color: var(--toolbarbutton-background-hot) !important;
+                        border-color: hsla(200, 6%, 10%, 0.1) !important;
+                    }
+
+                    &:not([disabled="true"]):hover:active,
+                    &:not([disabled="true"])[open] {
+                        background-image: none !important;
+                        background-color: var(--toolbarbutton-background-active) !important;
+                        box-shadow: var(--toolbarbutton-shadow-active) !important;
+                        --toolbarbutton-border-color: hsla(200, 6%, 10%, 0.1) !important;
+                        transition: none !important;
+                    }
+                }
+            }
+
+            &:not(:hover, :active, [open]) {
+                .toolbarbutton-menubutton-dropmarker::before {
+                    content: '' !important; 
+                    display: flex !important;
+                    min-width: 1px !important;
+                    min-height: 16px !important;
+                    background-image: linear-gradient(hsla(210,54%,20%,.2) 0, hsla(210,54%,20%,.2) 16px) !important;
+                    background-clip: padding-box !important;
+                    background-position: center !important;
+                    background-repeat: no-repeat !important;
+                    background-size: 1px 16px !important;
+                    box-shadow: none !important;
+                    position: absolute !important;
+                    left: 31px !important;
+                }
+            }
+        }
+    }
+}

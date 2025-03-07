@@ -1,0 +1,126 @@
+@import "_mixins.scss";
+
+:root {
+    --toolbarbutton-icon-width: 18px;
+    --toolbarbutton-icon-height: 18px;
+    --toolbarbutton-icon-large-width: 20px;
+    --toolbatbutton-icon-large-height: 20px;
+    
+    --identity-icons-brand: url("chrome://branding/content/icon32.png");
+    --identity-color-brand: rgb(229,115,0);
+    --identity-background-brand: linear-gradient(rgba(229,114,0,0),
+                                 rgba(229,114,0,.5) 35%,
+                                 rgba(229,114,0,.5) 65%,
+                                 rgba(229,114,0,0));
+
+    @include toolbar-icons((    
+        "back-button": "firefox-4/toolbar/back-large.png",
+        "forward-button": "firefox-4/toolbar/forward.png",
+        "stop-button": "firefox-4/toolbar/stop.png",
+        "reload-button": "firefox-4/toolbar/reload.png",
+        "home-button": "firefox-4/toolbar/home.png",
+        "downloads-button": "firefox-4/toolbar/download.png",
+        "downloads-indicator-anchor": "firefox-4/toolbar/download.png",
+        "downloads-button[attention="success"]": "firefox-4/toolbar/download-glow.png",
+        "history-button": "firefox-4/toolbar/history.png",
+        "bookmarks-button": "firefox-4/toolbar/bookmarksMenu.png",
+        "bookmarks-menu-button": "firefox-4/toolbar/bookmarksMenu.png",
+        "print-button": "firefox-4/toolbar/print.png",
+        "new-tab-button": "firefox-4/toolbar/new-tab.png",
+        "new-window-button": "firefox-4/toolbar/new-window.png",
+        "cut-button": "firefox-4/toolbar/edit-cut.png",
+        "copy-button": "firefox-4/toolbar/edit-copy.png",
+        "paste-button": "firefox-4/toolbar/edit-paste.png",
+        "fullscreen-button": "firefox-4/toolbar/fullscreen.png",
+        "zoom-out-button": "firefox-4/toolbar/zoom-out.png",
+        "zoom-in-button": "firefox-4/toolbar/zoom-in.png",
+        "PanelUI-menu-button": "firefox-29/toolbar/menu.png",
+        "save-to-pocket-button": "firefox-29/toolbar/pocket.png",
+        "save-to-pocket-button[open]": "firefox-29/toolbar/pocket_active.png",
+        "unified-extensions-button": "firefox-29/toolbar/addons.png",
+        "fxa-toolbar-menu-button": "firefox-4/toolbar/sync.png",
+        "fxa-toolbar-menu-button[status="active"]": "firefox-4/toolbar/sync-throbber.png",
+        "nav-bar-overflow-button": "firefox-29/toolbar/chevron.png",
+        "characterencoding-button": "firefox-29/toolbar/characterEncoding.png",
+        "history-panelmenu": "firefox-29/toolbar/history.png",
+        "developer-button": "firefox-29/toolbar/developer.png",
+        "echelon-button": "firefox-4/toolbar/echelon.png",
+        "panic-button": "firefox-29/toolbar/forget.png",
+        "panic-button[open]": "firefox-29/toolbar/forget_active.png",
+        "open-file-button": "firefox-29/toolbar/open.png",
+        "save-page-button": "firefox-29/toolbar/save.png",
+        "email-link-button": "firefox-29/toolbar/mail.png",
+        "sync-button": "firefox-29/toolbar/synced-tabs.png",
+        "sidebar-button": "firefox-29/toolbar/sidebars.png",
+        "screenshot-button": "firefox-29/toolbar/screenshot.png",
+        "logins-button": "firefox-29/toolbar/login.png",
+        "import-button": "firefox-29/toolbar/import.png",
+    ));
+
+    @include toolbar-icons-inverted((    
+        "back-button": "firefox-4/toolbar/inverted/back-large.png",
+        "forward-button": "firefox-4/toolbar/inverted/forward.png",
+        "stop-button": "firefox-4/toolbar/inverted/stop.png",
+        "reload-button": "firefox-4/toolbar/inverted/reload.png",
+        "home-button": "firefox-4/toolbar/inverted/home.png",
+        "downloads-button": "firefox-4/toolbar/inverted/download.png",
+        "downloads-indicator-anchor": "firefox-4/toolbar/inverted/download.png",
+        "history-button": "firefox-4/toolbar/inverted/history.png",
+        "bookmarks-button": "firefox-4/toolbar/inverted/bookmarksMenu.png",
+        "bookmarks-menu-button": "firefox-4/toolbar/inverted/bookmarksMenu.png",
+        "print-button": "firefox-4/toolbar/inverted/print.png",
+        "new-tab-button": "firefox-4/toolbar/inverted/new-tab.png",
+        "new-window-button": "firefox-4/toolbar/inverted/new-window.png",
+        "cut-button": "firefox-4/toolbar/inverted/edit-cut.png",
+        "copy-button": "firefox-4/toolbar/inverted/edit-copy.png",
+        "paste-button": "firefox-4/toolbar/inverted/edit-paste.png",
+        "fullscreen-button": "firefox-4/toolbar/inverted/fullscreen.png",
+        "zoom-out-button": "firefox-4/toolbar/inverted/zoom-out.png",
+        "zoom-in-button": "firefox-4/toolbar/inverted/zoom-in.png",
+        "PanelUI-menu-button": "firefox-29/toolbar/inverted/menu.png",
+        "save-to-pocket-button": "firefox-29/toolbar/inverted/pocket.png",
+        "save-to-pocket-button[open]": "firefox-29/toolbar/inverted/pocket_active.png",
+        "unified-extensions-button": "firefox-29/toolbar/inverted/addons.png",
+        "nav-bar-overflow-button": "firefox-29/toolbar/inverted/chevron.png",
+        "characterencoding-button": "firefox-29/toolbar/inverted/characterEncoding.png",
+        "history-panelmenu": "firefox-29/toolbar/inverted/history.png",
+        "developer-button": "firefox-29/toolbar/inverted/developer.png",
+        "echelon-button": "firefox-4/toolbar/inverted/echelon.png"
+    ));
+
+    @include replace-favicon("chrome://mozapps/skin/extensions/extension.svg", "chrome://echelon/content/firefox-4/extensions/extensionGeneric-16.png");
+    &[echelon-system-style="winxp"] {
+        @include replace-favicon("chrome://mozapps/skin/extensions/extension.svg", "chrome://echelon/content/firefox-4/xp/extensions/extensionGeneric-16.png");
+    }
+
+    #page-action-buttons {
+        .urlbar-page-action {
+            all: revert !important;
+            padding: 0 2px !important;
+        }
+
+        // travis: star button bullshit
+        #star-button {
+            @include set-background("firefox-4/bookmark.png");
+
+            @include set-horizontal-states(0, 16px, 32px);
+            
+            &[starred="true"] {
+                @include set-background("firefox-4/editBookmark.png");
+            }
+        }
+    }
+
+    // remove dog ass account picture from sync button
+    #fxa-toolbar-menu-button {
+        #fxa-avatar-image {
+            display: none !important;
+        }
+    }
+
+    .close-icon {
+        @include set-size(16px, 16px);
+        @include set-background("firefox-4/close.png");
+        @include set-horizontal-states(0, 16px, 32px);
+    }
+}

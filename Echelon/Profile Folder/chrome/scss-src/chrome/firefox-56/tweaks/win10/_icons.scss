@@ -1,0 +1,7 @@
+& {
+    .close-icon {
+        @include set-size(20px, 20px);
+        @include set-background("firefox-56/close.png");
+        @include set-horizontal-states(0, 20px, 40px);
+    }
+}

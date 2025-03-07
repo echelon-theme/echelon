@@ -1,0 +1,10 @@
+& {
+    @include toolbar-icons((    
+        "back-button:not(.unified-with-urlbar)": "firefox-4/toolbar/back.png",
+        "home-button": "firefox-14/toolbar/home.png",
+    ));
+
+    @include toolbar-icons-inverted((    
+        "home-button": "firefox-14/toolbar/inverted/home.png",
+    ));
+}

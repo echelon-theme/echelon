@@ -8,6 +8,7 @@
 {
     var { waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
     waitForElement = waitForElement.bind(window);
+
     Object.defineProperty(DownloadsIndicatorView, "percentComplete", {
         set: function(aValue)
         {
@@ -23,27 +24,29 @@
         
                 if (this._percentComplete >= 0)
                 {
+                    this.indicator.setAttribute("counter", "true");
                     this.indicator.setAttribute("progress", "true");
-                    this._progressIcon.style.width = this._percentComplete + "%";
-                    this._progressCounter.value = String(this._percentComplete);
+
+                    this._progressIcon.style.setProperty("--percent", this._percentComplete+"%");
+                    document.getElementById("downloads-indicator-counter-echelon").setAttribute("value", this._percentComplete+"%");
                 }
                 else
                 {
                     this.indicator.removeAttribute("progress");
-                    this._progressIcon.style.removeProperty("width");
-                    this._progressCounter.value = "";
+
+                    this._progressIcon.setAttribute("value", "0");
                 }
             }
         }
     });
-    
-    Object.defineProperty(DownloadsIndicatorView, "progressCounter", {
-        get: function() 
+
+    Object.defineProperty(DownloadsIndicatorView, "_progressIcon", {
+        get: function()
         {
             return (
-                this._progressCounter ||
-                (this._progressCounter = document.getElementById(
-                    "downloads-indicator-counter"
+                this.__progressIcon ||
+                (this.__progressIcon = document.getElementById(
+                    "downloads-indicator-progress-bar-echelon"
                 ))
             );
         }
@@ -63,8 +66,6 @@
 
     DownloadsIndicatorView._showNotification = function _showNotification(aType)
     {
-        console.log(aType);
-
         // No need to show visual notification if the panel is visible.
         if (DownloadsPanel.isPanelShowing)
         {
@@ -100,70 +101,42 @@
         // container.
         // Note: no notifier animation for download finished in Photon
         let notifier = this.notifier;
-    
-        // Show the notifier before measuring for size/placement. Being hidden by default
-        // avoids the interference with scrolling/APZ when the notifier element is
-        // tall enough to overlap the tabbrowser element
-        notifier.removeAttribute("hidden");
 
-        // the anchor height may vary if font-size is changed or
-        // compact/tablet mode is selected so recalculate this each time
-        let anchorRect = anchor.getBoundingClientRect();
-        let notifierRect = notifier.getBoundingClientRect();
-        let topDiff = anchorRect.top - notifierRect.top;
-        let leftDiff = anchorRect.left - notifierRect.left;
-        let heightDiff = anchorRect.height - notifierRect.height;
-        let widthDiff = anchorRect.width - notifierRect.width;
-        let translateX = leftDiff + 0.5 * widthDiff + "px";
-        let translateY = topDiff + 0.5 * heightDiff + "px";
-        notifier.style.transform =
-            "translate(" + translateX + ", " + translateY + ")";
-        notifier.setAttribute("notification", aType);
-        
+
+        if (notifier.style.transform == '') {
+            notifier.removeAttribute("hidden");
+
+            let anchorRect = anchor.getBoundingClientRect();
+            let notifierRect = notifier.getBoundingClientRect();
+            let topDiff = anchorRect.top - notifierRect.top;
+            let leftDiff = anchorRect.left - notifierRect.left;
+            let heightDiff = anchorRect.height - notifierRect.height;
+            let widthDiff = anchorRect.width - notifierRect.width;
+            let translateX = (leftDiff + .5 * widthDiff) + "px";
+            let translateY = (topDiff + .5 * heightDiff) + "px";
+            notifier.style.transform = "translate(" +  translateX + ", " + translateY + ")";
+            notifier.setAttribute("notification", aType);
+        }
         anchor.setAttribute("notification", aType);
-    
-        let animationDuration;
-        // This value is determined by the overall duration of animation in CSS.
-        animationDuration = aType == "start" ? 760 : 850;
-    
-        this._currentNotificationType = aType;
-    
-        setTimeout(() =>
-        {
-            requestAnimationFrame(() =>
-            {
-                notifier.hidden = true;
-                notifier.removeAttribute("notification");
-                notifier.style.transform = "";
-                anchor.removeAttribute("notification");
-    
-                requestAnimationFrame(() =>
-                {
-                    let nextType = this._nextNotificationType;
-                    this._currentNotificationType = null;
-                    this._nextNotificationType = null;
-                    if (nextType)
-                    {
-                        this._showNotification(nextType);
-                    }
-                });
-            });
-        }, animationDuration);
+        this._notificationTimeout = setTimeout(() => {
+            notifier.removeAttribute("notification");
+            notifier.style.transform = '';
+        }, 1000);
     };
 
     waitForElement("#downloads-button > .toolbarbutton-badge-stack").then(e => {
         e.innerHTML = "";
         let downloadsIndicator = MozXULElement.parseXULToFragment(
-        `        
-        <stack id="downloads-indicator-anchor-echelon" consumeanchor="downloads-button" class="toolbarbutton-icon">
-            <vbox id="downloads-indicator-progress-area" align="center">
-                <description id="downloads-indicator-counter" value="0s" />
-                <hbox id="downloads-indicator-progress">
-                    <spacer id="downloads-indicator-progress-bar" class="progress-bar" />
-                    <spacer id="downloads-indicator-progress-remainder" class="progress-remainder" flex="1" />
-                </hbox>
+        `
+        <stack id="downloads-indicator-anchor-echelon" consumeanchor="downloads-button">
+            <vbox id="downloads-indicator-progress-area-echelon" pack="center">
+                <description id="downloads-indicator-counter-echelon" value="" />
+                <progressmeter id="downloads-indicator-progress-echelon">
+                    <spacer id="downloads-indicator-progress-bar-echelon" class="progress-bar" />
+                    <spacer id="downloads-indicator-progress-remainder-echelon" class="progress-remainder" flex="1" />
+                </progressmeter>
             </vbox>
-            <image id="downloads-indicator-icon-echelon" />
+            <image id="downloads-indicator-icon" />
         </stack>
         `);
         e.append(downloadsIndicator);

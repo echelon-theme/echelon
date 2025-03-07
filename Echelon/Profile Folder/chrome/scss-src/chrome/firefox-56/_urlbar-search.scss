@@ -1,0 +1,207 @@
+& {
+    --urlbar-separator-color: ThreeDLightShadow;
+
+    --urlbar-border-color: hsla(210,54%,20%,.25) hsla(210,54%,20%,.27) hsla(210,54%,20%,.3) !important;
+    --urlbar-border-color-hover: hsla(210,54%,20%,.35) hsla(210,54%,20%,.37) hsla(210,54%,20%,.4) !important;
+    --urlbar-border-color-focused: Highlight !important;
+
+    &[echelon-system-style="win8"],
+    &[echelon-system-style="win10"] {
+        .urlbar-input-container,
+        #urlbar-input-container {
+            .urlbar-history-dropmarker {
+                @include set-background("firefox-56/urlbar/urlbar-history-dropmarker.png");
+            }
+        }
+    }
+
+    #navigator-toolbox:not(:hover) #nav-bar:not([customizing="true"]) #urlbar:not([focused]) .urlbar-history-dropmarker {
+        opacity: 0 !important;
+    }
+
+    #urlbar {
+        .urlbar-input-container,
+        #urlbar-input-container {
+            .urlbar-history-dropmarker {
+                transition: opacity 0.15s ease !important;
+            }
+        }
+
+        #identity-box {
+            padding: 3px 5px !important;
+            padding-inline-end: 2px !important;
+            margin-inline-end: 2px !important;
+            font-size: .9em !important;
+            transition: padding-left, padding-right !important;
+            fill: currentColor !important;
+            fill-opacity: .6 !important;
+            overflow: hidden !important;
+            
+            &:not(.chromeUI, .verifiedIdentity) {
+                #identity-icon-label {
+                    visibility: collapse !important;
+                }
+            }
+
+            &.chromeUI,
+            &[pageproxystate="valid"].verifiedIdentity {
+                padding-inline-end: 4px !important;
+                margin-inline-end: 4px !important;
+                border-inline-end: 1px solid var(--urlbar-separator-color) !important;
+                border-image: linear-gradient(transparent 15%, var(--urlbar-separator-color) 15%, var(--urlbar-separator-color) 85%, transparent 85%) !important;
+                border-image-slice: 1 !important;
+
+                #identity-icon-box {
+                    padding: 0 !important;
+                    
+                    #identity-icon-label {
+                        display: flex !important;
+                        visibility: visible !important;
+                        padding-inline-start: 2px !important;
+                    }
+                }
+            }
+
+            #identity-icon-box {
+                padding-inline: 0 !important;
+                background-color: transparent !important;
+
+                #identity-icon {
+                    list-style-image: url("chrome://echelon/content/firefox-56/skin/identity-icon.svg") !important;
+                }
+            }
+
+            &:hover:not(.chromeUI, .no-hover) #identity-icon-box #identity-icon,
+            &:not(.chromeUI) #identity-icon-box[open] #identity-icon {
+                list-style-image: url("chrome://echelon/content/firefox-56/skin/identity-icon-hover.svg") !important;
+            }
+
+            &[pageproxystate="valid"] {
+                &.verifiedDomain,
+                &.verifiedIdentity,
+                &.mixedActiveBlocked {
+                    #connection-icon {
+                        margin-inline-start: 2px !important;
+                        list-style-image: url("chrome://echelon/content/firefox-56/skin/connection-secure.svg") !important;
+                        -moz-context-properties: fill !important;
+                        fill: #4d9a26 !important;
+                        visibility: visible !important;
+                    }
+                }
+
+                &.verifiedIdentity {
+                    #identity-icon-label {
+                        color: hsl(92,100%,30%) !important;
+                    }
+                }
+            }
+
+            &.chromeUI {
+                #identity-icon-box {
+                    #identity-icon {
+                        list-style-image: var(--identity-icons-brand) !important;
+                    }
+
+                    #identity-icon-label {
+                        color: var(--identity-color-brand) !important;
+                    }
+                }
+            }
+        }
+
+        #page-action-buttons {
+            order: 1 !important;
+
+            #reader-mode-button {
+                padding: 0 3px !important;
+                width: 22px !important;
+
+                #reader-mode-button-icon {
+                    list-style-image: none !important;
+                    background-image: url("chrome://echelon/content/firefox-56/skin/readerMode.svg") !important;
+                }
+
+                &:hover {
+                    #reader-mode-button-icon {
+                        background-position-x: -16px;
+                    }
+                }
+
+                &:active,
+                &[readeractive="true"] {
+                    #reader-mode-button-icon {
+                        background-position-x: -32px;
+                    }
+                }
+            }
+        }
+    }
+
+    &:not([chromehidden~="toolbar"]) #forward-button.unified-with-urlbar[disabled] + #urlbar-container #identity-box { 
+        padding-inline-start: 5px !important;
+    }
+
+    #stop-reload-button {
+        &.unified {
+            padding: 1px !important;
+            padding-inline-start: 0 !important;
+    
+            .toolbarbutton-1 {
+                padding: 0 9px !important;
+                margin-inline-start: 5px !important;
+                border-inline-start: 1px solid var(--urlbar-separator-color) !important;
+                border-image: linear-gradient(transparent 15%, var(--urlbar-separator-color) 15%, var(--urlbar-separator-color) 85%, transparent 85%) !important;
+                border-image-slice: 1 !important;
+                background-image: none !important;
+            }
+        }
+    }
+
+    #searchbar {
+        padding: 0 !important;
+
+        .searchbar-search-button {
+            .searchbar-search-icon {
+                width: 20px !important;
+                height: 20px !important;
+                margin-block: 1px !important;
+                margin-inline: 4px 0 !important;
+                list-style-image: none !important;
+                background-image: url("chrome://echelon/content/firefox-56/search/search-indicator.png") !important;
+            }
+
+            &:hover {
+                .searchbar-search-icon {
+                    background-position-x: -20px !important;
+                }
+
+                &:active {
+                    .searchbar-search-icon {
+                        background-position-x: -40px !important;
+                    }
+                }
+            }
+
+            .searchbar-search-icon-overlay {
+                visibility: collapse !important;
+            }
+        }
+
+        .search-go-container {
+            padding: 2px 2px !important;
+            
+            .search-go-button {
+                width: 12px !important;
+                height: 12px !important;
+                padding: 1px !important;
+                border-radius: 0 !important;
+                outline: 0 !important;
+                background-color: transparent !important;
+                background-size: 40px 40px !important;
+                @include set-background("firefox-56/urlbar/reload-stop-go.png");
+                @include set-vertical-states(0, 27px, 41px);
+                background-position-x: -28px !important;
+            }
+        }
+    }
+}

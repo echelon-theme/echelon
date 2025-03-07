@@ -10,16 +10,24 @@ if git config --get custom.ignorePostCommitHook > /dev/null; then
 fi
 
 build_number=$(git rev-list --count HEAD)
+hash=$(git rev-parse --short HEAD)
+branch=$(git rev-parse --abbrev-ref HEAD)
 
 # Ideally, this file would be named .build, but for some reason
 # dotfiles within chrome URLs are weird, and won't even return
 # the "file not found" page when they don't exist. They just
 # don't return anything.
-cat <<EOL > "Echelon/Profile Folder/chrome/build.txt"
-$build_number
+cat <<EOL > "Echelon/Profile Folder/chrome/version.json"
+{
+	"version": "2.0b1",
+	"build": "$build_number",
+	"hash": "$hash",
+	"channel": "nightly",
+	"branch": "$branch"
+}
 EOL
 
-git add "Echelon/Profile Folder/chrome/build.txt"
+git add "Echelon/Profile Folder/chrome/version.json"
 
 # Ignore next run
 git config custom.ignorePostCommitHook "true"

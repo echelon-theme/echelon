@@ -1,0 +1,81 @@
+#echelon-wizard-container {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    z-index: 999999 !important;
+    inset: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    #echelon-wizard-arrowcontent {
+        width: 100% !important;
+        height: 7px !important;
+        margin-block-end: -1px !important;
+        z-index: 1 !important;
+        
+        image {
+            width: 13px;
+            height: 8px;
+            list-style-image: url("chrome://echelon/content/wizard/wizard-arrow.png") !important;
+        }
+    }
+
+    &[side="right"] {
+        #echelon-wizard-arrowcontent {
+            padding-inline: 12px;
+            flex-direction: row-reverse !important;
+
+            image {
+                list-style-image: url("chrome://echelon/content/wizard/wizard-arrow-right.png") !important;
+            }
+        }
+    }
+
+    #echelon-wizard-panel {
+        opacity: 0 !important;
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        transition-duration: 550ms !important;
+        transform: translateY(-40px) !important;
+        transition-property: transform, opacity !important;
+        will-change: transform, opacity !important;
+
+        #echelon-wizard-content {
+            width: 556px;
+            height: 422px;
+            border-radius: 3.5px;
+            background-clip: padding-box;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 15px rgb(0, 0, 0, .5);
+            position: relative;
+        }
+    }
+
+    &[animate="false"],
+    &[animate="open"] {
+        opacity: 1 !important;
+
+        #echelon-wizard-panel {
+            opacity: 1 !important;
+            &:-moz-window-inactive {
+                opacity: 0.5 !important;
+            }
+            
+            transform: none !important;
+            pointer-events: all !important;
+        }
+    }
+
+    &[animate="closing"] {
+        opacity: 1 !important;
+        pointer-events: none !important;
+
+        #echelon-wizard-panel {
+            opacity: 0 !important;
+            transform: translateY(40px) !important;
+        }
+    }
+
+    &[animating] {
+        pointer-events: none !important;
+    }
+}

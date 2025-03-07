@@ -1,0 +1,21 @@
+& {
+    #editBookmarkPanel {
+        font: message-box !important;
+
+        .footer-button {
+            appearance: button !important;
+            color: ButtonText !important;
+            background-color: ButtonFace !important;
+            padding: 2px 3px !important;
+            margin: 1px 5px 2px !important;
+            font-weight: normal !important;
+        }
+
+        #editBookmarkPanel {
+            .expander-up,
+            .expander-down {
+                appearance: button !important;
+            }
+        }
+    }
+}

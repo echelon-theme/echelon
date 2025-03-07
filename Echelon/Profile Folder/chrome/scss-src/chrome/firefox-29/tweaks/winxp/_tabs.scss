@@ -1,0 +1,31 @@
+&:not([lwtheme="true"])[tabsintitlebar="true"] {
+    #TabsToolbar {
+        color: var(--captiontext, CaptionText) !important;
+        &:-moz-window-inactive {
+            color: var(--inactivecaptiontext, InactiveCaptionText) !important;
+        }
+
+        .tab-close-button {
+            &:not(:hover, :hover:active, [selected]) {
+                background-position-x: -48px !important;
+            }
+        }
+    }
+
+    &:not([echelon-style-7]) {
+        #TabsToolbar {
+            #tabs-newtab-button,
+            #new-tab-button {
+                .toolbarbutton-icon {
+                    @include set-background("firefox-29/tabbrowser/newtab-inverted.png");
+                }
+            }
+
+            #alltabs-button {
+                .toolbarbutton-icon {
+                    @include set-background("firefox-14/toolbarbutton-dropdown-arrow-inverted.png");
+                }
+            }
+        }
+    }
+}

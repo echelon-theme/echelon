@@ -1,0 +1,415 @@
+#navigator-toolbox > toolbar:not(#titlebar, #TabsToolbar),
+#toolbar-menubar #menubar-items,
+#navigator-toolbox::after,
+#navigator-toolbox > #titlebar > #TabsToolbar > .toolbar-items,
+#browser,
+#customization-container {
+    transition-property: margin-left, margin-right !important;
+    transition-duration: 150ms !important;
+    transition-timing-function: ease-out !important;
+}
+
+:root[customizing] {
+    background-image: url('chrome://echelon/content/firefox-29/customizableui/customizeMode-gridTexture.png') !important;
+    background-attachment: fixed !important;
+
+    #navigator-toolbox > toolbar:not(#titlebar),
+    #navigator-toolbox::after,
+    #navigator-toolbox > #titlebar > #TabsToolbar > .toolbar-items,
+    #browser,
+    #customization-container,
+    #toolbar-menubar #menubar-items {
+        margin-inline: 2em !important;
+    }
+
+    #navigator-toolbox {
+        background-color: transparent !important;
+    }
+
+    #browser,
+    #customization-container {
+        margin-block-end: 2em !important;
+        border-inline: 1px solid hsla(209,67%,12%,0.35) !important;
+        border-block-end: 1px solid hsla(209,67%,12%,0.35) !important;
+        background-clip: padding-box !important;
+    }
+
+    #nav-bar-customization-target,
+    #TabsToolbar,
+    #toolbar-menubar #menubar-items,
+    #PersonalToolbar {
+        padding-inline: 10px !important;
+    }
+
+    #nav-bar-overflow-button,
+    toolbarpaletteitem[place="palette"] #bookmarks-menu-button-dropmarker {
+        visibility: collapse !important;
+    }
+
+    #stop-reload-button.unified {
+        opacity: 0.5 !important;
+    }
+}
+
+:root:not([customizing]) #customization-container {
+    display: grid !important;
+    min-height: 0 !important;
+    visibility: collapse !important;
+}
+
+#customization-panel-container {
+    grid-area: 1 / 2 / 3 / 3;
+    overflow-y: hidden !important;
+    padding: 15px 25px 25px !important;
+    background-image: url("chrome://echelon/content/firefox-29/customizableui/customizeMode-separatorHorizontal.png"),
+                      url("chrome://echelon/content/firefox-29/customizableui/customizeMode-separatorVertical.png"),
+                      url("chrome://echelon/content/firefox-29/customizableui/customizeMode-gridTexture.png"),
+                      url("chrome://echelon/content/firefox-29/customizableui/background-noise-toolbar.png"),
+                      linear-gradient(to bottom, #3e86ce, #3878ba) !important;
+    background-position: center top, left center, left top, left top, left top !important;
+    background-repeat: no-repeat, no-repeat, repeat, repeat, no-repeat !important;
+    background-size: auto 12px, 12px 100%, auto, auto, auto !important;
+    background-attachment: scroll, scroll, fixed, fixed, scroll !important;
+
+    
+    .panel-arrow[side="top"] {
+        list-style-image: url("chrome://echelon/content/firefox-29/panelarrow/panelarrow-vertical.svg") !important;
+        fill: -moz-Field !important;
+        stroke: ThreeDShadow !important;
+        margin-inline-end: 6px !important;
+
+        :root[echelon-appearance-blue] & {
+            stroke: hsla(210,4%,10%,.2) !important;
+        }
+    }
+
+    .panel-arrowcontent {
+        // We will have to hardcode the styling of
+        // this panel, as it causes to look messed up
+        // on any other that isn't Australis.
+        // Honestly don't even matter
+        border: 1px solid ThreeDShadow !important;
+        box-shadow: none !important;
+        color: -moz-FieldText !important;
+        background-color: -moz-field !important;
+        border-radius: 4px !important;
+
+        // For 115
+        panelview {
+            background: inherit !important;
+        }
+        
+        :root[echelon-appearance-blue] & {
+            border-color: hsla(210,4%,10%,.2) !important;
+            box-shadow: 0 0 4px hsla(210,4%,10%,.2) !important;
+        }
+
+        :root:is([echelon-system-style="win8"], [echelon-system-style="win10"]) & {
+            border-radius: 0 !important;
+        }
+
+        overflow: hidden !important;
+        flex: 1 !important;
+
+        #PanelUI-mainView {
+            height: 100% !important;
+        }
+    }
+    
+}
+
+#customization-container {
+    grid-template-columns: 1fr auto !important;
+    grid-template-rows: 1fr auto !important;
+
+    &:not([hidden]) {
+        display: grid !important;
+    }
+
+    #customization-content-container {
+        background-color: white !important; //lwtheme causes ts to be transparent
+        grid-area: 1 / 1 / 2 / 2 !important;
+    }
+    
+    toolbarpaletteitem[place="palette"] {
+        width: 10em !important;
+        max-width: 10em !important;
+        height: calc(40px + 2em) !important;
+        display: inline-flex !important;
+        margin: 0 !important;
+        margin-block-end: 5px !important;
+    }
+
+    :root:not([echelon-style-7]) & {
+        #customization-header {
+            font-size: 1.5em !important;
+            line-height: 1.5em !important;
+            color: rgb(64,100,128) !important;
+            font-weight: lighter !important;
+            margin: 0 !important;
+            margin-bottom: 1em !important;
+            padding: 25px 25px 0 !important;
+        }
+    }
+
+    #customization-palette {
+        padding: 0 25px 25px !important;
+
+        &:not([hidden]) {
+            margin-bottom: 25px !important;
+        }
+    }
+
+    #customization-footer {
+        grid-area: 2 / 1 / 3 / 2 !important;
+    }
+
+    :root:not([echelon-style-7]) & {
+        #customization-footer {
+            background-color: rgb(236,236,236) !important;
+            border-top: 1px solid rgb(221,221,221) !important;
+            padding: 15px !important;
+        }
+
+        .footer-button,
+        .customizationmode-button,
+        #customization-titlebar-visibility-checkbox {
+            appearance: none !important;
+            border: 1px solid rgb(192,192,192) !important;
+            border-radius: 3px !important;
+            margin: 0 !important;
+            padding: 2px 12px !important;
+            background-color: rgb(251,251,251) !important;
+            color: rgb(71,71,71) !important;
+            box-shadow: 0 1px rgba(255, 255, 255, 0.5),
+                        inset 0 1px rgba(255, 255, 255, 0.5) !important;
+            font-weight: normal !important;
+            min-height: 35px !important;
+            margin-inline-end: 10px !important;
+
+            &[disabled="true"] {
+                opacity: .5 !important;
+            }
+
+            .button-box {
+                margin-inline-start: 3px !important;
+                margin-inline-end: 4px !important;
+                padding-block-start: 1px !important;
+                padding-block-end: 2px !important;
+            }
+
+            &[type="menu"] {
+                .button-menu-dropmarker {
+                    margin: 1px !important;
+                    width: 11px !important;
+                    height: 11px !important;
+                    content: none !important;
+                    list-style-image: none !important;
+                    background-image: url("chrome://echelon/content/firefox-4/arrow-dn.gif") !important;
+                    background-repeat: no-repeat !important;
+                    background-position: center center !important;
+                }
+            }
+        }
+
+        #customization-titlebar-visibility-checkbox {
+            padding: 2px 7px !important;
+            
+            .checkbox-check {
+                visibility: collapse !important;
+            }
+
+            .checkbox-label-box {
+                margin-inline-start: 3px !important;
+                margin-inline-end: 4px !important;
+                padding-block-start: 1px !important;
+                padding-block-end: 2px !important;
+                align-items: center !important;
+            }
+
+            .checkbox-icon {
+                display: flex !important;
+                width: 24px !important;
+                height: 24px !important;
+                background-image: url("chrome://echelon/content/firefox-29/customizableui/customize-titleBar-toggle.png") !important;
+            }
+
+            .checkbox-label {
+                margin-inline-start: 6px !important;
+            }
+
+            &[checked] {
+                background-color: rgb(218, 218, 218) !important;
+                border-color: rgb(168, 168, 168) !important;
+                text-shadow: 0 1px rgb(236, 236, 236) !important;
+                box-shadow: 0 1px rgba(255, 255, 255, 0.5),
+                            inset 0 1px rgb(196, 196, 196) !important;
+
+                .checkbox-icon {
+                    background-position-x: -24px !important;
+                }
+            }
+            
+            :root:not([echelon-style-6]) & {
+                visibility: collapse !important;
+            }
+        }
+
+        #customization-reset-button {
+            margin-inline-end: 0 !important;
+        }
+    }
+
+    #customization-done-button {
+        visibility: collapse !important;
+    }
+
+    #customization-uidensity-menu-header,
+    #customization-lwtheme-menu-header,
+    #customization-lwtheme-menu-recommended,
+    #customization-lwtheme-menu-footer {
+        background-color: var(--arrowpanel-dimmed) !important;
+        margin-right: -10px !important;
+        margin-left: -10px !important;
+        color: hsl(0,0%,50%) !important;
+    }
+
+    #customization-uidensity-menu-header,
+    #customization-lwtheme-menu-header,
+    #customization-lwtheme-menu-recommended {
+        padding: 10px !important;
+        margin-top: -10px !important;
+        margin-bottom: 5px !important;
+        border-bottom: 1px solid var(--arrowpanel-dimmed) !important;
+    }
+
+    #customization-lwtheme-menu-recommended {
+        margin-top: 0 !important;
+        border-top: 1px solid var(--arrowpanel-dimmed) !important;
+    }
+    
+    #customization-lwtheme-menu-footer {
+        background: linear-gradient(hsla(210,4%,10%,.05) 60%, transparent) border-box !important;
+        border-top: 1px solid hsla(210,4%,10%,.05) !important;
+        margin-bottom: -10px !important;
+        
+        .customization-lwtheme-menu-footeritem {
+          appearance: none !important;
+          flex: 1 !important;
+          color: hsl(0,0%,50%) !important;
+          border-style: none !important;
+          padding: 10px !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+            
+            &:hover {
+                background: linear-gradient(hsla(210,4%,10%,.08) 40%, transparent) padding-box !important;
+            }
+            
+            &:first-child {
+              border-inline-end: 1px solid hsla(210,4%,10%,.15) !important;
+            }
+        }
+    }
+    
+    #customization-lwtheme-button {
+        padding: 2px 7px !important;
+        
+        .button-icon {
+          width: 20px !important;
+          height: 20px !important;
+          border-radius: 2px !important;
+          background-size: contain !important;
+        }
+        
+        .button-text {
+            margin-inline-start: 6px !important;
+        }
+    }
+
+    .customization-uidensity-menuitem,
+    .customization-lwtheme-menu-theme {
+        appearance: none !important;
+        border: 1px solid transparent !important;
+        margin: 0 -5px 5px !important;
+        padding: 0 !important;
+        padding-inline-end: 5px !important;
+        border-radius: 0 !important;
+
+        &:is(:hover, [active="true"]) {
+            background-color: var(--arrowpanel-dimmed) !important;
+            border-color: var(--panel-separator-color) !important;
+        } 
+
+        &:is(:hover:active, [active="true"]) {
+            background-color: var(--arrowpanel-dimmed-further) !important;
+        }
+
+        .menu-iconic-left {
+            appearance: none !important;
+            width: unset !important;
+            padding-top: 0 !important;
+
+            .menu-iconic-icon {
+                width: 32px !important;
+                height: 32px !important;
+                margin: 5px !important;
+            }
+        }
+    }
+
+    .customization-lwtheme-menu-theme {
+        .toolbarbutton-icon {
+            margin: 5px !important;
+            width: 32px !important;
+            height: 32px !important;
+        }
+        
+        .toolbarbutton-text {
+            text-align: start !important;
+        }
+    }
+
+    #customization-uidensity-menuitem-compact {
+        list-style-image: url("chrome://echelon/content/firefox-29/customizableui/density-compact.svg") !important;
+    }
+
+    #customization-uidensity-menuitem-normal {
+        list-style-image: url("chrome://echelon/content/firefox-29/customizableui/density-normal.svg") !important;
+    }
+
+    #customization-uidensity-menuitem-touch {
+        list-style-image: url("chrome://echelon/content/firefox-29/customizableui/density-touch.svg") !important;
+    }
+
+    #customization-palette-container {
+        #wrapper-edit-controls:is([place="palette"], [place="panel"]) > #edit-controls, 
+        #wrapper-zoom-controls:is([place="palette"], [place="panel"]) > #zoom-controls, 
+        :is(panelview, #widget-overflow-fixed-list) .toolbaritem-combined-buttons {
+            background-color: hsla(210,4%,10%,0) !important;
+            border-radius: 2px !important;
+            border: 1px solid !important;
+            border-color: hsla(210,4%,10%,0) !important;
+            border-bottom-color: hsla(210,4%,10%,.1) !important;
+            padding: 0 !important;
+            align-items: normal !important;
+            width: fit-content !important;
+            align-self: center !important;
+
+            toolbarbutton {
+                min-width: 24px !important;
+                min-height: 24px !important;
+                width: 24px !important;
+                height: 24px !important;
+                margin-block-start: 20px !important;
+                flex: none !important;
+                padding: 0 !important;
+                align-items: center !important;
+            }
+
+            separator {
+                margin-block-start: 20px !important;
+            }
+        }
+    }
+}

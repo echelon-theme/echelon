@@ -1,0 +1,74 @@
+& {
+    &[tabsintitlebar][sizemode="normal"][chromehidden~="menubar"] #toolbar-menubar ~ #TabsToolbar .toolbar-items,
+    &[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"][inactive] ~ #TabsToolbar .toolbar-items {
+        margin-top: 0 !important;
+    }
+
+    .close-icon {
+        @include set-size(20px, 20px);
+        @include set-background("firefox-56/close.png");
+        @include set-horizontal-states(0, 20px, 40px);
+    }
+
+    &:not([customizing], [lwtheme], [is128newer]) #TabsToolbar {
+        background-image: none !important;
+    }
+
+    #TabsToolbar {
+        margin-block-end: 0 !important;
+
+        .tabbrowser-tab {
+            pointer-events: auto !important;
+
+            &:hover {
+                background-color: var(--tab-hover-background-color) !important;
+            }
+
+            &[visuallyselected] {
+                color: var(--tab-selection-color) !important;
+                background-color: var(--tab-selection-background-color) !important;
+            }
+
+            .tab-background {
+                visibility: hidden !important;
+                margin-inline: 0 !important;
+            }
+        }
+
+        .tab-close-button {
+            // reset background positioning from lwtheme styling
+            &:not(:hover, :hover:active, [selected]) {
+                background-position-x: 0 !important;
+            }
+
+            &[selected="true"] {
+                @include set-background("firefox-56/close-inverted.png");
+            }
+        }
+
+        #tabs-newtab-button,
+        #new-tab-button {
+            .toolbarbutton-icon {
+                @include set-background("firefox-56/tabbrowser/newtab.svg");
+                fill: currentColor !important;
+                color: inherit !important;
+            }
+        }
+
+        #tabs-newtab-button {
+            width: 36px !important;
+            margin-inline: 0 !important;
+            background-image: none !important;
+
+            &:hover {
+                background-color: var(--tab-hover-background-color) !important;
+            }
+        }
+    }
+
+    &[lwtheme-brighttext] {
+        .tab-close-button {
+            @include set-background("firefox-56/close-inverted.png");
+        }
+    }
+}

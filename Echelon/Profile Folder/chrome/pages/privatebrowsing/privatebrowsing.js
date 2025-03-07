@@ -15,6 +15,6 @@ let g_themeManager = new EchelonThemeManager;
 g_themeManager.init(
     document.documentElement,
     {
-        bools: ["Echelon.Appearance.XP"]
+        style: true
     }
 );

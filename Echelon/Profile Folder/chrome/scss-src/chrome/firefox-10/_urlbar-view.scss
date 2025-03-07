@@ -1,0 +1,15 @@
+&:not([echelon-style-7]) {
+    .urlbarView {
+        .urlbarView-body-inner {
+            .urlbarView-results {
+                .urlbarView-row {
+                    &[type="bookmark"] {
+                        .urlbarView-type-icon {
+                            @include set-background("firefox-10/editBookmark.png");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

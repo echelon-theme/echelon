@@ -1,0 +1,25 @@
+#PersonalToolbar {
+    padding: 0 5px !important;
+    
+    #personal-bookmarks {
+        min-height: 24px !important;
+    }
+
+    .bookmark-item:not(menuitem, .subviewbutton),
+    .toolbarbutton-1 {
+        margin: 0 !important;
+        padding: 2px 3px !important;
+    }
+}
+
+&:not([echelon-system-style="win8"], [echelon-system-style="win10"]) {
+    .bookmark-item:not(menuitem, .subviewbutton),
+    .toolbarbutton-1 {
+        background-origin: padding-box !important;
+        background-clip: padding-box !important;
+        border: 1px solid var(--toolbarbutton-border-color) !important;
+        border-radius: var(--toolbarbutton-border-radius) !important;
+        transition-property: background-color, border-color, box-shadow !important;
+        transition-duration: 150ms !important;
+    }
+}

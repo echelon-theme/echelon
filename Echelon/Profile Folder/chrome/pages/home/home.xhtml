@@ -1,74 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE html [
-  <!ENTITY % htmlDTD
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "DTD/xhtml1-strict.dtd">
-  %htmlDTD;
-  <!ENTITY % aboutHomeDTD SYSTEM "chrome://echelon/locale/dtd/home.dtd">
-  %aboutHomeDTD;
-]>
+<!DOCTYPE window SYSTEM "chrome://echelon/locale/dtd/home.dtd">
 
 <html xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
-	  xmlns="http://www.w3.org/1999/xhtml" 
-	  lang="en">
-	<xul:stringbundle id="homeBundle" src="chrome://echelon/locale/properties/home.properties"/>
+	  xmlns="http://www.w3.org/1999/xhtml">
 
 	<head>
 		<title>&abouthome.pageTitle;</title>
-		<link rel="icon" type="image/png" href="chrome://branding/content/icon32.png" />
-		<link rel="stylesheet" type="text/css" href="chrome://userchrome/content/pages/home/home.css" />
+		<link rel="icon" type="image/png" href="chrome://branding/content/icon16.png" />
+		<link rel="stylesheet" href="chrome://userchrome/content/pages/home/home.css" />
 		<script id="refresh-tab-name" src="chrome://userchrome/content/pages/common/_selfLoadTitle.js"></script>
 	</head>
 	<body>
-		<div class="topSection">
-			<div class="brandSpacer"></div>
-			<div class="brandLogo"></div>
-			<div class="searchContainer">
-				<form method="get" name="searchForm" id="searchForm" onsubmit="onSearchSubmit(event)">
-					<div id="searchLogo"></div>
-					<input type="text" name="q" value="" id="searchText" maxlength="256" placeholder="" />
-					<input type="submit" id="searchSubmit" value="&abouthome.searchEngineButton.label;" />
-				</form>
-			</div>	
-			<div id="snippetContainer">
-				<div id="snippets" class="snippet1">
-					<div class="snippetIcon snippetIcon1"></div>
-					<span id="defaultSnippet1"></span>
-				</div>
-				<div id="snippets" class="snippet2">
-					<div class="snippetIcon snippetIcon2"></div>
-					<span id="defaultSnippet2"></span>
-				</div>
-			</div>
-		</div>
-		<div id="launcher">
-			<button class="launchButton" id="downloads" onclick="windowRoot.ownerGlobal.BrowserDownloadsUI();">
-				&abouthome.downloadsButton.label;
-			</button>
-			<button class="launchButton" id="bookmarks" onclick="windowRoot.ownerGlobal.PlacesCommandHook.showPlacesOrganizer('UnfiledBookmarks');">
-				&abouthome.bookmarksButton.label;
-			</button>
-			<button class="launchButton" id="history" onclick="windowRoot.ownerGlobal.PlacesCommandHook.showPlacesOrganizer('History');">
-				&abouthome.historyButton.label;
-			</button>
-			<button class="launchButton" id="addons" onclick="windowRoot.ownerGlobal.BrowserOpenAddonsMgr();">
-				&abouthome.addonsButton.label;
-			</button>
-			<button class="launchButton" id="sync" onclick="windowRoot.ownerGlobal.openPreferences('sync');">
-				&abouthome.syncButton.label;
-			</button>
-			<button class="launchButton" id="settings" onclick="windowRoot.ownerGlobal.openPreferences();">
-				&abouthome.settingsButton.label;
-			</button>
-			<div id="restorePreviousSessionSeparator"/>
-      		<button class="launchButton" id="restorePreviousSession" onclick="restoreLastSession()">
-				&abouthome.restoreLastSessionButton.label;
-			</button>
-		</div>
-		<a id="aboutMozilla" href="https://www.mozilla.org/about/?utm_source=about-home&amp;utm_medium=Referral">
-			&abouthome.aboutMozilla;
-		</a>
+		<script>
+			var { AppConstants } = ChromeUtils.importESModule("resource://gre/modules/AppConstants.sys.mjs");
+			const homeBundle = Services.strings.createBundle("chrome://echelon/locale/properties/home.properties");
+		</script>
+
+		<script src="chrome://userchrome/content/pages/home/home.js" defer="true"></script>
 	</body>
-	<script src="chrome://userchrome/content/pages/home/home.js"></script>
 </html>

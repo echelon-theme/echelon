@@ -1,0 +1,24 @@
+.autoscroller {
+    height: 28px !important;
+    width: 28px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background-image: url("chrome://echelon/content/firefox-4/autoscroll.png") !important;
+    :root[echelon-system-style="winxp"] & {
+        background-image: url("chrome://echelon/content/firefox-4/xp/autoscroll.png") !important;
+    }
+    background-position: right top !important;
+
+    &[scrolldir="NS"] {
+        background-position: right center !important;
+    }
+
+    &[scrolldir="EW"] {
+        background-position: right bottom !important;
+    }
+
+    &::part(arrowcontent) {
+        display: none !important;
+    }
+}

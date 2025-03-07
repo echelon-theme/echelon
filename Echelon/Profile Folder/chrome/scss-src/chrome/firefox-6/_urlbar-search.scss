@@ -1,0 +1,155 @@
+& {
+    --urlbar-container-padding: 0 !important;
+
+    --urlbar-shadow-normal: none !important;
+
+    --urlbar-background-color: white !important;
+    --urlbar-background-color-hover: white !important;
+    --urlbar-background-color-focused: white !important;
+    
+    --urlbar-border-color: ThreeDShadow !important;
+    --urlbar-border-color-hover: ThreeDShadow !important;
+    --urlbar-border-color-focused: ThreeDShadow !important;
+
+    &:not([lwtheme], [echelon-system-style="winxp"], [echelon-style-7]) {
+        &[echelon-appearance-blue] {
+            --urlbar-border-color: rgba(0,0,0,.32) !important;
+            --urlbar-border-color-hover: rgba(0,0,0,.32) !important;
+            --urlbar-border-color-focused: rgba(0,0,0,.32) !important;
+        }
+    }
+
+    &[lwtheme] {
+        --urlbar-background-color: rgba(255,255,255,.8) !important;
+        --urlbar-background-color-hover: var(var(--urlbar-background-color)) !important;
+        
+        --urlbar-border-color: rgba(0,0,0,.32) !important;
+        --urlbar-border-color-hover: rgba(0,0,0,.32) !important;
+        --urlbar-border-color-focused: rgba(0,0,0,.32) !important;
+    }
+}
+
+&:not([echelon-style-5]) {
+    #urlbar {
+        & #identity-box {
+            order: -1 !important;
+            margin-inline-end: 0 !important;
+    
+            #identity-icon-box {
+                outline: 0 !important;
+                color: -moz-DialogText !important;
+                background-image: linear-gradient(hsl(0,0%,98%), hsl(0,0%,92%)) !important;
+                box-shadow: 0 1px 0 hsla(0,0%,0%,.05) inset !important;
+                border-inline-end: 1px solid hsla(0,0%,0%,.1) !important;
+                padding: 2px !important;
+                border-radius: 0 !important;
+                order: -1 !important;
+                margin-inline-end: 0 !important;
+
+                &:hover {
+                    background-image: linear-gradient(hsl(0,0%,95%), hsl(0,0%,87%)) !important;
+                }
+        
+                &[open="true"],
+                &:hover:active {
+                    background-image: linear-gradient(hsl(0,0%,92%), hsl(0,0%,82%)) !important;
+                    box-shadow: 0 1px 1px hsla(0,0%,0%,.3) inset,
+                                0 1px 3px hsla(0,0%,0%,.3) inset !important;
+                }
+            }
+
+            &.verifiedDomain {
+                #identity-icon-box {
+                    background-image: linear-gradient(hsl(215,60%,92%), hsl(215,58%,88%)) !important;
+                    box-shadow: 0 1px 0 hsla(215,54%,33%,.05) inset !important;
+                    border-inline-end-color: hsla(215,54%,33%,.2) !important;
+                    color: hsl(215,54%,33%) !important;
+        
+                    &:hover {
+                        background-image: linear-gradient(hsl(215,85%,85%), hsl(215,70%,68%)) !important;
+                    }
+            
+                    &[open="true"],
+                    &:hover:active {
+                        background-image: linear-gradient(hsl(215,80%,80%), hsl(215,67%,65%)) !important;
+                        box-shadow: 0 1px 1px hsla(215,54%,33%,.7) inset,
+                                    0 1px 3px 1px hsla(215,54%,33%,.5) inset !important;
+                    }
+                }
+            }
+
+            &.verifiedIdentity {
+                #identity-icon-box {
+                    background-image: linear-gradient(hsl(91,70%,90%), hsl(93,60%,81%)) !important;
+                    box-shadow: 0 1px 0 hsla(92,81%,16%,.05) inset;
+                    border-inline-end-color: hsla(92,81%,16%,.2);
+                    color: hsl(92,100%,20%);
+
+                    &:hover {
+                        background-image: linear-gradient(hsl(92,69%,77%), hsl(92,44%,51%)) !important;
+                    }
+
+                    &[open="true"],
+                    &:hover:active {
+                        background-image: linear-gradient(hsl(92,65%,70%), hsl(92,40%,48%)) !important;
+                        box-shadow: 0 1px 1px hsla(92,81%,16%,.6) inset,
+                                    0 1px 3px 1px hsla(92,81%,16%,.5) inset !important;
+                    }
+                }
+            }
+
+            &[pageproxystate="invalid"] {
+                #identity-icon {
+                    opacity: 0.5 !important;
+                }
+            }
+    
+            &.chromeUI {
+                #identity-icon-label {
+                    visibility: collapse !important;
+                }
+            }
+    
+            #identity-icon {
+                margin-block: 1px !important;
+                margin-inline: 4px !important;
+            }
+            
+            #identity-icon-label {
+                padding-inline: 0 !important;
+                margin-inline-start: 1px !important;
+                margin-inline-end: 3px !important;
+            }
+        }
+    }
+}
+
+&:not([echelon-style-7]) {
+    #urlbar {
+        .urlbar-input-box {
+            padding-inline-start: 3px !important;
+        }
+    }
+}
+
+#urlbar {
+    #identity-box {
+        #notification-popup-box {
+            z-index: 1 !important;
+            order: -2 !important;
+            background-color: #fff !important;
+            background-clip: padding-box !important;
+            padding-left: 3px !important;
+            border-radius: 2.5px 0 0 2.5px !important;
+            border-width: 0 8px 0 0 !important;
+            border-style: solid !important;
+            border-image: url("chrome://echelon/content/firefox-14/urlbar/urlbar-arrow.png") 0 8 0 0 fill !important;
+            margin-inline-end: 0 !important;
+
+            .notification-anchor-icon {
+                padding: 0 !important;
+                margin: 0 2px !important;
+            }
+        }
+    }
+}

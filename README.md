@@ -1,28 +1,22 @@
-<h3><img src="images/echelon.png" alt="logo"></h3>
-Bring back the "better Internet".
+<p align="center">
+    <img src="images/echelon.png" alt="Echelon logo">
+    <h6 align="center"><i>Bring back the "better Internet".</i></h6>
+    
+</p>
 
-Echelon is an old Mozilla Firefox theme for Mozilla Firefox 115ESR.
+___
 
-![Screenshot](images/preview.png)
+<h3 align="center">
+<b>This rewrite of Echelon is a work in progress. Features may change and might not be fully functional.</b>
+</h3>
 
-## Installation
-Detailed instructions on how to install the theme can be seen here.
+<p align="center">
+  Echelon is a Mozilla Firefox (115-latest) theme that restores the look and feel of older versions.
 
-[See this page for installation instructions.](https://github.com/echelon-theme/echelon/wiki/Installation)
-
-## Screenshots
-### Strata (Firefox 4)
-![Screenshot](images/ff4.png)
-### Strata (Firefox 5-9)
-![Screenshot](images/ff5.png)
-### Strata (Firefox 10-13)
-![Screenshot](images/ff10.png)
-### Strata (Firefox 14-28)
-![Screenshot](images/ff14.png)
-### Australis (Firefox 29)
-![Screenshot](images/ff29.png)
+  <img src="images/preview.png" alt="Echelon logo">
+</p>
 
 ## Developers
 * [Travis](https://github.com/travy-patty/)
 * [aubymori](https://github.com/aubymori) 
-* ephemeralViolette
+* [Isabella Lulamoon](https://github.com/kawapure/)

@@ -1,0 +1,50 @@
+& {
+    #TabsToolbar {
+        .tab-throbber {
+            &[progress] {
+                background-image: url("chrome://echelon/content/firefox-56/tabbrowser/loading.png");
+            }
+        }
+
+        #tabs-newtab-button,
+        #new-tab-button {
+            .toolbarbutton-icon {
+                @include set-background("firefox-56/tabbrowser/newtab.svg");
+                fill: currentColor !important;
+            }
+        }
+
+        .tab-background {
+            &[selected] {
+                .tab-background-middle {
+                    background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-active-middle.png"),
+                    linear-gradient(transparent 2px, rgba(255,255,255,.4) 2px, rgba(255,255,255,.4)),
+                                      none !important;
+                }
+    
+                .tab-background-start,
+                .tab-background-end {
+                    &::before {
+                        background-image: linear-gradient(transparent 2px, rgba(255,255,255,.4) 2px, rgba(255,255,255,.4)) !important;
+                    }
+                }
+            }
+        }
+    }
+
+    #tabbrowser-tabs[movingtab] > .tabbrowser-tab:last-of-type::after,
+    .tabbrowser-tab:not([selected]):not(:hover + .tabbrowser-tab):not(:first-of-type):not(:first-of-type[selected] + .tabbrowser-tab):not(:hover)::before,
+    #tabbrowser-tabs:not([overflow]) .tabbrowser-tab:not([selected]):last-of-type:not([beforehovered]):not(:hover)::after {
+        width: 1px;
+        margin-inline-start: -1px;
+        margin-inline-end: 0;
+        background-image: linear-gradient(transparent 5px,
+                                          currentColor 5px,
+                                          currentColor calc(100% - 4px),
+                                          transparent calc(100% - 4px));
+        opacity: 0.2;
+        content: "";
+        display: flex;
+    }
+    
+}

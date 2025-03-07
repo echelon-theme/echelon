@@ -1,0 +1,148 @@
+:root {
+    --organizer-pane-background: -moz-Field !important;
+    --organizer-content-background: var(--organizer-pane-background) !important;
+    --organizer-pane-border-color: ThreeDLightShadow !important;
+    &[echelon-appearance-blue] {
+        --organizer-pane-background: #EEF3FA !important;
+        --organizer-pane-border-color: #A9B7C9 !important;
+    }
+}
+
+#placesMenu {
+    margin-inline-start: 8px !important;
+    appearance: none !important;
+    border: none !important;
+    
+    menu {
+        padding-inline-start: 4px !important;
+        padding-inline-end: 1px !important;
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+        appearance: toolbarbutton !important;
+        color: inherit !important;
+        border: 1px solid transparent !important;
+
+        &[_moz-menuactive="true"] {
+            background-color: transparent !important;
+        }
+
+        &[open="true"] {
+            border-color: ThreeDShadow ThreeDHighlight ThreeDHighlight ThreeDShadow !important;
+            padding-inline-start: 5px !important;
+            padding-inline-end: 0px !important;
+            padding-top: 3px !important;
+            padding-bottom: 1px !important;
+        }
+
+        &:hover {
+            border-color: ThreeDHighlight ThreeDShadow ThreeDShadow ThreeDHighlight !important;
+        }     
+        
+        .menubar-text {
+            padding-inline-end: 8px !important;
+            background: url("chrome://echelon/content/firefox-4/arrow-dn.gif") right center no-repeat !important;
+            :root[echelon-appearance-blue] & {
+                padding-inline-end: 15px !important;
+                background-image: url("chrome://echelon/content/firefox-4/places/dropDown.png") !important;
+            }
+
+            &:-moz-locale-dir(rtl) {
+                background-position: left center !important;
+            }            
+        }        
+    }
+
+}
+
+#placesToolbar {
+    :root[echelon-appearance-blue] & {
+        appearance: -moz-win-media-toolbox !important;
+        color: -moz-win-mediatext !important;
+        min-height: 36px !important;
+        padding-inline: 0 !important;
+        padding-inline-start: 6px !important;
+        padding-inline-end: 8px !important;
+    }
+
+    #back-button,
+    #forward-button {
+        appearance: none !important;
+        width: 24px !important;
+        height: 24px !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        opacity: 1 !important;
+        background-image: url("chrome://echelon/content/firefox-4/places/libraryNavigation.png") !important;
+        list-style-image: none !important;
+        background-color: transparent !important;
+
+        &[disabled] {
+            background-position-y: -48px !important;
+        }
+
+        &:not([disabled]):hover {
+            background-position-y: -24px !important;
+            
+            &:active {
+                background-position-y: -72px !important;
+            }
+        }
+    }
+
+    #forward-button {
+        background-position-x: -24px !important;
+    }
+}
+
+#organizeButton, 
+#viewMenu, 
+#maintenanceButton {
+    list-style-image: none !important;
+
+    .menubar-left {
+        width: 16px !important;
+        height: 16px !important;
+        background-image: url("chrome://echelon/content/firefox-4/places/libraryToolbar.png") !important;
+    }
+}
+
+#viewMenu {
+    .menubar-left {
+        background-position-x: -16px !important;
+    }
+}
+
+#maintenanceButton {
+    .menubar-left {
+        background-position-x: -32px !important;
+    }
+}
+
+#searchFilter {
+    appearance: auto !important;
+    min-height: unset !important;
+
+    &[focused] {
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    :root[echelon-appearance-blue] & {
+        padding-block-start: 2px !important;
+        padding-block-end: 3px !important;
+    }
+}
+
+.textbox-search-sign {
+    order: 1 !important;
+    width: 16px !important;
+    height: 16px !important;
+    background-image: url("chrome://echelon/content/firefox-4/Search-glass.png") !important;
+    list-style-image: none !important;
+    margin: 0 !important;
+}
+
+#detailsPane,
+:root[echelon-appearance-blue] #placesView > splitter {
+    border-color: var(--organizer-pane-border-color) !important;
+}

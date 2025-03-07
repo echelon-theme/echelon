@@ -1,0 +1,29 @@
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Tooltip appearance */
+tooltip {
+	-moz-default-appearance: tooltip !important;
+	appearance: auto !important;
+	margin-top: 21px;
+	border: 1px solid InfoText;
+	padding: 2px 3px;
+	max-width: 40em;
+	background-color: InfoBackground;
+	color: InfoText;
+	font: message-box;
+	color-scheme: light !important;
+}
+
+/* Make everything light theme. The content inside a xul:browser inherits its
+   prefers-color-scheme media query from its color-scheme property, and we
+   don't want the light theme to apply here. If we do, then certain things
+   such as dialogs in about:preferences will become light theme on dark theme. */
+:not(xul|browser) {
+	color-scheme: light !important;
+}
+
+@media (prefers-color-scheme: dark) {
+	xul|browser {
+		color-scheme: dark !important;
+	}
+}

@@ -1,0 +1,524 @@
+:root {
+    --toolbarbutton-width: 30px !important;
+    --toolbarbutton-height: 24px !important;
+    --toolbarbutton-outer-padding: 1px 3px !important;
+    
+    --toolbarbutton-background: rgba(151, 152, 153, 0.05) linear-gradient(rgba(251, 252, 253, 0.95), rgba(246, 247, 248, 0.47) 49%, rgba(231, 232, 233, 0.45) 51%, rgba(225, 226, 229, 0.3));
+    --toolbarbutton-border-radius: 4.5px !important;
+    --toolbarbutton-border-color: rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.19) rgba(0, 0, 0, 0.38) !important;
+
+    --toolbarbutton-transition-duration: .3s !important;
+    --toolbarbutton-transition-timingfunction: ease-in !important;
+    
+    --toolbarbutton-shadow-normal: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
+    --toolbarbutton-shadow-hot: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 1.5px rgba(255, 255, 255, 0.1) inset, 0 1px 0 rgba(0, 0, 0, 0.1), 0 0 3.5px hsl(190, 90%, 80%);
+    --toolbarbutton-shadow-active: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.4);
+
+    --toolbar-highlight-top: rgba(255, 255, 255, .5) !important;
+    --toolbar-highlight-bottom: transparent !important;
+    --toolbar-background-color: -moz-Dialog !important;
+    --toolbar-border-color: rgba(26, 26, 26, 0.4) !important;
+}
+
+/* toolbarbutton */
+
+#navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
+    padding: 1px 5px !important;
+    background: var(--toolbarbutton-background) !important;
+    background-clip: padding-box !important;
+    border-radius: var(--toolbarbutton-border-radius) !important;
+    border: 1px solid !important;
+    border-color: var(--toolbarbutton-border-color) !important;
+    box-shadow: var(--toolbarbutton-shadow-normal) !important;
+    color: var(--lwt-text-color, black) !important;
+    text-shadow: 0 0 2px white;
+    transition: background-color var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction), border-color var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction), box-shadow var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction) !important;
+
+    &:not([disabled="true"]) {
+        &:hover {
+            background-color: hsla(190,60%,70%,.5) !important;
+            --toolbarbutton-border-color: hsla(190,50%,65%,.8) hsla(190,50%,50%,.8) hsla(190,50%,40%,.8) !important;
+            box-shadow: var(--toolbarbutton-shadow-hot) !important;
+        }
+
+        &:hover:active,
+        &[open] {
+            background-color: transparent !important;
+            --toolbarbutton-border-color: rgba(0,0,0,.65) rgba(0,0,0,.55) rgba(0,0,0,.5) !important;
+            box-shadow: var(--toolbarbutton-shadow-active) !important;
+            text-shadow: none !important;
+            transition: none !important;
+        }
+    }
+
+    &[disabled="true"] {
+        opacity: .8 !important;
+
+        .toolbarbutton-icon {
+            opacity: .5 !important;
+        }
+    }
+
+    .toolbarbutton-badge-stack {
+        padding: 0 !important;
+        border-radius: 0 !important;
+        background-color: transparent !important;
+    }
+
+    &:not(.unified-extensions-item-action-button) .toolbarbutton-icon {
+        --toolbarbutton-inner-padding: 0 !important;
+        --toolbarbutton-border-radius: 0 !important;
+        background-color: transparent !important;
+        width: var(--toolbarbutton-icon-width) !important;
+        height: var(--toolbarbutton-icon-height) !important;
+    }
+
+    // back and forward buttons
+    :root:not([echelon-style-5]) &#back-button,
+    :root[echelon-style-5] &#back-button.unified-with-urlbar {
+        width: 30px !important;
+        min-width: 30px;
+        height: 30px !important;
+        position: relative !important;
+        z-index: 4 !important;
+        margin-top: -2px !important;
+        margin-bottom: -2px !important;
+        margin-inline-start: 3px !important;
+        border-radius: 50% !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3), 1px 2px 1px rgba(0, 0, 0, 0.2) !important;
+
+        &:not([disabled="true"]) {
+            &:hover {
+                background-color: hsla(190,60%,70%,.5) !important;
+                box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px hsla(190, 50%, 40%, 0.3), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3), 1px 2px 1px rgba(0, 0, 0, 0.2), 0 0 5px 1px hsl(190, 90%, 80%) !important;
+            }
+
+            &:hover:active,
+            &[open] {
+                background-color: transparent !important;
+                box-shadow: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset, 0 0 0 1px rgba(0, 0, 0, 0.65), 0 2px 0 rgba(255, 255, 255, 0.4) !important;
+            }
+        }
+
+        .toolbarbutton-icon {
+            --toolbarbutton-icon-width: var(--toolbarbutton-icon-large-width) !important;
+            --toolbarbutton-icon-height: var(--toolbarbutton-icon-large-height) !important;
+        }
+
+    }
+
+    :root:not([echelon-style-5]) &#forward-button,
+    :root[echelon-style-5] &#forward-button.unified-with-urlbar {
+        // travis: this from echelon 115 this is ass
+        clip-path: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CclipPath id='windows-keyhole-forward-clip-path' clipPathUnits='objectBoundingBox'%3E%3Cpath d='M 0,0 C 0.16,0.11 0.28,0.29 0.28,0.5 0.28,0.71 0.16,0.89 0,1 L 1,1 1,0 0,0 z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E#windows-keyhole-forward-clip-path") !important;
+        width: 29px !important;
+        height: var(--toolbarbutton-height) !important;
+        margin: var(--toolbarbutton-outer-padding) !important;
+        margin-inline-start: -6px !important;  
+        padding-left: 6px !important;
+        padding-right: 4px !important;
+    }
+}
+
+#nav-bar {
+    height: 38px !important;
+    box-shadow: none !important;
+    padding-inline: 2px !important;
+    align-items: center !important;
+    background-clip: padding-box !important;
+    position: relative !important;
+    border-top: 0 !important;
+
+    :root[tabs-on-top="true"] & {
+        z-index: 1 !important;
+        background-color: var(--toolbar-background-color) !important;
+        background-image: linear-gradient(var(--toolbar-highlight-top) 15%, var(--toolbar-highlight-bottom)) !important;
+        margin-top: calc(-1 * var(--navbar-tab-toolbar-highlight-overlap)) !important;
+    }
+
+    :root:not([tabs-on-top="true"]) & {
+        height: 34px !important;
+        padding-block-start: 2px !important;
+        padding-block-end: 6px !important;
+        background-color: transparent !important;
+        overflow-y: visible !important;
+    }
+
+    :root[tabs-on-top="true"]:not([lwtheme]) & {
+        border-top: 1px solid var(--toolbar-border-color) !important;
+    }
+
+    #nav-bar-customization-target {
+        align-items: center !important;
+    }
+
+    .toolbaritem-combined-buttons {
+        margin: 0 !important;
+    }
+
+    .toolbarbutton-1 {
+        &:not(#back-button, #forward-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, .unified) {
+            margin: var(--toolbarbutton-outer-padding) !important;
+            min-width: var(--toolbarbutton-width) !important;
+            max-width: var(--toolbarbutton-width) !important;
+            height: var(--toolbarbutton-height) !important;
+        }
+
+        &.echelon-unified-bookmarks-menu-button {
+            padding: 0 !important;
+            margin: var(--toolbarbutton-outer-padding) !important;
+            height: var(--toolbarbutton-height) !important;
+    
+            .toolbarbutton-1 {
+                --toolbarbutton-outer-padding: 0 !important;
+            }
+    
+            .toolbarbutton-menubutton-button {
+                visibility: collapse !important;
+            }
+
+            .toolbarbutton-menubutton-dropmarker {
+                --toolbarbutton-width: 35px !important;
+                align-items: center !important;
+
+                &::after {
+                    display: flex !important;
+                    width: 5px !important;
+                    height: 3px !important;
+                    content: url("chrome://echelon/content/firefox-4/arrow-dn.gif") !important;
+                    margin-block-start: 1px !important;
+                }
+
+                .dropmarker-icon {
+                    --toolbarbutton-inner-padding: 0 !important;
+                    --toolbarbutton-border-radius: 0 !important;
+                    background-color: transparent !important;
+                    width: var(--toolbarbutton-icon-width) !important;
+                    height: var(--toolbarbutton-icon-height) !important;
+                }
+            }
+        }
+    }
+}
+
+.toolbaritem-combined-buttons[cui-areatype="toolbar"] > separator {
+    display: none !important;
+}
+
+#navigator-toolbox > #nav-bar #zoom-controls {
+    margin: var(--toolbarbutton-outer-padding) !important;
+
+    #zoom-reset-button {
+        display: none !important;
+    }
+
+    .toolbarbutton-1 {
+        height: var(--toolbarbutton-height) !important;
+        margin: 0 !important;
+
+        &:not(:first-of-type, :last-of-type) {
+            --toolbarbutton-border-radius: 0 !important;
+            border-left: 0 !important;
+        }
+
+        &:first-of-type {
+            border-top-right-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+
+        &:last-of-type {
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+            border-left: 0 !important;
+        }
+    }
+}
+
+#navigator-toolbox > toolbar {
+    -moz-window-dragging: no-drag !important;
+}
+
+#downloads-indicator-anchor-echelon {
+    min-width: var(--toolbarbutton-icon-width) !important;
+    min-height: var(--toolbarbutton-icon-height) !important;
+}
+
+#downloads-indicator-progress-area-echelon {
+    align-items: center !important;
+    margin-top: 3px !important;
+}
+
+#downloads-indicator-counter-echelon {
+    height: 9px !important;
+    margin: -3px 0px 0px 0px !important;
+    color: hsl(0,0%,30%) !important;
+    text-shadow: hsla(0,0%,100%,.5) 0 1px !important;
+    font-size: 9px !important;
+    line-height: 9px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    margin-bottom: 1px !important;
+}
+
+#downloads-indicator-progress-echelon {
+    width: 16px !important;
+    height: 5px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    margin-top: 1px !important;
+    margin-bottom: 2px !important;
+    border-radius: 2px !important;
+    box-shadow: 0 1px 0 hsla(0,0%,100%,.4) !important;
+}
+
+#downloads-indicator-progress-echelon > .progress-bar {
+    width: var(--percent) !important;
+    background-clip: padding-box, border-box !important;
+    background-color: rgb(90, 201, 66) !important;
+    background-image: linear-gradient(transparent 1px, rgba(255, 255, 255, 0.4) 1px, rgba(255, 255, 255, 0.4) 2px, transparent 2px), none !important;
+    border: 1px solid !important;
+    border-color: rgba(0,43,86,.6) rgba(0,43,86,.4) rgba(0,43,86,.4) !important;
+    border-radius: 2px 0 0 2px !important;
+}
+
+#downloads-indicator-progress-echelon > .progress-remainder {
+    background-image: linear-gradient(#505050, #575757) !important;
+    border: 1px solid !important;
+    border-color: hsla(0,0%,0%,.6) hsla(0,0%,0%,.4) hsla(0,0%,0%,.4) !important;
+    border-inline-start: none !important;
+    border-radius: 0 2px 2px 0 !important;
+}       
+
+#downloads-button:not([counter]) #downloads-indicator-counter-echelon {
+    color: transparent !important;
+    background: url("chrome://userchrome/content/assets/firefox-4/toolbar/inverted/downloads.png") center no-repeat !important;
+    background-size: 12px !important;
+}      
+
+#downloads-button:not([progress]) #downloads-indicator-progress-area-echelon {
+    display: none !important;
+}
+
+#downloads-button[progress] #downloads-indicator-icon {
+    display: none !important;
+}
+
+#downloads-animation-container {
+    min-height: 1px !important;
+    min-width: 1px !important;
+    height: 1px !important;
+    margin-bottom: -1px !important;
+    position: relative !important;
+    z-index: 5 !important;
+}      
+
+#downloads-notification-anchor {
+    min-height: 16px !important;
+}
+
+#downloads-indicator-notification {
+    opacity: 0;
+    background-size: 16px !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+:root:not([echelon-style-6]) #bookmarked-notification-container {
+    display: none !important;
+}
+
+@keyframes downloadsIndicatorNotificationStartRight {
+    from {
+        opacity: 0;
+        transform: translate(-128px, 128px) scale(8);
+    }
+
+    20% {
+        opacity: 0.85;
+        animation-timing-function: ease-out;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(0) scale(1);
+    }
+}
+
+@keyframes downloadsIndicatorNotificationStartLeft {
+    from {
+        opacity: 0;
+        transform: translate(128px, 128px) scale(8);
+    }
+
+    20% {
+        opacity: 0.85;
+        animation-timing-function: ease-out;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(0) scale(1);
+    }
+}
+
+#downloads-notification-anchor[notification="start"] > #downloads-indicator-notification {
+    background-image: url("chrome://echelon/content/firefox-4/downloads/download-notification-start.png") !important;
+    animation-name: downloadsIndicatorNotificationStartRight !important;
+    animation-duration: 1s !important;
+}
+
+#downloads-notification-anchor[notification="start"]:-moz-locale-dir(rtl) > #downloads-indicator-notification {
+    animation-name: downloadsIndicatorNotificationStartLeft !important;
+}
+
+@keyframes downloadsIndicatorNotificationFinish {
+    from {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    20% {
+        opacity: 0.65;
+        animation-timing-function: ease-in;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(8);
+    }
+}
+
+#downloads-notification-anchor[notification="finish"] > #downloads-indicator-notification {
+    background-image: url("chrome://echelon/content/firefox-4/downloads/download-notification-finish.png") !important;
+    animation-name: downloadsIndicatorNotificationFinish !important;
+    animation-duration: 1s !important;
+}
+
+.unified-extensions-item-action-button {
+    overflow: visible !important;
+}
+
+.toolbarbutton-badge {
+    margin: -6px 0 0 !important;
+    margin-inline-end: -8px !important;
+    max-width: 28px !important;
+    line-height: 13px !important;
+}
+
+#navigator-toolbox {
+    border-bottom: 0 !important; // remove bottom border and use a hacky way (mozilla mfs used it too)
+}
+
+#navigator-toolbox::after {
+    content: '' !important;
+    display: flex !important;
+    height: 1px !important;
+    background-color: ThreeDShadow !important;
+}
+
+:root:not([echelon-style-6])[echelon-appearance-disablechrome="true"][disablechrome] #navigator-toolbox::after,
+:root:not([tabs-on-top="true"]) #navigator-toolbox::after {
+    display: none !important;
+}
+
+// Toolbar borders
+@media (-moz-windows-compositor) {
+    :root[sizemode="normal"] {
+        &:not([echelon-system-style="winxp"], [echelon-system-style="win10"], [lwtheme-image]) {
+            #navigator-toolbox::after {
+                border-inline: 1px solid var(--toolbar-border-color) !important;
+                background-clip: padding-box !important;
+            }
+
+            &[tabs-on-top="true"] {
+                #nav-bar {
+                    border-inline: 1px solid var(--toolbar-border-color) !important;
+                    border-top-left-radius: 3.5px !important;
+                    border-top-right-radius: 3.5px !important;
+                }
+            }
+
+            &:not([tabs-on-top="true"]) {
+                #PersonalToolbar:not([collapsed="true"]) + #TabsToolbar {
+                    border-inline: 1px solid var(--toolbar-border-color) !important;
+                    background-clip: padding-box !important;
+                }
+            }
+
+            #PersonalToolbar {
+                border-inline: 1px solid var(--toolbar-border-color) !important;
+                background-clip: padding-box !important;
+            }
+
+            #browser, #customization-container {
+                border-inline: 1px solid var(--toolbar-border-color) !important;
+                border-bottom: 1px solid var(--toolbar-border-color) !important;
+                background-clip: padding-box !important;
+
+                &[findbar-focused] {
+                    border-bottom-left-radius: 3.5px !important;
+                    border-bottom-right-radius: 3.5px !important;  
+                    overflow: clip !important;
+                }
+            }
+        }
+    }
+}
+
+// Aero blue style
+:root:not([lwtheme], [echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
+    &[echelon-appearance-blue] {
+        --toolbar-background-color: hsl(214, 44%, 87%) !important;
+    }
+}
+
+#PersonalToolbar {
+    background-color: var(--toolbar-background-color) !important;
+}
+
+// Hide Toolbars when chrome is disabled
+:root:not([echelon-style-6])[echelon-appearance-disablechrome="true"][disablechrome] #navigator-toolbox toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
+    position: absolute !important; 
+    min-width: 100% !important;
+    left: -999em !important;
+
+    //holy fuck bro
+}
+
+:root:not([echelon-style-6]) {
+    #PanelUI-button {
+        max-width: 1px !important;
+        margin-inline-end: -1px !important;
+        opacity: 0 !important;
+    }
+}
+
+:root[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"]:not([inactive="true"]) {
+    height: unset !important;
+}
+
+:root:not([tabsintitlebar][echelon-style-6][echelon-system-style="winxp"]) {
+    #main-menubar > menu {
+        appearance: auto !important;
+    }
+}
+
+:root:not([lwtheme="true"])[tabsintitlebar][echelon-style-6][echelon-system-style="winxp"] {
+    #main-menubar > menu {
+        border: 2px solid transparent;
+        color: var(--captiontext, CaptionText) !important;
+
+        &:-moz-window-inactive {
+            color: var(--inactivecaptiontext, InactiveCaptionText) !important;
+        }
+
+        &[_moz-menuactive] {
+            background-color: -moz-menuhover !important;
+            color: -moz-menuhovertext !important;
+        }
+    }
+}

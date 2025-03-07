@@ -1,0 +1,104 @@
+& {
+    --toolbarbutton-icon-width: 16px;
+    --toolbarbutton-icon-height: 16px;
+    
+    --toolbarbutton-icon-large-width: 16px;
+    --toolbatbutton-icon-large-height: 16px;
+
+    //--toolbarbutton-icon-fill: light-dark(rgb(121, 124, 128), rgb(255, 255, 255)) !important;
+    //--toolbarbutton-icon-fill-attention: light-dark(rgb(23, 126, 229), rgb(23, 126, 229)) !important;
+    --toolbarbutton-icon-fill: rgb(121, 124, 128) !important;
+    --toolbarbutton-icon-fill-inverted: #fff !important;
+    --toolbarbutton-icon-fill-attention: rgb(23, 126, 229) !important;
+}
+
+&[lwtheme-brighttext] {
+    --toolbarbutton-icon-fill: var(--toolbarbutton-icon-fill-inverted) !important;
+}
+
+@include toolbar-icons((    
+    "back-button": "firefox-29/toolbar/win8/back-large.svg",
+    "back-button:not(.unified-with-urlbar)": "firefox-29/toolbar/win8/back.svg",
+    "forward-button": "firefox-29/toolbar/win8/forward.svg",
+    "stop-button": "firefox-29/toolbar/win8/stop.svg",
+    "reload-button": "firefox-29/toolbar/win8/reload.svg",
+    "home-button": "firefox-29/toolbar/win8/home.svg",
+    "downloads-button": "firefox-29/toolbar/win8/download.svg",
+    "downloads-indicator-anchor": "firefox-29/toolbar/win8/download.svg",
+    "history-button": "firefox-29/toolbar/win8/history.svg",
+    "bookmarks-button": "firefox-29/toolbar/win8/bookmarksMenu.svg",
+    "bookmarks-menu-button": "firefox-29/toolbar/win8/bookmarksMenu.svg",
+    "bookmarks-menu-button[starred] .toolbarbutton-menubutton-button": "firefox-29/toolbar/win8/bookmark.svg",
+    "bookmarks-menu-button .toolbarbutton-menubutton-button": "firefox-29/toolbar/win8/bookmark-hollow.svg",
+    "print-button": "firefox-29/toolbar/win8/print.svg",
+    "new-tab-button": "firefox-29/toolbar/win8/new-tab.svg",
+    "new-window-button": "firefox-29/toolbar/win8/new-window.svg",
+    "cut-button": "firefox-29/toolbar/win8/edit-cut.svg",
+    "copy-button": "firefox-29/toolbar/win8/edit-copy.svg",
+    "paste-button": "firefox-29/toolbar/win8/edit-paste.svg",
+    "fullscreen-button": "firefox-29/toolbar/win8/fullscreen.svg",
+    "zoom-out-button": "firefox-29/toolbar/win8/zoom-out.svg",
+    "zoom-in-button": "firefox-29/toolbar/win8/zoom-in.svg",
+    "PanelUI-menu-button": "firefox-29/toolbar/win8/menu.svg",
+    "save-to-pocket-button": "firefox-29/toolbar/win8/pocket.svg",
+    "save-to-pocket-button[open]": "firefox-29/toolbar/win8/pocket.svg",
+    "unified-extensions-button": "firefox-29/toolbar/win8/addons.svg",
+    "fxa-toolbar-menu-button": "firefox-29/toolbar/win8/sync.svg",
+    "fxa-toolbar-menu-button[status="active"]": "firefox-29/toolbar/syncProgress-toolbar.svg",
+    "nav-bar-overflow-button": "firefox-29/toolbar/win8/chevron.svg",
+    "characterencoding-button": "firefox-29/toolbar/win8/characterEncoding.svg",
+    "history-panelmenu": "firefox-29/toolbar/win8/history.svg",
+    "developer-button": "firefox-29/toolbar/win8/developer.svg",
+    "echelon-button": "firefox-29/toolbar/win8/echelon.svg"
+));
+
+@include toolbar-icons-inverted((    
+    "back-button": "firefox-29/toolbar/win8/back-large.svg",
+    "back-button:not(.unified-with-urlbar)": "firefox-29/toolbar/win8/back.svg",
+    "forward-button": "firefox-29/toolbar/win8/forward.svg",
+    "stop-button": "firefox-29/toolbar/win8/stop.svg",
+    "reload-button": "firefox-29/toolbar/win8/reload.svg",
+    "home-button": "firefox-29/toolbar/win8/home.svg",
+    "downloads-button": "firefox-29/toolbar/win8/download.svg",
+    "downloads-indicator-anchor": "firefox-29/toolbar/win8/download.svg",
+    "history-button": "firefox-29/toolbar/win8/history.svg",
+    "bookmarks-button": "firefox-29/toolbar/win8/bookmarksMenu.svg",
+    "bookmarks-menu-button": "firefox-29/toolbar/win8/bookmarksMenu.svg",
+    "bookmarks-menu-button[starred] .toolbarbutton-menubutton-button": "firefox-29/toolbar/win8/bookmark.svg",
+    "bookmarks-menu-button .toolbarbutton-menubutton-button": "firefox-29/toolbar/win8/bookmark-hollow.svg",
+    "print-button": "firefox-29/toolbar/win8/print.svg",
+    "new-tab-button": "firefox-29/toolbar/win8/new-tab.svg",
+    "new-window-button": "firefox-29/toolbar/win8/new-window.svg",
+    "cut-button": "firefox-29/toolbar/win8/edit-cut.svg",
+    "copy-button": "firefox-29/toolbar/win8/edit-copy.svg",
+    "paste-button": "firefox-29/toolbar/win8/edit-paste.svg",
+    "fullscreen-button": "firefox-29/toolbar/win8/fullscreen.svg",
+    "zoom-out-button": "firefox-29/toolbar/win8/zoom-out.svg",
+    "zoom-in-button": "firefox-29/toolbar/win8/zoom-in.svg",
+    "PanelUI-menu-button": "firefox-29/toolbar/win8/menu.svg",
+    "save-to-pocket-button": "firefox-29/toolbar/win8/pocket.svg",
+    "save-to-pocket-button[open]": "firefox-29/toolbar/win8/pocket.svg",
+    "unified-extensions-button": "firefox-29/toolbar/win8/addons.svg",
+    "fxa-toolbar-menu-button": "firefox-29/toolbar/win8/sync.svg",
+    "fxa-toolbar-menu-button[status="active"]": "firefox-29/toolbar/syncProgress-toolbar.svg",
+    "nav-bar-overflow-button": "firefox-29/toolbar/win8/chevron.svg",
+    "characterencoding-button": "firefox-29/toolbar/win8/characterEncoding.svg",
+    "history-panelmenu": "firefox-29/toolbar/win8/history.svg",
+    "developer-button": "firefox-29/toolbar/win8/developer.svg",
+    "echelon-button": "firefox-29/toolbar/win8/echelon.svg"
+));
+
+// fuck pocket {
+#save-to-pocket-button {
+    --toolbarbutton-icon-width: 18px !important;
+    --toolbarbutton-icon-height: 18px !important;
+
+    &[open] {
+        fill: rgb(213,32,20) !important;
+    }
+}
+
+#bookmarks-menu-button[starred] .toolbarbutton-menubutton-button,
+#downloads-button[attention="success"] {
+    fill: var(--toolbarbutton-icon-fill-attention) !important;
+}

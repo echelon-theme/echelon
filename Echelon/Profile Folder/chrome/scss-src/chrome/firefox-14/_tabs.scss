@@ -1,0 +1,3 @@
+#tabbrowser-tabs:not([overflow], [hashiddentabs]) ~ #alltabs-button {
+    display: none !important;
+}

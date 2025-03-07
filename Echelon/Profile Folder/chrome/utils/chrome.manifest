@@ -2,16 +2,13 @@ content userchromejs ./
 content userscripts ../JS/
 content modules ../JS/modules/
 
-locale echelon en-US ../locale/en-US/
-locale echelon es-CL ../locale/es-CL/
-locale echelon es-ES ../locale/es-ES/
-locale echelon cs-CZ ../locale/cs-CZ/
-locale echelon fr    ../locale/fr/
-locale echelon it    ../locale/it/
-locale echelon ja    ../locale/ja/
-locale echelon pl    ../locale/pl/
-
-skin userstyles classic/1.0 ../CSS/
-content userchrome ../ contentaccessible=yes
-
+override chrome://global/skin/arrowscrollbox.css                  ../assets/override/global/skin/arrowscrollbox.css
+override chrome://global/content/elements/panel.js                      ../assets/override/widgets/panel.js
 override chrome://global/content/commonDialog.xhtml ../windows/commonDialog/commonDialog.xhtml
+
+locale echelon en-US ../locale/en-US/
+locale echelon ja    ../locale/ja/
+
+skin	userstyles	classic/1.0	../CSS/
+content userchrome ../ contentaccessible=yes
+content echelon ../assets/images/ contentaccessible=yes

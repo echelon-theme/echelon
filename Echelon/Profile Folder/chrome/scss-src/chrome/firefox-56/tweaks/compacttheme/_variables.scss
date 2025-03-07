@@ -1,0 +1,61 @@
+&[default-light-theme] {
+    --url-and-searchbar-background-color: #fff !important;
+    --chrome-background-color: #E3E4E6 !important;
+    --chrome-color: #18191a !important;
+    --chrome-secondary-background-color: #f5f6f7 !important;
+    --chrome-navigator-toolbox-separator-color: #cccccc !important;
+    --chrome-nav-bar-separator-color: #B6B6B8 !important;
+    --chrome-nav-buttons-background: #ffffff !important;
+    --chrome-nav-buttons-hover-background: #DADBDB !important;
+    --chrome-nav-bar-controls-border-color: #ccc !important;
+    --chrome-selection-color: #f5f7fa !important;
+    --chrome-selection-background-color: #4c9ed9 !important;
+    --tab-background-color: #E3E4E6 !important;
+    --tab-hover-background-color: #D7D8DA !important;
+    --tab-selection-color: #f5f7fa !important;
+    --tab-selection-background-color: #4c9ed9 !important;
+    --tab-selection-box-shadow: none !important;
+    --pinned-tab-glow: radial-gradient(22px at center calc(100% - 2px), rgba(76,158,217,0.9) 13%, transparent 16%) !important;
+
+    --toolbarbutton-hover-background: #eaeaea !important;
+    --toolbarbutton-hover-boxshadow: none !important;
+    --toolbarbutton-hover-bordercolor: rgba(0,0,0,0.1) !important;
+    --toolbarbutton-active-background: #d7d7d8 border-box !important;
+    --toolbarbutton-active-boxshadow: none !important;
+    --toolbarbutton-active-bordercolor: rgba(0,0,0,0.15) !important;
+    --toolbarbutton-checkedhover-backgroundcolor: #d7d7d8 !important;
+}
+
+&[default-dark-theme],
+&[lwt-default-theme-in-dark-mode] {
+    --chrome-background-color: #272b35 !important;
+    --chrome-color: #F5F7FA !important;
+    --chrome-secondary-background-color: #393F4C !important;
+    --chrome-navigator-toolbox-separator-color: rgba(0,0,0,.2) !important;
+    --chrome-nav-bar-separator-color: rgba(0,0,0,.2) !important;
+    --chrome-nav-buttons-background: #252C33 !important;
+    --chrome-nav-buttons-hover-background: #1B2127 !important;
+    --chrome-nav-bar-controls-border-color: #1D2328 !important;
+    --chrome-selection-color: #fff !important;
+    --chrome-selection-background-color: #5675B9 !important;
+    --tab-background-color: #272b35 !important;
+    --tab-hover-background-color: #07090a !important;
+    --tab-selection-color: #f5f7fa !important;
+    --tab-selection-background-color: #5675B9 !important;
+    --tab-selection-box-shadow: none !important;
+    --pinned-tab-glow: radial-gradient(22px at center calc(100% - 2px), rgba(76,158,217,0.9) 13%, rgba(0,0,0,0.4) 16%, transparent 70%) !important;
+    --url-and-searchbar-background-color: #171B1F !important;
+    --urlbar-separator-color: #5F6670 !important;
+
+    --toolbarbutton-hover-background: rgba(25,33, 38,.6) linear-gradient(rgba(25,33,38,.6), rgba(25,33,38,.6)) padding-box !important;
+    --toolbarbutton-hover-boxshadow: none !important;
+    --toolbarbutton-hover-bordercolor: rgba(25,33,38,.6) !important;
+    --toolbarbutton-active-background: rgba(25,33,38,1) linear-gradient(rgba(25,33,38,1), rgba(25,33,38,1)) border-box !important;
+    --toolbarbutton-active-boxshadow: none !important;
+    --toolbarbutton-active-bordercolor: rgba(25,33,38,.8) !important;
+    --toolbarbutton-checkedhover-backgroundcolor: #3C5283 !important;
+
+    #nav-bar #PanelUI-button {
+        border-image-source: linear-gradient(transparent, rgba(100%,100%,100%,.2) 20%, rgba(100%,100%,100%,.2) 80%, transparent) !important;
+    }
+}

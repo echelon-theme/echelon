@@ -1,0 +1,19 @@
+&[echelon-style-6] {
+    @import "tabs";
+    @import "icons";
+    @import "personalToolbar";
+    @import "toolbars";
+    @import "urlbar-search";
+    @import "urlbar-view";
+    @import "menupopup";
+    @import "customizeui";
+
+    &[echelon-system-style="win10"] {
+        @import "tweaks/win10/style";
+    }
+
+    &[compact-theme],
+    &[lwt-default-theme-in-dark-mode] {
+        @import "tweaks/compacttheme/style"
+    }
+}

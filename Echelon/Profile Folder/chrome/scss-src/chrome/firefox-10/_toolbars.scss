@@ -1,0 +1,10 @@
+& {
+    --toolbarbutton-border-radius: 2.5px !important;
+}
+
+#navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
+    &#forward-button.unified-with-urlbar {
+        border-radius: 0 !important;
+        margin-inline-end: 0 !important;
+    }
+}

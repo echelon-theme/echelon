@@ -1,0 +1,76 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* Modified version for Echelon, fuck Mozilla. */
+
+:host([scrolledtostart])::part(overflow-start-indicator),
+:host([scrolledtoend])::part(overflow-end-indicator),
+:host(:not([overflowing])) > toolbarbutton {
+  visibility: collapse;
+}
+
+scrollbox {
+  min-width: 0;
+  min-height: 0;
+}
+
+slot {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: inherit;
+}
+
+/* Scroll arrows */
+
+toolbarbutton {
+  color: inherit;
+  list-style-image: url("chrome://global/skin/icons/arrow-down-12.svg");
+  -moz-context-properties: fill, fill-opacity;
+  fill: currentColor;
+  fill-opacity: 1;
+  padding: 2px;
+  /* Make sure we draw on top of our scrollbox, since otherwise the up button
+   * won't be hittable */
+  position: relative;
+
+  &[disabled] {
+    fill-opacity: var(--toolbarbutton-disabled-opacity);
+  }
+
+  :host([orient="horizontal"]) > & {
+    list-style-image: url("chrome://global/skin/icons/arrow-left.svg");
+  }
+
+  @media not (-moz-platform: macos) {
+    :host(:not([clicktoscroll])) > & {
+      appearance: none;
+    }
+  }
+
+  > .toolbarbutton-text {
+    display: none;
+  }
+}
+
+#scrollbutton-up > .toolbarbutton-icon {
+  transform: scaleY(1);
+}
+
+:host([orient="horizontal"]) > #scrollbutton-down:-moz-locale-dir(ltr) > .toolbarbutton-icon,
+:host([orient="horizontal"]) > #scrollbutton-up:-moz-locale-dir(rtl) > .toolbarbutton-icon {
+  transform: scaleX(1);
+}
+
+#scrollbutton-up > .toolbarbutton-icon,
+#scrollbutton-down > .toolbarbutton-icon {
+  width: 15px !important;
+  height: 17px !important;
+  list-style-image: none !important;
+  background-image: var(--arrowscrollbox-image) !important;
+}
+
+#scrollbutton-up:hover > .toolbarbutton-icon,
+#scrollbutton-down:hover > .toolbarbutton-icon {
+  background-position-x: -15px !important;
+}

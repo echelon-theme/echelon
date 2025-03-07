@@ -1,0 +1,20 @@
+& {
+    --toolbarbutton-height: 28px !important;
+}
+
+// remove toolbar borders
+#nav-bar,
+#PersonalToolbar,
+#navigator-toolbox::after,
+#browser {
+    border-inline: 0 !important;
+}
+
+#browser {
+    border-bottom: 0 !important;
+}
+
+#nav-bar {
+    border-top: 0 !important;
+    box-shadow: none !important;
+}

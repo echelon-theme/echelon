@@ -1,0 +1,20 @@
+&:not([echelon-system-style="winxp"]),
+&[lwtheme-brighttext] {
+    #TabsToolbar {
+        #alltabs-button {
+            .toolbarbutton-icon {
+                @include set-background("firefox-8/mainwindow-dropdown-arrow-inverted.png");
+            }
+            .toolbarbutton-icon,
+            .toolbarbutton-badge-stack {
+                @include set-size(13px, 10px);
+            }
+        }
+    
+        #new-tab-button {
+            .toolbarbutton-icon {
+                @include set-background("firefox-8/tabs/newtab-inverted.png");
+            }
+        }
+    }    
+}

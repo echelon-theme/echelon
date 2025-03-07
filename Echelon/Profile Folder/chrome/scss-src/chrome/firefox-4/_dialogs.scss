@@ -1,0 +1,49 @@
+@import "_mixins.scss";
+
+xul|dialog[inbrowserwindow] {
+    padding-block: 8px 10px !important;
+    padding-inline: 8px 10px !important;
+}
+
+:is(xul|window, xul|dialog):not(.sidebar-panel) {
+    treecol {
+		appearance: auto !important;
+	}
+}
+
+/* commonDialog icons */
+.message-icon {
+    list-style-image: url("chrome://echelon/content/firefox-4/icons/information-32.png") !important;
+}
+
+.alert-dialog #infoIcon,
+.alert-icon {
+    list-style-image: url("chrome://echelon/content/firefox-4/icons/warning-32.png") !important;
+}
+
+.error-icon {
+    list-style-image: url("chrome://echelon/content/firefox-4/icons/error-32.png") !important;
+}
+
+.question-icon {
+    list-style-image: url("chrome://echelon/content/firefox-4/icons/question-32.png") !important;
+}
+
+:root[echelon-system-style="winxp"] {
+    .message-icon {
+        list-style-image: url("chrome://echelon/content/firefox-4/xp/icons/information-32.png") !important;
+    }
+    
+    .alert-dialog #infoIcon,
+    .alert-icon {
+        list-style-image: url("chrome://echelon/content/firefox-4/xp/icons/warning-32.png") !important;
+    }
+    
+    .error-icon {
+        list-style-image: url("chrome://echelon/content/firefox-4/xp/icons/error-32.png") !important;
+    }
+    
+    .question-icon {
+        list-style-image: url("chrome://echelon/content/firefox-4/xp/icons/question-32.png") !important;
+    }
+}

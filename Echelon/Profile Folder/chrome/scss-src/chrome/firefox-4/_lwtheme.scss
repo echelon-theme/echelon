@@ -1,0 +1,85 @@
+:root[lwtheme="true"] {
+    --toolbar-background-color: transparent !important;
+    &:not([echelon-style-6]) {
+        --navbar-tab-toolbar-highlight-overlap: 0 !important;
+    }
+
+    #navigator-toolbox {
+        background-image: var(--lwt-additional-images) !important;
+        background-repeat: no-repeat, var(--lwt-background-tiling) !important;
+        background-position: right top, var(--lwt-background-alignment) !important;
+    }
+
+    &[lwtheme-image] #navigator-toolbox {
+        background-image: var(--lwt-header-image), var(--lwt-additional-images) !important;
+        background-repeat: no-repeat, var(--lwt-background-tiling) !important;
+        background-position: right top, var(--lwt-background-alignment) !important;
+    }
+    
+    #titlebar,
+    #nav-bar, 
+    #PersonalToolbar {
+        background-color: var(--toolbar-background-color) !important;
+    }
+
+    &:not([sizemode="fullscreen"]) #titlebar {
+        visibility: visible !important;
+    }
+    
+    &[tabsintitlebar="true"][sizemode="maximized"] #titlebar {
+        visibility: hidden !important;
+
+        > * {
+            visibility: visible !important;
+        }
+    }
+
+    #main-menubar > menu:not([_moz-menuactive="true"], [disabled="true"]),
+    #TabsToolbar {
+        color: inherit !important;
+    }
+
+    #main-menubar > menu[_moz-menuactive] {
+        background-color: -moz-menuhover !important;
+        color: -moz-menuhovertext !important;
+        text-shadow: none !important;
+    }
+
+    &:not([lwtheme-brighttext], [echelon-style-6]) #TabsToolbar {
+        .tab-background,
+        #tabs-newtab-button {
+            background-image: linear-gradient(hsla(0,0%,60%,.5), hsla(0,0%,45%,.5) 80%) !important;
+        }
+
+        .tabbrowser-tab:not([selected], [multiselected]):hover .tab-background,
+        #tabs-newtab-button:hover,
+        #tabs-newtab-button[open] {
+            background-image: linear-gradient(hsla(0,0%,80%,.5), hsla(0,0%,60%,.5) 80%) !important;        
+        }
+    }
+
+    &[lwtheme-brighttext]:not([echelon-style-6]) #TabsToolbar {
+        .tab-background,
+        #tabs-newtab-button {
+            background-image: linear-gradient(hsla(0,0%,40%,.6), hsla(0,0%,30%,.6) 80%) !important;
+        }
+
+        .tabbrowser-tab:not([selected], [multiselected]):hover .tab-background,
+        #tabs-newtab-button:hover,
+        #tabs-newtab-button[open] {
+            background-image: linear-gradient(hsla(0,0%,60%,.6), hsla(0,0%,45%,.6) 80%) !important;        
+        }
+    }
+
+    &:not([echelon-style-6]) #TabsToolbar {        
+        .tabbrowser-tab:is([selected], [multiselected]) {
+            .tab-background {
+                background-image: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.5) 50%) !important;
+            }
+        }
+    }
+
+    #urlbar, #searchbar {
+        color: black !important;
+    }
+}

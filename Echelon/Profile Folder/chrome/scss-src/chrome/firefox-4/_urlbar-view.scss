@@ -1,0 +1,236 @@
+:root:not([echelon-style-7]) {
+    --urlbarView-highlight-color: HighlightText !important;
+    --urlbarView-highlight-background: Highlight !important;
+    
+    --urlbarView-hover-background: var(--urlbarView-highlight-background) !important;
+    
+    --history-icon: url("chrome://echelon/content/firefox-4/places/history.png") !important;
+    
+    #urlbar:not([open]) > .urlbarView, #urlbar:not([breakout]) > .urlbarView {
+        display: none !important;
+    }
+    
+    .urlbarView {
+        width: 100% !important;
+        display: flex !important;
+        background-color: -moz-Field !important;
+        border: 1px solid ThreeDDarkShadow !important;
+        margin-inline: 0 !important;
+        position: relative !important;
+        overflow: visible !important;
+
+        &::after {
+            content: "" !important;
+            display: inline-block !important;
+            width: calc(100% - 6px) !important;
+            height: calc(100% - 5px) !important;
+            position: absolute !important;
+            left: 8px !important;
+            top: 7px !important;
+            z-index: -1 !important;
+            background: rgba(0, 0, 0, 0.502) !important;
+            filter: blur(1.5px) !important;
+            pointer-events: none !important;
+        }
+
+        .urlbarView-body-inner {
+            border: 0 !important;
+            width: 100% !important;
+            margin-inline: 0 !important;
+
+            .urlbarView-results {
+                padding: 0 !important;
+
+                .urlbarView-row {
+                    display: flex !important;
+                    align-items: flex-start !important;
+                    min-height: 35px !important;
+                    border: 0 !important;
+                    border-radius: 0 !important;
+                    
+                    &[rich-suggestion] {
+                        .urlbarView-row-inner {
+                            flex-direction: row !important;
+                            align-items: flex-start !important;
+                        }
+                        
+                        .urlbarView-url {
+                            visibility: collapse !important;
+                        }
+                    }
+                    
+                    &:not(:first-of-type) {
+                        border-top: 1px solid ThreeDLightShadow !important;
+                    }
+                    
+                    &[row-selectable]:not([selected]):hover,
+                    &[selected] {
+                        background-color: var(--urlbarView-hover-background) !important;
+                        color: var(--urlbarView-highlight-color) !important;
+                        
+                        .urlbarView-url {
+                            color: inherit !important;
+                        }
+                    }
+                    
+                    &[type="bookmark"] {
+                        .urlbarView-type-icon {
+                            @include set-background("firefox-4/editBookmark.png");
+                            background-size: unset !important;
+                        }
+                    }
+
+                    &[pinned] {
+                        .urlbarView-type-icon {
+                            background-image: none !important;
+                        }
+                    }
+                    
+                    &[label] {
+                        margin-block-start: 0 !important;
+                        
+                        &::before {
+                            display: none !important;
+                        }
+                    }
+                    
+                    .urlbarView-row-inner {
+                        flex-wrap: wrap !important;
+                        height: 100% !important;
+                        padding: 1px 2px !important;
+                        position: relative !important;
+                        flex-direction: column !important;
+                        align-items: flex-start !important;
+                    }
+                    
+                    .urlbarView-favicon {
+                        width: 16px !important;
+                        height: 16px !important;
+                        margin: 0 5px -3px 3px !important;
+                        flex-basis: 0 !important;
+                        
+                        &[src="chrome://global/skin/icons/search-glass.svg"],
+                        &.default-favicon {
+                            content: var(--default-favicon) !important;
+                        }
+                        
+                        &[src="chrome://browser/skin/history.svg"] {
+                            content: var(--history-icon) !important;
+                        }
+                    }
+                    
+                    .urlbarView-no-wrap {
+                        width: 100% !important;
+                        max-width: 100% !important;
+                        position: relative !important;
+                    }
+                    
+                    .urlbarView-title {
+                        padding: 0 !important;
+                        margin-block-start: 2px !important;
+                        font-size: 1.15em !important;
+                        line-height: unset !important;
+                    }
+                    
+                    .urlbarView-url {
+                        color: LinkText !important;
+                        font-size: unset !important;
+                        margin: 2px 0 1px 24px !important;
+                        padding: 0 !important;
+                        line-height: unset !important;
+                    }
+                    
+                    .urlbarView-overflowable[overflow],
+                    .urlbarView-url[overflow] {
+                        mask-image: none !important;
+                        text-overflow: ellipsis !important;
+                    }
+                    
+                    strong {
+                        text-decoration: underline !important;
+                    }
+                    
+                    .urlbarView-type-icon {
+                        position: relative !important;
+                        margin: 0 !important;
+                        min-width: 16px !important;
+                        height: 16px !important;
+                        object-fit: cover !important;
+                        order: 1 !important;
+                        margin-left: auto !important;
+                    }
+                    
+                    .urlbarView-row-body-description {
+                        font-size: unset !important;
+                    }
+                    
+                    .urlbarView-action {
+                        color: inherit !important;
+                        font-size: unset !important;
+                        margin: 0 !important;
+                        background-color: transparent !important;
+                        border-radius: 0 !important;
+                        padding: 0 !important;
+                    }
+                    
+                    &[has-url] {
+                        .urlbarView-url {
+                            visibility: visible !important;
+                        }
+                    }
+                    
+                    &[has-action]:is([type=switchtab], [type=remotetab], [type=clipboard]) {
+                        .urlbarView-action {
+                            margin-inline-start: 8px !important;
+                        }
+                        
+                        .urlbarView-title-separator {
+                            visibility: collapse !important;
+                        }
+                    }
+                    
+                    .urlbarView-button {
+                        visibility: collapse !important;
+                    }
+                    
+                    &:not([has-action])[has-url] {
+                        .urlbarView-title-separator {
+                            visibility: collapse !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .search-one-offs {
+            visibility: collapse !important;
+        }
+    }
+    
+    .unified-refresh-button {
+        .urlbarView {
+            width: calc(100% + 22px) !important;
+        }
+    }
+
+    &[echelon-system-style="winxp"] {
+        .urlbarView {
+            .urlbarView-body-inner {
+                .urlbarView-results {
+                    .urlbarView-row {
+                        .urlbarView-url {
+                            color:#006600 !important;
+                        }
+
+                        &[row-selectable]:not([selected]):hover,
+                        &[selected] {
+                            .urlbarView-url {
+                                color: inherit !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

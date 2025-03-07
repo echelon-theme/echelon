@@ -1,0 +1,28 @@
+:root {
+    --identity-color-brand: rgb(0,33,71) !important;
+    --identity-background-brand: linear-gradient(rgba(0,33,71,0), rgba(0,33,71,.5) 35%, rgba(0,33,71,.5) 65%,rgba(0,33,71,0)) !important;
+    --identity-icons-brand: url("chrome://branding/content/identity-icons-brand.png") !important;
+
+    &[echelon-style-7] {
+        --identity-icons-brand: url("chrome://branding/content/identity-icons-brand.svg") !important;
+    }
+}
+
+:root:not([privatebrowsingmode="temporary"]) {
+    --appmenu-button-border-color: hsla(210, 59%, 13%, .9) !important;
+    --appmenu-button-hover-border-color: hsla(210, 59%, 13%, .9) !important;
+    --appmenu-button-active-border-color: hsla(210, 59%, 13%, .9) !important;
+    
+    --appmenu-button-normal-background: linear-gradient(hsl(211, 33%, 32%), hsl(209, 53%, 10%) 95%) !important;
+    --appmenu-button-hover-background: -moz-radial-gradient(center bottom, farthest-side, hsla(210, 48%, 90%, .5) 10%, hsla(210, 48%, 90%, 0) 70%),
+                                        -moz-radial-gradient(center bottom, farthest-side, hsla(211, 70%, 83%, .5), hsla(211, 70%, 83%, 0)),
+                                        linear-gradient(hsl(211, 33%, 32%), hsl(209, 53%, 10%) 95%) !important;
+    --appmenu-button-active-background: linear-gradient(hsl(211, 33%, 26%), hsl(209, 53%, 6%) 95%) !important;
+    
+    --appmenu-button-normal-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset, 0 0 2px 1px hsla(211, 65%, 85%, .15) inset !important;
+    --appmenu-button-hover-shadow: 0 1px 0 hsla(210, 48%, 90%, .15) inset,
+                                    0 0 2px 1px hsla(210, 48%, 90%, .4) inset,
+                                    0 -1px 0 hsla(210, 48%, 90%, .2) inset !important;
+    --appmenu-button-active-shadow: 0 2px 3px rgba(0, 0, 0, .4) inset,
+                                    0 1px 1px rgba(0, 0, 0, .2) inset !important;
+}

@@ -1,0 +1,214 @@
+& {
+    --toolbarbutton-border-radius: 1px !important;
+
+    &[echelon-system-style="win8"],
+    &[echelon-system-style="win10"] {
+        --toolbarbutton-background: transparent !important;
+        --toolbarbutton-background-hot: rgba(0,0,0,.1) !important;
+        --toolbarbutton-background-active: rgba(0,0,0,.1) !important;
+
+        --toolbarbutton-border-color: transparent !important;
+        
+        --toolbarbutton-shadow-normal: none !important;
+        --toolbarbutton-shadow-hot: none !important;
+        --toolbarbutton-shadow-active: 0 0 0 1px rgba(0,0,0,.15) inset !important;
+        
+        --backbutton-border-color: var(--urlbar-border-color-hover) !important;
+        --backbutton-background: rgba(255,255,255,.15) !important;
+    }
+
+    #searchbar {
+        border-radius: var(--toolbarbutton-border-radius) !important;
+    }
+    
+    &[sizemode="normal"]:not([echelon-system-style="winxp"], [echelon-system-style="win8"], [echelon-system-style="win10"]) #nav-bar {
+        border-top-left-radius: 2.5px !important;
+        border-top-right-radius: 2.5px !important;
+    }
+    
+    #nav-bar {
+        #PanelUI-button {
+            background-image: none !important;
+            border-inline-start: 1px solid !important;
+            border-image: linear-gradient(transparent, rgba(0,0,0,.1) 20%, rgba(0,0,0,.1) 80%, transparent) !important;
+            border-image-slice: 1 !important;
+            margin-inline-start: 2px !important;
+        }
+    }
+
+    &:not([echelon-system-style="win8"], [echelon-system-style="win10"]) {
+        #PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton),
+        #PersonalToolbar .toolbarbutton-1 {
+            appearance: none !important;
+            background-clip: padding-box !important;
+            border: 1px solid transparent !important;
+            border-color: var(--toolbarbutton-border-color) !important;
+            box-shadow: var(--toolbarbutton-shadow-normal) !important;
+            transition-property: background-color, border-color, box-shadow !important;
+            transition-duration: 150ms !important;
+    
+            &:not([disabled="true"]):hover {
+                background-image: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1)) !important;
+                background-color: var(--toolbarbutton-background) !important;
+                --toolbarbutton-border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25) !important;
+                box-shadow: var(--toolbarbutton-shadow-hot) !important;
+            }
+    
+            &:not([disabled="true"]):hover:active,
+            &:not([disabled="true"])[open] {
+                box-shadow: var(--toolbarbutton-shadow-active) !important;
+                background-image: var(--toolbarbutton-background-active) !important;
+                background-color: hsla(210,54%,20%,.15) !important;
+                --toolbarbutton-border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
+                transition: none !important;
+            }
+        }
+    }
+
+    &[echelon-system-style="win8"],
+    &[echelon-system-style="win10"] {
+        #navigator-toolbox > toolbar {
+            background-clip: padding-box !important;
+            background-image: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.4)) !important;
+        }
+
+        #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified),
+        #PersonalToolbar .bookmark-item:not(menuitem, .subviewbutton),
+        #PersonalToolbar .toolbarbutton-1 {
+            background-clip: padding-box !important;
+
+            &:not([disabled="true"]):hover,
+            &#forward-button.unified-with-urlbar:not([open], [disabled="true"], :active):hover {
+                background-image: none !important;
+                background-color: var(--toolbarbutton-background-hot) !important;
+                --toolbarbutton-border-color: rgba(0,0,0,.2) !important;
+                box-shadow: var(--toolbarbutton-shadow-hot) !important;
+            }
+
+            &:not([disabled="true"]):hover:active,
+            &:not([disabled="true"])[open] {
+                background-image: none !important;
+                background-color: var(--toolbarbutton-background-active) !important;
+                box-shadow: var(--toolbarbutton-shadow-active) !important;
+                --toolbarbutton-border-color: rgba(0,0,0,.3) !important;
+                border-top-color: var(--toolbarbutton-border-color) !important;
+                transition-duration: 10ms !important;
+            }
+        }
+
+        #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
+            &#back-button.unified-with-urlbar {
+                width: 32px !important;
+                min-width: 32px !important;
+                height: 32px !important;
+                background-clip: padding-box !important;
+                background-image: none !important;
+                background-color: var(--backbutton-background) !important;
+                border: 1px solid !important;
+                border-color: var(--backbutton-border-color) !important;
+                box-shadow: none !important;
+
+                &:not([open], [disabled="true"], :active):hover {
+                    background-image: none !important;
+                    background-color: var(--toolbarbutton-background-hot) !important;
+                    box-shadow: var(--toolbarbutton-shadow-hot) !important;
+                }
+
+                &:not([disabled="true"]):hover:active,
+                &:not([disabled="true"])[open] {
+                    background-image: none !important;
+                    background-color: var(--toolbarbutton-background-active) !important;
+                    box-shadow: var(--toolbarbutton-shadow-active) !important;
+                }
+            }
+
+            &#forward-button.unified-with-urlbar {
+                width: 33px !important;
+                margin-inline-start: -8px !important;
+
+                background-color: var(--backbutton-background) !important;
+                border-color: var(--backbutton-border-color) !important;
+
+                &:not([open], [disabled="true"], :active):hover {
+                    background-color: var(--toolbarbutton-background-hot) !important;
+                }
+
+                &:not([disabled="true"]):hover:active,
+                &:not([disabled="true"])[open] {
+                    background-color: var(--toolbarbutton-background-active) !important;
+                }
+            }
+        }
+
+        #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button {
+            position: relative !important;
+
+            .toolbarbutton-menubutton-button {
+                --toolbarbutton-width: 31px !important;
+                border-top-right-radius: 0 !important;
+                border-bottom-right-radius: 0 !important;
+                visibility: visible !important;
+                border-inline-end-style: none !important;
+            }
+
+            &:is(:hover, [open]):not([disabled="true"]) {
+                .toolbarbutton-menubutton-button,
+                .toolbarbutton-menubutton-dropmarker {
+                    background-image: none !important;
+                    background-color: var(--toolbarbutton-background-hot) !important;
+                    --toolbarbutton-border-color: rgba(0,0,0,.2) !important;
+                    box-shadow: var(--toolbarbutton-shadow-hot) !important;
+
+                    &:active,
+                    &[open] {
+                        background-image: none !important;
+                        background-color: var(--toolbarbutton-background-active) !important;
+                        --toolbarbutton-border-color: rgba(0,0,0,.3) !important;
+                        box-shadow: var(--toolbarbutton-shadow-active) !important;
+                    }
+                }
+            }
+
+            #bookmarks-menu-button-dropmarker {
+                --toolbarbutton-width: 32px !important;
+                border-top-left-radius: 0 !important;
+                border-bottom-left-radius: 0 !important;
+
+                &::before {
+                    content: "";
+                    display: flex !important;
+                    width: 1px !important;
+                    height: 16px !important;
+                    margin-inline-end: -1px !important;
+                    background-image: linear-gradient(currentColor 0, currentColor 100%) !important;
+                    background-position: center !important;
+                    background-repeat: no-repeat !important;
+                    background-size: 1px 16px !important;
+                    opacity: .2 !important;
+                    position: absolute !important;
+                    left: 31px !important;
+                }
+
+                &::after {
+                    visibility: collapse !important;
+                }
+            }
+
+            &:is(:hover, :active, [open]) {
+                #bookmarks-menu-button-dropmarker::before {
+                    opacity: 0 !important;
+                }
+            }
+        }
+    }
+
+    #downloads-notification-anchor[notification="finish"] > #downloads-indicator-notification {
+        background-image: url("chrome://echelon/content/firefox-56/downloads/download-notification-finish.png") !important;
+    }
+
+    #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button {
+        width: 32px !important;
+        padding-left: 9px !important;
+        padding-right: 3px !important;
+    }
+}

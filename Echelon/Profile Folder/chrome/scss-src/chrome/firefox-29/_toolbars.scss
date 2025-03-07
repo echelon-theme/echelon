@@ -1,0 +1,255 @@
+& {
+    --toolbarbutton-outer-padding: 1px 2px !important;
+
+    --toolbar-border-color: hsla(209,67%,12%,0.35) !important;
+
+    // Hide "Tabs on Top" menu item
+    #toolbar-context-echelonTabsOnTop,
+    #tabsOnTopMenuSeparator {
+        visibility: collapse !important;
+    }
+
+    #nav-bar {
+        z-index: 1 !important;
+        height: 41px !important;
+        box-shadow: 0 1px 0 rgba(253,253,253,0.45) inset !important;
+        background-image: linear-gradient(rgba(253,253,253,0.45), rgba(255,255,255,0)) !important;
+        border-top: 1px solid var(--toolbar-border-color) !important;
+
+        #PanelUI-button {
+            min-height: 100% !important;
+            align-items: center !important;
+            padding-inline-start: 4px !important;
+            background-image: linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,.3) 30%, hsla(0,0%,100%,.3) 70%, hsla(0,0%,100%,0)),
+                              linear-gradient(hsla(210,54%,20%,0), hsla(210,54%,20%,.3) 30%, hsla(210,54%,20%,.3) 70%, hsla(210,54%,20%,0)),
+                              linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,.3) 30%, hsla(0,0%,100%,.3) 70%, hsla(0,0%,100%,0)) !important;
+            background-size: 1px calc(100% - 1px), 1px calc(100% - 1px), 1px  calc(100% - 1px) !important;
+            background-position: 0px 0px, 1px 0px, 2px 0px !important;
+            background-repeat: no-repeat !important;
+
+            #PanelUI-menu-button {
+                &[badge-status] {
+                    .toolbarbutton-badge {
+                        &:-moz-window-inactive { // disable grayscale shit firefox 133 does
+                            filter: none !important
+                        }
+                    }
+                }
+
+                &[badge-status="update-available"],
+                &[badge-status="update-downloading"],
+                &[badge-status="update-manual"],
+                &[badge-status="update-other-instance"],
+                &[badge-status="update-restart"],
+                &[badge-status="update-unsupported"] {
+                    .toolbarbutton-badge {
+                        background: #74BF43 url("chrome://echelon/content/firefox-56/toolbar/update-badge.svg") no-repeat center !important;
+                        border-radius: 50% !important;
+                        box-shadow: none !important;
+                        border: 2px solid -moz-dialog !important;
+                        margin: -9px 0 0 !important;
+                        margin-inline-end: -6px !important;
+                        min-width: 16px !important;
+                        min-height: 16px !important;
+                    }
+                }
+
+                &[open] {
+                    .toolbarbutton-badge {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+
+    #search-container {
+        margin-inline-end: 3px !important;
+    }
+
+    #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
+        &#forward-button.unified-with-urlbar {
+            width: 31px !important;
+            padding-left: 9px !important;
+            padding-right: 3px !important;
+            border-left: 0 !important;
+        }
+    }
+
+    // unified bookmark button styling
+    &:not([echelon-style-7][echelon-system-style="win8"], [echelon-style-7][echelon-system-style="win10"]) #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button {
+        position: relative !important;
+
+        &:not([disabled="true"]):hover,
+        &:not([disabled="true"])[open="true"] {
+            .toolbarbutton-1 {
+                background-image: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1)) !important;
+                background-color: var(--toolbarbutton-background) !important;
+                box-shadow: var(--toolbarbutton-shadow-hot) !important;
+                --toolbarbutton-border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25) !important;
+
+                &:not([open], [disabled="true"], :active):hover {
+                    background-color: hsla(210,48%,96%,.75) !important;
+                    border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
+                }
+
+                &:not([disabled="true"]):hover:active,
+                &:not([disabled="true"])[open] {
+                    background-image: var(--toolbarbutton-background-active) !important;
+                    background-color: hsla(210,54%,20%,.15) !important;
+                    box-shadow: var(--toolbarbutton-shadow-active) !important;
+                    --toolbarbutton-border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
+                    transition: none !important;
+                }
+            }
+
+            .toolbarbutton-menubutton-button {
+                border-top-right-radius: 0 !important;
+                border-bottom-right-radius: 0 !important;
+            }
+
+            .toolbarbutton-menubutton-dropmarker {
+                border-top-left-radius: 0 !important;
+                border-bottom-left-radius: 0 !important;
+            }
+        }
+
+        .toolbarbutton-menubutton-button {
+            visibility: visible !important;
+        }
+
+        .toolbarbutton-menubutton-dropmarker {
+            --toolbarbutton-width: 30px !important;
+
+            &::after {
+                display: none !important;
+            }
+        }
+
+        &:not(:hover, :active, [open]) {
+            .toolbarbutton-menubutton-dropmarker::before {
+                content: '' !important; 
+                display: flex !important;
+                min-width: 1px !important;
+                min-height: 18px !important;
+                background-image: linear-gradient(hsla(210,54%,20%,.2) 0, hsla(210,54%,20%,.2) 16px) !important;
+                background-clip: padding-box !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+                background-size: 1px 18px !important;
+                box-shadow: 0 0 0 1px hsla(0,0%,100%,.2) !important;
+                position: absolute !important;
+                left: 31px !important;
+            }
+        }
+
+        .toolbarbutton-menubutton-button {
+            --toolbarbutton-width: 31px !important;
+            border-inline-end: 0 !important;
+        }
+    }
+
+    @keyframes animation-bookmarkAdded {
+        from {
+            transform: rotate(0deg) translateX(-16px) rotate(0deg) scale(1);
+            opacity: 0;
+        }
+
+        60% {
+            transform: rotate(180deg) translateX(-16px) rotate(-180deg) scale(2.2);
+            opacity: 1;
+        }
+
+        80% {
+            opacity: 1;
+        }
+
+        to {
+            transform: rotate(180deg) translateX(-16px) rotate(-180deg) scale(1);
+            opacity: 0;
+        }
+    }
+
+    @keyframes animation-bookmarkPulse {
+        from {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.3);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    #bookmarked-notification-container {
+        min-height: 1px;
+        min-width: 1px;
+        height: 1px;
+        margin-bottom: -1px;
+        z-index: 5;
+        position: relative;
+        pointer-events: none;
+    }
+
+    #bookmarked-notification-anchor {
+        min-height: 18px;
+    }
+
+    #bookmarked-notification {
+        background-size: 16px;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 16px;
+        height: 16px;
+        opacity: 0;
+    }
+
+    #bookmarked-notification-dropmarker-anchor {
+        z-index: -1;
+        position: relative;
+        min-height: 18px;
+    }
+
+    #bookmarked-notification-dropmarker-icon {
+        width: 18px;
+        height: 18px;
+        visibility: hidden;
+    }
+
+    #bookmarked-notification-anchor[notification="finish"]>#bookmarked-notification {
+        background-image: url("chrome://echelon/content/firefox-29/places/bookmarks-notification-finish.png");
+        animation: animation-bookmarkAdded 800ms;
+        animation-timing-function: ease, ease, ease;
+    }
+
+    #bookmarks-menu-button[notification="finish"]>.toolbarbutton-menubutton-dropmarker>.dropmarker-icon {
+        list-style-image: none !important;
+    }
+
+    #bookmarked-notification-dropmarker-anchor[notification="finish"]>#bookmarked-notification-dropmarker-icon {
+        visibility: visible;
+        animation: animation-bookmarkPulse 300ms;
+        animation-delay: 600ms;
+        animation-timing-function: ease-out;
+    }
+
+    // Toolbar borders
+    &[sizemode="normal"] {
+        &:not([lwtheme-image]) {
+            #nav-bar {
+                border-top-left-radius: 0 !important;
+                border-top-right-radius: 0 !important;
+            }
+            
+            #browser, #customization-container {
+                &[findbar-focused] {
+                    border-bottom-left-radius: 0 !important;
+                    border-bottom-right-radius: 0 !important;  
+                }
+            }
+        }
+    }
+}

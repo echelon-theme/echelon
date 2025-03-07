@@ -2,5 +2,14 @@
 /**/package-lock.json
 /**/chrome/_chrome_user.css
 /**/chrome/_content_user.css
-
+/**/chrome/compile.bat
+/**/chrome/watch.bat
+/**/chrome/src/
 .DS_Store
+
+*.css
+*.css.map
+
+!userChrome.css
+!userChrome.au.css
+!userContent.css

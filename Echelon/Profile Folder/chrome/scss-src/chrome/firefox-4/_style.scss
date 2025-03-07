@@ -1,0 +1,21 @@
+@import "base";
+@import "titlebar";
+@import "toolbars";
+@import "tabs";
+@import "icons";
+@import "urlbar-search";
+@import "urlbar-view";
+@import "personalToolbar";
+@import "appmenu";
+@import "panelui";
+@import "menupopup";
+@import "customizeUI";
+@import "places";
+
+:root[echelon-system-style="winxp"] {
+    @import "tweaks/winxp/style";
+}
+
+@import "wizard";
+@import "lwtheme";
+@import "dialogs";

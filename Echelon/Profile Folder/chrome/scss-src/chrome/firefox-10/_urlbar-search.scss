@@ -1,0 +1,180 @@
+#urlbar-container {
+    pointer-events: none !important;
+}
+
+&:not([chromehidden~="toolbar"], [customizing]) #urlbar-container.unified-forward-button {
+    margin-inline-start: 0 !important;
+}
+
+#urlbar {
+    pointer-events: all !important;
+}
+
+#urlbar-background, #searchbar {
+    border-radius: 2.5px !important;
+}
+
+#urlbar {
+    .urlbar-history-dropmarker {
+        appearance: none !important;
+        padding: 0 1px !important;
+        background-color: transparent !important;
+        border: none !important;
+        width: 11px !important;
+        @include set-background("firefox-10/urlbar/urlbar-history-dropmarker.png");
+        background-repeat: no-repeat !important;
+        background-position-y: center !important;
+        margin-inline-start: 4px !important;
+        margin-inline-end: 2px !important;
+        height: auto !important;
+
+        &:hover {
+            background-position-x: -11px !important;
+
+            &:active {
+                background-position-x: -22px !important;
+            }
+        }
+    }
+
+    &[suppress-focus-border][breakout-extend] {
+        .urlbar-history-dropmarker {
+            background-position-x: -22px !important;
+        }
+    }
+}
+
+&:not([chromehidden~="toolbar"], [customizing]) #forward-button.unified-with-urlbar[disabled] + #urlbar-container #notification-popup-box { 
+    padding-inline-start: 5px !important;
+    margin-inline-end: -7px !important;
+}
+
+// unified refresh/go/stop
+#stop-reload-button {
+    &.unified {
+        padding-inline-end: 2px !important;
+
+        .toolbarbutton-1 {
+            padding: 0 2px !important;
+            border-inline-start: 0 !important;
+            box-shadow: none !important;
+
+            .toolbarbutton-icon {
+                @include set-background("firefox-10/reload-stop-go.png");
+            }
+
+            &:not([disabled]):hover {
+                .toolbarbutton-icon {
+                    background-position-y: -14px !important;
+                }
+
+                &:active {
+                    .toolbarbutton-icon {
+                        background-position-y: -28px !important;
+                    }
+                }
+            }
+        }
+
+        #reload-button {
+            &:not([disabled]):hover {
+                background-image: -moz-radial-gradient(center, circle closest-side, hsla(200,100%,70%,.2), hsla(200,100%,70%,0)) !important;
+                
+                &:active {
+                    background-image: -moz-radial-gradient(center, circle closest-side, hsla(200,100%,60%,.1), hsla(200,100%,60%,0)) !important;
+                }
+            }
+        }
+
+        #stop-button {
+            .toolbarbutton-icon {
+                background-position-x: -14px !important;
+            }
+
+            &:not([disabled]):hover {
+                background-image: -moz-radial-gradient(center, circle closest-side, hsla(5,100%,75%,.3), hsla(5,100%,75%,0)) !important;
+
+                &:active {
+                    background-image: -moz-radial-gradient(center, circle closest-side, hsla(5,100%,75%,.1), hsla(5,100%,75%,0)) !important;
+                }
+            }
+        }
+
+        #go-button {
+            .toolbarbutton-icon {
+                background-position-x: -28px !important;
+            }
+
+            &:not([disabled]):hover {
+                background-image: -moz-radial-gradient(center, circle closest-side, hsla(110,70%,50%,.2), hsla(110,70%,50%,0)) !important;
+                
+                &:active {
+                    background-image: -moz-radial-gradient(center, circle closest-side, hsla(110,70%,50%,.1), hsla(110,70%,50%,0)) !important   ;
+                }
+            }
+        }
+    }
+}
+
+// unified urlbar behavior
+
+&:not([chromehidden~="toolbar"], [customizing]) {
+    #nav-bar {
+        #forward-button.unified-with-urlbar:not(:hover)[disabled] {
+            opacity: 0 !important;
+
+            & + #urlbar-container {            
+                & > #urlbar,
+                & > #echelon-urlbar-positioning {
+                    margin-left: -27px !important;
+                }
+    
+                #urlbar-background,
+                .urlbar-input-container,
+                #urlbar-input-container {
+                    mask: url("chrome://echelon/content/firefox-10/urlbar/winstripe-urlbar-back-button-mask.svg") !important;
+                    mask-repeat: no-repeat !important;
+                    mask-position-x: -1px !important;
+                }
+
+                #identity-icon-box {
+                    padding-inline-start: 5px !important;
+                }
+            }
+        }
+
+        #forward-button.unified-with-urlbar {
+            & + #urlbar-container {
+                padding-inline-start: 27px !important;
+                margin-inline-start: -27px !important;
+
+                #urlbar-background,
+                .urlbar-input-container,
+                #urlbar-input-container {
+                    border-top-left-radius: 0 !important;
+                    border-bottom-left-radius: 0 !important;
+                    border-inline-start: 0 !important;
+                }
+            }
+        }
+    }
+
+    &:not([echelon-tabchanging="true"]) {
+        #nav-bar {
+            #forward-button.unified-with-urlbar {
+                transition: opacity 150ms ease-out !important;
+
+                &:not(:hover)[disabled] {
+                    #identity-box {
+                        transition: padding-inline-start !important;
+                    }
+                }
+
+                & + #urlbar-container > #urlbar,
+                & + #urlbar-container > #echelon-urlbar-positioning {
+                    transition: margin-inline-start 150ms ease-out !important;
+                }
+            }
+        }
+    }
+}

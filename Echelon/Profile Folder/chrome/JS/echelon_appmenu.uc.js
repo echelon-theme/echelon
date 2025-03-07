@@ -8,8 +8,9 @@
 let g_echelonFirefoxButton = null;
 
 {
-	var { PrefUtils, BrandUtils, renderElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+	var { PrefUtils, waitForElement, BrandUtils, renderElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
 	renderElement = renderElement.bind(window);
+	waitForElement = waitForElement.bind(window);
 
 	function setAttributes(element, attributes)
 	{
@@ -233,64 +234,34 @@ let g_echelonFirefoxButton = null;
 		{
 			try
 			{
-				let useCustomStyle = PrefUtils.tryGetBoolPref("Echelon.FirefoxButton.CustomStyle");
-
-				//
-				// 	Custom Firefox Button name & background color
-				//
-				if (useCustomStyle)
-				{
-					let fxButtonBgColor = PrefUtils.tryGetStringPref("Echelon.FirefoxButton.CustomBGColor");
-						
-					let root = document.documentElement;
-					root.setAttribute("custom-fx-button-bg", "true");
-					
-					let styleElement = document.createElement('style');
-					document.head.appendChild(styleElement);
-
-					styleElement.innerHTML = `
-						:root {
-							--fx-custom-bg: `+ fxButtonBgColor + `;
-						}
-					`;
-				}
-				
 				//
 				// Button creation and insertion
 				//
-				let titlebarEl = document.getElementById("titlebar");
-				let browserName = BrandUtils.getShortProductName();
+				waitForElement("#titlebar-content").then(e => {
+					let browserName = BrandUtils.getBrandingKey("brandShortName");
 
-				if (useCustomStyle)
-				{
-					browserName = PrefUtils.tryGetStringPref("Echelon.FirefoxButton.CustomName");
-					if (browserName === "")
-					{
-						browserName = BrandUtils.getShortProductName();
-					}
-				}
-				
-				this.appMenuButtonContainerEl = document.createXULElement("hbox");
-				const appMenuButtonContainerAttrs = {
-					"id": "appmenu-button-container"
-				};
-				setAttributes(this.appMenuButtonContainerEl, appMenuButtonContainerAttrs);
-				
-				this.appMenuButtonEl = document.createXULElement("button");
-				const appMenuButtonAttrs = {
-					"id":	 "appmenu-button",
-					"type": "menu",
-					"label": browserName
-				};
-				setAttributes(this.appMenuButtonEl, appMenuButtonAttrs);
-				
-				titlebarEl.insertBefore(this.appMenuButtonContainerEl, titlebarEl.firstChild);
-				this.appMenuButtonContainerEl.appendChild(this.appMenuButtonEl);
-				
-				//
-				// Creates the Firefox menu contents.
-				//
-				this.initMenu(this.appMenuButtonEl);
+					this.appMenuButtonContainerEl = document.createXULElement("hbox");
+					const appMenuButtonContainerAttrs = {
+						"id": "appmenu-button-container"
+					};
+					setAttributes(this.appMenuButtonContainerEl, appMenuButtonContainerAttrs);
+					
+					this.appMenuButtonEl = document.createXULElement("button");
+					const appMenuButtonAttrs = {
+						"id":	 "appmenu-button",
+						"type": "menu",
+						"label": browserName
+					};
+					setAttributes(this.appMenuButtonEl, appMenuButtonAttrs);
+					
+					e.insertBefore(this.appMenuButtonContainerEl, e.firstChild);
+					this.appMenuButtonContainerEl.appendChild(this.appMenuButtonEl);
+					
+					//
+					// Creates the Firefox menu contents.
+					//
+					this.initMenu(this.appMenuButtonEl);
+				});
 			}
 			catch (e) { console.log(e); } // ignore, nothing important
 		}
@@ -540,6 +511,14 @@ let g_echelonFirefoxButton = null;
 						"class": "menuitem-iconic",
 						"data-l10n-id": "quit",
 						"oncommand": "Services.startup.quit(Ci.nsIAppStartup.eAttemptQuit)"
+					}),
+					elm("xul:menuseparator", {"class": "appmenu-menuseparator", "hidden": "true"}),
+					elm("xul:menuitem", {
+						"id": "appmenu-echelon-update",
+						"class": "menuitem-iconic",
+						"data-l10n-id": "echelon_update_available",
+						"oncommand": "Services.startup.quit(Ci.nsIAppStartup.eAttemptQuit)",
+						"hidden": "true"
 					})
 				]),
 				elm("xul:vbox", {id: "appmenuSecondaryPane"}, [
@@ -833,6 +812,12 @@ let g_echelonFirefoxButton = null;
 								break;
 						}
 					}
+				}
+
+				let aboutDialog = this.menuEl.querySelector("#appmenu_about");
+				if (aboutDialog)
+				{
+					aboutDialog.label = this.strings.formatStringFromName("about", [BrandUtils.getBrandingKey("brandShortName")]);
 				}
 			}
 		}

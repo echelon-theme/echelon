@@ -1,131 +1,254 @@
-const { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
-let gHomeBundle = document.getElementById("homeBundle");
-
-// FOR PRE-FIREFOX 23 STYLE
+var { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+let { PrivateBrowsingUtils } = ChromeUtils.importESModule("resource://gre/modules/PrivateBrowsingUtils.sys.mjs");
+Components.utils.import("resource:///modules/sessionstore/SessionStore.jsm", this);
 
 let root = document.documentElement;
-let searchText = document.getElementById("searchText");
+let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Homepage.Style");
+let newLogo = PrefUtils.tryGetBoolPref("Echelon.Appearance.NewLogo");
+let snippets = PrefUtils.tryGetBoolPref("Echelon.Homepage.HideCustomSnippets");
+let product = BrandUtils.getBrandingKey("brandShortName");
 
-let echelonStyle = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
-let echelonHomepageStyle = PrefUtils.tryGetIntPref("Echelon.Appearance.Homepage.Style");
-let echelonOldLogo = PrefUtils.tryGetBoolPref("Echelon.Appearance.NewLogo");
+function createHomePage() {
+    let container = document.body;
 
+    homeFragment = `
+        <html:div id="brandStartSpacer" />
 
-if (echelonOldLogo) {
-	root.setAttribute("echelon-new-logo", echelonOldLogo);
-}
+        <html:div id="brandStart">
+            <img id="brandStartLogo" alt="" />
+        </html:div>
 
-// BROWSER NAME AND BRANCH (FOR ALT BRANDING)
+        <html:div id="searchContainer">
+        <html:form method="get" name="searchForm" id="searchForm" onsubmit="onSearchSubmit(event)">
+            <html:div id="searchLogoContainer"><img id="searchEngineLogo" /></html:div>
+            <html:div id="searchInputContainer">
+            <html:input type="text" name="q" value="" id="searchText" maxlength="256" placeholder="" />
 
-root.setAttribute("browser-name", BrandUtils.getBrowserName());
-root.setAttribute("update-channel", BrandUtils.getUpdateChannel());
+            </html:div>
+            <html:div id="searchButtons">
+            <html:input id="searchSubmit" type="submit" value="${homeBundle.GetStringFromName("searchEngineButton")}" />
+            </html:div>
+        </html:form>
+        </html:div>
 
-// ECHELON STYLE
+        <html:div id="contentContainer">
+        <html:div id="snippetContainer">
+            <html:div id="defaultSnippets" hidden="true">
+                <html:span id="defaultSnippet1">${homeBundle.formatStringFromName("snippet_1", [product])}</html:span>
+                <html:span id="defaultSnippet2">${homeBundle.formatStringFromName("snippet_2", [product])}</html:span>
+            </html:div>
+            <html:div id="snippets"/>
+        </html:div>
 
-function updateHomepageStyle()
-{
-	let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Homepage.Style");
+        <html:div id="launcher">
+            <html:button id="restorePreviousSession" onclick="restoreLastSession()">${homeBundle.GetStringFromName("restoreLastSessionButton")}</html:button>
+        </html:div>
+        </html:div>
 
-	/* Snippet icon */
-	if (style == 0)
-	{
-		root.setAttribute("no-snippet-icon", "true");
-	}
-	else
-	{
-		root.removeAttribute("no-snippet-icon");
-	}
+        <html:div id="bottomSection">
+            <html:div id="aboutMozilla">
+                <html:a href="http://www.mozilla.com/about/">${homeBundle.GetStringFromName("aboutMozilla")}</html:a>
+            </html:div>
+            <html:div id="syncLinksContainer">
+                <html:a onclick="windowRoot.ownerGlobal.openPreferences('sync');" class="sync-link" id="setupSyncLink">${homeBundle.GetStringFromName("syncSetup")}</html:a>
+                <html:a onclick="windowRoot.ownerGlobal.gSync.openConnectAnotherDevice();" class="sync-link" id="pairDeviceLink">${homeBundle.GetStringFromName("pairDevice")}</html:a>
+            </html:div>
+        </html:div>
+    `
 
-	/* Style attribute */
-	if (style <= 1)
-	{
-		root.setAttribute("echelon-style", "1");
-	}
-	else if (style >= 4)
-	{
-		root.setAttribute("echelon-style", "5");
-	}
-	else
-	{
-		root.removeAttribute("echelon-style");
-	}
+    stylesheet = `
+        <html:link rel="stylesheet" href="chrome://userchrome/content/pages/home/home-old.css" />
+    `
+    
+    if (style >= 2) {
+        homeFragment = `
+            <html:div class="spacer"/>
+            <html:div id="topSection">
+            <html:img id="brandLogo"/>
 
-	/* Logo */
-	if (style >= 3)
-	{
-		root.setAttribute("echelon-new-logo", "true");
-	}
-	else
-	{
-		root.removeAttribute("echelon-new-logo");
-	}
+            <html:div id="searchContainer">
+                <html:form name="searchForm" id="searchForm" onsubmit="onSearchSubmit(event)">
+                <html:div id="searchLogoContainer"><img id="searchEngineLogo"/></html:div>
+                <html:input type="text" name="q" value="" id="searchText" maxlength="256"
+                        autofocus="autofocus" />
+                <html:input id="searchSubmit" type="submit" value="${homeBundle.GetStringFromName("searchEngineButton")}"/>
+                </html:form>
+            </html:div>
 
-	/* Search placeholder */
-	if (style >= 4)
-	{
-		searchText.setAttribute("placeholder", document.getElementById("searchSubmit").value);
-	}
-	else
-	{
-		searchText.removeAttribute("placeholder");
-	}
-	
-	Services.search.getDefault().then(engine => {
+            <html:div id="snippetContainer">
+                <html:div id="defaultSnippets" hidden="true">
+                    <html:span id="defaultSnippet1">${homeBundle.formatStringFromName("snippet_1", [product])}</html:span>
+                    <html:span id="defaultSnippet2">${homeBundle.formatStringFromName("snippet_2", [product])}</html:span>
+                </html:div>
+                <html:div id="snippets"/>
+            </html:div>
+            </html:div>
+            <html:div class="spacer"/>
+
+            <html:div id="launcher">
+            <html:button class="launchButton" id="downloads" onclick="windowRoot.ownerGlobal.DownloadsPanel.showDownloadsHistory();">${homeBundle.GetStringFromName("downloadsButton")}</html:button>
+            <html:button class="launchButton" id="bookmarks" onclick="windowRoot.ownerGlobal.PlacesCommandHook.showPlacesOrganizer('UnfiledBookmarks');">${homeBundle.GetStringFromName("bookmarksButton")}</html:button>
+            <html:button class="launchButton" id="history" onclick="windowRoot.ownerGlobal.PlacesCommandHook.showPlacesOrganizer('History');">${homeBundle.GetStringFromName("historyButton")}</html:button>
+            <html:button class="launchButton" id="addons" onclick="windowRoot.ownerGlobal.BrowserAddonUI.openAddonsMgr('addons://list/extension');">${homeBundle.GetStringFromName("addonsButton")}</html:button>
+            <html:button class="launchButton" id="sync" onclick="windowRoot.ownerGlobal.openPreferences('sync');">${homeBundle.GetStringFromName("syncButton")}</html:button>
+            <html:button class="launchButton" id="settings" onclick="windowRoot.ownerGlobal.openPreferences();">${homeBundle.GetStringFromName("settingsButton")}</html:button>
+            <html:div id="restorePreviousSessionSeparator"/>
+            <html:button class="launchButton" id="restorePreviousSession" onclick="restoreLastSession()">${homeBundle.GetStringFromName("restoreLastSessionButton")}</html:button>
+            </html:div>
+
+            <html:a id="aboutMozilla" href="http://www.mozilla.com/about/"/>
+        `
+
+        stylesheet = `
+            <html:link rel="stylesheet" href="chrome://userchrome/content/pages/home/home-new.css" />
+        `
+    }
+
+    document.head.appendChild(MozXULElement.parseXULToFragment(stylesheet));
+    container.appendChild(MozXULElement.parseXULToFragment(homeFragment));
+
+    // Set links on snippets
+    document.querySelector("#defaultSnippet1 a").href = "https://www.mozilla.org/firefox/features/?utm_source=snippet&utm_medium=snippet&utm_campaign=default+feature+snippet";
+    document.querySelector("#defaultSnippet2 a").href = "https://addons.mozilla.org/firefox/?utm_source=snippet&utm_medium=snippet&utm_campaign=addons";
+
+    Services.search.getDefault().then(engine => {
 		window.engine = engine;
 		
 		/* Only Google has a logo. Others use placeholder. */
-		if (engine._name != "Google" && echelonHomepageStyle == 3)
+		if (engine._name != "Google" && style > 4)
 		{
-			document.getElementById("searchLogo").hidden = true;
+			document.getElementById("searchEngineLogo").hidden = true;
 			document.getElementById("searchText").placeholder = engine._name;
 		}
+
+        if (style == 4)
+        {
+            document.getElementById("searchText").placeholder = homeBundle.GetStringFromName("searchEngineButton");
+            document.getElementById("searchSubmit").value = "▶";
+        }
 	});
+
+    if (style >= 3) {
+        let brandLogo = document.createElement("div");
+        brandLogo.id = "brandLogo";
+
+        let brandLogoImg = document.getElementById("brandLogo");
+
+        brandLogoImg.replaceWith(brandLogo);
+    }
+
+    // focusInput();
+    updateHomepageStyle();
+    insertCustomSnippets();
+
+    if (SessionStore.canRestoreLastSession && !PrivateBrowsingUtils.isWindowPrivate(window))
+    {
+        document.getElementById("launcher").setAttribute("session", "true");
+    }
+
+    fitToWidth();
+    window.addEventListener("resize", fitToWidth);  
 }
 
-updateHomepageStyle();
-Services.prefs.addObserver(
-	"Echelon.Appearance.Homepage.Style",
-	updateHomepageStyle
-);
-
-// SNIPPET RANDOMIZER
-
-function percentChance(chance)
+function insertCustomSnippets()
 {
-    return (Math.random() * 100) <= chance;
+    let defaultSnippetsElt = document.getElementById("defaultSnippets");
+
+    if (!snippets) {
+        // remove default snippets if custom snippets are shown
+
+        Array.from(defaultSnippetsElt.childNodes).forEach((elm) => {
+            elm.remove();
+        });
+    }
+
+    // TODO: CHANGE URL WHEN RELEASE CANIDATE 1
+    const snippetsURL = "https://raw.githack.com/echelon-theme/echelon-theme.github.io/main/snippets.json";
+
+    fetch(snippetsURL, {method: "Get"})
+    .then((response) => response.json())
+
+    .then((data) => {
+        for (const snippet of data.snippets) {
+            let snippetElem = document.createElement("span");
+
+            snippetElem.id = snippet.id;
+            snippetElem.classList.add("customSnippet");
+            snippetElem.style.setProperty("--background-image", `url(${snippet.image})`);
+            snippetElem.innerHTML = snippet.text;
+
+            if (snippet.link) {
+                snippetElem.querySelector("a").href = snippet.link;
+            }
+
+            // Option to hide custom snippets
+
+            try
+			{
+                if (!snippets) {
+                    defaultSnippetsElt.appendChild(snippetElem);
+                }
+			}
+			catch (e)
+			{
+				if (e.name == "NS_ERROR_UNEXPECTED") // preference does not exist
+				{
+					try
+					{
+						PrefUtils.trySetBoolPref("Echelon.Homepage.HideCustomSnippets", false);
+					}
+					catch (e) {}
+				}
+			}
+        }
+
+        showSnippets();
+    })
+
+    .catch(error => {
+        console.error("Can't fetch unique snippets, show default:", error);
+        showSnippets();
+    });
 }
 
-function snippetRandomizer() 
+function showSnippets()
 {
-	let selector = ".snippet1";
-	if (percentChance(75))
-	{
-		selector = ".snippet2";
-	}
+    let snippetsElt = document.getElementById("snippets");
+    // Show default snippets otherwise.
+    let defaultSnippetsElt = document.getElementById("defaultSnippets");
+    let entries = defaultSnippetsElt.querySelectorAll("span");
+    // Choose a random snippet.  Assume there is always at least one.
+    let randIndex = Math.round(Math.random() * (entries.length - 1));
+    let entry = entries[randIndex];
 
-	document.querySelector(selector).hidden = true;
+    // Move the default snippet to the snippets element.
+    snippetsElt.appendChild(entry);
+    
+    if (!style && style <= 1) {
+        let snippethref = document.querySelector("#snippets > span > a").href;
+
+        if (snippethref) {
+            snippetsElt.onclick = function(){window.open(snippethref, "_self")};
+        }
+    }
+
+    if (!snippets & style == 2) {
+        snippetsElt.setAttribute("hidden", "true");
+    }
 }
 
-snippetRandomizer();
 
-// TITLE TEXT
+function updateHomepageStyle() {
+    if (newLogo) {
+        root.setAttribute("echelon-appearance-newlogo", "true");
+    }
+    
+    for (let i = 1; i <= style; i++)
+    {
+        root.setAttribute(`echelon-style-${i}`, "true");
+    }
 
-let product = BrandUtils.getFullProductName();
-document.title = gHomeBundle.getFormattedString("title_format", [product]);
-
-// HIDE IF USER WANTS BLANK PAGE FOR NEW TAB
-
-if (location.href.startsWith("about:newtab"))
-{
-	let blank = PrefUtils.tryGetBoolPref("browser.newtabpage.enabled", true);
-	if (!blank)
-	{
-		document.documentElement.hidden = true;
-
-		// least nitpicking
-		// Do not localize. New Tab will be added as a separate page eventually.
-		document.title = "New Tab";
-	}
+    document.title = homeBundle.formatStringFromName("title_format", [BrandUtils.getBrandingKey("brandFullName")]);
 }
 
 function onSearchSubmit(e)
@@ -138,17 +261,24 @@ function onSearchSubmit(e)
 	e.preventDefault();
 }
 
-/* The fucks at Mozilla decided to not let you inject markup with dtd anymore, so we have to do this.
-   (https://bugzilla.mozilla.org/show_bug.cgi?id=1539759) */
-document.getElementById("defaultSnippet1").innerHTML = gHomeBundle.getString("snippet_1");
-document.getElementById("defaultSnippet2").innerHTML = gHomeBundle.getString("snippet_2");
-document.querySelector("#defaultSnippet1 a").href = "https://www.mozilla.org/firefox/features/?utm_source=snippet&utm_medium=snippet&utm_campaign=default+feature+snippet";
-document.querySelector("#defaultSnippet2 a").href = "https://addons.mozilla.org/firefox/?utm_source=snippet&utm_medium=snippet&utm_campaign=addons";
+if (location.href.startsWith("about:newtab"))
+{
+    let blank = PrefUtils.tryGetBoolPref("browser.newtabpage.enabled", true);
+    if (!blank)
+    {
+        document.documentElement.hidden = true;
 
+        // least nitpicking
+        // Do not localize. New Tab will be added as a separate page eventually.
+        document.title = "New Tab";
+    }
+}
 
-// RESTORE PREVIOUS SESSION BUTTON
-let { PrivateBrowsingUtils } = ChromeUtils.importESModule("resource://gre/modules/PrivateBrowsingUtils.sys.mjs");
-Components.utils.import("resource:///modules/sessionstore/SessionStore.jsm", this);
+function focusInput() {
+    setTimeout(() => document.getElementById("searchText").focus(), 100); // hack to autofocus on input box
+}
+
+addEventListener("load", createHomePage);
 
 function restoreLastSession()
 {
@@ -159,7 +289,11 @@ function restoreLastSession()
 	}
 }
 
-if (SessionStore.canRestoreLastSession && !PrivateBrowsingUtils.isWindowPrivate(window))
-{
-	document.getElementById("launcher").setAttribute("session", "true");
+function fitToWidth() {
+    if (window.scrollMaxX) {
+        document.body.setAttribute("narrow", "true");
+    } else if (document.body.hasAttribute("narrow")) {
+        document.body.removeAttribute("narrow");
+        fitToWidth();
+    }
 }

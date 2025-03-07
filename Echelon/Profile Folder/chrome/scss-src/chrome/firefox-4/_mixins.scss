@@ -1,0 +1,145 @@
+@use "sass:list";
+@use "sass:string";
+
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+@function icon($name, $hash: false) {
+    @if ($hash) {
+        @return url("chrome://userchrome/content/icons/#{$name}.svg##{$hash}");
+    }
+    @return url("chrome://echelon/content/#{$name}");
+}
+
+@mixin set-icon($icon-id, $icon-hash: false) {
+    list-style-image: icon($icon-id, $icon-hash) !important;
+}
+
+@mixin set-background($icon-id, $icon-hash: false) {
+    background-image: icon($icon-id, $icon-hash) !important;
+    list-style-image: none !important;
+}
+
+@mixin toolbar-icon($toolbar-ids, $icon-id, $icon-hash: false) {
+    $selector: "##{list.nth($toolbar-ids, 1)}";
+
+    @if (list.length($toolbar-ids) > 1) {
+        @for $i from 2 through list.length($toolbar-ids) {
+            $selector: "#{$selector}, ##{list.nth($toolbar-ids, $i)}";
+        }
+    }
+
+    #{$selector} {
+        @include set-icon($icon-id, $icon-hash);
+    }
+}
+
+@mixin toolbar-icons($map) {
+    @each $id, $icon in $map {
+        &:not([lwtheme-brighttext]) {
+            @include toolbar-icon("#{$id}", $icon);
+        }
+    }
+}
+
+@mixin toolbar-icons-inverted($map) {
+    @each $id, $icon in $map {
+        &[lwtheme-brighttext],
+        &[echelon-style-5]:not([tabs-on-top="true"]) {
+            @include toolbar-icon("#{$id}", $icon);
+        }
+    }
+}
+
+@mixin toolbar-icons-simple($ids) {
+    @each $id in $ids {
+        @include toolbar-icon("#{string.to-lower-case($id)}-button", $id);
+    }
+}
+
+@mixin start($amount) {
+    left: $amount !important;
+
+    &:-moz-locale-dir(rtl) {
+        left: unset !important;
+        right: $amount !important;
+    }
+}
+
+@mixin end($amount) {
+    right: $amount !important;
+
+    &:-moz-locale-dir(rtl) {
+        right: unset !important;
+        left: $amount !important;
+    }
+}
+
+@mixin set-vertical-states($icon-normal, $icon-hover, $icon-active) {
+    background-position-y: $icon-normal * -1 !important;
+
+    &:hover {
+        background-position-y: $icon-hover * -1 !important;
+        
+        &:active {
+            background-position-y: $icon-active * -1 !important;
+        }
+    }
+}
+
+@mixin set-horizontal-states($icon-normal, $icon-hover, $icon-active) {
+    background-position-x: -($icon-normal) !important;
+
+    &:hover {
+        background-position-x: -($icon-hover) !important;
+    }
+
+    &:hover:active,
+    &[open] {
+        background-position-x: -($icon-active) !important;
+    }
+}
+
+// removes padding border all them properties and set width
+@mixin set-size($width, $height) {
+    width: $width !important;
+    height: $height !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+
+@mixin replace-favicon($old, $new, $urlbar: true) {
+    .tab-icon-image[src="#{$old}"] {
+        content: url($new) !important;
+    }
+
+    @if ($urlbar) {
+        #identity-icon[style="list-style-image: url('#{$old}');"] {
+            list-style-image: url($new) !important;
+        }
+    }
+}
+
+@mixin default-favicon($url, $maxStyle: 5) {
+    @include replace-favicon($url, "images/defaultFavicon.png");
+
+    &[echelon-system-style="winxp"] {
+        @include replace-favicon($url, "images/xp/defaultFavicon.png");
+    }
+
+    @if ($maxStyle >= 3) {
+        &[echelon-style-3] {
+            @include replace-favicon($url, "images/defaultFavicon-new.png", false);
+        }
+    }
+
+    @if ($maxStyle >= 4) {
+        .tab-icon-image[src="#{$url}"]:not([pinned]) {
+            display: none !important;
+        }
+    }
+}

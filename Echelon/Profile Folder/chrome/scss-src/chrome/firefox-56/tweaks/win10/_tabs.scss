@@ -1,0 +1,29 @@
+#TabsToolbar {
+    margin-block-end: 0 !important;
+
+    .tabbrowser-tab {
+        .tab-background[selected] {
+            .tab-background-middle {
+                background-size: 0, auto 100% !important;
+            }
+
+            .tab-background-start,
+            .tab-background-end {
+                &::after {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}
+
+&:not([customizing], [lwtheme], [is128newer]) #TabsToolbar {
+    background-image: none !important;
+}
+
+.tabbrowser-tab:hover .tab-background:not([selected]),
+#tabs-newtab-button:hover {
+    background-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-background-start.png"),
+                      url("chrome://echelon/content/firefox-56/tabbrowser/tab-background-middle.png"),
+                      url("chrome://echelon/content/firefox-56/tabbrowser/tab-background-end.png") !important;
+}

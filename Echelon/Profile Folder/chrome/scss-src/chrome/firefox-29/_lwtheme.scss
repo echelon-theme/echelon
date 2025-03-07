@@ -1,0 +1,90 @@
+&[lwtheme="true"] {
+    #titlebar {
+        visibility: hidden !important;
+
+        #titlebar-content {
+            #appmenu-button-container,
+            #titlebar-spacer,
+            .titlebar-buttonbox-container {
+                visibility: collapse !important;
+            }
+        }
+
+        > * {
+            visibility: visible !important;
+        }
+    }
+
+    &[tabsintitlebar][sizemode="normal"][echelon-system-style="winxp"] {
+        #titlebar-content {
+            height: 4px !important;
+            margin-block-end: -4px !important;
+            background-image: linear-gradient(to bottom, rgb(8, 49, 216) 0, rgb(8, 49, 216) 1px, rgb(15, 77, 227) 1px, rgb(15, 77, 227) 2px, rgb(22, 106, 238) 2px, rgb(22, 106, 238) 3px, rgb(8, 85, 221) 3px, rgb(8, 85, 221) 4px, transparent 4px);
+
+            &:-moz-window-inactive {
+                background-image: linear-gradient(to bottom,
+                    rgb(91, 104, 205) 0, rgb(91, 104, 205) 1px,
+                    rgb(116, 128, 220) 1px, rgb(116, 128, 220) 2px,
+                    rgb(117, 140, 221) 2px, rgb(117, 140, 221) 4px,
+                    transparent 4px) !important;
+            }
+        }
+    }
+
+    &[lwtheme-brighttext] {
+        #TabsToolbar {
+            .tab-close-button {
+                &:not(:hover, :hover:active, [selected]) {
+                    background-position-x: -48px !important;
+                }
+            }
+
+            #tabs-newtab-button,
+            #new-tab-button {
+                .toolbarbutton-icon {
+                    @include set-background("firefox-29/tabbrowser/newtab-inverted.png");
+                }
+            }
+
+            #alltabs-button {
+                .toolbarbutton-icon {
+                    @include set-background("firefox-14/toolbarbutton-dropdown-arrow-inverted.png");
+                }
+            }
+        }
+    }
+
+    &[lwtheme-image] {
+        #tabbrowser-tabs {
+            &:not([movingtab]) {
+                .tab-background {
+                    &[selected] {
+                        .tab-background-middle {
+                            background-color: transparent !important;
+                            background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-active-middle.png"),
+                                              linear-gradient(transparent, transparent 2px, rgba(254,254,254,0.72) 2px, rgba(254,254,254,0.72) 2px, rgba(250,250,250,0.88) 3px, rgba(250,250,250,0.88) 3px, rgba(254,254,254,0.72) 4px, rgba(254,254,254,0.72) 4px, rgba(253,253,253,0.45)),
+                                              var(--lwt-header-image) !important;
+                            background-position: 0 0, 0 0, right top !important;
+                            background-repeat: repeat-x, repeat-x, no-repeat !important;
+                            background-size: auto 100%, auto 100%, auto auto !important;
+                            background-attachment: scroll, scroll, fixed !important;
+                        }
+                        
+                        .tab-background-start,
+                        .tab-background-end {
+                            &::before {
+                                background-color: transparent !important;
+                                background-image: linear-gradient(transparent, transparent 2px, rgba(254,254,254,0.72) 2px, rgba(254,254,254,0.72) 2px, rgba(250,250,250,0.88) 3px, rgba(250,250,250,0.88) 3px, rgba(254,254,254,0.72) 4px, rgba(254,254,254,0.72) 4px, rgba(253,253,253,0.45)), var(--lwt-header-image) !important;
+                                background-position: 0 0, right top !important;;
+                                background-repeat: repeat-x, no-repeat !important;
+                                background-size: auto 100%, auto auto !important;
+                                background-attachment: scroll, fixed !important;
+                                mask-size: unset !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

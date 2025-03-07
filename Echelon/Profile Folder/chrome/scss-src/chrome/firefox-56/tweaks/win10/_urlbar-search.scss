@@ -1,0 +1,70 @@
+& {    
+    --urlbar-border-color: hsl(0,0%,90%) !important;
+    --urlbar-border-color-hover: hsl(0,0%,80%) !important;
+    --urlbar-border-color-focused: Highlight !important;
+
+    #searchbar:focus-within {
+        box-shadow: 0 0 0 1px var(--urlbar-border-color-focused) inset !important;
+    }
+
+    #urlbar-background,
+    #searchbar {
+        transition-property: border-color, box-shadow !important;
+        transition-duration: .1s !important;
+    }
+
+    #urlbar,
+    #searchbar {
+        font-size: 1.15em !important;
+    }
+
+    #stop-reload-button {
+        &.unified {
+            .toolbarbutton-1 {
+                .toolbarbutton-icon {
+                    @include set-background("firefox-56/urlbar/reload-stop-go.png");
+                }
+            }
+        }
+    }
+
+    &:not([chromehidden~="toolbar"]) {
+        #nav-bar {
+            #forward-button.unified-with-urlbar:not(:hover)[disabled] {
+                & + #urlbar-container {
+                    & > #urlbar,
+                    & > #echelon-urlbar-positioning {
+                        margin-left: -32px !important;
+                    }
+
+                    #urlbar-background,
+                    .urlbar-input-container,
+                    #urlbar-input-container {
+                        mask: url("chrome://echelon/content/firefox-56/urlbar/urlbar-back-button-clip-path-win10.svg") !important;
+                    }
+                }
+            }
+
+            #forward-button.unified-with-urlbar {
+                & + #urlbar-container {
+                    padding-inline-start: 32px !important;
+                    margin-inline-start: -32px !important;
+                }
+            }
+        }
+
+        #urlbar-container.unified-refresh-button {    
+            &[focused="true"] {
+                + #stop-reload-button {       
+                    transition-property: border-color, box-shadow !important;
+                    transition-duration: .1s !important;         
+                    box-shadow: inset -1px 0 0 var(--urlbar-border-color-focused), inset 0 1px 0 var(--urlbar-border-color-focused), inset 0 -1px 0 var(--urlbar-border-color-focused) !important;
+                }
+
+                #urlbar-background {                
+                    box-shadow: inset 0 1px 0 var(--urlbar-border-color-focused), inset 0 1px 0 var(--urlbar-border-color-focused), inset 0 -1px 0 var(--urlbar-border-color-focused) !important;
+                }
+            }
+        }
+    }
+}

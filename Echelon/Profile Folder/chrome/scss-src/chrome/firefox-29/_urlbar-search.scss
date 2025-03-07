@@ -1,0 +1,29 @@
+
+& {
+    #urlbar {
+        #star-button-box {
+            visibility: collapse !important;
+        }
+    }
+}
+
+
+&:not([chromehidden~="toolbar"]) {
+    #nav-bar {
+        #forward-button.unified-with-urlbar:not(:hover)[disabled] {
+            & + #urlbar-container {            
+                & > #urlbar,
+                & > #echelon-urlbar-positioning {
+                    margin-left: -29px !important;
+                }
+            }
+        }
+
+        #forward-button.unified-with-urlbar {
+            & + #urlbar-container {
+                padding-inline-start: 30px !important;
+                margin-inline-start: -30px !important;
+            }
+        }
+    }
+}

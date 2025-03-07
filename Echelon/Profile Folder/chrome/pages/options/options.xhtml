@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://global/content/xul.css" type="text/css"?>
+<?xml-stylesheet href="chrome://userchrome/content/framework/apathum/styles/style.css" type="text/css"?>
+<?xml-stylesheet href="chrome://userchrome/content/pages/options/styles.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://echelon/locale/dtd/echelon-options.dtd">
+
+<html xmlns:html="http://www.w3.org/1999/xhtml" 
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+		id="echelonOptions" 
+		title="&window.title;">
+
+	<stringbundle id="optionsBundle" src="chrome://echelon/locale/properties/echelon-options.properties"/>
+	<head>
+		<html:link rel="shortcut icon" href="chrome://userchrome/content/pages/options/images/icon.png"/>
+	</head>
+
+	<html:body>
+		<vbox class="modal-container" hidden="true">
+            <vbox class="modal" data-modal="restart-needed">
+                <vbox class="page-header">
+                    <h2 class="restart-browser-label">do you want to restart your browser?</h2>
+                    <html:div class="header-description">In order for Echelon to work properly, you must restart your browser. This simple step ensures a seamless experience with Echelon features.</html:div>
+                </vbox>
+                <hbox class="page-footer" flex="1">
+                    <button class="page-footer-button restart-later-button" label="Restart Later"></button>
+                    <button class="page-footer-button restart-now-button" default="true" label="Restart Now"></button>
+                </hbox>
+            </vbox>
+        </vbox>
+		<hbox flex="1">
+			<hbox class="options-container" flex="1">
+				<richlistbox id="categories" class="options-categories">
+					<richlistitem id="category-general" value="section-general" class="category">
+						<image class="category-image" />
+						<label class="category-text" value="&tabs.appearance;" />
+					</richlistitem>
+					<richlistitem id="category-behavior" value="section-behavior" class="category">
+						<image class="category-image" />
+						<label class="category-text" value="&tabs.behavior;" />
+					</richlistitem>
+					<richlistitem id="category-native-controls" hidden="true" value="section-native-controls" class="category">
+						<image class="category-image" />
+						<label class="category-text" value="&tabs.nativeControls;" />
+					</richlistitem>
+					<richlistitem id="category-about" value="section-about" class="category">
+						<image class="category-image" />
+						<label class="category-text" value="&tabs.about;" />
+					</richlistitem>
+				</richlistbox>
+				<vbox id="options-sections" flex="1">
+					<vbox id="section-general" class="section" flex="1">
+						<hbox class="options-header">
+							<image class="header-image" />
+							<label class="header-text" value="&appearance.header;" />
+						</hbox>
+						<vbox class="options-content">
+							<vbox class="content-section">
+								<label class="header" value="&appearance.text;" />
+								<vbox class="section-content">
+									<hbox class="menulist-container" align="center" flex="1">
+										<label value="&general.appearance.os;" flex="1"/>
+										<echelon-menulist class="menulist" type="string" preference="Echelon.Appearance.systemStyle" flex="1">
+											<label class="selected"></label>
+											<image class="dropdown-marker" />
+											<vbox class="list">
+												<hbox class="list-arrow">
+													<image class="list-arrow-image" />
+												</hbox>
+												<vbox class="list-container">
+													<hbox class="item item-iconic" id="system-style-default" value="win">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">&general.appearance.os.default;</label>
+													</hbox>
+													<hbox class="item item-iconic" id="system-style-winxp" value="winxp">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">&general.appearance.os.xp;</label>
+													</hbox>
+													<hbox class="item item-iconic" id="system-style-win8" value="win8">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">&general.appearance.os.eight;</label>
+													</hbox>
+													<hbox class="item item-iconic" id="system-style-win10" value="win10">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">&general.appearance.os.ten;</label>
+													</hbox>
+												</vbox>
+											</vbox>
+										</echelon-menulist>
+									</hbox>
+									<checkbox label="&general.appearance.blue;" preference="Echelon.Appearance.Blue"/>
+								</vbox>
+							</vbox>
+							<vbox class="content-section">
+								<label class="header" value="&general.appearance.presets;" needs-restart-label="&requires.restart;" />
+								<vbox class="section-content">
+									<radiogroup preference="Echelon.Appearance.Preset" class="card-container" id="preset-container" flex="1">
+
+									</radiogroup>
+								</vbox>
+							</vbox>
+							<vbox class="content-section">
+								<label class="header" value="&general.appearance.homepage;" />
+								<vbox class="section-content">
+									<checkbox label="&general.appearance.override;" preference="Echelon.Appearance.overrideHomepagePreset" />
+									<radiogroup preference="Echelon.Appearance.Homepage.Style" class="card-container" id="homepage-container" flex="1">
+
+									</radiogroup>
+								</vbox>
+							</vbox>
+						</vbox>
+					</vbox>
+					<vbox id="section-behavior" class="section" flex="1">
+						<hbox class="options-header">
+							<image class="header-image" />
+							<label class="header-text" value="&behavior.text;" />
+						</hbox>
+						<vbox class="options-content">
+							<vbox class="content-section">
+								<label class="header" value="&behavior.branding.browser;" needs-restart-label="&requires.restart;" />
+								<vbox class="section-content">
+									<hbox class="menulist-container" align="center" flex="1">
+										<label value="&behavior.branding.branding;" flex="1"/>
+										<echelon-menulist class="menulist" type="string" preference="Echelon.Option.Branding" flex="1">
+											<label class="selected"></label>
+											<image class="dropdown-marker" />
+											<vbox class="list">
+												<hbox class="list-arrow">
+													<image class="list-arrow-image" />
+												</hbox>
+												<vbox class="list-container">
+													<hbox class="item item-iconic" id="branding-default" value="">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">&behavior.branding.default;</label>
+													</hbox>
+													<hbox class="item item-iconic" id="branding-echelon" value="echelon">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">&behavior.branding.echelon;</label>
+													</hbox>
+													<hbox class="item item-iconic" id="branding-firefox" value="firefox">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">&behavior.branding.firefox;</label>
+													</hbox>
+													<hbox class="item item-iconic" id="branding-aurora" value="aurora">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">&behavior.branding.aurora;</label>
+													</hbox>
+													<hbox class="item item-iconic" id="branding-nightly" value="nightly">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">&behavior.branding.nightly;</label>
+													</hbox>
+												</vbox>
+											</vbox>
+										</echelon-menulist>
+									</hbox> 
+									<checkbox label="&behavior.branding.newlogo;" preference="Echelon.Appearance.NewLogo"/>
+								</vbox>
+							</vbox>
+							<vbox class="content-section">
+								<label class="header" value="Toolbar" />
+								<vbox class="section-content">
+									<checkbox label="&behavior.appearance.tabsOnTop;" preference="Echelon.Appearance.TabsOnTop" echelon-style-disabled="6"/>
+									<checkbox label="&behavior.appearance.hideTabManager;" preference="browser.tabs.tabmanager.enabled" echelon-style-disabled="5"/>
+									<checkbox label="&behavior.appearance.hideAddons;" preference="Echelon.Option.HideUnifiedExtensions"/>
+									<checkbox label="&behavior.appearance.hideToolbar;" preference="Echelon.Appearance.disableChrome" echelon-style-disabled="6"/>
+								</vbox>
+							</vbox>
+							<vbox class="content-section">
+								<label class="header" value="Homepage" />
+								<vbox class="section-content">
+									<checkbox label="&behavior.homepage.disableSnippets;" preference="Echelon.Homepage.HideCustomSnippets"/>
+								</vbox>
+							</vbox>
+						</vbox>
+					</vbox>
+					<vbox id="section-native-controls" class="section" flex="1">
+						<hbox class="options-header">
+							<image class="header-image" />
+							<label class="header-text" value="&nativeControls.text;" />
+						</hbox>
+					</vbox>
+					<vbox id="section-about" class="section" flex="1">
+						<vbox class="about-header">
+							<image class="about-header-logo" />
+							<vbox class="about-header-info">
+								<label id="version" class="about-header-ver" />
+								<label class="about-header-update" />
+							</vbox>
+						</vbox>
+						<hbox class="options-header view-credits-button">
+							<hbox class="view-credits-container">
+								<image class="header-image" />
+								<label class="header-text" value="View Contributors" />
+							</hbox>
+						</hbox>
+						<vbox class="about-content" flex="1">
+							<!-- <vbox id="contributors" class="about-content-container">
+							</vbox> -->
+							<vbox id="browserInfo" class="about-content-container">
+								<vbox class="about-content-section">
+									<stack class="about-content-header">
+										<hbox class="about-content-header-background">
+											<hbox class="about-content-header-background-left"></hbox>
+											<hbox class="about-content-header-background-middle" flex="1"></hbox>
+											<hbox class="about-content-header-background-right"></hbox>
+										</hbox>
+										<label class="about-content-header-text" value="Echelon" />
+									</stack>
+									<vbox class="about-section-content">
+										<vbox class="about-section">
+											<html:b class="about-section-header">Version</html:b>
+											<label id="version-short" class="about-section-text"></label>
+										</vbox>
+										<vbox class="about-section">
+											<html:b class="about-section-header">Build</html:b>
+											<label id="build" class="about-section-text"></label>
+										</vbox>
+										<vbox class="about-section">
+											<html:b class="about-section-header">Update Channel</html:b>
+											<label id="channel" class="about-section-text"></label>
+										</vbox>
+										<vbox class="about-section">
+											<html:b class="about-section-header">Repository Branch</html:b>
+											<label id="branch" class="about-section-text"></label>
+										</vbox>
+									</vbox>
+								</vbox>
+								<vbox class="about-content-section">
+									<stack class="about-content-header">
+										<hbox class="about-content-header-background">
+											<hbox class="about-content-header-background-left"></hbox>
+											<hbox class="about-content-header-background-middle" flex="1"></hbox>
+											<hbox class="about-content-header-background-right"></hbox>
+										</hbox>
+										<label class="about-content-header-text" value="Browser" />
+									</stack>
+									<vbox class="about-section-content">
+										<vbox class="about-section">
+											<html:b class="about-section-header">Browser Name</html:b>
+											<label data-content="Services.appinfo.name" class="about-section-text"></label>
+										</vbox>
+										<vbox class="about-section">
+											<html:b class="about-section-header">Engine Version</html:b>
+											<label data-content="Services.appinfo.version" id="browser-version" class="about-section-text"></label>
+										</vbox>
+										<vbox class="about-section">
+											<html:b class="about-section-header">Update Channel</html:b>
+											<label data-content="Services.appinfo.defaultUpdateChannel" id="browser-channel" class="about-section-text"></label>
+										</vbox>
+									</vbox>
+								</vbox>
+								<vbox class="about-content-section">
+									<stack class="about-content-header">
+										<hbox class="about-content-header-background">
+											<hbox class="about-content-header-background-left"></hbox>
+											<hbox class="about-content-header-background-middle" flex="1"></hbox>
+											<hbox class="about-content-header-background-right"></hbox>
+										</hbox>
+										<label class="about-content-header-text" value="Windows" />
+									</stack>
+									<vbox class="about-section-content">
+										<vbox class="about-section">
+											<html:b class="about-section-header">Version in Manifest</html:b>
+											<label data-content="getWinVer()" class="about-section-text"></label>
+										</vbox>
+										<vbox class="about-section">
+											<html:b class="about-section-header">Version</html:b>
+											<label data-content="getTrueWinVer()" class="about-section-text"></label>
+										</vbox>
+									</vbox>
+								</vbox>
+							</vbox>
+						</vbox>
+					</vbox>
+				</vbox>
+			</hbox>
+		</hbox>
+	</html:body>
+
+	<script src="chrome://userchrome/content/framework/apathum/scripts/modal.js" type="text/javascript"></script>
+	<script src="chrome://userchrome/content/framework/apathum/scripts/menulist.js" type="text/javascript"></script>
+	
+	<script src="chrome://userchrome/content/pages/options/script.js" type="text/javascript"></script>
+
+</html>

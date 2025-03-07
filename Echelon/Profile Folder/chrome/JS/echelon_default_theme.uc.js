@@ -15,15 +15,18 @@
         {
             case "firefox-compact-light@mozilla.org":
                 root.setAttribute("default-light-theme", "true");
+                root.setAttribute("compact-theme", "true");
                 root.removeAttribute("default-dark-theme");
                 break;
             case "firefox-compact-dark@mozilla.org":
                 root.setAttribute("default-dark-theme", "true");
+                root.setAttribute("compact-theme", "true");
                 root.removeAttribute("default-light-theme");
                 break;
             default:
                 root.removeAttribute("default-light-theme");
                 root.removeAttribute("default-dark-theme");
+                root.removeAttribute("compact-theme");
                 break;
         }
     }

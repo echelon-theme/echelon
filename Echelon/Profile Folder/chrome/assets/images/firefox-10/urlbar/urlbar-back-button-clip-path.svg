@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px" height="0" preserveAspectRatio="none" xml:space="preserve">
+  <defs>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+    <svg:clipPath id="urlbar-back-button-clip-path" clipPathUnits="userSpaceOnUse">
+      <svg:path d="M -11,-5 a 16 16 0 0 1 0,34 l 10000,0 l 0,-34 l -10000,0 z"/>
+    </svg:clipPath>
+  </defs>
+</svg>

@@ -1,0 +1,45 @@
+& {
+    #titlebar-content {
+        visibility: collapse !important;
+    } 
+
+    &:not([echelon-system-style="winxp"])[tabsintitlebar][sizemode="normal"] {
+        #titlebar {
+            appearance: none !important;
+        }
+    }
+
+    &[tabsintitlebar][sizemode="normal"][chromehidden~="menubar"] #toolbar-menubar ~ #TabsToolbar .toolbar-items,
+    &[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"][inactive] ~ #TabsToolbar .toolbar-items {
+        margin-top: 15px !important;
+    }
+
+    .private-browsing-indicator {
+        pointer-events: none !important;
+        display: none !important;
+    }
+
+    
+    &[privatebrowsingmode="temporary"][tabsintitlebar] #private-browsing-indicator-titlebar > .private-browsing-indicator {
+        display: block !important;
+        width: 40px;
+        height: 20px;
+        margin-inline-end: 4px;
+        background: url("chrome://echelon/content/firefox-29/privatebrowsing/privatebrowsing-mask-titlebar-XPVista7.png") no-repeat center 0px;
+    }
+
+    &[privatebrowsingmode="temporary"]:not([tabsintitlebar]) #TabsToolbar > .private-browsing-indicator {
+        display: flex !important;
+        width: 48px !important;
+        height: 32px !important;
+        margin-inline-end: 4px !important;
+        background: url("chrome://echelon/content/firefox-29/privatebrowsing/privatebrowsing-mask-tabstrip-XPVista7.png") no-repeat center 0;
+    }
+
+    &[echelon-system-style="winxp"] {
+        &[privatebrowsingmode="temporary"][tabsintitlebar] #private-browsing-indicator-titlebar > .private-browsing-indicator {
+            background-image: url("chrome://echelon/content/firefox-29/privatebrowsing/privatebrowsing-mask-titlebar-XPVista7-tall.png") !important;
+            height: 28px !important;
+        }
+    }
+}

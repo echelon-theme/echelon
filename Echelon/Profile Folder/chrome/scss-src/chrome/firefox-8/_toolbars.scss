@@ -1,0 +1,9 @@
+#navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
+    &[disabled="true"] {
+        opacity: 0.4 !important;
+
+        .toolbarbutton-icon {
+            opacity: 1 !important;
+        }
+    }
+}

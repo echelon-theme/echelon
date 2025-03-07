@@ -65,31 +65,19 @@ class EchelonWidgetManager
         };
         this.createWidget(AddOnsButtonWidget);
 
-        let buttonText = "Echelon Options";
         this.createWidget({
             id: "echelon-button",
+            type: "button",
             removable: true,
-            label: buttonText,
-            tooltiptext: "Opens the Echelon Options window",
-            onCommand: function() {
-                launchEchelonOptions();
-            },
-            onCreated: function(button) {
-                return button;
-            },
-        });
 
-        buttonText = "Bookmarks";
-        this.createWidget({
-            id: "bookmarks-button",
-            defaultArea: CustomizableUI.AREA_NAVBAR,
-            removable: true,
-            label: buttonText,
-            tooltiptext: "Bookmark this page",
+            label: str("echelon_options_button.label"),
+            tooltiptext: str("echelon_options_button.tooltiptext"),
+            defaultArea: "PanelUI-contents",
+
             onCommand: function() {
-                let bookmarksSvc = Cc["@mozilla.org/browser/nav-bookmarks-service;1"].getService(Ci.nsINavBookmarksService);
-                bookmarksSvc.insertBookmark(3, gBrowser.currentURI, bookmarksSvc.DEFAULT_INDEX, gBrowser.selectedTab._fullLabel);
+                showEchelonWizard();
             },
+            
             onCreated: function(button) {
                 return button;
             },

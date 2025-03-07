@@ -1,0 +1,21 @@
+& {
+    @include toolbar-icons((    
+        "bookmarks-menu-button": "firefox-29/toolbar/bookmarksMenu.png",
+        "bookmarks-menu-button[starred] .toolbarbutton-menubutton-button": "firefox-29/toolbar/bookmark.png",
+        "bookmarks-menu-button .toolbarbutton-menubutton-button": "firefox-29/toolbar/bookmark-hollow.png",
+        "fxa-toolbar-menu-button[status="active"]": "firefox-29/toolbar/syncProgress-toolbar.png"
+    ));
+
+    @include toolbar-icons-inverted((    
+        "bookmarks-menu-button": "firefox-29/toolbar/inverted/bookmarksMenu.png",
+        "bookmarks-menu-button[starred] .toolbarbutton-menubutton-button": "firefox-29/toolbar/inverted/bookmark.png",
+        "bookmarks-menu-button .toolbarbutton-menubutton-button": "firefox-29/toolbar/inverted/bookmark-hollow.png",
+        "fxa-toolbar-menu-button[status="active"]": "firefox-29/toolbar/inverted/syncProgress-toolbar.png"
+    ));
+
+    .close-icon {
+        @include set-size(16px, 16px);
+        @include set-background("firefox-29/close.png");
+        @include set-horizontal-states(0, 16px, 32px);
+    }
+}

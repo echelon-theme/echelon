@@ -1,0 +1,618 @@
+.unified-nav-current {
+	font-weight: bold !important;
+}
+
+.unified-nav-back[_moz-menuactive]:-moz-locale-dir(ltr),
+.unified-nav-forward[_moz-menuactive]:-moz-locale-dir(rtl) {
+	list-style-image: url("chrome://echelon/content/firefox-4/menupopup/menu-back.png") !important;
+}
+
+.unified-nav-forward[_moz-menuactive]:-moz-locale-dir(ltr),
+.unified-nav-back[_moz-menuactive]:-moz-locale-dir(rtl) {
+	list-style-image: url("chrome://echelon/content/firefox-4/menupopup/menu-forward.png") !important;
+}
+
+#identity-popup {
+	--popup-width: unset !important;
+
+	.panel-header,
+	toolbarseparator {
+		visibility: collapse !important;
+	}
+
+	.identity-popup-section {
+		min-width: 280px !important;
+		padding: 10px !important;
+		margin: 0 !important;
+	}
+
+	#identity-popup-icon {
+		height: 64px;
+		width: 64px;
+		padding: 0;
+		background-image: url("chrome://echelon/content/firefox-4/urlbar/identity.png");
+
+		:root[echelon-system-style="winxp"] & {
+			background-image: url("chrome://echelon/content/firefox-4/xp/urlbar/identity.png");
+		}
+	}
+
+	&[connection=secure] #identity-popup-icon {
+		background-position-y: -64px !important;
+	}
+
+	&[connection=secure-ev] #identity-popup-icon {
+		background-position-y: -128px !important;
+	}
+
+	&[connection=chrome] #identity-popup-icon {
+		background-image: url("chrome://branding/content/icon64.png") !important;
+	}
+
+	.identity-popup-description {
+		white-space: pre-wrap !important;
+		padding-inline-start: 15px !important;
+		margin: 2px 0 4px !important;
+	}
+
+	.identity-popup-label {
+		white-space: pre-wrap !important;
+		margin: 0 !important;
+		margin-inline-start: 15px !important;
+	}
+
+	#identity-popup-content-host {
+		font-size: 1.2em !important;
+		margin-top: 3px !important;
+		margin-bottom: 5px !important;
+		font-weight: bold !important;
+		max-width: 300px !important;
+	}
+
+	#identity-popup-brandName {
+		font-weight: bold !important;
+		font-size: 1.25em !important;
+		margin-top: .5em !important;
+		margin-bottom: .5em !important;
+	}
+
+	#identity-popup-content-owner {
+		margin-top: 4px !important;
+		margin-bottom: 0 !important;
+		font-weight: bold !important;
+		max-width: 300px !important;
+	}
+
+	&[connection=secure] #identity-popup-content-owner {
+		font-weight: normal !important;
+	}
+
+	&[connection=secure-ev] #identity-popup-content-owner {
+		font-size: 1.2em !important;
+	}
+
+	#identity-popup-content-verifier {
+		margin: 4px 0 2px !important;
+	}
+
+	&[connection=secure] #identity-popup-encryption,
+	&[connection=secure-ev] #identity-popup-encryption {
+		margin-top: 10px !important;
+		margin-inline-start: -24px !important;
+
+		#identity-popup-encryption-icon {
+			list-style-image: url("chrome://echelon/content/firefox-4/urlbar/Secure24.png");
+
+			:root[echelon-system-style="winxp"] & {
+				background-image: url("chrome://echelon/content/firefox-4/xp/urlbar/Secure24.png");
+			}
+		}
+	}
+
+	#identity-popup-help-icon {
+		appearance: none !important;
+		border: none !important;
+		margin: 7px 0 0 -3px !important;
+		background: none !important;
+		min-width: 0 !important;
+		list-style-image: url("chrome://echelon/content/firefox-4/icons/question-16.png") !important;
+		cursor: pointer !important;
+
+		:root[echelon-system-style="winxp"] & {
+			list-style-image: url("chrome://echelon/content/firefox-4/xp/icons/question-16.png") !important;
+		}
+	}
+
+	#identity-popup-more-info-button {
+		margin-top: 6px !important;
+		margin-bottom: 0 !important;
+		margin-inline-end: 0 !important;
+	}
+
+	#identity-popup-clear-sitedata-footer {
+		flex-direction: row !important;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 60%, transparent) !important;
+		padding: 10px !important;
+		margin-top: 5px !important;
+		margin-bottom: 0 !important;
+	}
+}
+
+:root:not([echelon-style-7]) {
+#downloadsPanel {
+	#downloadsPanel-mainView {
+		min-width: 0 !important;
+		padding: 0 !important;
+	}
+
+	#downloadsListBox {
+		padding: 4px !important;
+
+		richlistitem {
+			&[type="download"] {
+				min-height: 7em !important;
+				padding: 8px !important;
+				margin: 0 !important;
+				border-radius: 0 !important;
+				border-block-start: 1px solid hsla(0, 0%, 100%, .3) !important;
+				border-block-end: 1px solid hsla(220, 18%, 51%, .25) !important;
+
+				&:first-child {
+					border-block-start: 1px solid transparent !important;
+				}
+
+				&:last-child {
+					border-block-end: 1px solid transparent !important;
+				}
+
+				&[state="1"][exists]:hover {
+					border-radius: 3px !important;
+					border-block-start: 1px solid hsla(0, 0%, 100%, .2) !important;
+					border-block-end: 1px solid hsla(0, 0%, 0%, .2) !important;
+					background-color: Highlight !important;
+					color: HighlightText !important;
+					cursor: pointer !important;
+				}
+
+				.downloadMainArea {
+					padding-block: 0 !important;
+					padding-inline-start: 0 !important;
+
+					.downloadTypeIcon {
+						margin-inline-end: 8px !important;
+					}
+
+					.downloadContainer {
+						.downloadTarget {
+							margin-block-end: 6px !important;
+						}
+
+						description {
+							margin-block: 1px 2px !important;
+							margin-inline: 6px 5px !important;
+							cursor: pointer !important;
+						}
+					}
+				}
+
+				&:hover {
+					.downloadButton {
+						.button-icon {
+							background-position-x: -16px !important;
+						}
+
+						&:hover {
+							.button-icon {
+								background-position-x: -32px !important;
+							}
+						}
+
+						&:active {
+							.button-icon {
+								background-position-x: -48px !important;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.downloadButton {
+			min-width: 0 !important;
+			min-height: 0 !important;
+			margin: 3px !important;
+			padding: 5px !important;
+			border: none !important;
+			background-color: transparent !important;
+			border-radius: 0 !important;
+
+			.button-icon {
+				margin: 0 !important;
+				list-style-image: none !important;
+				background-image: url("chrome://echelon/content/firefox-4/downloads/buttons.png") !important;
+			}
+
+			&.downloadIconShow {
+				.button-icon {
+					background-position-y: -16px !important;
+				}
+			}
+
+			&.downloadIconRetry {
+				.button-icon {
+					background-position-y: -32px !important;
+				}
+			}
+		}
+	}
+
+	#downloadsHistory {
+		color: LinkText !important;
+		padding: 0 !important;
+		border-radius: 0 !important;
+		background: transparent !important;
+		cursor: pointer !important;
+		justify-content: center !important;
+
+		&>.button-box {
+			border: none !important;
+			margin: 1em !important;
+		}
+	}
+
+	&[hasdownloads] {
+		#downloadsHistory {
+			.button-text {
+				justify-content: center !important;
+				flex: 1 !important;
+			}
+		}
+	}
+
+	#downloadsFooterButtons {
+		toolbarseparator {
+			visibility: collapse !important;
+		}
+	}
+
+	&:not([hasdownloads]) {
+		#emptyDownloads {
+			visibility: collapse !important;
+		}
+	}
+}
+
+&[echelon-style-6][echelon-system-style="win8"],
+&[echelon-style-6][echelon-system-style="win10"] {
+	#downloadsPanel {
+		&[hasdownloads] {
+			#downloadsFooter {
+				background-color: hsla(210, 4%, 10%, .04) !important;
+				box-shadow: 0 1px 0 hsla(210, 4%, 10%, .08) inset !important;
+				transition-duration: 150ms !important;
+				transition-property: background-color !important;
+
+				&:hover {
+					background-color: hsla(210, 4%, 10%, .05) !important;
+
+					&:active {
+						background-color: hsla(210, 4%, 10%, .1) !important;
+						box-shadow: 0 2px 0 0 hsla(210, 4%, 10%, .1) inset !important;
+					}
+				}
+			}
+		}
+
+		#downloadsListBox {
+			richlistitem {
+				&[type="download"] {
+					&[state="1"][exists]:hover {
+						background-color: hsla(210, 4%, 10%, .08) !important;
+						border-radius: 0 !important;
+						outline: 1px solid hsla(210, 4%, 10%, .1) !important;
+						outline-offset: -1px !important;
+						color: black !important;
+
+						&:active {
+							background-color: hsla(210, 4%, 10%, .15) !important;
+							outline: 1px solid hsla(210, 4%, 10%, .15) !important;
+							box-shadow: 0 1px 0 0 hsla(210, 4%, 10%, .05) inset !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+&:not([echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
+	&[echelon-appearance-blue] {
+		#downloadsPanel {
+			&[hasdownloads] {
+				#downloadsFooter {
+					background-color: #f1f5fb !important;
+					box-shadow: 0px 1px 2px rgb(204, 214, 234) inset !important;
+					border-bottom-left-radius: 3px !important;
+					border-bottom-right-radius: 3px !important;
+				}
+			}
+
+			#downloadsListBox {
+				richlistitem {
+					&[type="download"] {
+						border: 1px solid transparent !important;
+						border-block-end: 1px solid hsl(213, 40%, 90%) !important;
+
+						&:last-child {
+							border-block-end: 1px solid transparent !important;
+						}
+
+						&[state="1"][exists]:hover {
+							border: 1px solid hsl(213, 45%, 65%) !important;
+							box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .5) inset,
+								0 1px 0 hsla(0, 0%, 100%, .3) inset !important;
+							background-image: linear-gradient(hsl(212, 86%, 92%), hsl(212, 91%, 86%)) !important;
+							color: black !important;
+						}
+					}
+				}
+			}
+
+			#downloadsHistory {
+				color: Highlight !important;
+			}
+		}
+	}
+}
+}
+
+// shoutout marble for making me do this bullshit
+
+:root[echelon-style-6] {
+	#BMB_bookmarksPopup {
+		--arrowpanel-padding: 4px !important;
+		appearance: none !important;
+		border: 0 !important;
+		background-color: transparent !important;
+
+		scrollbox {
+			overflow: visible !important;
+		}
+
+		menuseparator {
+			appearance: none !important;
+			min-height: 0 !important;
+			border-top: 1px solid hsla(210, 4%, 10%, .15) !important;
+			margin: 6px 0 !important;
+			padding: 0 !important;
+
+			&:last-of-type {
+				appearance: none !important;
+				visibility: hidden !important;
+				min-height: 1px !important;
+				margin: -1px 0 0 !important;
+				border: none !important;
+			}
+
+			&::before { // 115 shit
+				display: none !important;
+			}
+		}
+
+		menu,
+		menuitem:not(#BMB_bookmarksShowAll, .openintabs-menuitem) {
+			margin-inline: 4px !important;
+			appearance: none !important;
+			padding-block: 0 !important;
+			padding-inline: 6px !important;
+			border: 1px solid transparent !important;
+			border-radius: 2px !important;
+			min-height: 22px !important;
+
+			&:not(#BMB_viewBookmarksToolbar):last-of-type {
+				margin-block-end: 4px !important;
+			}
+
+			&:not([disabled]) {
+				color: inherit !important;
+			}
+
+			&:not([disabled], :active)[_moz-menuactive] {
+				background-color: hsla(210, 4%, 10%, .08) !important;
+				border-color: hsla(210, 4%, 10%, .11) !important;
+			}
+
+			&:not([disabled])[_moz-menuactive]:active {
+				background-color: hsla(210, 4%, 10%, .12) !important;
+				border-color: hsla(210, 4%, 10%, .14) !important;
+				box-shadow: 0 1px 0 hsla(210, 4%, 10%, .03) inset !important;
+			}
+
+			.menu-iconic-left {
+				appearance: none !important;
+				padding-top: 1px !important;
+				margin-block-start: 1px !important;
+				margin-block-end: 2px !important;
+				margin-inline-end: 3px !important;
+			}
+
+			.menu-iconic-text {
+				margin-inline-start: 2px !important;
+				padding-block-start: 1px !important;
+				padding-block-end: 1px !important;
+				padding-inline-end: 2px !important;
+			}
+		}
+
+		.menu-accel-container {
+			margin-inline-start: 10px !important;
+			margin-inline-end: auto !important;
+			color: hsl(0, 0%, 50%) !important;
+		}
+
+		menuitem:not(.menuitem-iconic) {
+			.menu-text {
+				margin-inline-start: 5px !important;
+				appearance: none !important;
+				padding-inline-start: 1.45em !important;
+			}
+
+			.menu-accel, .menu-iconic-accel {
+				margin-inline: 0.74em 1.35em !important;
+			}
+		}
+
+		#BMB_bookmarksShowAll,
+		.openintabs-menuitem {
+			appearance: none !important;
+			margin: 4px 0 0 !important;
+			background-color: hsla(210, 4%, 10%, .07) !important;
+			border-top: 1px solid hsla(210, 4%, 10%, .12) !important;
+			border-radius: 0 !important;
+			color: hsl(0, 0%, 25%) !important;
+			padding: 12px !important;
+
+			&:not([disabled], [open], :active):hover {
+				background-color: hsla(210, 4%, 10%, .15) !important;
+				border-top: 1px solid hsla(210, 4%, 10%, .14) !important;
+			}
+
+			&:not([disabled]):hover:active {
+				background-color: hsla(210, 4%, 10%, .19) !important;
+				;
+				border-top: 1px solid hsla(210, 4%, 10%, .14) !important;
+				box-shadow: 0 1px 0 hsla(210, 4%, 10%, .05) inset !important;
+			}
+
+			.menu-text {
+				appearance: none !important;
+				padding-inline: 6px !important;
+				padding-inline-start: 16px !important;
+				margin: 0 !important;
+			}
+		}
+		
+		.menu-right {
+			appearance: none !important;
+			margin-inline-end: -2px !important;
+			margin-block-start: 1px !important;
+			margin-block-end: 2px !important;
+			padding-block-start: 1px !important;
+			
+			image {
+				width: 16px !important;
+				height: 16px !important;
+				list-style-image: none !important;
+				background-image: url("chrome://echelon/content/firefox-29/places/bookmarks-menu-arrow.png") !important;
+			}
+		}
+		
+		#BMB_bookmarksShowAll {
+			margin-block-start: 0 !important;
+		}
+	}
+}
+
+#editBookmarkPanel {
+	font: inherit !important;
+	
+	#editBookmarkPanelHeader {
+		margin-block-end: 0.5em !important;
+		
+		#editBookmarkPanelStarIcon {
+			width: 48px !important;
+			height: 48px !important;
+			list-style-image: url("chrome://echelon/content/firefox-4/places/starred48.png") !important;
+		}
+		
+		#editBookmarkPanelTitle {
+			font-size: 130% !important;
+		}
+		
+		.editBookmarkPanelHeaderButton {
+			padding: 0 !important;
+			
+			.button-box {
+				border: 1px solid transparent !important;
+				padding-block-start: 1px !important;
+				padding-block-end: 2px !important;
+			}
+		}
+	}
+	
+	menulist {
+		dropmarker {
+      height: 100% !important;
+		}
+	}
+	
+	.expander-down,
+	.expander-up {
+    appearance: auto !important;
+		padding: 0 !important;
+		min-width: 0 !important;
+		min-height: 0 !important;
+		max-width: 24px !important;
+		max-height: 24px !important;
+		justify-content: center !important;
+		
+		.button-box {
+      		padding: 0 !important;
+		}
+	}
+	
+	.expander-up {
+		list-style-image: url("chrome://echelon/content/firefox-4/places/collapse.png") !important;
+	}
+	
+	.expander-down {
+		list-style-image: url("chrome://echelon/content/firefox-4/places/expand.png") !important;
+	}
+	
+	#editBMPanel_newFolderButton,
+	.footer-button {
+		appearance: auto !important;
+		font-size: unset !important;
+		margin: 1px 5px 2px !important;
+		padding: 2px 3px !important;
+		font-weight: normal !important;
+		color: ButtonText !important;
+		min-height: unset !important;
+		min-width: 6.3em !important;
+	}
+	
+	#editBMPanel_folderTree {
+		appearance: auto !important;
+		min-width: 27em !important;
+		margin-block: 2px !important;
+	}
+	
+	.checkbox-label {
+		opacity: 1 !important;
+	}
+}
+
+#context-navigation {
+	background: transparent !important;
+	flex-direction: column !important;;
+
+	& > .menuitem-iconic {
+		width: unset !important;
+
+		& > .menu-iconic-left {
+			appearance: auto !important;
+
+			& > .menu-iconic-icon {
+				display: none !important;
+			}
+		}
+		
+		.menu-iconic-text {
+			display: block !important;
+		}
+	}
+}
+
+#context-sep-navigation {
+	margin-inline-start: 0 !important;
+}

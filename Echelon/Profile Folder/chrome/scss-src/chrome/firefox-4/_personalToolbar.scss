@@ -1,0 +1,157 @@
+#PersonalToolbar {
+    padding-inline: 0 !important;
+
+    #personal-toolbar-empty {
+        visibility: collapse !important;
+    }
+
+    :root:not([tabs-on-top="true"], [echelon-system-style="winxp"]) & {
+        border-block-start: 1px solid var(--toolbar-border-color) !important;
+        border-top-left-radius: 3.5px !important;
+        border-top-right-radius: 3.5px !important;
+    }
+
+    :root:not([tabs-on-top="true"], [echelon-system-style="winxp"], [lwtheme]) & {
+        background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0)) !important;
+    }
+
+    #personal-bookmarks {
+        min-height: 24px !important;
+    }
+
+    :root:not([echelon-style-7]) & {
+        .bookmark-item:not(menuitem, .subviewbutton),
+        .toolbarbutton-1 {
+            margin: 0 !important;
+            appearance: toolbarbutton !important;
+            -moz-default-appearance: toolbarbutton !important;
+            align-items: center !important;
+            border: 1px solid transparent !important;
+            padding: 3px !important;
+            border-radius: 0 !important;
+            background-color: transparent !important;
+
+            .toolbarbutton-icon {
+                padding: 0 !important;
+                border-radius: 0 !important;
+                outline: 0 !important;
+                background-color: transparent !important;
+
+                &[label]:not([label=""]) {
+                    margin-inline-end: 5px !important;
+                }
+            }
+
+            &:not([disabled="true"]) {
+                &:hover {
+                    border-color: ThreeDHighlight ThreeDShadow ThreeDShadow ThreeDHighlight !important;
+                }
+
+                &:hover,
+                &:hover:active,
+                &[open="true"] {
+                    text-shadow: none !important;
+                    color: -moz-DialogText !important;
+                }
+
+                &:hover:active,
+                &[open="true"]:hover,
+                &[open="true"] {
+                    border-color: ThreeDShadow ThreeDHighlight ThreeDHighlight ThreeDShadow !important;
+                    padding-top: 4px !important;
+                    padding-bottom: 2px !important;
+                    padding-inline-start: 4px !important;
+                    padding-inline-end: 2px !important;
+                }
+            }
+        }
+    }
+
+    .toolbarbutton-1:not(#bookmarks-menu-button) {
+        .toolbarbutton-icon {
+            width: 18px !important;
+            height: 18px !important;
+            margin-inline-end: 0 !important;
+        }
+    }
+
+    #bookmarks-menu-button {
+        .toolbarbutton-icon {
+            width: 16px !important;
+            height: 16px !important;
+        }
+
+        .toolbarbutton-text {
+            display: flex !important;
+            padding: 0 !important;
+            min-height: unset !important;
+            background-color: transparent !important;
+        }
+    }
+}
+
+.bookmark-item[container] .toolbarbutton-icon,
+.menu-iconic[container] > .menu-iconic-left > .menu-iconic-icon {
+    background-image: url("chrome://echelon/content/firefox-4/bookmarks/folder-item.png") !important;
+    background-position-x: -16px !important;
+    list-style-image: none !important;
+}
+
+.bookmark-item[container][query] .toolbarbutton-icon,
+.menu-iconic[container][query] > .menu-iconic-left > .menu-iconic-icon {
+    background-image: url("chrome://echelon/content/firefox-4/bookmarks/query.png") !important;
+}
+
+.bookmark-item:not([container]) {
+    .default-favicon {
+        list-style-image: var(--default-favicon) !important;
+    }
+}
+
+:root[echelon-system-style="winxp"] {
+    .bookmark-item[container] .toolbarbutton-icon,
+    .menu-iconic[container] > .menu-iconic-left > .menu-iconic-icon {
+        background-image: url("chrome://echelon/content/firefox-4/xp/bookmarks/folder-item.png") !important;
+    }
+    
+    .bookmark-item[container][query] .toolbarbutton-icon,
+    .menu-iconic[container][query] > .menu-iconic-left > .menu-iconic-icon {
+        background-image: url("chrome://echelon/content/firefox-4/xp/bookmarks/query.png") !important;
+    }
+}
+
+#PlacesToolbarDropIndicator {
+    list-style-image: url("chrome://echelon/content/firefox-4/places/toolbarDropMarker.png") !important;
+}
+
+#bookmarksToolbarFolderMenu, 
+#BMB_bookmarksToolbar, 
+#panelMenu_bookmarksToolbar,
+#bookmarks-toolbar-button, 
+#bookmarks-toolbar-placeholder {
+    list-style-image: url("chrome://echelon/content/firefox-4/places/bookmarksToolbar.png") !important;
+
+    :root[echelon-system-style="winxp"] & {
+        list-style-image: url("chrome://echelon/content/firefox-4/xp/places/bookmarksToolbar.png") !important;
+    }
+
+    & > .menu-iconic-left > .menu-iconic-icon {
+        background-image: none !important;
+        list-style-image: inherit !important;
+    }
+}
+
+#BMB_unsortedBookmarks,
+#panelMenu_unsortedBookmarks,
+#menu_unsortedBookmarks {
+    list-style-image: url("chrome://echelon/content/firefox-4/places/unsortedBookmarks.png") !important;
+
+    :root[echelon-system-style="winxp"] & {
+        list-style-image: url("chrome://echelon/content/firefox-4/xp/places/unsortedBookmarks.png") !important;
+    }
+
+    & > .menu-iconic-left > .menu-iconic-icon {
+        background-image: none !important;
+        list-style-image: inherit !important;
+    }
+}

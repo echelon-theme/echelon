@@ -1,0 +1,9 @@
+& {
+    @include toolbar-icons((    
+        "back-button": "firefox-29/toolbar/win8/back.svg",
+    ));
+
+    @include toolbar-icons-inverted((    
+        "back-button": "firefox-29/toolbar/win8/back.svg",
+    ));
+}

@@ -1,0 +1,30 @@
+#urlbar-background, 
+#searchbar 
+{
+    border-radius: 0 !important;
+}
+
+&:not([chromehidden~="toolbar"]) {
+    #nav-bar {
+        #forward-button.unified-with-urlbar:not(:hover)[disabled] {
+            & + #urlbar-container {            
+                & > #urlbar {
+                    margin-left: -29px !important;
+                }
+
+                #urlbar-background,
+                .urlbar-input-container,
+                #urlbar-input-container {
+                    mask-position-x: -2px !important;
+                }
+            }
+        }
+
+        #forward-button.unified-with-urlbar {
+            & + #urlbar-container {
+                padding-inline-start: 30px !important;
+                margin-inline-start: -30px !important;
+            }
+        }
+    }
+}

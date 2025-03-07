@@ -1,0 +1,374 @@
+@import "../_mixins.scss";
+
+:root:not([echelon-style-6]) {
+    --arrowpanel-padding: 10px !important;
+    --arrowpanel-color: -moz-DialogText !important;
+    --arrowpanel-background: -moz-Dialog !important;
+    --arrowpanel-border-radius: 6px !important;
+    --arrowpanel-border: 1px solid var(--arrowpanel-border-color) !important;
+    --arrowpanel-border-color: ThreeDShadow !important;
+    --arrowpanel-margin: 0 !important;
+    --arrowpanel-echelon-shadow: none !important;
+
+    --arrowpanel-arrow-margin: -23px !important;
+    --arrowpanel-arrow-offset: 6px !important;
+
+    --arrowpanel-arrow-position: -1px !important;
+
+    --arrowpanel-vertical: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-vertical.svg");
+    --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-horizontal.svg");
+
+    &:not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style="winxp"] {
+        --arrowpanel-padding: 16px !important;
+        --arrowpanel-background: rgb(250,251,253) !important;
+        --arrowpanel-border-radius: 6px !important;
+        --arrowpanel-border: none !important;
+        --arrowpanel-margin: 3px !important;
+        --arrowpanel-echelon-shadow: 0 0 5px 1px rgba(184,205,232,1) inset, 0 0 0 1px rgba(0,0,0,.25), 0 1px 5px rgba(0,0,0,.5) !important;
+    
+        --arrowpanel-arrow-margin: -25px !important;
+
+        --arrowpanel-vertical: url("chrome://echelon/content/firefox-4/xp/panelarrow/panelarrow-up.png");
+        --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-4/xp/panelarrow/panelarrow-down.png");
+    }
+}
+
+:root[echelon-style-5]:not([echelon-style-6]) {
+    --arrowpanel-border-radius: 4px !important;
+    --arrowpanel-margin: 4px !important;
+
+    --arrowpanel-arrow-margin: -20px !important;
+    --arrowpanel-arrow-offset: 10px !important;
+
+    --arrowpanel-arrow-position: -5px !important;
+
+    --arrowpanel-vertical: url("chrome://echelon/content/firefox-14/panelarrow/panelarrow-vertical.svg");
+    --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-14/panelarrow/panelarrow-horizontal.svg");
+
+    &[echelon-appearance-newlogo] {
+        --arrowpanel-border-color: rgba(0,0,0,.3) !important;
+        --arrowpanel-echelon-shadow: 0 0 4px rgba(0,0,0,.3) !important;
+        --arrowpanel-background: linear-gradient(white 1px, rgba(255,255,255,0) 15px), -moz-Dialog !important;
+
+        --arrowpanel-vertical: url("chrome://echelon/content/firefox-28/panelarrow/panelarrow-vertical-white.png");
+        --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-28/panelarrow/panelarrow-horizontal-white.png");
+    }
+}
+
+:root[echelon-appearance-blue]:not([echelon-system-style="winxp"]):not([echelon-style-4]) {
+    --arrowpanel-border-radius: 6px !important;
+    --arrowpanel-background: -moz-linear-gradient(rgba(250,253,255,.9), rgba(250,253,255,.75) 20px, rgba(250,253,255,.70) 39px, rgba(250,253,255,0) 41px, rgba(250,253,255,0)), rgba(179,230,255,.35) !important;
+    --arrowpanel-border: none !important;
+    --arrowpanel-margin: 5px !important;
+    --arrowpanel-echelon-shadow: 0 0 0 1px rgba(255,255,255,.65) inset, 0 1px 0 rgba(255,255,255,.3) inset, 0 0 0 1px rgba(0,0,0,.75), 0 1px 3px 2px rgba(0,0,0,.65) !important;
+
+    --arrowpanel-arrow-position: -5px !important;
+
+    --arrowpanel-vertical: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-up.png");
+    --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-horiz.png");
+
+    --arrowpanel-inner-background: rgb(250,250,250) !important;
+    --arrowpanel-inner-margin: 5px !important;
+    --arrowpanel-inner-border-radius: 2px !important;
+    --arrowpanel-inner-padding: 16px !important;
+    --arrowpanel-inner-border: 1px solid rgba(0,0,0,.7) !important;
+    --arrowpanel-inner-shadow: 0 0 0 1px rgba(255,255,255,.6) !important;
+}
+
+:root[echelon-style-6] {
+    --arrowpanel-padding: 10px !important;
+    --arrowpanel-color: -moz-FieldText !important;
+    --arrowpanel-background: -moz-field !important;
+    --arrowpanel-border-radius: 4px !important;
+    --arrowpanel-border: 1px solid var(--arrowpanel-border-color) !important;
+    --arrowpanel-border-color: ThreeDShadow !important;
+    --arrowpanel-margin: 4px !important;
+    --arrowpanel-echelon-shadow: none !important;
+
+    --arrowpanel-arrow-margin: -20px !important;
+    --arrowpanel-arrow-offset: 10px !important;
+
+    --arrowpanel-arrow-position: -5px !important;
+
+    --arrowpanel-vertical: url("chrome://echelon/content/firefox-29/panelarrow/panelarrow-vertical.svg");
+    --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-29/panelarrow/panelarrow-horizontal.svg");
+
+    &[echelon-appearance-blue] {
+        --arrowpanel-border-color: hsla(210,4%,10%,.2) !important;
+        --arrowpanel-echelon-shadow: 0 0 4px hsla(210,4%,10%,.2) !important;
+    }
+
+    &[echelon-system-style="win8"],
+    &[echelon-system-style="win10"] {
+        --arrowpanel-border-radius: 0 !important;
+    }
+}
+
+panel[type="arrow"] {
+    appearance: none;
+    background: transparent;
+    border: none;
+
+    &[side="top"],
+    &[side="bottom"] {
+        margin-inline: var(--arrowpanel-arrow-margin);
+    }
+
+    &[side="left"],
+    &[side="right"] {
+        margin-block: var(--arrowpanel-arrow-margin);
+    }
+}
+
+menupopup[type="arrow"] {
+    &[side="top"],
+    &[side="bottom"] {
+        margin-inline: -6px;
+    }
+
+    &[side="left"],
+    &[side="right"] {
+        margin-block: -6px;
+    }
+}
+
+/* These specifically for some reason has weird positioning */
+#appMenu-popup,
+#widget-overflow {
+    margin-inline: -6px !important;
+}
+
+/* More weird positioning at the edge of the screen */
+#sidebarMenu-popup {
+    margin-inline: -7px !important;
+}
+
+#PanelUI-popup {
+    margin-inline: -11px !important;
+}
+
+/* even more weird positioning shit */
+
+:is(panel):not([type="autocomplete-richlistbox"]),
+:is([echelon-style-6]) :is(menupopup[placespopup][is="places-popup-arrow"]) {
+    --panel-shadow: var(--arrowpanel-echelon-shadow) !important;
+
+    &::part(arrowcontent) {
+        padding: var(--arrowpanel-padding);
+        color: var(--arrowpanel-color);
+        background: var(--arrowpanel-background);
+        border-radius: var(--arrowpanel-border-radius);
+        background-clip: padding-box;
+        border: var(--arrowpanel-border);
+        box-shadow: var(--arrowpanel-echelon-shadow);
+        margin: var(--arrowpanel-margin);
+
+        & > slot {
+            /* propagate border-radius from arrowcontent to slotted children */
+            border-radius: inherit;
+        }
+    }
+
+    &::part(innerarrowcontent) {
+        background: var(--arrowpanel-inner-background);
+        margin: var(--arrowpanel-inner-margin);
+        border-radius: var(--arrowpanel-inner-border-radius);
+        padding: var(--arrowpanel-inner-padding);
+        border: var(--arrowpanel-inner-border);
+        box-shadow: var(--arrowpanel-inner-shadow);
+        background-clip: padding-box;
+    }
+
+    &[orient="vertical"]::part(arrowcontent),
+    &[orient="vertical"]::part(innerarrowcontent) {
+        flex-direction: column;
+    }
+
+    &.panel-no-padding::part(arrowcontent),
+    &.panel-no-padding::part(innerarrowcontent) {
+        padding: 0;
+        overflow: hidden; /* Don't let panel content overflow the border-radius */
+    }
+    
+    &::part(arrow) {
+        -moz-context-properties: fill, stroke;
+        fill: var(--arrowpanel-background);
+        stroke: var(--arrowpanel-border-color);
+    }
+
+    &[side="top"],
+    &[side="bottom"] {
+        &::part(arrow) {
+            list-style-image: var(--arrowpanel-vertical);
+            position: relative;
+            margin-inline: var(--arrowpanel-arrow-offset);
+        }
+    }
+
+    &[side="top"]::part(arrow) {
+        margin-bottom: var(--arrowpanel-arrow-position);
+    }
+
+    &[side="bottom"]::part(arrow) {
+        transform: scaleY(-1);
+        margin-top: var(--arrowpanel-arrow-position);
+    }
+
+    &[side="left"],
+    &[side="right"] {
+        &::part(arrow) {
+            list-style-image: var(--arrowpanel-hortizontal);
+            position: relative;
+            margin-block: var(--arrowpanel-arrow-offset);
+        }
+    }
+
+    &[side="left"]::part(arrow) {
+        margin-right: var(--arrowpanel-arrow-position);
+    }
+    
+    &[side="right"]::part(arrow) {
+        transform: scaleX(-1);
+        margin-left: var(--arrowpanel-arrow-position);
+    }
+}
+
+:root:not([echelon-style-6]):not([echelon-style-5][echelon-appearance-newlogo])[echelon-system-style="winxp"] :is(panel, menupopup[placespopup]):not([type="autocomplete-richlistbox"]) {
+    &[side="top"]::part(arrow) {
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-bottom: -13px;
+        margin-top: -4px;    
+    }
+
+    &[side="bottom"]::part(arrow) {
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-top: -12px;
+        margin-bottom: -4px;
+    }
+
+    &[side="left"]::part(arrow) {
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-right: -12px;
+        margin-left: -4px;
+    }
+    
+    &[side="right"]::part(arrow) {
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-left: -12px;
+        margin-right: -4px;
+    }
+}
+
+#protections-popup[mainviewshowing][side="top"]::part(arrow) {
+    fill: #0A51BF;
+}
+
+.ac-dropmarker {
+    width: 12px !important;
+
+    &::part(icon) {
+        @include set-icon("arrow-dropdown-12");
+        width: 12px !important;
+        height: 16px !important;
+    }
+}
+
+.popup-notification-dropmarker > .button-box > .button-menu-dropmarker::part(icon) {
+    @include set-icon("arrow-dropdown-16");
+}
+
+:root:not([echelon-style-6]) {
+    :is(menupopup[placespopup]) {
+        appearance: auto !important;
+        --panel-background: Menu !important;
+        --panel-color: MenuText !important;
+        --panel-padding: 0 !important;
+        --panel-border-radius: 0 !important;
+        --panel-shadow-margin: 0 !important;
+        --panel-border-color: ThreeDShadow !important;
+        --panel-shadow: none !important;
+
+        &::part(arrow) {
+            display: none !important;
+        }
+
+        &::part(content) {
+            border: 0 !important;
+        }
+
+        & > :is(menu, menuitem) {
+            margin: 0 !important;
+            min-height: 0 !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            appearance: auto !important;
+
+            :is(.menu-text, .menu-iconic-text, .menu-iconic-icon, .menu-iconic-left, .menu-iconic-accel, .menu-accel-container, .menu-accel, .menu-right) {
+                appearance: auto !important;
+            }
+
+            & > .menu-accel-container > :is(.menu-accel, .menu-iconic-accel) {
+                margin-inline: 0.74em 1.35em !important;
+                color: inherit !important;
+            }
+        }
+
+        & :is(.menu-iconic, .menuitem-iconic) > .menu-iconic-left {
+            margin-inline-end: 0 !important;
+        }
+
+        menuseparator {
+            appearance: auto !important;
+            margin: 0 !important;
+            padding: 3px 1px 4px !important;
+            border-top: 1px solid ThreeDShadow !important;
+            border-bottom: 1px solid ThreeDHighlight !important;
+
+            &::before {
+                display: none !important;
+            }
+        }
+
+        .menu-right {
+            list-style-image: none !important;
+        }
+    }
+
+    #BMB_bookmarksPopup {
+        transition: none !important;
+    }
+}
+
+#customization-uidensity-menu::part(arrowcontent) {
+    padding: 10px !important;
+}
+
+:is([echelon-style-6]) {
+    #BMB_bookmarksPopup::part(arrowcontent) {
+        padding-inline: 0 !important;
+        padding-block-end: 0 !important;
+    }
+
+    #BMB_bookmarksPopup {
+        menupopup[placespopup="true"] {
+            border: 0 !important;
+            appearance: none !important;
+            background: transparent !important;
+            padding: 6px !important;
+
+            &::part(content) {
+                padding-block-start: 4px !important;
+                padding-block-end: 0 !important;
+                box-shadow: 0 0 4px rgba(0,0,0,0.2) !important;
+                background: #FFF !important;
+                border: 1px solid rgba(0,0,0,0.25) !important;
+                border-radius: 3.5px !important;
+                margin-top: -4px !important;
+            }
+        }
+    }
+}

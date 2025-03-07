@@ -9,6 +9,8 @@
 // @backgroundmodule
 // ==/UserScript==
 
+let brandBundle = Services.strings.createBundle("chrome://branding/locale/brand.properties");
+
 function renderElement(nodeName, attrMap = {}, childrenArr = [])
 {
 	let namespace = "html";
@@ -117,106 +119,30 @@ class PrefUtils
 }
 
 class BrandUtils
-{
-	static getBrowserName()
+{	
+	static bundle = Services.strings.createBundle("chrome://branding/locale/brand.properties");
+
+	static getBrandingKey(key)
 	{
-		let spoof = PrefUtils.tryGetStringPref("Echelon.Option.BrowserSpoof");
-		if (spoof == "")
-		{
-			return Services.appinfo.name;
-		}
-		return spoof;
-	}
-
-	static getUpdateChannel()
-	{
-		let spoof = PrefUtils.tryGetStringPref("Echelon.Option.ChannelSpoof");
-		if (spoof == "")
-		{
-			return Services.appinfo.defaultUpdateChannel;
-		}
-		return spoof;
-	}
-
-	static getShortProductName()
-	{
-		let custom = PrefUtils.tryGetStringPref("Echelon.Option.BrandName");
-		if (custom != "")
-		{
-			return custom;
-		}
-
-		switch (this.getUpdateChannel())
-		{
-			case "nightly":
-				return "Nightly";
-			case "aurora":
-				return "Aurora";
-			default:
-				return this.getBrowserName();
-		}
-	}
-
-	static getDefaultProductName()
-	{
-		switch (this.getUpdateChannel())
-		{
-			case "nightly":
-				return "Nightly";
-			case "aurora":
-				return "Aurora";
-			default:
-				if (this.getBrowserName() == "Firefox")
-				{
-					return "Mozilla Firefox";
-				}
-				return this.getBrowserName();
-		}
-	}
-
-	static getFullProductName()
-	{
-		let custom = PrefUtils.tryGetStringPref("Echelon.Option.BrandName");
-		if (custom == "")
-		{
-			return this.getDefaultProductName();
-		}
-		return custom;
-	}
-
-	static getDefaultTitles()
-	{
-		let product = this.getFullProductName();
-		return {
-			"default": product,
-			"private": `${product} (Private Browsing)`,
-			"contentDefault": `CONTENTTITLE - ${product}`,
-			"contentPrivate": `CONTENTTITLE - ${product} (Private Browsing)`
-		};
-	}
-
-	static getUserTitles()
-	{
-		let result = this.getDefaultTitles();
-		
-		const prefmap = {
-			"default": "Echelon.WindowTitle.Default",
-			"private": "Echelon.WindowTitle.Private",
-			"contentDefault": "Echelon.WindowTitle.ContentDefault",
-			"contentPrivate": "Echelon.WindowTitle.ContentPrivate"
-		};
-
-		for (const prop in prefmap)
-		{
-			let string = PrefUtils.tryGetStringPref(prefmap[prop]);
-			if (string != "")
-			{
-				result[prop] = string;
-			}
-		}
-
-		return result;
+		return this.bundle.GetStringFromName(key);
 	}
 }
 
-let EXPORTED_SYMBOLS = [ "PrefUtils", "BrandUtils", "waitForElement", "renderElement" ];
+class VersionUtils {
+    static async getEchelonVer() {
+        try {
+            const response = await fetch("chrome://userchrome/content/version.json");
+			const data = await response.json();
+
+			const version = data.version;
+
+            return version;
+
+        } catch (error) {
+            console.error('Error fetching JSON:', error);
+            throw error;
+        }
+    }
+}
+
+let EXPORTED_SYMBOLS = [ "PrefUtils", "BrandUtils", "waitForElement", "renderElement", "VersionUtils" ];

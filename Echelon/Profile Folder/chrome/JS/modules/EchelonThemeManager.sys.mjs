@@ -20,15 +20,14 @@ export class EchelonThemeManager
 		if (config?.style)
 		{
 			this.refreshTheme();
+			Services.prefs.addObserver("Echelon.Appearance.systemStyle", (function() {
+				this.refreshTheme();
+				console.log("theme change");
+			}).bind(this));
 			Services.prefs.addObserver("Echelon.Appearance.Style", (function() {
 				this.refreshTheme();
 				console.log("theme change");
 			}).bind(this));
-		}
-
-		if (config?.channel)
-		{
-			this.refreshChannel();
 		}
 
 		if (config?.bools && Array.isArray(config.bools))
@@ -39,19 +38,10 @@ export class EchelonThemeManager
 			}
 		}
 	}
-
-	refreshChannel()
-	{
-		let channel = PrefUtils.tryGetStringPref("Echelon.Option.ChannelSpoof");
-		if (channel == "")
-		{
-			channel = Services.appinfo.defaultUpdateChannel;
-		}
-		this.root.setAttribute("update-channel", channel);
-	}
 	
 	refreshTheme()
 	{
+		let platform = PrefUtils.tryGetStringPref("Echelon.Appearance.systemStyle");
 		let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
 		
 		for (let attr of this.root.getAttributeNames())
@@ -68,10 +58,13 @@ export class EchelonThemeManager
 		}
 
 		/* Enable Tabs on Top for Australis */
-		if (style >= 4)
+		if (style >= 6)
 		{
 			PrefUtils.trySetBoolPref("Echelon.Appearance.TabsOnTop", true);
 		}
+
+		/* Set platform style */
+		this.root.setAttribute("echelon-system-style", platform);
 	}
 	
 	refreshPrefBoolAttribute(prefName, attrName)

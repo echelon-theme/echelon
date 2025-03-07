@@ -1,0 +1,153 @@
+& {    
+    --urlbar-border-color: ThreeDShadow !important;
+    --urlbar-border-color-hover: ThreeDShadow !important;
+    --urlbar-border-color-focused: ThreeDShadow !important;
+
+    &:not([echelon-system-style="winxp"], [echelon-style-7]) {
+        &[echelon-appearance-blue],
+        &[echelon-system-style="win8"] {
+            --urlbar-border-color: hsla(210,54%,20%,.25) hsla(210,54%,20%,.27) hsla(210,54%,20%,.3) !important;
+            --urlbar-border-color-hover: hsla(210,54%,20%,.35) hsla(210,54%,20%,.37) hsla(210,54%,20%,.4) !important;
+            --urlbar-border-color-focused: hsla(206,100%,60%,.65) hsla(206,100%,55%,.65) hsla(206,100%,50%,.65) !important;
+        }
+    }
+
+    &[lwtheme] {
+        --urlbar-border-color: rgba(0,0,0,.32) !important;
+        --urlbar-border-color-hover: rgba(0,0,0,.32) !important;
+        --urlbar-border-color-focused: rgba(0,0,0,.32) !important;
+    }
+}
+
+&:not([echelon-style-7]) {
+    #urlbar {
+        & #identity-box {
+            order: -1 !important;
+            margin-inline-end: 0 !important;
+
+            #identity-icon-box {
+                order: -1 !important;
+                background-color: transparent !important;
+                border-radius: 0 !important;
+                outline: 0 !important;
+                padding: 2px !important;
+                font-size: .9em !important;
+                margin-inline-end: 0 !important;
+
+                &:hover {
+                    #identity-icon {
+                        background-position-x: -16px !important;
+                    }
+                }
+
+                &:hover:active,
+                &[open="true"] {
+                    #identity-icon {
+                        background-position-x: -32px !important;
+                    }
+                }
+            }
+
+            #identity-icon {
+                @include set-background("firefox-14/urlbar/identity-icons-generic.png");
+                margin-block: 1px !important;
+                margin-inline-start: 3px !important;
+            }
+
+            &[pageproxystate="valid"]:not(.chromeUI, .verifiedIdentity, .notSecure, .localResource) {
+                #identity-icon-box {
+                    #identity-icon {
+                        @include set-background("firefox-14/urlbar/identity-icons-https.png");
+                    }
+                }
+            }
+
+            &.verifiedIdentity {
+                #identity-icon-box {
+                    color: hsl(92,100%,30%) !important;
+                    background-image: -moz-linear-gradient(hsla(92,81%,16%,0),
+                                    hsla(92,81%,16%,.2) 25%,
+                                    hsla(92,81%,16%,.2) 75%,
+                                    hsla(92,81%,16%,0)) !important;
+                    margin-inline-end: 3px !important;
+
+                    background-position: right !important;
+                    background-size: 1px !important;
+                    background-repeat: no-repeat !important;
+
+                    #identity-icon {
+                        margin-inline-end: 3px !important;
+                        @include set-background("firefox-14/urlbar/identity-icons-https-ev.png");
+                        background-size: cover !important;
+                    }
+
+                    #identity-icon-label {
+                        display: flex !important;
+                        visibility: visible !important;
+                    }
+                }
+            }
+
+            #identity-icon-label {
+                padding-inline-start: 0 !important;
+                padding-inline-end: 5px !important;
+                padding-block-start: 1px !important;
+                margin: 0 !important;
+                visibility: collapse !important;
+            }    
+        }
+
+        .urlbar-input-box {
+            padding-inline-start: 2px !important;
+        }
+    }
+
+    &:not([chromehidden~="toolbar"]) #forward-button.unified-with-urlbar[disabled] + #urlbar-container #notification-popup-box { 
+        padding-inline-start: 5px !important;
+        margin-inline-end: -5px !important;
+    }
+}
+
+&:not([echelon-style-7])[echelon-appearance-newlogo],
+&:not([echelon-style-7])[echelon-style-6] {
+    #urlbar {
+        & #identity-box {
+            &.chromeUI {
+                #identity-icon-box {
+                    color: var(--identity-color-brand) !important;
+                    background-image: var(--identity-background-brand) !important;
+                    margin-inline-end: 3px !important;
+
+                    background-position: right !important;
+                    background-size: 1px !important;
+                    background-repeat: no-repeat !important;
+
+                    #identity-icon {
+                        margin-inline-end: 3px !important;
+                        background-image: var(--identity-icons-brand) !important;
+                        background-size: cover !important;
+                    }
+
+                    #identity-icon-label {
+                        display: flex !important;
+                        visibility: visible !important;
+                    }
+                }
+            }
+
+            &[pageproxystate="valid"]:not(.chromeUI, .verifiedIdentity, .notSecure, .localResource) {
+                #identity-icon-box {
+                    #identity-icon {
+                        @include set-background("firefox-29/urlbar/identity-icons-https.png");
+                    }
+                }
+            }
+        }
+    }
+}
+
+#urlbar-container {
+    &:not(.unified-forward-button) {
+        margin-inline-start: 2px !important;
+    }
+}

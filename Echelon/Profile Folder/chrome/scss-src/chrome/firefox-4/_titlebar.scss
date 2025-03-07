@@ -1,0 +1,132 @@
+:root {
+	--inactive-titlebar-opacity: 1 !important; // remove the shit inactive titlebar transparency
+
+	// Fix titlebar background in Firefox 133+
+	#TabsToolbar {
+		background-color: transparent !important;
+	}
+
+	#titlebar {
+		-moz-window-dragging: drag !important;
+	}
+}
+
+// FUUUUUUUUUUUCK MOZILLA
+:root[echelon-style-6][is128newer] {
+	#titlebar {
+		z-index: 2 !important;
+	}
+}
+
+:root:not([echelon-style-6]) {
+	#titlebar {
+		z-index: 2 !important;
+	}
+	
+	// hide app menu when titlebar enabled
+	&:not([tabsintitlebar="true"]) #appmenu-button-container {
+		visibility: collapse !important;
+	}
+
+	// maximized behavior
+	&[tabsintitlebar="true"]:not([sizemode="maximized"]) #toolbar-menubar,
+	&:not([sizemode="maximized"]) #TabsToolbar,
+	&[sizemode="maximized"] #titlebar-content,
+	&[sizemode="maximized"] #toolbar-menubar:not([inactive="true"]) + #TabsToolbar {
+		.titlebar-buttonbox-container {
+			visibility: collapse !important;
+		}
+	}
+
+	&[echelon-system-style="winxp"]:not([sizemode="maximized"]) {
+		&:not([lwtheme="true"]) #titlebar {
+			background-color: -moz-Dialog !important;
+		}
+		
+		&[tabsintitlebar="true"] {
+			#titlebar {
+				appearance: none !important;
+		
+				#titlebar-content {
+					appearance: auto !important;
+					-moz-default-appearance: -moz-window-titlebar !important;
+				}
+			}
+		}
+	}
+
+	// grid area for maximized layout
+	&[sizemode="maximized"] {
+		#titlebar {
+			display: grid !important;
+			grid-template-areas: "firefox-button menu-bar" "firefox-button tabbar" !important;
+			grid-auto-columns: min-content auto !important;
+		}
+
+		#titlebar-content {
+			grid-area: firefox-button !important;
+		}
+
+		#toolbar-menubar {
+			grid-area: menu-bar !important;
+			margin-inline-start: 4px !important;
+		}
+
+		#TabsToolbar {
+			grid-area: tabbar !important;
+		}
+	}
+
+	@media all and (-moz-windows-classic) { 
+		&:not([sizemode="maximized"]) {
+			.titlebar-buttonbox {
+				appearance: auto !important;
+			}
+		}
+	}
+}
+
+// taken from browser-aero.css (for backporting to 115)
+@media (-moz-platform: windows) {
+	.titlebar-buttonbox-container {
+		align-items: flex-start !important;
+	}
+	
+    @media not (-moz-windows-classic) {
+		:root[sizemode="normal"] .titlebar-buttonbox {
+			appearance: auto !important;
+			-moz-default-appearance: -moz-window-button-box !important;
+		}
+  
+		@media (-moz-windows-compositor) {
+			:root[sizemode="maximized"] .titlebar-buttonbox {
+				appearance: auto !important;
+				-moz-default-appearance: -moz-window-button-box-maximized !important;
+			}
+
+			:root[chromemargin^="0,"][sizemode="normal"]:not([inFullscreen="true"], [echelon-style-6]) {
+				#titlebar-content {
+					margin-block-end: -2px !important;
+				}
+
+				&:not([tabs-on-top="true"]) {
+					#titlebar {
+						margin-block-end: -2px !important;
+
+						#titlebar-content {
+							margin-block-end: 0 !important;
+						}
+
+						#toolbar-menubar:not([inactive="true"]) {
+							margin-block-end: 2px !important;
+						}
+					}
+				}
+			}
+
+			:root[tabsintitlebar][sizemode="normal"]:not([echelon-style-6]) #toolbar-menubar[inactive="true"] + #TabsToolbar .toolbar-items {
+				padding-top: 2px !important;
+			}
+		}
+    }
+}

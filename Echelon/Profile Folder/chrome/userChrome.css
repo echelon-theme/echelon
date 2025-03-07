@@ -9,7 +9,7 @@
  * source, which is put into _echelon.css.
  */
 
-@import url("_echelon.css");
+@import url("echelon.css");
 
 /* Additional styles from the user ignored by Git. */
 @import url("_chrome_user.css");

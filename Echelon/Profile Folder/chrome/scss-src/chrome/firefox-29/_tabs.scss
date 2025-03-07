@@ -1,0 +1,294 @@
+& {
+    --tab-min-height: 31px !important;
+    --tab-max-width: 210px !important;
+    --tab-inline-padding: 9px !important;
+
+    --tab-pinned-icon-end-margin: 0 !important;
+    --tab-pinned-icon-start-margin: 0 !important;
+
+    --tab-icon-start-margin: 0 !important;
+    --tab-icon-end-margin: 6px !important;
+}
+
+/* preload images involving australis tabs */
+#tabbrowser-tabs::before {
+    order: -1 !important;
+    content: '' !important;
+    display: block;
+    background-image:
+    url("chrome://echelon/content/firefox-29/tabbrowser/tab-background-start.png"),
+    url("chrome://echelon/content/firefox-29/tabbrowser/tab-background-middle.png"),
+    url("chrome://echelon/content/firefox-29/tabbrowser/tab-background-end.png");
+}
+
+&,
+&[lwtheme-brighttext] {
+    #TabsToolbar {
+        #alltabs-button {
+            min-width: 19px !important;
+
+            .toolbarbutton-icon {
+                @include set-background("firefox-14/toolbarbutton-dropdown-arrow.png");
+                background-position: 0 !important;
+            }
+            .toolbarbutton-icon,
+            .toolbarbutton-badge-stack {
+                @include set-size(9px, 7px);
+            }
+        }
+    }
+}
+
+#TabsToolbar {
+    background-image: none !important;
+    
+    .private-browsing-indicator-with-label {
+        align-items: flex-start !important;
+        margin-inline: 0 !important;
+
+        .private-browsing-indicator-label {
+            display: none !important;
+        }
+    }
+    
+    .toolbar-items {
+        padding-top: 1px !important;
+        padding-inline: 1px !important;
+    }
+
+    #new-tab-button {
+        min-width: 26px !important;
+
+        .toolbarbutton-icon {
+            @include set-background("firefox-29/tabbrowser/newtab.png");
+        }
+    }
+
+    z-index: initial !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+    margin-block-end: -1px !important;
+
+    .tabbrowser-tab {
+        &[pinned] {
+            margin-block-start: 1px !important;
+        }
+        pointer-events: none !important;
+        overflow: visible !important;
+
+        &:not([pinned]) {
+            min-width: 100px !important;
+            max-width: var(--tab-max-width) !important;
+            width: 0 !important;
+
+            &:not([fadein]) {
+                max-width: 0.1px !important;
+                min-width: 0.1px !important;
+            }
+        }
+
+        .tab-close-button,
+        .tab-background {
+            visibility: visible !important;
+            transition: visibility 0ms 25ms !important;
+
+            &:not([fadein]):not([pinned]) {
+                visibility: hidden !important;
+                transition-delay: 0ms !important;
+            }
+        }
+    
+        .tab-background {
+            flex-direction: row !important;
+            border-radius: 0 !important;
+            margin-block: 0 !important;
+            outline: 0 !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+    
+            .tab-context-line,
+            .tab-loading-burst,
+            .tab-group-line {
+                visibility: collapse !important;
+            }
+    
+            .tab-background-middle {
+                flex: 1 !important;
+                background-clip: padding-box !important;
+                border-inline: 15px solid transparent !important;
+                margin: 0 -15px !important;
+                pointer-events: auto !important;
+            }
+
+            .tab-background-start,
+            .tab-background-end {
+                width: 30px !important;
+                min-height: var(--tab-min-height) !important;
+            }
+
+            &[selected] {
+                .tab-background-middle {
+                    background-clip: padding-box, padding-box, content-box !important; 
+                    background-color: var(--toolbar-background-color) !important;
+                    background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-active-middle.png"),
+                                      linear-gradient(transparent, transparent 2px, rgba(254,254,254,0.72) 2px, rgba(254,254,254,0.72) 2px, rgba(250,250,250,0.88) 3px, rgba(250,250,250,0.88) 3px, rgba(254,254,254,0.72) 4px, rgba(254,254,254,0.72) 4px, rgba(253,253,253,0.45)),
+                                      none !important;
+                    background-size: auto 100% !important;
+                    padding-top: 2px !important;
+
+                    :root[lwtheme="true"] & {
+                        background-color: var(--toolbar-bgcolor) !important;
+                    }
+                }
+
+                .tab-background-start,
+                .tab-background-end {
+                    &::before,
+                    &::after {
+                        width: 30px !important;
+                        min-height: var(--tab-min-height) !important;
+                    }
+    
+                    &::before {
+                        content: "" !important;
+                        display: flex !important;
+    
+                        /* In Firefox 29, Mozilla used a SVG background image that had CSS to color the tab curves.
+                            instead, we are going to use a CSS mask and CSS gradients to recreate the same effect. */
+                        mask-size: 100% 100% !important;
+                        background-color: var(--toolbar-background-color) !important;
+                        background-image: linear-gradient(transparent, transparent 2px, rgba(254,254,254,0.72) 2px, rgba(254,254,254,0.72) 2px, rgba(250,250,250,0.88) 3px, rgba(250,250,250,0.88) 3px, rgba(254,254,254,0.72) 4px, rgba(254,254,254,0.72) 4px, rgba(253,253,253,0.45)) !important;
+                        background-repeat: no-repeat !important;
+                    }
+    
+                    &::after {
+                        margin-inline-start: -30px !important;
+                        background-size: 100% 100% !important;
+                        content: "" !important;
+                        display: flex !important;
+                        position: relative !important;
+                    }
+                }
+
+                .tab-background-start {
+                    &::before {
+                        mask-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-selected-start.svg") !important;
+                    }
+    
+                    &::after {
+                        background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-stroke-start.png") !important;
+                    }
+                }
+        
+                .tab-background-end {
+                    &::before {
+                        mask-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-selected-end.svg") !important;
+                    }
+    
+                    &::after {
+                        background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-stroke-end.png") !important;
+                    }
+                }
+            }
+        }
+    
+        .tab-label-container {
+            padding-block-end: 1px !important;
+        }
+    
+        .tab-close-button {
+            pointer-events: auto !important;
+            margin-inline-end: -2px !important;
+            margin-inline-start: 4px !important;
+    
+            &:not(:hover, :hover:active, [selected]) {
+                background-position-x: 0 !important;
+            }
+        }
+    }
+
+    #tabs-newtab-button {
+        width: 66px !important;
+        pointer-events: auto !important;
+    
+        .toolbarbutton-icon {
+            @include set-background("firefox-29/tabbrowser/newtab.png");
+        }
+    }
+}
+
+// TODO: sass this
+#tabbrowser-tabs[movingtab] > .tabbrowser-tab:last-of-type::after,
+.tabbrowser-tab:not([selected]):not(:hover + .tabbrowser-tab):not(:first-of-type):not(:first-of-type[selected] + .tabbrowser-tab):not(:hover)::before,
+#tabbrowser-tabs:not([overflow]) .tabbrowser-tab:not([selected]):last-of-type:not([beforehovered]):not(:hover)::after {
+    margin-inline-start: -1.5px;
+    margin-inline-end: -1.5px;
+    background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-separator.png");
+    background-position: left bottom 1px;
+    background-repeat: no-repeat;
+    background-size: 3px 100%;
+    content: "";
+    display: flex;
+    width: 3px;
+}
+
+#main-window[sizemode="normal"] #TabsToolbar {
+    padding-inline: 1px !important;
+}
+
+&:not([customizing], [lwtheme], [echelon-style-7], [is128newer]) #TabsToolbar {
+    background-image: linear-gradient(to top, hsla(209,67%,12%,0.35) 2px, rgba(0,0,0,.05) 2px, transparent 50%) !important;
+}
+
+&:not([sizemode="maximized"]) #tabbrowser-tabs[haspinnedtabs][overflow] {
+    padding-inline: calc(var(--tab-overflow-pinned-tabs-width) + 15px) 0 !important;
+}
+
+.tab-background,
+#tabs-newtab-button {
+    /* overlap the tab curves */
+    margin-inline: -15px !important;
+}
+
+.tabbrowser-tab:hover .tab-background:not([selected]),
+#tabs-newtab-button:hover {
+    background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-background-start.png"),
+                      url("chrome://echelon/content/firefox-29/tabbrowser/tab-background-middle.png"),
+                      url("chrome://echelon/content/firefox-29/tabbrowser/tab-background-end.png") !important;
+    background-position: left bottom, 30px bottom, right bottom !important;
+    background-repeat: no-repeat !important;
+    background-size: 30px 100%, calc(100% - (2 * 30px)) 100%, 30px 100% !important;
+}
+
+@media (-moz-platform: windows) {
+    @media not (-moz-windows-classic) {
+		@media (-moz-windows-compositor) {
+            @media (-moz-windows-glass) {
+                &[echelon-appearance-blue]:not([lwtheme], [echelon-system-style="winxp"], [echelon-system-style="win8"], [echelon-system-style="win10"]) {
+                    #navigator-toolbox {
+                        position: relative !important;
+
+                        &::before {
+                            /* Because we use placeholders for window controls etc. in the tabstrip,
+                             * and position those with ordinal attributes, and because our layout code
+                             * expects :before/:after nodes to come first/last in the frame list,
+                             * we have to reorder this element to come last, hence the
+                             * ordinal group value (see bug 853415). */
+                            order: 1001 !important;
+                            box-shadow: 0 0 30px 30px rgba(174,189,204,0.85) !important;
+                            content: "" !important;
+                            display: flex !important;
+                            height: 0 !important;
+                            margin: 0 60px !important; /* (30px + 30px) from box-shadow */
+                            position: absolute !important;
+                            pointer-events: none !important;
+                            top: var(--fog-position) !important;
+                            width: -moz-available !important;
+                            z-index: -1 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

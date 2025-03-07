@@ -1,0 +1,378 @@
+@import "_mixins.scss";
+
+:root {
+    --tab-max-width: 250px !important;
+    --tab-min-height: 28px !important;
+    &[echelon-system-style="winxp"] {
+        --tab-min-height: 26px !important;
+    }
+    --tabstrip-min-height: var(--tab-min-height) !important;
+    --tab-background: linear-gradient(transparent, hsla(0, 0%, 45%, .1) 1px, hsla(0, 0%, 32%, .2) 80%, hsla(0, 0%, 0%, .2)) !important;
+    --tab-background-hover: linear-gradient(hsla(0, 0%, 100%, .3) 1px, hsla(0, 0%, 75%, .2) 80%, hsla(0, 0%, 60%, .2)) !important;
+    --tab-selected-highlight: rgba(255, 255, 255, .7) !important;
+
+    --tab-inline-padding: 3px !important;
+    --tab-icon-start-margin: 2px !important;
+    --tab-icon-end-margin: 3px !important;
+    --tab-pinned-icon-start-margin: 5px !important;
+    --tab-pinned-icon-end-margin: 5px !important;
+    --tab-border-radius: 7px 7px 0 0 !important;
+    --navbar-tab-toolbar-highlight-overlap: 1px !important;
+    --tab-overflow-clip-margin: 0 !important;
+}
+
+#TabsToolbar {
+    z-index: 2 !important;
+
+    :root:not([tabs-on-top="true"]) & {
+        background-color: transparent !important;
+        background-image: linear-gradient(to top, rgba(10%,10%,10%,.4) 1px, rgba(0,0,0,.05) 1px, transparent 50%) !important;
+        border-bottom: 0 !important;
+    }
+
+    :root:not([tabs-on-top="true"]) #PersonalToolbar:not([collapsed="true"]) + & {
+        background-color: var(--toolbar-background-color) !important;
+    }
+
+    :root[tabs-on-top="true"]:not([lwtheme]) & {
+        background-image: none !important;
+        color: black !important;
+    }
+
+    .titlebar-spacer { // Hide spacers
+        visibility: collapse !important;
+    }
+
+    .toolbarbutton-1:not(#alltabs-button, #tabs-newtab-button, #new-tab-button) {
+        min-height: var(--tab-min-height) !important;
+
+        .toolbarbutton-icon,
+        .toolbarbutton-badge-stack {
+            @include set-size(18px, 18px);
+        }
+    }
+
+    .tabbrowser-tab {
+        padding: 0 !important;
+        z-index: 0 !important;
+        
+        &:not([pinned]) {
+            // min-width: 100px !important;
+            max-width: var(--tab-max-width) !important;
+            margin-inline: 0 !important; // remove fucking pinned tab margin
+            // transition: min-width 200ms ease-out,
+            //             max-width 250ms ease-out,
+            //             opacity 50ms ease-out 20ms !important;
+
+            &[visuallyselected] {
+                position: relative !important;
+            }
+        }
+
+        &:not([pinned], [fadein]) {
+            max-width: 0.1px !important;
+            min-width: 0.1px !important;
+            visibility: hidden !important;
+            // opacity: 0 !important;
+            // visibility: visible !important;
+            // transition: min-width 200ms ease-out,
+            //             max-width 250ms ease-out,
+            //             opacity 50ms ease-out 100ms !important;
+        }
+
+        &[visuallyselected] { // make tab above outer border from navbar
+            z-index: 2 !important;
+        }
+
+        .tab-content {
+            padding: 0 var(--tab-inline-padding) !important;
+            &[pinned] {
+                .tab-icon-stack {
+                    .tab-throbber,
+                    .tab-icon-pending,
+                    .tab-icon-image,
+                    .tab-sharing-icon-overlay
+                    {
+                        margin-inline-end: var(--tab-pinned-icon-end-margin) !important;
+                        margin-inline-start: var(--tab-pinned-icon-start-margin) !important;
+                    }
+                }
+            }
+            .tab-icon-stack {
+                .tab-throbber,
+                .tab-icon-pending,
+                .tab-icon-image,
+                .tab-sharing-icon-overlay
+                {
+                    opacity: 1 !important;
+                    margin-inline-end: var(--tab-icon-end-margin) !important;
+                    margin-inline-start: var(--tab-icon-start-margin) !important;
+                    :root[echelon-system-style="winxp"] & {
+                        margin-block-start: 1px !important;
+                    }
+                }
+            }
+
+            :root:not([echelon-style-6]) & .tab-icon-image {
+                &:not([src], [busy], [progress], [pinned], [crashed], [sharing], [pictureinpicture]) {
+                    display: flex !important;
+                }
+
+                &:not([src], [busy], [progress]), &:-moz-broken {
+                    content: var(--default-favicon) !important;
+                }
+            }
+
+            .tab-secondary-label {
+                visibility: collapse !important;
+            }
+
+            .tab-icon-overlay {
+                padding: 0 !important;
+                margin-inline-end: 0 !important;
+                pointer-events: auto !important;
+                background-image: none !important;
+
+                &:not([crashed]) {
+                    &:is([soundplaying], [muted], [activemedia-blocked]) {
+                        background-color: transparent !important;
+                        border-radius: 0 !important;
+                        opacity: 1 !important;
+                    }
+
+                    &:is([pinned], [sharing]) {
+                        margin-top: -8px !important;
+                        margin-inline-start: -15px !important;
+                        margin-inline-end: -1px !important;
+                        top: unset !important;
+
+                        &:is([soundplaying], [muted]) {
+                            border-radius: 10px !important;
+
+                            &:hover {
+                                background-color: white !important;
+                            }
+                        }
+                    }
+
+                    &[soundplaying] {
+                        list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab") !important;
+                        &:is([pinned], [sharing]) {
+                            list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio-small.svg#tab-audio") !important;
+                        }
+
+                        &:not([pinned], [sharing]) {
+                            &:hover {
+                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-hover") !important;
+
+                                &:active {
+                                    list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-pressed") !important;
+                                }
+                            }
+                        }
+                    }
+
+                    &[muted] {
+                        list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted") !important;
+                        &:is([pinned], [sharing]) {
+                            list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio-small.svg#tab-audio-muted") !important;
+                        }
+
+                        &:not([pinned], [sharing]) {
+                            &:hover {
+                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-hover") !important;
+
+                                &:active {
+                                    list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-pressed") !important;
+                                }
+                            }
+                        }
+                    }
+
+                    &:not([pinned], [sharing]) {
+                        &[selected] {
+                            &[soundplaying] {
+                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio") !important;
+        
+                                &:hover {
+                                    list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-hover") !important;
+        
+                                    &:active {
+                                        list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-pressed") !important;
+                                    }
+                                }
+                            }
+        
+                            &[muted] {
+                                list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted") !important;
+        
+                                &:hover {
+                                    list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted-hover") !important;
+        
+                                    &:active {
+                                        list-style-image: url("chrome://echelon/content/firefox-56/tabbrowser/tab-audio.svg#tab-audio-muted-pressed") !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .tab-loading-burst {
+            visibility: collapse !important;
+        }
+
+        .tab-label-container {
+            height: var(--tab-min-height) !important;
+        }
+
+        .tab-close-button {
+            margin-inline-end: 0 !important;
+            &:not(:hover, :hover:active, [selected]) {
+                background-position-x: -48px !important;
+            }
+        }
+
+        // hide close button if theres only one tab
+        &:first-of-type:last-of-type {
+            .tab-close-button {
+                visibility: collapse !important;
+            }
+        }
+    }
+
+    .tab-throbber {
+        &::before {
+            visibility: collapse !important;
+        }
+
+        &[busy] {
+            background-image: url("chrome://echelon/content/firefox-4/tabs/connecting.png");
+        }
+        
+        &[progress] {
+            background-image: url("chrome://echelon/content/firefox-4/tabs/loading.png");
+        }
+    }
+
+    :root:not([echelon-style-6]) & {
+        #private-browsing-indicator-with-label {
+            display: none !important;
+        }
+        
+        .tab-background,
+        #tabs-newtab-button
+        {
+            box-shadow: none !important;
+            border-image: url("chrome://echelon/content/firefox-4/tabs/tab.png") 6 3 4/6px 3px 4px repeat stretch !important;
+            background-image: linear-gradient(to top, rgba(26, 26, 26, 0.4) 1px, transparent 1px), var(--tab-background), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color));
+            background-color: transparent !important;
+            background-position: -2px -2px !important;
+            background-size: calc(100% + 4px) calc(100% + 2px) !important;
+            background-repeat: no-repeat !important;
+            border-radius: var(--tab-border-radius) !important;
+            border-width: 4px 3px 0 !important;
+            border-style: solid !important;
+            margin-block: 0 !important;  
+            outline: none !important;   
+            background-origin: padding-box !important;
+        }
+
+        .tabbrowser-tab:hover .tab-background,
+        #tabs-newtab-button:hover,
+        #tabs-newtab-button[open] {
+            background-image: linear-gradient(to top, rgba(10%, 10%, 10%, .4) 1px, transparent 1px), var(--tab-background-hover), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
+        }
+
+        #tabs-newtab-button {
+            width: 30px !important;
+        }
+        
+        .tabbrowser-tab:is([selected], [multiselected]) {
+            .tab-background {
+                background-image: linear-gradient(var(--tab-selected-highlight), var(--toolbar-highlight-top) 50%), linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
+                background-repeat: no-repeat !important;
+            }
+        }
+
+        .toolbar-items {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+    }
+
+    :root:not([echelon-style-6])[sizemode="normal"] & {
+        .toolbar-items {
+            padding-inline: 4px !important;
+        }
+    }
+
+    :root:not([echelon-style-6], [tabs-on-top="true"])[sizemode="normal"] & {
+        .toolbar-items {
+            padding-inline: 2px !important;
+        }
+    }
+
+    :root:not([echelon-style-6]):not([tabs-on-top="true"], [echelon-appearance-disablechrome="true"][disablechrome]) & {
+        .tabbrowser-tab:is([selected], [multiselected]) {
+            .tab-background {
+                background-image: -moz-linear-gradient(bottom, rgba(10%,10%,10%,.4) 1px, transparent 1px),
+                                  -moz-linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.5) 50%),
+                                  -moz-linear-gradient(var(--toolbar-background-color), var(--toolbar-background-color)) !important;
+            }
+        }
+    }
+
+    #tabs-newtab-button,
+    #new-tab-button {
+        min-height: var(--tab-min-height) !important;
+
+        .toolbarbutton-icon {
+            @include set-background("firefox-4/tabs/newtab.png");
+            @include set-size(16px, 16px);
+            margin-top: -1px !important;
+            margin-bottom: -1px !important;
+            
+            :root[echelon-system-style="winxp"] & {
+                margin-top: -2px !important;
+            }
+
+            :root[lwtheme-brighttext] & {
+                @include set-background("firefox-8/tabs/newtab-inverted.png");
+            }
+        }
+
+        :root:not([echelon-style-6]) &:hover:active {
+            .toolbarbutton-icon {
+                background-position-x: -16px !important;
+            }
+        }
+    }
+
+    #alltabs-button {
+        min-height: var(--tab-min-height) !important;
+        .toolbarbutton-icon {
+            @include set-background("firefox-4/mainwindow-dropdown-arrow.png");
+        }
+        .toolbarbutton-icon,
+        .toolbarbutton-badge-stack {
+            @include set-size(13px, 11px);
+        }
+        
+        &[open] {
+            .toolbarbutton-icon {
+                background-position-x: -13px !important;
+            }
+        }
+    }
+}
+
+:root:not([echelon-system-style="winxp"], [tabsintitlebar="true"]) #TabsToolbar .toolbar-items {
+    padding-inline: 4px !important;
+}
+
+:root[browser-tabs-tabmanager-enabled="true"] #tabbrowser-tabs:not([overflow], [hashiddentabs]) ~ #alltabs-button {
+    display: none !important;
+}

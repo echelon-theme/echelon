@@ -1,0 +1,454 @@
+:root {
+    --urlbar-border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.37) !important;
+    --urlbar-border-color-hover: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.37) !important;
+    --urlbar-border-color-focused: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.32) rgba(0, 0, 0, 0.37) !important;
+
+    --urlbar-shadow-normal: 0 1px 0 rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+
+    --urlbar-background-color: rgba(255, 255, 255, 0.725) !important;
+    --urlbar-background-color-hover: rgba(255,255,255,.898) !important;
+    --urlbar-background-color-focused: white !important;
+    
+    --urlbar-container-padding: 2px !important;
+    --urlbar-height-echelon: var(--toolbarbutton-height) !important;
+    --urlbar-min-height: var(--urlbar-height-echelon) !important;
+
+    --searchbar-search-icon: url("chrome://echelon/content/firefox-4/defaultFavicon.png") !important;
+    --searchbar-go-button: url("chrome://echelon/content/firefox-4/Search-glass.png") !important;
+
+    --default-favicon: url("chrome://echelon/content/firefox-4/defaultFavicon.png") !important;
+
+    // Make placeholder text on urlbar/search italic on aero style
+    &:not([echelon-system-style="winxp"])[echelon-appearance-blue] {
+        #urlbar-input::placeholder,
+        .searchbar-textbox::placeholder {
+            font-style: italic !important;
+        }
+    }
+}
+
+#urlbar-input::placeholder,
+.searchbar-textbox::placeholder {
+    opacity: 1 !important;
+    color: #777 !important;
+}
+
+#urlbar-container.unified-refresh-button {
+    // hide original go button on urlbar
+    #urlbar-go-button,
+    .urlbar-go-button {
+        visibility: collapse !important;
+    }
+}
+
+#urlbar-container:not(.unified-refresh-button) {
+    #urlbar {
+        &[focused] {
+            #page-action-buttons {
+                visibility: collapse !important;
+            }
+        }
+    }
+}
+
+#echelon-urlbar-positioning {
+    position: absolute !important;
+    width: -moz-available !important;
+    height: var(--urlbar-container-height) !important;
+    pointer-events: none !important;
+}
+
+#urlbar {
+    &[breakout],
+    &[breakout][breakout-extend] {
+        height: var(--urlbar-min-height) !important;
+        width: -moz-available !important;
+        &[echelon-modified="true"] { // for non XUL element version
+            width: var(--urlbar-echelon-width) !important;
+        }
+        margin: 0 !important;
+        top: calc((var(--urlbar-min-height) - 2) / 2) !important;
+        left: 0 !important;
+        inset: unset !important;
+    }
+
+    &::after {
+        order: -1 !important;
+        content: '' !important;
+        display: block;
+        background-image: url("chrome://echelon/content/firefox-4/menupopupshadowfake.png");
+    }
+
+    .urlbar-input-container,
+    #urlbar-input-container {
+        padding: var(--urlbar-container-padding) !important;
+        padding-inline-end: 0 !important;
+        height: var(--urlbar-min-height) !important;
+    }
+
+    .urlbar-history-dropmarker {
+        appearance: none !important;
+        padding: 0 1px !important;
+        background-color: transparent !important;
+        border: none !important;
+        width: 13px !important;
+        @include set-background("firefox-4/mainwindow-dropdown-arrow.png");
+        background-repeat: no-repeat !important;
+        background-position-y: center !important;
+    }
+
+    &[suppress-focus-border][breakout-extend] {
+        .urlbar-history-dropmarker {
+            background-position-x: -13px !important;
+        }
+    }
+
+    #tracking-protection-icon-container,
+    #pageActionButton,
+    #identity-permission-box,
+    #connection-icon {
+        visibility: collapse !important;
+    }
+
+    #urlbar-go-button,
+    .urlbar-go-button {
+        @include set-background("firefox-4/urlbar/Go-arrow.png");
+
+        width: 20px !important;
+        background-repeat: no-repeat;
+        background-color: transparent !important;
+        background-position: center 3px !important;
+
+        &:hover {
+            background-position: center -13px !important;
+        }
+    }
+
+    :root:not([echelon-style-2]) & #identity-box {
+        order: -1 !important;
+        margin-inline-end: 0 !important;
+
+        &.chromeUI {
+            #identity-icon-label {
+                display: none !important;
+            }
+        }
+
+        #identity-icon-box {
+            order: -1 !important;
+            height: 18px !important;
+            padding: 1px 4px !important;
+            outline: 0 !important;
+            background-color: -moz-dialog !important;
+            background-image: linear-gradient(rgba(255,255,255,.25), rgba(0,0,0,.15)) !important;
+            color: -moz-dialogText !important;
+            border-radius: 2px !important;
+            margin-inline-end: 4px !important;
+            position: relative;
+
+            &:hover {
+                background-image: linear-gradient(rgba(255,255,255,.5), rgba(50%,50%,50%,.2), rgba(0,0,0,.15)) !important;
+    
+                &:active {
+                    background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.1)) !important;
+                }
+            }
+
+            &[open="true"] {
+                background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.1)) !important;
+            }
+
+            &::before {
+                content: '';
+                display: flex;
+                width: 100%;
+                height: 100%;
+                background: url("chrome://echelon/content/firefox-4/urlbar-favicon-glow.png") left center no-repeat !important;
+                position: absolute;
+                left: 0;
+                z-index: 0;
+                pointer-events: none;
+            }
+
+            #identity-icon {
+                z-index: 1 !important;
+
+                &:not([src]) {
+                    list-style-image: var(--default-favicon) !important;
+                }
+            }
+
+            #identity-icon-label {
+                padding-inline-start: 6px !important;
+                margin-block-end: 1px !important;
+            }
+        }
+
+        &.verifiedDomain,
+        &.verifiedIdentity {
+            #identity-icon-box {
+                color: white !important;
+                text-shadow: 0 1px 0 rgba(0,0,0,.25) !important;
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2) inset !important;
+            }
+
+            #identity-icon-label:not([value=""]) {
+                display: flex !important;
+                visibility: visible !important;
+            }
+        }
+
+        &.verifiedDomain {
+            #identity-icon-box {
+                background-color: hsl(219,45%,60%) !important;
+            }
+        }
+
+        &.verifiedIdentity {
+            #identity-icon-box {
+                background-color: hsl(92,45%,52%) !important;
+            }
+        }
+
+        #notification-popup-box {
+            order: -2 !important;
+            margin-inline: 3px !important;
+            padding: 0 !important;
+            background-color: transparent !important;
+
+            .notification-anchor-icon {
+                padding: 0 !important;
+            }
+        }
+    }
+
+    #urlbar-zoom-button {
+        margin: 0 3px !important;
+        font-size: .8em !important;
+        padding: 0 8px !important;
+        border-radius: 1em !important;
+        background-color: hsla(0,0%,0%,.05) !important;
+        border: 1px solid ThreeDLightShadow !important;
+
+        &:hover {
+            background-color: hsla(0,0%,0%,.1) !important;
+
+            &:active {
+                background-color: hsla(0,0%,0%,.15) !important;
+            }
+        }
+    }
+}
+
+#urlbar-container, #search-container {
+    position: relative !important;
+    margin-inline: 6px !important;
+    align-items: unset !important;
+}
+
+#urlbar-container {
+    min-height: var(--urlbar-min-height) !important;
+    padding-block: 0 !important;
+    margin-inline-end: 0 !important;
+
+    &:hover {
+        #urlbar-background {
+            background-color: var(--urlbar-background-color-hover) !important;
+            border-color: var(--urlbar-border-color-hover) !important;
+        }
+    }
+    
+    &[focused="true"] {
+        #urlbar-background {                
+            background-color: var(--urlbar-background-color-focused) !important;
+            border-color: var(--urlbar-border-color-focused) !important;
+        }
+    }
+}
+
+#urlbar, #searchbar {
+    font: message-box !important;
+}
+
+#searchbar {
+    &:hover {
+        background-color: var(--urlbar-background-color-hover) !important;
+        border-color: var(--urlbar-border-color-hover) !important;
+    }
+
+    &:focus-within {
+        background-color: var(--urlbar-background-color-focused) !important;
+        border-color: var(--urlbar-border-color-focused) !important;
+    }
+}
+
+#urlbar[breakout][breakout-extend], #urlbar[breakout][breakout-extend-disabled][open] {
+    z-index: 3 !important;
+    height: auto !important;
+}
+
+#urlbar-background,
+#searchbar {
+    height: var(--urlbar-min-height) !important;
+    padding: 2px !important;
+    border: 1px solid;
+    border-color: var(--urlbar-border-color) !important;
+    border-radius: var(--toolbarbutton-border-radius) !important;
+    background-clip: padding-box !important;
+    background-color: var(--urlbar-background-color) !important;
+    box-shadow: var(--urlbar-shadow-normal) !important;
+    outline: 0 !important;
+    color: black !important;
+    animation: none !important;
+}
+
+// unified urlbar and refresh/stop/go buttons
+:root:not([chromehidden~="toolbar"]) {
+    #urlbar-container.unified-refresh-button {
+        margin-inline-end: 0 !important;
+
+        #urlbar-background {
+            border-top-right-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+            border-inline-end: 0 !important;
+        }
+
+        &:hover {
+            + #stop-reload-button {
+                border-color: var(--urlbar-border-color-hover) !important;
+                background-color: var(--urlbar-background-color-hover) !important;
+            }
+        }
+
+        &[focused="true"] {
+            + #stop-reload-button {                
+                border-color: var(--urlbar-border-color-focused) !important;
+                background-color: var(--urlbar-background-color-focused) !important;
+
+                > .toolbarbutton-1:not(#go-button) { // hide errthang but go button
+                    visibility: collapse !important;
+                }
+
+                > #go-button { // welcome back go button
+                    visibility: visible !important;
+                }
+            }
+        }
+    }
+}
+
+#stop-reload-button {
+    &.unified {
+        height: var(--urlbar-min-height) !important;
+        border: 1px solid !important;
+        border-color: var(--urlbar-border-color) !important;
+        border-inline-start: 0 !important;
+        border-top-right-radius: var(--toolbarbutton-border-radius) !important;
+        border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;
+        box-shadow: var(--urlbar-shadow-normal) !important;
+        background-color: var(--urlbar-background-color) !important;
+        background-clip: padding-box !important;
+        overflow: clip !important;
+
+        .toolbarbutton-1 {
+            padding: 0 3px !important;
+            border-inline-start: 1px solid rgba(0, 0, 0, 0.25) !important;
+            :root[echelon-style-3]:not([echelon-style-4]) &:not(#stop-button, #go-button, :hover, :hover:active) {
+                border-inline-start: 1px solid transparent !important;
+            }
+            background-origin: border-box !important;
+            margin: 0 !important;
+            opacity: 1 !important;
+
+            &:hover {
+                box-shadow: 0 1px 0 rgba(0,0,0,.1) inset, -1px -1px 1px rgba(255,255,255,.25) inset !important;
+
+                &:active {
+                    box-shadow: 0 0 6.5px rgba(0,0,0,.4) inset, 0 0 2px rgba(0,0,0,.4) inset !important;
+                }
+            }
+
+            .toolbarbutton-icon {
+                @include set-background("firefox-4/reload-stop-go.png");
+                width: 14px !important;
+                height: 14px !important;
+                padding: 0 !important;
+                background-color: transparent !important;
+                opacity: 1 !important;
+            }
+        }
+
+        :root:not([echelon-style-4]) & #reload-button {
+            &:hover {
+                background-image: linear-gradient(rgb(162, 207, 241), rgb(111, 178, 225) 49%, rgb(91, 159, 217) 51%, rgb(62, 138, 200)) !important;
+
+                .toolbarbutton-icon {
+                    background-position-x: -14px !important;
+                }
+            }
+        }
+
+        :root:not([echelon-style-4]) & #go-button {
+            background-image: linear-gradient(rgb(115,213,115), rgb(96,190,96) 49%, rgb(82,174,82) 51%, rgb(79,155,79)) !important;
+
+            .toolbarbutton-icon {
+                background-position-x: -42px !important;
+            }
+        }
+
+        :root:not([echelon-style-4]) & #stop-button {
+            background-image: -moz-linear-gradient(rgb(231,162,140), rgb(209,119,100) 49%, rgb(193,92,78) 51%, rgb(173,72,58)) !important;
+            
+            .toolbarbutton-icon {
+                background-position-x: -28px !important;
+            }
+        }
+    }
+    
+    #go-button,
+    .toolbarbutton-animatable-box,
+    #reload-button:not([displaystop="true"]) + #go-button + #stop-button { // holy shit bro
+        visibility: collapse !important;
+    }
+}
+
+:root:not([echelon-style-7]) #searchbar {
+    .searchbar-search-button {
+        margin-inline-end: 4px !important;
+
+        .searchbar-search-icon {
+            margin-inline: 2px !important;
+            margin-right: 0 !important;
+            list-style-image: var(--searchbar-search-icon) !important;
+        }
+
+        .searchbar-search-icon-overlay {
+            width: 13px !important;
+            height: 11px !important;
+            margin-inline: 0 !important;
+            margin-top: 0 !important;
+            @include set-background("firefox-4/mainwindow-dropdown-arrow.png");
+        }
+
+        &[aria-expanded="true"] {
+            .searchbar-search-icon-overlay {
+                background-position-x: -13px !important;
+            }
+        }
+    }
+
+    .search-go-button {
+        all: unset !important;
+        width: 16px !important;
+        height: 16px !important;
+        display: flex !important;
+        margin: 1px !important;
+        background-image: url("chrome://echelon/content/firefox-4/Search-glass.png") !important;
+        :root[echelon-system-style="winxp"] & {
+            background-image: url("chrome://echelon/content/firefox-4/xp/Search-glass.png") !important;
+        }
+        list-style-image: none !important;
+
+        @include set-horizontal-states(0, 16px, 32px);
+    }
+}

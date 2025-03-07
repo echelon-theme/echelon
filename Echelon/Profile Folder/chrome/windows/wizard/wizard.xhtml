@@ -1,273 +1,100 @@
 <?xml version="1.0"?>
 
 <?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
-<?xml-stylesheet href="chrome://userchrome/content/windows/wizard/styles.css" type="text/css"?>
+<?xml-stylesheet href="chrome://global/content/xul.css" type="text/css"?>
+<?xml-stylesheet href="chrome://userchrome/content/framework/apathum/styles/style.css" type="text/css"?>
+<?xml-stylesheet href="chrome://userchrome/content/windows/wizard/wizard.css" type="text/css"?>
 
-<window xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="echelonWizard" windowtype="Browser:EchelonWizard" width="585" height="440" role="dialog" resizable="false" title="Set Up Echelon">
-	<button class="close_button" oncommand="window.close();">Close</button>
+<html xmlns:html="http://www.w3.org/1999/xhtml" 
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+		id="echlonWizard" 
+		title="Echelon Wizard"
+        echelon-appearance-blue="true">
 
-	<hbox id="contentArea" flex="1">
-	
-		<!-- WELCOME PAGE -->
-		<html:div id="page0" class="page" flex="1">
-		
-			<vbox class="pageContent" flex="1">
-				<vbox class="pageContentContainer" flex="1">
-					<vbox class="content welcome" flex="1">
-						<html:div class="echelonLogo"></html:div>
-						<vbox class="welcomeText">
-							<p>Echelon aims to brings back the beloved designs of older versions of Mozilla Firefox.</p>
-							<p>Our mission — to bring back the cleanliness and sleek design of internet browsing. We are bringing back what made Mozilla Firefox set itself apart from its competitors.</p>
-						</vbox>
-					</vbox>
-					<hbox class="pageContentFooter" style="justify-content:flex-end;">
-						<button class="nextButton footerButton styleGreen" onclick="showPage(1);">
-							<html:div class="buttonIcon"></html:div>
-							<span class="buttonLabel">Next</span>
-						</button>
-					</hbox>
-				</vbox>
-			</vbox>
-			
-		</html:div>
-		
-		<!-- SELECT THEME -->
-		
-		<html:div id="page1" class="page" flex="1">
-		
-			<vbox class="pageContent" flex="1">
-				<vbox class="pageContentContainer" flex="1">
-					<vbox class="content" flex="1" style="justify-content: space-between;">
-						<vbox class="pageContentHeader">
-							<h1>choose your style</h1>
-							<p>Echelon has several styles spanning across multiple versions of Firefox. Choose your preferred appearance.</p>
-						</vbox>
-						<hbox class="themeSelectorContainer">
-							<vbox class="styleOptionContainer" flex="1" onclick="setBoolPref(echelonAppearanceNewLogo, false); setIntPref(echelonAppearanceStyle, 0); showPage(2);">
-								<vbox class="styleOptionPreview">
-									<html:div class="styleOptionPreviewImg ff4blue" flex="1"></html:div>
-								</vbox>
-								<hbox class="styleOptionHeader">
-									<h2>Strata</h2>
-								</hbox>
-							</vbox>
-							<vbox class="styleOptionContainer" flex="1" onclick="setBoolPref(echelonAppearanceNewLogo, true); setIntPref(echelonAppearanceStyle, 4); setIntPref(echelonAppearanceHomepageStyle, 3); showPage(4);">
-								<vbox class="styleOptionPreview">
-									<html:div class="styleOptionPreviewImg australisblue" flex="1"></html:div>
-								</vbox>
-								<hbox class="styleOptionHeader">
-									<h2>Australis</h2>
-								</hbox>
-							</vbox>
-						</hbox>
-					</vbox>
-					<hbox class="pageContentFooter">
-						<button class="backButton footerButton styleBlue" onclick="showPage(0);">
-							<html:div class="buttonIcon"></html:div>
-							<span class="buttonLabel">Back</span>
-						</button>
-						<button disabled="true" class="nextButton footerButton styleGreen">
-							<html:div class="buttonIcon"></html:div>
-							<span class="buttonLabel">Next</span>
-						</button>
-					</hbox>
-				</vbox>
-			</vbox>
-			
-		</html:div>
-		
-		<!-- SELECT OS STYLE -->
-		
-		<html:div id="page2" class="page" flex="1">
-		
-			<vbox class="pageContent" flex="1">
-				<vbox class="pageContentContainer" flex="1">
-					<vbox class="content" flex="1" style="justify-content: space-between;">
-						<vbox class="pageContentHeader">
-							<h1>choose your style</h1>
-							<p>Mozilla Firefox had many styles for its theme depending on the user’s operating system.</p>
-						</vbox>
-						<hbox class="themeSelectorContainer">
-							<vbox class="styleOptionContainer" flex="1" onclick="setOSPref('winxp'); showPage(3);">
-								<vbox class="styleOptionPreview">
-									<html:div class="styleOptionPreviewImg ff4xp" flex="1"></html:div>
-								</vbox>
-								<hbox class="styleOptionHeader">
-									<h2>Windows XP</h2>
-								</hbox>
-							</vbox>
-							<vbox class="styleOptionContainer" flex="1" onclick="setOSPref('win7'); showPage(3);">
-								<vbox class="styleOptionPreview">
-									<html:div class="styleOptionPreviewImg ff4blue" flex="1"></html:div>
-								</vbox>
-								<hbox class="styleOptionHeader">
-									<h2>Windows 7</h2>
-								</hbox>
-							</vbox>
-						</hbox>
-					</vbox>
-					<hbox class="pageContentFooter">
-						<button class="backButton footerButton styleBlue" onclick="goBack()">
-							<html:div class="buttonIcon"></html:div>
-							<span class="buttonLabel">Back</span>
-						</button>
-						<button disabled="true" class="nextButton footerButton styleGreen">
-							<html:div class="buttonIcon"></html:div>
-							<span class="buttonLabel">Next</span>
-						</button>
-					</hbox>
-				</vbox>
-			</vbox>
-			
-		</html:div>
-		
-		<!-- SELECT STRATA STYLE -->
-		
-		<html:div id="page3" class="page" flex="1">
-		
-			<vbox class="pageContent" flex="1">
-				<vbox class="pageContentContainer" flex="1">
-					<vbox class="content" flex="1" style="justify-content: space-between;">
-						<vbox class="pageContentHeader">
-							<h1>choose your variation</h1>
-							<p>Strata has had multiple variations during its lifespan. Choose your preferred variation. </p>
-						</vbox>
-						<hbox class="themeSelectorContainer">
-							<vbox class="styleOptionContainer" flex="1" onclick="setIntPref(echelonAppearanceStyle, 0); setIntPref(echelonAppearanceHomepageStyle, 0); showPage(5);">
-								<vbox class="styleOptionPreview">
-									<html:div class="styleOptionPreviewImg ff4bluesmall" flex="1"></html:div>
-								</vbox>
-								<hbox class="styleOptionHeader">
-									<h2>Firefox 4</h2>
-								</hbox>
-							</vbox>
-							<vbox class="styleOptionContainer" flex="1" onclick="setIntPref(echelonAppearanceStyle, 2); setIntPref(echelonAppearanceHomepageStyle, 1); showPage(5);">
-								<vbox class="styleOptionPreview">
-									<html:div class="styleOptionPreviewImg ff10bluesmall" flex="1"></html:div>
-								</vbox>
-								<hbox class="styleOptionHeader">
-									<h2>Firefox 10</h2>
-								</hbox>
-							</vbox>
-							<vbox class="styleOptionContainer" flex="1" onclick="setIntPref(echelonAppearanceStyle, 3); setIntPref(echelonAppearanceHomepageStyle, 2); showPage(5);">
-								<vbox class="styleOptionPreview">
-									<html:div class="styleOptionPreviewImg ff14bluesmall" flex="1"></html:div>
-								</vbox>
-								<hbox class="styleOptionHeader">
-									<h2>Firefox 14+</h2>
-								</hbox>
-							</vbox>
-						</hbox>
-					</vbox>
-					<hbox class="pageContentFooter">
-						<button class="backButton footerButton styleBlue" onclick="goBack()">
-							<html:div class="buttonIcon"></html:div>
-							<span class="buttonLabel">Back</span>
-						</button>
-						<button disabled="true" class="nextButton footerButton styleGreen">
-							<html:div class="buttonIcon"></html:div>
-							<span class="buttonLabel">Next</span>
-						</button>
-					</hbox>
-				</vbox>
-			</vbox>
-			
-		</html:div>
-		
-		<!-- SELECT AUSTRALIS STYLE -->
-		
-		<html:div id="page4" class="page" flex="1">
-		
-			<vbox class="pageContent" flex="1">
-				<vbox class="pageContentContainer" flex="1">
-					<vbox class="content" flex="1" style="justify-content: space-between;">
-						<vbox class="pageContentHeader">
-							<h1>choose your style</h1>
-							<p>Mozilla Firefox had many styles for its theme depending on the user’s operating system.</p>
-						</vbox>
-						<hbox class="themeSelectorContainer smallText">
-							<vbox class="styleOptionContainer" flex="1" onclick="setOSPref('winxp'); showPage(5);">
-								<vbox class="styleOptionPreview">
-									<html:div class="styleOptionPreviewImg australisxp" flex="1"></html:div>
-								</vbox>
-								<hbox class="styleOptionHeader">
-									<h2>Windows XP</h2>
-								</hbox>
-							</vbox>
-							<vbox class="styleOptionContainer" flex="1" onclick="setOSPref('win7'); showPage(5);">
-								<vbox class="styleOptionPreview">	
-									<html:div class="styleOptionPreviewImg australisblue" flex="1"></html:div>
-								</vbox>
-								<hbox class="styleOptionHeader">
-									<h2>Windows 7</h2>
-								</hbox>
-							</vbox>
-							<vbox class="styleOptionContainer" flex="1" onclick="setOSPref('win8'); showPage(5);">
-								<vbox class="styleOptionPreview">
-									<html:div class="styleOptionPreviewImg australisnative" flex="1"></html:div>
-								</vbox>
-								<hbox class="styleOptionHeader">
-									<h2>Windows 8</h2>
-								</hbox>
-							</vbox>
-							<vbox class="styleOptionContainer" flex="1" onclick="setOSPref('win10'); showPage(5);">
-								<vbox class="styleOptionPreview">
-									<html:div class="styleOptionPreviewImg australisWindows10" flex="1"></html:div>
-								</vbox>
-								<hbox class="styleOptionHeader">
-									<h2>Windows 10</h2>
-								</hbox>
-							</vbox>
-						</hbox>
-					</vbox>
-					<hbox class="pageContentFooter">
-						<button class="backButton footerButton styleBlue" onclick="goBack()">
-							<html:div class="buttonIcon"></html:div>
-							<span class="buttonLabel">Back</span>
-						</button>
-						<button disabled="true" class="nextButton footerButton styleGreen">
-							<html:div class="buttonIcon"></html:div>
-							<span class="buttonLabel">Next</span>
-						</button>
-					</hbox>
-				</vbox>
-			</vbox>
-			
-		</html:div>
-		
-		<!-- END SCREEN -->
-		
-		<html:div id="page5" class="page" flex="1">
-			
-				<vbox class="pageContent" flex="1">
-					<vbox class="pageContentContainer endScreen" flex="1">
-						<vbox class="content" flex="1">
-							<vbox class="pageContentHeader">
-								<h1>thanks!</h1>
-								<vbox class="welcomeText">
-									<p>Thank you for choosing Echelon!</p>
-									<p>Click "Finish" to begin using Echelon.</p>
-								</vbox>
-							</vbox>
-						</vbox>
-						<hbox class="pageContentFooter">
-							<button class="backButton footerButton styleBlue close" onclick="goBack()">
-								<html:div class="buttonIcon"></html:div>
-								<span class="buttonLabel">Back</span>
-							</button>
-							<checkbox id="reset-layout" label="Refresh toolbox layout (recommended)" flex="1" checked="true"/>
-							<button id="finishButton" class="restartButton nextButton footerButton styleGreen">
-								<html:div class="buttonIcon"></html:div>
-								<span class="buttonLabel">Finish</span>
-							</button>
-						</hbox>
-					</vbox>
-				</vbox>
-				
-		</html:div>
-		
-	</hbox>
+	<head>
+		<html:link rel="shortcut icon" href="chrome://userchrome/content/windows/options/images/icon.png"/>
+	</head>
 
-	<script src="chrome://userchrome/content/windows/wizard/script.js" type="text/javascript"></script>
+	<html:body flex="1">
+        <vbox class="modal-container" hidden="true">
+            <vbox class="modal" data-modal="restart-needed">
+                <vbox class="page-header">
+                    <h2 class="restart-browser-label">do you want to restart your browser?</h2>
+                    <html:div class="header-description">In order for Echelon to work properly, you must restart your browser. This simple step ensures a seamless experience with Echelon features.</html:div>
+                </vbox>
+                <hbox class="page-footer" flex="1">
+                    <button class="page-footer-button restart-later-button" label="Restart Later"></button>
+                    <button class="page-footer-button restart-now-button" default="true" label="Restart Now"></button>
+                </hbox>
+            </vbox>
+        </vbox>
+		<hbox flex="1">
+            <vbox id="echelon-wizard-close-container">
+                <hbox class="echelon-wizard-titlebar-buttons-container">
+                    <hbox class="echelon-wizard-titlebar-buttons">
+                        <toolbarbutton class="echelon-wizard-titlebar-close">
+                        </toolbarbutton>
+                    </hbox>
+                </hbox>
+            </vbox>
+            <vbox id="echelon-wizard-header">
+                <image id="echelon-logo" />
+                <vbox class="wizard-progress" align="center">
+                    <html:div class="wizard-progress-text"><html:b>0</html:b>/<html:div>0</html:div></html:div>
+                    <hbox class="wizard-progress-bar-container">
+                        <spacer class="wizard-progress-bar" />
+                        <spacer class="wizard-remaining-bar" />
+                    </hbox>
+                </vbox>
+            </vbox>
+            <hbox id="echelon-wizard-page" flex="1">
+                <vbox id="page1" class="page" flex="1">
+                    <vbox class="page-container" flex="1">
+                        <vbox class="page-header">
+                            <h1>make echelon yours</h1>
+                            <html:div class="header-description">Echelon has several styles spanning across multiple versions of Firefox. Choose your preferred appearance.</html:div>
+                        </vbox>
+                        <vbox class="page-content" flex="1">
+                            <radiogroup preference="Echelon.Appearance.Preset" class="card-container" id="preset-container" hardcode-blue="true">
 
-</window>
+                            </radiogroup>
+                        </vbox>
+                    </vbox>
+                </vbox>
+                <vbox id="page2" class="page" flex="1">
+                    <vbox class="page-container" flex="1">
+                        <vbox class="page-header">
+                            <h1>choose a system style</h1>
+                            <html:div class="header-description">Firefox had different appearances depending on the operating system. Select a preferred system style.</html:div>
+                        </vbox>
+                        <vbox class="page-content" flex="1">
+                            <radiogroup preference="Echelon.Appearance.systemStyle" type="string" class="card-container" id="system-style-container" hardcode-blue="true">
+
+                            </radiogroup>
+                        </vbox>
+                    </vbox>
+                </vbox>
+                <vbox id="page3" class="page finish" flex="1">
+                    <vbox class="page-container" flex="1">
+                        <vbox class="page-header">
+                            <h1>thank you for choosing echelon!</h1>
+                            <html:div class="header-description">You can access Echelon Options by clicking the application menu or by right clicking the toolbar. Click the finish button to begin using Echelon.</html:div>
+                        </vbox>
+                        <vbox class="page-content" flex="1">
+
+                        </vbox>
+                    </vbox>
+                </vbox>
+            </hbox>
+            <vbox id="echelon-wizard-finish-container">
+                <toolbarbutton class="echelon-wizard-finish-button">
+                    <image class="toolbarbutton-image" />
+                    <label class="toolbarbutton-text" crop="end" flex="1" hidden="true"></label>
+                </toolbarbutton>
+            </vbox>
+		</hbox>
+	</html:body>
+
+    <script src="chrome://userchrome/content/framework/apathum/scripts/modal.js" type="text/javascript"></script>
+	<script src="chrome://userchrome/content/windows/wizard/wizard.js" type="text/javascript"></script>
+</html>

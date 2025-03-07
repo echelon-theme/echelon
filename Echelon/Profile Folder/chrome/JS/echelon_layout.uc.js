@@ -15,16 +15,35 @@ let g_echelonLayoutManager;
 		
 		async init()
 		{
-			this.initTabsOnTop();
-			
 			let toolboxRoot = await waitForElement("#navigator-toolbox");
 			toolboxRoot.addEventListener("customizationchange", this);
 			toolboxRoot.addEventListener("aftercustomization", this);
+			this.getFogPositionalValues();
+			this.initURLBarWidth();
 			this.refreshToolboxLayout();
 			this.hookTabArrowScrollbox();
 
+			this.titlebarElem = document.getElementById("titlebar");
+
+			// add back titlebar element if removed
+			if (!this.titlebarElem)
+			{
+				this.titlebarElem = document.createXULElement("vbox");
+				this.titlebarElem.id = "titlebar";
+	
+				toolboxRoot.insertBefore(this.titlebarElem, toolboxRoot.firstChild);
+				this.titlebarElem.appendChild(document.querySelector("#toolbar-menubar"));
+				this.titlebarElem.appendChild(document.querySelector("#TabsToolbar"));
+			}
+			
+			this.titlebarContent = document.createXULElement("hbox");
+			this.titlebarContent.id = "titlebar-content";
+			this.titlebarElem.insertBefore(this.titlebarContent, this.titlebarElem.firstChild);
+
 			let tabsBox = await waitForElement("#tabbrowser-tabs");
 			tabsBox.addEventListener("TabSelect", this.onTabSwitch.bind(this));
+
+			this.initTabsOnTop();
 		}
 		
 		initTabsOnTop()
@@ -73,6 +92,8 @@ let g_echelonLayoutManager;
 			if (style < ECHELON_LAYOUT_AUSTRALIS || state)
 			{
 				let tabsContainer = document.querySelector("#TabsToolbar");
+				let menubarContainer = document.querySelector("#toolbar-menubar");
+				document.querySelector("#titlebar").appendChild(menubarContainer);
 				
 				if (!tabsContainer)
 				{
@@ -150,6 +171,46 @@ let g_echelonLayoutManager;
 					Array.from(reloadButtonEl.children).forEach(elm => elm.classList.remove("unified"));
 				}
 			}
+
+			// Update back/forward button
+			let backButtonel = document.querySelector("#back-button");
+			let forwardButtonEl;
+			if (forwardButtonEl = document.querySelector("#forward-button"))
+			{
+				// We need to figure out what the previous element is as well:
+				let nextEl = null;
+				
+				if (forwardButtonEl.parentNode?.nodeName == "toolbarpaletteitem")
+				{
+					// Customise mode is active, so we need to hack around to resolve
+					// the non-wrapped previous element.
+					nextEl = forwardButtonEl.parentNode.nextSibling?.children[0];
+				}
+				else
+				{
+					nextEl = forwardButtonEl.nextSibling;
+				}
+				
+				if (nextEl?.id == "urlbar-container")
+				{
+					nextEl.classList.add("unified-forward-button");
+
+					backButtonel.classList.add("unified-with-urlbar");
+					forwardButtonEl.classList.add("unified-with-urlbar");
+					Array.from(forwardButtonEl.children).forEach(elm => elm.classList.add("unified"));
+					
+					this.urlbarEl = nextEl;
+				}
+				else
+				{
+					// Previous element is not guaranteed to exist.
+					this.urlbarEl?.classList.remove("unified-forward-button");
+					
+					backButtonel.classList.remove("unified-with-urlbar");
+					forwardButtonEl.classList.remove("unified-with-urlbar");
+					Array.from(forwardButtonEl.children).forEach(elm => elm.classList.remove("unified"));
+				}
+			}
 		}
 		
 		handleEvent(event)
@@ -216,6 +277,80 @@ let g_echelonLayoutManager;
 				ensureElementIsVisible_orig.apply(arrowScrollbox, arguments);
 			};
 		}
+
+		/**
+		 * Appends a XUL element inside of the URLBar Container.
+		 * 
+		 * Starting from I believe 133, the URLBar got changed from an
+		 * XUL element to an HTML element:
+		 * https://github.com/mozilla/gecko-dev/commit/22d599d1607cf798100f87e1b25e3e4f7e247f87
+		 * 
+		 * This causes the width of it to be fucked. The fucker knew about
+		 * this too and added extra code to manually add in the width. This
+		 * wouldn't be a problem until it was time in adding the Firefox 10
+		 * style and the unified URLBar.
+		 * 
+		 * The idea is to add a XUL element inside of the URLBar container
+		 * With similar unified styling as the actual URLBar and get the width
+		 * of the element and set it to the real URLBar element.
+		 */
+		initURLBarWidth()
+		{
+			let toolbar = gURLBar.textbox.closest("toolbar");
+
+			if (toolbar) {
+				let urlbar = gURLBar.textbox;
+				let urlbarContainer = urlbar.parentElement;
+
+				// Check if URLBar isn't a XUL element
+				if (urlbar.nodeName != "hbox") {
+					this.echelonURLBarElem = document.createXULElement("hbox");
+					this.echelonURLBarElem.id = "echelon-urlbar-positioning";
+					this.echelonURLBarElem.setAttribute("flex", "1");
+
+					urlbarContainer.insertBefore(this.echelonURLBarElem, urlbarContainer.lastChild);
+
+					let echelonURLBarObserver = new ResizeObserver(([entry]) => {
+						gURLBar.textbox.style.setProperty(
+							"--urlbar-echelon-width",
+							(entry.borderBoxSize[0].inlineSize) + "px"
+						);
+					});
+
+					// Observer the sizing of the custom element.
+					echelonURLBarObserver.observe(this.echelonURLBarElem);
+
+					// add attribute for styling purposes
+					if (this.echelonURLBarElem) {
+						urlbar.setAttribute("echelon-modified", "true");
+						urlbar.querySelector("#urlbar-background").setAttribute("echelon-modified", "true");
+					}
+				}
+			}
+		}
+
+		/**
+		 * For some whatever reason on a version of Firefox after 115, z-index is bugged and
+		 * cannot fix the overlaying of the Tabs Toolbar and Navigation Toolbar how it originally did
+		 * in Firefox 29, causing the Tabs to have a 2px bottom border, and having the fog effect
+		 * show above the Navigation Toolbar, too hard to explain honestly
+		 */
+		async getFogPositionalValues()
+		{
+			let titlebarElem = await waitForElement("#titlebar");
+			let tabsToolbar = await waitForElement("#TabsToolbar");
+			let navigatorToolbox = await waitForElement("#navigator-toolbox");
+
+			let fogObserver = new ResizeObserver(([entry]) => {
+				console.log(entry);
+				navigatorToolbox.style.setProperty(
+					"--fog-position",
+					Math.round(entry.contentRect.bottom - (tabsToolbar.getBoundingClientRect().height / 2)) + "px"
+				);
+			});
+
+			fogObserver.observe(titlebarElem);
+		}
 	}
 	
 	g_echelonLayoutManager = new LayoutManager;
@@ -251,5 +386,42 @@ let g_echelonLayoutManager;
 			}
 			contextMenuItem.parentNode.addEventListener("popupshowing", g_echelonLayoutManager.onCustomizePopupShowing);
 		});
+	});
+
+	waitForElement("#titlebar").then(e => {
+		waitForElement("#titlebar-content").then(e => {
+			let echelonTitlebarButtonBox = window.MozXULElement.parseXULToFragment(`
+				<spacer id="titlebar-spacer" flex="1"/>
+				<hbox class="titlebar-buttonbox-container echelon-custom-buttonbox" skipintoolbarset="true">
+					<hbox class="titlebar-buttonbox">
+						<toolbarbutton class="titlebar-button titlebar-min" oncommand="window.minimize();" data-l10n-id="browser-window-minimize-button" tooltiptext="Minimize"></toolbarbutton>
+						<toolbarbutton class="titlebar-button titlebar-max" oncommand="window.maximize();" data-l10n-id="browser-window-maximize-button" tooltiptext="Maximize"></toolbarbutton>
+						<toolbarbutton class="titlebar-button titlebar-restore" oncommand="window.fullScreen ? BrowserCommands.fullScreen() : window.restore();" data-l10n-id="browser-window-restore-down-button" tooltiptext="Restore Down"></toolbarbutton>
+						<toolbarbutton class="titlebar-button titlebar-close" command="cmd_closeWindow" data-l10n-id="browser-window-close-button" tooltiptext="Close"></toolbarbutton>
+					</hbox>
+				</hbox>
+			`);
+			e.appendChild(echelonTitlebarButtonBox);
+		});
+	});
+
+	waitForElement(".titlebar-buttonbox-container").then(e => {
+		for (const elem of document.querySelectorAll(".titlebar-buttonbox-container")) {
+			let echelonPrivateBrowsing = window.MozXULElement.parseXULToFragment(`
+				<hbox id="private-browsing-indicator-titlebar">
+					<hbox class="private-browsing-indicator"/>
+				</hbox>
+			`);
+			elem.insertBefore(echelonPrivateBrowsing, elem.querySelector(".titlebar-buttonbox"));
+		};
+	});
+
+	waitForElement(".private-browsing-indicator-with-label").then(e => {
+		for (const elem of document.querySelectorAll(".private-browsing-indicator-with-label")) {
+			let echelonPrivateBrowsing = window.MozXULElement.parseXULToFragment(`
+				<hbox class="private-browsing-indicator"/>
+			`);
+			elem.replaceWith(echelonPrivateBrowsing);
+		}
 	});
 }

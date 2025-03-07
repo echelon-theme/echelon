@@ -1,0 +1,7 @@
+#private-browsing-indicator-titlebar > .private-browsing-indicator {
+    background-image: url("chrome://echelon/content/firefox-29/privatebrowsing/privatebrowsing-mask-titlebar.png") !important;
+}
+
+#TabsToolbar > .private-browsing-indicator {
+    background-image: url("chrome://echelon/content/firefox-29/privatebrowsing/privatebrowsing-mask-tabstrip.png") !important;
+}

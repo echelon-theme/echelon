@@ -1,0 +1,160 @@
+.menulist-container {
+	margin-block-end: 10px;
+
+    & > label {
+        margin: 0;
+    }
+}
+
+.menulist {
+	display: flex;
+	align-items: center;
+	border: 1px solid;
+	border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25);
+	border-radius: 2px;
+	background-color: hsla(210,48%,96%,0);
+	background-image: linear-gradient(to bottom, hsla(0,0%,100%,.6), hsla(0,0%,100%,.1));
+	background-clip: padding-box;
+	box-shadow: 0 1px hsla(0,0%,100%,.3) inset, 0 1px hsla(210,54%,20%,.03), 0 0 2px hsla(210,54%,20%,.1);
+	padding: 2px 6px;
+	transition-property: background-color, border-color, box-shadow;
+	transition-duration: 150ms;
+	cursor: pointer;
+	max-width: 350px;
+	max-height: 20px;
+
+	appearance: none;
+	box-sizing: border-box;
+	flex: 1;
+
+    &:hover {
+        background-color: hsla(210,48%,96%,.75);
+        border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4);
+    }
+    
+    &[open] {
+        background-image: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1));
+        background-color: hsla(210, 33%, 93%, 0.15);
+        box-shadow: 0 1px 1px hsla(210,54%,20%,.1) inset, 0 0 1px hsla(210,54%,20%,.2) inset, 0 1px 0 hsla(210,54%,20%,0), 0 0 2px hsla(210,54%,20%,0);
+        border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4);
+    }
+
+    & > label {
+        flex: 1;
+        cursor: inherit;
+        font-size: 8pt;
+        font-weight: bold;
+        color: #1F364C;
+        text-transform: uppercase;
+        text-shadow: 0 1px 0 white;
+        text-align: left;
+        cursor: inherit;
+    }
+
+    .dropdown-marker {
+        width: 9px;
+        height: 7px;
+        list-style-image: url("chrome://userchrome/content/framework/apathum/images/menulist/menulist-dropdown-arrow.png");
+        margin-inline: 6px;
+    }     
+
+    .list {
+        position: fixed;
+        left: 0;
+        top: 0;
+        margin-block-start: 3px;
+        z-index: 100;	
+    
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275), ease-out !important;
+        transition-duration: 550ms, 100ms !important;
+        transition-property: transform, opacity !important;
+
+        .list-arrow {
+            width: 100%;
+            height: 8px;
+            padding-inline: 10px;
+            margin-block-end: -1px;
+            z-index: 1;
+            justify-content: flex-end;
+    
+            .list-arrow-image {
+                width: 15px;
+                height: 8px;
+                list-style-image: url("chrome://userchrome/content/framework/apathum/images/menulist/menulist-arrow.png");
+            }
+        }   
+
+        .list-container {
+            padding: 8px;
+            background-color: #F2F4F7;
+            background-clip: padding-box;
+            border: 1px solid rgba(23, 51, 79, 0.42);
+            box-shadow: 0px 1px 3px rgba(23, 51, 79, 0.25), 0px 0px 6px rgba(23, 51, 79, 0.5);
+            border-radius: 3px;
+
+            .item {
+                min-width: 200px;
+                min-height: 44px;
+                padding: 6px;
+                font-size: 15px;
+                align-items: center;
+                color: #4B5964;
+                border: 1px solid;
+                border-color: hsla(210,54%,20%,0) hsla(210,54%,20%,0) hsla(210,54%,20%,.0);
+                border-radius: 2px;
+                background-color: hsla(210,48%,96%,0);
+                background-image: linear-gradient(to bottom, hsla(0,0%,100%,0), hsla(0,0%,100%,0));
+                background-clip: padding-box;
+                text-shadow: 0 1px 0 white;
+                box-shadow: 0 1px hsla(0,0%,100%,0) inset, 0 1px hsla(210,54%,20%,0), 0 0 2px hsla(210,54%,20%,0);
+                transition-property: background-color, border-color, box-shadow;
+                transition-duration: 150ms;
+
+                &:not(:last-of-type) {
+                    margin-block-end: 4px;
+                }
+
+                &:hover {
+                    border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25);
+                    background-color: hsla(210,48%,96%,0);
+                    background-image: linear-gradient(to bottom, hsla(0,0%,100%,.6), hsla(0,0%,100%,.1));
+                    box-shadow: 0 1px hsla(0,0%,100%,.3) inset, 0 1px hsla(210,54%,20%,.03), 0 0 2px hsla(210,54%,20%,.1);
+                }
+
+                &:hover:active,
+                &[selected] {
+                    transition: none;
+                    background-image: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1));
+                    background-color: hsla(216, 2%, 45%, 0.15);
+                    box-shadow: 0 1px 1px hsla(210,54%,20%,.1) inset, 0 0 1px hsla(210,54%,20%,.2) inset, 0 1px 0 hsla(210,54%,20%,0), 0 0 2px hsla(210,54%,20%,0);
+                    border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4);
+                }
+
+                .item-iconic {
+                    .item-iconic-image {
+                        width: 32px;
+                        height: 32px;
+                        margin-inline-end: 10px;
+                    }
+
+                    .item-iconic-text {
+                        cursor: inherit;
+                    }
+                }
+            }
+            
+        }        
+    }
+
+    &:not([open]) .list {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px) !important;
+    }
+
+    &[open] .list {
+        opacity: 1;
+        transform: none;
+        pointer-events: all;
+    }
+}

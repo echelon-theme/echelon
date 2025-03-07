@@ -1,46 +1,93 @@
 // ==UserScript==
 // @name			Echelon :: System Metrics
 // @description 	Gets system metrics and assigns them to CSS variables.
-// @author			AngelBruni, Travis
+// @author			Travis
 // @include			main
 // ==/UserScript==
 
 {
-    var { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");
+    waitForElement(".titlebar-buttonbox").then((e) => {
+        function setButtonBoxMetrics() {
 
-    window.addEventListener("load", function() {
+            document.documentElement.style.removeProperty(`--buttonbox-width`);
+            document.documentElement.style.removeProperty(`--buttonbox-height`);
+
+            document.documentElement.style.setProperty(
+                `--buttonbox-width`,
+                `${e.clientWidth}px`
+            );
+            document.documentElement.style.setProperty(
+                `--buttonbox-height`,
+                `${e.clientHeight}px`
+            );
+        }
+        
+        setButtonBoxMetrics();
+        let observer = new MutationObserver(setButtonBoxMetrics);
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ["sizemode"] });
+    });
+
+    function GetSystemColor(aValue) {
         if (Services.appinfo.OS == "WINNT")
         {
+            var { ctypes } = ChromeUtils.importESModule("resource://gre/modules/ctypes.sys.mjs");
+
             let user32 = ctypes.open("user32.dll");
-            let GetSystemMetrics = user32.declare(
-                "GetSystemMetrics",
+            let GetSysColor = user32.declare(
+                "GetSysColor",
                 ctypes.winapi_abi,
                 ctypes.int32_t,
                 ctypes.int32_t
             );
 
-            // SM_CYPCAPTION
-            let titlebarHeight = GetSystemMetrics(4) - 1;
+            let coloref = GetSysColor(aValue);
 
-            // SM_CXPADDEDBORDER
-            let paddedBorder = GetSystemMetrics(92);
-            if (paddedBorder > 0)
-            {
-                paddedBorder--;
-            }
+            let r = coloref & 0xFF;
+            let g = (coloref >> 8) & 0xFF;
+            let b = (coloref >> 16) & 0xFF;
 
-            // CAPTION BUTTON MASK SIZE
-            let captionMaskSize = document.querySelector(".titlebar-buttonbox-container").clientWidth;
+            user32.close();
 
-            let style = document.createElement("style");
-            style.innerHTML = `
-                :root {
-                    --titlebar-height: ${titlebarHeight}px;
-                    --padded-border: ${paddedBorder}px;
-                    --caption-mask-width: ${captionMaskSize}px;
-                }
-            `;
-            document.head.appendChild(style);
+            return `rgb(${r}, ${g}, ${b})`;
         }
-    });
+        else {
+            // fallbacks
+            switch (aValue) {
+                case "9":
+                    return "CaptionText"
+                case "19":
+                    return "InactiveCaptionText"
+                default:
+                    return "rgb(0, 0, 0)"
+            }
+        }
+    }
+
+    function SetSystemColors() {
+        if (Services.appinfo.OS == "WINNT")
+        {
+            document.documentElement.style.removeProperty(`--captiontext`);
+            document.documentElement.style.removeProperty(`--inactivecaptiontext`);
+
+            document.documentElement.style.setProperty(
+                `--captiontext`,
+                GetSystemColor(9)
+            );
+            document.documentElement.style.setProperty(
+                `--inactivecaptiontext`,
+                GetSystemColor(19)
+            );
+        }
+    }
+
+    window.addEventListener("load", SetSystemColors);
+
+    let WM_THEMECHANGED = {
+        observe(aSubject, aTopic, aData)
+        {
+            SetSystemColors();
+        }
+    };
+    
+    Services.obs.addObserver(WM_THEMECHANGED, "internal-look-and-feel-changed");
 }

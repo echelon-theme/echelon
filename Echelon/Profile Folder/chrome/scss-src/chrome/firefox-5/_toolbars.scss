@@ -1,0 +1,12 @@
+& {
+    --toolbarbutton-border-radius: 3.5px !important;
+    --toolbarbutton-shadow-normal: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset !important;
+}
+
+&:not([echelon-style-5]) {
+    #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
+        &#back-button {
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3) !important;
+        }
+    }
+}

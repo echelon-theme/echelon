@@ -1,0 +1,8 @@
+@import "../firefox-29/tweaks/win8/icons";
+
+& {
+    // --toolbarbutton-icon-fill: light-dark(rgb(76, 76, 76), rgb(255, 255, 255)) !important;
+    // --toolbarbutton-icon-fill-attention: light-dark(rgb(22, 125, 227), rgb(23, 126, 229)) !important;
+    --toolbarbutton-icon-fill: rgb(76, 76, 76) !important;
+    --toolbarbutton-icon-fill-attention: rgb(22, 125, 227) !important;
+}
