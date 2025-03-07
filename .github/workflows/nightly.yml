@@ -41,6 +41,13 @@ jobs:
           calculatedSha=$(git rev-parse --short ${{ github.sha }})
           echo "COMMIT_SHORT_SHA=$calculatedSha" >> $GITHUB_ENV
 
+          
+      - name: Extract commit number
+        id: extract_rev
+        run: |
+          calculatedBuild=$(git rev-list --count ${{ github.sha }})
+          echo "COMMIT_NUMBER=$calculatedBuild" >> $GITHUB_ENV
+        
       - name: Extract branch name
         shell: bash
         run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
@@ -50,8 +57,9 @@ jobs:
         run: |
           rm -f Echelon/Profile\ Folder/chrome/version.json
           echo '{
-            "version": "1.0",
-            "build": "${{ env.COMMIT_SHORT_SHA }}",
+            "version": "2.0b1",
+            "build": "${{ env.COMMIT_NUMBER }}",
+            "hash": "${{ env.COMMIT_SHORT_SHA }}",
             "channel": "nightly",
             "branch": "${{ steps.extract_branch.outputs.branch }}"
           }' > Echelon/Profile\ Folder/chrome/version.json
