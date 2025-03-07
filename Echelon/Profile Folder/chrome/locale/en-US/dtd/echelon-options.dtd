@@ -42,7 +42,7 @@
 <!ENTITY behavior.branding.newlogo "Use new Browser Logo">
 
 <!ENTITY behavior.appearance.tabsOnTop "Tabs on Top">
-<!ENTITY behavior.appearance.hideTabManager "Hide Tab Manager">
+<!ENTITY behavior.appearance.hideTabManager "Show Tab Manager">
 <!ENTITY behavior.appearance.hideAddons "Hide unified extensions button (not recomended)">
 <!ENTITY behavior.appearance.hideToolbar "Hide Toolbars on Browser Pages">
 

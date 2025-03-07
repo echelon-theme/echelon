@@ -57,8 +57,9 @@
     &[lwtheme-image] {
         #tabbrowser-tabs {
             &:not([movingtab]) {
-                .tab-background {
+                .tab-background {                    
                     &[selected] {
+
                         .tab-background-middle {
                             background-color: transparent !important;
                             background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-active-middle.png"),
@@ -79,7 +80,6 @@
                                 background-repeat: repeat-x, no-repeat !important;
                                 background-size: auto 100%, auto auto !important;
                                 background-attachment: scroll, fixed !important;
-                                mask-size: unset !important;
                             }
                         }
                     }

@@ -127,6 +127,8 @@
             }
 
             &[selected] {
+                background: none !important;
+                
                 .tab-background-middle {
                     background-clip: padding-box, padding-box, content-box !important; 
                     background-color: var(--toolbar-background-color) !important;

@@ -428,13 +428,13 @@
 // Toolbar borders
 @media (-moz-windows-compositor) {
     :root[sizemode="normal"] {
-        &:not([echelon-system-style="winxp"], [echelon-system-style="win10"], [lwtheme-image]) {
+        &:not([echelon-system-style="winxp"], [echelon-system-style="win10"]) {
             #navigator-toolbox::after {
                 border-inline: 1px solid var(--toolbar-border-color) !important;
                 background-clip: padding-box !important;
             }
 
-            &[tabs-on-top="true"] {
+            &:not([lwtheme])[tabs-on-top="true"] {
                 #nav-bar {
                     border-inline: 1px solid var(--toolbar-border-color) !important;
                     border-top-left-radius: 3.5px !important;
@@ -449,9 +449,11 @@
                 }
             }
 
-            #PersonalToolbar {
-                border-inline: 1px solid var(--toolbar-border-color) !important;
-                background-clip: padding-box !important;
+            &:not([lwtheme]) {
+                #PersonalToolbar {
+                    border-inline: 1px solid var(--toolbar-border-color) !important;
+                    background-clip: padding-box !important;
+                }
             }
 
             #browser, #customization-container {

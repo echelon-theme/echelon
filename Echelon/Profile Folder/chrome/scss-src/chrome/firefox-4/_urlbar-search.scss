@@ -92,6 +92,7 @@
         background-color: transparent !important;
         border: none !important;
         width: 13px !important;
+        height: 100% !important;
         @include set-background("firefox-4/mainwindow-dropdown-arrow.png");
         background-repeat: no-repeat !important;
         background-position-y: center !important;
