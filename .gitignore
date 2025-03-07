@@ -2,7 +2,8 @@
 /**/package-lock.json
 /**/chrome/_chrome_user.css
 /**/chrome/_content_user.css
-/**/chrome/sass.bat
+/**/chrome/compile.bat
+/**/chrome/watch.bat
 /**/chrome/src/
 .DS_Store
 

@@ -1,0 +1,53 @@
+<!ENTITY window.title "Echelon Options">
+<!ENTITY window.restartRequired "Restart required">
+
+<!ENTITY window.buttons.ok "OK">
+<!ENTITY window.buttons.cancel "Cancel">
+<!ENTITY window.buttons.apply "Apply">
+<!ENTITY window.buttons.apply.accesskey "A">
+
+<!ENTITY tabs.appearance "General">
+<!ENTITY tabs.behavior "Behavior">
+<!ENTITY tabs.nativeControls "Native Controls">
+<!ENTITY tabs.about "About Echelon">
+<!ENTITY tabs.debug "Debug">
+
+<!ENTITY requires.restart "Requires Restart">
+
+<!ENTITY appearance.header "Customize your Echelon">
+
+<!ENTITY appearance.text "Appearance">
+
+<!ENTITY general.appearance.presets "Echelon Presets">
+
+<!ENTITY general.appearance.os "System Style">
+<!ENTITY general.appearance.os.default "Default">
+<!ENTITY general.appearance.os.xp "Windows XP">
+<!ENTITY general.appearance.os.eight "Windows 8">
+<!ENTITY general.appearance.os.ten "Windows 10">
+
+<!ENTITY general.appearance.blue "Use Aero blue style">
+<!ENTITY general.appearance.homepage "Homepage">
+<!ENTITY general.appearance.override "Override Echelon Presets">
+
+<!ENTITY behavior.text "Behavior">
+
+<!ENTITY behavior.branding.browser "Browser">
+<!ENTITY behavior.branding.branding "Branding">
+<!ENTITY behavior.branding.default "Default">
+<!ENTITY behavior.branding.echelon "Echelon">
+<!ENTITY behavior.branding.firefox "Firefox">
+<!ENTITY behavior.branding.aurora "Aurora">
+<!ENTITY behavior.branding.nightly "Nightly">
+<!ENTITY behavior.branding.newlogo "Use new Browser Logo">
+
+<!ENTITY behavior.appearance.tabsOnTop "Tabs on Top">
+<!ENTITY behavior.appearance.hideTabManager "Hide Tab Manager">
+<!ENTITY behavior.appearance.hideAddons "Hide unified extensions button (not recomended)">
+<!ENTITY behavior.appearance.hideToolbar "Hide Toolbars on Browser Pages">
+
+<!ENTITY behavior.homepage.disableSnippets "Disable custom homepage snippets">
+
+<!ENTITY nativeControls.text "Native Controls">
+
+<!ENTITY about.text "About Echelon">

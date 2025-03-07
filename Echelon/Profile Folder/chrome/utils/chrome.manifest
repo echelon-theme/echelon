@@ -4,8 +4,10 @@ content modules ../JS/modules/
 
 override chrome://global/skin/arrowscrollbox.css                  ../assets/override/global/skin/arrowscrollbox.css
 override chrome://global/content/elements/panel.js                      ../assets/override/widgets/panel.js
+override chrome://global/content/commonDialog.xhtml ../windows/commonDialog/commonDialog.xhtml
 
 locale echelon en-US ../locale/en-US/
+locale echelon ja    ../locale/ja/
 
 skin	userstyles	classic/1.0	../CSS/
 content userchrome ../ contentaccessible=yes
