@@ -45,21 +45,31 @@
         border-block-end: 1px solid hsla(0, 0%, 100%, 0.5) !important;
 
         #appmenu-button {
-            height: calc(var(--buttonbox-height) - 1px) !important;
+            height: calc(100% - 1px) !important;
             border-bottom-left-radius: 3px !important;
             border-bottom-right-radius: 3px !important;
         }
     }
 
-    &[sizemode="normal"] {
+    &:not([lwtheme])[sizemode="normal"] {
         #appmenu-button-container {
             margin-block-start: 1px !important;
         }
     }
 
+    &[sizemode="normal"] {
+        #appmenu-button-container {
+            margin-block-start: -1px !important;
+        }
+
+        .titlebar-buttonbox-container {
+            margin-block-start: -2px !important;
+        }
+    }
+
     &[sizemode="maximized"] {
         #appmenu-button {
-            height: calc(var(--buttonbox-height) - 8px) !important;
+            height: calc(100% - 8px) !important;
         }
     }
 }

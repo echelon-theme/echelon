@@ -1,5 +1,7 @@
 & {
     @include toolbar-icons((    
+        "back-button": "firefox-29/toolbar/back-large.png",
+        "back-button:not(.unified-with-urlbar)": "firefox-29/toolbar/back.png",
         "bookmarks-menu-button": "firefox-29/toolbar/bookmarksMenu.png",
         "bookmarks-menu-button[starred] .toolbarbutton-menubutton-button": "firefox-29/toolbar/bookmark.png",
         "bookmarks-menu-button .toolbarbutton-menubutton-button": "firefox-29/toolbar/bookmark-hollow.png",

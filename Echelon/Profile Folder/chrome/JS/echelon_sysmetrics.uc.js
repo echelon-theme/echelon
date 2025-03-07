@@ -6,27 +6,6 @@
 // ==/UserScript==
 
 {
-    waitForElement(".titlebar-buttonbox").then((e) => {
-        function setButtonBoxMetrics() {
-
-            document.documentElement.style.removeProperty(`--buttonbox-width`);
-            document.documentElement.style.removeProperty(`--buttonbox-height`);
-
-            document.documentElement.style.setProperty(
-                `--buttonbox-width`,
-                `${e.clientWidth}px`
-            );
-            document.documentElement.style.setProperty(
-                `--buttonbox-height`,
-                `${e.clientHeight}px`
-            );
-        }
-        
-        setButtonBoxMetrics();
-        let observer = new MutationObserver(setButtonBoxMetrics);
-        observer.observe(document.documentElement, { attributes: true, attributeFilter: ["sizemode"] });
-    });
-
     function GetSystemColor(aValue) {
         if (Services.appinfo.OS == "WINNT")
         {
