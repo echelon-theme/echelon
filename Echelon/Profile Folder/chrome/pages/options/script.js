@@ -475,7 +475,6 @@ async function loadVersion() {
 }
 document.addEventListener("DOMContentLoaded", loadVersion);
 
-
 let windowRootDocument = windowRoot.ownerGlobal.document.documentElement;
 
 function setLWTbg() {

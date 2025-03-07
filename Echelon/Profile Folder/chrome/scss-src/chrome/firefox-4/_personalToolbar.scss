@@ -1,6 +1,10 @@
 #PersonalToolbar {
     padding-inline: 0 !important;
 
+    #personal-toolbar-empty {
+        visibility: collapse !important;
+    }
+
     :root:not([tabs-on-top="true"], [echelon-system-style="winxp"]) & {
         border-block-start: 1px solid var(--toolbar-border-color) !important;
         border-top-left-radius: 3.5px !important;

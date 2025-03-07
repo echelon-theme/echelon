@@ -196,75 +196,79 @@
 							</hbox>
 						</hbox>
 						<vbox class="about-content" flex="1">
-							<vbox class="about-content-section">
-								<stack class="about-content-header">
-									<hbox class="about-content-header-background">
-										<hbox class="about-content-header-background-left"></hbox>
-										<hbox class="about-content-header-background-middle" flex="1"></hbox>
-										<hbox class="about-content-header-background-right"></hbox>
-									</hbox>
-									<label class="about-content-header-text" value="Echelon" />
-								</stack>
-								<vbox class="about-section-content">
-									<vbox class="about-section">
-										<html:b class="about-section-header">Version</html:b>
-										<label id="version-short" class="about-section-text"></label>
-									</vbox>
-									<vbox class="about-section">
-										<html:b class="about-section-header">Build</html:b>
-										<label id="build" class="about-section-text"></label>
-									</vbox>
-									<vbox class="about-section">
-										<html:b class="about-section-header">Update Channel</html:b>
-										<label id="channel" class="about-section-text"></label>
-									</vbox>
-									<vbox class="about-section">
-										<html:b class="about-section-header">Repository Branch</html:b>
-										<label id="branch" class="about-section-text"></label>
-									</vbox>
-								</vbox>
-							</vbox>
-							<vbox class="about-content-section">
-								<stack class="about-content-header">
-									<hbox class="about-content-header-background">
-										<hbox class="about-content-header-background-left"></hbox>
-										<hbox class="about-content-header-background-middle" flex="1"></hbox>
-										<hbox class="about-content-header-background-right"></hbox>
-									</hbox>
-									<label class="about-content-header-text" value="Browser" />
-								</stack>
-								<vbox class="about-section-content">
-									<vbox class="about-section">
-										<html:b class="about-section-header">Browser Name</html:b>
-										<label data-content="Services.appinfo.name" class="about-section-text"></label>
-									</vbox>
-									<vbox class="about-section">
-										<html:b class="about-section-header">Engine Version</html:b>
-										<label data-content="Services.appinfo.version" id="browser-version" class="about-section-text"></label>
-									</vbox>
-									<vbox class="about-section">
-										<html:b class="about-section-header">Update Channel</html:b>
-										<label data-content="Services.appinfo.defaultUpdateChannel" id="browser-channel" class="about-section-text"></label>
+							<!-- <vbox id="contributors" class="about-content-container">
+							</vbox> -->
+							<vbox id="browserInfo" class="about-content-container">
+								<vbox class="about-content-section">
+									<stack class="about-content-header">
+										<hbox class="about-content-header-background">
+											<hbox class="about-content-header-background-left"></hbox>
+											<hbox class="about-content-header-background-middle" flex="1"></hbox>
+											<hbox class="about-content-header-background-right"></hbox>
+										</hbox>
+										<label class="about-content-header-text" value="Echelon" />
+									</stack>
+									<vbox class="about-section-content">
+										<vbox class="about-section">
+											<html:b class="about-section-header">Version</html:b>
+											<label id="version-short" class="about-section-text"></label>
+										</vbox>
+										<vbox class="about-section">
+											<html:b class="about-section-header">Build</html:b>
+											<label id="build" class="about-section-text"></label>
+										</vbox>
+										<vbox class="about-section">
+											<html:b class="about-section-header">Update Channel</html:b>
+											<label id="channel" class="about-section-text"></label>
+										</vbox>
+										<vbox class="about-section">
+											<html:b class="about-section-header">Repository Branch</html:b>
+											<label id="branch" class="about-section-text"></label>
+										</vbox>
 									</vbox>
 								</vbox>
-							</vbox>
-							<vbox class="about-content-section">
-								<stack class="about-content-header">
-									<hbox class="about-content-header-background">
-										<hbox class="about-content-header-background-left"></hbox>
-										<hbox class="about-content-header-background-middle" flex="1"></hbox>
-										<hbox class="about-content-header-background-right"></hbox>
-									</hbox>
-									<label class="about-content-header-text" value="Windows" />
-								</stack>
-								<vbox class="about-section-content">
-									<vbox class="about-section">
-										<html:b class="about-section-header">Version in Manifest</html:b>
-										<label data-content="getWinVer()" class="about-section-text"></label>
+								<vbox class="about-content-section">
+									<stack class="about-content-header">
+										<hbox class="about-content-header-background">
+											<hbox class="about-content-header-background-left"></hbox>
+											<hbox class="about-content-header-background-middle" flex="1"></hbox>
+											<hbox class="about-content-header-background-right"></hbox>
+										</hbox>
+										<label class="about-content-header-text" value="Browser" />
+									</stack>
+									<vbox class="about-section-content">
+										<vbox class="about-section">
+											<html:b class="about-section-header">Browser Name</html:b>
+											<label data-content="Services.appinfo.name" class="about-section-text"></label>
+										</vbox>
+										<vbox class="about-section">
+											<html:b class="about-section-header">Engine Version</html:b>
+											<label data-content="Services.appinfo.version" id="browser-version" class="about-section-text"></label>
+										</vbox>
+										<vbox class="about-section">
+											<html:b class="about-section-header">Update Channel</html:b>
+											<label data-content="Services.appinfo.defaultUpdateChannel" id="browser-channel" class="about-section-text"></label>
+										</vbox>
 									</vbox>
-									<vbox class="about-section">
-										<html:b class="about-section-header">Version</html:b>
-										<label data-content="getTrueWinVer()" class="about-section-text"></label>
+								</vbox>
+								<vbox class="about-content-section">
+									<stack class="about-content-header">
+										<hbox class="about-content-header-background">
+											<hbox class="about-content-header-background-left"></hbox>
+											<hbox class="about-content-header-background-middle" flex="1"></hbox>
+											<hbox class="about-content-header-background-right"></hbox>
+										</hbox>
+										<label class="about-content-header-text" value="Windows" />
+									</stack>
+									<vbox class="about-section-content">
+										<vbox class="about-section">
+											<html:b class="about-section-header">Version in Manifest</html:b>
+											<label data-content="getWinVer()" class="about-section-text"></label>
+										</vbox>
+										<vbox class="about-section">
+											<html:b class="about-section-header">Version</html:b>
+											<label data-content="getTrueWinVer()" class="about-section-text"></label>
+										</vbox>
 									</vbox>
 								</vbox>
 							</vbox>

@@ -426,42 +426,44 @@
 }
 
 // Toolbar borders
-:root[sizemode="normal"] {
-    &:not([echelon-system-style="winxp"], [echelon-system-style="win10"], [lwtheme-image]) {
-        #navigator-toolbox::after {
-            border-inline: 1px solid var(--toolbar-border-color) !important;
-            background-clip: padding-box !important;
-        }
-
-        &[tabs-on-top="true"] {
-            #nav-bar {
-                border-inline: 1px solid var(--toolbar-border-color) !important;
-                border-top-left-radius: 3.5px !important;
-                border-top-right-radius: 3.5px !important;
-            }
-        }
-
-        &:not([tabs-on-top="true"]) {
-            #PersonalToolbar:not([collapsed="true"]) + #TabsToolbar {
+@media (-moz-windows-compositor) {
+    :root[sizemode="normal"] {
+        &:not([echelon-system-style="winxp"], [echelon-system-style="win10"], [lwtheme-image]) {
+            #navigator-toolbox::after {
                 border-inline: 1px solid var(--toolbar-border-color) !important;
                 background-clip: padding-box !important;
             }
-        }
 
-        #PersonalToolbar {
-            border-inline: 1px solid var(--toolbar-border-color) !important;
-            background-clip: padding-box !important;
-        }
+            &[tabs-on-top="true"] {
+                #nav-bar {
+                    border-inline: 1px solid var(--toolbar-border-color) !important;
+                    border-top-left-radius: 3.5px !important;
+                    border-top-right-radius: 3.5px !important;
+                }
+            }
 
-        #browser, #customization-container {
-            border-inline: 1px solid var(--toolbar-border-color) !important;
-            border-bottom: 1px solid var(--toolbar-border-color) !important;
-            background-clip: padding-box !important;
+            &:not([tabs-on-top="true"]) {
+                #PersonalToolbar:not([collapsed="true"]) + #TabsToolbar {
+                    border-inline: 1px solid var(--toolbar-border-color) !important;
+                    background-clip: padding-box !important;
+                }
+            }
 
-            &[findbar-focused] {
-                border-bottom-left-radius: 3.5px !important;
-                border-bottom-right-radius: 3.5px !important;  
-                overflow: clip !important;
+            #PersonalToolbar {
+                border-inline: 1px solid var(--toolbar-border-color) !important;
+                background-clip: padding-box !important;
+            }
+
+            #browser, #customization-container {
+                border-inline: 1px solid var(--toolbar-border-color) !important;
+                border-bottom: 1px solid var(--toolbar-border-color) !important;
+                background-clip: padding-box !important;
+
+                &[findbar-focused] {
+                    border-bottom-left-radius: 3.5px !important;
+                    border-bottom-right-radius: 3.5px !important;  
+                    overflow: clip !important;
+                }
             }
         }
     }

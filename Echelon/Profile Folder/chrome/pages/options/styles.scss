@@ -1,7 +1,7 @@
 :root {
     --echelon-options-background-color: -moz-Dialog;
 
-    &:not([echelon-system-style="winxp"], [echelon-system-style="win8"][echelon-style-6="true"])[echelon-appearance-blue="true"] {
+    &:not([echelon-system-style="winxp"], [echelon-system-style="win8"][echelon-style-6="true"], [echelon-system-style="win10"][echelon-style-6="true"])[echelon-appearance-blue="true"] {
         --echelon-options-background-color: hsl(214, 44%, 87%);
 
         &[echelon-style-5="true"] {
@@ -20,7 +20,8 @@
 	font-weight: 400;
 	text-shadow: 0 1px 0 white;
 
-    &[echelon-system-style="win8"][echelon-style-6="true"] {
+    &[echelon-system-style="win8"][echelon-style-6="true"],
+	&[echelon-system-style="win10"][echelon-style-6="true"] {
         text-shadow: none;
         background-image: none;
     }    
@@ -115,7 +116,7 @@ body > hbox {
         transition-property: opacity !important;
         transition-duration: 150ms !important;
 
-        :root:is([echelon-system-style="winxp"], [echelon-system-style="win8"][echelon-style-6="true"]) & {
+        :root:is([echelon-system-style="winxp"], [echelon-system-style="win8"][echelon-style-6="true"], [echelon-system-style="win10"][echelon-style-6="true"]) & {
             background-image: url("chrome://userchrome/content/pages/options/images/categories-xp8.png");
         }
     }
@@ -171,7 +172,8 @@ body > hbox {
 	position: relative;
 	background-image: radial-gradient(0.06% 50% at 0.06% 50%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 75%, rgba(255, 255, 255, 0) 100%);
 
-    :root[echelon-system-style="win8"] & {
+    :root[echelon-system-style="win8"] &,
+	:root[echelon-system-style="win10"] & {
         background-image: none;
     }
 }
@@ -223,7 +225,7 @@ body > hbox {
 	width: 26px;
 	height: 26px;
 	background-image: url("chrome://userchrome/content/pages/options/images/categories-header.png");
-    :root:is([echelon-system-style="winxp"], [echelon-system-style="win8"][echelon-style-6="true"]) & {
+    :root:is([echelon-system-style="winxp"], [echelon-system-style="win8"][echelon-style-6="true"], [echelon-system-style="win10"][echelon-style-6="true"]) & {
         background-image: url("chrome://userchrome/content/pages/options/images/categories-header-xp8.png");
     }
 }
@@ -340,14 +342,21 @@ checkbox {
 	width: 100%;
 	min-height: 160px;
 	border-block-end: 1px solid white;
+	// background-image: url("chrome://userchrome/content/branding/echelon/content/about-logo.png"),
+	// 				  url("chrome://echelon/content/firefox-29/customizableui/background-noise-toolbar.png"),
+	// 				  url("chrome://echelon/content/firefox-29/customizableui/customizeMode-gridTexture.png"), 
+	// 				  linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .25)),
+	// 				  linear-gradient(to bottom, #2677B1, #214B72);
+	background-color: #0C1B28;
 	background-image: url("chrome://userchrome/content/branding/echelon/content/about-logo.png"),
-					  url("chrome://echelon/content/firefox-29/customizableui/background-noise-toolbar.png"),
-					  url("chrome://echelon/content/firefox-29/customizableui/customizeMode-gridTexture.png"), 
-					  linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .25)),
-					  linear-gradient(to bottom, #2677B1, #214B72);
-	background-repeat: no-repeat, repeat, repeat, repeat-x, repeat;
-	background-position: center left -45px, center center, center center, center bottom, center center;
-	background-size: auto, auto, auto, 100% 10px, auto;
+					  url("chrome://userchrome/content/pages/options/images/echelon-nightly-background-grid.png"),
+					  url("chrome://userchrome/content/pages/options/images/echelon-nightly-background.png");
+	background-repeat: no-repeat, repeat, no-repeat;
+	background-position: center left -45px, center center, bottom left;
+	background-size: auto, auto, auto;
+	// background-repeat: no-repeat, repeat, repeat, repeat-x, repeat;
+	// background-position: center left -45px, center center, center center, center bottom, center center;
+	// background-size: auto, auto, auto, 100% 10px, auto;
 	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 	padding-inline: 45px;
 	padding-inline-start: 185px;
@@ -356,7 +365,7 @@ checkbox {
 
 .about-header-logo {
 	width: 404px;
-	height: 71px;
+	height: 69px;
 	list-style-image: url("chrome://userchrome/content/pages/options/images/echelon-nightly-header-logo.png");
 }
 
