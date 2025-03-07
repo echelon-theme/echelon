@@ -6,7 +6,7 @@
     @import "urlbar-search";
     @import "urlbar-view";
     @import "menupopup";
-    @import "customizeui";
+    @import "customizeUI";
 
     &[echelon-system-style="win10"] {
         @import "tweaks/win10/style";
