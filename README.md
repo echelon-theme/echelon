@@ -16,6 +16,9 @@ ___
   <img src="images/preview.png" alt="Echelon logo">
 </p>
 
+## Installation
+As this rewrite is still in the works, there are no releases for it yet. But, you can download compiled builds in [Github Actions](https://github.com/echelon-theme/echelon/actions). Download the source code no longer works as it only has the uncompiled SCSS files.
+
 ## Developers
 * [Travis](https://github.com/travy-patty/)
 * [aubymori](https://github.com/aubymori) 
