@@ -5,6 +5,8 @@
     --urlbar-border-color-hover: hsla(210,54%,20%,.35) hsla(210,54%,20%,.37) hsla(210,54%,20%,.4) !important;
     --urlbar-border-color-focused: Highlight !important;
 
+    --default-favicon: url("chrome://echelon/content/firefox-56/skin/defaultFavicon.svg") !important;
+
     &[echelon-system-style="win8"],
     &[echelon-system-style="win10"] {
         .urlbar-input-container,
