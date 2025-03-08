@@ -17,6 +17,10 @@
 		<html:link rel="shortcut icon" href="chrome://userchrome/content/pages/options/images/icon.png"/>
 	</head>
 
+	<script>
+		var { AppConstants } = ChromeUtils.importESModule("resource://gre/modules/AppConstants.sys.mjs");
+	</script>
+
 	<html:body>
 		<vbox class="modal-container" hidden="true">
             <vbox class="modal" data-modal="restart-needed">
@@ -70,9 +74,13 @@
 													<image class="list-arrow-image" />
 												</hbox>
 												<vbox class="list-container">
-													<hbox class="item item-iconic" id="system-style-default" value="win">
+													<hbox class="item item-iconic" id="system-style-default" value="">
 														<image class="item-iconic-image" />
 														<label class="item-iconic-text">&general.appearance.os.default;</label>
+													</hbox>
+													<hbox class="item item-iconic" id="system-style-winvista" value="" hidden="true">
+														<image class="item-iconic-image" />
+														<label class="item-iconic-text">&general.appearance.os.vistaSeven;</label>
 													</hbox>
 													<hbox class="item item-iconic" id="system-style-winxp" value="winxp">
 														<image class="item-iconic-image" />

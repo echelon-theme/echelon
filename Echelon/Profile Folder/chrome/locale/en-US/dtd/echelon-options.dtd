@@ -22,6 +22,7 @@
 
 <!ENTITY general.appearance.os "System Style">
 <!ENTITY general.appearance.os.default "Default">
+<!ENTITY general.appearance.os.vistaSeven "Windows Vista/7">
 <!ENTITY general.appearance.os.xp "Windows XP">
 <!ENTITY general.appearance.os.eight "Windows 8">
 <!ENTITY general.appearance.os.ten "Windows 10">

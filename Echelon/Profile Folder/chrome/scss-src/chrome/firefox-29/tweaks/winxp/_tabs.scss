@@ -1,13 +1,15 @@
 &:not([lwtheme="true"])[tabsintitlebar="true"] {
-    #TabsToolbar {
-        color: var(--captiontext, CaptionText) !important;
-        &:-moz-window-inactive {
-            color: var(--inactivecaptiontext, InactiveCaptionText) !important;
-        }
+    @media (-moz-platform: windows) {
+        #TabsToolbar {
+            color: var(--captiontext, CaptionText) !important;
+            &:-moz-window-inactive {
+                color: var(--inactivecaptiontext, InactiveCaptionText) !important;
+            }
 
-        .tab-close-button {
-            &:not(:hover, :hover:active, [selected]) {
-                background-position-x: -48px !important;
+            .tab-close-button {
+                &:not(:hover, :hover:active, [selected]) {
+                    background-position-x: -48px !important;
+                }
             }
         }
     }

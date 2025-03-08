@@ -538,3 +538,20 @@ const lwtOffsetObserverPrefs = {
 document.addEventListener("DOMContentLoaded", setLWTbg);
 Services.prefs.addObserver("extensions.activeThemeID", lwtOffsetObserverPrefs, false);
 document.addEventListener("DOMContentLoaded", lwtOffsetObserver);
+
+function systemStyleMenuList() {
+    let platform = AppConstants.platform;
+    let defaultItem = document.querySelector(".menulist[preference='Echelon.Appearance.systemStyle'] #system-style-default");
+    let vistaItem = document.querySelector(".menulist[preference='Echelon.Appearance.systemStyle'] #system-style-winvista");
+
+    if (platform == "win") {
+        defaultItem.setAttribute("value", "win");
+    } 
+    else if (platform == "linux") {
+        defaultItem.setAttribute("value", "linux");
+
+        vistaItem.setAttribute("value", "win");
+        vistaItem.removeAttribute("hidden");
+    }
+}
+document.addEventListener("DOMContentLoaded", systemStyleMenuList);
