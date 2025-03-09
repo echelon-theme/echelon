@@ -2,11 +2,10 @@
 // @name			Echelon :: Wizard
 // @description 	Opens the Echelon Wizard on first-time installs
 // @author			Travis
+// @include         main
 // ==/UserScript==
 
-let mainPopupSet = document.getElementById("mainPopupSet");
-if (mainPopupSet)
-{
+waitForElement("#mainPopupSet").then(mainPopupSet => {
     let echelonWizard = MozXULElement.parseXULToFragment(
     `
     <hbox id="echelon-wizard-container">
@@ -19,47 +18,47 @@ if (mainPopupSet)
     </hbox>
     `);
     mainPopupSet.append(echelonWizard);
+});
 
-    function showEchelonWizard() {
-        let echelonWizardEl = document.querySelector("#echelon-wizard-container");
-        
-        echelonWizardEl.setAttribute("animate", "open");
-        echelonWizardEl.setAttribute("animating", "true");
+function showEchelonWizard() {
+    let echelonWizardEl = document.querySelector("#echelon-wizard-container");
+    
+    echelonWizardEl.setAttribute("animate", "open");
+    echelonWizardEl.setAttribute("animating", "true");
 
-        setTimeout(() => {
-            echelonWizardEl.removeAttribute("animating")
-            echelonWizardEl.setAttribute("animate", "false")
-        }, 550);
-    }
+    setTimeout(() => {
+        echelonWizardEl.removeAttribute("animating")
+        echelonWizardEl.setAttribute("animate", "false")
+    }, 550);
+}
 
-    function resetEchelonWizard() {
-        // reset selected choices
-        PrefUtils.trySetIntPref("Echelon.Appearance.Preset", "0");
-        PrefUtils.trySetStringPref("Echelon.Appearance.systemStyle", "");
-        PrefUtils.trySetBoolPref("Echelon.Appearance.Blue", false);
+function resetEchelonWizard() {
+    // reset selected choices
+    PrefUtils.trySetIntPref("Echelon.Appearance.Preset", "0");
+    PrefUtils.trySetStringPref("Echelon.Appearance.systemStyle", "");
+    PrefUtils.trySetBoolPref("Echelon.Appearance.Blue", false);
 
-        let echelonWizardEl = document.querySelector("#echelon-wizard-container");
+    let echelonWizardEl = document.querySelector("#echelon-wizard-container");
 
-        echelonWizardEl.setAttribute("animating", "true");
-        echelonWizardEl.setAttribute("animate", "closing");
+    echelonWizardEl.setAttribute("animating", "true");
+    echelonWizardEl.setAttribute("animate", "closing");
 
-        setTimeout(() => {
-            echelonWizardEl.removeAttribute("animating")
-            echelonWizardEl.removeAttribute("animate")
-        }, 550);
-    }
+    setTimeout(() => {
+        echelonWizardEl.removeAttribute("animating")
+        echelonWizardEl.removeAttribute("animate")
+    }, 550);
+}
 
-    function hideEchelonWizard() {
-        let echelonWizardEl = document.querySelector("#echelon-wizard-container");
+function hideEchelonWizard() {
+    let echelonWizardEl = document.querySelector("#echelon-wizard-container");
 
-        echelonWizardEl.setAttribute("animating", "true");
-        echelonWizardEl.setAttribute("animate", "closing");
+    echelonWizardEl.setAttribute("animating", "true");
+    echelonWizardEl.setAttribute("animate", "closing");
 
-        setTimeout(() => {
-            echelonWizardEl.removeAttribute("animating")
-            echelonWizardEl.removeAttribute("animate")
-        }, 550);
-    }
+    setTimeout(() => {
+        echelonWizardEl.removeAttribute("animating")
+        echelonWizardEl.removeAttribute("animate")
+    }, 550);
 }
 
 // set default echelon settings
