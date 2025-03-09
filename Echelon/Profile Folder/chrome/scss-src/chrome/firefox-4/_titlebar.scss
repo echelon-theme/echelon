@@ -128,5 +128,13 @@
 				padding-top: 2px !important;
 			}
 		}
+
+		@media not (-moz-windows-compositor) {
+			:root[sizemode="normal"][tabsintitlebar] {
+				.titlebar-buttonbox {
+					margin-block-start: var(--paddedborder);
+				}
+			}
+		}
     }
 }

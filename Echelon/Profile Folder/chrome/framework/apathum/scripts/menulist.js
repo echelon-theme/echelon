@@ -69,3 +69,81 @@ document.querySelectorAll(".menulist").forEach(menulist => {
         }
     };
 });
+
+// {
+//     window.addEventListener(
+//         "echelonpopupshowing",
+//         e => {
+//             if (e.originalTarget.ownerDocument != document) {
+//                 return;
+//             }
+// 
+//             e.originalTarget.setAttribute("hasbeenopened", "true");
+//             for (let el of e.originalTarget.querySelectorAll("echelon-menulist")) {
+//                 el.render();
+//             }
+//         },
+//         { capture: true }
+//     );
+// 
+//     class EchelonMenulist extends MozElements.ButtonBase {
+//         static get fragment() {
+//             let frag = document.importNode(
+//             MozXULElement.parseXULToFragment(`
+//                     <label class="menulist-text"></label>
+//                     <image class="dropdown-marker" />
+//                 `),
+//                 true
+//             );
+//             Object.defineProperty(this, "fragment", { value: frag });
+//             return frag;
+//         }
+// 
+//         get menulist() {
+//             return this;
+//         }
+// 
+//         get _hasRendered() {
+//             return this.querySelector(":scope > .selected") != null;
+//         }
+//         
+//         get _textNode() {
+//             let node = this.querySelector(".menulist-text");
+//             if (node) {
+//             Object.defineProperty(this, "_textNode", { value: node });
+//             }
+//             return node;
+//         }
+// 
+//         connectedCallback() {
+//             if (this.delayConnectedCallback()) {
+//               return;
+//             }
+// 
+//             let panel = this.querySelector("echelon-panel");
+//             if (panel && !panel.hasAttribute("hasbeenopened")) {
+//                 return;
+//             }
+//       
+//             this.render();
+//         }
+// 
+//         render() {
+//             if (this._hasRendered) {
+//                 return;
+//             }
+// 
+//             this.appendChild(this.constructor.fragment.cloneNode(true));
+// 
+//             this.addEventListener("click", this);
+//         }
+// 
+//         on_click(event) {
+//             if (event.button != 0) {
+//                 return;
+//             }
+//         }
+//     }
+//     
+//     customElements.define("echelon-menulist", EchelonMenulist);
+// }

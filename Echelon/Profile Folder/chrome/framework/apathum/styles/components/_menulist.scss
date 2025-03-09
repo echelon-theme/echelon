@@ -58,7 +58,8 @@
         margin-inline: 6px;
     }     
 
-    .list {
+    .list,
+    echelon-panel {
         position: fixed;
         left: 0;
         top: 0;
@@ -146,13 +147,15 @@
         }        
     }
 
-    &:not([open]) .list {
+    &:not([open]) .list,
+    &:not([open]) echelon-panel {
         opacity: 0;
         pointer-events: none;
         transform: translateY(-10px) !important;
     }
 
-    &[open] .list {
+    &[open] .list,
+    &[open] echelon-panel {
         opacity: 1;
         transform: none;
         pointer-events: all;

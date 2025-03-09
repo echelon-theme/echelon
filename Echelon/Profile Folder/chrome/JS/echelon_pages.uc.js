@@ -29,7 +29,9 @@ function reloadStyledPages() {
     let visibleTabs = gBrowser.visibleTabs;
 
     for (const tab of visibleTabs) {
-        if (gBrowser.getBrowserForTab(tab).currentURI.spec == "about:newtab") {
+        let currentURL = gBrowser.getBrowserForTab(tab).documentURI.spec;
+
+        if (currentURL && currentURL == "about:newtab") {
             gBrowser.getBrowserForTab(tab).reload();
         }
     }
