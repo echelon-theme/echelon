@@ -1491,14 +1491,15 @@ window {
   list-style-image: none !important;
   background-position-x: 0 !important;
 }
-:root[echelon-system-style=winxp] :root:not([echelon-style-7]) #searchbar .search-go-button {
-  background-image: url("chrome://echelon/content/firefox-4/xp/Search-glass.png") !important;
-}
 :root:not([echelon-style-7]) #searchbar .search-go-button:hover {
   background-position-x: -16px !important;
 }
 :root:not([echelon-style-7]) #searchbar .search-go-button:hover:active, :root:not([echelon-style-7]) #searchbar .search-go-button[open] {
   background-position-x: -32px !important;
+}
+
+:root:not([echelon-style-7])[echelon-system-style=winxp] #searchbar .search-go-button {
+  background-image: url("chrome://echelon/content/firefox-4/xp/Search-glass.png") !important;
 }
 
 :root:not([echelon-style-7]) {
