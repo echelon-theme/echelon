@@ -19,4 +19,14 @@
             }
         }
     }
+
+    @media (-moz-windows-classic) {
+        &[sizemode="normal"] {
+            #TabsToolbar {
+                .toolbar-items {
+                    padding-inline: 0 !important;
+                }
+            }
+        }
+	}
 }
