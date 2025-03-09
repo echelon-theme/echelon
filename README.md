@@ -16,18 +16,18 @@ ___
   <img src="images/preview.png" alt="Echelon logo">
 </p>
 
+## Coming from Echelon 1?
+Echelon versions before release 2.0 is no longer supported. The update checker may display an error message, if you wish to continue using Echelon 1, disable update checks on the Echelon Options window.
+
 ## Screenshots
 | ![preview-1](images/preview-1.png) | ![preview-2](images/preview-2.png) |
 |---|---|
 | ![preview-3](images/preview-3.png) | ![preview-4](images/preview-4.png) |
 
-## Coming from Echelon 1?
-Echelon versions before release 2.0 is no longer supported. The update checker may display an error message, if you wish to continue using Echelon 1, disable update checks on the Echelon Options window.
-
 # Installation
 Detailed instructions on how to install Echelon can be seen here:
 
-[Instrutions of installing Echelon](https://github.com/echelon-theme/echelon/wiki/Installation)
+[Instructions of installing Echelon](https://github.com/echelon-theme/echelon/wiki/Installation)
 
 # Developers
 * [Travis](https://github.com/travy-patty/)
