@@ -80,6 +80,11 @@ window {
     align-items: flex-start !important;
   }
 }
+@media (-moz-platform: windows) and (-moz-windows-classic) {
+  #toolbar-menubar {
+    margin-block-start: 0 !important;
+  }
+}
 @media (-moz-platform: windows) and (not (-moz-windows-classic)) {
   :root[sizemode=normal] .titlebar-buttonbox {
     appearance: auto !important;
@@ -491,6 +496,8 @@ window {
   }
   :root[sizemode=normal]:not([echelon-system-style=winxp], [echelon-system-style=win10]):not([lwtheme])[tabs-on-top=true] #nav-bar {
     border-inline: 1px solid var(--toolbar-border-color) !important;
+  }
+  :root[sizemode=normal]:not([echelon-system-style=winxp], [echelon-system-style=win10]):not([lwtheme], [echelon-style-6])[tabs-on-top=true] #nav-bar {
     border-top-left-radius: 3.5px !important;
     border-top-right-radius: 3.5px !important;
   }
@@ -4234,6 +4241,11 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 :root[echelon-system-style=winxp]:not([echelon-style-6])[sizemode=normal] #TabsToolbar .toolbar-items {
   padding-inline: 2px !important;
+}
+@media (-moz-windows-classic) {
+  :root[echelon-system-style=winxp]:not([echelon-style-6])[sizemode=normal] #TabsToolbar .toolbar-items {
+    padding-inline: 0 !important;
+  }
 }
 :root[echelon-system-style=winxp] {
   background-color: -moz-Dialog !important;

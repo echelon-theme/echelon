@@ -91,6 +91,12 @@
 	.titlebar-buttonbox-container {
 		align-items: flex-start !important;
 	}
+
+	@media (-moz-windows-classic) {
+		#toolbar-menubar {
+			margin-block-start: 0 !important;
+		}
+	}
 	
     @media not (-moz-windows-classic) {
 		:root[sizemode="normal"] .titlebar-buttonbox {

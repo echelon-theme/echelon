@@ -436,6 +436,11 @@
             &:not([lwtheme])[tabs-on-top="true"] {
                 #nav-bar {
                     border-inline: 1px solid var(--toolbar-border-color) !important;
+                }
+            }
+
+            &:not([lwtheme], [echelon-style-6])[tabs-on-top="true"] {
+                #nav-bar {
                     border-top-left-radius: 3.5px !important;
                     border-top-right-radius: 3.5px !important;
                 }
