@@ -17,7 +17,9 @@ ___
 </p>
 
 ## Installation
-As this rewrite is still in the works, there are no releases for it yet. But, you can download compiled builds in [Github Actions](https://github.com/echelon-theme/echelon/actions). Download the source code no longer works as it only has the uncompiled SCSS files.
+Detailed instructions on how to install Echelon can be seen here:
+
+[Instrutions of installing Echelon](https://github.com/echelon-theme/echelon/wiki/Installation)
 
 ## Developers
 * [Travis](https://github.com/travy-patty/)
