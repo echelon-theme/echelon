@@ -16,12 +16,15 @@ ___
   <img src="images/preview.png" alt="Echelon logo">
 </p>
 
-## Installation
+## Coming from Echelon 1?
+Echelon versions before release 2.0 is no longer supported. The update checker may display an error message, if you wish to continue using Echelon 1, disable update checks on the Echelon Options window.
+
+# Installation
 Detailed instructions on how to install Echelon can be seen here:
 
 [Instrutions of installing Echelon](https://github.com/echelon-theme/echelon/wiki/Installation)
 
-## Developers
+# Developers
 * [Travis](https://github.com/travy-patty/)
 * [aubymori](https://github.com/aubymori) 
 * [Isabella Lulamoon](https://github.com/kawapure/)
