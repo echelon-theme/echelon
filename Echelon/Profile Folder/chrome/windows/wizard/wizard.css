@@ -1,0 +1,321 @@
+body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+#echelon-wizard-close-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+}
+
+.echelon-wizard-titlebar-close {
+  appearance: none !important;
+  width: 20px;
+  height: 20px;
+  background-image: url("chrome://userchrome/content/windows/wizard/assets/close.png") !important;
+}
+
+:root[finished=true] .echelon-wizard-titlebar-close:not(:hover, :active) {
+  background-position-x: -60px !important;
+}
+
+.echelon-wizard-titlebar-close:hover {
+  background-position-x: -20px !important;
+}
+
+.echelon-wizard-titlebar-close:active {
+  background-position-x: -40px !important;
+}
+
+#echelon-wizard-header {
+  background-image: url("chrome://userchrome/content/windows/wizard/assets/bgnoise.png"), url("chrome://userchrome/content/windows/wizard/assets/bggrid.png"), radial-gradient(9.18% 50% at 100% 50%, rgba(23, 45, 68, 0.5) 0%, rgba(51, 100, 143, 0) 100%), radial-gradient(402% 100% at 50% 0%, #4792C9 0%, #285783 100%);
+  padding: 25px;
+  z-index: 1;
+  box-shadow: inset -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+#echelon-logo {
+  margin-block-end: 25px;
+  list-style-image: url("chrome://userchrome/content/windows/wizard/assets/header-logo.png");
+}
+
+#echelon-wizard-page {
+  width: 100%;
+  position: relative;
+  background-color: #EFF6FD;
+  background-image: linear-gradient(180deg, #F4F4F4 0%, rgba(244, 244, 244, 0) 10%), linear-gradient(to bottom, rgba(180, 193, 205, 0), rgba(180, 193, 205, 0.25));
+}
+
+.page {
+  height: 100%;
+  transform: none;
+}
+
+.page-container {
+  background-color: #EFF6FD;
+  background-image: linear-gradient(180deg, #F4F4F4 0%, rgba(244, 244, 244, 0) 10%), linear-gradient(to bottom, rgba(180, 193, 205, 0), rgba(180, 193, 205, 0.25));
+}
+
+.page[animating],
+.page[animating] > .page-container {
+  pointer-events: none;
+  transition-property: opacity, transform;
+  transition-duration: 250ms;
+}
+
+.page[animating]::before {
+  content: "";
+  display: flex;
+  width: 12px;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  position: absolute;
+  left: -12px;
+  pointer-events: none;
+}
+
+.page::after {
+  content: "";
+  display: flex;
+  width: 7px;
+  height: 13px;
+  background-image: url("chrome://userchrome/content/windows/wizard/assets/page-arrow.svg");
+  -moz-context-properties: fill, stroke;
+  fill: #EEF4FB;
+  stroke: rgba(0, 0, 0, 0.25);
+  z-index: 2;
+  position: absolute;
+  left: -7px;
+  top: 40px;
+  pointer-events: none;
+}
+
+.page.hidden {
+  position: absolute;
+  width: 100%;
+  transform: translateX(calc(100% + 7px));
+}
+
+.page.last-page {
+  transform: none;
+}
+
+.page.last-page .page-container {
+  opacity: 0;
+}
+
+#preset-container image,
+#system-style-container image {
+  background-position: 10px 0;
+  background-repeat: no-repeat;
+}
+
+#system-style-container .winxp image {
+  background-position: 23px 10px;
+}
+
+.page-content {
+  padding-inline: 20px;
+  padding-block-end: 30px;
+}
+
+.page-header {
+  padding: 20px;
+  padding-block-start: 25px;
+}
+
+.page-header h1,
+.page-header h2 {
+  font-family: "Open Sans";
+  font-weight: lighter;
+  font-size: 30px;
+  text-shadow: 0 2px 0 white;
+  letter-spacing: -0.02em;
+  color: #5B758B;
+}
+
+.page-header h2 {
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.page-header .header-description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12.5px;
+  font-weight: 400;
+  text-shadow: 0px 1px 0px #FFF;
+  line-height: 1.5;
+  margin-block-start: 6px;
+  color: #404041;
+}
+
+.wizard-progress-text {
+  display: flex;
+}
+
+.wizard-progress-bar-container {
+  width: 40px;
+  height: 5px;
+  border-radius: 5px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  margin-block-start: 5px;
+}
+
+.wizard-progress-bar {
+  background-clip: padding-box, border-box !important;
+  background-color: rgb(90, 201, 66) !important;
+  background-image: linear-gradient(transparent 1px, rgba(255, 255, 255, 0.4) 1px, rgba(255, 255, 255, 0.4) 2px, transparent 2px), none !important;
+  border: 1px solid !important;
+  border-color: rgba(0, 43, 86, 0.6) rgba(0, 43, 86, 0.4) rgba(0, 43, 86, 0.4) !important;
+  border-radius: 2px 0 0 2px !important;
+  transition-property: width !important;
+  transition-duration: 250ms !important;
+}
+
+.wizard-remaining-bar {
+  flex: 1;
+  background-color: #515151;
+  background-image: linear-gradient(transparent 1px, rgba(255, 255, 255, 0.25) 1px, rgba(255, 255, 255, 0.25) 2px, transparent 2px), none;
+  border: 1px solid;
+  border-color: hsla(0, 0%, 0%, 0.6) hsla(0, 0%, 0%, 0.4) hsla(0, 0%, 0%, 0.4);
+  border-inline-start: none;
+  border-radius: 0 2px 2px 0;
+  transition-property: width !important;
+  transition-duration: 250ms !important;
+}
+
+.wizard-progress-bar[style="width: 100%;"] + .wizard-remaining-bar {
+  border: none;
+}
+
+.wizard-progress {
+  color: rgba(255, 255, 255, 0.5);
+  text-shadow: 0 1px 0 rgba(8, 22, 37, 0.25);
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+}
+
+.wizard-progress-text b {
+  color: white;
+}
+
+:root:not([echelon-style-6]) .card[australisonly=true] {
+  display: none;
+}
+
+/* preload hack */
+#echelon-wizard-page::before {
+  order: -1 !important;
+  content: "" !important;
+  display: block;
+  background-image: url("chrome://userchrome/content/windows/wizard/assets/finishbg.png");
+}
+
+.page.finish > .page-container {
+  color: white;
+  background-image: url("chrome://userchrome/content/windows/wizard/assets/finishbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.page.finish::after {
+  fill: #1C173F;
+}
+
+.page.finish .page-header .header-description {
+  color: inherit;
+  text-shadow: 0 1px 0 black;
+}
+
+.page.finish .page-header h1 {
+  color: #A2E2FF;
+  text-shadow: 0px -1px 17px #1384C4, 0px -1px 3.8px #1384C4;
+}
+
+#system-style-container .winxp image {
+  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/winxp/firefox-4.png");
+}
+
+:root[echelon-style-4] #system-style-container .winxp image {
+  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/winxp/firefox-10.png");
+}
+
+:root[echelon-style-5] #system-style-container .winxp image {
+  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/winxp/firefox-14.png");
+}
+
+:root[echelon-style-6] #system-style-container .winxp image {
+  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/winxp/firefox-29.png");
+}
+
+#system-style-container .win image {
+  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/win7/firefox-4.png");
+}
+
+:root[echelon-style-4] #system-style-container .win image {
+  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/win7/firefox-10.png");
+}
+
+:root[echelon-style-5] #system-style-container .win image {
+  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/win7/firefox-14.png");
+}
+
+:root[echelon-style-6] #system-style-container .win image {
+  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/win7/firefox-29.png");
+}
+
+#system-style-container .win8 image {
+  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/win8/firefox-29.png");
+}
+
+#echelon-wizard-finish-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.echelon-wizard-finish-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 30px;
+  appearance: none;
+  border: 1px solid #315B16;
+  border-radius: 3px;
+  background-color: #74BF43;
+  background-clip: padding-box;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), transparent 75%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: white;
+  list-style-image: url("chrome://userchrome/content/windows/wizard/assets/finish.png");
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+:root[finished=true] .echelon-wizard-finish-button {
+  opacity: 1;
+  transform: none;
+  transition-property: opacity, transform;
+  transition-duration: 250ms;
+}
+
+.card-container {
+  display: grid;
+  max-width: 415px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 202px));
+  gap: 10px;
+}
+
+/*# sourceMappingURL=wizard.css.map */

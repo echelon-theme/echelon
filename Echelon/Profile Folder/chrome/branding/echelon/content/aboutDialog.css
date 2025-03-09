@@ -1,0 +1,42 @@
+#aboutDialogContainer {
+  background-image: url("chrome://branding/content/about-background.png"), url("chrome://branding/content/about-background-grid.png");
+  background-repeat: no-repeat, repeat;
+  background-color: #0C1B28;
+  color: #fff;
+  color-scheme: light;
+}
+
+#clientBox {
+  padding: 0;
+}
+
+#leftBox {
+  visibility: collapse;
+}
+
+.text-link {
+  color: white !important;
+}
+
+#rightBox {
+  background-image: url("chrome://branding/content/about-wordmark.svg");
+  background-size: auto;
+  margin-left: 300px;
+  margin-right: 20px;
+  padding-top: 38px;
+  margin-top: 20px;
+}
+
+#bottomBox {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px 10px 0;
+}
+
+#trademark {
+  font-size: xx-small;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  margin-block: 10px;
+}
+
+/*# sourceMappingURL=aboutDialog.css.map */

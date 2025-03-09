@@ -1,0 +1,26 @@
+#aboutDialogContainer {
+  background-image: url("chrome://branding/content/about-background.png");
+  background-repeat: no-repeat;
+  background-color: rgb(10, 17, 37);
+  color: #fff;
+}
+
+.text-link {
+  color: #fff !important;
+}
+
+#leftBox {
+  visibility: collapse !important;
+}
+
+#rightBox {
+  /* this margin prevents text from overlapping the planet image */
+  margin-left: 280px;
+  margin-right: 20px;
+}
+
+#bottomBox {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/*# sourceMappingURL=aboutDialog.css.map */

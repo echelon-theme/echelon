@@ -1,0 +1,445 @@
+html {
+  font: message-box;
+  font-size: 100%;
+  background-color: hsl(0, 0%, 90%);
+  color: #000;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-image: url(chrome://userchrome/content/pages/home/images/firefox-14/noise.png), -moz-linear-gradient(hsla(0, 0%, 100%, 0.7), hsla(0, 0%, 100%, 0.4));
+}
+
+[hidden=true] {
+  display: none !important;
+}
+
+:root[echelon-style-3] {
+  background-color: hsl(0, 0%, 95%);
+}
+
+:root[echelon-style-3] body {
+  background-image: none;
+}
+
+input,
+button {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+a {
+  color: -moz-nativehyperlinktext;
+  text-decoration: none;
+}
+
+.spacer {
+  flex: 1;
+}
+
+#topSection {
+  text-align: center;
+  display: block;
+}
+
+:root:not([echelon-style-3]) #brandLogo {
+  height: 154px;
+  margin: 22px 0 31px;
+  content: var(--about-logo);
+}
+
+:root[echelon-style-3] #brandLogo {
+  height: 192px;
+  width: 192px;
+  margin: 22px auto 31px;
+  background-image: var(--about-logo);
+  background-size: 192px auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#searchForm,
+#snippets {
+  width: 470px;
+}
+
+#searchForm {
+  display: flex;
+  margin: 0 auto;
+}
+:root[echelon-style-4] #searchForm {
+  height: 36px;
+}
+
+#searchLogoContainer {
+  display: flex;
+  align-items: center;
+  padding-top: 2px;
+  padding-inline-end: 8px;
+}
+
+#searchEngineLogo {
+  display: inline-block;
+}
+
+:root[echelon-style-3] #searchEngineLogo {
+  height: 28px;
+  width: 70px;
+  min-width: 70px;
+  content: url("chrome://userchrome/content/pages/home/images/firefox-14/google.png");
+}
+
+#searchContainer,
+#snippetContainer {
+  justify-content: center;
+}
+
+#searchText {
+  flex: 1;
+  padding: 6px 8px;
+  background: hsla(0, 0%, 100%, 0.9) padding-box;
+  border: 1px solid;
+  border-color: hsla(210, 54%, 20%, 0.15) hsla(210, 54%, 20%, 0.17) hsla(210, 54%, 20%, 0.2);
+  box-shadow: 0 1px 0 hsla(210, 65%, 9%, 0.02) inset, 0 0 2px hsla(210, 65%, 9%, 0.1) inset, 0 1px 0 hsla(0, 0%, 100%, 0.2);
+  border-radius: 2.5px 0 0 2.5px;
+  outline: 0;
+}
+
+body[dir=rtl] #searchText {
+  border-radius: 0 2.5px 2.5px 0;
+}
+
+#searchText:focus {
+  border-color: hsla(206, 100%, 60%, 0.6) hsla(206, 76%, 52%, 0.6) hsla(204, 100%, 40%, 0.6);
+}
+
+#searchSubmit {
+  min-width: 73px;
+  margin-inline-start: -1px;
+  background: -moz-linear-gradient(hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0.1)) padding-box;
+  padding: 0 9px;
+  border: 1px solid;
+  border-color: hsla(210, 54%, 20%, 0.15) hsla(210, 54%, 20%, 0.17) hsla(210, 54%, 20%, 0.2);
+  border-inline-start: 1px solid transparent;
+  border-radius: 0 2.5px 2.5px 0;
+  box-shadow: 0 0 2px hsla(0, 0%, 100%, 0.5) inset, 0 1px 0 hsla(0, 0%, 100%, 0.2);
+  cursor: pointer;
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 150ms;
+}
+
+body[dir=rtl] #searchSubmit {
+  border-radius: 2.5px 0 0 2.5px;
+}
+
+#searchText:focus + #searchSubmit,
+#searchText + #searchSubmit:hover {
+  border-color: #59b5fc #45a3e7 #3294d5;
+  color: white;
+}
+
+#searchText:focus + #searchSubmit {
+  background-image: -moz-linear-gradient(#4cb1ff, #1793e5);
+  box-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.2) inset, 0 0 0 1px hsla(0, 0%, 100%, 0.1) inset, 0 1px 0 hsla(210, 54%, 20%, 0.03);
+}
+
+#searchText + #searchSubmit:hover {
+  background-image: -moz-linear-gradient(#66bdff, #0d9eff);
+  box-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.2) inset, 0 0 0 1px hsla(0, 0%, 100%, 0.1) inset, 0 1px 0 hsla(210, 54%, 20%, 0.03), 0 0 4px hsla(206, 100%, 20%, 0.2);
+}
+
+#searchText + #searchSubmit:hover:active {
+  box-shadow: 0 1px 1px hsla(211, 79%, 6%, 0.1) inset, 0 0 1px hsla(211, 79%, 6%, 0.2) inset;
+  transition-duration: 0ms;
+}
+
+#defaultSnippet1,
+#defaultSnippet2,
+.customSnippet {
+  display: block;
+  min-height: 38px;
+  background: 30px center no-repeat;
+  padding: 6px 0;
+  padding-inline-start: 79px;
+}
+
+body[dir=rtl] #defaultSnippet1,
+body[dir=rtl] #defaultSnippet2,
+body[dir=rtl] .customSnippet {
+  background-position: right 30px center;
+}
+
+.customSnippet {
+  background-image: var(--background-image);
+}
+
+#defaultSnippet1 {
+  background-image: url("chrome://userchrome/content/pages/home/images/firefox-14/snippet1.png");
+}
+
+#defaultSnippet2 {
+  background-image: url("chrome://userchrome/content/pages/home/images/firefox-14/snippet2.png");
+}
+
+#snippets {
+  display: inline-block;
+  text-align: start;
+  margin: 12px 0;
+  color: #3c3c3c;
+  font-size: 75%;
+}
+
+#launcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: hsla(0, 0%, 0%, 0.03);
+  border-top: 1px solid hsla(0, 0%, 0%, 0.03);
+  box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.02) inset, 0 -1px 0 hsla(0, 0%, 100%, 0.25);
+}
+
+#launcher:not([session]),
+body[narrow] #launcher[session] {
+  display: block;
+  /* display separator and restore button on separate lines */
+  text-align: center;
+  white-space: nowrap;
+  /* prevent navigational buttons from wrapping */
+}
+
+.launchButton {
+  display: inline-block;
+  flex-direction: column;
+  margin: 16px 1px;
+  padding: 14px 6px;
+  min-width: 88px;
+  max-width: 176px;
+  max-height: 85px;
+  white-space: normal;
+  background: transparent padding-box;
+  border: 1px solid transparent;
+  border-radius: 2.5px;
+  color: #525c66;
+  font-size: 75%;
+  cursor: pointer;
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 150ms;
+  text-align: center;
+  appearance: none;
+}
+
+body[narrow] #launcher[session] > .launchButton {
+  margin: 4px 1px;
+}
+
+.launchButton:hover {
+  background-color: hsla(211, 79%, 6%, 0.03);
+  border-color: hsla(210, 54%, 20%, 0.15) hsla(210, 54%, 20%, 0.17) hsla(210, 54%, 20%, 0.2);
+}
+
+.launchButton:hover:active {
+  background-image: -moz-linear-gradient(hsla(211, 79%, 6%, 0.02), hsla(211, 79%, 6%, 0.05));
+  border-color: hsla(210, 54%, 20%, 0.2) hsla(210, 54%, 20%, 0.23) hsla(210, 54%, 20%, 0.25);
+  box-shadow: 0 1px 1px hsla(211, 79%, 6%, 0.05) inset, 0 0 1px hsla(211, 79%, 6%, 0.1) inset;
+  transition-duration: 0ms;
+}
+
+.launchButton[hidden],
+#launcher:not([session]) > #restorePreviousSessionSeparator,
+#launcher:not([session]) > #restorePreviousSession {
+  display: none;
+}
+
+#restorePreviousSessionSeparator {
+  width: 3px;
+  height: 116px;
+  margin: 0 10px;
+  background-image: -moz-linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.35), hsla(0, 0%, 100%, 0)), -moz-linear-gradient(hsla(211, 79%, 6%, 0), hsla(211, 79%, 6%, 0.2), hsla(211, 79%, 6%, 0)), -moz-linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.35), hsla(0, 0%, 100%, 0));
+  background-position: left top, center, right bottom;
+  background-size: 1px auto;
+  background-repeat: no-repeat;
+}
+
+body[narrow] #restorePreviousSessionSeparator {
+  margin: 0 auto;
+  width: 512px;
+  height: 3px;
+  background-image: -moz-linear-gradient(0, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.35), hsla(0, 0%, 100%, 0)), -moz-linear-gradient(0, hsla(211, 79%, 6%, 0), hsla(211, 79%, 6%, 0.2), hsla(211, 79%, 6%, 0)), -moz-linear-gradient(0, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.35), hsla(0, 0%, 100%, 0));
+  background-size: auto 1px;
+}
+
+#restorePreviousSession {
+  display: block;
+  max-width: none;
+  font-size: 90%;
+}
+
+body[narrow] #restorePreviousSession {
+  font-size: 80%;
+}
+
+.launchButton::before {
+  display: block;
+  height: 32px;
+  margin-bottom: 6px;
+  line-height: 0;
+  /* remove extra vertical space due to non-zero font-size */
+}
+
+#downloads::before {
+  content: url("chrome://userchrome/content/pages/home/images/firefox-14/downloads.png");
+}
+
+#bookmarks::before {
+  content: url("chrome://userchrome/content/pages/home/images/firefox-14/bookmarks.png");
+}
+
+#history::before {
+  content: url("chrome://userchrome/content/pages/home/images/firefox-14/history.png");
+}
+
+#apps::before {
+  content: url("chrome://userchrome/content/pages/home/images/firefox-14/apps.png");
+}
+
+#addons::before {
+  content: url("chrome://userchrome/content/pages/home/images/firefox-14/addons.png");
+}
+
+#sync::before {
+  content: url("chrome://userchrome/content/pages/home/images/firefox-14/sync.png");
+}
+
+#settings::before {
+  content: url("chrome://userchrome/content/pages/home/images/firefox-14/settings.png");
+}
+
+#restorePreviousSession::before {
+  content: url("chrome://userchrome/content/pages/home/images/firefox-14/restore-large.png");
+  height: 48px;
+  width: 48px;
+  display: inline-block;
+  /* display on same line as text label */
+  vertical-align: middle;
+  margin-bottom: 0;
+  margin-inline-end: 8px;
+}
+
+body[dir=rtl] #restorePreviousSession::before {
+  transform: scaleX(-1);
+}
+
+body[narrow] #restorePreviousSession::before {
+  content: url("chrome://userchrome/content/pages/home/images/firefox-14/restore.png");
+  height: 32px;
+  width: 32px;
+}
+
+#aboutMozilla {
+  display: block;
+  position: relative;
+  /* pin wordmark to edge of document, not of viewport */
+  order: -1;
+  opacity: 0.5;
+  transition: opacity 150ms;
+}
+
+#aboutMozilla:hover {
+  opacity: 1;
+}
+
+#aboutMozilla::before {
+  content: url("chrome://userchrome/content/pages/home/images/firefox-14/mozilla.png");
+  display: block;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+body[dir=rtl] > #launcher {
+  order: 1;
+}
+
+body[dir=rtl] > .spacer {
+  order: 2;
+}
+
+body[dir=rtl] > #topSection {
+  order: 3;
+}
+
+body[dir=rtl] > .spacer:first-child {
+  order: 4;
+}
+
+body[dir=rtl] > #aboutMozilla {
+  order: 5;
+}
+
+:root[echelon-style-4] #searchLogoContainer {
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  border: 1px transparent;
+  background-image: url("chrome://userchrome/content/pages/home/images/firefox-56/search-indicator-magnifying-glass.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+:root[echelon-style-4] #searchLogoContainer #searchEngineLogo {
+  visibility: collapse;
+}
+
+:root[echelon-style-4] #searchSubmit {
+  color: transparent !important;
+  min-width: 50px;
+  background-image: url("chrome://userchrome/content/pages/home/images/firefox-56/search-arrow-go.svg"), linear-gradient(hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0.1)) !important;
+  background-position: center center;
+  background-repeat: no-repeat, repeat;
+  -moz-context-properties: fill;
+  fill: #616366;
+}
+
+:root[echelon-style-4] #searchText:focus + #searchSubmit {
+  background-image: url("chrome://userchrome/content/pages/home/images/firefox-56/search-arrow-go.svg"), linear-gradient(#4cb1ff, #1793e5) !important;
+  fill: white;
+}
+
+:root[echelon-style-4] #searchText + #searchSubmit:hover {
+  background-image: url("chrome://userchrome/content/pages/home/images/firefox-56/search-arrow-go.svg"), linear-gradient(#66bdff, #0d9eff) !important;
+  fill: white;
+}
+
+:root[echelon-style-4] #searchText {
+  padding-inline-start: 34px;
+}
+
+:root[echelon-style-4] #defaultSnippet1,
+:root[echelon-style-4] #defaultSnippet2,
+:root[echelon-style-4] .customSnippet {
+  padding-inline-start: 49px;
+  background-position: 0 center;
+}
+
+:root[echelon-style-4] #aboutMozilla {
+  opacity: 0.2;
+}
+
+:root[echelon-style-4] #aboutMozilla:hover {
+  opacity: 0.6;
+}
+
+:root[echelon-style-4] #aboutMozilla::before {
+  content: url("chrome://userchrome/content/pages/home/images/firefox-56/mozilla.svg");
+  width: 67px;
+  height: 19px;
+}
+
+/*# sourceMappingURL=home-new.css.map */

@@ -1,0 +1,13 @@
+:root {
+  --about-logo: url("chrome://branding/content/about-logo.png");
+}
+
+:root {
+  color-scheme: light !important;
+}
+
+body {
+  display: none;
+}
+
+/*# sourceMappingURL=home.css.map */
