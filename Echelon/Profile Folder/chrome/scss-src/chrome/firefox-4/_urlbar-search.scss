@@ -19,10 +19,12 @@
     --default-favicon: url("chrome://echelon/content/firefox-4/defaultFavicon.png") !important;
 
     // Make placeholder text on urlbar/search italic on aero style
-    &:not([echelon-system-style="winxp"])[echelon-appearance-blue] {
-        #urlbar-input::placeholder,
-        .searchbar-textbox::placeholder {
-            font-style: italic !important;
+    @media all and not (-moz-windows-classic) { 
+        &:not([echelon-system-style="winxp"])[echelon-appearance-blue] {
+            #urlbar-input::placeholder,
+            .searchbar-textbox::placeholder {
+                font-style: italic !important;
+            }
         }
     }
 }

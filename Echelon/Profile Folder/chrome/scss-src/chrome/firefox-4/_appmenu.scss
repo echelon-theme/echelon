@@ -239,24 +239,26 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
         border-inline-end: 1px solid ThreeDShadow;
     }
 
-    :root[echelon-appearance-blue]:not([echelon-system-style="winxp"]) {
-        #appmenuPrimaryPane {
-            background-color: rgba(255, 255, 255, 0.5);
-            padding: 2px;
-            border-inline-end: none;
-        }
-        
-        #appmenuSecondaryPane {
-            background-color: #f1f5fb;
-            box-shadow: 1px 0 2px rgb(204, 214, 234) inset;
-            padding-top: 2px;
-            padding-bottom: 2px;
-            border-inline-start: 3px;
-            border-inline-end: 2px;
-        }
-        
-        #appmenuSecondaryPane:-moz-locale-dir(rtl) {
-            box-shadow: -1px 0 2px rgb(204, 214, 234) inset;
+    @media all and not (-moz-windows-classic) { 
+        :root[echelon-appearance-blue]:not([echelon-system-style="winxp"]) {
+            #appmenuPrimaryPane {
+                background-color: rgba(255, 255, 255, 0.5);
+                padding: 2px;
+                border-inline-end: none;
+            }
+            
+            #appmenuSecondaryPane {
+                background-color: #f1f5fb;
+                box-shadow: 1px 0 2px rgb(204, 214, 234) inset;
+                padding-top: 2px;
+                padding-bottom: 2px;
+                border-inline-start: 3px;
+                border-inline-end: 2px;
+            }
+            
+            #appmenuSecondaryPane:-moz-locale-dir(rtl) {
+                box-shadow: -1px 0 2px rgb(204, 214, 234) inset;
+            }
         }
     }
 	

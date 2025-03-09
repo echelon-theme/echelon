@@ -476,9 +476,11 @@
 }
 
 // Aero blue style
-:root:not([lwtheme], [echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
-    &[echelon-appearance-blue] {
-        --toolbar-background-color: hsl(214, 44%, 87%) !important;
+@media all and not (-moz-windows-classic) { 
+    :root:not([lwtheme], [echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
+        &[echelon-appearance-blue] {
+            --toolbar-background-color: hsl(214, 44%, 87%) !important;
+        }
     }
 }
 

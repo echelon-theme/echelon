@@ -11,11 +11,13 @@
     --urlbar-border-color-hover: ThreeDShadow !important;
     --urlbar-border-color-focused: ThreeDShadow !important;
 
-    &:not([lwtheme], [echelon-system-style="winxp"], [echelon-style-7]) {
-        &[echelon-appearance-blue] {
-            --urlbar-border-color: rgba(0,0,0,.32) !important;
-            --urlbar-border-color-hover: rgba(0,0,0,.32) !important;
-            --urlbar-border-color-focused: rgba(0,0,0,.32) !important;
+    @media all and not (-moz-windows-classic) { 
+        &:not([lwtheme], [echelon-system-style="winxp"], [echelon-style-7]) {
+            &[echelon-appearance-blue] {
+                --urlbar-border-color: rgba(0,0,0,.32) !important;
+                --urlbar-border-color-hover: rgba(0,0,0,.32) !important;
+                --urlbar-border-color-focused: rgba(0,0,0,.32) !important;
+            }
         }
     }
 

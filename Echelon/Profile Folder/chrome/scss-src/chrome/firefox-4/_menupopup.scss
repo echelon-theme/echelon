@@ -325,41 +325,43 @@
 	}
 }
 
-&:not([echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
-	&[echelon-appearance-blue] {
-		#downloadsPanel {
-			&[hasdownloads] {
-				#downloadsFooter {
-					background-color: #f1f5fb !important;
-					box-shadow: 0px 1px 2px rgb(204, 214, 234) inset !important;
-					border-bottom-left-radius: 3px !important;
-					border-bottom-right-radius: 3px !important;
+@media all and not (-moz-windows-classic) { 
+	&:not([echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
+		&[echelon-appearance-blue] {
+			#downloadsPanel {
+				&[hasdownloads] {
+					#downloadsFooter {
+						background-color: #f1f5fb !important;
+						box-shadow: 0px 1px 2px rgb(204, 214, 234) inset !important;
+						border-bottom-left-radius: 3px !important;
+						border-bottom-right-radius: 3px !important;
+					}
 				}
-			}
 
-			#downloadsListBox {
-				richlistitem {
-					&[type="download"] {
-						border: 1px solid transparent !important;
-						border-block-end: 1px solid hsl(213, 40%, 90%) !important;
+				#downloadsListBox {
+					richlistitem {
+						&[type="download"] {
+							border: 1px solid transparent !important;
+							border-block-end: 1px solid hsl(213, 40%, 90%) !important;
 
-						&:last-child {
-							border-block-end: 1px solid transparent !important;
-						}
+							&:last-child {
+								border-block-end: 1px solid transparent !important;
+							}
 
-						&[state="1"][exists]:hover {
-							border: 1px solid hsl(213, 45%, 65%) !important;
-							box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .5) inset,
-								0 1px 0 hsla(0, 0%, 100%, .3) inset !important;
-							background-image: linear-gradient(hsl(212, 86%, 92%), hsl(212, 91%, 86%)) !important;
-							color: black !important;
+							&[state="1"][exists]:hover {
+								border: 1px solid hsl(213, 45%, 65%) !important;
+								box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .5) inset,
+									0 1px 0 hsla(0, 0%, 100%, .3) inset !important;
+								background-image: linear-gradient(hsl(212, 86%, 92%), hsl(212, 91%, 86%)) !important;
+								color: black !important;
+							}
 						}
 					}
 				}
-			}
 
-			#downloadsHistory {
-				color: Highlight !important;
+				#downloadsHistory {
+					color: Highlight !important;
+				}
 			}
 		}
 	}

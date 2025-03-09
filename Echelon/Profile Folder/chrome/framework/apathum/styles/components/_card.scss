@@ -2,9 +2,11 @@
     --card-background-color: hsl(204, 83%, 54%);
     --card-name-background-color: -moz-Dialog;
 
-    &:not([echelon-system-style="winxp"])[echelon-appearance-blue],
-    & .card-container[hardcode-blue] .content {
-        --card-name-background-color: hsl(210, 55%, 92%);
+    @media all and not (-moz-windows-classic) { 
+        &:not([echelon-system-style="winxp"])[echelon-appearance-blue],
+        & .card-container[hardcode-blue] .content {
+            --card-name-background-color: hsl(210, 55%, 92%);
+        }
     }
 }
 

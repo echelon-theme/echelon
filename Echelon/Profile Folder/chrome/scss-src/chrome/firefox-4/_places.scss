@@ -2,9 +2,11 @@
     --organizer-pane-background: -moz-Field !important;
     --organizer-content-background: var(--organizer-pane-background) !important;
     --organizer-pane-border-color: ThreeDLightShadow !important;
-    &[echelon-appearance-blue] {
-        --organizer-pane-background: #EEF3FA !important;
-        --organizer-pane-border-color: #A9B7C9 !important;
+    @media all and not (-moz-windows-classic) { 
+        &[echelon-appearance-blue] {
+            --organizer-pane-background: #EEF3FA !important;
+            --organizer-pane-border-color: #A9B7C9 !important;
+        }
     }
 }
 
@@ -41,9 +43,11 @@
         .menubar-text {
             padding-inline-end: 8px !important;
             background: url("chrome://echelon/content/firefox-4/arrow-dn.gif") right center no-repeat !important;
-            :root[echelon-appearance-blue] & {
-                padding-inline-end: 15px !important;
-                background-image: url("chrome://echelon/content/firefox-4/places/dropDown.png") !important;
+            @media all and not (-moz-windows-classic) { 
+                :root[echelon-appearance-blue] & {
+                    padding-inline-end: 15px !important;
+                    background-image: url("chrome://echelon/content/firefox-4/places/dropDown.png") !important;
+                }
             }
 
             &:-moz-locale-dir(rtl) {
@@ -55,13 +59,15 @@
 }
 
 #placesToolbar {
-    :root[echelon-appearance-blue] & {
-        appearance: -moz-win-media-toolbox !important;
-        color: -moz-win-mediatext !important;
-        min-height: 36px !important;
-        padding-inline: 0 !important;
-        padding-inline-start: 6px !important;
-        padding-inline-end: 8px !important;
+    @media all and not (-moz-windows-classic) { 
+        :root[echelon-appearance-blue] & {
+            appearance: -moz-win-media-toolbox !important;
+            color: -moz-win-mediatext !important;
+            min-height: 36px !important;
+            padding-inline: 0 !important;
+            padding-inline-start: 6px !important;
+            padding-inline-end: 8px !important;
+        }
     }
 
     #back-button,
@@ -127,9 +133,11 @@
         outline: none !important;
     }
 
-    :root[echelon-appearance-blue] & {
-        padding-block-start: 2px !important;
-        padding-block-end: 3px !important;
+    @media all and not (-moz-windows-classic) { 
+        :root[echelon-appearance-blue] & {
+            padding-block-start: 2px !important;
+            padding-block-end: 3px !important;
+        }
     }
 }
 
@@ -142,7 +150,12 @@
     margin: 0 !important;
 }
 
-#detailsPane,
-:root[echelon-appearance-blue] #placesView > splitter {
+#detailsPane {
     border-color: var(--organizer-pane-border-color) !important;
+}
+
+@media all and not (-moz-windows-classic) { 
+    :root[echelon-appearance-blue] #placesView > splitter {
+        border-color: var(--organizer-pane-border-color) !important;
+    }
 }

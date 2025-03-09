@@ -1,13 +1,15 @@
 :root {
     --echelon-options-background-color: -moz-Dialog;
 
-    &:not([echelon-system-style="winxp"], [echelon-system-style="win8"][echelon-style-6="true"], [echelon-system-style="win10"][echelon-style-6="true"])[echelon-appearance-blue="true"] {
-        --echelon-options-background-color: hsl(214, 44%, 87%);
+	@media all and not (-moz-windows-classic) { 
+		&:not([echelon-system-style="winxp"], [echelon-system-style="win8"][echelon-style-6="true"], [echelon-system-style="win10"][echelon-style-6="true"])[echelon-appearance-blue="true"] {
+			--echelon-options-background-color: hsl(214, 44%, 87%);
 
-        &[echelon-style-5="true"] {
-            --echelon-options-background-color: hsl(210, 75%, 92%);
-        }
-    }
+			&[echelon-style-5="true"] {
+				--echelon-options-background-color: hsl(210, 75%, 92%);
+			}
+		}
+	}
 }
 
 :root {

@@ -73,23 +73,24 @@ tooltip {
   --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-28/panelarrow/panelarrow-horizontal-white.png");
 }
 
-:root[echelon-appearance-blue]:not([echelon-system-style=winxp]):not([echelon-style-4]) {
-  --arrowpanel-border-radius: 6px !important;
-  --arrowpanel-background: -moz-linear-gradient(rgba(250,253,255,.9), rgba(250,253,255,.75) 20px, rgba(250,253,255,.70) 39px, rgba(250,253,255,0) 41px, rgba(250,253,255,0)), rgba(179,230,255,.35) !important;
-  --arrowpanel-border: none !important;
-  --arrowpanel-margin: 5px !important;
-  --arrowpanel-echelon-shadow: 0 0 0 1px rgba(255,255,255,.65) inset, 0 1px 0 rgba(255,255,255,.3) inset, 0 0 0 1px rgba(0,0,0,.75), 0 1px 3px 2px rgba(0,0,0,.65) !important;
-  --arrowpanel-arrow-position: -5px !important;
-  --arrowpanel-vertical: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-up.png");
-  --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-horiz.png");
-  --arrowpanel-inner-background: rgb(250,250,250) !important;
-  --arrowpanel-inner-margin: 5px !important;
-  --arrowpanel-inner-border-radius: 2px !important;
-  --arrowpanel-inner-padding: 16px !important;
-  --arrowpanel-inner-border: 1px solid rgba(0,0,0,.7) !important;
-  --arrowpanel-inner-shadow: 0 0 0 1px rgba(255,255,255,.6) !important;
+@media all and not (-moz-windows-classic) {
+  :root[echelon-appearance-blue]:not([echelon-system-style=winxp]):not([echelon-style-4]) {
+    --arrowpanel-border-radius: 6px !important;
+    --arrowpanel-background: -moz-linear-gradient(rgba(250,253,255,.9), rgba(250,253,255,.75) 20px, rgba(250,253,255,.70) 39px, rgba(250,253,255,0) 41px, rgba(250,253,255,0)), rgba(179,230,255,.35) !important;
+    --arrowpanel-border: none !important;
+    --arrowpanel-margin: 5px !important;
+    --arrowpanel-echelon-shadow: 0 0 0 1px rgba(255,255,255,.65) inset, 0 1px 0 rgba(255,255,255,.3) inset, 0 0 0 1px rgba(0,0,0,.75), 0 1px 3px 2px rgba(0,0,0,.65) !important;
+    --arrowpanel-arrow-position: -5px !important;
+    --arrowpanel-vertical: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-up.png");
+    --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-4/panelarrow/panelarrow-horiz.png");
+    --arrowpanel-inner-background: rgb(250,250,250) !important;
+    --arrowpanel-inner-margin: 5px !important;
+    --arrowpanel-inner-border-radius: 2px !important;
+    --arrowpanel-inner-padding: 16px !important;
+    --arrowpanel-inner-border: 1px solid rgba(0,0,0,.7) !important;
+    --arrowpanel-inner-shadow: 0 0 0 1px rgba(255,255,255,.6) !important;
+  }
 }
-
 :root[echelon-style-6] {
   --arrowpanel-padding: 10px !important;
   --arrowpanel-color: -moz-FieldText !important;
@@ -105,9 +106,11 @@ tooltip {
   --arrowpanel-vertical: url("chrome://echelon/content/firefox-29/panelarrow/panelarrow-vertical.svg");
   --arrowpanel-hortizontal: url("chrome://echelon/content/firefox-29/panelarrow/panelarrow-horizontal.svg");
 }
-:root[echelon-style-6][echelon-appearance-blue] {
-  --arrowpanel-border-color: hsla(210,4%,10%,.2) !important;
-  --arrowpanel-echelon-shadow: 0 0 4px hsla(210,4%,10%,.2) !important;
+@media all and not (-moz-windows-classic) {
+  :root[echelon-style-6][echelon-appearance-blue] {
+    --arrowpanel-border-color: hsla(210,4%,10%,.2) !important;
+    --arrowpanel-echelon-shadow: 0 0 4px hsla(210,4%,10%,.2) !important;
+  }
 }
 :root[echelon-style-6][echelon-system-style=win8], :root[echelon-style-6][echelon-system-style=win10] {
   --arrowpanel-border-radius: 0 !important;
@@ -145,6 +148,10 @@ menupopup[type=arrow][side=left], menupopup[type=arrow][side=right] {
 
 #PanelUI-popup {
   margin-inline: -11px !important;
+}
+
+panelview {
+  background: inherit !important;
 }
 
 /* even more weird positioning shit */
