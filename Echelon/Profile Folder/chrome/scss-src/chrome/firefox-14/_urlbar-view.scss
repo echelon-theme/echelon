@@ -20,28 +20,30 @@
         }
     }
 
-    &:not([echelon-system-style="winxp"]) {
-        &[echelon-appearance-blue] {
-            .urlbarView {
-                .urlbarView-body-inner {
-                    .urlbarView-results {
-                        .urlbarView-row {
-                            margin: 1px !important;
+    @media all and not (-moz-windows-classic) { 
+        &:not([echelon-system-style="winxp"]) {
+            &[echelon-appearance-blue] {
+                .urlbarView {
+                    .urlbarView-body-inner {
+                        .urlbarView-results {
+                            .urlbarView-row {
+                                margin: 1px !important;
 
-                            &[row-selectable]:not([selected]):hover,
-                            &[selected] {
-                                color: inherit !important;
-                                background-color: transparent !important;
-                                outline-offset: -1px !important;
-                                outline: 1px solid rgb(124,163,206) !important;
-                                border-radius: 4px !important;
-                                background-clip: content-box !important;
-                                background-image:
-                                      linear-gradient(to bottom, rgba(255,255,255,0.9) 2px, rgba(255,255,255,0) 2px),
-                                      linear-gradient(to right, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0) 2px),
-                                      linear-gradient(to left, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0) 2px),
-                                      linear-gradient(to top, rgba(255,255,255,0.4) 2px, rgba(255,255,255,0) 2px),
-                                      linear-gradient(to bottom, rgba(163,196,247,0.3), rgba(122,180,246,0.3)) !important;
+                                &[row-selectable]:not([selected]):hover,
+                                &[selected] {
+                                    color: inherit !important;
+                                    background-color: transparent !important;
+                                    outline-offset: -1px !important;
+                                    outline: 1px solid rgb(124,163,206) !important;
+                                    border-radius: 4px !important;
+                                    background-clip: content-box !important;
+                                    background-image:
+                                        linear-gradient(to bottom, rgba(255,255,255,0.9) 2px, rgba(255,255,255,0) 2px),
+                                        linear-gradient(to right, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0) 2px),
+                                        linear-gradient(to left, rgba(255,255,255,0.5) 2px, rgba(255,255,255,0) 2px),
+                                        linear-gradient(to top, rgba(255,255,255,0.4) 2px, rgba(255,255,255,0) 2px),
+                                        linear-gradient(to bottom, rgba(163,196,247,0.3), rgba(122,180,246,0.3)) !important;
+                                }
                             }
                         }
                     }

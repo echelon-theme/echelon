@@ -148,8 +148,10 @@ label {
   --card-background-color: hsl(204, 83%, 54%);
   --card-name-background-color: -moz-Dialog;
 }
-:root:not([echelon-system-style=winxp])[echelon-appearance-blue], :root .card-container[hardcode-blue] .content {
-  --card-name-background-color: hsl(210, 55%, 92%);
+@media all and not (-moz-windows-classic) {
+  :root:not([echelon-system-style=winxp])[echelon-appearance-blue], :root .card-container[hardcode-blue] .content {
+    --card-name-background-color: hsl(210, 55%, 92%);
+  }
 }
 
 .card-container {

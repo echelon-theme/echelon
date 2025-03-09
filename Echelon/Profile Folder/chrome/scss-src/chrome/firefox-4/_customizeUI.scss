@@ -78,8 +78,10 @@
         stroke: ThreeDShadow !important;
         margin-inline-end: 6px !important;
 
-        :root[echelon-appearance-blue] & {
-            stroke: hsla(210,4%,10%,.2) !important;
+        @media all and not (-moz-windows-classic) { 
+            :root[echelon-appearance-blue] & {
+                stroke: hsla(210,4%,10%,.2) !important;
+            }
         }
     }
 
@@ -99,9 +101,11 @@
             background: inherit !important;
         }
         
-        :root[echelon-appearance-blue] & {
-            border-color: hsla(210,4%,10%,.2) !important;
-            box-shadow: 0 0 4px hsla(210,4%,10%,.2) !important;
+        @media all and not (-moz-windows-classic) { 
+            :root[echelon-appearance-blue] & {
+                border-color: hsla(210,4%,10%,.2) !important;
+                box-shadow: 0 0 4px hsla(210,4%,10%,.2) !important;
+            }
         }
 
         :root:is([echelon-system-style="win8"], [echelon-system-style="win10"]) & {

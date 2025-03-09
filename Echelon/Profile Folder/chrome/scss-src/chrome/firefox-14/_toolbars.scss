@@ -101,13 +101,15 @@
         }
     }
 
-    // Aero blue style
-    &:not([lwtheme], [echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
-        &[echelon-appearance-blue] {
-            --toolbar-background-color: hsl(210,75%,92%) !important;
+    @media all and not (-moz-windows-classic) { 
+        // Aero blue style
+        &:not([lwtheme], [echelon-system-style="winxp"], [echelon-style-6][echelon-system-style="win8"], [echelon-style-6][echelon-system-style="win10"]) {
+            &[echelon-appearance-blue] {
+                --toolbar-background-color: hsl(210,75%,92%) !important;
 
-            #navigator-toolbox::after {
-                background-color: #aabccf !important;
+                #navigator-toolbox::after {
+                    background-color: #aabccf !important;
+                }
             }
         }
     }

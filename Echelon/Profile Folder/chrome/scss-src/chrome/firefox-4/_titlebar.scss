@@ -76,12 +76,12 @@
 			grid-area: tabbar !important;
 		}
 	}
+}
 
-	@media all and (-moz-windows-classic) { 
-		&:not([sizemode="maximized"]) {
-			.titlebar-buttonbox {
-				appearance: auto !important;
-			}
+@media all and (-moz-windows-classic) { 
+	:root:not([sizemode="maximized"]) {
+		.titlebar-buttonbox {
+			appearance: auto !important;
 		}
 	}
 }

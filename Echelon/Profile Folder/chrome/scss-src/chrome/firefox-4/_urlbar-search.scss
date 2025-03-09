@@ -19,10 +19,12 @@
     --default-favicon: url("chrome://echelon/content/firefox-4/defaultFavicon.png") !important;
 
     // Make placeholder text on urlbar/search italic on aero style
-    &:not([echelon-system-style="winxp"])[echelon-appearance-blue] {
-        #urlbar-input::placeholder,
-        .searchbar-textbox::placeholder {
-            font-style: italic !important;
+    @media all and not (-moz-windows-classic) { 
+        &:not([echelon-system-style="winxp"])[echelon-appearance-blue] {
+            #urlbar-input::placeholder,
+            .searchbar-textbox::placeholder {
+                font-style: italic !important;
+            }
         }
     }
 }
@@ -445,11 +447,14 @@
         display: flex !important;
         margin: 1px !important;
         background-image: url("chrome://echelon/content/firefox-4/Search-glass.png") !important;
-        :root[echelon-system-style="winxp"] & {
-            background-image: url("chrome://echelon/content/firefox-4/xp/Search-glass.png") !important;
-        }
         list-style-image: none !important;
 
         @include set-horizontal-states(0, 16px, 32px);
+    }
+}
+
+:root:not([echelon-style-7])[echelon-system-style="winxp"] {
+    #searchbar .search-go-button {
+        background-image: url("chrome://echelon/content/firefox-4/xp/Search-glass.png") !important;
     }
 }

@@ -3,12 +3,14 @@
     --urlbar-border-color-hover: ThreeDShadow !important;
     --urlbar-border-color-focused: ThreeDShadow !important;
 
-    &:not([echelon-system-style="winxp"], [echelon-style-7]) {
-        &[echelon-appearance-blue],
-        &[echelon-system-style="win8"] {
-            --urlbar-border-color: hsla(210,54%,20%,.25) hsla(210,54%,20%,.27) hsla(210,54%,20%,.3) !important;
-            --urlbar-border-color-hover: hsla(210,54%,20%,.35) hsla(210,54%,20%,.37) hsla(210,54%,20%,.4) !important;
-            --urlbar-border-color-focused: hsla(206,100%,60%,.65) hsla(206,100%,55%,.65) hsla(206,100%,50%,.65) !important;
+    @media all and not (-moz-windows-classic) { 
+        &:not([echelon-system-style="winxp"], [echelon-style-7]) {
+            &[echelon-appearance-blue],
+            &[echelon-system-style="win8"] {
+                --urlbar-border-color: hsla(210,54%,20%,.25) hsla(210,54%,20%,.27) hsla(210,54%,20%,.3) !important;
+                --urlbar-border-color-hover: hsla(210,54%,20%,.35) hsla(210,54%,20%,.37) hsla(210,54%,20%,.4) !important;
+                --urlbar-border-color-focused: hsla(206,100%,60%,.65) hsla(206,100%,55%,.65) hsla(206,100%,50%,.65) !important;
+            }
         }
     }
 
