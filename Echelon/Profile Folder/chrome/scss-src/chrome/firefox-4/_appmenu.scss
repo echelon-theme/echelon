@@ -85,6 +85,19 @@
     }
 }
 
+
+@media not (-moz-windows-compositor) {
+    :root:not([echelon-system-style="winxp"]) {
+        #appmenu-button-container {
+            height: calc(100% - 3px) !important;
+
+            #appmenu-button {
+                height: 100% !important;
+            }
+        }
+    }
+}
+
 #appmenu-button-container {
     border-bottom-left-radius: 4px !important;
     border-bottom-right-radius: 4px !important;

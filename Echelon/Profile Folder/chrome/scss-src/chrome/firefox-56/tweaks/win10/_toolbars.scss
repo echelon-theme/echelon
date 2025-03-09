@@ -18,3 +18,12 @@
     border-top: 0 !important;
     box-shadow: none !important;
 }
+
+#navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
+    &#forward-button,
+    &#forward-button.unified-with-urlbar {
+        padding-left: 11px !important;
+        padding-right: 2px !important;
+        clip-path: var(--urlbar-back-button-clip-path-win10) !important;
+    }
+}

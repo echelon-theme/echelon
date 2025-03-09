@@ -2,47 +2,115 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+:root {
+    &:not([echelon-style-5][echelon-appearance-newlogo="true"]) {
+        margin-bottom: 10px;
+        min-width: 600px !important;
+        width: 600px !important;
+        max-width: 600px !important;
+    }
+}
+
 #aboutDialogContainer {
-  background-color: #f7f7f7;
-  color: #222222;
-  color-scheme: light;
+    color-scheme: light;
 }
 
 #clientBox {
-  padding: 10px 0 15px;
+    background-color: #F7F7F7 !important;
+    color: #222222 !important;
 }
 
 #leftBox {
-  background-image: url("chrome://branding/content/about-logo.png");
-  background-repeat: no-repeat;
-  background-size: 192px auto;
-  background-position: center 20%;
-  /* min-width and min-height create room for the logo */
-  min-width: 210px;
-  min-height: 210px;
-  margin-top: 20px;
-  margin-inline-start: 30px;
+    background-image: url("chrome://branding/content/about-logo.png");
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    background-position: center 20%;
+    /* min-width and min-height create room for the logo */
+    min-width: 210px;
+    min-height: 210px;
+    margin-top: 20px;
+    margin-inline-start: 30px;
 }
 
 .text-link {
-  color: var(--link-color) !important;
-  text-decoration: underline;
+    color: link !important;
+
+    text-decoration: none;
+
+    :root:not([echelon-style-5][echelon-appearance-newlogo="true"]) &,
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 #rightBox {
-  background-image: url("chrome://branding/content/about-wordmark.png");
-  background-size: 130px auto;
-  margin-inline: 30px;
+    background-image: url("chrome://branding/content/about-wordmark.png");
+    background-size: 130px auto;
+    margin-inline: 30px;
 }
 
 #bottomBox {
-  background-color: -moz-Dialog;
-  padding: 15px 10px 15px;
+    background-color: -moz-Dialog;
+    padding: 15px 10px 0;
 }
 
 #trademark {
-  font-size: xx-small;
-  text-align: center;
-  color: #999999;
-  margin-block: 10px;
+    font-size: xx-small;
+    text-align: center;
+    color: #999999;
+    margin-block: 10px;
+}
+
+#icons {
+    .icon {
+        margin: 0;
+
+        &:not(.update-throbber) {
+            visibility: collapse !important;
+        }
+    }
+}
+
+#updateDeck {
+    margin-block-end: 10px;
+    
+    description {
+        color: #909090 !important;
+
+        :root:not([echelon-style-5]) & {
+            font-style: italic !important;
+        }
+    }
+}
+
+.update-throbber {
+    content: url("chrome://echelon/content/firefox-4/loading_16.png")
+}
+
+hbox + .text-blurb {
+    visibility: collapse !important;
+}
+
+:root:not([echelon-style-7]) {
+    #releasenotes {
+        visibility: collapse !important;
+    }
+}
+
+#updateDeck + hbox[align="baseline"] {
+    order: -1;
+}
+
+#release,
+#distribution,
+#distributionId {
+    visibility: collapse !important;
+}
+
+#version {
+    margin-top: 5px;
+
+    :root[echelon-style-7] & {
+        font-weight: bold;
+    }
 }

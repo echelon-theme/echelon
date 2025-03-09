@@ -1,0 +1,352 @@
+html {
+  font-family: sans-serif;
+  background: Field;
+  color: FieldText;
+  height: 100%;
+}
+
+body {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+span p {
+  display: inline-block;
+}
+
+a {
+  color: rgb(0, 0, 238);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus {
+  color: rgb(238, 0, 0);
+}
+
+#brandStart {
+  text-align: center;
+  height: 19%;
+  max-height: 256px;
+  min-height: 92px;
+}
+
+#brandStartSpacer {
+  height: 6.5%;
+}
+
+#brandStartLogo {
+  display: inline-block;
+  content: var(--about-logo);
+  height: 100%;
+}
+
+#searchContainer {
+  height: 15%;
+  min-height: 90px;
+}
+
+#searchContainer::before {
+  content: " ";
+  display: block;
+  height: 23%;
+}
+
+#searchForm {
+  display: table;
+  width: 100%;
+  max-width: 1830px;
+  margin: 0 auto;
+}
+
+@media all and (max-height: 700px) {
+  #searchContainer {
+    height: 20%;
+  }
+}
+@media all and (max-height: 450px) {
+  #searchContainer {
+    height: 30%;
+  }
+}
+#searchLogoContainer {
+  display: table-cell;
+  width: 30%;
+  text-align: end;
+  line-height: 32px;
+}
+
+#searchEngineLogo {
+  display: inline-block;
+  margin-inline-end: 2.5%;
+  content: url("chrome://userchrome/content/pages/home/images/firefox-4/google.png");
+}
+
+#searchEngineLogo[hidden=true] {
+  display: none;
+}
+
+#searchInputContainer {
+  display: table-cell;
+  width: 38%;
+  max-width: 700px;
+  min-width: 150px;
+  vertical-align: top;
+}
+
+#searchText {
+  width: 100%;
+  height: 24px;
+  padding: 3px 6px;
+  border-radius: 2px;
+  border: 1px solid rgb(150, 150, 150);
+  border-top-color: rgb(100, 100, 100);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  font-size: 1.2em;
+  outline: 0;
+}
+
+#searchButtons {
+  display: table-cell;
+  width: 31%;
+  padding-inline-start: 13px;
+  vertical-align: top;
+}
+
+@media all and (max-width: 470px) {
+  #searchLogoContainer {
+    width: 10%;
+  }
+  #searchButtons {
+    width: 11%;
+  }
+  #searchInputContainer {
+    width: 40%;
+  }
+}
+@media all and (min-width: 470px) and (max-width: 600px) {
+  #searchLogoContainer {
+    width: 15%;
+  }
+  #searchButtons {
+    width: 16%;
+    white-space: nowrap;
+  }
+  #searchInputContainer {
+    width: 45%;
+  }
+}
+@media all and (min-width: 600px) and (max-width: 850px) {
+  #searchLogoContainer {
+    width: 20%;
+  }
+  #searchButtons {
+    width: 21%;
+    white-space: nowrap;
+  }
+  #searchInputContainer {
+    width: 49%;
+  }
+}
+#searchSubmit {
+  display: inline-block;
+  background: linear-gradient(#f1f1f1, #dfdfdf);
+  padding: 4px 10px;
+  height: 32px;
+  border: 1px solid #ccc;
+  border-top-color: #ccc;
+  border-bottom-color: #999;
+  border-inline-start-color: #afafaf;
+  border-inline-end-color: #999;
+  box-shadow: 1px 1px 0 #e7e7e7, 0 1px 0 #fcfcfc inset, 0 -1px 0 #d7d7d7 inset;
+  font-size: 1.05em;
+  color: #000;
+  cursor: pointer;
+}
+
+body[dir=rtl] #searchSubmit {
+  box-shadow: -1px 1px 0 #e7e7e7, 0 1px 0 #fcfcfc inset, 0 -1px 0 #d7d7d7 inset;
+}
+
+#searchSubmit:active {
+  background: linear-gradient(#c5c5c5, #c5c5c5);
+  box-shadow: 1px 1px 0 #e7e7e7;
+}
+
+body[dir=rtl] #searchSubmit:active {
+  box-shadow: -1px 1px 0 #e7e7e7;
+}
+
+#contentContainer {
+  height: 30%;
+  background-image: -moz-radial-gradient(center top, ellipse farthest-side, rgba(16, 83, 130, 0.5), rgba(16, 83, 130, 0) 75%), -moz-radial-gradient(center top, ellipse farthest-side, rgba(180, 218, 244, 0.5), rgba(180, 218, 244, 0)), -moz-radial-gradient(center top, ellipse farthest-side, rgba(180, 218, 244, 0.3), rgba(180, 218, 244, 0));
+  background-size: 100% 5px, 100% 50px, 100% 100%;
+  background-repeat: no-repeat;
+}
+
+@media all and (max-height: 400px) {
+  #contentContainer {
+    height: 20%;
+  }
+}
+#snippetContainer {
+  position: relative;
+  top: -24px;
+  text-align: center;
+}
+
+#snippets {
+  display: inline-block;
+  padding: 14px;
+  width: 30%;
+  max-width: 600px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+  background-color: rgb(250, 250, 250);
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 -2px 0 rgba(0, 0, 0, 0.1) inset, 0 0 10px rgba(255, 255, 255, 0.5) inset, 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: rgb(60, 60, 60);
+  font-size: 0.85em;
+  cursor: pointer;
+}
+
+@media all and (max-width: 470px) {
+  #snippets {
+    width: 65%;
+  }
+}
+@media all and (min-width: 470px) and (max-width: 850px) {
+  #snippets {
+    width: 45%;
+  }
+}
+#snippets:hover {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 -2px 0 rgba(0, 0, 0, 0.1) inset, 0 0 10px rgba(255, 255, 255, 0.5) inset, 0 0 5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#snippets:hover:active {
+  background-color: rgb(210, 210, 210);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+#launcher {
+  padding-top: 1.5%;
+  text-align: center;
+}
+
+@media all and (max-height: 370px) {
+  #launcher {
+    position: relative;
+    top: -5px;
+    padding-top: 0;
+  }
+}
+#restorePreviousSession {
+  display: inline-block;
+  padding: 10px;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(9, 37, 59, 0), 0 1px 2px rgba(9, 37, 59, 0), 0 0 10px rgba(255, 255, 255, 0), 0 -3px 0 rgba(180, 194, 212, 0) inset;
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-out;
+  background: transparent;
+  color: rgb(50, 50, 50);
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  appearance: none !important;
+}
+
+#restorePreviousSession::before {
+  display: inline-block;
+  content: url("chrome://userchrome/content/pages/home/images/firefox-4/aboutHome-restore-icon.png");
+  margin-inline-end: 10px;
+  vertical-align: middle;
+  height: 66px;
+  /* Needed to avoid a blank space under the image */
+}
+
+body[dir=rtl] #restorePreviousSession::before {
+  transform: scaleX(-1);
+}
+
+@media all and (max-height: 500px) {
+  #restorePreviousSession::before {
+    content: url("chrome://userchrome/content/pages/home/images/firefox-4/aboutHome-restore-icon-small.png");
+    height: 41px;
+  }
+}
+@media all and (max-width: 500px) {
+  #restorePreviousSession::before {
+    content: url("chrome://userchrome/content/pages/home/images/firefox-4/aboutHome-restore-icon-small.png");
+    height: 41px;
+  }
+}
+#restorePreviousSession:not([session]) {
+  display: none !important;
+}
+
+#restorePreviousSession:hover {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.2));
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(9, 37, 59, 0.2), 0 1px 2px rgba(9, 37, 59, 0.2), 0 0 10px rgba(255, 255, 255, 0.4), 0 -3px 0 rgba(180, 194, 212, 0.3) inset;
+}
+
+#restorePreviousSession:hover:active {
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
+  background-color: rgba(23, 75, 115, 0.1);
+  box-shadow: 0 0 0 1px rgba(9, 37, 59, 0.2), 0 1px 2px rgba(9, 37, 59, 0.4) inset, 0 1px 5px rgba(9, 37, 59, 0.15) inset;
+}
+
+#bottomSection {
+  position: absolute;
+  color: rgb(150, 150, 150);
+  font-size: 0.8em;
+  width: 100%;
+  text-align: center;
+  bottom: 2%;
+}
+
+#syncLinksContainer {
+  display: none;
+}
+
+:root[echelon-style-1] #syncLinksContainer {
+  display: block;
+  padding-top: 1em;
+}
+:root[echelon-style-1] .sync-link {
+  padding: 1em;
+}
+:root[echelon-style-1] #defaultSnippet1,
+:root[echelon-style-1] #defaultSnippet2,
+:root[echelon-style-1] .customSnippet {
+  display: table-row;
+  text-align: start;
+}
+:root[echelon-style-1] #defaultSnippet1::before,
+:root[echelon-style-1] #defaultSnippet2::before,
+:root[echelon-style-1] .customSnippet::before {
+  display: table-cell;
+  vertical-align: middle;
+  padding-inline-end: 1em;
+}
+:root[echelon-style-1] #defaultSnippet1::before {
+  content: url("chrome://userchrome/content/pages/home/images/firefox-14/snippet1.png");
+}
+:root[echelon-style-1] #defaultSnippet2::before {
+  content: url("chrome://userchrome/content/pages/home/images/firefox-14/snippet2.png");
+}
+:root[echelon-style-1] .customSnippet::before {
+  content: var(--background-image);
+}
+
+/*# sourceMappingURL=home-old.css.map */

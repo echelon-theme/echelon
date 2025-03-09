@@ -108,9 +108,11 @@
                         height: 16px !important;
                         margin: 0 5px -3px 3px !important;
                         flex-basis: 0 !important;
-                        
+
+                        &.default-favicon,
+                        &:-moz-broken, 
                         &[src="chrome://global/skin/icons/search-glass.svg"],
-                        &.default-favicon {
+                        &[src="chrome://global/skin/icons/defaultFavicon.svg"] {
                             content: var(--default-favicon) !important;
                         }
                         

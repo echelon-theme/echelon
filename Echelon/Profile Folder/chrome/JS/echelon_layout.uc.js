@@ -416,12 +416,20 @@ let g_echelonLayoutManager;
 		};
 	});
 
-	waitForElement(".private-browsing-indicator-with-label").then(e => {
-		for (const elem of document.querySelectorAll(".private-browsing-indicator-with-label")) {
+	function replacePrivateBrowsing(indicator) {
+		for (const elem of indicator) {
 			let echelonPrivateBrowsing = window.MozXULElement.parseXULToFragment(`
 				<hbox class="private-browsing-indicator"/>
 			`);
 			elem.replaceWith(echelonPrivateBrowsing);
 		}
+	}
+
+	waitForElement(".private-browsing-indicator-with-label").then(e => {
+		replacePrivateBrowsing(document.querySelectorAll(".private-browsing-indicator-with-label"));
+	});
+	
+	waitForElement("#private-browsing-indicator-with-label").then(e => {
+		replacePrivateBrowsing(document.querySelectorAll("#private-browsing-indicator-with-label"));
 	});
 }

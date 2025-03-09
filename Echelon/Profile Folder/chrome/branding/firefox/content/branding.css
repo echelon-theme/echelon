@@ -1,0 +1,9 @@
+:root {
+  --identity-icons-brand: url("chrome://branding/content/identity-icons-brand.png") !important;
+}
+:root[echelon-style-7] {
+  --identity-icons-brand: url("chrome://branding/content/identity-icons-brand.svg") !important;
+  --identity-color-brand: rgb(229, 115, 0) !important;
+}
+
+/*# sourceMappingURL=branding.css.map */

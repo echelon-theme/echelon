@@ -412,6 +412,16 @@ checkbox {
 }
 
 #system-style-default {
+	&[value="win"] {
+		list-style-image: url("chrome://userchrome/content/pages/options/images/system-styles/win7.png");
+	}
+
+	&[value="linux"] {
+		list-style-image: url("chrome://userchrome/content/pages/options/images/system-styles/linux.png");
+	}
+}
+
+#system-style-winvista {
 	list-style-image: url("chrome://userchrome/content/pages/options/images/system-styles/win7.png");
 }
 

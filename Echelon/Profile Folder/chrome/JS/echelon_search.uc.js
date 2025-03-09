@@ -111,24 +111,6 @@ class EchelonSearchManager
 		return url;
 	}
 
-	static async onMutation(list)
-	{
-		//for (const mut of list)
-		//{
-		//	if (mut.type == "attributes"
-		//	&& (mut.target.nodeName == "image"
-		//	|| mut.target.matches("img.urlbarView-favicon"))
-		//	&& mut.attributeName == "src")
-		//	{
-		//		let replacement = await this.getReplacementIcon(mut.target.getAttribute("src"));
-		//		if (replacement != mut.target.getAttribute("src"))
-		//		{
-		//			mut.target.setAttribute("src", replacement);
-		//		}
-		//	}
-		//}
-	}
-
 	static updateDisplay_hook()
 	{
 		if (this.updateDisplay_orig && this.searchbar)
@@ -166,8 +148,6 @@ class EchelonSearchManager
 	}
 }
 
-let observer = new MutationObserver(EchelonSearchManager.onMutation.bind(EchelonSearchManager));
-observer.observe(document.documentElement, { attributes: true, childList: true, subtree : true });
 EchelonSearchManager.installSearchBoxHook();
 
 const updateSeachManager = {

@@ -34,21 +34,25 @@
                 & + #urlbar-container {
                     & > #urlbar,
                     & > #echelon-urlbar-positioning {
-                        margin-left: -32px !important;
+                        margin-left: -35px !important;
                     }
 
                     #urlbar-background,
                     .urlbar-input-container,
                     #urlbar-input-container {
-                        mask: url("chrome://echelon/content/firefox-56/urlbar/urlbar-back-button-clip-path-win10.svg") !important;
+                        clip-path: var(--urlbar-back-button-clip-path-win10) !important;
+                    }
+
+                    #identity-icon-box {
+                        padding-inline-start: 10px !important;
                     }
                 }
             }
 
             #forward-button.unified-with-urlbar {
                 & + #urlbar-container {
-                    padding-inline-start: 32px !important;
-                    margin-inline-start: -32px !important;
+                    padding-inline-start: 35px !important;
+                    margin-inline-start: -35px !important;
                 }
             }
         }

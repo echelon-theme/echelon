@@ -132,9 +132,7 @@
                 #urlbar-background,
                 .urlbar-input-container,
                 #urlbar-input-container {
-                    mask: url("chrome://echelon/content/firefox-10/urlbar/winstripe-urlbar-back-button-mask.svg") !important;
-                    mask-repeat: no-repeat !important;
-                    mask-position-x: -1px !important;
+                    clip-path: var(--urlbar-back-button-clip-path) !important;
                 }
 
                 #identity-icon-box {

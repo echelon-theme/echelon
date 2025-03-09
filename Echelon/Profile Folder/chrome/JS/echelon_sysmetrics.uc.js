@@ -6,6 +6,30 @@
 // ==/UserScript==
 
 {
+    function GetSystemMetrics(aValue) {
+        if (Services.appinfo.OS == "WINNT")
+        {
+            var { ctypes } = ChromeUtils.importESModule("resource://gre/modules/ctypes.sys.mjs");
+
+            let user32 = ctypes.open("user32.dll");
+            let GetSystemMetrics = user32.declare(
+                "GetSystemMetrics",
+                ctypes.winapi_abi,
+                ctypes.int32_t,
+                ctypes.int32_t
+            );
+
+            let sysmetric = GetSystemMetrics(aValue);
+
+            user32.close();
+
+            return sysmetric;
+        }
+        else {
+            return
+        }
+    }
+
     function GetSystemColor(aValue) {
         if (Services.appinfo.OS == "WINNT")
         {
@@ -45,6 +69,8 @@
     function SetSystemColors() {
         if (Services.appinfo.OS == "WINNT")
         {
+            let paddedBorder = GetSystemMetrics(92);
+            
             document.documentElement.style.removeProperty(`--captiontext`);
             document.documentElement.style.removeProperty(`--inactivecaptiontext`);
 
@@ -55,6 +81,10 @@
             document.documentElement.style.setProperty(
                 `--inactivecaptiontext`,
                 GetSystemColor(19)
+            );
+            document.documentElement.style.setProperty(
+                `--paddedborder`,
+                `${paddedBorder}px`
             );
         }
     }

@@ -1,10 +1,13 @@
+let { PrefUtils, VersionUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+let { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");
+
+let gOptionsBundle = document.getElementById("optionsBundle");
+let ncpQueryResult = window.matchMedia("(-moz-ev-native-controls-patch)");
+
 ChromeUtils.defineESModuleGetters(window, {
     EchelonThemeManager: "chrome://modules/content/EchelonThemeManager.sys.mjs",
     EchelonUpdateChecker: "chrome://userscripts/content/modules/EchelonUpdateChecker.sys.mjs",
 });
-const { PrefUtils, VersionUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
-const gOptionsBundle = document.getElementById("optionsBundle");
-const { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");
 
 let g_themeManager = new EchelonThemeManager;
 g_themeManager.init(
@@ -538,3 +541,20 @@ const lwtOffsetObserverPrefs = {
 document.addEventListener("DOMContentLoaded", setLWTbg);
 Services.prefs.addObserver("extensions.activeThemeID", lwtOffsetObserverPrefs, false);
 document.addEventListener("DOMContentLoaded", lwtOffsetObserver);
+
+function systemStyleMenuList() {
+    let platform = AppConstants.platform;
+    let defaultItem = document.querySelector(".menulist[preference='Echelon.Appearance.systemStyle'] #system-style-default");
+    let vistaItem = document.querySelector(".menulist[preference='Echelon.Appearance.systemStyle'] #system-style-winvista");
+
+    if (platform == "win") {
+        defaultItem.setAttribute("value", "win");
+    } 
+    else if (platform == "linux") {
+        defaultItem.setAttribute("value", "linux");
+
+        vistaItem.setAttribute("value", "win");
+        vistaItem.removeAttribute("hidden");
+    }
+}
+document.addEventListener("DOMContentLoaded", systemStyleMenuList);

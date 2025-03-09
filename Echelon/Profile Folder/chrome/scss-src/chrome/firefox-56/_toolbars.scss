@@ -21,9 +21,11 @@
         border-radius: var(--toolbarbutton-border-radius) !important;
     }
     
-    &[sizemode="normal"]:not([echelon-system-style="winxp"], [echelon-system-style="win8"], [echelon-system-style="win10"]) #nav-bar {
-        border-top-left-radius: 2.5px !important;
-        border-top-right-radius: 2.5px !important;
+    @media (-moz-windows-compositor) { 
+        &[sizemode="normal"]:not([echelon-system-style="winxp"], [echelon-system-style="win8"], [echelon-system-style="win10"]) #nav-bar {
+            border-top-left-radius: 2.5px !important;
+            border-top-right-radius: 2.5px !important;
+        }
     }
     
     #nav-bar {
@@ -123,8 +125,8 @@
             }
 
             &#forward-button.unified-with-urlbar {
-                width: 33px !important;
-                margin-inline-start: -8px !important;
+                width: 35px !important;
+                margin-inline-start: -10px !important;
 
                 background-color: var(--backbutton-background) !important;
                 border-color: var(--backbutton-border-color) !important;
@@ -204,11 +206,5 @@
 
     #downloads-notification-anchor[notification="finish"] > #downloads-indicator-notification {
         background-image: url("chrome://echelon/content/firefox-56/downloads/download-notification-finish.png") !important;
-    }
-
-    #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified)#forward-button {
-        width: 32px !important;
-        padding-left: 9px !important;
-        padding-right: 3px !important;
     }
 }

@@ -102,8 +102,10 @@
                         margin-inline-end: 9px !important;
                         flex-basis: 0 !important;
 
-                        &.default-favicon {
-                            content: url("chrome://echelon/content/firefox-56/skin/defaultFavicon.svg") !important;
+                        &.default-favicon,
+                        &:-moz-broken, 
+                        &[src="chrome://global/skin/icons/defaultFavicon.svg"] {
+                            content: var(--default-favicon) !important;
                         }
 
                         &[src="chrome://global/skin/icons/search-glass.svg"] {

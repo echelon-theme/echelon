@@ -75,7 +75,7 @@ class EchelonWidgetManager
             defaultArea: "PanelUI-contents",
 
             onCommand: function() {
-                showEchelonWizard();
+                launchEchelonOptions();
             },
             
             onCreated: function(button) {

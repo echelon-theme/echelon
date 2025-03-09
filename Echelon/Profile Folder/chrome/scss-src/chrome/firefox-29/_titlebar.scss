@@ -3,9 +3,20 @@
         visibility: collapse !important;
     } 
 
-    &:not([echelon-system-style="winxp"])[tabsintitlebar][sizemode="normal"] {
-        #titlebar {
-            appearance: none !important;
+    @media (-moz-windows-compositor) { 
+        &[tabsintitlebar][sizemode="normal"] {
+            #titlebar {
+                appearance: none !important;
+            }
+        }
+    }
+
+    @media not (-moz-windows-compositor) { 
+        &[tabsintitlebar][sizemode="normal"] {
+            #titlebar {
+                appearance: auto !important;
+                -moz-default-appearance: -moz-window-titlebar !important;
+            }
         }
     }
 
@@ -22,10 +33,10 @@
     
     &[privatebrowsingmode="temporary"][tabsintitlebar] #private-browsing-indicator-titlebar > .private-browsing-indicator {
         display: block !important;
-        width: 40px;
-        height: 20px;
-        margin-inline-end: 4px;
-        background: url("chrome://echelon/content/firefox-29/privatebrowsing/privatebrowsing-mask-titlebar-XPVista7.png") no-repeat center 0px;
+        width: 40px !important;
+        height: 20px !important;
+        margin-inline-end: 4px !important;
+        background: url("chrome://echelon/content/firefox-29/privatebrowsing/privatebrowsing-mask-titlebar-XPVista7.png") no-repeat center 0px !important;
     }
 
     &[privatebrowsingmode="temporary"]:not([tabsintitlebar]) #TabsToolbar > .private-browsing-indicator {
@@ -33,10 +44,10 @@
         width: 48px !important;
         height: 32px !important;
         margin-inline-end: 4px !important;
-        background: url("chrome://echelon/content/firefox-29/privatebrowsing/privatebrowsing-mask-tabstrip-XPVista7.png") no-repeat center 0;
+        background: url("chrome://echelon/content/firefox-29/privatebrowsing/privatebrowsing-mask-tabstrip-XPVista7.png") no-repeat center 0 !important;
     }
 
-    &[echelon-system-style="winxp"] {
+    @media not (-moz-windows-compositor) { 
         &[privatebrowsingmode="temporary"][tabsintitlebar] #private-browsing-indicator-titlebar > .private-browsing-indicator {
             background-image: url("chrome://echelon/content/firefox-29/privatebrowsing/privatebrowsing-mask-titlebar-XPVista7-tall.png") !important;
             height: 28px !important;

@@ -14,15 +14,15 @@
             & + #urlbar-container {            
                 & > #urlbar,
                 & > #echelon-urlbar-positioning {
-                    margin-left: -29px !important;
+                    margin-left: -31px !important;
                 }
             }
         }
 
         #forward-button.unified-with-urlbar {
             & + #urlbar-container {
-                padding-inline-start: 30px !important;
-                margin-inline-start: -30px !important;
+                padding-inline-start: 31px !important;
+                margin-inline-start: -31px !important;
             }
         }
     }
