@@ -1736,7 +1736,7 @@ window {
   padding-inline-start: 4px !important;
   padding-inline-end: 2px !important;
 }
-#PersonalToolbar .toolbarbutton-1:not(#bookmarks-menu-button) .toolbarbutton-icon {
+#PersonalToolbar .toolbarbutton-1:not(#bookmarks-menu-button, #PlacesChevron) .toolbarbutton-icon {
   width: 18px !important;
   height: 18px !important;
   margin-inline-end: 0 !important;
@@ -1750,6 +1750,17 @@ window {
   padding: 0 !important;
   min-height: unset !important;
   background-color: transparent !important;
+}
+#PersonalToolbar #PlacesChevron {
+  align-items: center !important;
+  list-style-image: url("chrome://echelon/content/firefox-4/chevron.gif") !important;
+}
+#PersonalToolbar #PlacesChevron .toolbarbutton-icon {
+  width: 8px !important;
+  height: 5px !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  padding: 0 !important;
 }
 
 .bookmark-item[container] .toolbarbutton-icon,
@@ -5256,6 +5267,9 @@ xul|dialog[inbrowserwindow] {
   box-shadow: none !important;
   background-color: transparent !important;
 }
+:root[echelon-style-6]:not([sizemode=maximized]) #TabsToolbar .toolbar-items {
+  padding-top: 1px !important;
+}
 :root[echelon-style-6] #TabsToolbar {
   background-image: none !important;
   z-index: initial !important;
@@ -5271,7 +5285,6 @@ xul|dialog[inbrowserwindow] {
   display: none !important;
 }
 :root[echelon-style-6] #TabsToolbar .toolbar-items {
-  padding-top: 1px !important;
   padding-inline: 1px !important;
 }
 :root[echelon-style-6] #TabsToolbar #new-tab-button {

@@ -253,11 +253,6 @@ body {
 	margin-block-end: 15px;
 }
 
-#preset-container image {
-	background-position: 10px 0;
-	background-repeat: no-repeat;
-}
-
 .content-section {
 	max-width: 700px;
 	margin-block-end: 10px;
@@ -268,7 +263,6 @@ body {
 	font-weight: normal;
 	font-size: 9pt;
 	padding-block-end: 10px;
-	padding-inline: 2px;
 	font-size: 15px;
 	align-items: center;
 	justify-content: space-between;
@@ -483,14 +477,6 @@ label:not(.header)[needs-restart-label] {
 	&::after {
 		margin-block-start: 2px;
 	}
-}
-
-#preset-container[echelon-system-style="winxp"] image {
-	background-position: 23px 10px;
-}
-
-#preset-container[echelon-system-style="win10"] image {
-	background-position: 10px -8px;
 }
 
 .view-credits-button {

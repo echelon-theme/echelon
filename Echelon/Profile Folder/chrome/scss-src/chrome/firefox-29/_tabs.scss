@@ -39,6 +39,12 @@
     }
 }
 
+&:not([sizemode="maximized"]) {
+    #TabsToolbar .toolbar-items {
+        padding-top: 1px !important;
+    }
+}
+
 #TabsToolbar {
     background-image: none !important;
     
@@ -52,7 +58,6 @@
     }
     
     .toolbar-items {
-        padding-top: 1px !important;
         padding-inline: 1px !important;
     }
 

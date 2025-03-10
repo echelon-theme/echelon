@@ -67,7 +67,7 @@
         }
     }
 
-    .toolbarbutton-1:not(#bookmarks-menu-button) {
+    .toolbarbutton-1:not(#bookmarks-menu-button, #PlacesChevron) {
         .toolbarbutton-icon {
             width: 18px !important;
             height: 18px !important;
@@ -86,6 +86,19 @@
             padding: 0 !important;
             min-height: unset !important;
             background-color: transparent !important;
+        }
+    }
+
+    #PlacesChevron {
+        align-items: center !important;
+        list-style-image: url("chrome://echelon/content/firefox-4/chevron.gif") !important;
+
+        .toolbarbutton-icon {
+            width: 8px !important;
+            height: 5px !important;
+            border-radius: 0 !important;
+            background-color: transparent !important;
+            padding: 0 !important;
         }
     }
 }
