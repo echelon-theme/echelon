@@ -239,5 +239,13 @@ function initIdentityHandlerFavicon() {
 	updateIcon();
 }
 
+const IdentityHandlerFavicon = {
+	observe: function (subject, topic, data) {
+		if (topic == "nsPref:changed")
+			updateIcon();
+	},
+};
+Services.prefs.addObserver("Echelon.Appearance.Style", IdentityHandlerFavicon, false);
+
 // initiate script after DOM/browser content is loaded
 document.addEventListener("DOMContentLoaded", initIdentityHandlerFavicon, false);

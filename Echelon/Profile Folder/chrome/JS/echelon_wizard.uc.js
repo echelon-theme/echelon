@@ -248,6 +248,12 @@ function setDefaultSettings() {
 window.addEventListener("load", () => {
     if (!PrefUtils.tryGetBoolPref("Echelon.parameter.isFirstRunFinished")) {
         setDefaultSettings();
+
+        // Set old Echelon options after all default settings get set
+        if (EchelonThemeMigrator.wasLegacyInstalled) {
+            EchelonThemeMigrator.migrate();
+        }
+
         showEchelonWizard();
     }
 });

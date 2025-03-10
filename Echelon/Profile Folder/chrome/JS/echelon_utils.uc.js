@@ -78,6 +78,19 @@ class PrefUtils
 		return result;
 	}
 
+	static #internalTryDeletePref(name)
+	{
+		try 
+		{
+			Services.prefs.clearUserPref(name);
+			return true;
+		} 
+		catch (e) 
+		{
+			return false;
+		}
+	}
+
 	static tryGetBoolPref(name, fallback = false)
 	{
 		return this.#internalTryGetPref(name, fallback, Services.prefs.getBoolPref);
@@ -91,6 +104,21 @@ class PrefUtils
 	static tryGetStringPref(name, fallback = "")
 	{
 		return this.#internalTryGetPref(name, fallback, Services.prefs.getStringPref);
+	}
+
+	static tryGetPref(name) {
+		try 
+		{
+			return Services.prefs.getPrefType(name) != 0;
+		} 
+		catch (e) 
+		{
+			return false;
+		}
+	}
+
+	static tryDeletePref(name) {
+		return this.#internalTryDeletePref(name);
 	}
 
 	static #internalTrySetPref(name, value, func)
@@ -224,20 +252,6 @@ class ThemeUtils
         PrefUtils.trySetIntPref("Echelon.Appearance.Style", ThemeUtils.getPresetKey("style"));
         PrefUtils.trySetIntPref("Echelon.Appearance.Homepage.Style", ThemeUtils.getPresetKey("pageStyle"));
         PrefUtils.trySetBoolPref("Echelon.Appearance.NewLogo", ThemeUtils.getPresetKey("newlogo"));
-
-		// set media queries as attributes, these don't have to be updated so these can be here
-		let queries = [
-			"-moz-ev-native-controls-patch",
-			"-moz-windows-compositor",
-		]
-		
-		queries.forEach((query) => {
-				let queryAttr = query.slice(1);
-				if (window.matchMedia(`(${query})`).matches) {
-					document.documentElement.setAttribute(queryAttr, "true");
-				}
-			}
-		);
     }
 }
 
