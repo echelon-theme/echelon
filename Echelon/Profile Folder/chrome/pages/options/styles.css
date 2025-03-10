@@ -1,5 +1,7 @@
 :root {
   --echelon-options-background-color: -moz-Dialog;
+  --echelon-options-highlight-blue: #27A0EF;
+  --echelon-options-highlight-blue-darker: #1e79b6;
 }
 @media all and not (-moz-windows-classic) {
   :root:not([echelon-system-style=winxp], [echelon-system-style=win8][echelon-style-6=true], [echelon-system-style=win10][echelon-style-6=true])[echelon-appearance-blue=true] {
@@ -20,14 +22,13 @@
   font-weight: 400;
   text-shadow: 0 1px 0 white;
 }
-:root[echelon-system-style=win8][echelon-style-6=true], :root[echelon-system-style=win10][echelon-style-6=true] {
+:root[echelon-style-6=true]:is([echelon-system-style=win8], [echelon-system-style=win10]) {
   text-shadow: none;
   background-image: none;
 }
 :root[lwtheme] {
   --card-name-background-color: var(--lwt-accent-color);
   color: var(--lwt-text-color);
-  background-color: var(--lwt-accent-color);
 }
 :root[lwtheme][lwtheme-image] {
   background-image: linear-gradient(to bottom, rgba(180, 193, 205, 0), rgba(180, 193, 205, 0.25)), linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(to bottom, transparent, var(--lwt-accent-color) 75px), var(--lwt-header-image);
@@ -49,7 +50,6 @@ body {
   height: 100%;
   overflow: hidden;
 }
-
 body > hbox {
   max-height: 100vh;
 }
@@ -89,7 +89,9 @@ body > hbox {
   width: 10px;
   height: 17px;
   display: flex;
-  background-image: url("chrome://userchrome/content/pages/options/images/category-arrow.png");
+  background-image: url("chrome://userchrome/content/pages/options/images/categories/arrow.svg");
+  -moz-context-properties: fill;
+  fill: var(--echelon-options-highlight-blue);
   position: absolute;
   right: 0;
   transition-property: opacity, transform !important;
@@ -100,13 +102,12 @@ body > hbox {
 .category .category-image {
   width: 18px;
   height: 18px;
-  background-image: url("chrome://userchrome/content/pages/options/images/categories.png");
+  -moz-context-properties: fill;
+  fill: #7B8994;
   opacity: 0.5;
-  transition-property: opacity !important;
+  transition-property: fill, opacity !important;
   transition-duration: 150ms !important;
-}
-:root:is([echelon-system-style=winxp], [echelon-system-style=win8][echelon-style-6=true], [echelon-system-style=win10][echelon-style-6=true]) .category .category-image {
-  background-image: url("chrome://userchrome/content/pages/options/images/categories-xp8.png");
+  filter: drop-shadow(0 1px 0 white);
 }
 .category:hover .category-image {
   opacity: 1;
@@ -120,8 +121,8 @@ body > hbox {
   color: rgb(75, 89, 100);
 }
 .category[selected=true] {
-  background-image: radial-gradient(0.28% 50% at 99.76% 50%, rgb(39, 160, 239) 0%, rgb(39, 160, 239) 75%, rgba(39, 160, 239, 0) 100%), radial-gradient(1.32% 50% at 99.49% 50%, rgba(39, 160, 239, 0.15) 50.98%, rgba(232, 239, 245, 0) 100%);
-  color: #27A0EF;
+  background-image: radial-gradient(0.28% 50% at 99.76% 50%, var(--echelon-options-highlight-blue) 0%, var(--echelon-options-highlight-blue) 75%, rgba(39, 160, 239, 0) 100%), radial-gradient(1.32% 50% at 99.49% 50%, rgba(39, 160, 239, 0.15) 50.98%, rgba(232, 239, 245, 0) 100%);
+  color: var(--echelon-options-highlight-blue);
   background-color: transparent;
 }
 .category[selected=true]::after {
@@ -130,23 +131,19 @@ body > hbox {
 }
 .category[selected=true] .category-image {
   opacity: 1;
-  background-position-y: -18px;
+  fill: var(--echelon-options-highlight-blue);
 }
 
 #category-general .category-image {
-  background-position-x: -72px;
+  list-style-image: url("chrome://userchrome/content/pages/options/images/categories/general.svg");
 }
 
-#category-branding .category-image {
-  background-position-x: -36px;
-}
-
-#category-native-controls .category-image {
-  background-position-x: -18px;
+#category-behavior {
+  list-style-image: url("chrome://userchrome/content/pages/options/images/categories/settings.svg");
 }
 
 #category-about .category-image {
-  background-position-x: -54px;
+  list-style-image: url("chrome://userchrome/content/pages/options/images/categories/echelon.svg");
 }
 
 #options-sections {
@@ -201,10 +198,9 @@ body > hbox {
 .header-image {
   width: 26px;
   height: 26px;
-  background-image: url("chrome://userchrome/content/pages/options/images/categories-header.png");
-}
-:root:is([echelon-system-style=winxp], [echelon-system-style=win8][echelon-style-6=true], [echelon-system-style=win10][echelon-style-6=true]) .header-image {
-  background-image: url("chrome://userchrome/content/pages/options/images/categories-header-xp8.png");
+  background-image: url("chrome://userchrome/content/pages/options/images/categories-header.svg");
+  -moz-context-properties: fill;
+  fill: #4B5964;
 }
 
 #section-general .header-image {
@@ -256,7 +252,7 @@ body > hbox {
 
 .section-content {
   padding-block-start: 10px;
-  background: radial-gradient(50.06% 4px at 49.94% 0%, rgba(23, 45, 68, 0.2) 0%, rgba(23, 45, 68, 0) 100%), radial-gradient(50.06% 25px at 49.94% 0%, rgba(23, 45, 68, 0.11) 0%, rgba(23, 45, 68, 0) 100%);
+  background: radial-gradient(50% 4px at 50% 0%, rgba(23, 45, 68, 0.2) 0%, rgba(23, 45, 68, 0) 100%);
 }
 
 checkbox {
@@ -288,16 +284,19 @@ checkbox .checkbox-check[disabled] {
   opacity: 0.4;
 }
 checkbox .checkbox-check[checked=true] {
-  background-image: url("chrome://userchrome/content/pages/options/images/checked.png");
+  background-image: url("chrome://userchrome/content/pages/options/images/checkmark-image.svg");
+  -moz-context-properties: fill;
+  fill: var(--echelon-options-highlight-blue);
   background-repeat: no-repeat;
   background-position: center center;
 }
 checkbox:hover .checkbox-check:not([disabled]) {
-  border-color: #269DEB !important;
+  border-color: var(--echelon-options-highlight-blue) !important;
 }
 checkbox:hover:active .checkbox-check:not([disabled]) {
   background-color: #E2E2E2 !important;
-  border-color: #1e79b6 !important;
+  border-color: var(--echelon-options-highlight-blue-darker) !important;
+  fill: var(--echelon-options-highlight-blue-darker) !important;
 }
 
 .no-padding {
@@ -309,10 +308,10 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
   min-height: 160px;
   border-block-end: 1px solid white;
   background-color: #0C1B28;
-  background-image: url("chrome://userchrome/content/branding/echelon/content/about-logo.png"), url("chrome://userchrome/content/pages/options/images/echelon-nightly-background-grid.png"), url("chrome://userchrome/content/pages/options/images/echelon-nightly-background.png");
+  background-image: url("chrome://userchrome/content/branding/echelon/content/about-logo@2x.png"), url("chrome://userchrome/content/pages/options/images/echelon-nightly-background-grid.png"), url("chrome://userchrome/content/pages/options/images/echelon-nightly-background.png");
   background-repeat: no-repeat, repeat, no-repeat;
   background-position: center left -45px, center center, bottom left;
-  background-size: auto, auto, auto;
+  background-size: 210px auto, auto, auto;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
   padding-inline: 45px;
   padding-inline-start: 185px;
@@ -322,7 +321,7 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
 .about-header-logo {
   width: 404px;
   height: 69px;
-  list-style-image: url("chrome://userchrome/content/pages/options/images/echelon-nightly-header-logo.png");
+  list-style-image: url("chrome://userchrome/content/pages/options/images/branding/echelon-nightly-header-logo.svg");
 }
 
 .about-content {
@@ -338,6 +337,7 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
   font-family: "Open Sans", sans-serif;
   background-image: url("chrome://userchrome/content/pages/options/images/uptodate.png");
+  background-size: 30px auto;
   background-repeat: no-repeat;
   background-position: center left;
   padding-inline-start: 40px;
@@ -397,23 +397,20 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
 #branding-firefox {
   list-style-image: url("chrome://userchrome/content/branding/firefox/content/icon32.png");
 }
+:root[echelon-appearance-newlogo=true] #branding-firefox {
+  list-style-image: url("chrome://userchrome/content/branding/firefox/new/content/icon32.png");
+}
 
 #branding-aurora {
   list-style-image: url("chrome://userchrome/content/branding/aurora/content/icon32.png");
+}
+:root[echelon-appearance-newlogo=true] #branding-aurora {
+  list-style-image: url("chrome://userchrome/content/branding/aurora/new/content/icon32.png");
 }
 
 #branding-nightly {
   list-style-image: url("chrome://userchrome/content/branding/nightly/content/icon32.png");
 }
-
-:root[echelon-appearance-newlogo=true] #branding-firefox {
-  list-style-image: url("chrome://userchrome/content/branding/firefox/new/content/icon32.png");
-}
-
-:root[echelon-appearance-newlogo=true] #branding-aurora {
-  list-style-image: url("chrome://userchrome/content/branding/aurora/new/content/icon32.png");
-}
-
 :root[echelon-appearance-newlogo=true] #branding-nightly {
   list-style-image: url("chrome://userchrome/content/branding/nightly/new/content/icon32.png");
 }
@@ -430,7 +427,6 @@ label[needs-restart-label]::after {
 label:not(.header)[needs-restart-label] {
   flex-direction: column;
 }
-
 label:not(.header)[needs-restart-label]::after {
   margin-block-start: 2px;
 }
@@ -529,16 +525,18 @@ label:not(.header)[needs-restart-label]::after {
   position: absolute;
 }
 
-.about-content-header-background-left::before {
-  mask-image: url("chrome://userchrome/content/pages/options/images/about-header-left-mask.svg");
+.about-content-header-background-left::before,
+.about-content-header-background-right::before {
   background-color: hsl(210, 50%, 95.3%);
   background-image: linear-gradient(to bottom, hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1));
 }
 
+.about-content-header-background-left::before {
+  mask-image: url("chrome://userchrome/content/pages/options/images/about-header-left-mask.svg");
+}
+
 .about-content-header-background-right::before {
   mask-image: url("chrome://userchrome/content/pages/options/images/about-header-right-mask.svg");
-  background-color: hsl(210, 50%, 95.3%);
-  background-image: linear-gradient(to bottom, hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.1));
 }
 
 .about-content-header-background-left::after {
