@@ -10,7 +10,6 @@ let ECHELON_BOOT_CONFIG = {
 	/* Main browser window */
 	"chrome://browser/content/browser.xhtml": {
 		updates: true,
-		wizard: true,
 		themes: {
 			style: true,
 			bools: [
@@ -49,20 +48,6 @@ let ECHELON_BOOT_CONFIG = {
 			let { EchelonThemeManager } = ChromeUtils.importESModule("chrome://modules/content/EchelonThemeManager.sys.mjs");
 			context.g_themeManager = new EchelonThemeManager;
 			context.g_themeManager.init(context.document.documentElement, config.themes);
-		}
-		if (config?.wizard)
-			{
-				let { openEchelonWizardWindow } = ChromeUtils.import("chrome://userscripts/content/echelon_wizard.uc.js");
-				openEchelonWizardWindow = showEchelonWizard.bind(context);
-				openEchelonWizardWindow(true);
-	
-				context.addEventListener("echelon-reopen-wizard", function(e)
-				{
-					// Kill the wizard notification early. Technically, it will disappear as soon as this
-					// callback ends, but it looks bad.
-					gBrowser?.getNotificationBox()?.getNotificationWithValue("echelon-setup-closed")?.dismiss();
-					openEchelonWizardWindow(false);
-				});
 		}
 		if (config?.nativeControls)
 		{

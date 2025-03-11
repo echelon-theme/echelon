@@ -317,24 +317,24 @@ function onClose() {
 	// PrefUtils.trySetStringPref("browser.uiCustomization.state");
 
 	// Notify the user that this action can be rectified in the future:
+    let strings = Services.strings.createBundle("chrome://echelon/locale/properties/echelon-wizard.properties");
+    let lang = Services.locale.requestedLocale;
+
 	let root = windowRoot.ownerGlobal;
-	let notificationBox = windowRoot.ownerGlobal.gBrowser.getNotificationBox();
+	let notificationBox = root.gBrowser.getNotificationBox();
 
 	notificationBox.appendNotification(
 		"echelon-setup-closed",
 		{
-			label: "You can restart the Echelon Wizard by restarting Firefox or clicking here.",
-			image: "chrome://echelon/content/firefox-4/branding/echelon/icon16.png",
-			priority: "warning",
-			eventCallback: function() {
-				alert("hi");
-			}
+			label: strings.GetStringFromName("echelon_setup_closed"),
+			image: "chrome://echelon/content/firefox-4/icons/information-16.png",
+			priority: "1",
 		},
 		[
 			{
 				isDefault: true,
-				accessKey: "E",
-				label: "Reopen Echelon Wizard",
+				accessKey: strings.GetStringFromName("echelon_setup_closed_button_accessKey"),
+				label: strings.GetStringFromName("echelon_setup_closed_button_label"),
 				callback: function() {
 					// Since the window is already closed by this point, we can't do much from
 					// within this callback. This hack just bounces the call over to a thread
@@ -350,7 +350,7 @@ function onClose() {
 
 document.querySelector(".echelon-wizard-titlebar-close").addEventListener("click",  function () {
     windowRoot.ownerGlobal.resetEchelonWizard();
-    // onClose();
+    onClose();
 
     // Reset to First page
     // Timeout is so the first page does not show

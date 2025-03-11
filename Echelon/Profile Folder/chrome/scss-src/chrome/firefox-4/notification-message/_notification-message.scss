@@ -1,0 +1,127 @@
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+#tab-notification-deck {
+    order: 1000 !important;
+}
+
+notification-message.animated,
+notification.animated {
+    transition: margin-top 300ms, opacity 300ms !important;
+}
+
+notification-message {
+    &:not([style*="margin-top:"])[message-bar-type="infobar"] {
+        margin-inline: 0 !important;
+        margin-block-end: 0 !important;
+
+        &:first-of-type {
+            margin-block-start: 0 !important;
+        }
+    }
+
+    &[style*="margin-top:"][message-bar-type="infobar"] {
+        margin-inline: 0 !important;
+        margin-block-end: 0 !important;
+    }
+}
+
+.container.infobar[echelon-modified="true"] {
+    &::before {
+        visibility: collapse !important;
+    }
+
+    &[type="warning"] {
+        --message-bar-icon-url: url("chrome://echelon/content/firefox-4/icons/warning-16.png") !important;
+    }
+
+    &[type="info"] {
+        --message-bar-icon-url: url("chrome://echelon/content/firefox-4/icons/information-16.png") !important;
+
+        background-color: -moz-Dialog !important;
+        color: -moz-DialogText !important;
+    }
+    
+    &[type="critical"] {
+        --message-bar-icon-url: url("chrome://echelon/content/firefox-4/icons/error-16.png") !important;
+
+        background-image: linear-gradient(rgb(212,0,0), rgb(152,0,0)) !important;
+        color: white !important;
+    }
+
+    border: 1px solid ThreeDShadow !important;
+    border-left-color: ThreeDHighlight !important;
+    border-top-color: ThreeDHighlight !important;
+
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    
+    background-color: InfoBackground !important;
+    color: InfoText !important;
+
+    align-items: center !important;
+
+    .icon {
+        margin: 0 !important;
+        margin-inline-start: 6px !important;
+        margin-inline-end: 1px !important;
+    }
+
+    .notification-content {
+        display: flex !important;
+        margin-inline-start: 0 !important;
+        flex: 1 !important;
+
+        .notification-message {
+            flex: 1 !important;
+
+            margin-block-start: 1px !important;
+            margin-inline-end: 5px !important;
+            margin-block-end: 4px !important;
+            margin-inline-start: 6px !important;
+
+            padding-block: 0 !important;
+            min-height: unset !important;
+        }
+    }
+
+    .spacer {
+        visibility: collapse !important;
+    }
+
+    .notification-button-container {
+        button {
+            all: unset !important;
+            appearance: button !important;
+            margin: 1px 5px 2px 5px !important;
+            min-width: 6.3em !important;
+            color: ButtonText !important;
+            text-shadow: none !important;
+            display: inline-flex !important;
+        }
+    }
+
+    .close {
+        width: 16px !important;
+        height: 16px !important;
+        background-color: transparent !important;
+        background-image: url("chrome://echelon/content/firefox-4/close.png") !important;
+        padding: 0 !important;
+        margin: 0 5px 0 0 !important;
+        background-position: unset !important;
+        background-size: auto auto !important;
+        border: 0 !important;
+
+        &:hover {
+            background-position-x: -16px !important;
+
+            &:active {
+                background-position-x: -32px !important;
+            }
+        }
+    }
+
+    &[echelon-modified-australis="true"] .close {
+        background-image: url("chrome://echelon/content/firefox-29/close.png") !important;
+    }
+}

@@ -245,7 +245,7 @@ function setDefaultSettings() {
     }
 }
 
-window.addEventListener("load", () => {
+function runEchelonWizard() {
     if (!PrefUtils.tryGetBoolPref("Echelon.parameter.isFirstRunFinished")) {
         setDefaultSettings();
 
@@ -256,4 +256,7 @@ window.addEventListener("load", () => {
 
         showEchelonWizard();
     }
-});
+}
+
+window.addEventListener("load", runEchelonWizard);
+window.addEventListener("echelon-reopen-wizard", runEchelonWizard);

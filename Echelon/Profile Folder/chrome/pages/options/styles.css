@@ -1,7 +1,5 @@
 :root {
   --echelon-options-background-color: -moz-Dialog;
-  --echelon-options-highlight-blue: #27A0EF;
-  --echelon-options-highlight-blue-darker: #1e79b6;
 }
 @media all and not (-moz-windows-classic) {
   :root:not([echelon-system-style=winxp], [echelon-system-style=win8][echelon-style-6=true], [echelon-system-style=win10][echelon-style-6=true])[echelon-appearance-blue=true] {
