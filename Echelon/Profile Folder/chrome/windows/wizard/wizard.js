@@ -362,6 +362,7 @@ document.querySelector(".echelon-wizard-titlebar-close").addEventListener("click
 
 document.querySelector(".restart-later-button").addEventListener("click",  function () {
     windowRoot.ownerGlobal.hideEchelonWizard();
+    PrefUtils.trySetBoolPref("Echelon.parameter.isFirstRunFinished", "true");
     document.querySelector("[data-modal='restart-needed']").visibility("hide");
 
     setTimeout(() => {
