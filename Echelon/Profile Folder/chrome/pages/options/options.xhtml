@@ -45,9 +45,9 @@
 						<image class="category-image" />
 						<label class="category-text" value="&tabs.behavior;" />
 					</richlistitem>
-					<richlistitem id="category-native-controls" hidden="true" value="section-native-controls" class="category">
+					<richlistitem id="category-debug" value="section-debug" class="category">
 						<image class="category-image" />
-						<label class="category-text" value="&tabs.nativeControls;" />
+						<label class="category-text" value="&tabs.debug;" />
 					</richlistitem>
 					<richlistitem id="category-about" value="section-about" class="category">
 						<image class="category-image" />
@@ -179,6 +179,22 @@
 								<label class="header" value="Homepage" />
 								<vbox class="section-content">
 									<checkbox label="&behavior.homepage.disableSnippets;" preference="Echelon.Homepage.HideCustomSnippets"/>
+								</vbox>
+							</vbox>
+						</vbox>
+					</vbox>
+					<vbox id="section-debug" class="section" flex="1">
+						<hbox class="options-header">
+							<image class="header-image" />
+							<label class="header-text" value="&tabs.debug;" />
+						</hbox>
+						<vbox class="options-content">
+							<label class="header" value="&debug.notice;" style="background: none;" />
+
+							<vbox class="content-section">
+								<label class="header" value="&debug.wizard;" />
+								<vbox class="section-content">
+									<checkbox label="&debug.wizard.firstRun;" preference="Echelon.parameter.isFirstRunFinished"/>
 								</vbox>
 							</vbox>
 						</vbox>

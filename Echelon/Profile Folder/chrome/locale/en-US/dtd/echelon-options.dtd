@@ -52,3 +52,10 @@
 <!ENTITY nativeControls.text "Native Controls">
 
 <!ENTITY about.text "About Echelon">
+
+
+<!ENTITY debug.notice "These options are meant for debugging; you should not need to change them unless you are a developer.">
+
+<!ENTITY debug.wizard "Wizard">
+
+<!ENTITY debug.wizard.firstRun "First run has been completed">

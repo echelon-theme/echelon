@@ -144,6 +144,10 @@ body > hbox {
   list-style-image: url("chrome://userchrome/content/pages/options/images/categories/echelon.svg");
 }
 
+#category-debug .category-image {
+  list-style-image: url("chrome://userchrome/content/pages/options/images/categories/wrench.svg");
+}
+
 #options-sections {
   position: relative;
   background-image: radial-gradient(0.06% 50% at 0.06% 50%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 75%, rgba(255, 255, 255, 0) 100%);
@@ -209,7 +213,7 @@ body > hbox {
   background-position-x: -52px;
 }
 
-#section-native-controls .header-image {
+#section-debug .header-image {
   background-position-x: -26px;
 }
 

@@ -558,3 +558,7 @@ function systemStyleMenuList() {
     }
 }
 document.addEventListener("DOMContentLoaded", systemStyleMenuList);
+
+if (!PrefUtils.tryGetBoolPref("Echelon.parameter.debug")) {
+    document.querySelector("#category-debug").setAttribute("hidden", "true");
+}
