@@ -619,7 +619,7 @@ window {
   max-width: var(--tab-max-width) !important;
   margin-inline: 0 !important;
 }
-#TabsToolbar .tabbrowser-tab:not([pinned])[visuallyselected] {
+#TabsToolbar .tabbrowser-tab:not([pinned])[selected] {
   position: relative !important;
 }
 #TabsToolbar .tabbrowser-tab:not([pinned], [fadein]) {
@@ -627,7 +627,7 @@ window {
   min-width: 0.1px !important;
   visibility: hidden !important;
 }
-#TabsToolbar .tabbrowser-tab[visuallyselected] {
+#TabsToolbar .tabbrowser-tab[selected] {
   z-index: 2 !important;
 }
 #TabsToolbar .tabbrowser-tab .tab-content {
@@ -5403,6 +5403,15 @@ xul|dialog[inbrowserwindow] {
 :root[echelon-style-6] #TabsToolbar .tabbrowser-tab .tab-close-button:not(:hover, :hover:active, [selected]) {
   background-position-x: 0 !important;
 }
+:root[echelon-style-6] #TabsToolbar .tabbrowser-tab::after, :root[echelon-style-6] #TabsToolbar .tabbrowser-tab::before {
+  width: 3px;
+  margin-inline-start: -1.5px;
+  margin-inline-end: -1.5px;
+  background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-separator.png");
+  background-position: left bottom 1px;
+  background-repeat: no-repeat;
+  background-size: 3px 100%;
+}
 :root[echelon-style-6] #TabsToolbar #tabs-newtab-button {
   width: 66px !important;
   pointer-events: auto !important;
@@ -5411,18 +5420,11 @@ xul|dialog[inbrowserwindow] {
   background-image: url("chrome://echelon/content/firefox-29/tabbrowser/newtab.png") !important;
   list-style-image: none !important;
 }
-:root[echelon-style-6] #tabbrowser-tabs[movingtab] > .tabbrowser-tab:last-of-type::after,
-:root[echelon-style-6] .tabbrowser-tab:not([selected]):not(:hover + .tabbrowser-tab):not(:first-of-type):not(:first-of-type[selected] + .tabbrowser-tab):not(:hover)::before,
-:root[echelon-style-6] #tabbrowser-tabs:not([overflow]) .tabbrowser-tab:not([selected]):last-of-type:not([beforehovered]):not(:hover)::after {
-  margin-inline-start: -1.5px;
-  margin-inline-end: -1.5px;
-  background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-separator.png");
-  background-position: left bottom 1px;
-  background-repeat: no-repeat;
-  background-size: 3px 100%;
+:root[echelon-style-6] #tabbrowser-tabs[movingtab] .tabbrowser-tab[beforeselected-visible]:not([last-visible-tab])::after,
+:root[echelon-style-6] .tabbrowser-tab:not([selected]):not([afterselected-visible]):not([afterhovered]):not([first-visible-tab]):not(:hover)::before,
+:root[echelon-style-6] #tabbrowser-tabs:not([overflow]) .tabbrowser-tab[last-visible-tab]:not([selected]):not([beforehovered]):not(:hover)::after {
   content: "";
   display: flex;
-  width: 3px;
 }
 :root[echelon-style-6] #main-window[sizemode=normal] #TabsToolbar {
   padding-inline: 1px !important;
@@ -6057,16 +6059,12 @@ xul|dialog[inbrowserwindow] {
 :root[echelon-style-7][echelon-style-6] #TabsToolbar .tab-background[selected] .tab-background-end::before {
   background-image: linear-gradient(transparent 2px, rgba(255, 255, 255, 0.4) 2px, rgba(255, 255, 255, 0.4)) !important;
 }
-:root[echelon-style-7][echelon-style-6] #tabbrowser-tabs[movingtab] > .tabbrowser-tab:last-of-type::after,
-:root[echelon-style-7][echelon-style-6] .tabbrowser-tab:not([selected]):not(:hover + .tabbrowser-tab):not(:first-of-type):not(:first-of-type[selected] + .tabbrowser-tab):not(:hover)::before,
-:root[echelon-style-7][echelon-style-6] #tabbrowser-tabs:not([overflow]) .tabbrowser-tab:not([selected]):last-of-type:not([beforehovered]):not(:hover)::after {
+:root[echelon-style-7][echelon-style-6] #TabsToolbar .tabbrowser-tab::before, :root[echelon-style-7][echelon-style-6] #TabsToolbar .tabbrowser-tab::after {
   width: 1px;
   margin-inline-start: -1px;
   margin-inline-end: 0;
   background-image: linear-gradient(transparent 5px, currentColor 5px, currentColor calc(100% - 4px), transparent calc(100% - 4px));
   opacity: 0.2;
-  content: "";
-  display: flex;
 }
 :root[echelon-style-7][echelon-style-6] {
   --toolbarbutton-icon-width: 16px;
@@ -7393,7 +7391,7 @@ xul|dialog[inbrowserwindow] {
 :root[echelon-style-7][echelon-style-6][compact-theme] #TabsToolbar .tabbrowser-tab:hover, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] #TabsToolbar .tabbrowser-tab:hover {
   background-color: var(--tab-hover-background-color) !important;
 }
-:root[echelon-style-7][echelon-style-6][compact-theme] #TabsToolbar .tabbrowser-tab[visuallyselected], :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] #TabsToolbar .tabbrowser-tab[visuallyselected] {
+:root[echelon-style-7][echelon-style-6][compact-theme] #TabsToolbar .tabbrowser-tab[selected], :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] #TabsToolbar .tabbrowser-tab[selected] {
   color: var(--tab-selection-color) !important;
   background-color: var(--tab-selection-background-color) !important;
 }

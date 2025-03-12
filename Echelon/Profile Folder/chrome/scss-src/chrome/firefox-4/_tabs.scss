@@ -61,7 +61,7 @@
             //             max-width 250ms ease-out,
             //             opacity 50ms ease-out 20ms !important;
 
-            &[visuallyselected] {
+            &[selected] {
                 position: relative !important;
             }
         }
@@ -77,7 +77,7 @@
             //             opacity 50ms ease-out 100ms !important;
         }
 
-        &[visuallyselected] { // make tab above outer border from navbar
+        &[selected] { // make tab above outer border from navbar
             z-index: 2 !important;
         }
 

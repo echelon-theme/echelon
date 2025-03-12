@@ -59,7 +59,6 @@
             &:not([movingtab]) {
                 .tab-background {                    
                     &[selected] {
-
                         .tab-background-middle {
                             background-color: transparent !important;
                             background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-active-middle.png"),

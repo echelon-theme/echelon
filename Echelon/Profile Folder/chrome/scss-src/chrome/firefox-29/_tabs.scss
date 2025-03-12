@@ -209,6 +209,17 @@
                 background-position-x: 0 !important;
             }
         }
+
+        &::after,
+        &::before {
+            width: 3px;
+            margin-inline-start: -1.5px;
+            margin-inline-end: -1.5px;
+            background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-separator.png");
+            background-position: left bottom 1px;
+            background-repeat: no-repeat;
+            background-size: 3px 100%;
+        }
     }
 
     #tabs-newtab-button {
@@ -221,19 +232,11 @@
     }
 }
 
-// TODO: sass this
-#tabbrowser-tabs[movingtab] > .tabbrowser-tab:last-of-type::after,
-.tabbrowser-tab:not([selected]):not(:hover + .tabbrowser-tab):not(:first-of-type):not(:first-of-type[selected] + .tabbrowser-tab):not(:hover)::before,
-#tabbrowser-tabs:not([overflow]) .tabbrowser-tab:not([selected]):last-of-type:not([beforehovered]):not(:hover)::after {
-    margin-inline-start: -1.5px;
-    margin-inline-end: -1.5px;
-    background-image: url("chrome://echelon/content/firefox-29/tabbrowser/tab-separator.png");
-    background-position: left bottom 1px;
-    background-repeat: no-repeat;
-    background-size: 3px 100%;
+#tabbrowser-tabs[movingtab] .tabbrowser-tab[beforeselected-visible]:not([last-visible-tab])::after,
+.tabbrowser-tab:not([selected]):not([afterselected-visible]):not([afterhovered]):not([first-visible-tab]):not(:hover)::before,
+#tabbrowser-tabs:not([overflow]) .tabbrowser-tab[last-visible-tab]:not([selected]):not([beforehovered]):not(:hover)::after {
     content: "";
     display: flex;
-    width: 3px;
 }
 
 #main-window[sizemode="normal"] #TabsToolbar {

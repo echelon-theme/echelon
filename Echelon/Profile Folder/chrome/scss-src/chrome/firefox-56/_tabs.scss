@@ -30,21 +30,19 @@
                 }
             }
         }
-    }
 
-    #tabbrowser-tabs[movingtab] > .tabbrowser-tab:last-of-type::after,
-    .tabbrowser-tab:not([selected]):not(:hover + .tabbrowser-tab):not(:first-of-type):not(:first-of-type[selected] + .tabbrowser-tab):not(:hover)::before,
-    #tabbrowser-tabs:not([overflow]) .tabbrowser-tab:not([selected]):last-of-type:not([beforehovered]):not(:hover)::after {
-        width: 1px;
-        margin-inline-start: -1px;
-        margin-inline-end: 0;
-        background-image: linear-gradient(transparent 5px,
-                                          currentColor 5px,
-                                          currentColor calc(100% - 4px),
-                                          transparent calc(100% - 4px));
-        opacity: 0.2;
-        content: "";
-        display: flex;
+        .tabbrowser-tab {
+            &::before,
+            &::after {
+                width: 1px;
+                margin-inline-start: -1px;
+                margin-inline-end: 0;
+                background-image: linear-gradient(transparent 5px,
+                                                  currentColor 5px,
+                                                  currentColor calc(100% - 4px),
+                                                  transparent calc(100% - 4px));
+                opacity: 0.2;
+            }
+        }
     }
-    
 }

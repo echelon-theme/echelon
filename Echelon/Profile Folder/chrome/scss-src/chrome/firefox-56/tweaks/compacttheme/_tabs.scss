@@ -24,7 +24,7 @@
                 background-color: var(--tab-hover-background-color) !important;
             }
 
-            &[visuallyselected] {
+            &[selected] {
                 color: var(--tab-selection-color) !important;
                 background-color: var(--tab-selection-background-color) !important;
             }
