@@ -20,7 +20,6 @@
 	color: #3E4E5B;
 	font-size: 13px;
 	font-weight: 400;
-	text-shadow: 0 1px 0 white;
 
 	&[echelon-style-6="true"]:is([echelon-system-style="win8"], [echelon-system-style="win10"]) {
         text-shadow: none;
@@ -39,12 +38,16 @@
             background-position: left top, left top, left top, right top calc(-1 * var(--lwt-header-image-offset));
 
             &[lwtheme-brighttext] {
-                text-shadow: 0 1px 1px rgba(0, 0, 0, .25);
+				background-image: linear-gradient(to bottom, rgba(180, 193, 205, 0), rgba(180, 193, 205, 0.25)), linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), linear-gradient(to bottom, transparent, var(--lwt-accent-color) 75px), var(--lwt-header-image);
             }
         }
         
         &[lwtheme-brighttext] .options-header {
             color: var(--toolbar-field-focus-background-color);
+
+			.header-image {
+				fill: var(--toolbar-field-focus-background-color);
+			}
         }
     }
 }
@@ -82,6 +85,13 @@ body {
 	align-items: center;
 	padding-inline: 15px;
 	color: rgba(75, 89, 100, .5);
+	:root[lwtheme-brighttext] &:not([selected="true"]) {
+		color: var(--toolbar-field-focus-background-color);
+
+		.category-image {
+			fill: var(--toolbar-field-focus-background-color);
+		}
+	}
 	margin-block-end: 5px;
 	font-size: 14px;
 	cursor: pointer;
@@ -119,8 +129,6 @@ body {
         opacity: 0.5;
         transition-property: fill, opacity !important;
         transition-duration: 150ms !important;
-
-		filter: drop-shadow(0 1px 0 white)
     }
 
     &:hover .category-image {
@@ -184,9 +192,10 @@ body {
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-	transition-property: transform, opacity !important;
-	transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275), ease-out !important;
-	transition-duration: 330ms, 100ms !important;
+	filter: none;
+	transition-property: transform, filter, opacity !important;
+	transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275), ease-out, ease-out !important;
+	transition-duration: 330ms, 100ms, 100ms !important;
 	pointer-events: all;
 	align-items: center;
 
@@ -195,7 +204,8 @@ body {
         height: 100%;
         position: absolute;
         opacity: 0;
-        transform: translateY(20px);
+        transform: scale(95%) translateY(10px);
+		filter: blur(2px);
         pointer-events: none;
     }
 
@@ -384,7 +394,7 @@ checkbox {
 }
 
 .about-header-ver {
-	font-size: 14px;
+	font-size: 13.5px;
 	text-transform: lowercase;
 }
 
@@ -685,6 +695,11 @@ label:not(.header)[needs-restart-label] {
 		background-repeat: repeat-x;
 		box-shadow: inset 0 -2px 0 rgba(211, 220, 226, 0.5);
 		color: #6F7C89;
+
+		:root[lwtheme-brighttext] & {
+			color: var(--toolbar-field-focus-background-color);	
+			background-color: var(--lwt-accent-color);
+		}
 
 		.content-section-option {
 			min-height: 58px;

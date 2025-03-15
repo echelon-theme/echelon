@@ -1,4 +1,4 @@
-document.querySelectorAll(".menulist").forEach(menulist => {
+document.querySelectorAll("echelon-menulist").forEach(menulist => {
     let dropdown = menulist.querySelector(".list");
     let firstItem = menulist.querySelector(".item");
     let defaultItem = menulist.querySelector(".item[selected]");
@@ -19,8 +19,9 @@ document.querySelectorAll(".menulist").forEach(menulist => {
         let menuListBoundingRect = menulist.getBoundingClientRect();
         let dropdownBoundingRect = dropdown.getBoundingClientRect();
 
-        dropdown.style.left = menuListBoundingRect.right - dropdownBoundingRect.width + "px";
+        dropdown?.style.removeProperty("left");
 
+        dropdown.style.left = menuListBoundingRect.right - dropdownBoundingRect.width + "px";
         dropdown.style.top = menuListBoundingRect.height + menuListBoundingRect.y + "px";
 
         if (!menulist.hasAttribute("open")) 

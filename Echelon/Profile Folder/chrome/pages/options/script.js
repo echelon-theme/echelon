@@ -578,3 +578,31 @@ document.addEventListener("DOMContentLoaded", disableHomepagePreset);
 document.querySelector("checkbox[preference='Echelon.Appearance.overrideHomepagePreset']").addEventListener("CheckboxStateChange",  function () {
     disableHomepagePreset();
 });
+
+function getScrollbarWidth()
+{
+    var inner = document.createElement('p');
+    inner.style.width = "100%";
+    inner.style.height = "200px";
+
+    var outer = document.createElement('div');
+    outer.style.position = "absolute";
+    outer.style.top = "0px";
+    outer.style.left = "0px";
+    outer.style.visibility = "hidden";
+    outer.style.width = "200px";
+    outer.style.height = "150px";
+    outer.style.overflow = "hidden";
+    outer.appendChild(inner);
+
+    document.querySelector("body").appendChild(outer);
+    var w1 = inner.offsetWidth;
+    outer.style.overflow = 'scroll';
+    var w2 = inner.offsetWidth;
+    if (w1 == w2) w2 = outer.clientWidth;
+
+    document.querySelector("body").removeChild(outer);
+
+    document.documentElement.style.setProperty("--scrollbar-width", String(w1 - w2) + "px");
+}
+document.addEventListener("DOMContentLoaded", getScrollbarWidth);
