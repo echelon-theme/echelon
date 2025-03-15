@@ -44,7 +44,7 @@
 
 <!ENTITY behavior.appearance.tabsOnTop "Tabs on Top">
 <!ENTITY behavior.appearance.hideTabManager "Show Tab Manager">
-<!ENTITY behavior.appearance.hideAddons "Hide unified extensions button (not recomended)">
+<!ENTITY behavior.appearance.hideAddons "Hide unified extensions button">
 <!ENTITY behavior.appearance.hideToolbar "Hide Toolbars on Browser Pages">
 
 <!ENTITY behavior.homepage.disableSnippets "Disable custom homepage snippets">

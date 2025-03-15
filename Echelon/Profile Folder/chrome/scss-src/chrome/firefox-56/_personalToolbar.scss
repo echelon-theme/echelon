@@ -12,14 +12,46 @@
     }
 }
 
-&:not([echelon-system-style="win8"], [echelon-system-style="win10"]) {
+#PersonalToolbar {
     .bookmark-item:not(menuitem, .subviewbutton),
     .toolbarbutton-1 {
-        background-origin: padding-box !important;
-        background-clip: padding-box !important;
-        border: 1px solid var(--toolbarbutton-border-color) !important;
+        background: var(--toolbarbutton-background) !important;
+        background-color: var(--toolbarbutton-background-color) !important;
+        background-origin: var(--toolbarbutton-background-clip) !important;
+        background-clip: var(--toolbarbutton-background-clip) !important;
         border-radius: var(--toolbarbutton-border-radius) !important;
-        transition-property: background-color, border-color, box-shadow !important;
-        transition-duration: 150ms !important;
+        border: var(--toolbarbutton-border) !important;
+        border-color: var(--toolbarbutton-border-color) !important;
+        box-shadow: var(--toolbarbutton-box-shadow) !important;
+        color: var(--lwt-text-color, black) !important;
+        text-shadow: 0 0 2px white !important;
+        transition: var(--toolbarbutton-transiton) !important;
+
+        &:not([disabled="true"]) {
+            &:hover {
+                background: var(--toolbarbutton-hover-background) !important;
+                background-color: var(--toolbarbutton-hover-background-color) !important;
+                border-color: var(--toolbarbutton-hover-border-color) !important;
+                box-shadow: var(--toolbarbutton-hover-box-shadow) !important;
+            }
+
+            &[open="true"],
+            &:hover:active {
+                background: var(--toolbarbutton-active-background) !important;
+                background-color: var(--toolbarbutton-active-background-color) !important;
+                border-color: var(--toolbarbutton-active-border-color) !important;
+                box-shadow: var(--toolbarbutton-active-box-shadow) !important;
+                text-shadow: none !important;
+                transition: none !important;
+            }
+        }
+
+        &[disabled="true"] {
+            opacity: var(--toolbarbutton-disabled-opacity) !important;
+
+            .toolbarbutton-icon {
+                opacity: var(--toolbarbutton-icon-disabled-opacity) !important;
+            }
+        }
     }
 }

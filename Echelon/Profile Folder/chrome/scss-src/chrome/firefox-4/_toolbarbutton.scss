@@ -1,0 +1,249 @@
+$global-toolbarbutton-exclusion: ".unified";
+
+:root {
+    --toolbarbutton-width: 30px !important;
+    --toolbarbutton-height: 24px !important;
+
+    --toolbarbutton-inner-padding: 1px 5px !important;
+    --toolbarbutton-outer-padding: 1px 3px !important;
+    
+    --toolbarbutton-background: rgba(151, 152, 153, 0.05) linear-gradient(rgba(251, 252, 253, 0.95), rgba(246, 247, 248, 0.47) 49%, rgba(231, 232, 233, 0.45) 51%, rgba(225, 226, 229, 0.3)) !important;
+    --toolbarbutton-hover-background: var(--toolbarbutton-background) !important;
+    --toolbarbutton-active-background: var(--toolbarbutton-background) !important;
+
+    --toolbarbutton-background-color: transparent !important;
+    --toolbarbutton-hover-background-color: hsla(190,60%,70%,.5) !important;
+    --toolbarbutton-active-background-color: transparent !important;
+
+    --toolbarbutton-background-clip: padding-box !important;
+    --toolbarbutton-background-origin: padding-box !important;
+
+    --toolbarbutton-border: 1px solid !important;
+    --toolbarbutton-border-radius: 4.5px !important;
+    --forwardbutton-unified-border-radius: var(--toolbarbutton-border-radius) !important;
+
+    --toolbarbutton-border-color: rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.19) rgba(0, 0, 0, 0.38) !important;
+    --toolbarbutton-hover-border-color: hsla(190,50%,65%,.8) hsla(190,50%,50%,.8) hsla(190,50%,40%,.8) !important;
+    --toolbarbutton-active-border-color: rgba(0,0,0,.65) rgba(0,0,0,.55) rgba(0,0,0,.5) !important;
+
+    --toolbarbutton-transiton: background-color var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction), border-color var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction), box-shadow var(--toolbarbutton-transition-duration) var(--toolbarbutton-transition-timingfunction) !important;
+    --toolbarbutton-transition-duration: .3s !important;
+    --toolbarbutton-transition-timingfunction: ease-in !important;
+    
+    --toolbarbutton-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 1px 0 rgba(0, 0, 0, 0.15) !important;
+    --toolbarbutton-hover-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 1.5px rgba(255, 255, 255, 0.1) inset, 0 1px 0 rgba(0, 0, 0, 0.1), 0 0 3.5px hsl(190, 90%, 80%) !important;
+    --toolbarbutton-active-box-shadow: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+
+    --toolbarbutton-disabled-opacity: .8 !important;
+    --toolbarbutton-icon-disabled-opacity: .5 !important;
+
+    /*** Back Button ***/
+    --backbutton-background: var(--toolbarbutton-background) !important;
+    --backbutton-hover-background: var(--toolbarbutton-hover-background) !important;
+    --backbutton-active-background: var(--toolbarbutton-active-background) !important;
+
+    --backbutton-background-color: transparent !important;
+    --backbutton-hover-background-color: hsla(190,60%,70%,.5) !important;
+    --backbutton-active-background-color: transparent !important;
+
+    --backbutton-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3), 1px 2px 1px rgba(0, 0, 0, 0.2) !important;
+    --backbutton-hover-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 0 0 1px hsla(190, 50%, 40%, 0.3), 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3), 1px 2px 1px rgba(0, 0, 0, 0.2), 0 0 5px 1px hsl(190, 90%, 80%) !important;
+    --backbutton-active-box-shadow: 0 0 6.5px rgba(0, 0, 0, 0.4) inset, 0 0 2px rgba(0, 0, 0, 0.4) inset, 0 0 0 1px rgba(0, 0, 0, 0.65), 0 2px 0 rgba(255, 255, 255, 0.4) !important;
+    --backbutton-disabled-box-shadow: var(--backbutton-box-shadow) !important;
+    --backbutton-urlbar-overlap: 6px !important;
+
+    /*** Forward Button ***/
+    --forwardbutton-background: var(--toolbarbutton-background) !important;
+    --forwardbutton-hover-background: var(--toolbarbutton-hover-background)  !important;
+    --forwardbutton-active-background: var(--toolbarbutton-active-background) !important;
+
+    --forwardbutton-background-color: var(--toolbarbutton-background-color) !important;
+    --forwardbutton-hover-background-color: var(--toolbarbutton-hover-background-color) !important;
+    --forwardbutton-active-background-color: var(--toolbarbutton-active-background-color) !important;
+
+    --forwardbutton-border-color: var(--toolbarbutton-border-color) !important;
+    --forwardbutton-hover-border-color: var(--toolbarbutton-hover-border-color) !important;
+    --forwardbutton-active-border-color: var(--toolbarbutton-active-border-color) !important;
+
+    --forwardbutton-box-shadow: var(--toolbarbutton-box-shadow) !important;
+    --forwardbutton-hover-box-shadow: var(--toolbarbutton-hover-box-shadow) !important;
+    --forwardbutton-active-box-shadow: var(--toolbarbutton-active-box-shadow) !important;
+    --forwardbutton-disabled-box-shadow: var(--forwardbutton-box-shadow) !important;
+    
+    --forwardbutton-inner-inline-padding: 6px 4px !important; 
+    --forwardbutton-inline-outer-padding: calc(var(--backbutton-urlbar-overlap) * -1) 3px !important;
+
+    --toolbarbutton-menubutton-dropmarker-image: url("chrome://echelon/content/firefox-4/arrow-dn.gif") !important;
+    --toolbarbutton-menubutton-dropmarker-width: 5px !important;
+    --toolbarbutton-menubutton-dropmarker-height: 3px !important;
+    --toolbarbutton-menubutton-outer-block-padding: 1px 0 !important;
+
+    --bookmarksmenubutton-width: calc(var(--toolbarbutton-width) + var(--toolbarbutton-menubutton-dropmarker-width)) !important;
+}
+
+#nav-bar {
+    .toolbarbutton-1:not(#{$global-toolbarbutton-exclusion}),
+    .toolbarbutton-menubutton-dropmarker {
+        min-width: var(--toolbarbutton-width) !important;
+        max-width: var(--toolbarbutton-width) !important;
+        height: var(--toolbarbutton-height) !important;
+        margin: var(--toolbarbutton-outer-padding) !important;
+        padding: var(--toolbarbutton-inner-padding) !important;
+        background: var(--toolbarbutton-background) !important;
+        background-color: var(--toolbarbutton-background-color) !important;
+        background-origin: var(--toolbarbutton-background-clip) !important;
+        background-clip: var(--toolbarbutton-background-clip) !important;
+        border-radius: var(--toolbarbutton-border-radius) !important;
+        border: var(--toolbarbutton-border) !important;
+        border-color: var(--toolbarbutton-border-color) !important;
+        box-shadow: var(--toolbarbutton-box-shadow) !important;
+        color: var(--lwt-text-color, black) !important;
+        text-shadow: 0 0 2px white !important;
+        transition: var(--toolbarbutton-transiton) !important;
+
+        &:not([disabled="true"]) {
+            &:hover {
+                background: var(--toolbarbutton-hover-background) !important;
+                background-color: var(--toolbarbutton-hover-background-color) !important;
+                border-color: var(--toolbarbutton-hover-border-color) !important;
+                box-shadow: var(--toolbarbutton-hover-box-shadow) !important;
+            }
+
+            &[open="true"],
+            &:hover:active {
+                background: var(--toolbarbutton-active-background) !important;
+                background-color: var(--toolbarbutton-active-background-color) !important;
+                border-color: var(--toolbarbutton-active-border-color) !important;
+                box-shadow: var(--toolbarbutton-active-box-shadow) !important;
+                text-shadow: none !important;
+                transition: none !important;
+            }
+        }
+
+        &[disabled="true"] {
+            opacity: var(--toolbarbutton-disabled-opacity) !important;
+
+            .toolbarbutton-icon {
+                opacity: var(--toolbarbutton-icon-disabled-opacity) !important;
+            }
+        }
+
+        .toolbarbutton-icon {
+            min-width: var(--toolbarbutton-icon-width) !important;
+            min-height: var(--toolbarbutton-icon-height) !important;
+            background-color: transparent !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+        }
+
+        .toolbarbutton-badge-stack {
+            padding: 0 !important;
+            border-radius: 0 !important;
+            background-color: transparent !important;
+        }
+    }
+
+    #back-button {
+        :root:not([echelon-style-5]) &,
+        :root[echelon-style-5] &:is(.unified-with-urlbar)
+        {
+            --toolbarbutton-width: 30px !important;
+            --toolbarbutton-height: 30px !important;
+            margin: 0 !important;
+            margin-block-start: -2px !important;
+            margin-block-end: -2px !important;
+            margin-inline-start: 3px !important;
+            z-index: 4 !important;
+            border-style: none !important;
+            border-radius: 50% !important;
+            box-shadow: var(--backbutton-box-shadow) !important;
+            position: relative !important;
+            background: var(--backbutton-background) !important;
+            background-color: var(--backbutton-background-color) !important;
+
+            &:not([disabled="true"]) {
+                &:hover {
+                    box-shadow: var(--backbutton-hover-box-shadow) !important;
+                    background: var(--backbutton-hover-background) !important;
+                    background-color: var(--backbutton-hover-background-color) !important;
+                }
+    
+                &[open="true"],
+                &:hover:active {
+                    box-shadow: var(--backbutton-active-box-shadow) !important;
+                    background: var(--backbutton-active-background) !important;
+                    background-color: var(--backbutton-active-background-color) !important;
+                }
+            }
+
+            &[disabled="true"] {
+                box-shadow: var(--backbutton-disabled-box-shadow) !important;
+            }
+
+            & > .toolbarbutton-icon {
+                min-width: var(--toolbarbutton-icon-large-width) !important;
+                min-height: var(--toolbarbutton-icon-large-height) !important;
+            }
+        }
+    }
+
+    #forward-button {
+        :root:not([echelon-style-5]) &,
+        :root[echelon-style-5] &:is(.unified-with-urlbar)
+        {
+            clip-path: var(--urlbar-back-button-clip-path) !important;
+            padding-inline: var(--forwardbutton-inner-inline-padding) !important;
+            margin-inline: var(--forwardbutton-inline-outer-padding) !important;
+            box-shadow: var(--forwardbutton-box-shadow) !important;
+            background: var(--forwardbutton-background) !important;
+            background-color: var(--forwardbutton-background-color) !important;
+            border-color: var(--forwardbutton-border-color) !important;
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+
+            &:not([disabled="true"]) {
+                &:hover {
+                    box-shadow: var(--forwardbutton-hover-box-shadow) !important;
+                    background: var(--forwardbutton-hover-background) !important;
+                    background-color: var(--forwardbutton-hover-background-color) !important;
+                    border-color: var(--forwardbutton-hover-border-color) !important;
+                }
+    
+                &[open="true"],
+                &:hover:active {
+                    box-shadow: var(--forwardbutton-active-box-shadow) !important;
+                    background: var(--forwardbutton-active-background) !important;
+                    background-color: var(--forwardbutton-active-background-color) !important;
+                    border-color: var(--forwardbutton-active-border-color) !important;
+                }
+            }
+        }
+        
+        &:is(.unified-with-urlbar) {
+            border-radius: var(--forwardbutton-unified-border-radius) !important;
+        }
+    }
+
+    #bookmarks-menu-button {
+        &:is(.echelon-unified-bookmarks-menu-button) {
+            padding: 0 !important;
+
+            .toolbarbutton-menubutton-button {
+                visibility: collapse !important;
+            }
+
+            .toolbarbutton-menubutton-dropmarker {
+                --toolbarbutton-width: var(--bookmarksmenubutton-width) !important;
+                align-items: center !important;
+
+                &::after {
+                    display: flex !important;
+                    width: var(--toolbarbutton-menubutton-dropmarker-width) !important;
+                    height: var(--toolbarbutton-menubutton-dropmarker-height) !important;
+                    content: var(--toolbarbutton-menubutton-dropmarker-image) !important;
+                    margin-block: var(--toolbarbutton-menubutton-outer-block-padding) !important;
+                }
+            }
+        }
+    }
+}

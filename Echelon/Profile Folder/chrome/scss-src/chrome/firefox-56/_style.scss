@@ -3,6 +3,7 @@
     @import "icons";
     @import "personalToolbar";
     @import "toolbars";
+    @import "toolbarbutton";
     @import "urlbar-search";
     @import "urlbar-view";
     @import "menupopup";
@@ -14,6 +15,6 @@
 
     &[compact-theme],
     &[lwt-default-theme-in-dark-mode] {
-        @import "tweaks/compacttheme/style"
+        @import "tweaks/compacttheme/style";
     }
 }

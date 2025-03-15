@@ -69,83 +69,10 @@
 
     #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
         &#forward-button.unified-with-urlbar {
-            width: 32px !important;
+            --toolbarbutton-width: 32px !important;
             padding-left: 9px !important;
             padding-right: 3px !important;
             border-left: 0 !important;
-        }
-    }
-
-    // unified bookmark button styling
-    &:not([echelon-style-7][echelon-system-style="win8"], [echelon-style-7][echelon-system-style="win10"]) #navigator-toolbox > #nav-bar .echelon-unified-bookmarks-menu-button {
-        position: relative !important;
-
-        &:not([disabled="true"]):hover,
-        &:not([disabled="true"])[open="true"] {
-            .toolbarbutton-1 {
-                background-image: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1)) !important;
-                background-color: var(--toolbarbutton-background) !important;
-                box-shadow: var(--toolbarbutton-shadow-hot) !important;
-                --toolbarbutton-border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25) !important;
-
-                &:not([open], [disabled="true"], :active):hover {
-                    background-color: hsla(210,48%,96%,.75) !important;
-                    border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
-                }
-
-                &:not([disabled="true"]):hover:active,
-                &:not([disabled="true"])[open] {
-                    background-image: var(--toolbarbutton-background-active) !important;
-                    background-color: hsla(210,54%,20%,.15) !important;
-                    box-shadow: var(--toolbarbutton-shadow-active) !important;
-                    --toolbarbutton-border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
-                    transition: none !important;
-                }
-            }
-
-            .toolbarbutton-menubutton-button {
-                border-top-right-radius: 0 !important;
-                border-bottom-right-radius: 0 !important;
-            }
-
-            .toolbarbutton-menubutton-dropmarker {
-                border-top-left-radius: 0 !important;
-                border-bottom-left-radius: 0 !important;
-            }
-        }
-
-        .toolbarbutton-menubutton-button {
-            visibility: visible !important;
-        }
-
-        .toolbarbutton-menubutton-dropmarker {
-            --toolbarbutton-width: 30px !important;
-
-            &::after {
-                display: none !important;
-            }
-        }
-
-        &:not(:hover, :active, [open]) {
-            .toolbarbutton-menubutton-dropmarker::before {
-                content: '' !important; 
-                display: flex !important;
-                min-width: 1px !important;
-                min-height: 18px !important;
-                background-image: linear-gradient(hsla(210,54%,20%,.2) 0, hsla(210,54%,20%,.2) 16px) !important;
-                background-clip: padding-box !important;
-                background-position: center !important;
-                background-repeat: no-repeat !important;
-                background-size: 1px 18px !important;
-                box-shadow: 0 0 0 1px hsla(0,0%,100%,.2) !important;
-                position: absolute !important;
-                left: 31px !important;
-            }
-        }
-
-        .toolbarbutton-menubutton-button {
-            --toolbarbutton-width: 31px !important;
-            border-inline-end: 0 !important;
         }
     }
 
@@ -219,17 +146,17 @@
         visibility: hidden;
     }
 
-    #bookmarked-notification-anchor[notification="finish"]>#bookmarked-notification {
+    #bookmarked-notification-anchor[notification="finish"] > #bookmarked-notification {
         background-image: url("chrome://echelon/content/firefox-29/places/bookmarks-notification-finish.png");
         animation: animation-bookmarkAdded 800ms;
         animation-timing-function: ease, ease, ease;
     }
 
-    #bookmarks-menu-button[notification="finish"]>.toolbarbutton-menubutton-dropmarker>.dropmarker-icon {
+    #bookmarks-menu-button[notification="finish"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
         list-style-image: none !important;
     }
 
-    #bookmarked-notification-dropmarker-anchor[notification="finish"]>#bookmarked-notification-dropmarker-icon {
+    #bookmarked-notification-dropmarker-anchor[notification="finish"] > #bookmarked-notification-dropmarker-icon {
         visibility: visible;
         animation: animation-bookmarkPulse 300ms;
         animation-delay: 600ms;

@@ -43,6 +43,7 @@
             margin-inline: 0 !important;
 
             .urlbarView-results {
+                transition: height 1000ms;
                 padding: 4px 3px !important;
 
                 .urlbarView-row {

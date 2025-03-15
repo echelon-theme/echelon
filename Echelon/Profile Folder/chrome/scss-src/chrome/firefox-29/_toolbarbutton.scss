@@ -1,0 +1,88 @@
+& {
+    --bookmarksmenubutton-width: 30px !important;
+
+    --toolbarbutton-menubutton-hover-background-color: hsla(210,48%,96%,.75) !important;
+    --toolbarbutton-menubutton-hover-border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
+    --toolbarbutton-menubutton-hover-box-shadow: 0 0 1px hsla(210,54%,20%,.03), 0 0 2px hsla(210,54%,20%,.1) !important;
+
+    #nav-bar {
+        #forward-button {
+            &:is(.unified-with-urlbar)
+            {
+                --toolbarbutton-width: 31px !important;
+            }
+        }
+
+        #bookmarks-menu-button {
+            &:is(.echelon-unified-bookmarks-menu-button) {
+                margin: var(--toolbarbutton-outer-padding) !important;
+                position: relative !important;
+
+                &:not([disabled="true"]):hover,
+                &:not([disabled="true"])[open="true"] {
+                    .toolbarbutton-1 {
+                        background: var(--toolbarbutton-hover-background) !important;
+                        background-color: var(--toolbarbutton-hover-background-color) !important;
+                        border-color: var(--toolbarbutton-hover-border-color) !important;
+                        box-shadow: var(--toolbarbutton-hover-box-shadow) !important;
+
+                        &:not([open], [disabled="true"], :active):hover {
+                            background-color: var(--toolbarbutton-menubutton-hover-background-color) !important;
+                            border-color: var(--toolbarbutton-menubutton-hover-border-color) !important;
+                            box-shadow: var(--toolbarbutton-menubutton-hover-box-shadow) !important;
+                        }
+
+                        &:not([disabled="true"]):hover:active,
+                        &:not([disabled="true"])[open] {
+                            background: var(--toolbarbutton-active-background) !important;
+                            background-color: var(--toolbarbutton-active-background-color) !important;
+                            border-color: var(--toolbarbutton-active-border-color) !important;
+                            box-shadow: var(--toolbarbutton-active-box-shadow) !important;
+                        }
+                    }
+                }
+
+                .toolbarbutton-menubutton-button,
+                .toolbarbutton-menubutton-dropmarker {
+                    --toolbarbutton-outer-padding: 0 !important;
+                }
+    
+                .toolbarbutton-menubutton-button {
+                    --toolbarbutton-width: 31px !important;
+                    border-top-right-radius: 0 !important;
+                    border-bottom-right-radius: 0 !important;
+                    border-inline-end-style: none !important;
+
+                    visibility: visible !important;
+                }
+    
+                .toolbarbutton-menubutton-dropmarker {
+                    position: relative !important;
+                    border-top-left-radius: 0 !important;
+                    border-bottom-left-radius: 0 !important;
+                    
+                    &::after {
+                        display: none !important;
+                    }
+                }
+
+                &:not(:hover, :active, [open]) {
+                    .toolbarbutton-menubutton-dropmarker::before {
+                        content: '' !important; 
+                        display: flex !important;
+                        min-width: 1px !important;
+                        min-height: 18px !important;
+                        background-image: linear-gradient(hsla(210,54%,20%,.2) 0, hsla(210,54%,20%,.2) 16px) !important;
+                        background-clip: padding-box !important;
+                        background-position: center !important;
+                        background-repeat: no-repeat !important;
+                        background-size: 1px 18px !important;
+                        box-shadow: 0 0 0 1px hsla(0,0%,100%,.2) !important;
+                        position: absolute !important;
+                        left: -1px !important;
+                    }
+                }   
+            }
+        }
+    }
+}

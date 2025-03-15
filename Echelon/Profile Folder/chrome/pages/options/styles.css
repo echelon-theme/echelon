@@ -14,7 +14,7 @@
   color-scheme: light !important;
   background-color: var(--echelon-options-background-color);
   background-image: url("chrome://echelon/content/firefox-29/customizableui/background-noise-toolbar.png"), linear-gradient(to bottom, rgba(180, 193, 205, 0), rgba(180, 193, 205, 0.25)), linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
-  font-family: "Segoe Ui", "Open Sans", "Tahoma", sans-serif;
+  font-family: "Open Sans", "Tahoma", sans-serif;
   color: #3E4E5B;
   font-size: 13px;
   font-weight: 400;
@@ -72,7 +72,7 @@ body > hbox {
   padding-inline: 15px;
   color: rgba(75, 89, 100, 0.5);
   margin-block-end: 5px;
-  font-size: 15px;
+  font-size: 14px;
   cursor: pointer;
   background-color: transparent;
   position: relative;
@@ -182,19 +182,18 @@ body > hbox {
   width: 100%;
   min-width: 100px;
   max-width: 700px;
-  color: #5B758B;
+  color: #4B5964;
   font-weight: lighter;
-  font-size: 18px;
+  font-size: 19px;
   padding: 28px 0;
   padding-block-end: 0;
-  font-family: "Segoe UI", sans-serif;
 }
 
 .options-content {
   width: 100%;
   min-width: 100px;
   max-width: 700px;
-  padding: 25px 0;
+  padding: 10px 0;
 }
 
 .header-image {
@@ -223,10 +222,9 @@ body > hbox {
 }
 
 .card-container {
-  max-width: 700px;
+  padding: 12px;
   grid-template-columns: repeat(3, minmax(150px, 225px));
   gap: 10px;
-  margin-block-end: 15px;
 }
 
 .content-section {
@@ -253,21 +251,7 @@ body > hbox {
 
 checkbox {
   margin: 0;
-  margin-block-end: 10px;
   padding-inline: 2px;
-}
-checkbox + radiogroup {
-  opacity: 1;
-  max-height: 100%;
-  transition-property: opacity !important;
-  transition-duration: 250ms !important;
-}
-checkbox:not([checked]) + radiogroup {
-  max-height: 83px;
-  overflow: hidden;
-  opacity: 0.75;
-  pointer-events: none;
-  mask-image: linear-gradient(to bottom, black, transparent);
 }
 checkbox .checkbox-check {
   appearance: none;
@@ -275,6 +259,7 @@ checkbox .checkbox-check {
   border: 1px solid #CCC !important;
   border-radius: 2px;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 1px 0 rgba(204, 204, 204, 0.25);
+  margin-inline-end: 0;
 }
 checkbox .checkbox-check[disabled] {
   opacity: 0.4;
@@ -285,6 +270,9 @@ checkbox .checkbox-check[checked=true] {
   fill: var(--echelon-options-highlight-blue);
   background-repeat: no-repeat;
   background-position: center center;
+}
+checkbox[label] .checkbox-check {
+  margin-inline-end: 6px;
 }
 checkbox:hover .checkbox-check:not([disabled]) {
   border-color: var(--echelon-options-highlight-blue) !important;
@@ -325,6 +313,7 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
   min-width: 100px;
   max-width: 700px;
   padding: 25px;
+  padding-block-start: 0;
   background: radial-gradient(50.06% 4px at 49.94% 0%, rgba(23, 45, 68, 0.2) 0%, rgba(23, 45, 68, 0) 100%);
 }
 
@@ -574,6 +563,146 @@ label:not(.header)[needs-restart-label]::after {
 
 .about-section-text {
   margin: 0;
+}
+
+.content-section-new {
+  border-radius: 2px;
+  border: 1px solid rgba(51, 56, 60, 0.2);
+  background-clip: padding-box;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  margin-block-start: 20px;
+}
+.content-section-new .content-section-header {
+  min-height: 36px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-block-start: 1px solid rgb(255, 255, 255);
+  border-block-end: 1px solid rgba(179, 179, 179, 0.5);
+  padding-inline: 12px;
+  color: var(--echelon-options-highlight-blue);
+  fill: var(--echelon-options-highlight-blue);
+  cursor: pointer;
+  align-items: center;
+}
+.content-section-new .content-section-header .content-section-header-image {
+  width: 16px;
+  height: 16px;
+  position: relative;
+}
+.content-section-new .content-section-header .content-section-header-image .content-section-header-badge {
+  width: 7px;
+  height: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: white;
+  list-style-image: url("chrome://userchrome/content/pages/options/images/categories/arrow-small.svg");
+  -moz-context-properties: fill;
+  fill: #4B5964;
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  z-index: 1;
+}
+.content-section-new .content-section-header .content-section-header-image .content-section-header-icon {
+  width: 100%;
+  height: 100%;
+  -moz-context-properties: fill;
+}
+.content-section-new .content-section-header .content-section-header-label {
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 11px;
+  margin-inline: 7px;
+  margin-block: 0;
+}
+.content-section-new .content-section-container {
+  background-color: rgba(255, 255, 255, 0.5);
+  background-image: radial-gradient(50.06% 100% at 49.94% 0%, rgba(23, 45, 68, 0.2) 0%, rgba(23, 45, 68, 0) 100%);
+  background-size: 100% 2px;
+  background-repeat: repeat-x;
+  box-shadow: inset 0 -2px 0 rgba(211, 220, 226, 0.5);
+  color: #6F7C89;
+}
+.content-section-new .content-section-container .content-section-option {
+  min-height: 58px;
+  align-items: center;
+}
+.content-section-new .content-section-container .content-section-option:not(:first-of-type) {
+  border-top: 1px dashed rgba(23, 45, 68, 0.1);
+}
+.content-section-new .content-section-container .content-section-option .content-section-label-container {
+  font-size: 11px;
+  padding-inline: 12px;
+}
+.content-section-new .content-section-container .content-section-option .content-section-label-container .content-section-label {
+  font-weight: bolder;
+  text-transform: uppercase;
+  margin: 0;
+  color: #3E4E5B;
+}
+.content-section-new .content-section-container .content-section-option .content-section-label-container .content-section-additional-container {
+  flex-wrap: wrap;
+}
+.content-section-new .content-section-container .content-section-option .content-section-label-container .content-section-additional-container .content-section-needs-restart,
+.content-section-new .content-section-container .content-section-option .content-section-label-container .content-section-additional-container .content-section-description {
+  margin: 0;
+}
+.content-section-new .content-section-container .content-section-option .content-section-label-container .content-section-additional-container .content-section-needs-restart {
+  color: #8A1C04;
+  margin-inline-end: 6px;
+}
+.content-section-new .content-section-container .content-section-option .content-section-input-container {
+  max-width: 300px;
+  padding-inline: 20px;
+}
+
+#content-section-appearance .content-section-header {
+  list-style-image: url("chrome://userchrome/content/pages/options/images/categories/customize.svg");
+}
+
+#content-section-echelon-preset .content-section-header {
+  list-style-image: url("chrome://userchrome/content/pages/options/images/categories/echelon-preset.svg");
+}
+
+#content-section-homepage .content-section-header {
+  list-style-image: url("chrome://userchrome/content/pages/options/images/categories/home.svg");
+}
+
+#content-section-browser .content-section-header {
+  list-style-image: url("chrome://userchrome/content/pages/options/images/categories/globe.svg");
+}
+
+#content-section-toolbar .content-section-header {
+  list-style-image: url("chrome://userchrome/content/pages/options/images/categories/tabs.svg");
+}
+
+#content-section-about-echelon .content-section-header {
+  list-style-image: url("chrome://userchrome/content/pages/options/images/categories/echelon.svg");
+}
+
+#content-section-about-browser .content-section-header {
+  list-style-image: url("chrome://userchrome/content/pages/options/images/categories/globe.svg");
+}
+
+#content-section-about-os .content-section-header {
+  list-style-image: url("chrome://userchrome/content/pages/options/images/categories/windows.svg");
+}
+
+#homepage-container {
+  opacity: 1;
+  max-height: 100%;
+  transition-property: opacity !important;
+  transition-duration: 250ms !important;
+  visibility: visible;
+}
+#homepage-container:is([collapsed=true]) {
+  max-height: 83px;
+  overflow: hidden;
+  opacity: 0.75;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, black, transparent);
 }
 
 /*# sourceMappingURL=styles.css.map */

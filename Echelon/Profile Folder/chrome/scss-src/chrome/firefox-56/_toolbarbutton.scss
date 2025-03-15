@@ -1,0 +1,75 @@
+& {
+    --toolbarbutton-border-radius: 1px !important;
+
+    &:is([echelon-system-style="win8"], [echelon-system-style="win10"]) {
+        --toolbarbutton-background: none var(--toolbarbutton-background-clip) !important;
+        --toolbarbutton-hover-background: var(--toolbarbutton-background) !important;
+        --toolbarbutton-active-background: var(--toolbarbutton-background) !important;
+    
+        --toolbarbutton-background-clip: padding-box !important;
+    
+        --toolbarbutton-background-color: rgba(0,0,0,0) !important;
+        --toolbarbutton-hover-background-color: rgba(0,0,0,.1) !important;
+        --toolbarbutton-active-background-color: rgba(0,0,0,.15) !important;
+    
+        --toolbarbutton-border-radius: 1px !important;
+    
+        --toolbarbutton-border-color: rgba(0,0,0,0) !important;
+        --toolbarbutton-hover-border-color: rgba(0,0,0,.2) !important;
+        --toolbarbutton-active-border-color: rgba(0,0,0,.3) !important;
+    
+        --toolbarbutton-box-shadow: 0 0 0 1px rgba(0,0,0,0) inset !important;
+        --toolbarbutton-hover-box-shadow: 0 0 0 1px rgba(0,0,0,0) inset !important;
+        --toolbarbutton-active-box-shadow: 0 0 0 1px rgba(0,0,0,.15) inset !important;
+
+        --backbutton-background: var(--toolbarbutton-background) !important;
+        --backbutton-hover-background: var(--toolbarbutton-hover-background)  !important;
+        --backbutton-active-background: var(--toolbarbutton-active-background) !important;
+    
+        --backbutton-background-color: rgba(255,255,255,.15) !important;
+        --backbutton-hover-background-color: var(--toolbarbutton-hover-background-color) !important;
+        --backbutton-active-background-color: var(--toolbarbutton-active-background-color) !important;
+    
+        --backbutton-border-color: var(--urlbar-border-color-hover) !important;
+        --backbutton-hover-border-color: var(--backbutton-border-color) !important;
+        --backbutton-active-border-color: var(--backbutton-border-color) !important;
+    
+        --backbutton-box-shadow: var(--toolbarbutton-box-shadow) !important;
+        --backbutton-hover-box-shadow: var(--toolbarbutton-hover-box-shadow) !important;
+        --backbutton-active-box-shadow: var(--toolbarbutton-active-box-shadow) !important;
+        --backbutton-disabled-box-shadow: var(--backbutton-box-shadow) !important;
+
+        --backbutton-urlbar-overlap: 9px !important;
+    
+        --forwardbutton-background-color: var(--backbutton-background-color) !important;
+        --forwardbutton-hover-background-color: var(--toolbarbutton-hover-background-color) !important;
+        --forwardbutton-active-background-color: var(--toolbarbutton-active-background-color) !important;
+    
+        --forwardbutton-border-color: var(--backbutton-border-color) !important;
+        --forwardbutton-hover-border-color: var(--backbutton-border-color) !important;
+        --forwardbutton-active-border-color: var(--backbutton-border-color) !important;
+    
+        --forwardbutton-inner-inline-padding: 7px 3px !important; 
+    
+        --forwardbutton-box-shadow: var(--toolbarbutton-box-shadow) !important;
+        --forwardbutton-hover-box-shadow: var(--toolbarbutton-hover-box-shadow) !important;
+        --forwardbutton-active-box-shadow: var(--toolbarbutton-active-box-shadow) !important;
+        --forwardbutton-disabled-box-shadow: var(--forwardbutton-box-shadow) !important;
+
+        #nav-bar {
+            #bookmarks-menu-button {
+                &:is(.echelon-unified-bookmarks-menu-button) {
+                    &:not([disabled="true"]):hover,
+                    &:not([disabled="true"])[open="true"] {
+                        .toolbarbutton-1 {
+                            &:not([disabled="true"]):hover:active,
+                            &:not([disabled="true"])[open] {
+                                border-color: rgba(0,0,0,.3) !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -562,3 +562,19 @@ document.addEventListener("DOMContentLoaded", systemStyleMenuList);
 if (!PrefUtils.tryGetBoolPref("Echelon.parameter.debug")) {
     document.querySelector("#category-debug").setAttribute("hidden", "true");
 }
+
+function disableHomepagePreset() {
+    let checkbox = document.querySelector("checkbox[preference='Echelon.Appearance.overrideHomepagePreset']");
+
+    if (!checkbox.hasAttribute("checked")) {
+        document.querySelector("#homepage-container").setAttribute("collapsed", "true");
+    }
+    else {
+        document.querySelector("#homepage-container").removeAttribute("collapsed");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", disableHomepagePreset);
+document.querySelector("checkbox[preference='Echelon.Appearance.overrideHomepagePreset']").addEventListener("CheckboxStateChange",  function () {
+    disableHomepagePreset();
+});

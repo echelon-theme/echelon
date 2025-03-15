@@ -1,0 +1,93 @@
+& {
+    --toolbarbutton-width: 32px !important;
+
+    --toolbarbutton-inner-padding: 2px 6px !important;
+    --toolbarbutton-outer-padding: 1px 3px !important;
+    
+    --toolbarbutton-background: linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,0)) !important;
+    --toolbarbutton-hover-background: linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1)) !important;
+    --toolbarbutton-active-background: linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1)) !important;
+
+    --toolbarbutton-background-color: hsla(210,32%,93%,0) !important;
+    --toolbarbutton-hover-background-color: hsla(210,32%,93%,0)!important;
+    --toolbarbutton-active-background-color: hsla(210,54%,20%,.15) !important;
+
+    --toolbarbutton-border-radius: 2px !important;
+
+    --toolbarbutton-border-color: hsla(210,54%,20%,0) hsla(210,54%,20%,0) hsla(210,54%,20%,0) !important;
+    --toolbarbutton-hover-border-color: hsla(210,54%,20%,.15) hsla(210,54%,20%,.2) hsla(210,54%,20%,.25) !important;
+    --toolbarbutton-active-border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
+
+    --toolbarbutton-transition-duration: 150ms !important;
+    
+    --toolbarbutton-box-shadow: 0 1px hsla(0,0%,100%,0) inset, 0 1px hsla(210,54%,20%,0), 0 0 2px hsla(210,54%,20%,0) !important;
+    --toolbarbutton-hover-box-shadow: 0 1px hsla(0,0%,100%,.3) inset, 0 1px hsla(210,54%,20%,.03), 0 0 2px hsla(210,54%,20%,.1) !important;
+    --toolbarbutton-active-box-shadow: 0 1px 1px hsla(210,54%,20%,.1) inset, 0 0 1px hsla(210,54%,20%,.2) inset, 0 1px 0 hsla(210,54%,20%,0), 0 0 2px hsla(210,54%,20%,0) !important;
+
+    --toolbarbutton-disabled-opacity: .4 !important;
+    --toolbarbutton-icon-disabled-opacity: 1 !important;
+
+    /*** Back Button ***/
+    --backbutton-background: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1)) !important;
+    --backbutton-hover-background: -moz-linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,.1)) !important;
+    --backbutton-active-background: var(--toolbarbutton-active-background) !important;
+
+    --backbutton-background-color: transparent !important;
+    --backbutton-hover-background-color: hsla(210,48%,96%,.75) !important;
+    --backbutton-active-background-color: hsla(210,54%,20%,.15) !important;
+
+    --backbutton-box-shadow: 0 1px 0 hsla(0,0%,100%,.3) inset, 0 0 0 1px hsla(0,0%,100%,.3) inset, 0 0 0 1px hsla(210,54%,20%,.25), 0 1px 0 hsla(210,54%,20%,.35) !important;
+    --backbutton-hover-box-shadow: 0 1px 0 hsla(0,0%,100%,.3) inset, 0 0 0 1px hsla(0,0%,100%,.3) inset, 0 0 0 1px hsla(210,54%,20%,.3), 0 1px 0 hsla(210,54%,20%,.4), 0 0 4px hsla(210,54%,20%,.2) !important;
+    --backbutton-active-box-shadow: 0 1px 1px hsla(210,54%,20%,.1) inset, 0 0 1px hsla(210,54%,20%,.2) inset, 0 0 0 1px hsla(210,54%,20%,.4), 0 1px 0 hsla(210,54%,20%,.2) !important;
+    --backbutton-disabled-box-shadow: 0px 0px 0px 1px rgba(23, 51, 78, 0.55), 0px 1px 0px rgba(23, 51, 78, 0.65) !important;
+    
+    /*** Forward Button ***/
+    --forwardbutton-background: var(--toolbarbutton-hover-background) !important;
+    --forwardbutton-hover-background: none !important;
+    --forwardbutton-active-background: var(--toolbarbutton-active-background) !important;
+
+    --forwardbutton-background-color: var(--toolbarbutton-hover-background-color) !important;
+    --forwardbutton-hover-background-color: hsla(210,48%,96%,.75) !important;
+    --forwardbutton-active-background-color: var(--toolbarbutton-active-background-color) !important;
+
+    --forwardbutton-border-color: var(--toolbarbutton-hover-border-color) !important;
+    --forwardbutton-hover-border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
+    --forwardbutton-active-border-color: hsla(210,54%,20%,.3) hsla(210,54%,20%,.35) hsla(210,54%,20%,.4) !important;
+
+    --forwardbutton-inner-inline-padding: 7px 3px !important; 
+
+    --forwardbutton-box-shadow: var(--toolbarbutton-hover-box-shadow) !important;
+    --forwardbutton-hover-box-shadow: var(--toolbarbutton-hover-box-shadow) !important;
+    --forwardbutton-active-box-shadow: var(--toolbarbutton-active-box-shadow) !important;
+    --forwardbutton-disabled-box-shadow: var(--forwardbutton-box-shadow) !important;
+
+    /*** Dropdown ***/
+    --toolbarbutton-menubutton-dropmarker-image: url("chrome://echelon/content/firefox-14/toolbarbutton-dropdown-arrow.png") !important;
+    &[lwtheme-brighttext] {
+        --toolbarbutton-menubutton-dropmarker-image: url("chrome://echelon/content/firefox-14/toolbarbutton-dropdown-arrow-inverted.png") !important;
+    }
+    --toolbarbutton-menubutton-dropmarker-width: 9px !important;
+    --toolbarbutton-menubutton-dropmarker-height: 7px !important;
+
+    --bookmarksmenubutton-width: 43px !important;
+
+    #nav-bar {
+        #forward-button {
+            &:is(.unified-with-urlbar)
+            {
+                --toolbarbutton-width: 29px !important;
+                border-inline-start-style: none !important;
+            }
+        }
+
+        #bookmarks-menu-button {
+            &:is(.echelon-unified-bookmarks-menu-button) {
+                .toolbarbutton-menubutton-dropmarker {
+                    &::after {
+                        margin-inline-start: 3px !important;
+                    }
+                }
+            }
+        }
+    }
+}

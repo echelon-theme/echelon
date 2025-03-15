@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name            Phroton :: Positional Attributes
+// @name            Echelon :: Positional Attributes
 // @description     Sets positional attributes on tabs
 // @author          aubymori, Travis
 // @include         main
@@ -13,7 +13,7 @@ customElements.get("tabbrowser-tab").prototype._mouseenter = function _mouseente
     }
 
     let tabContainer = this.container;
-    let visibleTabs = tabContainer._getVisibleTabs();
+    let visibleTabs = gBrowser.visibleTabs;
     let tabIndex = visibleTabs.indexOf(this);
 
     if (this.selected)
@@ -57,7 +57,6 @@ customElements.get("tabbrowser-tab").prototype._mouseenter = function _mouseente
     if (this.linkedPanel && !this.selected)
     {
         this.linkedBrowser.unselectedTabHover(true);
-        this.startUnselectedTabHoverTimer();
     }
 
     // Prepare connection to host beforehand.
@@ -89,13 +88,12 @@ customElements.get("tabbrowser-tab").prototype._mouseleave = function _mouseleav
     if (this.linkedPanel && !this.selected)
     {
         this.linkedBrowser.unselectedTabHover(false);
-        this.cancelUnselectedTabHoverTimer();
     }
 }
 
 customElements.get("tabbrowser-tabs").prototype._setPositionalAttributes = function _setPositionalAttributes()
 {
-    let visibleTabs = this._getVisibleTabs();
+    let visibleTabs = gBrowser.visibleTabs;
     if (!visibleTabs.length)
     {
         return;

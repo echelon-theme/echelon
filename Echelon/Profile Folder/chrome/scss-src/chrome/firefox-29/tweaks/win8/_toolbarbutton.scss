@@ -1,0 +1,108 @@
+& {
+
+    --toolbarbutton-background: none !important;
+    --toolbarbutton-hover-background: var(--toolbarbutton-background) !important;
+    --toolbarbutton-active-background: var(--toolbarbutton-background) !important;
+
+    --toolbarbutton-background-clip: border-box !important;
+
+    --toolbarbutton-background-color: hsla(210,25%,98%,0) !important;
+    --toolbarbutton-hover-background-color: hsla(210,4%,10%,.08)!important;
+    --toolbarbutton-active-background-color: hsla(210,4%,10%,.12) !important;
+
+    --toolbarbutton-border-radius: 0 !important;
+
+    --toolbarbutton-border-color: hsla(200, 6%, 10%, 0) !important;
+    --toolbarbutton-hover-border-color: hsla(200, 6%, 10%, 0.1) !important;
+    --toolbarbutton-active-border-color: hsla(210, 4%, 10%, .2) hsla(210, 4%, 10%, 0) hsla(210, 4%, 10%, 0) hsla(210, 4%, 10%, 0) !important;
+
+    --toolbarbutton-box-shadow: 0 1px 0 0 hsla(210,4%,10%,0) inset !important;
+    --toolbarbutton-hover-box-shadow: 0 1px 0 0 hsla(210,4%,10%,0) inset !important;
+    --toolbarbutton-active-box-shadow: 0 1px 0 0 hsla(210,4%,10%,.1) inset !important;
+
+    --backbutton-background-color: transparent !important;
+    --backbutton-hover-background-color: hsla(210,25%,98%,.08) !important;
+    --backbutton-active-background-color: transparent !important;
+
+    --backbutton-border-color: rgba(23, 26, 28, 0.25) !important;
+    --backbutton-hover-border-color: var(--backbutton-border-color) !important;
+    --backbutton-active-border-color: var(--backbutton-border-color) !important;
+
+    --backbutton-box-shadow: 0 1px 0 0 hsla(210,80%,20%,0) inset !important;
+    --backbutton-hover-box-shadow: 0 1px 0 0 hsla(210,80%,20%,0) inset !important;
+    --backbutton-active-box-shadow: 0 1px 0 0 hsla(210,80%,20%,.1) inset !important;
+    --backbutton-disabled-box-shadow: var(--backbutton-box-shadow) !important;
+
+    /*** Forward Button ***/
+    --forwardbutton-background: var(--toolbarbutton-background-color) !important;
+    --forwardbutton-hover-background: var(--toolbarbutton-hover-background-color) !important;
+    --forwardbutton-active-background: var(--toolbarbutton-active-background-color) !important;
+
+    --forwardbutton-background-color: var(--backbutton-background-color) !important;
+    --forwardbutton-hover-background-color: var(--toolbarbutton-hover-background-color) !important;
+    --forwardbutton-active-background-color: var(--toolbarbutton-active-background-color) !important;
+
+    --forwardbutton-border-color: var(--toolbarbutton-hover-border-color) !important;
+    --forwardbutton-hover-border-color: var(--toolbarbutton-hover-border-color) !important;
+    --forwardbutton-active-border-color: var(--toolbarbutton-active-border-color) !important;
+
+    --forwardbutton-inner-inline-padding: 7px 3px !important; 
+
+    --forwardbutton-box-shadow: var(--toolbarbutton-box-shadow) !important;
+    --forwardbutton-hover-box-shadow: var(--toolbarbutton-hover-box-shadow) !important;
+    --forwardbutton-active-box-shadow: var(--toolbarbutton-active-box-shadow) !important;
+    --forwardbutton-disabled-box-shadow: var(--forwardbutton-box-shadow) !important;
+
+    --toolbarbutton-menubutton-hover-background-color: var(--toolbarbutton-hover-background-color) !important;
+    --toolbarbutton-menubutton-hover-border-color: var(--toolbarbutton-hover-border-color) !important;
+    --toolbarbutton-menubutton-hover-box-shadow: var(--toolbarbutton-hover-box-shadow) !important;
+
+    #nav-bar {
+        #back-button {
+            &:is(.unified-with-urlbar)
+            {
+                --toolbarbutton-width: 32px !important;
+                --toolbarbutton-height: 32px !important;
+                border: 1px solid !important;
+                border-color: var(--backbutton-border-color) !important;
+    
+                &:not([disabled="true"]) {
+                    &:not([open], [disabled="true"], :active):hover {
+                        border-color: var(--backbutton-hover-border-color) !important;
+                    }
+
+                    &:not([disabled="true"]):hover:active,
+                    &:not([disabled="true"])[open] {
+                        border-color: var(--backbutton-active-border-color) !important;
+                    }
+                }
+            }
+        }
+
+        #bookmarks-menu-button {
+            &:is(.echelon-unified-bookmarks-menu-button) {
+                margin: var(--toolbarbutton-outer-padding) !important;
+                position: relative !important;
+
+                &:not([disabled="true"]):hover,
+                &:not([disabled="true"])[open="true"] {
+                    .toolbarbutton-1 {
+                        &:not([disabled="true"]):hover:active,
+                        &:not([disabled="true"])[open] {
+                            border-color: var(--toolbarbutton-hover-border-color) !important;
+                        }
+                    }
+                }
+
+                &:not(:hover, :active, [open]) {
+                    .toolbarbutton-menubutton-dropmarker::before {
+                        min-height: 16px !important;
+                        background-image: linear-gradient(hsla(210,54%,20%,.2) 0, hsla(210,54%,20%,.2) 16px) !important;
+                        background-size: 1px 16px !important;
+                        box-shadow: none !important;
+                    }
+                }   
+            }
+        }
+    }
+}

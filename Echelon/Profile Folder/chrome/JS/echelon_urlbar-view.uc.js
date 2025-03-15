@@ -112,12 +112,12 @@ function setURLbarViewAttr() {
 // 
 //             // Calculate the height
 //             let lastRowRect = rows[numRows - 1].getBoundingClientRect();
-//             height = lastRowRect.bottom - firstRowRect.top + urlbarViewResultsPadding
+//             height = lastRowRect.bottom - firstRowRect.top + urlbarViewResultsPadding;
 // 
 //             let currentHeight = urlbarResults.getBoundingClientRect().height;
-// 
-//             urlbarResults.style.height = height + "px";
 //         }
+//         
+//         urlbarResults.style.height = height + "px";
 //     }
 // }
 
@@ -155,7 +155,9 @@ waitForElement("#urlbar-input").then(e => {
 
         if (!document.querySelector(".search-panel-custom-echelon")) {
             searchOneOffs.insertBefore(oldOneOffsHeaderXUL, searchOneOffs.querySelector(".search-panel-one-offs-container"));
-            searchOneOffs.querySelector(".search-panel-one-offs-header").setAttribute("hidden", "true");
+            waitForElement("#urlbar .search-one-offs .search-panel-one-offs-header").then(oneOffsHeader => {
+                oneOffsHeader.setAttribute("hidden", "true");
+            });
         }
 
         let customSearchPanel = document.querySelector(".search-panel-custom-echelon");
@@ -198,7 +200,6 @@ waitForElement("#urlbar-input").then(e => {
 
     inputField.addEventListener('input', function (evt) {
         setOneOffText();
-        // adjustHeight();
     });
 
     waitForElement(".search-panel-one-offs-header").then(header => {
@@ -211,3 +212,9 @@ waitForElement("#urlbar").then(e => {
     let observer = new MutationObserver(setURLbarViewAttr);
     observer.observe(e, { attributes: true, attributeFilter: ["open"] });
 });
+
+// waitForElement("#urlbar-results").then(e => {
+//     urlbarResults = e;
+//     let observer = new MutationObserver(adjustHeight);
+//     observer.observe(e, { childList: true, subtree: true });
+// });
