@@ -21,19 +21,19 @@
         let bookmarksMenuButton = MozXULElement.parseXULToFragment(
         `
             <toolbarbutton class="box-inherit toolbarbutton-1 toolbarbutton-menubutton-button" label="Bookmarks" flex="1" allowevents="1" tooltiptext="Bookmark this page"></toolbarbutton>
-            <dropmarker id="bookmarks-menu-button-dropmarker" type="menu-button" class="toolbarbutton-1 toolbarbutton-menubutton-dropmarker" anonid="dropmarker" label="Bookmarks">
+            <echelon-dropmarker id="bookmarks-menu-button-dropmarker" type="menu-button" class="toolbarbutton-1 toolbarbutton-menubutton-dropmarker" anonid="dropmarker" label="Bookmarks">
                 <image class="dropmarker-icon" />
-            </dropmarker>
+            </echelon-dropmarker>
         `);
         e.append(bookmarksMenuButton);
 
         e.querySelector(".toolbarbutton-menubutton-button").onclick = function(){BookmarkingUI._echelonBookmarkButton();};
 
         function dropmarkerAttr() {
-            e.querySelector("dropmarker").removeAttribute("open");
+            e.querySelector("echelon-dropmarker").removeAttribute("open");
 
             if (e.open == true && StarUI.panel.state == "closed") { 
-                e.querySelector("dropmarker").setAttribute("open", "true");
+                e.querySelector("echelon-dropmarker").setAttribute("open", "true");
             }
         }
 
@@ -152,7 +152,7 @@
         if (this.notifier.style.transform == '') {
             // Get all the relevant nodes and computed style objects
             let widgetGroup = document.getElementById("bookmarks-menu-button");
-            let dropmarker = widgetGroup.querySelector("dropmarker");
+            let dropmarker = widgetGroup.querySelector("echelon-dropmarker");
             let dropmarkerIcon = dropmarker.querySelector(".dropmarker-icon");
             let dropmarkerStyle = getComputedStyle(dropmarkerIcon);
 
