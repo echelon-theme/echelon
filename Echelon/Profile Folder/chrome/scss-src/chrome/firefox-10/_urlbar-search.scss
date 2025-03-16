@@ -126,7 +126,7 @@
             & + #urlbar-container {            
                 & > #urlbar,
                 & > #echelon-urlbar-positioning {
-                    margin-left: -27px !important;
+                    margin-left: calc(-1 * var(--forwardbutton-offset)) !important;
                 }
     
                 #urlbar-background,
@@ -143,8 +143,8 @@
 
         #forward-button.unified-with-urlbar {
             & + #urlbar-container {
-                padding-inline-start: 27px !important;
-                margin-inline-start: -27px !important;
+                padding-inline-start: var(--forwardbutton-offset) !important;
+                margin-inline-start: calc(-1 * var(--forwardbutton-offset)) !important;
 
                 #urlbar-background,
                 .urlbar-input-container,

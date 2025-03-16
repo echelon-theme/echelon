@@ -32,11 +32,6 @@
         #nav-bar {
             #forward-button.unified-with-urlbar:not(:hover)[disabled] {
                 & + #urlbar-container {
-                    & > #urlbar,
-                    & > #echelon-urlbar-positioning {
-                        margin-left: -35px !important;
-                    }
-
                     #urlbar-background,
                     .urlbar-input-container,
                     #urlbar-input-container {
@@ -46,13 +41,6 @@
                     #identity-icon-box {
                         padding-inline-start: 10px !important;
                     }
-                }
-            }
-
-            #forward-button.unified-with-urlbar {
-                & + #urlbar-container {
-                    padding-inline-start: 35px !important;
-                    margin-inline-start: -35px !important;
                 }
             }
         }

@@ -38,8 +38,6 @@
         --backbutton-hover-box-shadow: var(--toolbarbutton-hover-box-shadow) !important;
         --backbutton-active-box-shadow: var(--toolbarbutton-active-box-shadow) !important;
         --backbutton-disabled-box-shadow: var(--backbutton-box-shadow) !important;
-
-        --backbutton-urlbar-overlap: 9px !important;
     
         --forwardbutton-background-color: var(--backbutton-background-color) !important;
         --forwardbutton-hover-background-color: var(--toolbarbutton-hover-background-color) !important;
@@ -57,6 +55,13 @@
         --forwardbutton-disabled-box-shadow: var(--forwardbutton-box-shadow) !important;
 
         #nav-bar {
+            #forward-button {
+                &:is(.unified-with-urlbar)
+                {
+                    --toolbarbutton-width: 31px !important;
+                }
+            }
+    
             #bookmarks-menu-button {
                 &:is(.echelon-unified-bookmarks-menu-button) {
                     &:not([disabled="true"]):hover,
@@ -68,6 +73,22 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+
+    &[echelon-system-style="win10"] {
+        --backbutton-urlbar-overlap: 9px !important;
+        --forwardbutton-offset: 34px !important;
+        --forwardbutton-inner-inline-padding: 11px 2px !important; 
+
+        #nav-bar {
+            #forward-button {
+                &:is(.unified-with-urlbar)
+                {
+                    --toolbarbutton-width: 34px !important;
+                    clip-path: var(--urlbar-back-button-clip-path-win10) !important;
                 }
             }
         }

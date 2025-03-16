@@ -1,0 +1,31 @@
+& {
+    --toolbarbutton-border-radius: 2.5px !important;
+
+    --forwardbutton-inline-outer-padding: calc(var(--backbutton-urlbar-overlap) * -1) 0 !important;
+    --forwardbutton-unified-border-radius: 0 !important;
+    --forwardbutton-offset: 27px !important;
+
+    --backbutton-box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset, 0 0 0 2px rgba(255,255,255,.1) inset, 0 0 0 1px rgba(0,0,0,.15), 0 1px 0 rgba(0,0,0,.4) !important;
+    --backbutton-hover-box-shadow: 0 0 0 1px rgba(255,255,255,.3) inset, 0 0 0 2px rgba(255,255,255,.1) inset, 0 0 0 1px hsla(190,50%,40%,.3), 0 1px 0 rgba(0,0,0,.4), 0 0 5px 1px hsl(190,90%,80%) !important;
+    --backbutton-active-box-shadow: 0 0 6.5px rgba(0,0,0,.4) inset, 0 0 2px rgba(0,0,0,.4) inset, 0 0 0 1px rgba(0,0,0,.65), 0 2px 0 rgba(255,255,255,.4) !important;
+
+    #nav-bar {
+        #forward-button {
+            &:is(.unified-with-urlbar)
+            {
+                --toolbarbutton-width: 29px !important;
+                border-inline-start-style: none !important;
+            }
+        }
+
+        #bookmarks-menu-button {
+            &:is(.echelon-unified-bookmarks-menu-button) {
+                .toolbarbutton-menubutton-dropmarker {
+                    &::after {
+                        margin-inline-start: 3px !important;
+                    }
+                }
+            }
+        }
+    }
+}

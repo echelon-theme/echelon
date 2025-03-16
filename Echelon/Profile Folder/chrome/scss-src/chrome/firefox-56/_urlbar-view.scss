@@ -346,21 +346,4 @@
             display: none !important;
         }
     }
-
-    #urlbar-label-box {
-        padding-inline-start: 4px !important;
-        border-inline: 1px solid var(--urlbar-separator-color) !important;
-        border-image: linear-gradient(transparent 15%, var(--urlbar-separator-color) 15%, var(--urlbar-separator-color) 85%, transparent 85%) !important;
-        border-image-slice: 1 !important;
-        margin-inline-end: 4px !important;
-        background-color: transparent !important;
-        border-radius: 0 !important;
-
-        .urlbar-label {
-            margin-top: 0 !important;
-            margin-bottom: 0 !important;
-            margin-inline-start: 0 !important;
-            color: GrayText !important;
-        }
-    }
 }

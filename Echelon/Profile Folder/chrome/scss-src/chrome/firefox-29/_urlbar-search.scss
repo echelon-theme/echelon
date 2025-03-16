@@ -1,29 +1,9 @@
-
 & {
+    --forwardbutton-offset: 31px !important;
+
     #urlbar {
         #star-button-box {
             visibility: collapse !important;
-        }
-    }
-}
-
-
-&:not([chromehidden~="toolbar"]) {
-    #nav-bar {
-        #forward-button.unified-with-urlbar:not(:hover)[disabled] {
-            & + #urlbar-container {            
-                & > #urlbar,
-                & > #echelon-urlbar-positioning {
-                    margin-left: -31px !important;
-                }
-            }
-        }
-
-        #forward-button.unified-with-urlbar {
-            & + #urlbar-container {
-                padding-inline-start: 31px !important;
-                margin-inline-start: -31px !important;
-            }
         }
     }
 }

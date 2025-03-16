@@ -67,15 +67,6 @@
         margin-inline-end: 3px !important;
     }
 
-    #navigator-toolbox > #nav-bar .toolbarbutton-1:not(.unified) {
-        &#forward-button.unified-with-urlbar {
-            --toolbarbutton-width: 32px !important;
-            padding-left: 9px !important;
-            padding-right: 3px !important;
-            border-left: 0 !important;
-        }
-    }
-
     @keyframes animation-bookmarkAdded {
         from {
             transform: rotate(0deg) translateX(-16px) rotate(0deg) scale(1);

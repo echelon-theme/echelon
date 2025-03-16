@@ -24,7 +24,6 @@
         border-color: var(--toolbarbutton-border-color) !important;
         box-shadow: var(--toolbarbutton-box-shadow) !important;
         color: var(--lwt-text-color, black) !important;
-        text-shadow: 0 0 2px white !important;
         transition: var(--toolbarbutton-transiton) !important;
 
         &:not([disabled="true"]) {

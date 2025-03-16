@@ -72,14 +72,6 @@
     --bookmarksmenubutton-width: 43px !important;
 
     #nav-bar {
-        #forward-button {
-            &:is(.unified-with-urlbar)
-            {
-                --toolbarbutton-width: 29px !important;
-                border-inline-start-style: none !important;
-            }
-        }
-
         #bookmarks-menu-button {
             &:is(.echelon-unified-bookmarks-menu-button) {
                 .toolbarbutton-menubutton-dropmarker {
