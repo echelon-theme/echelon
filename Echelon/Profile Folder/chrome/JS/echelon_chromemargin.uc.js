@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name			Echelon :: Chrome Margins
-// @description 	Changes the window title formats.
-// @author			aubymori
+// @description 	Changes chrome margins
+// @author			Travis
 // @include			main
 // ==/UserScript===
 

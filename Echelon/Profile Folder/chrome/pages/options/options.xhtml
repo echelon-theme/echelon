@@ -61,7 +61,7 @@
 							<label class="header-text" value="&appearance.header;" />
 						</hbox>
 						<vbox class="options-content">
-							<vbox id="content-section-appearance" class="content-section-new">
+							<vbox id="content-section-appearance" class="content-section">
 								<hbox class="content-section-header">
 									<stack class="content-section-header-image">
 										<image class="content-section-header-icon" />
@@ -125,7 +125,7 @@
 									</hbox>
 								</vbox>
 							</vbox>
-							<vbox id="content-section-echelon-preset" class="content-section-new">
+							<vbox id="content-section-echelon-preset" class="content-section">
 								<hbox class="content-section-header">
 									<stack class="content-section-header-image">
 										<image class="content-section-header-icon" />
@@ -138,7 +138,7 @@
 									</radiogroup>
 								</vbox>
 							</vbox>
-							<vbox id="content-section-homepage" class="content-section-new">
+							<vbox id="content-section-homepage" class="content-section">
 								<hbox class="content-section-header">
 									<stack class="content-section-header-image">
 										<image class="content-section-header-icon" />
@@ -171,7 +171,7 @@
 							<label class="header-text" value="&behavior.text;" />
 						</hbox>
 						<vbox class="options-content">
-							<vbox id="content-section-browser" class="content-section-new">
+							<vbox id="content-section-browser" class="content-section">
 								<hbox class="content-section-header">
 									<stack class="content-section-header-image">
 										<image class="content-section-header-icon" />
@@ -233,7 +233,7 @@
 									</hbox>
 								</vbox>
 							</vbox>
-							<vbox id="content-section-toolbar" class="content-section-new">
+							<vbox id="content-section-toolbar" class="content-section">
 								<hbox class="content-section-header">
 									<stack class="content-section-header-image">
 										<image class="content-section-header-icon" />
@@ -289,7 +289,7 @@
 									</hbox>
 								</vbox>
 							</vbox>
-							<vbox id="content-section-homepage" class="content-section-new">
+							<vbox id="content-section-homepage" class="content-section">
 								<hbox class="content-section-header">
 									<stack class="content-section-header-image">
 										<image class="content-section-header-icon" />
@@ -319,7 +319,7 @@
 							<label class="header-text" value="&tabs.debug;" />
 						</hbox>
 						<vbox class="options-content">
-							<vbox id="content-section-appearance" class="content-section-new">
+							<vbox id="content-section-appearance" class="content-section">
 								<hbox class="content-section-header">
 									<stack class="content-section-header-image">
 										<image class="content-section-header-icon" />
@@ -363,10 +363,20 @@
 							</hbox>
 						</hbox>
 						<vbox class="about-content" flex="1">
-							<!-- <vbox id="contributors" class="about-content-container">
-							</vbox> -->
-							<vbox class="options-content">
-								<vbox id="content-section-about-echelon" class="content-section-new">
+							<vbox id="contributors" class="options-content">
+								<vbox id="content-section-developers" class="content-section">
+									<hbox class="content-section-header">
+										<stack class="content-section-header-image">
+											<image class="content-section-header-icon" />
+										</stack>
+										<label class="content-section-header-label">Echelon Developers</label>
+									</hbox>
+									<vbox class="content-section-container">
+									</vbox>
+								</vbox>
+							</vbox>
+							<vbox id="browser-info" class="options-content">
+								<vbox id="content-section-about-echelon" class="content-section">
 									<hbox class="content-section-header">
 										<stack class="content-section-header-image">
 											<image class="content-section-header-icon" />
@@ -378,7 +388,7 @@
 											<vbox class="content-section-label-container" flex="1">
 												<label class="content-section-label">Version</label>
 												<span class="content-section-additional-container">
-													<label id="version-short" class="about-section-text"></label>
+													<label id="version-short" class="content-section-description"></label>
 												</span>
 											</vbox>
 										</hbox>
@@ -386,7 +396,7 @@
 											<vbox class="content-section-label-container" flex="1">
 												<label class="content-section-label">Build</label>
 												<span class="content-section-additional-container">
-													<label id="build" class="about-section-text"></label>
+													<label id="build" class="content-section-description"></label>
 												</span>
 											</vbox>
 										</hbox>
@@ -394,7 +404,7 @@
 											<vbox class="content-section-label-container" flex="1">
 												<label class="content-section-label">Update Channel</label>
 												<span class="content-section-additional-container">
-													<label id="channel" class="about-section-text"></label>
+													<label id="channel" class="content-section-description"></label>
 												</span>
 											</vbox>
 										</hbox>
@@ -402,13 +412,13 @@
 											<vbox class="content-section-label-container" flex="1">
 												<label class="content-section-label">Repository Branch</label>
 												<span class="content-section-additional-container">
-													<label id="branch" class="about-section-text"></label>
+													<label id="branch" class="content-section-description"></label>
 												</span>
 											</vbox>
 										</hbox>
 									</vbox>
 								</vbox>
-								<vbox id="content-section-browser" class="content-section-new">
+								<vbox id="content-section-browser" class="content-section">
 									<hbox class="content-section-header">
 										<stack class="content-section-header-image">
 											<image class="content-section-header-icon" />
@@ -420,7 +430,7 @@
 											<vbox class="content-section-label-container" flex="1">
 												<label class="content-section-label">Browser Name</label>
 												<span class="content-section-additional-container">
-													<label data-content="Services.appinfo.name" class="about-section-text"></label>
+													<label data-content="Services.appinfo.name" class="content-section-description"></label>
 												</span>
 											</vbox>
 										</hbox>
@@ -428,7 +438,7 @@
 											<vbox class="content-section-label-container" flex="1">
 												<label class="content-section-label">Engine Version</label>
 												<span class="content-section-additional-container">
-													<label data-content="Services.appinfo.version" class="about-section-text"></label>
+													<label data-content="Services.appinfo.version" class="content-section-description"></label>
 												</span>
 											</vbox>
 										</hbox>
@@ -436,13 +446,13 @@
 											<vbox class="content-section-label-container" flex="1">
 												<label class="content-section-label">Update Channel</label>
 												<span class="content-section-additional-container">
-													<label data-content="Services.appinfo.defaultUpdateChannel" class="about-section-text"></label>
+													<label data-content="Services.appinfo.defaultUpdateChannel" class="content-section-description"></label>
 												</span>
 											</vbox>
 										</hbox>
 									</vbox>
 								</vbox>
-								<vbox id="content-section-about-os" class="content-section-new">
+								<vbox id="content-section-about-os" class="content-section">
 									<hbox class="content-section-header">
 										<stack class="content-section-header-image">
 											<image class="content-section-header-icon" />
@@ -454,7 +464,7 @@
 											<vbox class="content-section-label-container" flex="1">
 												<label class="content-section-label">Version in Manifest</label>
 												<span class="content-section-additional-container">
-													<label data-content="getWinVer()" class="about-section-text"></label>
+													<label data-content="getWinVer()" class="content-section-description"></label>
 												</span>
 											</vbox>
 										</hbox>
@@ -462,7 +472,7 @@
 											<vbox class="content-section-label-container" flex="1">
 												<label class="content-section-label">Update Channel</label>
 												<span class="content-section-additional-container">
-													<label data-content="getTrueWinVer()" class="about-section-text"></label>
+													<label data-content="getTrueWinVer()" class="content-section-description"></label>
 												</span>
 											</vbox>
 										</hbox>

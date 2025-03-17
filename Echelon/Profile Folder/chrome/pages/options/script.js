@@ -463,7 +463,7 @@ async function loadVersion() {
         identifier.value = localEchelonJSON.branch;
 	})
 
-    for (const aboutSection of document.querySelectorAll(".about-section-text[data-content]"))
+    for (const aboutSection of document.querySelectorAll(".content-section-description[data-content]"))
     {
         aboutSection.value = eval(aboutSection.dataset.content);
     }
@@ -606,3 +606,94 @@ function getScrollbarWidth()
     document.documentElement.style.setProperty("--scrollbar-width", String(w1 - w2) + "px");
 }
 document.addEventListener("DOMContentLoaded", getScrollbarWidth);
+
+document.querySelector(".view-credits-button").addEventListener("click", function () {
+    document.querySelector("#section-about").toggleAttribute("contributors-open");
+    document.querySelector("#section-about").setAttribute("animating", "true");
+    document.querySelector("#section-about").setAttribute("animate", "open");
+
+    setTimeout(() => {
+        document.querySelector("#section-about").removeAttribute("animating")
+        document.querySelector("#section-about").setAttribute("animate", "false")
+    }, 330);
+})
+
+
+function buildCredits() {
+    let creditsContainer = document.querySelector("#contributors");
+
+    let credits =
+    [
+        {
+            "name": "Travis",
+            "role": "developers",
+            "contributions": "Creator of the Echelon theme",
+            "socials": [
+                {
+                    "name": "GitHub",
+                    "url": "https://github.com/travy-patty"
+                }
+            ]
+        },
+        {
+            "name": "aubymori",
+            "role": "developers",
+            "contributions": "Branding system, carried older Echelon releases",
+            "socials": [
+                {
+                    "name": "GitHub",
+                    "url": "https://github.com/aubymori"
+                }
+            ]
+        },
+        {
+            "name": "Isabella Lulamoon",
+            "role": "developers",
+            "contributions": "Australis menu panel, tons of improvements JS/CSS wise from older Echelon releases",
+            "socials": [
+                {
+                    "name": "GitHub",
+                    "url": "https://github.com/kawapure"
+                }
+            ]
+        }
+    ]
+
+    credits.forEach(contributor => {
+        let contributorRolePlacement = document.querySelector(`#content-section-${contributor.role} .content-section-container`);
+
+        let creditsCard = `
+            <hbox class="content-section-option" data-name="${contributor.name}">
+                <vbox class="content-section-label-container" flex="1">
+                    <label class="content-section-label">${contributor.name}</label>
+                    <span class="content-section-additional-container">
+                        <description class="content-section-description">${contributor.contributions}</description>
+                    </span>
+                </vbox>
+            </hbox>
+        `
+
+        contributorRolePlacement.appendChild(MozXULElement.parseXULToFragment(creditsCard));
+
+        let creditsContainer = document.querySelector(`.content-section-option[data-name="${contributor.name}"]`);
+
+        if (contributor.socials) {
+            let socialLinks = document.createXULElement("hbox");
+            socialLinks.classList.add("credits-social-links");
+            
+            creditsContainer.appendChild(socialLinks);
+
+            contributor.socials.forEach(social => {
+                let socialLink = `
+                    <hbox class="credits-social-link-container" align="center">
+                        <image class="credits-social-link-icon ${social.name.toLowerCase()}-icon" />
+                        <label class="credits-social-link" is="text-link" href="${social.url}">${social.name}</label>
+                    </hbox>
+                `
+
+                socialLinks.appendChild(MozXULElement.parseXULToFragment(socialLink));
+            })
+        }
+    });
+}
+document.addEventListener("DOMContentLoaded", buildCredits);
