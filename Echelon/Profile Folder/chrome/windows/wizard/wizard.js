@@ -251,13 +251,6 @@ class ThemeUtils
             "defaultTheme": "true",
             "visibleOnly": "australis"
         },
-        3: { // Windows 10
-            "value": "win10",
-            "name": "Windows 10",
-            "platform": ["win"],
-            "defaultTheme": "true",
-            "visibleOnly": "australis"
-        },
     };
 }
 

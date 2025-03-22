@@ -433,6 +433,12 @@ panelview {
 
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
+:root {
+  --warning-16: url("chrome://echelon/content/firefox-4/icons/warning-16.png") !important;
+  --information-16: url("chrome://echelon/content/firefox-4/icons/information-16.png") !important;
+  --error-16: url("chrome://echelon/content/firefox-4/icons/error-16.png") !important;
+}
+
 #tab-notification-deck {
   order: 1000 !important;
 }
@@ -468,15 +474,15 @@ notification-message[style*="margin-top:"][message-bar-type=infobar] {
   visibility: collapse !important;
 }
 .container.infobar[echelon-modified=true][type=warning] {
-  --message-bar-icon-url: url("chrome://echelon/content/firefox-4/icons/warning-16.png") !important;
+  --message-bar-icon-url: var(--warning-16) !important;
 }
 .container.infobar[echelon-modified=true][type=info] {
-  --message-bar-icon-url: url("chrome://echelon/content/firefox-4/icons/information-16.png") !important;
+  --message-bar-icon-url: var(--information-16) !important;
   background-color: -moz-Dialog !important;
   color: -moz-DialogText !important;
 }
 .container.infobar[echelon-modified=true][type=critical] {
-  --message-bar-icon-url: url("chrome://echelon/content/firefox-4/icons/error-16.png") !important;
+  --message-bar-icon-url: var(--error-16) !important;
   background-image: linear-gradient(rgb(212, 0, 0), rgb(152, 0, 0)) !important;
   color: white !important;
 }

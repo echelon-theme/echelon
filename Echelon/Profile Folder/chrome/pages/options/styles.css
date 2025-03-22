@@ -167,10 +167,9 @@ body > hbox {
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  filter: none;
-  transition-property: transform, filter, opacity !important;
-  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275), ease-out, ease-out !important;
-  transition-duration: 330ms, 100ms, 100ms !important;
+  transition-property: transform, opacity !important;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275), ease-out !important;
+  transition-duration: 330ms, 100ms !important;
   pointer-events: all;
   align-items: center;
 }
@@ -179,8 +178,7 @@ body > hbox {
   height: 100%;
   position: absolute;
   opacity: 0;
-  transform: scale(95%) translateY(10px);
-  filter: blur(2px);
+  transform: translateY(20px);
   pointer-events: none;
 }
 .section:not(#section-about) {
@@ -331,7 +329,6 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
   background-position: center left;
   padding-inline-start: 40px;
 }
-
 .about-header-info[status=available] {
   background-image: url("chrome://userchrome/content/pages/options/images/update-available.png");
 }
@@ -402,22 +399,6 @@ checkbox:hover:active .checkbox-check:not([disabled]) {
 }
 :root[echelon-appearance-newlogo=true] #branding-nightly {
   list-style-image: url("chrome://userchrome/content/branding/nightly/new/content/icon32.png");
-}
-
-label[needs-restart-label]::after {
-  content: attr(needs-restart-label);
-  font-size: 8pt;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-shadow: inherit;
-  color: #8a1c04;
-}
-
-label:not(.header)[needs-restart-label] {
-  flex-direction: column;
-}
-label:not(.header)[needs-restart-label]::after {
-  margin-block-start: 2px;
 }
 
 .about-table {

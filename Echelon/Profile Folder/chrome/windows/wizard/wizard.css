@@ -111,16 +111,6 @@ body {
   opacity: 0;
 }
 
-#preset-container image,
-#system-style-container image {
-  background-position: 10px 0;
-  background-repeat: no-repeat;
-}
-
-#system-style-container .winxp image {
-  background-position: 23px 10px;
-}
-
 .page-content {
   padding-inline: 20px;
   padding-block-end: 30px;
@@ -242,39 +232,39 @@ body {
 }
 
 #system-style-container .winxp image {
-  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/winxp/firefox-4.png");
+  background-image: url("chrome://userchrome/content/pages/options/images/presets/winxp/firefox-4.png");
 }
 
 :root[echelon-style-4] #system-style-container .winxp image {
-  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/winxp/firefox-10.png");
+  background-image: url("chrome://userchrome/content/pages/options/images/presets/winxp/firefox-10.png");
 }
 
 :root[echelon-style-5] #system-style-container .winxp image {
-  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/winxp/firefox-14.png");
+  background-image: url("chrome://userchrome/content/pages/options/images/presets/winxp/firefox-14.png");
 }
 
 :root[echelon-style-6] #system-style-container .winxp image {
-  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/winxp/firefox-29.png");
+  background-image: url("chrome://userchrome/content/pages/options/images/presets/winxp/firefox-29.png");
 }
 
 #system-style-container .win image {
-  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/win7/firefox-4.png");
+  background-image: url("chrome://userchrome/content/pages/options/images/presets/win/firefox-4.png");
 }
 
 :root[echelon-style-4] #system-style-container .win image {
-  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/win7/firefox-10.png");
+  background-image: url("chrome://userchrome/content/pages/options/images/presets/win/firefox-10.png");
 }
 
 :root[echelon-style-5] #system-style-container .win image {
-  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/win7/firefox-14.png");
+  background-image: url("chrome://userchrome/content/pages/options/images/presets/win/firefox-14.png");
 }
 
 :root[echelon-style-6] #system-style-container .win image {
-  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/win7/firefox-29.png");
+  background-image: url("chrome://userchrome/content/pages/options/images/presets/win/firefox-29.png");
 }
 
 #system-style-container .win8 image {
-  background-image: url("chrome://userchrome/content/windows/wizard/assets/systemstyles/win8/firefox-29.png");
+  background-image: url("chrome://userchrome/content/pages/options/images/presets/win8/firefox-29.png");
 }
 
 #echelon-wizard-finish-container {

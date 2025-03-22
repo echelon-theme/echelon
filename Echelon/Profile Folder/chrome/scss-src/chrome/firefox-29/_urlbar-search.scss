@@ -1,5 +1,8 @@
 & {
     --forwardbutton-offset: 31px !important;
+    &[is133newer] { // FUCK EMILIO
+        --forwardbutton-offset: 30px !important;
+    }
 
     #urlbar {
         #star-button-box {

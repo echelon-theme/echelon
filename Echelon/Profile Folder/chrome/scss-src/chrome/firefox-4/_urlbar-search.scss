@@ -175,10 +175,7 @@
 
             #identity-icon {
                 z-index: 1 !important;
-
-                &:not([src]) {
-                    list-style-image: var(--default-favicon) !important;
-                }
+                list-style-image: var(--default-favicon) !important;
             }
 
             #identity-icon-label {
