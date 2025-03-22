@@ -1,0 +1,44 @@
+# Original: chrome://browser/locale/tabbrowser.properties
+# From version 88.0.1
+
+tabs.emptyTabTitle=Nowa karta
+tabs.emptyPrivateTabTitle=Przeglądanie prywatne
+tabs.closeTab=Zamknij kartę
+tabs.close=Zamknij
+tabs.closeTitleTabs=Potwierdzenie zamknięcia
+tabs.closeTabsAndQuitTitle=Potwierdzenie zakończenia
+tabs.closeTabsAndQuitTitleWin=Potwierdzenie zakończenia
+tabs.closeWarningMultipleTabs=;Nastąpi zamknięcie #1 kart.
+tabs.closeWarningMultipleTabsSessionRestore=;Nastąpi zamknięcie #1 kart. Karty (z pominięciem tych z okien prywatnych) zostaną przywrócone po ponownym uruchomieniu.;Nastąpi zamknięcie #1 kart. Karty (z pominięciem tych z okien prywatnych) zostaną przywrócone po ponownym uruchomieniu.
+tabs.closeButtonMultiple=Zamknij karty
+tabs.closeWarningPrompt=Ostrzegaj przed zamknięciem wielu kart
+
+tabs.closeWarningMultipleWindows2=;Nastąpi zamknięcie #1 kart %S.
+tabs.closeWarningMultipleWindowsSessionRestore3=;Nastąpi zamknięcie #1 kart %S. Karty (z pominięciem tych z okien prywatnych) zostaną przywrócone po ponownym uruchomieniu.;Nastąpi zamknięcie #1 kart. Karty (z pominięciem tych z okien prywatnych) zostaną przywrócone po ponownym uruchomieniu.
+
+tabs.closeWarningMultipleWindowsTabSnippet=;z (łącznie) #1 kartami;z (łączenie) #1 kartami
+
+tabs.closeTabs.tooltip=Zamknij kartę;Zamknij #1 karty;Zamknij #1 kart
+
+tabs.muteAudio2.tooltip=Wycisz kartę (%S);Wycisz #1 karty (%S);Wycisz #1 kart (%S)
+
+tabs.unmuteAudio2.tooltip=Włącz dźwięk (%S);Włącz dźwięk w #1 kartach (%S);Włącz dźwięk w #1 kartach (%S)
+
+tabs.muteAudio2.background.tooltip=Wycisz kartę;Wycisz #1 karty;Wycisz #1 kart
+
+tabs.unmuteAudio2.background.tooltip=Włącz dźwięk;Włącz dźwięk w #1 kartach;Włącz dźwięk w #1 kartach
+
+tabs.unblockAudio2.tooltip=Odtwarzaj;Odtwarzaj w #1 kartach;Odtwarzaj w #1 kartach
+
+tabs.allowTabFocusByPromptForSite=Zezwalaj komunikatom z %S przenosić do karty, z której są otwierane
+
+tabs.containers.tooltip=%1$S — %2$S
+
+tabs.openWarningTitle=Potwierdzenie otwarcia
+tabs.openWarningMultipleBranded=Nastąpi otwarcie %S kart jednocześnie. Może to spowodować spowolnienie działania przeglądarki %S podczas wczytywania stron. Czy na pewno kontynuować?
+tabs.openButtonMultiple=Otwórz karty
+tabs.openWarningPromptMeBranded=Ostrzegaj, kiedy próba otwarcia zbyt wielu kart może spowolnić przeglądarkę %S
+
+browsewithcaret.checkMsg=Nie pytaj ponownie.
+browsewithcaret.checkWindowTitle=Przeglądanie z użyciem kursora
+browsewithcaret.checkLabel=Naciśnięcie klawisza F7 włącza lub wyłącza tryb przeglądania z użyciem kursora. Opcja ta wyświetla ruchomy kursor na stronach WWW, pozwalając na zaznaczanie tekstu przy pomocy klawiatury. Czy włączyć opcję przeglądania z użyciem kursora?
