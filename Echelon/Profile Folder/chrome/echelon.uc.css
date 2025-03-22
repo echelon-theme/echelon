@@ -438,6 +438,11 @@ panelview {
   --information-16: url("chrome://echelon/content/firefox-4/icons/information-16.png") !important;
   --error-16: url("chrome://echelon/content/firefox-4/icons/error-16.png") !important;
 }
+:root[echelon-system-style=winxp] {
+  --warning-16: url("chrome://echelon/content/firefox-4/xp/icons/warning-16.png") !important;
+  --information-16: url("chrome://echelon/content/firefox-4/xp/icons/information-16.png") !important;
+  --error-16: url("chrome://echelon/content/firefox-4/xp/icons/error-16.png") !important;
+}
 
 #tab-notification-deck {
   order: 1000 !important;
